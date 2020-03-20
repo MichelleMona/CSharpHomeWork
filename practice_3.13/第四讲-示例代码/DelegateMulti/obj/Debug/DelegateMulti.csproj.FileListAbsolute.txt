@@ -1,0 +1,6 @@
+C:\Users\jiaxy\source\repos\ch04\DelegateMulti\bin\Debug\DelegateMulti.exe.config
+C:\Users\jiaxy\source\repos\ch04\DelegateMulti\bin\Debug\DelegateMulti.exe
+C:\Users\jiaxy\source\repos\ch04\DelegateMulti\bin\Debug\DelegateMulti.pdb
+C:\Users\jiaxy\source\repos\ch04\DelegateMulti\obj\Debug\DelegateMulti.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\DelegateMulti\obj\Debug\DelegateMulti.exe
+C:\Users\jiaxy\source\repos\ch04\DelegateMulti\obj\Debug\DelegateMulti.pdb

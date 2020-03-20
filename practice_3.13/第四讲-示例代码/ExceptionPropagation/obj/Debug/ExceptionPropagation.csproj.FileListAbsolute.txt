@@ -1,0 +1,7 @@
+C:\Users\jiaxy\source\repos\ch04\ExceptionPropagation\bin\Debug\ExceptionPropagation.exe.config
+C:\Users\jiaxy\source\repos\ch04\ExceptionPropagation\bin\Debug\ExceptionPropagation.exe
+C:\Users\jiaxy\source\repos\ch04\ExceptionPropagation\bin\Debug\ExceptionPropagation.pdb
+C:\Users\jiaxy\source\repos\ch04\ExceptionPropagation\obj\Debug\ExceptionPropagation.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\ExceptionPropagation\obj\Debug\ExceptionPropagation.exe
+C:\Users\jiaxy\source\repos\ch04\ExceptionPropagation\obj\Debug\ExceptionPropagation.pdb
+C:\Users\jiaxy\source\repos\ch04\ExceptionPropagation\obj\Debug\ExceptionPropagation.csprojAssemblyReference.cache

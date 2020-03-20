@@ -1,0 +1,8 @@
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\bin\Debug\NamespaceAndUsing.exe.config
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\bin\Debug\NamespaceAndUsing.exe
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\bin\Debug\NamespaceAndUsing.pdb
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\bin\Debug\NamespaceAndUsing.exe.CodeAnalysisLog.xml
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\bin\Debug\NamespaceAndUsing.exe.lastcodeanalysissucceeded
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\obj\Debug\NamespaceAndUsing.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\obj\Debug\NamespaceAndUsing.exe
+C:\Users\jiaxy\source\repos\ch04\NamespaceAndUsing\obj\Debug\NamespaceAndUsing.pdb

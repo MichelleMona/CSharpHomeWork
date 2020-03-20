@@ -1,0 +1,10 @@
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\bin\Debug\DelegatePlot.exe.config
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\bin\Debug\DelegatePlot.exe
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\bin\Debug\DelegatePlot.pdb
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\obj\Debug\DelegatePlot.csprojAssemblyReference.cache
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\obj\Debug\DelegatePlot.Form1.resources
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\obj\Debug\DelegatePlot.Properties.Resources.resources
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\obj\Debug\DelegatePlot.csproj.GenerateResource.cache
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\obj\Debug\DelegatePlot.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\obj\Debug\DelegatePlot.exe
+C:\Users\jiaxy\source\repos\ch04\DelegatePlot\obj\Debug\DelegatePlot.pdb

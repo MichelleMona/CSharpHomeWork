@@ -1,0 +1,7 @@
+C:\Users\jiaxy\source\repos\ch04\DelegateExample\bin\Debug\DelegateExample.exe.config
+C:\Users\jiaxy\source\repos\ch04\DelegateExample\bin\Debug\DelegateExample.exe
+C:\Users\jiaxy\source\repos\ch04\DelegateExample\bin\Debug\DelegateExample.pdb
+C:\Users\jiaxy\source\repos\ch04\DelegateExample\obj\Debug\DelegateExample.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\DelegateExample\obj\Debug\DelegateExample.exe
+C:\Users\jiaxy\source\repos\ch04\DelegateExample\obj\Debug\DelegateExample.pdb
+C:\Users\jiaxy\source\repos\ch04\DelegateExample\obj\Debug\DelegateExample.csprojAssemblyReference.cache

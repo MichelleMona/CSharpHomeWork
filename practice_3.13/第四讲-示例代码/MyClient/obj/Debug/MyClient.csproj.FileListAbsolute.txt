@@ -1,0 +1,12 @@
+C:\Users\jiaxy\source\repos\ch04\MyClient\bin\Debug\MyClient.exe.config
+C:\Users\jiaxy\source\repos\ch04\MyClient\bin\Debug\MyClient.exe
+C:\Users\jiaxy\source\repos\ch04\MyClient\bin\Debug\MyClient.pdb
+C:\Users\jiaxy\source\repos\ch04\MyClient\bin\Debug\MyLibrary.dll
+C:\Users\jiaxy\source\repos\ch04\MyClient\bin\Debug\MyLibrary.pdb
+C:\Users\jiaxy\source\repos\ch04\MyClient\obj\Debug\MyClient.csprojAssemblyReference.cache
+C:\Users\jiaxy\source\repos\ch04\MyClient\obj\Debug\MyClient.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\MyClient\obj\Debug\MyClient.csproj.CopyComplete
+C:\Users\jiaxy\source\repos\ch04\MyClient\obj\Debug\MyClient.exe
+C:\Users\jiaxy\source\repos\ch04\MyClient\obj\Debug\MyClient.pdb
+C:\Users\jiaxy\source\repos\ch04\MyClient\bin\Debug\MyClient.exe.CodeAnalysisLog.xml
+C:\Users\jiaxy\source\repos\ch04\MyClient\bin\Debug\MyClient.exe.lastcodeanalysissucceeded

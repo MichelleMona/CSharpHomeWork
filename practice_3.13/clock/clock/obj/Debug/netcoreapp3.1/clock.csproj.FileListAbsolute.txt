@@ -1,0 +1,11 @@
+C:\Users\Mr.Tian\source\repos\clock\clock\bin\Debug\netcoreapp3.1\clock.exe
+C:\Users\Mr.Tian\source\repos\clock\clock\bin\Debug\netcoreapp3.1\clock.deps.json
+C:\Users\Mr.Tian\source\repos\clock\clock\bin\Debug\netcoreapp3.1\clock.runtimeconfig.json
+C:\Users\Mr.Tian\source\repos\clock\clock\bin\Debug\netcoreapp3.1\clock.runtimeconfig.dev.json
+C:\Users\Mr.Tian\source\repos\clock\clock\bin\Debug\netcoreapp3.1\clock.dll
+C:\Users\Mr.Tian\source\repos\clock\clock\bin\Debug\netcoreapp3.1\clock.pdb
+C:\Users\Mr.Tian\source\repos\clock\clock\obj\Debug\netcoreapp3.1\clock.csprojAssemblyReference.cache
+C:\Users\Mr.Tian\source\repos\clock\clock\obj\Debug\netcoreapp3.1\clock.AssemblyInfoInputs.cache
+C:\Users\Mr.Tian\source\repos\clock\clock\obj\Debug\netcoreapp3.1\clock.AssemblyInfo.cs
+C:\Users\Mr.Tian\source\repos\clock\clock\obj\Debug\netcoreapp3.1\clock.dll
+C:\Users\Mr.Tian\source\repos\clock\clock\obj\Debug\netcoreapp3.1\clock.pdb

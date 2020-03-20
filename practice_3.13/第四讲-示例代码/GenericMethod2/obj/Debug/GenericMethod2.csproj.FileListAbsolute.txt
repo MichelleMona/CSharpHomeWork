@@ -1,0 +1,8 @@
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\bin\Debug\GenericMethod2.exe.config
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\bin\Debug\GenericMethod2.exe
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\bin\Debug\GenericMethod2.pdb
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\bin\Debug\GenericMethod2.exe.CodeAnalysisLog.xml
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\bin\Debug\GenericMethod2.exe.lastcodeanalysissucceeded
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\obj\Debug\GenericMethod2.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\obj\Debug\GenericMethod2.exe
+C:\Users\jiaxy\source\repos\ch04\GenericMethod2\obj\Debug\GenericMethod2.pdb

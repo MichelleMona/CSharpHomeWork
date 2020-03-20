@@ -1,0 +1,7 @@
+C:\Users\jiaxy\source\repos\ch04\DelegateIntegral\bin\Debug\DelegateIntegral.exe.config
+C:\Users\jiaxy\source\repos\ch04\DelegateIntegral\bin\Debug\DelegateIntegral.exe
+C:\Users\jiaxy\source\repos\ch04\DelegateIntegral\bin\Debug\DelegateIntegral.pdb
+C:\Users\jiaxy\source\repos\ch04\DelegateIntegral\obj\Debug\DelegateIntegral.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\DelegateIntegral\obj\Debug\DelegateIntegral.exe
+C:\Users\jiaxy\source\repos\ch04\DelegateIntegral\obj\Debug\DelegateIntegral.pdb
+C:\Users\jiaxy\source\repos\ch04\DelegateIntegral\obj\Debug\DelegateIntegral.csprojAssemblyReference.cache

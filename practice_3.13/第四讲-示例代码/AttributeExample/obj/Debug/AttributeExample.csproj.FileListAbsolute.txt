@@ -1,0 +1,7 @@
+C:\Users\jiaxy\source\repos\ch04\AttributeExample\bin\Debug\AttributeExample.exe.config
+C:\Users\jiaxy\source\repos\ch04\AttributeExample\bin\Debug\AttributeExample.exe
+C:\Users\jiaxy\source\repos\ch04\AttributeExample\bin\Debug\AttributeExample.pdb
+C:\Users\jiaxy\source\repos\ch04\AttributeExample\obj\Debug\AttributeExample.csprojAssemblyReference.cache
+C:\Users\jiaxy\source\repos\ch04\AttributeExample\obj\Debug\AttributeExample.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\AttributeExample\obj\Debug\AttributeExample.exe
+C:\Users\jiaxy\source\repos\ch04\AttributeExample\obj\Debug\AttributeExample.pdb

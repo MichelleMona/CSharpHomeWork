@@ -1,0 +1,8 @@
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\bin\Debug\TryCatchFinallyDemo.exe.config
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\bin\Debug\TryCatchFinallyDemo.exe
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\bin\Debug\TryCatchFinallyDemo.pdb
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\obj\Debug\TryCatchFinallyDemo.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\obj\Debug\TryCatchFinallyDemo.exe
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\obj\Debug\TryCatchFinallyDemo.pdb
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\bin\Debug\TryCatchFinallyDemo.exe.CodeAnalysisLog.xml
+C:\Users\jiaxy\source\repos\ch04\TryCatchFinallyDemo\bin\Debug\TryCatchFinallyDemo.exe.lastcodeanalysissucceeded

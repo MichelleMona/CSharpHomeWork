@@ -1,0 +1,6 @@
+C:\Users\jiaxy\source\repos\ch04\ExceptionMy\bin\Debug\ExceptionMy.exe.config
+C:\Users\jiaxy\source\repos\ch04\ExceptionMy\bin\Debug\ExceptionMy.exe
+C:\Users\jiaxy\source\repos\ch04\ExceptionMy\bin\Debug\ExceptionMy.pdb
+C:\Users\jiaxy\source\repos\ch04\ExceptionMy\obj\Debug\ExceptionMy.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\ExceptionMy\obj\Debug\ExceptionMy.exe
+C:\Users\jiaxy\source\repos\ch04\ExceptionMy\obj\Debug\ExceptionMy.pdb

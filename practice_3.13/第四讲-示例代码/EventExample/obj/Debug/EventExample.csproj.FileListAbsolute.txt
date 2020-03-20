@@ -1,0 +1,7 @@
+C:\Users\jiaxy\source\repos\ch04\EventExample\bin\Debug\EventExample.exe.config
+C:\Users\jiaxy\source\repos\ch04\EventExample\bin\Debug\EventExample.exe
+C:\Users\jiaxy\source\repos\ch04\EventExample\bin\Debug\EventExample.pdb
+C:\Users\jiaxy\source\repos\ch04\EventExample\obj\Debug\EventExample.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\EventExample\obj\Debug\EventExample.exe
+C:\Users\jiaxy\source\repos\ch04\EventExample\obj\Debug\EventExample.pdb
+C:\Users\jiaxy\source\repos\ch04\EventExample\obj\Debug\EventExample.csprojAssemblyReference.cache

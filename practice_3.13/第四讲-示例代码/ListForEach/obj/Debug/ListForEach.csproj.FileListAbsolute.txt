@@ -1,0 +1,8 @@
+C:\Users\jiaxy\source\repos\ch04\ListForEach\bin\Debug\ListForEach.exe.config
+C:\Users\jiaxy\source\repos\ch04\ListForEach\bin\Debug\ListForEach.exe
+C:\Users\jiaxy\source\repos\ch04\ListForEach\bin\Debug\ListForEach.pdb
+C:\Users\jiaxy\source\repos\ch04\ListForEach\obj\Debug\ListForEach.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\ListForEach\obj\Debug\ListForEach.exe
+C:\Users\jiaxy\source\repos\ch04\ListForEach\obj\Debug\ListForEach.pdb
+C:\Users\jiaxy\source\repos\ch04\ListForEach\bin\Debug\ListForEach.exe.CodeAnalysisLog.xml
+C:\Users\jiaxy\source\repos\ch04\ListForEach\bin\Debug\ListForEach.exe.lastcodeanalysissucceeded

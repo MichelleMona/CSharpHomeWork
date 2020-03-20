@@ -1,0 +1,7 @@
+C:\Users\jiaxy\source\repos\ch04\GenericApplication\bin\Debug\GenericApplication.exe.config
+C:\Users\jiaxy\source\repos\ch04\GenericApplication\bin\Debug\GenericApplication.exe
+C:\Users\jiaxy\source\repos\ch04\GenericApplication\bin\Debug\GenericApplication.pdb
+C:\Users\jiaxy\source\repos\ch04\GenericApplication\obj\Debug\GenericApplication.csprojAssemblyReference.cache
+C:\Users\jiaxy\source\repos\ch04\GenericApplication\obj\Debug\GenericApplication.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\ch04\GenericApplication\obj\Debug\GenericApplication.exe
+C:\Users\jiaxy\source\repos\ch04\GenericApplication\obj\Debug\GenericApplication.pdb
