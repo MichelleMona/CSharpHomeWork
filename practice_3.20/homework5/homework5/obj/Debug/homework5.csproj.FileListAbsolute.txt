@@ -1,0 +1,13 @@
+C:\Users\张敬民\source\repos\homework5\homework5\bin\Debug\homework5.exe.config
+C:\Users\张敬民\source\repos\homework5\homework5\bin\Debug\homework5.exe
+C:\Users\张敬民\source\repos\homework5\homework5\bin\Debug\homework5.pdb
+C:\Users\张敬民\source\repos\homework5\homework5\obj\Debug\homework5.csprojAssemblyReference.cache
+C:\Users\张敬民\source\repos\homework5\homework5\obj\Debug\homework5.csproj.CoreCompileInputs.cache
+C:\Users\张敬民\source\repos\homework5\homework5\obj\Debug\homework5.exe
+C:\Users\张敬民\source\repos\homework5\homework5\obj\Debug\homework5.pdb
+C:\Users\Mr.Tian\Desktop\homework5\homework5\bin\Debug\homework5.exe.config
+C:\Users\Mr.Tian\Desktop\homework5\homework5\bin\Debug\homework5.exe
+C:\Users\Mr.Tian\Desktop\homework5\homework5\bin\Debug\homework5.pdb
+C:\Users\Mr.Tian\Desktop\homework5\homework5\obj\Debug\homework5.csprojAssemblyReference.cache
+C:\Users\Mr.Tian\Desktop\homework5\homework5\obj\Debug\homework5.exe
+C:\Users\Mr.Tian\Desktop\homework5\homework5\obj\Debug\homework5.pdb
