@@ -1,0 +1,12 @@
+C:\Users\jiaxy\source\repos\homeworks\Homework8\OrderService\obj\Debug\OrderService.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\homeworks\Homework8\OrderService\obj\Debug\OrderApp.exe
+C:\Users\jiaxy\source\repos\homeworks\Homework8\OrderService\obj\Debug\OrderApp.pdb
+C:\Users\jiaxy\source\repos\homeworks\Homework8\OrderService\bin\Debug\OrderApp.exe.config
+C:\Users\jiaxy\source\repos\homeworks\Homework8\OrderService\bin\Debug\OrderApp.exe
+C:\Users\jiaxy\source\repos\homeworks\Homework8\OrderService\bin\Debug\OrderApp.pdb
+C:\Users\Mr.Tian\Desktop\Homework8\OrderService\bin\Debug\OrderApp.exe.config
+C:\Users\Mr.Tian\Desktop\Homework8\OrderService\bin\Debug\OrderApp.exe
+C:\Users\Mr.Tian\Desktop\Homework8\OrderService\bin\Debug\OrderApp.pdb
+C:\Users\Mr.Tian\Desktop\Homework8\OrderService\obj\Debug\OrderService.csprojAssemblyReference.cache
+C:\Users\Mr.Tian\Desktop\Homework8\OrderService\obj\Debug\OrderApp.exe
+C:\Users\Mr.Tian\Desktop\Homework8\OrderService\obj\Debug\OrderApp.pdb
