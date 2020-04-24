@@ -1,0 +1,664 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="always" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>操作系统 - 网站分类 - 博客园</title>
+    <link rel="shortcut icon" href="//common.cnblogs.com/favicon.ico" type="image/x-icon" />
+    <link rel="Stylesheet" type="text/css" href="/css/aggsite.min.css?v=FRR6qbd_vc7TQxxV0n1kBxwFAKoajo20N8gkufL2xuk" />
+        <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://feed.cnblogs.com/blog/sitecateogry/108724/rss" />
+    <script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>
+    <script src="/js/aggsite.min.js?v=pF9WYZrlQXxT2TvAo3ctCaa3IJ8YXeHpSWGGmRU2OV8"></script>
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot('/1090369/A1', [468, 60], 'div-gpt-ad-1547816814884-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B1', [300, 250], 'div-gpt-ad-1546331539224-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B2', [300, 250], 'div-gpt-ad-1539007469525-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B3', [300, 250], 'div-gpt-ad-1546331252242-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B4', [300, 250], 'div-gpt-ad-1546331385104-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+
+        /**/</script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="hd_info">
+            <div id="cnts">
+                <div id="site_nav_top">代码改变世界</div>
+                <div id="login_area"><span id="span_userinfo"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="header">
+            <p class="h_r_3"></p><p class="h_r_2"></p><p class="h_r_1"></p>
+            <div id="header_block">
+                <div id="logo">
+                    <h1>
+                        <a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo_small.gif" alt="博客园Logo" width="142" height="55" /></a>
+                    </h1>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            <p class="h_r_1"></p><p class="h_r_2"></p><p class="h_r_3"></p>
+        </div>
+        <div id="nav_menu"><a href="https://home.cnblogs.com/">园子</a><a href="https://news.cnblogs.com">新闻</a><a href="https://q.cnblogs.com/">博问</a><a href="https://ing.cnblogs.com/">闪存</a><a href="https://group.cnblogs.com/">小组</a><a href="https://wz.cnblogs.com/">收藏</a><a href="https://job.cnblogs.com/">招聘</a><a href="https://edu.cnblogs.com/">班级</a><a href="http://zzk.cnblogs.com/">找找看</a></div>
+        <div id="main">
+            <div class="post_nav_block_wrapper">
+                <ul class="post_nav_block">
+                        <li><a href="/" class="" title="">首页</a></li>
+                        <li><a href="/cate/108724/" class="current_nav" title="">操作系统</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="rss_link" id="rss_block">
+<span id="posts_refresh_tips"></span><a id="posts_refresh" href="#" class="refresh" title="刷新博文列表" onclick="aggSite.loadCategoryPostList();return false">刷新</a><a href="http://feed.cnblogs.com/blog/sitecateogry/108724/rss"><img src="//common.cnblogs.com/images/icon_rss.gif" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章" /></a>            </div>
+                <div id="headline_block" class="headline"><ul><li class="editor_pick"><a href="https://www.cnblogs.com/code-craftsman/p/12712922.html" id="editor_pick_lnk" target="_blank">【编辑推荐】事件驱动的微服务 - 事件驱动设计<span id="editor_pick_count"></span></a> <a href="/aggsite/headline" title="查看更多编辑推荐" class="right_more">»</a></li><li><a href="https://www.cnblogs.com/hohoa/p/12685237.html" target="_blank" title="阅读379, 评论0, 推荐6">[最多推荐][一起读源码]走进C#并发队列ConcurrentQueue的内部世界 — .NET Core篇(0/379)</a> <a href="/aggsite/topdigged24h" title="查看24小时推荐排行" class="right_more">»</a></li><li><a href="https://news.cnblogs.com/n/660080/" target="_blank" title="阅读801, 评论5, 推荐4">[新闻头条]小米开源 Redmi Note 8 Pro 和 Note 9 Pro 系列的内核源码(5/801)</a> <a href="https://news.cnblogs.com/" title="查看更多新闻" class="right_more">»</a></li><li><a href="https://news.cnblogs.com/n/660047/" target="_blank" title="阅读1302, 评论9, 推荐2">[推荐新闻]&quot;00后缩写黑话翻译器&quot;登上GitHub热榜 终于能看懂awsl(9/1302)</a> <a href="https://news.cnblogs.com/n/recommend" title="查看更多推荐新闻" class="right_more">»</a></li></ul></div>
+
+            <div id="pager_top" style="display:none"></div>
+            <div id="post_list_tips" class="hide"></div>
+            
+            <div id="post_list">
+                <div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('fengciaimei',12735509,588635,1)"> 
+	<span class="diggnum" id="digg_count_12735509">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735509" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/fengciaimei/archive/2020/04/20/12735509.html" target="_blank">磁盘管理</a></h3>               	
+    <p class="post_item_summary">
+    简单介绍了磁盘类型，MBR分区、gpt分区、创建文件系统、挂载、RAID、LVM一些相关的命令。本文只是笔记，没有教学，还是怕误人子弟，见谅。 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/fengciaimei/" class="lightblue">讽刺暧昧</a> 
+    发布于 2020-04-20 02:04 
+    <span class="article_comment"><a href="https://www.cnblogs.com/fengciaimei/archive/2020/04/20/12735509.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/fengciaimei/archive/2020/04/20/12735509.html" class="gray">阅读(10)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12735417,295886,1)"> 
+	<span class="diggnum" id="digg_count_12735417">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735417" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735417.html" target="_blank">Shell笔记：for，while和until循环</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    一、for循环 语法一 for 变量 in 值1 值2 值3... do 程序 done 注：多个值之间只要“有空”，不只是空格，换行符、制表符等都行，比如读取文件时，可以自动遍历每一行。 示例1：遍历固定的某些项 #!/bin/bash for time in morning noon after ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-20 01:03 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735417.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735417.html" class="gray">阅读(6)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12735343,295886,1)"> 
+	<span class="diggnum" id="digg_count_12735343">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735343" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735343.html" target="_blank">Shell笔记：if和case条件判断</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    一、if语句 单分支if语句 语法（中括号首尾的空格不能省略）： if [ 条件判断式 ];then 程序 fi #或者 if [ 条件判断式 ] then 程序 fi 示例： #!/bin/bash #根分区的使用率如果达到80则发出警告，向屏幕输出一条提示信息。 rate=$(df -h | g ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-20 00:44 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735343.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735343.html" class="gray">阅读(7)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12735273,295886,1)"> 
+	<span class="diggnum" id="digg_count_12735273">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735273" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735273.html" target="_blank">Shell笔记：测试选项</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    Shell中if等语句的条件判断通常就是判断一些测试选项的结果是否为真。 常用的文件类型测试选项（Linux中目录、设备等都是用文件进行表示） -d 文件：判断该文件是否存在，并且是否为目录文件。 -e 文件：判断该文件是否存在。 -f 文件：判断该文件是否存在，并且是否为普通文件。 -L 文件：判 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-20 00:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735273.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735273.html" class="gray">阅读(11)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12735216,295886,1)"> 
+	<span class="diggnum" id="digg_count_12735216">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735216" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735216.html" target="_blank">Shell笔记：字符串提取</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    本文讲的字符串提取指的是从文件或某个输出中提取符合条件的列的内容，如果某个文件或输出中它的每一行的信息都是使用特定的分隔符来分割的话，就可以使用字符串的提取功能，本文涉及到的命令包括cut、printf、awk、sed等。 cut命令cut [选项] 文件名：在文件中提取符合条件的列。选项： -f  ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-20 00:05 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735216.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/20/12735216.html" class="gray">阅读(8)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12735085,295886,1)"> 
+	<span class="diggnum" id="digg_count_12735085">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735085" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12735085.html" target="_blank">Shell笔记：正则表达式</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    通配符是用于匹配符合条件的文件名（完全匹配），但是正则表达式是用来匹配文件中符合条件的字符串（包含匹配）。 基础的正则表达式 *：前一个字符匹配0次或任意多次。 .：匹配除了换行符之外的任意一个字符。 ^：匹配行首。 $：匹配行尾。 []：匹配方括号中指定的任意一个字符（只匹配一个字符），里面可以使 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-19 23:37 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12735085.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12735085.html" class="gray">阅读(8)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12735039,295886,1)"> 
+	<span class="diggnum" id="digg_count_12735039">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735039" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12735039.html" target="_blank"> Shell笔记：变量</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    通常说到变量，可能就是指的用户自定义的变量，但是Shell中变量的概念除了用户自定义变量，还包括环境变量、系统预定义变量、位置参数变量、数值变量等。 用户自定义变量注意用户自定义变量只在当前的shell终端中生效。自定义变量：变量名称可以使用字母、数字和下划线组成，但是不能以数字开头。变量类型：Ba ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-19 23:28 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12735039.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12735039.html" class="gray">阅读(9)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12733721,295886,1)"> 
+	<span class="diggnum" id="digg_count_12733721">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12733721" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12733721.html" target="_blank">Shell笔记：hello world和Shell基础</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    Shell概述一方面，Shell相当于一个命令解释器，将Linux命令解释为二进制机器码，或者反过来，将二进制机器码解释为Linux命令。其实我们启动Linux后命令交互界面就是系统给用户提供的一个Shell解释器的界面。另一方面，Shell也是一种解释执行的脚本编程语言，并且在Shell中可以直接 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-19 21:20 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12733721.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12733721.html" class="gray">阅读(12)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('LRainner',12733015,595812,1)"> 
+	<span class="diggnum" id="digg_count_12733015">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12733015" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/LRainner/archive/2020/04/19/12733015.html" target="_blank">Linux学习笔记（五）搜索命令</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/LRainner/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/2002406/20200415104634.png" alt=""/></a>    搜索命令 whereis which locate find whereis 英文原意：locate the binary，source，and manual page files for a command 功能：查找二进制命令、源文件和帮助文档的命令 语法：where 选项[ bm] 命令 wh ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/LRainner/" class="lightblue">LRainner</a> 
+    发布于 2020-04-19 19:20 
+    <span class="article_comment"><a href="https://www.cnblogs.com/LRainner/archive/2020/04/19/12733015.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/LRainner/archive/2020/04/19/12733015.html" class="gray">阅读(15)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12733004,295886,1)"> 
+	<span class="diggnum" id="digg_count_12733004">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12733004" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12733004.html" target="_blank">Linux笔记：其他系统操作</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    本文记一些比较零碎的系统操作，如将程序放入后台，查看进程和内存等信息，查看系统Linux内核和版本等信息，以及如何制定系统定时任务等。 将程序放入后台在Windows程序中其实最小化之后就是放入后台运行了，在Linux系统中有两种方式将程序放入后台。方式一：在命令的最后加一个&amp;符即可将命令的运行放入 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-19 19:19 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12733004.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12733004.html" class="gray">阅读(7)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12732836,295886,1)"> 
+	<span class="diggnum" id="digg_count_12732836">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12732836" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12732836.html" target="_blank">Linux笔记：进程管理</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    Windows中可以通过任务管理器来查看对应的进程信息以及系统资源等信息，Linux中则通常使用“ps aux”来查看这些信息。 查看所有进程和系统资源ps aux或ps -le：查看所有进程即系统资源的使用，前者使用的是BSD操作系统格式，即Unix系统格式，a表示前台进程，u表示创建该进程的用户 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-19 18:44 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12732836.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12732836.html" class="gray">阅读(9)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('guyuyun',12732657,295886,1)"> 
+	<span class="diggnum" id="digg_count_12732657">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12732657" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12732657.html" target="_blank">Linux笔记：权限管理</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/guyuyun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/997700/20160724184131.png" alt=""/></a>    Linux中对于权限的管理是非常严格的，不同的用户可以拥有不同的操作权限，其中超级管理员root是最大的，几乎拥有所有的权限，如果你是root用户，即使你想把系统给删了也是允许的，所以经常有“rm -rf /*”的玩笑或段子，但也确实需要小心，使用rm -rf命令的时候不要删错东西了。常用的权限操作 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/guyuyun/" class="lightblue">谷雨yun</a> 
+    发布于 2020-04-19 18:08 
+    <span class="article_comment"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12732657.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/guyuyun/archive/2020/04/19/12732657.html" class="gray">阅读(10)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('youkanyouxiao',12731326,305083,1)"> 
+	<span class="diggnum" id="digg_count_12731326">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12731326" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731326.html" target="_blank">一个小工具帮你搞定实时监控Nginx服务器</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/youkanyouxiao/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1024722/20200317203634.png" alt=""/></a>    Linux运维工程师的首要职责就是保证业务7 x 24小时稳定的运行，监控Web服务器对于查看网站上发生的情况至关重要。关注最多的便是日志变动，查看实时日志文件变动大家第一反应应该是&#39;tail -f /path/to/log&#39;命令吧，但是如果每个网站的访问日志都是使用这种方式查看也是相当崩溃的，今天 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/youkanyouxiao/" class="lightblue">民工哥</a> 
+    发布于 2020-04-19 13:51 
+    <span class="article_comment"><a href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731326.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731326.html" class="gray">阅读(28)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('youkanyouxiao',12731306,305083,1)"> 
+	<span class="diggnum" id="digg_count_12731306">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12731306" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731306.html" target="_blank">永久免费！国产操作系统 Deepin V20 Beta版发布（附安装教程）</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/youkanyouxiao/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1024722/20200317203634.png" alt=""/></a>    深度操作系统(DEEPIN)是武汉深之度科技有限公司致力于为全球用户提供美观易用、安全可靠的Linux发行版。经过一段时间的测试，这款操作系统的Beta版终于今天和大家见面了。这次Deepin v20操作系统带来了全新的Deepin桌面和全家桶软件，基于Linux 5.3内核，并宣布将永久免费使用。 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/youkanyouxiao/" class="lightblue">民工哥</a> 
+    发布于 2020-04-19 13:47 
+    <span class="article_comment"><a href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731306.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731306.html" class="gray">阅读(133)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('wsg1100',12730720,385777,1)"> 
+	<span class="diggnum" id="digg_count_12730720">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12730720" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/wsg1100/archive/2020/04/19/12730720.html" target="_blank">有利于提高xenomai 实时性的一些配置建议</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/wsg1100/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1250138/20170929104024.png" alt=""/></a>    本文讲述一些有利于提高xenomai 实时性配置建议，其中，一些是通用的，一些是针对某个架构的，最后是xenomai实时性测试数据，希望对你有用。 一、影响因素 硬实时操作系统应具备的最重要特性之一是可预测性，系统应该保证满足所有关键时序约束。然而，这取决于一系列因素，这些因素涉及硬件的架构特征、内 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/wsg1100/" class="lightblue">木多</a> 
+    发布于 2020-04-19 11:22 
+    <span class="article_comment"><a href="https://www.cnblogs.com/wsg1100/archive/2020/04/19/12730720.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/wsg1100/archive/2020/04/19/12730720.html" class="gray">阅读(6)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('henjay724',12728731,182601,1)"> 
+	<span class="diggnum" id="digg_count_12728731">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12728731" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/henjay724/archive/2020/04/19/12728731.html" target="_blank">《痞子衡嵌入式半月刊》 第 6 期 </a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/henjay724/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/623659/20200212200452.png" alt=""/></a>    这里分享嵌入式领域有用有趣的项目/工具以及一些热点新闻，农历年分二十四节气，希望在每个交节之日准时发布一期。 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/henjay724/" class="lightblue">痞子衡</a> 
+    发布于 2020-04-19 08:14 
+    <span class="article_comment"><a href="https://www.cnblogs.com/henjay724/archive/2020/04/19/12728731.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/henjay724/archive/2020/04/19/12728731.html" class="gray">阅读(42)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('plege',12729263,591792,1)"> 
+	<span class="diggnum" id="digg_count_12729263">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12729263" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/plege/archive/2020/04/19/12729263.html" target="_blank">假设本地源yum</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/plege/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1916635/20200331135544.png" alt=""/></a>    软件自动升级工具yum 历史：yum是yellow dog updater modified的缩写，yellow dog（黄狗）也是Linux的一个发行版本，只不过Redhat公司将这升级技术利用到自己的发行版本上形成了现在的yum. 作用：其实就是进行Linux的自动升级常用的一个工具 安装： 检 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/plege/" class="lightblue">栖林藏鱼</a> 
+    发布于 2020-04-19 00:03 
+    <span class="article_comment"><a href="https://www.cnblogs.com/plege/archive/2020/04/19/12729263.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/plege/archive/2020/04/19/12729263.html" class="gray">阅读(8)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('shaojie1986',12701902,596222,1)"> 
+	<span class="diggnum" id="digg_count_12701902">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12701902" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12701902.html" target="_blank">Linux 简介</a></h3>               	
+    <p class="post_item_summary">
+    Linux中vi编辑器的常用命令集合 在命令模式下执行的命令：Vi 行内移动工具：0 移动到行首，$ 移动到行尾w/W命令 每次把光标向后移动一个单词。b /B命令 每次把光标向前移动一个单词。yy命令 复制命令p命令 粘贴命令c 命令 修改文件中的任何文本cw--到光标所在行的首个单词c2b--前 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/shaojie1986/" class="lightblue">cxxb</a> 
+    发布于 2020-04-18 22:25 
+    <span class="article_comment"><a href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12701902.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12701902.html" class="gray">阅读(16)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('shaojie1986',12702195,596222,1)"> 
+	<span class="diggnum" id="digg_count_12702195">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12702195" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12702195.html" target="_blank">CentOS7配置网络问题</a></h3>               	
+    <p class="post_item_summary">
+    当配置好网络时，重启网络服务出现以下报错 Job for network.service failed because the control process exited with error code. See “systemctl status network.service” and “jo ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/shaojie1986/" class="lightblue">cxxb</a> 
+    发布于 2020-04-18 22:24 
+    <span class="article_comment"><a href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12702195.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12702195.html" class="gray">阅读(12)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('nanfengnan',12728401,565059,1)"> 
+	<span class="diggnum" id="digg_count_12728401">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12728401" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/nanfengnan/archive/2020/04/18/12728401.html" target="_blank">Vmware虚拟机 的工作模式</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/nanfengnan/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1798247/20200417103040.png" alt=""/></a>    vmware虚拟机的网卡 1.Bridged(桥接模式) 2.NAT(网络地址转换模式) 3.Host-only(仅主机模式) 1.Bridged(桥接模式) 桥接模式：就是将主机网卡和虚拟机虚拟的网卡利用虚拟网桥进行通信在虚拟模式的作用下，类似于把物理主机虚拟为一个交换机，所有桥接设置的虚拟机连接 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/nanfengnan/" class="lightblue">nanfengnan</a> 
+    发布于 2020-04-18 21:54 
+    <span class="article_comment"><a href="https://www.cnblogs.com/nanfengnan/archive/2020/04/18/12728401.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/nanfengnan/archive/2020/04/18/12728401.html" class="gray">阅读(11)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+   
+
+            </div>
+            <script>editorPickStat(); aggSite.user.getUserInfo();</script>
+            <script type="text/javascript">
+                var aggSiteModel = {"CategoryType":"TopSiteCategory","ParentCategoryId":0,"CategoryId":108724,"PageIndex":1,"TotalPostCount":4000,"ItemListActionName":"AggSitePostList"};
+            </script>
+            <div id="pager_bottom"><div id="paging_block"><div class="pager"><a href="/cate/108724/" class="p_1 current" onclick="aggSite.loadCategoryPostList(1,20);buildPaging(1);return false;">1</a><a href="/cate/108724/2" class="p_2 middle" onclick="aggSite.loadCategoryPostList(2,20);buildPaging(2);return false;">2</a><a href="/cate/108724/3" class="p_3 middle" onclick="aggSite.loadCategoryPostList(3,20);buildPaging(3);return false;">3</a><a href="/cate/108724/4" class="p_4 middle" onclick="aggSite.loadCategoryPostList(4,20);buildPaging(4);return false;">4</a><a href="/cate/108724/5" class="p_5 middle" onclick="aggSite.loadCategoryPostList(5,20);buildPaging(5);return false;">5</a><a href="/cate/108724/6" class="p_6 middle" onclick="aggSite.loadCategoryPostList(6,20);buildPaging(6);return false;">6</a><a href="/cate/108724/7" class="p_7 middle" onclick="aggSite.loadCategoryPostList(7,20);buildPaging(7);return false;">7</a><a href="/cate/108724/8" class="p_8 middle" onclick="aggSite.loadCategoryPostList(8,20);buildPaging(8);return false;">8</a><a href="/cate/108724/9" class="p_9 middle" onclick="aggSite.loadCategoryPostList(9,20);buildPaging(9);return false;">9</a><a href="/cate/108724/10" class="p_10 middle" onclick="aggSite.loadCategoryPostList(10,20);buildPaging(10);return false;">10</a><a href="/cate/108724/11" class="p_11 middle" onclick="aggSite.loadCategoryPostList(11,20);buildPaging(11);return false;">11</a><span class="ellipsis">···</span><a href="/cate/108724/200" class="p_200 last" onclick="aggSite.loadCategoryPostList(200,20);buildPaging(200);return false;">200</a><a href="/cate/108724/2" onclick="aggSite.loadCategoryPostList(2,20);buildPaging(2);return false;">Next &gt;</a></div></div><script type="text/javascript">var pagingBuider={"OnlyLinkText":false,"TotalCount":4000,"PageIndex":1,"PageSize":20,"ShowPageCount":5,"SkipCount":0,"UrlFormat":"/cate/108724/{0}","OnClickJsFunc":"aggSite.loadCategoryPostList()","FirstPageLink":"/cate/108724/","AjaxUrl":"/AggSite/Pager","AjaxCallbak":null,"TopPagerId":"pager_top","IsRenderScript":true};function buildPaging(pageIndex){pagingBuider.PageIndex=pageIndex;$.ajax({url:pagingBuider.AjaxUrl,data:JSON.stringify(pagingBuider),type:'post',dataType:'text',contentType:'application/json; charset=utf-8',success:function (data) { $('#paging_block').html(data); var pagerTop=$('#pager_top');if(pageIndex>1){$(pagerTop).html(data).show();}else{$(pagerTop).hide();}}});}</script>
+</div>
+            <div id="side_nav">
+                
+    <div id="cate_title_block">
+<div id="cate_title_title"><div class="cate_title">网站分类</div></div>
+<ul id="cate_item">
+<li id="cate_item_108698" onmouseover="cateShow(108698)" onmouseout="cateHidden(108698)">
+<a href="/cate/108698/">.NET技术(1)</a>
+</li>
+<li id="cate_item_2" onmouseover="cateShow(2)" onmouseout="cateHidden(2)">
+<a href="/cate/2/">编程语言(3)</a>
+</li>
+<li id="cate_item_108701" onmouseover="cateShow(108701)" onmouseout="cateHidden(108701)">
+<a href="/cate/108701/">软件设计(0)</a>
+</li>
+<li id="cate_item_108703" onmouseover="cateShow(108703)" onmouseout="cateHidden(108703)">
+<a href="/cate/108703/">Web前端(1)</a>
+</li>
+<li id="cate_item_108704" onmouseover="cateShow(108704)" onmouseout="cateHidden(108704)">
+<a href="/cate/108704/">企业信息化(0)</a>
+</li>
+<li id="cate_item_108705" onmouseover="cateShow(108705)" onmouseout="cateHidden(108705)">
+<a href="/cate/108705/">手机开发(1)</a>
+</li>
+<li id="cate_item_108709" onmouseover="cateShow(108709)" onmouseout="cateHidden(108709)">
+<a href="/cate/108709/">软件工程(0)</a>
+</li>
+<li id="cate_item_108712" onmouseover="cateShow(108712)" onmouseout="cateHidden(108712)">
+<a href="/cate/108712/">数据库技术(1)</a>
+</li>
+<li id="cate_item_108724" onmouseover="cateShow(108724)" onmouseout="cateHidden(108724)">
+<a href="/cate/108724/">操作系统(5)</a>
+</li>
+<li id="cate_item_4" onmouseover="cateShow(4)" onmouseout="cateHidden(4)">
+<a href="/cate/4/">其他分类(1)</a>
+</li>
+<li id="cate_item_0" onmouseover="cateShow(0)" onmouseout="cateHidden(0)">
+<a href="/cate/all/">所有随笔(278)</a>
+</li>
+<li id="cate_item_-1" onmouseover="cateShow(-1)" onmouseout="cateHidden(-1)">
+<a href="/comment/">所有评论(57)</a>
+</li>
+</ul>
+<div class="cate_bottom"></div>
+<div id="cate_sub_block"></div>
+<script type="text/javascript">var cateIdList = '108698,2,108701,108703,108704,108705,108709,108712,108724,4';aggSite.loadSubCategories();</script>
+</div>
+        <div class="l_s"></div>
+<p class="r_l_3" /><p class="r_l_2" /><p class="r_l_1" />
+<div class="w_l">
+<h4>相关分类</h4>
+<ul>
+<li><a href="/cate/108698/">.NET技术</a></li>
+<li><a href="/cate/2/">编程语言</a></li>
+<li><a href="/cate/108701/">软件设计</a></li>
+<li><a href="/cate/108703/">Web前端</a></li>
+<li><a href="/cate/108704/">企业信息化</a></li>
+<li><a href="/cate/108705/">手机开发</a></li>
+<li><a href="/cate/108709/">软件工程</a></li>
+<li><a href="/cate/108712/">数据库技术</a></li>
+<li><a href="/cate/4/">其他分类</a></li>
+</ul>
+</div>
+<p class="r_l_1" /><p class="r_l_2" /><p class="r_l_3" />
+<div class="l_s"></div>
+<p class="r_l_3"></p><p class="r_l_2"></p><p class="r_l_1"></p>
+<div class="w_l">
+<h4>链接</h4>        
+<ul>
+    <li><a href="https://group.cnblogs.com/forum/public/" target="_blank">反馈或建议</a></li> 
+    <li><a href="//www.cnblogs.com/cmt/" target="_blank">官方博客</a></li>
+    <li><a href="/skins.aspx" target="_blank">博客模板</a></li>
+    <li><a href="http://www.blogjava.net/">Java博客</a></li>
+    <li><a href="http://www.cppblog.com/">C++博客</a></li>
+    <li><a href="//www.cnblogs.com/cmt/archive/2009/09/26/1574616.html">手机版</a></li>
+</ul>
+</div>
+<p class="r_l_1"></p><p class="r_l_2"></p><p class="r_l_3"></p>
+<div class="l_s"></div>
+<div id="user_stats"></div>
+<div class="l_s"></div>        
+<p class="r_l_3"></p><p class="r_l_2"></p><p class="r_l_1"></p>
+<div class="w_l">                
+<h4>统计信息</h4>
+<div id="site_stats"></div>      
+</div>
+<p class="r_l_1"></p><p class="r_l_2"></p><p class="r_l_3"></p>
+            </div>
+            <div id="side_right">
+                    <div id="search_block">
+                        <div class="side_search">
+                            <input type="text" id="zzk_q" class="search_input" onkeydown="return zzk_go_enter(event);" tabindex="3" /><input onclick="zzk_go()" type="button" class="search_btn" value="找找看" />
+                        </div>
+                        <div id="google_search" class="side_search">
+                            <input type="text" id="google_search_q" class="search_input" onkeydown="return google_search_enter(event);" /><input type="button" value="Google" class="search_btn" onclick="return google_search();" />
+                        </div>
+                    </div>
+                <div id="cnblogs_a1">
+                    <div id='div-gpt-ad-1547816814884-0' style='height:60px; width:468px;'>
+                        <script>
+                            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1547816814884-0'); });
+                        </script>
+                    </div>
+                </div>
+                <div id="cnblogs_b1" class="sidebar-image">
+                    <div id='div-gpt-ad-1546331539224-0' style='height:250px; width:300px;'>
+                        <script>
+                            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1546331539224-0'); });
+                        </script>
+                    </div>
+                </div>
+                <div id="ad_right_text" class="ad_right_text"></div>
+                    <div style="margin: 10px 0;padding: 10px;color: #555;" class="w_r">
+                        全民国家安全教育日：网络安全始于心，安全行动践于行。-- 上海市公安局浦东公安分局宣
+                    </div>
+                <div id="side_right_block"></div>
+            </div>
+        </div>
+        <div id="footer_bottom">
+            <div>Powered by .NET Core on Kubernetes</div>
+            <div><a href="https://about.cnblogs.com/">关于博客园</a><a href="https://about.cnblogs.com/contact">联系我们</a><a href="https://about.cnblogs.com/ad">广告服务</a><a href="https://about.cnblogs.com/job">人才服务</a>&copy;2004-2020<a href="https://www.cnblogs.com/">博客园</a>保留所有权利<a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备09004260号</a></div>
+            <div><a href="https://ss.knet.cn/verifyseal.dll?sn=e131108110100433392itm000000&amp;ct=df&amp;a=1&amp;pa=0.25787803245785335" rel="nofollow" target="_blank"><img id="cnnic_img" src="//common.cnblogs.com/images/cnnic.png" alt="" width="64" height="23" /></a><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001144" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="//common.cnblogs.com/images/ghs.png" alt="" /><span style="float:left;height:20px;line-height:20px;margin: 0 5px 0 5px; color:#939393;">沪公网安备 31011502001144号</span></a></div>
+        </div>
+    </div>
+</body>
+</html>

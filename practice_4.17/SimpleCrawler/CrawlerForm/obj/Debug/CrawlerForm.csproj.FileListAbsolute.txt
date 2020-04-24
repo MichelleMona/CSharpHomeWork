@@ -1,0 +1,10 @@
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\bin\Debug\CrawlerForm.exe.config
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\bin\Debug\CrawlerForm.exe
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\bin\Debug\CrawlerForm.pdb
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.csprojAssemblyReference.cache
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.Form1.resources
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.Properties.Resources.resources
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.csproj.GenerateResource.cache
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.exe
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.pdb

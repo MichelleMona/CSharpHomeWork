@@ -1,0 +1,1184 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MIP官方博客 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/mipengine/custom.css?v=Ca1rNYuLELpdZiTmmNq2memiUb8=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/mipengine/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/mipengine/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/mipengine/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 313333;
+        var currentBlogApp = 'mipengine';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/mipengine/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/mipengine/">MIP</a>
+</h1>
+<h2>
+移动页面加速器 - 官方博客
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/mipengine/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/mipengine/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+45&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+59</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/07/21.html">2017年7月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-faqs.html">
+[置顶]    MIP 问题解决方案大全（2018-06更新）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在 MIP 推出后，我们收到了一些站长的疑问。现将常见问题整理出来，包括六个方面共45个问题：MIP 认知类问题，改造前准备，前端改造和组件使用，提交生效，MIPCache，更多学习资源。帮助大家了解 MIP 的知识。            <a href="https://www.cnblogs.com/mipengine/p/mip-faqs.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-07-21 12:42 MIP官方博客 阅读 (14953) 评论 (7)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7217064" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2018/05/04.html">2018年5月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-monthly-201804.html">
+    MIP 技术月报（4月）：支持熊掌号登录；优化页面悬浮元素
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：《MIP 技术月报》将会与大家分享包含移动加速技术以外的其他移动应用开发的技术，从移动用户体验、开发体验出发来分享 MIP 的更多技术点，技术面也将涉及更广的范围。            <a href="https://www.cnblogs.com/mipengine/p/mip-monthly-201804.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-05-04 16:04 MIP官方博客 阅读 (861) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8984957" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2018/04/02.html">2018年4月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-extensions-git.html">
+    MIP 组件库升级公告
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：背景 为了方便广大开发者们更好地使用组件，现对 MIP 组件库统一进行升级，升级后将分为通用组件和自定义组件两类，方便开发。 通用组件，即考虑了组件通用性方便所有开发者参考使用的组件，将存放于 &quot;mip extensions&quot; 仓库下，同时欢迎开发者贡献通用组件，为 MIP 技术做贡献，提交通用组件            <a href="https://www.cnblogs.com/mipengine/p/mip-extensions-git.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-04-02 17:22 MIP官方博客 阅读 (826) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8675573" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/12/28.html">2017年12月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-vd-baidu.html">
+    HTTP 视频怎么在 MIP 页面中使用？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在 MIP 中，一些资源的使用需要支持 HTTPS，视频就是其中一种。但目前大部分站点的视频资源都还是 HTTP 的资源，无法在百度 MIP 搜索结果中直接使用， mip video 视频组件针对 HTTP 的视频资源采用跳到一个 HTTP 的播放页面进行播放，这种体验并非最佳。故 MIP 项目组联            <a href="https://www.cnblogs.com/mipengine/p/mip-vd-baidu.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-28 15:21 MIP官方博客 阅读 (791) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8135690" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/12/22.html">2017年12月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/insert-async-data-without-js.html">
+    新手教程：不写JS，在MIP页中实现异步加载数据
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：从需求谈起：在 MIP 页中异步加载数据 &quot;MIP（移动网页加速器）&quot; 的 &quot;加速原理&quot; 除了靠谱的 MIP Cache CDN 加速外，最值得一提的就是组件系统。所有 JS 交互都需要使用 MIP 组件实现，保证页面中所有 JS 都是最精简高效的，避免一个导航效果需要引用 jquery.js，bo            <a href="https://www.cnblogs.com/mipengine/p/insert-async-data-without-js.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-22 17:01 MIP官方博客 阅读 (4409) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8086787" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/12/21.html">2017年12月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/c-mipcdn-announcement.html">
+    MIP 脚本域名地址变更公告
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：尊敬的 MIP 开发者： MIP 团队为了解决 MIP Cache 页面下 cookie 相互覆盖问题，增强站点品牌露出，在 2017 年 8 月将 MIP 的脚本域名和 MIP Cache 页面域名进行了升级变更，详见说明 &quot;MIP Cache 域名升级&quot; 。 在 12 月中旬，MIP 团队修改了            <a href="https://www.cnblogs.com/mipengine/p/c-mipcdn-announcement.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-21 18:46 MIP官方博客 阅读 (869) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8080892" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/12/12.html">2017年12月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-progress-201711.html">
+    MIP技术进展月报第3期：MIP小姐姐听说，你想改改MIP官网？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、 官网文档全部开源 MIP 是一项永久的开源的项目，提供持续优化的解决方案，当然官网也不能例外。从现在开始，任何人都可以在 MIP 官网贡献文档啦！ GitHub 上，我们已经上传了 &quot;《官网贡献指南》&quot; ，欢迎大家建言献策，让 MIP 官网更加丰富热闹起来吧。 二、 功能更新 1. mip m            <a href="https://www.cnblogs.com/mipengine/p/mip-progress-201711.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-12 15:26 MIP官方博客 阅读 (540) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8027991" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-progress-201710.html">
+    MIP技术进展月报第2期: 数据绑定，异步脚本加速
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、 功能更新 1. mip bind 上线，实现复杂交互 MIP bind 双向绑定机制和组件上线，提供双向绑定的特性；能够允许页面实现数据驱动功能，开发者可以在任意场景修改数据，并驱动页面元素变动。 MIP 小姐姐画外音： 在上一期的技术月报中，MIP 小姐姐给大家预告了 MIP 将支持更多复杂            <a href="https://www.cnblogs.com/mipengine/p/mip-progress-201710.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-12 15:19 MIP官方博客 阅读 (532) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8027935" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/10/23.html">2017年10月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/webp-in-mip.html">
+    WebP 在减少图片体积和流量上的效果如何？MIP技术实践分享
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：不论是 PC 还是移动端，图片一直占据着页面流量的大头，在图片的大小和质量之间如何权衡，成为了长期困扰开发者们的问题。而 WebP 技术的出现，为解决该问题提供了好的方案。本文将为大家详细介绍 WebP 技术，同时也会分享该技术在 MIP 项目中的实践。            <a href="https://www.cnblogs.com/mipengine/p/webp-in-mip.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-23 16:56 MIP官方博客 阅读 (1134) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7717541" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/10/20.html">2017年10月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-seo.html">
+    改造MIP获得搜索青睐，轻松完成SEO
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：搜索引擎目标及页面排序方法 搜索引擎作为互联网流量的入口，承担着流量分发的职责。但排序成千上万的网页，决定哪些网页在第一页，是由网页本身的用户体验决定的。权重算法会从内容优质性，广告多少，加载速度等多个角度评估网页的用户体验，让更优质的结果被用户看到，满足用户搜索需求。 比如百度先后推出了 &quot;冰桶算            <a href="https://www.cnblogs.com/mipengine/p/mip-seo.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-20 16:39 MIP官方博客 阅读 (1460) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7699648" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/10/16.html">2017年10月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-progress-201709.html">
+    MIP 技术进展月报：储存功能全新上线，MIP-Cache域名升级，校验更严谨
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：集 瞬时触达用户、高转化率、炫酷闪电标、优质展现形式 等诸多特性为一体的 MIP 页面吸引了众多站点进行改造。为了更好地服务于广大站长，更快地倾听站长们的声音，MIP 技术团队特推出《MIP 技术进展月报》，欢迎大家对 MIP 技术提建议，可以通过 &quot;github/issues&quot; 和 mip sup            <a href="https://www.cnblogs.com/mipengine/p/mip-progress-201709.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-16 16:44 MIP官方博客 阅读 (737) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7677387" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/09/06.html">2017年9月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/w3c-baidu-meeting.html">
+    【转】W3C中国与百度联合组织移动网页加速技术研讨会
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：2017年8月30日，W3C会员百度在北京中关村软件园国际会议中心主办了“移动网页加速技术研讨会”，W3C中国以及腾讯、阿里巴巴及UC、搜狗、小米、傲游、中国移动、中国电信、DCloud、听云等W3C中国区会员及厂商代表积极参与了本次研讨会。            <a href="https://www.cnblogs.com/mipengine/p/w3c-baidu-meeting.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-09-06 19:05 MIP官方博客 阅读 (304) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7484381" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/08/23.html">2017年8月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-w3c-meeting.html">
+    百度将与W3C中国召开MIP技术研讨会
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：百度计划与W3C中国共同组织国内W3C会员，于8月30日召开MIP 技术研讨会，讨论 MIP 等技术相关的应用标准，以期推进 MIP/AMP 在W3C中国的标准化进程。            <a href="https://www.cnblogs.com/mipengine/p/mip-w3c-meeting.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-23 11:18 MIP官方博客 阅读 (509) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7417209" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/08/08.html">2017年8月8日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-platform-hitch-effect.html">
+    【公告】MIP组件审核平台故障-影响说明
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：故障通报 2017年8月8日 下午14:11，由于机器故障原因， &quot;MIP组件审核平台&quot; 无法提供服务。 2017年8月8日 下午16:46，服务恢复。 故障影响 1. 2017年8月8日下午13:00 14:00提交的组件审核状态丢失，如果您在这段时间提交过组件，请重新提交。 2. 部分用户的数据            <a href="https://www.cnblogs.com/mipengine/p/mip-platform-hitch-effect.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-08 21:02 MIP官方博客 阅读 (272) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7308932" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-platform-hitch.html">
+    【公告】关于8.8MIP组件审核平台故障的说明
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：故障通报 2017 年 8 月 8 日 下午 14:11，由于机器故障原因，MIP 组件管理平台暂时无法提供服务。 2017 年 8 月 8 日 下午 16:46, 故障已解决。MIP 组件管理平台服务恢复。 故障影响 2017 年 8 月 8 日下午 13:00 开始提交的组件审核状态丢失，如果在            <a href="https://www.cnblogs.com/mipengine/p/mip-platform-hitch.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-08 16:09 MIP官方博客 阅读 (381) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7307370" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/07/25.html">2017年7月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/video_tutorial.html">
+    MIP 移动网页加速器视频教程全新发布
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：&quot;MIP&quot; (Mobile Instant Pages 移动网页加速器) 是百度推出的开源项目，用于移动端页面加速。MIP 技术通过优化浏览器资源加载，前端代码执行及 CDN 缓存加速来加速页面，打造秒开的页面浏览体验。目前，有 5000 多家站点的 MIP 页已经生效，享受到了 MIP 的加速效果            <a href="https://www.cnblogs.com/mipengine/p/video_tutorial.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-07-25 20:00 MIP官方博客 阅读 (1842) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7230748" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/07/21.html">2017年7月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-faqs.html">
+    MIP 问题解决方案大全（2018-06更新）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在 MIP 推出后，我们收到了一些站长的疑问。现将常见问题整理出来，包括六个方面共45个问题：MIP 认知类问题，改造前准备，前端改造和组件使用，提交生效，MIPCache，更多学习资源。帮助大家了解 MIP 的知识。            <a href="https://www.cnblogs.com/mipengine/p/mip-faqs.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-07-21 12:42 MIP官方博客 阅读 (14953) 评论 (7)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7217064" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/07/18.html">2017年7月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/MIP_declaration.html">
+    MIP 内容声明
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：从搜索结果页点出的 MIP 页面，其页面上的任何内容（包括但不限于广告、在线咨询、统计等组件）均视为在原站点上的投放和使用。 MIP （Mobile Instant Pages 移动网页加速器）, 是一套应用于移动网页的开放性技术标准。通过提供 MIP HTML 规范、MIP JS 运行环境以及 M            <a href="https://www.cnblogs.com/mipengine/p/MIP_declaration.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-07-18 16:03 MIP官方博客 阅读 (292) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7200966" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/MIPCache_update.html">
+    MIPCache 域名升级
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、MIPCache URL 是什么 举个例子，MIP 官网的 URL 为： 对应的 MIPCache 的 URL 为： 所谓 MIPCache URL 是经过 MIP Cache CDN 缓存后的 MIP 页面地址，指向 MIP Cache 的服务器。 MIPCache URL 对应的内容则是通过            <a href="https://www.cnblogs.com/mipengine/p/MIPCache_update.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-07-18 13:58 MIP官方博客 阅读 (1246) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7200073" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/06/20.html">2017年6月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip-access.html">
+    MIP ACCESS细节剖析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：什么是 MIP ACCESS MIP ACCESS 由百度 MIP 团队开发的一种页面访问权限控制机制，能够允许网页发布者在页面元素中定义内容标记，并结合用户访问情况进行综合评价，从而展现或隐藏页面中内容，直至用户登录、订阅或付费后才能够查看隐藏内容的一种全新阅读模式。 优势在哪里？ 方式新颖：页面            <a href="https://www.cnblogs.com/mipengine/p/mip-access.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-06-20 19:22 MIP官方博客 阅读 (694) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7055815" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/05/04.html">2017年5月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/experience_by_user.html">
+    【转】百度站长平台MIP引入工具使用心得
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：MIP引入主动推送流程 对于 MIP 站点改造好了，我们如何提交数据，并且 MIP 提交后，我们能得到哪些数据的反馈，在这里简单的写一篇文章，说一下。 1. 改造 MIP，我们一般是添加了一个二级域名站点进行改造，比如 mip.xxx.com、在 m.xxx.com改造，或者是m.xxx.com/m            <a href="https://www.cnblogs.com/mipengine/p/experience_by_user.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-05-04 14:01 MIP官方博客 阅读 (6655) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6806092" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/04/18.html">2017年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/faq_guangzhou_2017.html">
+    广州站长沙龙 MIP 问题及答案
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. mip提交几个月时间了，生效量比较少，是什么原因？ 答：提交 MIP 页面后，经过收录、校验、和生效三个步骤，才能在结果页看到闪电标。 1）提交 URL 后，spider 会去抓取收录； 2）页面收录后，会进行 MIP 校验，如果页面不能通过前端校验，则说明页面源码不符合 MIP 规范，此时页            <a href="https://www.cnblogs.com/mipengine/p/faq_guangzhou_2017.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-04-18 13:01 MIP官方博客 阅读 (916) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6727230" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/04/10.html">2017年4月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip_semi_fixed.html">
+    【转】mip-semi-fixed 走走又停停
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：写在前面 MIP 中悬浮元素的特殊情况 其实组件上线已经有一段时间了，最开始看到这个需求是站长提交了一个这中功能的组件过来，不过看过代码立刻就想到了 MIP 页面的特殊性：从结果页打开的 MIP 页面，是嵌套在一个 iframe 之中的。 在这种特殊的情况下，单纯的通过 position: fixe            <a href="https://www.cnblogs.com/mipengine/p/mip_semi_fixed.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-04-10 15:01 MIP官方博客 阅读 (861) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6689008" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/03/31.html">2017年3月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/AB_experiment_design_idea.html">
+    【转】AB实验设计思路及实验落地
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这篇文章会讨论： 1. 在什么情况下需要做 AB 实验 2. 从产品/交互角度，如何设计一个实验 3. 前端工程师如何打点 4. 如何统计数据，并保证数据准确可信 5. 如何分析实验数据，有哪些数据需要重点关注 6. 附：如何搭建前端实验项目，以 mip experiment 为例 一. AB 实验            <a href="https://www.cnblogs.com/mipengine/p/AB_experiment_design_idea.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-31 16:23 MIP官方博客 阅读 (5509) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6651822" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip_link_upgrade.html">
+    mip-link 组件功能升级说明
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：背景描述 某个页面被多少页面引用（在其他页面上有指向这个页面的 标签），是搜索引擎判断这个页面价值的其中一个因子。这里的搜索引擎不只是指百度，还包括国内外其他的搜索引擎。 MIP 在最初设计 MIP url 跳转逻辑实现时，并未考虑到搜索引擎判断页面价值的这一个点，设计了 组件代替了部分 标签功能，            <a href="https://www.cnblogs.com/mipengine/p/mip_link_upgrade.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-31 15:54 MIP官方博客 阅读 (1042) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6651743" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/03/21.html">2017年3月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/mip_shell_url.html">
+    百度推出 MIP Baidu Path链接
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在站长将站点 MIP 化时，需要关注 URL 的一共有三个：MIP URL, MIP-Cache URL 以及 MIP-Shell URL。MIP URL 是一个 MIP 页面的源头，其域名、服务器、内容都由站长自行管理。MIP-Cache URL 是经过 CDN 缓存的 MIP 页面地址，指向 MIP Cache 服务器。新的 URL 规则为 RESTful 风格，链接简短清晰、方便传播，在简化 URL 的同时也增加了站长自有品牌的露出。            <a href="https://www.cnblogs.com/mipengine/p/mip_shell_url.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-21 19:55 MIP官方博客 阅读 (2958) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6596357" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/03/17.html">2017年3月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/21_mip_infinitescroll.html">
+    【转】超酷的 mip-infinitescroll 无限滚动（无限下拉）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：写在前面 无限滚动技术（又叫做无限下拉技术）被广泛应用于新闻类，图片预览类网站。对用户来讲，使用无限滚动的页面有源源不断的信息可以预览，增加用户在页面的停留时长。技术上原理也很简单，在页面加载时加载一部分内容，当用户浏览到底部时想后端请求更多内容，显示在页面上。因此，继 &quot;mip list&quot; 列表组            <a href="https://www.cnblogs.com/mipengine/p/21_mip_infinitescroll.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-17 14:44 MIP官方博客 阅读 (1628) 评论 (8)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6565964" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/03/16.html">2017年3月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/22_technology_sharing.html">
+    MIP 技术交流分享（3月15日）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：3月15日下午，MIP 团队工程师与58赶集的 Web 前端工程师进行了一次面对面的技术交流。 在这次交流中，MIP 工程师主要分享了 MIP 技术原理，MIP 加速原理，以及 MIP 为开发者提供的工具集。 58赶集的工程师提出了以下问题： 1. 有了 AMP，为什么要做 MIP？ 我们做 MIP            <a href="https://www.cnblogs.com/mipengine/p/22_technology_sharing.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-16 16:37 MIP官方博客 阅读 (1080) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6560221" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/03/15.html">2017年3月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/extension_platform.html">
+    开发教程(四)  MIP组件平台使用说明
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：组件审核平台用于上传 MIP 组件。经过自动校验之后，提交审核，通过审核的组件会定时推送到线上，供网站使用。 平台地址：https://www.mipengine.org/platform/ 1. 使用说明 MIP 组件审核平台用于提交开发完成的组件，如何开发请参考： &quot;MIP 开发教程(一) MI            <a href="https://www.cnblogs.com/mipengine/p/extension_platform.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-15 13:05 MIP官方博客 阅读 (4847) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6409795" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/03/14.html">2017年3月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/20_cooperation_progress.html">
+    MIP 与 AMP 合作进展（3月7日）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：“到目前为止，全网通过 MIP 校验的网页已超10亿。除了代码和缓存， MIP 还想做更多来改善用户体验移动页面。” 3月7日，MIP 项目负责人在首次 AMP CONF 上发言。 那么 MIP 和 AMP 的关系是什么呢？ 1. AMP 是一个开源性项目，MIP 是这个开源项目的参与者。 2. M            <a href="https://www.cnblogs.com/mipengine/p/20_cooperation_progress.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-14 15:01 MIP官方博客 阅读 (1335) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6548479" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/mipengine/archive/2017/03/13.html">2017年3月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/mipengine/p/19_technology_sharing.html">
+    MIP技术交流分享（3月9日）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：3月9日上周四下午，MIP 团队工程师与去哪儿酒店云、众荟的 Web 前端工程师进行了一次面对面的技术交流。 在这次交流中，MIP 工程师主要分享了 MIP 技术原理，MIP 加速原理，以及 MIP 为开发者提供的工具集。去哪儿的工程师也提出了通用性，框架实现方面的的问题。 您可以通过阅读以下文档了            <a href="https://www.cnblogs.com/mipengine/p/19_technology_sharing.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-13 16:23 MIP官方博客 阅读 (965) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6543183" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/mipengine/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 MIP官方博客
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script>
+window.setTimeout(function() {
+    $('.c_ad_block').remove();
+}, 200);
+
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?2c8c49f8db803ab6bdcea87a6edc3069";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    </div>
+</body>
+</html>

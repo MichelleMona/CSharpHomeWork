@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>jerry_fuyi - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy.min.css?v=Nm_ujJtGKDq5SpJ2XERB3wgoRnlvEg7NAIZvC-SzytE" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jerry-fuyi/custom.css?v=QxGDGimsRKr9CZUobyVFO1mi8HA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jerry-fuyi/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jerry-fuyi/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jerry-fuyi/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 525569;
+        var currentBlogApp = 'jerry-fuyi';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'MTTrendy';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<div id="top">
+
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jerry-fuyi/">jerry_fuyi</a>
+</h1>
+<p id="tagline">
+
+</p>
+
+
+</div>
+
+<div id="rightmenu">
+
+	
+<h3>My Links</h3>
+<ul>
+			<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+			<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jerry-fuyi/">
+首页</a>
+</li>
+			<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/jerry_fuyi">
+联系</a></li>
+			<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+订阅</a> 
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+    <img src="/skins/mttrendy/images/xml.gif" alt="订阅" />
+</a></li>
+			<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+	<h3>Blog Stats</h3>
+	<ul>
+		<li>Posts - 
+71</li>
+		<li>Stories - 
+0</li>
+		<li>Comments - 
+11</li>
+		<li>Trackbacks - 
+0
+	</li>
+</ul>
+
+
+	
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+	<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+
+<div id="main">
+	
+
+
+
+
+		
+
+<p class="date">
+	2020年4月15日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/04/15.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/value_polymorphism.html">
+[置顶]    C++值多态：传统多态与类型擦除之间
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：值多态是一种介于传统多态与类型擦除之间的多态实现方式，借鉴了值语义，保留了继承，在单继承的适用范围内，程序和程序员都能从中受益。            <a href="https://www.cnblogs.com/jerry-fuyi/p/value_polymorphism.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-04-15 21:59 jerry_fuyi 阅读 (167) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12664787" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2019年8月6日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2019/08/06.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/avr_tutorial.html">
+[置顶]    AVR单片机教程——序言
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：AVR单片机教程，从电阻和LED到各类传感器，从寄存器到库函数，从过程式到基于事件……            <a href="https://www.cnblogs.com/jerry-fuyi/p/avr_tutorial.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2019-08-06 20:25 jerry_fuyi 阅读 (293) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11260284" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2019年7月29日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2019/07/29.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/std_function_interface_implementation.html">
+[置顶]    剖析std::function接口与实现
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：本文深度剖析了std::function的接口与实现，并简要介绍了相关的编程技巧。            <a href="https://www.cnblogs.com/jerry-fuyi/p/std_function_interface_implementation.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2019-07-29 12:02 jerry_fuyi 阅读 (2281) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11248176" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年4月19日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/04/19.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12733924.html">
+    模板参数的“右值引用”是转发引用
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：在C++11中， 不再只有逻辑与的含义，还可能是右值引用： 但也不尽然， 还可能是转发引用： “转发引用”（forwarding reference）旧称“通用引用”（universal reference），它的“通用”之处在于你可以拿一个左值绑定给转发引用，但不能给右值引用： 一个函数的参数要想            <a href="https://www.cnblogs.com/jerry-fuyi/p/12733924.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-04-19 21:46 jerry_fuyi 阅读 (70) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12733924" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年4月18日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/04/18.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12728941.html">
+    C++生成随机数
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：C++为随机数提供了两套工具：C风格的和C++风格的。 C风格 C为随机数提供的工具是 、`srand RAND_MAX 中。 为`rand srand(1) rand 0`到 ，`RAND_MAX 32767 32767`。 伪随机数看似随机，实则是有规律可循的，对于相同的种子值， 产生的序列完全            <a href="https://www.cnblogs.com/jerry-fuyi/p/12728941.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-04-18 23:14 jerry_fuyi 阅读 (140) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12728941" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年4月17日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/04/17.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12723287.html">
+    测量C++程序运行时间
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：有个很奇怪的现象，我自认为写得好的文章阅读量只有一百多，随手写的却有一千多——要么是胡搞，要么是比较浅显。纵观博客园里众多阅读过万的文章，若非绝世之作，则必为介绍入门级知识的短文。为了让我的十八线博客上升到十七线，我打算写几篇短文。当然，短不等于随便，不等于不负责任。客观的，要有确凿的依据，代码必须            <a href="https://www.cnblogs.com/jerry-fuyi/p/12723287.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-04-17 23:12 jerry_fuyi 阅读 (159) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12723287" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年4月15日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/04/15.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/value_polymorphism.html">
+    C++值多态：传统多态与类型擦除之间
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：值多态是一种介于传统多态与类型擦除之间的多态实现方式，借鉴了值语义，保留了继承，在单继承的适用范围内，程序和程序员都能从中受益。            <a href="https://www.cnblogs.com/jerry-fuyi/p/value_polymorphism.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-04-15 21:59 jerry_fuyi 阅读 (167) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12664787" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年4月5日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/04/05.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12633621.html">
+    std::bind接口与实现
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：前言 最近想起半年前鸽下来的Haskell，重温了一下忘得精光的语法，读了几个示例程序，挺带感的，于是函数式编程的草就种得更深了。又去Google了一下C++与FP，找到了一份近乎完美的讲义，然后被带到C++20的ranges library，对即将发布的C++20满怀憧憬。此时，我猛然间意识到，看            <a href="https://www.cnblogs.com/jerry-fuyi/p/12633621.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-04-05 19:16 jerry_fuyi 阅读 (174) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12633621" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年3月20日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/03/20.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12482580.html">
+    AVR单片机教程——走向高层
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：本文隶属于AVR单片机教程系列。 在系列教程的最后一篇中，我将向你推荐3个可以深造的方向：C++、事件驱动、RTOS。掌握这些技术可以帮助你更快、更好地开发更大的项目。 本文涉及到许多概念性的内容，如果你有不同意见，欢迎讨论。 关于高层 这一篇教程叫作“走向高层”。什么是高层？ 我认为，如果寥寥几行            <a href="https://www.cnblogs.com/jerry-fuyi/p/12482580.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-03-20 21:18 jerry_fuyi 阅读 (187) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12482580" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年2月25日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/02/25.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12306817.html">
+    AVR单片机教程——示波器
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：本文隶属于AVR单片机教程系列。 在用DAC做了一个稍大的项目之后，我们来拿ADC开开刀。在本讲中，我们将了解0.96寸OLED屏，移植著名的U8g2库到我们的开发板上，学习在屏幕上画直线的算法，编写一个示波器程序，使用EEPROM加入人性化功能，最后利用示波器观察555定时器、放大电路、波形变换电            <a href="https://www.cnblogs.com/jerry-fuyi/p/12306817.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-02-25 23:13 jerry_fuyi 阅读 (188) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12306817" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年2月8日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/02/08.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12259153.html">
+    AVR单片机教程——DAC
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：本文隶属于AVR单片机教程系列。 单片机的应用场景时常涉及到模拟信号。我们已经会使用ADC把模拟信号转换成数字信号，本讲中我们要学习使用DAC把数字信号转换成模拟信号。我们还将搭建一个简单的功率放大器电路，用DAC通过扬声器播放音乐。 SPI总线 集成DAC的单片机不多，ATmega系列就不在此列。            <a href="https://www.cnblogs.com/jerry-fuyi/p/12259153.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-02-08 22:13 jerry_fuyi 阅读 (62) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12259153" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年2月2日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/02/02.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12245019.html">
+    AVR单片机教程——矩阵键盘
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：本文隶属于AVR单片机教程系列。 开发板上有4个按键，我们可以把每一个按键连接到一个单片机引脚上，来实现按键状态的检测。但是常见的键盘有104键，是每一个键分别连接到一个引脚上的吗？我没有考证过，但我们确实有节省引脚的方法。 矩阵键盘 这是一个4 4的矩阵键盘，共有16个按键只需要8个引脚就可以驱动            <a href="https://www.cnblogs.com/jerry-fuyi/p/12245019.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-02-02 19:58 jerry_fuyi 阅读 (118) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12245019" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+		
+
+<p class="date">
+	2020年1月30日		  
+    <a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" title="Day Archive" href="https://www.cnblogs.com/jerry-fuyi/archive/2020/01/30.html" style="display:inline-block;border-width:0px;height:15px;width:12px;">#</a>
+</p>
+
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12242546.html">
+    AVR单片机教程——EasyElectronics Library v2.0手册
+</a>
+</h2>
+			
+			
+
+    <div class="c_b_p_desc">
+摘要：本文隶属于AVR单片机教程系列。 &quot;adc.h&quot; &quot;bit.h&quot; &quot;button.h&quot; &quot;buzzer.h&quot; &quot;dac.h&quot; &quot;delay.h&quot; &quot;ee.h&quot; &quot;exin.h&quot; &quot;exout.h&quot; &quot;lcd.h&quot; &quot;ldr.h&quot; &quot;led.h&quot; &quot;pin.h&quot; &quot;pot.h&quot; &quot;print.h&quot; &quot;            <a href="https://www.cnblogs.com/jerry-fuyi/p/12242546.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			
+			<p class="postfoot">		
+				
+
+posted @ 2020-01-30 21:04 jerry_fuyi 阅读 (75) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12242546" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/jerry-fuyi/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 jerry_fuyi
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+
+
+    
+</body>
+</html>

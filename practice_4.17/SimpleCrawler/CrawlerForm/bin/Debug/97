@@ -1,0 +1,664 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="always" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>数据库技术 - 网站分类 - 博客园</title>
+    <link rel="shortcut icon" href="//common.cnblogs.com/favicon.ico" type="image/x-icon" />
+    <link rel="Stylesheet" type="text/css" href="/css/aggsite.min.css?v=FRR6qbd_vc7TQxxV0n1kBxwFAKoajo20N8gkufL2xuk" />
+        <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://feed.cnblogs.com/blog/sitecateogry/108712/rss" />
+    <script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>
+    <script src="/js/aggsite.min.js?v=pF9WYZrlQXxT2TvAo3ctCaa3IJ8YXeHpSWGGmRU2OV8"></script>
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot('/1090369/A1', [468, 60], 'div-gpt-ad-1547816814884-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B1', [300, 250], 'div-gpt-ad-1546331539224-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B2', [300, 250], 'div-gpt-ad-1539007469525-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B3', [300, 250], 'div-gpt-ad-1546331252242-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B4', [300, 250], 'div-gpt-ad-1546331385104-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+
+        /**/</script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="hd_info">
+            <div id="cnts">
+                <div id="site_nav_top">代码改变世界</div>
+                <div id="login_area"><span id="span_userinfo"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="header">
+            <p class="h_r_3"></p><p class="h_r_2"></p><p class="h_r_1"></p>
+            <div id="header_block">
+                <div id="logo">
+                    <h1>
+                        <a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo_small.gif" alt="博客园Logo" width="142" height="55" /></a>
+                    </h1>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            <p class="h_r_1"></p><p class="h_r_2"></p><p class="h_r_3"></p>
+        </div>
+        <div id="nav_menu"><a href="https://home.cnblogs.com/">园子</a><a href="https://news.cnblogs.com">新闻</a><a href="https://q.cnblogs.com/">博问</a><a href="https://ing.cnblogs.com/">闪存</a><a href="https://group.cnblogs.com/">小组</a><a href="https://wz.cnblogs.com/">收藏</a><a href="https://job.cnblogs.com/">招聘</a><a href="https://edu.cnblogs.com/">班级</a><a href="http://zzk.cnblogs.com/">找找看</a></div>
+        <div id="main">
+            <div class="post_nav_block_wrapper">
+                <ul class="post_nav_block">
+                        <li><a href="/" class="" title="">首页</a></li>
+                        <li><a href="/cate/108712/" class="current_nav" title="">数据库技术</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="rss_link" id="rss_block">
+<span id="posts_refresh_tips"></span><a id="posts_refresh" href="#" class="refresh" title="刷新博文列表" onclick="aggSite.loadCategoryPostList();return false">刷新</a><a href="http://feed.cnblogs.com/blog/sitecateogry/108712/rss"><img src="//common.cnblogs.com/images/icon_rss.gif" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章" /></a>            </div>
+                <div id="headline_block" class="headline"><ul><li class="editor_pick"><a href="https://www.cnblogs.com/code-craftsman/p/12712922.html" id="editor_pick_lnk" target="_blank">【编辑推荐】事件驱动的微服务 - 事件驱动设计<span id="editor_pick_count"></span></a> <a href="/aggsite/headline" title="查看更多编辑推荐" class="right_more">»</a></li><li><a href="https://www.cnblogs.com/hohoa/p/12685237.html" target="_blank" title="阅读379, 评论0, 推荐6">[最多推荐][一起读源码]走进C#并发队列ConcurrentQueue的内部世界 — .NET Core篇(0/379)</a> <a href="/aggsite/topdigged24h" title="查看24小时推荐排行" class="right_more">»</a></li><li><a href="https://news.cnblogs.com/n/660080/" target="_blank" title="阅读801, 评论5, 推荐4">[新闻头条]小米开源 Redmi Note 8 Pro 和 Note 9 Pro 系列的内核源码(5/801)</a> <a href="https://news.cnblogs.com/" title="查看更多新闻" class="right_more">»</a></li><li><a href="https://news.cnblogs.com/n/660047/" target="_blank" title="阅读1302, 评论9, 推荐2">[推荐新闻]&quot;00后缩写黑话翻译器&quot;登上GitHub热榜 终于能看懂awsl(9/1302)</a> <a href="https://news.cnblogs.com/n/recommend" title="查看更多推荐新闻" class="right_more">»</a></li></ul></div>
+
+            <div id="pager_top" style="display:none"></div>
+            <div id="post_list_tips" class="hide"></div>
+            
+            <div id="post_list">
+                <div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('collen7788',12735706,591757,1)"> 
+	<span class="diggnum" id="digg_count_12735706">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735706" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/collen7788/archive/2020/04/20/12735706.html" target="_blank"> 【赵强老师】利用数据库触发实现复杂的安全性检查 </a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/collen7788/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1988466/20200403113327.png" alt=""/></a>    一、什么是触发器 数据库触发器是一个与表相关联的，存储的PL/SQL 语句。每当一个特定的数据操作语句（insert update delete）在指定的表上发出时，Oracle自动执行触发器中定义的语句序列。 触发器的应用场景如下： 复杂的安全性检查 数据的确认 数据库审计 数据的备份和审计 二、 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/collen7788/" class="lightblue">赵强老师</a> 
+    发布于 2020-04-20 08:27 
+    <span class="article_comment"><a href="https://www.cnblogs.com/collen7788/archive/2020/04/20/12735706.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/collen7788/archive/2020/04/20/12735706.html" class="gray">阅读(4)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('ytzx',12735521,589259,1)"> 
+	<span class="diggnum" id="digg_count_12735521">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12735521" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/ytzx/archive/2020/04/20/12735521.html" target="_blank">【甜甜老师的DB Fun圈】第三讲——GaussDB T 单机手工建库</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/ytzx/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1968517/20200322231031.png" alt=""/></a>    在【甜甜老师的DB Fun圈】第二讲的分享中，我们对GaussDB 100 OLTP 单机在RHEL7.6上的安装有了全面的认识，那么本期我们继续分享【甜甜老师的DB Fun圈】第三讲——GaussDB T 单机手工建库。 你需要知道的 好了，我们今天的课就先讲到这。同学们可以自己实操下，增强动手能 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/ytzx/" class="lightblue">ICT学习分享小鹿</a> 
+    发布于 2020-04-20 02:43 
+    <span class="article_comment"><a href="https://www.cnblogs.com/ytzx/archive/2020/04/20/12735521.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/ytzx/archive/2020/04/20/12735521.html" class="gray">阅读(7)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('jjfan0327',12731636,354334,1)"> 
+	<span class="diggnum" id="digg_count_12731636">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12731636" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/jjfan0327/archive/2020/04/19/12731636.html" target="_blank">SQL 语句执行很慢的原因</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/jjfan0327/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1161857/20170509103601.png" alt=""/></a>    大多数情况是正常的，只是偶尔会出现很慢的情况 网络问题 数据库在刷新脏页 获取锁失败，我们可以用&#160;show processlist这个命令来查看当前的状态 刷脏页有下面4种场景（后两种不用太关注“性能”问题）： redolog写满了：redo log 里的容量是有限的，如果数据库一直很忙，更新又很频 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/jjfan0327/" class="lightblue">傑0327</a> 
+    发布于 2020-04-19 15:10 
+    <span class="article_comment"><a href="https://www.cnblogs.com/jjfan0327/archive/2020/04/19/12731636.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/jjfan0327/archive/2020/04/19/12731636.html" class="gray">阅读(21)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('InternetJava',12731302,588701,1)"> 
+	<span class="diggnum" id="digg_count_12731302">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12731302" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/InternetJava/archive/2020/04/19/12731302.html" target="_blank">mysql使用技巧 行类视图子查询</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/InternetJava/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1779911/20200316144102.png" alt=""/></a>    查找描述信息中包括robot的电影对应的分类名称以及电影数目，而且还需要该分类对应电影数量&gt;=5部 film表为电影表，category表为电影分类表，film_category表为电影表与电影分类表的中间表(多对多的中间表) film表 字段 说明 film_id 电影id title 电影名称  ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/InternetJava/" class="lightblue">InternetJava</a> 
+    发布于 2020-04-19 13:47 
+    <span class="article_comment"><a href="https://www.cnblogs.com/InternetJava/archive/2020/04/19/12731302.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/InternetJava/archive/2020/04/19/12731302.html" class="gray">阅读(9)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('youkanyouxiao',12731294,305083,1)"> 
+	<span class="diggnum" id="digg_count_12731294">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12731294" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731294.html" target="_blank">自动补全、回滚！介绍一款可视化 sql 诊断利器</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/youkanyouxiao/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1024722/20200317203634.png" alt=""/></a>    Yearning简介 Yearning MYSQL 是一个SQL语句审核平台。提供查询审计，SQL审核等多种功能，支持Mysql，可以在一定程度上解决运维与开发之间的那一环，功能丰富，代码开源，安装部署容易！ 项目地址：https://gitee.com/cookieYe/Ye... 注意: Yea ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/youkanyouxiao/" class="lightblue">民工哥</a> 
+    发布于 2020-04-19 13:45 
+    <span class="article_comment"><a href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731294.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/youkanyouxiao/archive/2020/04/19/12731294.html" class="gray">阅读(24)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('zzz2000',12730880,593249,1)"> 
+	<span class="diggnum" id="digg_count_12730880">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12730880" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/zzz2000/archive/2020/04/19/12730880.html" target="_blank">NoSQL比较火的三个数据库Memcached、Redis、MongoDB</a></h3>               	
+    <p class="post_item_summary">
+    NoSQL，泛指非关系型的数据库。随着互联网不断的发展，传统的关系数据库在应付新互联网模式的网站，特别是超大规模和高并发的SNS类型的纯动态网站已经显得力不从心，暴露了很多难以克服的问题，而非关系型的数据库则由于其本身的特点得到了非常迅速的发展。NoSQL数据库的产生就是为了解决大规模数据集合多重数 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/zzz2000/" class="lightblue">看了看我</a> 
+    发布于 2020-04-19 11:56 
+    <span class="article_comment"><a href="https://www.cnblogs.com/zzz2000/archive/2020/04/19/12730880.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/zzz2000/archive/2020/04/19/12730880.html" class="gray">阅读(23)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('zhang502219048',12730451,518799,1)"> 
+	<span class="diggnum" id="digg_count_12730451">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12730451" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/zhang502219048/archive/2020/04/19/12730451.html" target="_blank">sql server临时删除/禁用非聚集索引并重新创建加回/启用的简便编程方法研究对比</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/zhang502219048/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1703141/20190622180520.png" alt=""/></a>    前言： 由于新型冠状病毒影响，博主（zhang502219048）在2020年1月份从广东广州工作地回到广东揭阳产业转移工业园磐东街道（镇里有阳美亚洲玉都、五金之乡，素以“金玉”闻名）老家后，还没过去广州现场复工，年后又延迟复工 + 居家办公，并且在老家对原来房子进行简单装修，1月份到3月份没时间去 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/zhang502219048/" class="lightblue">张工502219048</a> 
+    发布于 2020-04-19 10:49 
+    <span class="article_comment"><a href="https://www.cnblogs.com/zhang502219048/archive/2020/04/19/12730451.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/zhang502219048/archive/2020/04/19/12730451.html" class="gray">阅读(42)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('shaojie1986',12702299,596222,1)"> 
+	<span class="diggnum" id="digg_count_12702299">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12702299" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12702299.html" target="_blank">Hadoop伪分布安装搭建</a></h3>               	
+    <p class="post_item_summary">
+    Hadoop伪分布安装搭建 搭建Hadoop的环境 一、准备工作	1、安装Linux、JDK、关闭防火墙、配置主机名	解压：tar -zxvf hadoop-2.7.3.tar.gz -C ~/traning/ 设置Hadoop的环境变量: vi ~/.bash_profile HADOOP_HOM ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/shaojie1986/" class="lightblue">cxxb</a> 
+    发布于 2020-04-18 22:24 
+    <span class="article_comment"><a href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12702299.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/shaojie1986/archive/2020/04/18/12702299.html" class="gray">阅读(10)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('InternetJava',12726916,588701,1)"> 
+	<span class="diggnum" id="digg_count_12726916">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12726916" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/InternetJava/archive/2020/04/18/12726916.html" target="_blank">mysql 使用技巧 where条件连接；inner join内连接；外连接(left outer join,right outer join)</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/InternetJava/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1779911/20200316144102.png" alt=""/></a>    mysql的inner join等价于where条件连接查询 内连接 inner join 省略形式 join 外连接 左连接 left outer join 省略形式 left join 右连接 right outer join 省略形式 right join 两张表内容： mysql&gt; use  ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/InternetJava/" class="lightblue">InternetJava</a> 
+    发布于 2020-04-18 17:40 
+    <span class="article_comment"><a href="https://www.cnblogs.com/InternetJava/archive/2020/04/18/12726916.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/InternetJava/archive/2020/04/18/12726916.html" class="gray">阅读(16)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('a609251438',12726968,557004,1)"> 
+	<span class="diggnum" id="digg_count_12726968">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12726968" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/a609251438/archive/2020/04/18/12726968.html" target="_blank">MySQL 的主从复制（高级篇）</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/a609251438/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1853575/20191031141206.png" alt=""/></a>    首先要明白为什么要用 mysql 的主从复制： 1–在从服务器可以执行查询工作 (即我们常说的读功能)，降低主服务器压力；（主库写，从库读，降压） 2–在从主服务器进行备份，避免备份期间影响主服务器服务；（确保数据安全） 3–当主服务器出现问题时，可以切换到从服务器。（提升性能） 来说一下主从复制的 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/a609251438/" class="lightblue">八重樱</a> 
+    发布于 2020-04-18 17:29 
+    <span class="article_comment"><a href="https://www.cnblogs.com/a609251438/archive/2020/04/18/12726968.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/a609251438/archive/2020/04/18/12726968.html" class="gray">阅读(24)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('jjfan0327',12720850,354334,1)"> 
+	<span class="diggnum" id="digg_count_12720850">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12720850" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/jjfan0327/archive/2020/04/18/12720850.html" target="_blank">6. 锁</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/jjfan0327/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1161857/20170509103601.png" alt=""/></a>    开发多用户、数据库驱动的应用时，最大的难点是：一方面要最大程度的利用数据库的并发访问，一方面还要确保每个用户能以一致的方式读取和修改数据，为此有了锁的机制。 6.1 什么是锁 锁机制用于管理对共享资源的并发访问。InnoDB除了会在行级别上对表数据上锁，也会在数据库内部其他多个地方上锁，从而允许对多 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/jjfan0327/" class="lightblue">傑0327</a> 
+    发布于 2020-04-18 16:01 
+    <span class="article_comment"><a href="https://www.cnblogs.com/jjfan0327/archive/2020/04/18/12720850.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/jjfan0327/archive/2020/04/18/12720850.html" class="gray">阅读(11)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('InternetJava',12725963,588701,1)"> 
+	<span class="diggnum" id="digg_count_12725963">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12725963" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/InternetJava/archive/2020/04/18/12725963.html" target="_blank">mysql 使用技巧 分页limit</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/InternetJava/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1779911/20200316144102.png" alt=""/></a>    mysql 分页使用 limit关键字，limit x,y （x代表从哪条数据开始，y代表页面大小。mysql第一条数据在limit计算时索引为0） limit 10 前10条 limit 0,10 从第1条开始的10条 limit 10,10 从第 11 条开始的 10 条 limit 100,1 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/InternetJava/" class="lightblue">InternetJava</a> 
+    发布于 2020-04-18 15:05 
+    <span class="article_comment"><a href="https://www.cnblogs.com/InternetJava/archive/2020/04/18/12725963.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/InternetJava/archive/2020/04/18/12725963.html" class="gray">阅读(59)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('xinghebuluo',12722103,103057,1)"> 
+	<span class="diggnum" id="digg_count_12722103">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12722103" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/xinghebuluo/archive/2020/04/18/12722103.html" target="_blank">Redis之quicklist源码分析</a></h3>               	
+    <p class="post_item_summary">
+    一、quicklist简介 Redis列表是简单的字符串列表，按照插入顺序排序。你可以添加一个元素到列表的头部（左边）或者尾部（右边）。 一个列表最多可以包含&#160;232 - 1 个元素 (4294967295, 每个列表超过40亿个元素)。 其底层实现所依赖的内部数据结构就是quicklist，主要特 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/xinghebuluo/" class="lightblue">xinghebuluo</a> 
+    发布于 2020-04-18 13:47 
+    <span class="article_comment"><a href="https://www.cnblogs.com/xinghebuluo/archive/2020/04/18/12722103.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/xinghebuluo/archive/2020/04/18/12722103.html" class="gray">阅读(88)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('wy123',12724252,110066,1)"> 
+	<span class="diggnum" id="digg_count_12724252">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12724252" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/wy123/archive/2020/04/18/12724252.html" target="_blank">关于MySQL死锁检测机制参数innodb_deadlock_detect设置的一点思考</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/wy123/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/380271/20161014085139.png" alt=""/></a>    微信公众号中（这里）看到一个关于MySQL的innodb_deadlock_detect与并发相关的细节，觉得比较有意思，也即innodb_deadlock_detect这个参数的设置问题 死锁检测是一个MySQL Server层的自动检测机制，可以及时发现两个或者多个session间互斥资源的申请 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/wy123/" class="lightblue">MSSQL123</a> 
+    发布于 2020-04-18 12:04 
+    <span class="article_comment"><a href="https://www.cnblogs.com/wy123/archive/2020/04/18/12724252.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/wy123/archive/2020/04/18/12724252.html" class="gray">阅读(15)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('collen7788',12724642,591757,1)"> 
+	<span class="diggnum" id="digg_count_12724642">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12724642" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/collen7788/archive/2020/04/18/12724642.html" target="_blank"> 【赵强老师】Oracle存储过程中的out参数 </a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/collen7788/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1988466/20200403113327.png" alt=""/></a>    一、什么是存储过程 Oracle存储过程可以说是一个记录集吧，它是由一些PL/SQL语句组成的代码块，这些PL/SQL语句代码像一个方法一样实现一些功能（对单表或多表的增删改查），然后再给这个代码块取一个名字，在用到这个功能的时候调用他就行了。 存储过程的好处： 由于数据库执行动作时，是先编译后执行 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/collen7788/" class="lightblue">赵强老师</a> 
+    发布于 2020-04-18 11:00 
+    <span class="article_comment"><a href="https://www.cnblogs.com/collen7788/archive/2020/04/18/12724642.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/collen7788/archive/2020/04/18/12724642.html" class="gray">阅读(20)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('zpb2016',12723939,297036,1)"> 
+	<span class="diggnum" id="digg_count_12723939">1</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12723939" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/zpb2016/archive/2020/04/18/12723939.html" target="_blank">全方位认识HBase：一个值得拥有的NoSQL数据库（一）</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/zpb2016/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1001353/20200108124643.png" alt=""/></a>    前言： 说起HBase这门技术，在认知上对于稍微接触或使用过它的人来讲，可能只是百千数据库中一个很普通的库，大概就像我对Redis的认知一样：缓存嘛！可对于HBase，我确实是带着某些感情在的。今日突然萌生了一个生趣的想法，想抛开技术的视角，从情感的角度，像写小说一样，写写这位老朋友，这可能会有点滑 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/zpb2016/" class="lightblue">周蓬勃</a> 
+    发布于 2020-04-18 08:31 
+    <span class="article_comment"><a href="https://www.cnblogs.com/zpb2016/archive/2020/04/18/12723939.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/zpb2016/archive/2020/04/18/12723939.html" class="gray">阅读(174)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('zpb2016',12722914,297036,1)"> 
+	<span class="diggnum" id="digg_count_12722914">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12722914" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/zpb2016/archive/2020/04/17/12722914.html" target="_blank">HBase-2.2.3源码编译-Windows版</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/zpb2016/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1001353/20200108124643.png" alt=""/></a>    源码环境一览 下载安装 1. Maven|Git|Java下载安装 Maven、Git 、Java 请先自行下载安装并配置环境变量。 Maven安装完毕后在Maven配置文件settings.xml中配置阿里云镜像。 2. HBase 源码下载 然后下载HBase 2.2.3源码到本地，建议使用方式 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/zpb2016/" class="lightblue">周蓬勃</a> 
+    发布于 2020-04-17 22:24 
+    <span class="article_comment"><a href="https://www.cnblogs.com/zpb2016/archive/2020/04/17/12722914.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/zpb2016/archive/2020/04/17/12722914.html" class="gray">阅读(30)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('huozhonghun',12722694,448287,1)"> 
+	<span class="diggnum" id="digg_count_12722694">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12722694" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/huozhonghun/archive/2020/04/17/12722694.html" target="_blank">MongoDB基础入门</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/huozhonghun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1453965/20180730215616.png" alt=""/></a>    简介 • MongoDB是为快速开发互联网Web应用而设计的数据库系统。 • MongoDB的设计目标是极简、灵活、作为Web应用栈的一部分。 • MongoDB的数据模型是面向文档的，所谓文档是一种类似于JSON的结构，MongoDB中的“JSON”我们称为BSON，比普通的JSON的功能要更加的 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/huozhonghun/" class="lightblue">百里不守约</a> 
+    发布于 2020-04-17 21:48 
+    <span class="article_comment"><a href="https://www.cnblogs.com/huozhonghun/archive/2020/04/17/12722694.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/huozhonghun/archive/2020/04/17/12722694.html" class="gray">阅读(21)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('jjfan0327',12710411,354334,1)"> 
+	<span class="diggnum" id="digg_count_12710411">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12710411" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/jjfan0327/archive/2020/04/17/12710411.html" target="_blank">5. 索引与算法—B+树的操作、辅助索引与聚集索引、Cardinality、联合索引、覆盖索引、MRR/ICP、哈希算法、全文索引</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/jjfan0327/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1161857/20170509103601.png" alt=""/></a>    5.3 B+ 树 B+ 树是为磁盘或其他直接存储辅助设备设计的一种平衡查找树。在B+树中，所有记录都是按照键值大小顺序存放在同一层的叶子节点上，由叶子节点指针进行连接，双向链表连接。 5.3.1 B+ 树的插入操作 考虑一下三种情况： Leaf Page满 Index Page 满 操作 No No ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/jjfan0327/" class="lightblue">傑0327</a> 
+    发布于 2020-04-17 11:59 
+    <span class="article_comment"><a href="https://www.cnblogs.com/jjfan0327/archive/2020/04/17/12710411.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/jjfan0327/archive/2020/04/17/12710411.html" class="gray">阅读(22)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('zpb2016',12717301,297036,1)"> 
+	<span class="diggnum" id="digg_count_12717301">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12717301" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/zpb2016/archive/2020/04/17/12717301.html" target="_blank">HBase协处理器加载的三种方式</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/zpb2016/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1001353/20200108124643.png" alt=""/></a>    本文主要给大家罗列了HBase协处理器加载的三种方式：Shell加载（动态）、Api加载（动态）、配置文件加载（静态）。其中静态加载方式需要重启HBase。 我们假设我们已经有一个现成的需要加载的协处理器Jar包： HelloCoprocessor 0.0.1.jar 。 协处理器加载的三种方式 S ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/zpb2016/" class="lightblue">周蓬勃</a> 
+    发布于 2020-04-17 06:33 
+    <span class="article_comment"><a href="https://www.cnblogs.com/zpb2016/archive/2020/04/17/12717301.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/zpb2016/archive/2020/04/17/12717301.html" class="gray">阅读(55)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+   
+
+            </div>
+            <script>editorPickStat(); aggSite.user.getUserInfo();</script>
+            <script type="text/javascript">
+                var aggSiteModel = {"CategoryType":"TopSiteCategory","ParentCategoryId":0,"CategoryId":108712,"PageIndex":1,"TotalPostCount":4000,"ItemListActionName":"AggSitePostList"};
+            </script>
+            <div id="pager_bottom"><div id="paging_block"><div class="pager"><a href="/cate/108712/" class="p_1 current" onclick="aggSite.loadCategoryPostList(1,20);buildPaging(1);return false;">1</a><a href="/cate/108712/2" class="p_2 middle" onclick="aggSite.loadCategoryPostList(2,20);buildPaging(2);return false;">2</a><a href="/cate/108712/3" class="p_3 middle" onclick="aggSite.loadCategoryPostList(3,20);buildPaging(3);return false;">3</a><a href="/cate/108712/4" class="p_4 middle" onclick="aggSite.loadCategoryPostList(4,20);buildPaging(4);return false;">4</a><a href="/cate/108712/5" class="p_5 middle" onclick="aggSite.loadCategoryPostList(5,20);buildPaging(5);return false;">5</a><a href="/cate/108712/6" class="p_6 middle" onclick="aggSite.loadCategoryPostList(6,20);buildPaging(6);return false;">6</a><a href="/cate/108712/7" class="p_7 middle" onclick="aggSite.loadCategoryPostList(7,20);buildPaging(7);return false;">7</a><a href="/cate/108712/8" class="p_8 middle" onclick="aggSite.loadCategoryPostList(8,20);buildPaging(8);return false;">8</a><a href="/cate/108712/9" class="p_9 middle" onclick="aggSite.loadCategoryPostList(9,20);buildPaging(9);return false;">9</a><a href="/cate/108712/10" class="p_10 middle" onclick="aggSite.loadCategoryPostList(10,20);buildPaging(10);return false;">10</a><a href="/cate/108712/11" class="p_11 middle" onclick="aggSite.loadCategoryPostList(11,20);buildPaging(11);return false;">11</a><span class="ellipsis">···</span><a href="/cate/108712/200" class="p_200 last" onclick="aggSite.loadCategoryPostList(200,20);buildPaging(200);return false;">200</a><a href="/cate/108712/2" onclick="aggSite.loadCategoryPostList(2,20);buildPaging(2);return false;">Next &gt;</a></div></div><script type="text/javascript">var pagingBuider={"OnlyLinkText":false,"TotalCount":4000,"PageIndex":1,"PageSize":20,"ShowPageCount":5,"SkipCount":0,"UrlFormat":"/cate/108712/{0}","OnClickJsFunc":"aggSite.loadCategoryPostList()","FirstPageLink":"/cate/108712/","AjaxUrl":"/AggSite/Pager","AjaxCallbak":null,"TopPagerId":"pager_top","IsRenderScript":true};function buildPaging(pageIndex){pagingBuider.PageIndex=pageIndex;$.ajax({url:pagingBuider.AjaxUrl,data:JSON.stringify(pagingBuider),type:'post',dataType:'text',contentType:'application/json; charset=utf-8',success:function (data) { $('#paging_block').html(data); var pagerTop=$('#pager_top');if(pageIndex>1){$(pagerTop).html(data).show();}else{$(pagerTop).hide();}}});}</script>
+</div>
+            <div id="side_nav">
+                
+    <div id="cate_title_block">
+<div id="cate_title_title"><div class="cate_title">网站分类</div></div>
+<ul id="cate_item">
+<li id="cate_item_108698" onmouseover="cateShow(108698)" onmouseout="cateHidden(108698)">
+<a href="/cate/108698/">.NET技术(1)</a>
+</li>
+<li id="cate_item_2" onmouseover="cateShow(2)" onmouseout="cateHidden(2)">
+<a href="/cate/2/">编程语言(3)</a>
+</li>
+<li id="cate_item_108701" onmouseover="cateShow(108701)" onmouseout="cateHidden(108701)">
+<a href="/cate/108701/">软件设计(0)</a>
+</li>
+<li id="cate_item_108703" onmouseover="cateShow(108703)" onmouseout="cateHidden(108703)">
+<a href="/cate/108703/">Web前端(1)</a>
+</li>
+<li id="cate_item_108704" onmouseover="cateShow(108704)" onmouseout="cateHidden(108704)">
+<a href="/cate/108704/">企业信息化(0)</a>
+</li>
+<li id="cate_item_108705" onmouseover="cateShow(108705)" onmouseout="cateHidden(108705)">
+<a href="/cate/108705/">手机开发(1)</a>
+</li>
+<li id="cate_item_108709" onmouseover="cateShow(108709)" onmouseout="cateHidden(108709)">
+<a href="/cate/108709/">软件工程(0)</a>
+</li>
+<li id="cate_item_108712" onmouseover="cateShow(108712)" onmouseout="cateHidden(108712)">
+<a href="/cate/108712/">数据库技术(1)</a>
+</li>
+<li id="cate_item_108724" onmouseover="cateShow(108724)" onmouseout="cateHidden(108724)">
+<a href="/cate/108724/">操作系统(5)</a>
+</li>
+<li id="cate_item_4" onmouseover="cateShow(4)" onmouseout="cateHidden(4)">
+<a href="/cate/4/">其他分类(1)</a>
+</li>
+<li id="cate_item_0" onmouseover="cateShow(0)" onmouseout="cateHidden(0)">
+<a href="/cate/all/">所有随笔(278)</a>
+</li>
+<li id="cate_item_-1" onmouseover="cateShow(-1)" onmouseout="cateHidden(-1)">
+<a href="/comment/">所有评论(57)</a>
+</li>
+</ul>
+<div class="cate_bottom"></div>
+<div id="cate_sub_block"></div>
+<script type="text/javascript">var cateIdList = '108698,2,108701,108703,108704,108705,108709,108712,108724,4';aggSite.loadSubCategories();</script>
+</div>
+        <div class="l_s"></div>
+<p class="r_l_3" /><p class="r_l_2" /><p class="r_l_1" />
+<div class="w_l">
+<h4>相关分类</h4>
+<ul>
+<li><a href="/cate/108698/">.NET技术</a></li>
+<li><a href="/cate/2/">编程语言</a></li>
+<li><a href="/cate/108701/">软件设计</a></li>
+<li><a href="/cate/108703/">Web前端</a></li>
+<li><a href="/cate/108704/">企业信息化</a></li>
+<li><a href="/cate/108705/">手机开发</a></li>
+<li><a href="/cate/108709/">软件工程</a></li>
+<li><a href="/cate/108724/">操作系统</a></li>
+<li><a href="/cate/4/">其他分类</a></li>
+</ul>
+</div>
+<p class="r_l_1" /><p class="r_l_2" /><p class="r_l_3" />
+<div class="l_s"></div>
+<p class="r_l_3"></p><p class="r_l_2"></p><p class="r_l_1"></p>
+<div class="w_l">
+<h4>链接</h4>        
+<ul>
+    <li><a href="https://group.cnblogs.com/forum/public/" target="_blank">反馈或建议</a></li> 
+    <li><a href="//www.cnblogs.com/cmt/" target="_blank">官方博客</a></li>
+    <li><a href="/skins.aspx" target="_blank">博客模板</a></li>
+    <li><a href="http://www.blogjava.net/">Java博客</a></li>
+    <li><a href="http://www.cppblog.com/">C++博客</a></li>
+    <li><a href="//www.cnblogs.com/cmt/archive/2009/09/26/1574616.html">手机版</a></li>
+</ul>
+</div>
+<p class="r_l_1"></p><p class="r_l_2"></p><p class="r_l_3"></p>
+<div class="l_s"></div>
+<div id="user_stats"></div>
+<div class="l_s"></div>        
+<p class="r_l_3"></p><p class="r_l_2"></p><p class="r_l_1"></p>
+<div class="w_l">                
+<h4>统计信息</h4>
+<div id="site_stats"></div>      
+</div>
+<p class="r_l_1"></p><p class="r_l_2"></p><p class="r_l_3"></p>
+            </div>
+            <div id="side_right">
+                    <div id="search_block">
+                        <div class="side_search">
+                            <input type="text" id="zzk_q" class="search_input" onkeydown="return zzk_go_enter(event);" tabindex="3" /><input onclick="zzk_go()" type="button" class="search_btn" value="找找看" />
+                        </div>
+                        <div id="google_search" class="side_search">
+                            <input type="text" id="google_search_q" class="search_input" onkeydown="return google_search_enter(event);" /><input type="button" value="Google" class="search_btn" onclick="return google_search();" />
+                        </div>
+                    </div>
+                <div id="cnblogs_a1">
+                    <div id='div-gpt-ad-1547816814884-0' style='height:60px; width:468px;'>
+                        <script>
+                            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1547816814884-0'); });
+                        </script>
+                    </div>
+                </div>
+                <div id="cnblogs_b1" class="sidebar-image">
+                    <div id='div-gpt-ad-1546331539224-0' style='height:250px; width:300px;'>
+                        <script>
+                            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1546331539224-0'); });
+                        </script>
+                    </div>
+                </div>
+                <div id="ad_right_text" class="ad_right_text"></div>
+                    <div style="margin: 10px 0;padding: 10px;color: #555;" class="w_r">
+                        全民国家安全教育日：网络安全始于心，安全行动践于行。-- 上海市公安局浦东公安分局宣
+                    </div>
+                <div id="side_right_block"></div>
+            </div>
+        </div>
+        <div id="footer_bottom">
+            <div>Powered by .NET Core on Kubernetes</div>
+            <div><a href="https://about.cnblogs.com/">关于博客园</a><a href="https://about.cnblogs.com/contact">联系我们</a><a href="https://about.cnblogs.com/ad">广告服务</a><a href="https://about.cnblogs.com/job">人才服务</a>&copy;2004-2020<a href="https://www.cnblogs.com/">博客园</a>保留所有权利<a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备09004260号</a></div>
+            <div><a href="https://ss.knet.cn/verifyseal.dll?sn=e131108110100433392itm000000&amp;ct=df&amp;a=1&amp;pa=0.25787803245785335" rel="nofollow" target="_blank"><img id="cnnic_img" src="//common.cnblogs.com/images/cnnic.png" alt="" width="64" height="23" /></a><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001144" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="//common.cnblogs.com/images/ghs.png" alt="" /><span style="float:left;height:20px;line-height:20px;margin: 0 5px 0 5px; color:#939393;">沪公网安备 31011502001144号</span></a></div>
+        </div>
+    </div>
+</body>
+</html>

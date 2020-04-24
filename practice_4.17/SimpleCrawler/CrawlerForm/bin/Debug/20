@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="热点随笔： &amp;#183;&amp;#160;进大厂也就这回事，工作后2到3年进大厂操作指南&amp;#160;(hsm_computer)&amp;#183;&amp;#160;.Net微服务实战之技术架构分层篇&amp;#160;(陈珙)" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>上周热点回顾（4.13-4.19） - 博客园团队 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/cmt/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/cmt/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/cmt/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 39258;
+        var currentBlogApp = 'cmt';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/cmt/">博客园官方博客</a>
+</div>
+<div class="subtitle">
+代码改变世界
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/cmt/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%9B%A2%E9%98%9F">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/cmt/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+1115&nbsp;</span>
+<span id="stats_article_count">文章 - 
+51&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+21582</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/cmt/p/12735800.html">上周热点回顾（4.13-4.19）</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>热点随笔：</p>
+<p>&middot;&nbsp;<a href="https://www.cnblogs.com/JavaArchitect/archive/2020/04/14/12665483.html" target="_blank">进大厂也就这回事，工作后2到3年进大厂操作指南</a>&nbsp;(<a href="https://www.cnblogs.com/JavaArchitect/" target="_blank">hsm_computer</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/skychen1218/archive/2020/04/16/12653155.html" target="_blank">.Net微服务实战之技术架构分层篇</a>&nbsp;(<a href="https://www.cnblogs.com/skychen1218/" target="_blank">陈珙</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/tylerdonet/archive/2020/04/16/12711086.html" target="_blank">HTML5+tracking.js实现刷脸支付</a>&nbsp;(<a href="https://www.cnblogs.com/tylerdonet/" target="_blank">nd</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/qing-gee/archive/2020/04/15/12702817.html" target="_blank">大专学历以后就职会不会有瓶颈</a>&nbsp;(<a href="https://www.cnblogs.com/qing-gee/" target="_blank">沉默王二</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/lex-wu/archive/2020/04/16/11817236.html" target="_blank">技术从业者的未来</a>&nbsp;(<a href="https://www.cnblogs.com/lex-wu/" target="_blank">lex-wu</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/xuanyuan/archive/2020/04/16/12710715.html" target="_blank">震撼！全网第一张源码分析全景图揭秘Nginx</a>&nbsp;(<a href="https://www.cnblogs.com/xuanyuan/" target="_blank">轩辕之风</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/sesametech-netcore/archive/2020/04/18/12725914.html" target="_blank">谁说.NET不适合搞大数据，机器学习、人工智能</a>&nbsp;(<a href="https://www.cnblogs.com/sesametech-netcore/" target="_blank">芝麻麻雀</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/shanyou/archive/2020/04/17/12717318.html" target="_blank">Blazor WebAssembly 3.2.0 Preview 4 如期发布</a>&nbsp;(<a href="https://www.cnblogs.com/shanyou/" target="_blank">张善友</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/heyuquan/archive/2020/04/14/docker-cmd-and-dotnetcore.html" target="_blank">Docker 常用命令（.NET Core示例）</a>&nbsp;(<a href="https://www.cnblogs.com/heyuquan/" target="_blank">滴答的雨</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/panzi/archive/2020/04/13/12690675.html" target="_blank">一个关于HttpClient的轮子</a>&nbsp;(<a href="https://www.cnblogs.com/panzi/" target="_blank">丶Pz</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/starry-skys/archive/2020/04/13/12689683.html" target="_blank">面试官再问你 HashMap 底层原理，就把这篇文章甩给他看</a>&nbsp;(<a href="https://www.cnblogs.com/starry-skys/" target="_blank">烟雨星空</a>)<br />&middot;&nbsp;<a href="https://www.cnblogs.com/developer-huawei/archive/2020/04/15/12703502.html" target="_blank">DevEco Toolkit使用指南--平行视界</a>&nbsp;(<a href="https://www.cnblogs.com/developer-huawei/" target="_blank">华为开发者论坛</a>)</p>
+<p>热点新闻：</p>
+<p>&middot;&nbsp;<a href="https://news.cnblogs.com/n/659650/" target="_blank">谁杀死了免费工具？</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659960/" target="_blank">清华校友预测美国疫情发展，准确率达96%|网友：病毒都听你的，绝了</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659685/" target="_blank">为什么诈骗损失难以追回</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659910/" target="_blank">永久免费 国产OS系统深度Deepin v20 beta正式发布</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659826/" target="_blank">GitHub宣布向所有团队免费开放核心功能</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659942/" target="_blank">中国最赚钱高铁 京沪高铁发布上市首份年报：每天净赚3200万</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659643/" target="_blank">疯狂的《动森》：游戏已下架，&ldquo;黑产&rdquo;依旧火</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659799/" target="_blank">光追版《我的世界》开放抢先体验：简直不是同一款游戏</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659877/" target="_blank">物美价廉的品牌，为什么活不过半年？</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659753/" target="_blank">苹果收购的天气App有多特别？预测10分钟后会不会下雨</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659973/" target="_blank">GitHub 已完成对 npm 的收购</a><br />&middot;&nbsp;<a href="https://news.cnblogs.com/n/659890/" target="_blank">百度网盘破解版开发者被抓，百度回应：会提升体验</a></p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-20 09:03</span>&nbsp;
+<a href="https://www.cnblogs.com/cmt/">博客园团队</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735800" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12735800);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 39258, cb_blogApp = 'cmt', cb_blogUserGuid = 'bd42420b-63cf-dd11-9e4d-001cf0cd104b';
+    var cb_entryId = 12735800, cb_entryCreatedDate = '2020-04-20 09:03', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 博客园团队
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

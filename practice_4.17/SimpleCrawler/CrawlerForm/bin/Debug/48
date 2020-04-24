@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>流水理鱼 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/bluesky/bundle-bluesky.min.css?v=nIYPSqBALS6DuGAjaXk5hWfDv_C8bPXulypjfPAZ-d4" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/bluesky/bundle-bluesky-mobile.min.css?v=s2piIyFV3NYqZWTmizb6uafQjmZFRhUBr8YMAdV85mA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wwek/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wwek/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wwek/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 568509;
+        var currentBlogApp = 'wwek';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlueSky';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/wwek/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/wwek/">流水理鱼</a>
+</h1>
+<h2>
+关注云原生，中小互联网团队成长
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/wwek/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%B5%81%E6%B0%B4%E7%90%86%E9%B1%BC">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/wwek/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+8&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+1</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wwek/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12734930.html">
+    Sentry实时应用错误跟踪系统在Kubernetes中私有化部署
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：应用错误跟踪系统：对软件系统运行过程中产生的错误日志进行收集从而实现监控告警。 虽然软件错误❌是不可避免的，但是可以降低错误数。 提高对错误的治理能力能让错误带来的损失降到最低 ​&#128077;&#127995; 。 错误日志监控在最顶层的业务层监控,有他将会帮助你打造更好的软件！ 我们需要业务场景下自己发现Bug的速度快            <a href="https://www.cnblogs.com/wwek/p/12734930.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-19 23:07 流水理鱼 阅读 (156) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12734930" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wwek/archive/2020/04/05.html">2020年4月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12639700.html">
+    Kubernets中获取客户端真实IP总结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 导言 绝大多数业务场景都是需要知道客户端IP的 在k8s中运行的业务项目，如何获取到客户端真实IP？ 本文总结了通行的2种方式 要答案的直接看方式一、方式二和总结 SEO 关键字 nginx ingress客户端真实ip kubernets获取客户端真实ip rke获取客户端真实ip ranc            <a href="https://www.cnblogs.com/wwek/p/12639700.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-05 22:48 流水理鱼 阅读 (89) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12639700" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wwek/archive/2020/01/12.html">2020年1月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12184799.html">
+    Golang写的程序注入一些版本信息，Debug速度自然快几倍！
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：背景 Go程序运行时打印git提交信息编译信息 Golang编译信息注入程序 当在debug的过程中，我们需要明确当前运行的go程序是什么版本 不要浪费时间在确认版本的问题上 在go build编译的时候是可以注入外部参数的 让go程序在运行的时候就可以打印编译时候的参数情况 以gitlab run            <a href="https://www.cnblogs.com/wwek/p/12184799.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-12 21:15 流水理鱼 阅读 (29) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12184799" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wwek/archive/2020/01/09.html">2020年1月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12173909.html">
+    开源API网关，你选对了么？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：开源API网关，你选对了么？ api网关的本质 不用扯那么多，也不用画图，一句话说清楚 api网关：流量总入口，得以集中控制！ 就这么简单 api网关协议上最基本要支持HTTP 和 WebSocket，功能强大点的更会支持tcp/udp的负载均衡接入 正因为支持的是http协议，所以api网关不仅仅            <a href="https://www.cnblogs.com/wwek/p/12173909.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-09 22:52 流水理鱼 阅读 (737) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12173909" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wwek/archive/2019/12/28.html">2019年12月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12112788.html">
+    Service Mesh服务网格清单
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Service Mesh服务网格清单 Istio &quot;Istio官网&quot; &quot;Istio中文官网&quot; &quot;Istio开源&quot; 无需太多介绍Service Mesh明日之星，扛把子，截止2019.11还有太多问题没解决 复杂性，性能让人望而却步，能上生产的是真要技术厉害，还得内心强大，项目允许 Linkerd &quot;            <a href="https://www.cnblogs.com/wwek/p/12112788.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-28 19:28 流水理鱼 阅读 (90) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12112788" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wwek/archive/2019/12/19.html">2019年12月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12070379.html">
+    使用Portainer集中管理多地域内网运行的Docker实例
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 单机运行的Docker 容器化部署是现在进行时，开源应用大多数支持容器化部署 在少量机器的场景下往往采用docker cli 和 docker compose管理，进行“单机式管理” 机器稍多点会采用Docker Swarm群集的方式，毕竟k8s稍重 如果有更多的机器情况下一般会采用k8s的方            <a href="https://www.cnblogs.com/wwek/p/12070379.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-19 21:39 流水理鱼 阅读 (290) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12070379" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wwek/archive/2019/12/17.html">2019年12月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12056489.html">
+    API接口访问频次限制 / 网站恶意爬虫限制 / 网站恶意访问限制 方案
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：API接口访问频次限制 / 网站恶意爬虫限制 / 网站恶意访问限制 方案 采用多级拦截,后置拦截的方式体系化解决 1 分层拦截 1.1 第一层 商业web应用防火墙(WAF) 直接用商业服务 传统的F5硬件,不过现在用的很少了 云时代就用云时代的产品,典型代表 阿里云 web应用防火墙 1.2 第二            <a href="https://www.cnblogs.com/wwek/p/12056489.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-17 19:56 流水理鱼 阅读 (73) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12056489" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wwek/p/12055736.html">
+    让外部的开发机直接访问Kubernetes群集内的服务！
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：让外部的开发机直接访问Kubernetes群集内的服务！ 1.场景 容器化+K8s编排已经是现在进行时把网站的多个项目设计为云原生（Cloud Native）或老项改造为云原生可以获得诸多能力例如无云绑定、弹性、部署环境一致性、微服务、DevOps、持续交付同时下一代微服务框架 服务网格（Servi            <a href="https://www.cnblogs.com/wwek/p/12055736.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-17 17:32 流水理鱼 阅读 (161) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12055736" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 流水理鱼
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

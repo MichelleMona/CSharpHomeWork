@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="摘要：妙趣横生，上周的 GitHub 热点的关键词。无论是让你化身为爱因斯坦开启会议脑暴模式 avatarify，还是和上周人人都是抠图师项目的同门项目 3D 照片修复：3d photo inpain" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GitHub 热点速览 Vol.16：化身蒙娜丽莎和乔布斯对话 - 削微寒 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=Fx4xdLkGuHnlaG7xntG_wAnZrnorJWp5u_TWKqbvMF0" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/xueweihan/custom.css?v=RRRtuZg9tgADpy&#x2B;UPLStdn026o0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=cYvlxMu_nd6MVfg-vi7YqOC6FaZ7VHFsDM166vO_ekA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xueweihan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xueweihan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xueweihan/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 228315;
+        var currentBlogApp = 'xueweihan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlackLowKey';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <a href="https://github.com/521xueweihan/HelloGitHub/"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png" alt="Fork me on GitHub" data-canonical-src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png"></a>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/xueweihan/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xueweihan/">削微寒的程序员之路</a>
+</h1>
+<h2>
+谦逊、专注，才能成长。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xueweihan/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/xueweihan/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+321&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+1141</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/xueweihan/p/12733520.html">GitHub 热点速览 Vol.16：化身蒙娜丽莎和乔布斯对话</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210035183-183247811.png" alt=""></p>
+<blockquote>
+<p>摘要：妙趣横生，上周的 GitHub 热点的关键词。无论是让你化身为爱因斯坦开启会议脑暴模式 avatarify，还是和上周人人都是抠图师项目的同门项目 3D 照片修复：3d-photo-inpainting 都让人觉得，原来程序可以那么 interesting。除了趣味，本周的热点全靠 nbnhhsh 这个让人秒变 00 后解决各种缩写的小工具增添了一丝青春。除了趣味、青春，底蕴的头马最全中文诗歌古典文集数据库——chinese-poetry 表现也不俗，除了诗词歌赋你也可以了解唐宋诗词中高频词为何，知否知否，Spring 主题能否带你开启 Java 新世界大门就在本周的#Spring#主题模块。</p>
+</blockquote>
+<p>以下内容摘录自上周微博<a href="https://www.weibo.com/hellogithub/">@HelloGitHub</a> 的 GitHub Trending，选项标准：<code>新发布</code> | <code>实用</code> | <code>有趣</code>，根据项目 release 时间分类，发布时间超过 30 天的项目一律称之为成熟稳重老项目，由于文章篇幅问题还有部分项目未能在本文展示，望周知 🌝</p>
+<ul>
+<li>本文目录
+<ul>
+<li>
+<ol>
+<li>可怕 GitHub 新生</li>
+</ol>
+<ul>
+<li>1.1 3D 照片修复：3d-photo-inpainting</li>
+<li>1.2 视频聊天：Zipcall - Decentralized Video Chat</li>
+<li>1.3 30 天吃掉 TensorFlow2.0：eat_tensorflow2_in_30_days</li>
+<li>1.4 社交追踪：opentrace-ios</li>
+<li>1.5 视频头像变身：avatarify</li>
+<li>1.6 xmsl 翻译机：nbnhhsh</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li>尚能星否 GitHub 老项目</li>
+</ol>
+<ul>
+<li>2.1 追踪 bug：git-bug</li>
+<li>2.2 Python 设计的背后原理：wtfpython-cn</li>
+<li>2.3 算法 js 版：javascript-algorithms</li>
+<li>2.4 最全中文诗歌古典文集数据库：chinese-poetry</li>
+<li>2.5 推特白嫖党：twint</li>
+<li>2.6 云原生服务：Cortex</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li>本周 GitHub Trending #Spring#主题的主力军</li>
+</ol>
+<ul>
+<li>3.1 Spring Boot &amp; MyBatis的种子项目：spring-boot-api-project-seed</li>
+<li>3.2 Spring Boot 专栏：SpringBoot-Labs</li>
+<li>3.3 分布式敏捷开发：zheng</li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li>推荐阅读</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-可怕-github-新生">1. 可怕 GitHub 新生</h2>
+<h3 id="11-3d-照片修复：3d-photo-inpainting">1.1 3D 照片修复：3d-photo-inpainting</h3>
+<p><strong>本周 star 增长数：1100+</strong></p>
+<p>3d-photo-inpainting 是一种将单个 RGB-D 输入图像转换为 3D 照片的方法，即这是一种新的视图合成的多层表示，其中包含了原始视图中被遮挡区域的幻觉颜色和深度结构。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/vt-vl-lab/3d-photo-inpainting</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210101302-1197570320.jpg" alt=""></p>
+<h3 id="12-视频聊天：zipcall---decentralized-video-chat">1.2 视频聊天：Zipcall - Decentralized Video Chat</h3>
+<p><strong>本周 star 增长数：1400+</strong></p>
+<p>Zipcall - Decentralized Video Chat 是一个基于 Twilio STUN / TURN 的 WebRTC 视频聊天系统。Zipcall 提供了传统技术无法提供的高质量视频和超低延迟。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/ianramzy/decentralized-video-chat</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210118752-774438354.gif" alt=""></p>
+<h3 id="13-脸部检测：dbface">1.3 脸部检测：DBFace</h3>
+<p><strong>本周 star 增长数：300+</strong></p>
+<p>DBFace 是一个用于面部检测的实时、单级检测器，具有更快的速度和更高的精度。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/dlunion/DBFace</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210139163-949592831.png" alt=""></p>
+<h3 id="14-社交追踪：opentrace-ios">1.4 社交追踪：opentrace-ios</h3>
+<p><strong>本周 star 增长数：100+</strong></p>
+<p>社交追踪：opentrace-ios 是 BlueTrace 的开源参考实现。BlueTrace 是一种隐私保护协议，用于社区驱动的跨边界联系人跟踪。它允许参与的设备记录彼此的蓝牙接触，以便在保护用户个人数据和隐私的同时方便流行病学接触者的追踪。 ​​​​</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/opentrace-community/opentrace-ios</p>
+</blockquote>
+<h3 id="15-视频头像变身：avatarify">1.5 视频头像变身：avatarify</h3>
+<p><strong>本周 star 增长数：1950+</strong></p>
+<p>有了它，你就是爱因斯坦的化身。视频头像变身：avatarify 是一个可变更 Zoom、Skype 等视频软件视频人头像的工具，当你在说话时，你可切换成任意一个你设定的人物头像，例如：蒙娜丽莎。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/alievk/avatarify</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210154333-1915581739.gif" alt=""></p>
+<h3 id="16-xmsl-翻译机：nbnhhsh">1.6 xmsl 翻译机：nbnhhsh</h3>
+<p><strong>本周 star 增长数：1100+</strong></p>
+<p>xmsl 翻译机：nbnhhsh 「能不能好好说话？」 拼音首字母缩写翻译工具，社交平台上通过拼音首字母缩写指代特定词句的情况越来越多，为了让常人勉强能理解这一门另类沟通方式、做了这一个划词翻译油猴脚本。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/itorr/nbnhhsh</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210213406-1974973169.png" alt=""></p>
+<h2 id="2-尚能星否-github-老项目">2. 尚能星否 GitHub 老项目</h2>
+<h3 id="21-追踪-bug：git-bug">2.1 追踪 bug：git-bug</h3>
+<p><strong>本周 star 增长数：350+</strong></p>
+<p>git-bug 是一个错误跟踪器，特性：</p>
+<ul>
+<li>已完全嵌入 git：只需在 git 存储库中安装错误跟踪器</li>
+<li>分布式：使用常规 git 远程进行协作，推送和拉出错误</li>
+<li>离线工作：上天下海都在读写 bug</li>
+<li>防止供应商锁定：即便常规服务已关闭或挂了，都有完整备份</li>
+<li>快速：列出错误或打开错误仅需几毫秒</li>
+<li>不会污染项目：不在项目中添加任何文件</li>
+<li>与现有工具集成：使用你喜欢的 UI（CLI，终端，Web）或通过 CLI 或 GraphQL API 与现有工具集成</li>
+<li>与其他错误跟踪器的桥梁：使用桥梁导入和导出至其他跟踪器。</li>
+</ul>
+<blockquote>
+<p>GitHub 地址→https://github.com/MichaelMure/git-bug</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210232534-1529448039.gif" alt=""></p>
+<h3 id="22-python-设计的背后原理：wtfpython-cn">2.2 Python 设计的背后原理：wtfpython-cn</h3>
+<p><strong>本周 star 增长数：100+</strong></p>
+<p>Python 是设计优美的解释型高级语言，有让程序员感到舒适的特性。但有时候，Python 的一些输出结果对于初学者来说似乎并不是那么一目了然。<br>
+这个有趣的项目收集 Python 中难以理解和反人类的例子以及鲜为人知的功能特性，讨论这些现象背后的原理。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/leisurelicht/wtfpython-cn</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210302741-1474890878.png" alt=""></p>
+<h3 id="23-算法-js-版：javascript-algorithms">2.3 算法 js 版：javascript-algorithms</h3>
+<p><strong>本周 star 增长数：1400+</strong></p>
+<p>算法 js 版：javascript-algorithms 包含了多种基于 JavaScript 的算法与数据结构。每种算法和数据结构都有自己的 README，包含相关说明和链接，以便进一步阅读 (还有 YouTube 视频) 。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/trekhleb/javascript-algorithms</p>
+</blockquote>
+<h3 id="24-最全中文诗歌古典文集数据库：chinese-poetry">2.4 最全中文诗歌古典文集数据库：chinese-poetry</h3>
+<p><strong>本周 star 增长数：500+</strong></p>
+<p>知否知否，最全中文诗歌古典文集数据库：chinese-poetry 收录唐宋两朝近一万四千古诗人，接近 5.5 万首唐诗加 26 万宋诗。两宋时期 1564 位词人，21050 首词。该项目还针对诗词进行词云分析，罗列了唐诗、宋词高频词。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/chinese-poetry/chinese-poetry</p>
+</blockquote>
+<h3 id="25-推特白嫖党：twint">2.5 推特白嫖党：twint</h3>
+<p><strong>本周 star 增长数：950+</strong></p>
+<p>推特白嫖党，tweet 爬取：twint 是一个用 Python 实现的、无需使用 Twitter API、匿名也可获取用户的关注者，关注者，推文等内容的工具。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/twintproject/twint</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210323555-1194049643.png" alt=""></p>
+<h3 id="26-云原生服务：cortex">2.6 云原生服务：Cortex</h3>
+<p><strong>本周 star 增长数：300+</strong></p>
+<p>云原生服务：Cortex 是一个开源平台，用于将机器学习模型部署为生产 Web 服务。特性：</p>
+<ul>
+<li>多种框架：支持 TensorFlow，PyTorch，scikit-learn，XGBoost 等。</li>
+<li>自动缩放： 自动缩放 API 以处理生产工作负载。</li>
+<li>CPU / GPU支持： Cortex可以在CPU或GPU基础架构上运行推理。</li>
+<li>竞价型实例：支持 EC2 竞价型实例。</li>
+<li>滚动更新：无需中断即可更新已部署的 API。</li>
+<li>日志流：将日志从部署的模型流到 CLI。</li>
+<li>预测监视：监视网络指标并跟踪预测。</li>
+<li>配置简单：在单个 cortex.yaml 文件中定义部署。</li>
+</ul>
+<blockquote>
+<p>GitHub 地址→https://github.com/cortexlabs/cortex</p>
+</blockquote>
+<h2 id="3-本周-github-trending-spring主题的主力军">3. 本周 GitHub Trending #Spring#主题的主力军</h2>
+<p>学 Java 不知 Spring 好比一个程序员不知算法一般，在本期的 GitHub 热点，小鱼干为你选择了 3 个高星 Spring 项目，希望帮你开启 Spring 之门~~</p>
+<h3 id="31-spring-boot--mybatis的种子项目：spring-boot-api-project-seed">3.1 Spring Boot &amp; MyBatis的种子项目：spring-boot-api-project-seed</h3>
+<p><strong>本周 star 增长数：600+</strong></p>
+<p>Spring Boot API Project Seed 是一个基于Spring Boot &amp; MyBatis的种子项目，用于快速构建中小型API、RESTful API项目，该种子项目已经有过多个真实项目的实践，稳定、简单、快速，使我们摆脱那些重复劳动，专注于业务代码的编写，减少加班。下面是一个简单的使用演示，看如何基于本项目在短短几十秒钟内实现一套简单的API，并运行提供服务。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/lihengming/spring-boot-api-project-seed</p>
+</blockquote>
+<h3 id="32-spring-boot-专栏：springboot-labs">3.2 Spring Boot 专栏：SpringBoot-Labs</h3>
+<p><strong>本周 star 增长数：250+</strong></p>
+<p>一个涵盖六个专栏：Spring Boot 2.X、Spring Cloud、Spring Cloud Alibaba、Dubbo、分布式消息队列、分布式事务的仓库。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/YunaiV/SpringBoot-Labs</p>
+</blockquote>
+<h3 id="33-分布式敏捷开发：zheng">3.3 分布式敏捷开发：zheng</h3>
+<p><strong>本周 star 增长数：50+</strong></p>
+<p>基于 Spring+SpringMVC+Mybatis 分布式敏捷开发系统架构，提供整套公共微服务服务模块：内容管理、支付中心、用户管理（包括第三方）、微信平台、存储系统、配置中心、日志分析、任务和通知等，支持服务治理、监控和追踪，努力为中小型企业打造全方位 J2EE 企业级开发解决方案。</p>
+<blockquote>
+<p>GitHub 地址→https://github.com/shuzheng/zheng</p>
+</blockquote>
+<h2 id="推荐阅读">推荐阅读</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/129347558">GitHub 热点速览 Vol.15：Background-Matting 让你秒变专业抠图师</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/126315065">GitHub 热点速览 Vol.14：周获 2k+ Vim³ 掀起三维编程风</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/120349957">GitHub 热点速览 Vol.13：近 40k star 计算机论文项目再霸榜</a></li>
+</ul>
+<p>以上为 2020 年第 16 个工作周的 GitHub Trending 🎉如果你 Pick 其他好玩、实用的 GitHub 项目，记得来 HelloGitHub issue 区和我们分享下哟 🌝</p>
+<blockquote>
+<p>HelloGitHub 交流群现已全面开放，添加微信号：HelloGitHub 为好友入群，可同前端、Java、Go 等各界大佬谈笑风生、切磋技术~<br>
+<img src="https://img2020.cnblogs.com/blog/759200/202004/759200-20200419210420031-154004469.jpg" alt=""><br>
+<strong>关注公众号加入交流群</strong></p>
+</blockquote>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-20 08:51</span>&nbsp;
+<a href="https://www.cnblogs.com/xueweihan/">削微寒</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12733520" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12733520);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 228315, cb_blogApp = 'xueweihan', cb_blogUserGuid = '41673165-d8fd-e411-b908-9dcfd8948a71';
+    var cb_entryId = 12733520, cb_entryCreatedDate = '2020-04-20 08:51', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 削微寒
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

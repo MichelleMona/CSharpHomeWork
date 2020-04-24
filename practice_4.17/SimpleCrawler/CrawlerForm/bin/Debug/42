@@ -1,0 +1,402 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="在Asp.net Core之前所有的Action返回值都是ActionResult，Json(),File()等方法返回的都是ActionResult的子类。并且Core把MVC跟WebApi合并之后" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ASP.NET Core中的Action的返回值类型 - Agile.Zhou - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/kklldog/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/kklldog/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/kklldog/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 39765;
+        var currentBlogApp = 'kklldog';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/kklldog/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/kklldog/">菜鸟耕地</a>
+</h1>
+<h2>
+Agile.Zhou's study corner
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/kklldog/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Agile.Zhou">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/kklldog/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+115&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+559</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/kklldog/p/aspnetcore-actionresult.html">ASP.NET Core中的Action的返回值类型</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>在Asp.net Core之前所有的Action返回值都是ActionResult，Json(),File()等方法返回的都是ActionResult的子类。并且Core把MVC跟WebApi合并之后Action的返回值体系也有了很大的变化。</p>
+<h2 id="actionresult类">ActionResult类</h2>
+<p>ActionResult类是最常用的返回值类型。基本沿用了之前Asp.net MVC的那套东西，使用它大部分情况都没问题。比如用它来返回视图，返回json，返回文件等等。如果是异步则使用Task<ActionResult>。</p>
+<pre><code>    public class TestController : Controller
+    {
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult MyFile()
+        {
+            return File(new byte[] { }, &quot;image/jpg&quot;);
+        }
+
+        public ActionResult MyJson()
+        {
+            return Json(new { name = &quot;json&quot; });
+        }
+
+        public ActionResult Ok()
+        {
+            return Ok();
+        }
+    }
+</code></pre>
+<h2 id="iactionresult接口">IActionResult接口</h2>
+<p>ActionResult类实现了IActionResult接口所以能用ActionResult的地方都可以使用IActionResult来替换。同样异步的话使用Task包起来做为返回值。</p>
+<pre><code>   public class ITestController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult MyFile()
+        {
+            return File(new byte[] { }, &quot;image/jpg&quot;);
+        }
+
+        public IActionResult MyJson()
+        {
+            return Json(new { name = &quot;json&quot; });
+        }
+
+        public IActionResult HttpOk()
+        {
+            return Ok();
+        }
+
+        public async Task&lt;IActionResult&gt; AsyncCall()
+        {
+            await Task.Delay(1000);
+
+            return Content(&quot;ok&quot;);
+        }
+    }
+</code></pre>
+<h2 id="直接返回poco类">直接返回POCO类</h2>
+<p>Asp.net Core的Controller的Action可以把POCO类型(其实不一定是POCO类，可以是任意类型，但是使用的时候一般都返回viwemodel等POCO类)当做返回值，不一定非要是ActionResult或者IActionResult。Asp.net Core框架会帮我们自动序列化返回给前端，默认使用json序列化。同样异步的话使用Task包起来做为返回值。</p>
+<pre><code>   public class Person
+    {
+        public string Name { get; set; }
+
+        public string Sex { get; set; }
+    }
+
+    public class ITestController : Controller
+    {
+
+          public Person GetPerson()
+        {
+            return new Person { Name = &quot;abc&quot;, Sex = &quot;f&quot; };
+        }
+
+        public async Task&lt;List&lt;Person&gt;&gt; GetPersons()
+        {
+            await Task.Delay(1000);
+
+            return new List&lt;Person&gt; {
+            new Person { Name = &quot;abc&quot;, Sex = &quot;f&quot; },
+            new Person { Name = &quot;efg&quot;, Sex = &quot;m&quot; }
+            };
+        }
+    }
+</code></pre>
+<h2 id="actionresult-t-泛型类">ActionResult&lt; T &gt;泛型类</h2>
+<p>当我们设计restful webapi系统的时候习惯使用POCO做为返回值。比如我们设计一个获取Person的api。通过 /person/001 url获取001号person。</p>
+<pre><code>    [Route(&quot;[controller]&quot;)]
+    public class PersonController : Controller
+    {
+        IPersonRepository _repository;
+        PersonController(IPersonRepository repository) 
+        {
+            _repository = repository;
+        }
+
+        [HttpGet(&quot;{id}&quot;)]
+       public Person Get(string id)
+        {
+            return _repository.Get(id);
+        }
+    }
+</code></pre>
+<p>这个方法看起来好像没什么问题，但其实有个小问题。如果repository.Get方法没有根据id查找到数据，那么将会返回null。如果null做为Action的返回值，最后框架会转换为204的http status code。<br>
+<img src="https://s1.ax1x.com/2020/04/19/JKOUtf.md.png" alt=""><br>
+204表示No Content 。做为restful api，204的语义在这里会有问题，这里比较适合的status code是404 NOT FOUND 。那么我们来改一下：</p>
+<pre><code>        [HttpGet(&quot;{id}&quot;)]
+       public Person Get(string id)
+        {
+            var person = _repository.Get(id);
+            if (person == null)
+            {
+                Response.StatusCode = 404;
+            }
+
+            return person;
+        }
+</code></pre>
+<p>现在如果查找不到person数据，则系统会返回404 Not Found 。<br>
+<img src="https://s1.ax1x.com/2020/04/19/JKOUtf.md.png" alt=""><br>
+但是这看起来显然不够优雅，因为ControllerBase内置了NotFoundResult NotFound() 方法。这使用这个方法代码看起来更加清晰明了。继续改：</p>
+<pre><code>        [HttpGet(&quot;{id}&quot;)]
+       public Person Get(string id)
+        {
+            var person = _repository.Get(id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+            return person;
+        }
+</code></pre>
+<p>很不幸，这段代码VS会提示错误。因为返回值类型不一致。方法签名的返回值是Person，但是方法内部一会返回NotFoundResult，一会返回Person。<br>
+<img src="https://s1.ax1x.com/2020/04/19/JKOw9S.png" alt=""><br>
+解决这个问题就该ActionResult&lt; T &gt;出场了。我们继续改一下：</p>
+<pre><code>        [HttpGet(&quot;{id}&quot;)]
+       public ActionResult&lt;Person&gt; Get(string id)
+        {
+            var person = _repository.Get(id);
+            if (person == null)
+            {
+                return NotFound();
+            }
+
+            return person;
+        }
+</code></pre>
+<p>现在VS已经不会报错了，运行一下也可以正常工作。但仔细想想也很奇怪，为什么返回值类型改成了ActionResult&lt; Person &gt;就不报错了呢？明明返回值类型跟方法签名还是不一致啊？</p>
+<h2 id="深入actionresult-t-">深入ActionResult&lt; T &gt;</h2>
+<p>接上面的问题，让我们看一下ActionResult的内部：<br>
+<img src="https://s1.ax1x.com/2020/04/19/JKO01g.md.png" alt=""><br>
+看到这里就明白了原来ActionResult&lt; T &gt;里面内置了2个implicit operator方法。implicit operator用于声明隐式类型转换。</p>
+<pre><code>public static implicit operator ActionResult&lt;TValue&gt;(ActionResult result); 
+</code></pre>
+<p>表示ActionResult类型可以转换为ActionResult&lt; TValue &gt;类型。</p>
+<pre><code>public static implicit operator ActionResult&lt;TValue&gt;(TValue value)
+</code></pre>
+<p>表示TValue类型可以转换为ActionResult&lt; TValue &gt;类型。</p>
+<p>因为有了这2个方法，当ActionResult或者TValue类型往ActionResult&lt; T &gt;赋值的时候会进行一次自动的类型转换。所以VS这里不会报错。</p>
+<h2 id="总结">总结</h2>
+<ol>
+<li>大部分时候Action的返回值可以使用ActionResult/IActionResult</li>
+<li>设计restful api的时候可以直接使用POCO类作为返回值</li>
+<li>如果要设计既支持POCO类返回值或者ActionResult类为返回值的action可以使用ActionResult&lt; T &gt;作为返回值</li>
+<li>ActionResult&lt; T &gt;之所以能够支持两种类型的返回值类型，是因为使用了implicit operator内置了2个隐式转换的方法</li>
+</ol>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-20 01:06</span>&nbsp;
+<a href="https://www.cnblogs.com/kklldog/">Agile.Zhou</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735425" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12735425);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 39765, cb_blogApp = 'kklldog', cb_blogUserGuid = 'b544420b-63cf-dd11-9e4d-001cf0cd104b';
+    var cb_entryId = 12735425, cb_entryCreatedDate = '2020-04-20 01:06', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 Agile.Zhou
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

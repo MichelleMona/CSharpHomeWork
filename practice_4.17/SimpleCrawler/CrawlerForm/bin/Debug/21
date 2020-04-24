@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>博客园团队 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/cmt/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/cmt/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/cmt/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 39258;
+        var currentBlogApp = 'cmt';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/cmt/">博客园官方博客</a>
+</div>
+<div class="subtitle">
+代码改变世界
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/cmt/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%9B%A2%E9%98%9F">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/cmt/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+1115&nbsp;</span>
+<span id="stats_article_count">文章 - 
+51&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+21582</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12735800.html">
+    上周热点回顾（4.13-4.19）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：热点随笔： &#183;&#160;进大厂也就这回事，工作后2到3年进大厂操作指南&#160;(hsm_computer)&#183;&#160;.Net微服务实战之技术架构分层篇&#160;(陈珙)&#183;&#160;HTML5+tracking.js实现刷脸支付&#160;(nd)&#183;&#160;大专学历以后就职会不会有瓶颈&#160;(沉默王二)&#183;&#160;技术从业者的未来&#160;(lex-wu)&#183;&#160;震撼！全网第            <a href="https://www.cnblogs.com/cmt/p/12735800.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 09:03 博客园团队 阅读 (54) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735800" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/04/13.html">2020年4月13日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12689281.html">
+    上周热点回顾（4.6-4.12）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：热点随笔： &#183;&#160;【高并发】高并发秒杀系统架构解密，不是所有的秒杀都是秒杀！&#160;(冰河团队)&#183;&#160;Java是未来的第一编程语言吗？&#160;(黄钰朝)&#183;&#160;.Net 微服务架构技术栈的那些事&#160;(Jlion)&#183;&#160;[一起读源码]走进C#并发队列ConcurrentQueue的内部世界&#160;(balahoho)&#183;&#160;30岁开始            <a href="https://www.cnblogs.com/cmt/p/12689281.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-13 08:48 博客园团队 阅读 (643) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12689281" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/04/08.html">2020年4月8日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12659449.html">
+    【故障公告】部署在 k8s 上的博客后台昨天与今天在访问高峰多次出现 502
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：非常抱歉，从昨天上午开始，部署在 k8s 集群上的博客后台（基于 .NET Core 3.1 + Angular 8.2 实现）出现奇怪问题，一到访问高峰就多次出现 502 ，有时能自动恢复，有时需要我们手动删除 pod ，由此给您带来麻烦，请您谅解。            <a href="https://www.cnblogs.com/cmt/p/12659449.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-08 13:45 博客园团队 阅读 (1757) 评论 (6)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12659449" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/04/06.html">2020年4月6日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12640562.html">
+    上周热点回顾（3.30-4.5）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：热点随笔： &#183;&#160;你所不知道的 C# 中的细节&#160;(hez2010)&#183;&#160;2020年了，跨平台开发框架现在怎样了？&#160;(葡萄城技术团队)&#183;&#160;坚持写作快两年了，有些私藏工具跟你们分享&#160;(楼下小黑哥)&#183;&#160;从入门到精通-Nginx，图文并茂、负载均衡、动静分离、虚拟主机 附案例源码&#160;(陈彦斌)&#183;&#160;高效code r            <a href="https://www.cnblogs.com/cmt/p/12640562.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-06 08:59 博客园团队 阅读 (474) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12640562" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/03/30.html">2020年3月30日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12596477.html">
+    上周热点回顾（3.23-3.29）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：热点随笔： &#183;&#160;.Net微服务实战之技术选型篇&#160;(陈珙)&#183;&#160;WTM 3.5发布，VUE来了！&#160;(liuliang79)&#183;&#160;从草根到百万年薪程序员的二十年风雨之路&#160;(码农有道)&#183;&#160;大龄个人开发者，我是如何活下来的，又将怎样活下去&#160;(张晓衡)&#183;&#160;.NET 5 Preview 1的深度解读和跟进&#160;(Eri            <a href="https://www.cnblogs.com/cmt/p/12596477.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-30 08:54 博客园团队 阅读 (617) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12596477" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/03/26.html">2020年3月26日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12574296.html">
+    音乐天才vs计算机天才，直播来啦！
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：25岁音乐作品上春晚，27岁举办“个人作品音乐会”，30岁导演电影，43岁《晓说》开播，46岁加入阿里巴巴，现任阿里娱乐战略委员会主席。他就是高晓松，5年前加入阿里巴巴，花名矮大紧。在阿里工作是一种什么样的体验？高晓松有认真上班吗？今天（3月26日）晚18:50，矮大紧在线营业，给你一份“不靠谱的职业规划”。            <a href="https://www.cnblogs.com/cmt/p/12574296.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-26 14:30 博客园团队 阅读 (819) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12574296" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/03/24.html">2020年3月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12560107.html">
+    阿里巴巴2020实习生招聘（技术专场）来啦！
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：亲爱的同学，阿里巴巴2020实习生招聘空中宣讲会（技术专场）开放预约啦！ 来阿里巴巴实习，都有哪些面试技巧和诀窍？ 来阿里巴巴实习，你又能获得哪些成长空间？ 3月26日晚上8点（本周四） 6位技术大咖空降直播间 与你分享技术人的绝招，现场互动助你拿offer 赶紧开始预约吧！ 阿里巴巴2020实习生            <a href="https://www.cnblogs.com/cmt/p/12560107.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-24 17:09 博客园团队 阅读 (243) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12560107" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/03/23.html">2020年3月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12550199.html">
+    上周热点回顾（3.16-3.22）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：热点随笔： &#183;&#160;开源项目在闲鱼、b 站上被倒卖？这是什么骚操作？&#160;(我是13)&#183;&#160;【翻译】.NET 5 Preview 1 发布&#160;(HueiFeng)&#183;&#160;!大部分程序员只会写3年代码&#160;(沉默王二)&#183;&#160;上海月薪 1w 和家乡月薪 5000 你选择哪？&#160;(沉默王二)&#183;&#160;【.net core】电商平台升级            <a href="https://www.cnblogs.com/cmt/p/12550199.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-23 09:05 博客园团队 阅读 (678) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12550199" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/03/16.html">2020年3月16日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12501815.html">
+    上周热点回顾（3.9-3.15）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：热点随笔： &#183;&#160;200行代码，7个对象——让你了解ASP.NET Core框架的本质[3.x版]&#160;(Artech)&#183;&#160;C#桌面开发的未来WebWindow&#160;(zeje)&#183;&#160;分享一个基于Net Core 3.1开发的模块化的项目(补充数据库脚本)&#160;(喻平勇)&#183;&#160;Asp.Net Core 中Identi            <a href="https://www.cnblogs.com/cmt/p/12501815.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-16 09:04 博客园团队 阅读 (566) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12501815" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/cmt/archive/2020/03/09.html">2020年3月9日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/cmt/p/12446751.html">
+    上周热点回顾（3.2-3.8）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：热点随笔： &#183;&#160;这么香的Chrome插件，你都安装了吗？&#160;(有态度的小码甲)&#183;&#160;.NET平台编程语言的衰败&#160;(Z语言)&#183;&#160;《ASP.NET Core 3框架揭秘》读者群，欢迎加入&#160;(Artech)&#183;&#160;ASP.NET Core 反向代理部署知多少&#160;(「圣杰」)&#183;&#160;树莓派3B安装OpenWrt打造超级路            <a href="https://www.cnblogs.com/cmt/p/12446751.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-09 09:00 博客园团队 阅读 (673) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12446751" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/cmt/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 博客园团队
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

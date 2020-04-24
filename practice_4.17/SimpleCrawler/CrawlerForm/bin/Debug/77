@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="在C&#x2B;&#x2B;11中， 不再只有逻辑与的含义，还可能是右值引用： 但也不尽然， 还可能是转发引用： “转发引用”（forwarding reference）旧称“通用引用”（universal refere" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>模板参数的“右值引用”是转发引用 - jerry_fuyi - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy.min.css?v=Nm_ujJtGKDq5SpJ2XERB3wgoRnlvEg7NAIZvC-SzytE" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jerry-fuyi/custom.css?v=QxGDGimsRKr9CZUobyVFO1mi8HA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jerry-fuyi/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jerry-fuyi/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jerry-fuyi/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 525569;
+        var currentBlogApp = 'jerry-fuyi';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'MTTrendy';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<div id="top">
+
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jerry-fuyi/">jerry_fuyi</a>
+</h1>
+<p id="tagline">
+
+</p>
+
+
+</div>
+
+<div id="rightmenu">
+
+	
+<h3>My Links</h3>
+<ul>
+			<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+			<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jerry-fuyi/">
+首页</a>
+</li>
+			<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/jerry_fuyi">
+联系</a></li>
+			<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+订阅</a> 
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+    <img src="/skins/mttrendy/images/xml.gif" alt="订阅" />
+</a></li>
+			<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+	<h3>Blog Stats</h3>
+	<ul>
+		<li>Posts - 
+71</li>
+		<li>Stories - 
+0</li>
+		<li>Comments - 
+11</li>
+		<li>Trackbacks - 
+0
+	</li>
+</ul>
+
+
+	
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+	<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+
+<div id="main">
+	<div id="post_detail">
+	<div class="post">
+		<h2>
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12733924.html">模板参数的“右值引用”是转发引用</a>
+
+		</h2>
+		
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>在C++11中，<code>&amp;&amp;</code>不再只有逻辑与的含义，还可能是右值引用：</p>
+<pre><code>void f(int&amp;&amp; i);
+</code></pre>
+<p>但也不尽然，<code>&amp;&amp;</code>还可能是转发引用：</p>
+<pre><code>template&lt;typename T&gt;
+void g(T&amp;&amp; obj);
+</code></pre>
+<p>“转发引用”（forwarding reference）旧称“通用引用”（universal reference），它的“通用”之处在于你可以拿一个左值绑定给转发引用，但不能给右值引用：</p>
+<pre><code>void f(int&amp;&amp; i) { }
+
+template&lt;typename T&gt;
+void g(T&amp;&amp; obj) { }
+
+int main()
+{
+    int n = 2;
+    f(1);
+//  f(n); // error
+    g(1);
+    g(n);
+}
+</code></pre>
+<p>一个函数的参数要想成为转发引用，必须满足：</p>
+<ul>
+<li>
+<p>参数类型为<code>T&amp;&amp;</code>，没有<code>const</code>或<code>volatile</code>；</p>
+</li>
+<li>
+<p><code>T</code>必须是该函数的模板参数。</p>
+</li>
+</ul>
+<p>换言之，以下函数的参数都不是转发引用：</p>
+<pre><code>template&lt;typename T&gt;
+void f(const T&amp;&amp;);
+template&lt;typename T&gt;
+void g(typename std::remove_reference&lt;T&gt;&amp;&amp;);
+template&lt;typename T&gt;
+class A
+{
+    template&lt;typename U&gt;
+    void h(T&amp;&amp;, const U&amp;);
+};
+</code></pre>
+<p>另一种情况是<code>auto&amp;&amp;</code>变量也可以成为转发引用：</p>
+<pre><code>auto&amp;&amp; vec = foo();
+</code></pre>
+<p>所以写范围<code>for</code>循环的最好方法是用<code>auto&amp;&amp;</code>：</p>
+<pre><code>std::vector&lt;int&gt; vec;
+for (auto&amp;&amp; i : vec)
+{
+    // ...
+}
+</code></pre>
+<p>有一个例外，当<code>auto&amp;&amp;</code>右边是初始化列表，如<code>auto&amp;&amp; l = {1, 2, 3};</code>时，该变量为<code>std::initializer_list&lt;int&gt;&amp;&amp;</code>类型。</p>
+<p>转发引用，是用来转发的。只有当你的意图是转发参数时，才写转发引用<code>T&amp;&amp;</code>，否则最好把<code>const T&amp;</code>和<code>T&amp;&amp;</code>写成重载（如果需要的话还可以写<code>T&amp;</code>，还有不常用的<code>const T&amp;&amp;</code>；其中<code>T</code>是具体类型而非模板参数）。</p>
+<p>转发一个转发引用需要用<code>std::forward</code>，定义在<code>&lt;utility&gt;</code>中：</p>
+<pre><code>#include &lt;utility&gt;
+
+template&lt;typename... Args&gt;
+void f(Args&amp;&amp;... args) { }
+
+template&lt;typename T&gt;
+void g(T&amp;&amp; obj)
+{
+    f(std::forward&lt;T&gt;(obj));
+}
+
+template&lt;typename... Args&gt;
+void h(Args&amp;&amp;... args)
+{
+    f(std::forward&lt;Args&gt;(args)...);
+}
+</code></pre>
+<p>调用<code>g</code>有几种可能的参数：</p>
+<ul>
+<li>
+<p><code>int i = 1; g(i);</code>，<code>T</code>为<code>int&amp;</code>，调用<code>g(int&amp;)</code>；</p>
+</li>
+<li>
+<p><code>const int j = 2; g(j);</code>，<code>T</code>为<code>const int&amp;</code>，调用<code>g(const int&amp;)</code>；</p>
+</li>
+<li>
+<p><code>int k = 3; g(std::move(k));</code>或<code>g(4);</code>，<code>T</code>为<code>int</code>（不是<code>int&amp;&amp;</code>哦！），调用<code>g(int&amp;&amp;)</code>。</p>
+</li>
+</ul>
+<p>你也许会疑惑，为什么<code>std::move</code>不需要<code>&lt;T&gt;</code>而<code>std::forward</code>需要呢？这得从<code>std::forward</code>的签名说起：</p>
+<pre><code>template&lt;typename T&gt;
+constexpr T&amp;&amp; forward(std::remove_reference_t&lt;T&gt;&amp;) noexcept;
+template&lt;typename T&gt;
+constexpr T&amp;&amp; forward(std::remove_reference_t&lt;T&gt;&amp;&amp;) noexcept;
+</code></pre>
+<p>调用<code>std::forward</code>时，编译器无法根据<code>std::remove_reference_t&lt;T&gt;</code>反推出<code>T</code>，从而实例化函数模板，因此<code>&lt;T&gt;</code>需要手动指明。</p>
+<p>但是这并没有从根本上回答问题，或者可以进一步引出新的问题——为什么<code>std::forward</code>的参数不定义成<code>T&amp;&amp;</code>呢？</p>
+<p>原因很简单，<code>T&amp;&amp;</code>会把<code>T&amp;</code>、<code>const T&amp;</code>、<code>T&amp;&amp;</code>和<code>const T&amp;&amp;</code>（以及对应的<code>volatile</code>）都吃掉，有了<code>T&amp;&amp;</code>以后，再写<code>T&amp;</code>也没用。</p>
+<p>且慢，<code>T&amp;&amp;</code>参数在传入函数是会匹配到<code>T&amp;&amp;</code>吗？</p>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;utility&gt;
+
+void foo(int&amp;)
+{
+    std::cout &lt;&lt; &quot;int&amp;&quot; &lt;&lt; std::endl;
+}
+
+void foo(const int&amp;)
+{
+    std::cout &lt;&lt; &quot;const int&amp;&quot; &lt;&lt; std::endl;
+}
+
+void foo(int&amp;&amp;)
+{
+    std::cout &lt;&lt; &quot;int&amp;&amp;&quot; &lt;&lt; std::endl;
+}
+
+void bar(int&amp;&amp; i)
+{
+    foo(i);
+}
+
+int main()
+{
+    int i;
+    bar(std::move(i));
+}
+</code></pre>
+<p>不会！程序输出<code>int&amp;</code>。在函数<code>bar</code>中，<code>i</code>是一个左值，其类型为<code>int</code>的右值引用。更直接一点，它有名字，所以它是左值。</p>
+<p>因此，如果<code>std::forward</code>没有手动指定的模板参数，它将不能区分<code>T&amp;</code>和<code>T&amp;&amp;</code>——那将是“糟糕转发”，而不是“完美转发”了。</p>
+<p>最后分析一下<code>std::forward</code>的实现，以下代码来自libstdc++：</p>
+<pre><code>template&lt;typename _Tp&gt;
+  constexpr _Tp&amp;&amp;
+  forward(typename std::remove_reference&lt;_Tp&gt;::type&amp; __t) noexcept
+  { return static_cast&lt;_Tp&amp;&amp;&gt;(__t); }
+
+template&lt;typename _Tp&gt;
+  constexpr _Tp&amp;&amp;
+  forward(typename std::remove_reference&lt;_Tp&gt;::type&amp;&amp; __t) noexcept
+  {
+    static_assert(!std::is_lvalue_reference&lt;_Tp&gt;::value, &quot;template argument&quot;
+                  &quot; substituting _Tp is an lvalue reference type&quot;);
+    return static_cast&lt;_Tp&amp;&amp;&gt;(__t);
+  }
+</code></pre>
+<ul>
+<li>
+<p>当转发引用<code>T&amp;&amp; obj</code>绑定左值<code>int&amp;</code>时，匹配第一个重载，<code>_Tp</code>即<code>T</code>为<code>int&amp;</code>，返回类型<code>_Tp&amp;&amp;</code>为<code>int&amp;</code>（引用折叠：<code>&amp; &amp;</code>、<code>&amp; &amp;&amp;</code>、<code>&amp;&amp; &amp;</code>都折叠为<code>&amp;</code>，只有<code>&amp;&amp; &amp;&amp;</code>折叠为<code>&amp;&amp;</code>）；</p>
+</li>
+<li>
+<p><code>const int&amp;</code>同理；</p>
+</li>
+<li>
+<p>当转发引用绑定右值<code>int&amp;&amp;</code>时，匹配第二个重载，<code>_Tp</code>为<code>int</code>，返回类型为<code>int&amp;&amp;</code>；</p>
+</li>
+<li>
+<p><code>const int&amp;&amp;</code>同理。</p>
+</li>
+</ul>
+<p>综上，<code>std::forward</code>能完美转发。</p>
+<p>程序员总是要在Stack Overflow上<a href="https://stackoverflow.com/questions/61303832/is-it-possible-to-omit-template-parameter-in-stdforward/" target="_blank">撞撞墙</a>才能学会一点东西。</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		<p class="postfoot">
+			posted on 
+<span id="post-date">2020-04-19 21:46</span>&nbsp;
+<a href="https://www.cnblogs.com/jerry-fuyi/">jerry_fuyi</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12733924" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12733924);return false;">收藏</a>
+		</p>
+	</div>
+	
+	
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 525569, cb_blogApp = 'jerry-fuyi', cb_blogUserGuid = '976af27c-3f06-453c-e544-08d7006bad27';
+    var cb_entryId = 12733924, cb_entryCreatedDate = '2020-04-19 21:46', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 jerry_fuyi
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+
+
+    
+</body>
+</html>

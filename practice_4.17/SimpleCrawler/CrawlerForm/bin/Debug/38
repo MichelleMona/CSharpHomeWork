@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="1 简介 是最简单的使用 的方式，而 是最流行的 数据库。两者在分布式、微服务架构中使用率极高，本文将用实例介绍如何在 中整合 的两种方法： 和`MongoTemplate`。 代码结构如下： 2 项" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>实例讲解Springboot整合MongoDB进行CRUD操作的两种方式 - 南瓜慢说 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001.min.css?v=vmUk-3Bh8LDsKXwjNHs2GDiFna-ZMTUgOJzjUaXTlPA" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001-mobile.min.css?v=cJiDsI1JAuHHd-OAUWJeyE5JMXXsG4mmuUi2rVmEK1c" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/larrydpk/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/larrydpk/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/larrydpk/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 548387;
+        var currentBlogApp = 'larrydpk';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'AnotherEon001';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/larrydpk/">南瓜慢说</a>
+</h1>
+<div id="subtitle">
+
+</div>
+</div>
+<div id="sub"><div class="BlogStats">随笔 - 
+26, 文章 - 
+0, 评论 - 
+6, 引用 - 
+0</div>
+
+</div>
+
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	<div id="post_detail">
+    <div class="post">
+        <h2>
+            
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12735620.html">实例讲解Springboot整合MongoDB进行CRUD操作的两种方式</a>
+
+        </h2>
+        <div class="postbody">
+            
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="1-简介">1 简介</h1>
+<p><code>Springboot</code>是最简单的使用<code>Spring</code>的方式，而<code>MongoDB</code>是最流行的<code>NoSQL</code>数据库。两者在分布式、微服务架构中使用率极高，本文将用实例介绍如何在<code>Springboot</code>中整合<code>MongoDB</code>的两种方法：<code>MongoRepository</code>和<code>MongoTemplate</code>。</p>
+<p>代码结构如下：</p>
+<p><img src="https://img2020.cnblogs.com/other/946674/202004/946674-20200420070100797-1205459233.jpg" alt="code"></p>
+<h1 id="2-项目准备">2 项目准备</h1>
+<h2 id="21-启动mongodb实例">2.1 启动MongoDB实例</h2>
+<p>为了方便，使用<code>Docker</code>来启动<code>MongoDB</code>，详细指导文档请参考：<a href="https://www.pkslow.com/archives/start-mongodb-with-docker">用Docker安装一个MongoDB最新版玩玩</a> ，这里不再赘述。</p>
+<h2 id="22-引入相关依赖">2.2 引入相关依赖</h2>
+<p>主要的依赖为<code>Web</code>和<code>MongoDB</code>的<code>starter</code>，把下面代码加入到<code>pom.xml</code>中即可：</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-data-mongodb&lt;/artifactId&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h2 id="23-配置数据库连接信息">2.3 配置数据库连接信息</h2>
+<p>与配置<code>MySQL</code>或<code>Oracle</code>一样，<code>MongoDB</code>也需要配置连接信息，配置在<code>application.properties</code>中如下：</p>
+<pre><code class="language-properties">server.port=8080
+
+spring.data.mongodb.authentication-database=admin
+spring.data.mongodb.database=testdb
+spring.data.mongodb.username=user
+spring.data.mongodb.password=123456
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+</code></pre>
+<h2 id="24-创建数据模型实体">2.4 创建数据模型实体</h2>
+<p>创建<code>User</code>类如下：</p>
+<pre><code class="language-java">package com.pkslow.mongo.model;
+
+import org.springframework.data.annotation.Id;
+import java.util.Date;
+
+public class User {
+    @Id
+    private String userId;
+    private String name;
+    private Integer age;
+    private Date createTime = new Date();
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+}
+</code></pre>
+<p>不需要在<code>MongoDB</code>中创建对应的<code>Collections</code>（表），当通过Web应用新增时会自动创建。</p>
+<h1 id="3-方式1：mongorepository">3 方式1：MongoRepository</h1>
+<h2 id="31-定义数据访问层userrepository">3.1 定义数据访问层UserRepository</h2>
+<p>使用过<code>Spring Jpa</code>的都清楚，<code>Repository</code>实际就是用于操作数据库的类。在非关系型数据库<code>MongoDB</code>的整合中，也是一样的。<code>Spring</code>会帮我们实现好对应接口的方法，开发人员连<code>SQL</code>都不用写，非常省心。代码如下：</p>
+<pre><code class="language-java">package com.pkslow.mongo.dal;
+
+import com.pkslow.mongo.model.User;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends MongoRepository&lt;User, String&gt; {
+}
+</code></pre>
+<p>注意<code>MongoRepository</code>后面接的泛型<code>&lt;User, String&gt;</code>第一个为实体类，第二个为主键<code>ID</code>。</p>
+<h2 id="32-实现controller">3.2 实现Controller</h2>
+<p><code>Controller</code>比较基础，就不讲解了，常用的注解是必须要掌握的，直接上代码吧：</p>
+<pre><code class="language-java">package com.pkslow.mongo.contrlloer;
+
+import com.pkslow.mongo.dal.UserRepository;
+import com.pkslow.mongo.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/user&quot;)
+public class UserController {
+    @Autowired
+    private final UserRepository userRepository;
+
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
+    @GetMapping(&quot;&quot;)
+    public List&lt;User&gt; getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    @GetMapping(&quot;/{userId}&quot;)
+    public User getByUserId(@PathVariable String userId) {
+        return userRepository.findById(userId).orElse(new User());
+    }
+
+    @PostMapping(&quot;&quot;)
+    public User addNewUser(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+
+    @DeleteMapping(&quot;/{userId}&quot;)
+    public String delete(@PathVariable String userId) {
+        User user = new User();
+        user.setUserId(userId);
+        userRepository.deleteById(userId);
+        return &quot;deleted: &quot; + userId;
+    }
+
+    @PutMapping(&quot;&quot;)
+    public User update(@RequestBody User user) {
+        return userRepository.save(user);
+    }
+}
+</code></pre>
+<p>注意代码没有做异常情况的判断和处理，这里为了快速演示，就先不管了。</p>
+<h2 id="33-测试">3.3 测试</h2>
+<p>用<code>Postman</code>测试后，每个接口均调用成功。就不一一截图了。</p>
+<p><img src="https://img2020.cnblogs.com/other/946674/202004/946674-20200420070105430-429822646.jpg" alt="repository.test"></p>
+<h1 id="4-方式2：mongotemplate">4 方式2：MongoTemplate</h1>
+<h2 id="41-定义数据访问层userdal">4.1 定义数据访问层UserDAL</h2>
+<p>先定义接口为：</p>
+<pre><code class="language-java">package com.pkslow.mongo.dal;
+
+import com.pkslow.mongo.model.User;
+import java.util.List;
+
+public interface UserDAL {
+    List&lt;User&gt; findAll();
+
+    User findById(String userId);
+
+    User save(User user);
+
+    void deleteById(String userId);
+}
+</code></pre>
+<p>然后实现该接口如下：</p>
+<pre><code class="language-java">package com.pkslow.mongo.dal;
+
+import com.pkslow.mongo.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
+import java.util.List;
+
+@Repository
+public class UserDALImpl implements UserDAL {
+
+    @Autowired
+    private MongoTemplate template;
+
+    @Override
+    public List&lt;User&gt; findAll() {
+        return template.findAll(User.class);
+    }
+
+    @Override
+    public User findById(String userId) {
+        return template.findById(userId,User.class);
+    }
+
+    @Override
+    public User save(User user) {
+        return template.save(user);
+    }
+
+    @Override
+    public void deleteById(String userId) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where(&quot;userId&quot;).is(userId));
+        template.remove(query, User.class);
+    }
+}
+</code></pre>
+<h2 id="42-实现另一个controller">4.2 实现另一个Controller</h2>
+<p>这个<code>Controller</code>的代码与之前的基本一样，只是数据访问类不一样，代码如下：</p>
+<pre><code class="language-java">package com.pkslow.mongo.contrlloer;
+
+import com.pkslow.mongo.dal.UserDAL;
+import com.pkslow.mongo.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(&quot;/userTemplate&quot;)
+public class UserTemplateController {
+
+    @Autowired
+    private final UserDAL userDAL;
+
+    public UserTemplateController(UserDAL userDAL) {
+        this.userDAL = userDAL;
+    }
+
+
+    @GetMapping(&quot;&quot;)
+    public List&lt;User&gt; getAllUsers() {
+        return userDAL.findAll();
+    }
+
+    @GetMapping(&quot;/{userId}&quot;)
+    public User getByUserId(@PathVariable String userId) {
+        return userDAL.findById(userId);
+    }
+
+    @PostMapping(&quot;&quot;)
+    public User addNewUser(@RequestBody User user) {
+        return userDAL.save(user);
+    }
+
+    @DeleteMapping(&quot;/{userId}&quot;)
+    public String delete(@PathVariable String userId) {
+        User user = new User();
+        user.setUserId(userId);
+        userDAL.deleteById(userId);
+        return &quot;deleted: &quot; + userId;
+    }
+
+    @PutMapping(&quot;&quot;)
+    public User update(@RequestBody User user) {
+        return userDAL.save(user);
+    }
+}
+</code></pre>
+<h2 id="43-测试">4.3 测试</h2>
+<p>测试一样也是全部通过：</p>
+<p><img src="https://img2020.cnblogs.com/other/946674/202004/946674-20200420070105920-1580427006.jpg" alt="template.test"></p>
+<h1 id="5-总结">5 总结</h1>
+<p>本文通过实例讲解了如何整合<code>Springboot</code>和<code>MongoDB</code>，主要有两种方法：<code>MongoRepository</code>和<code>MongoTemplate</code>。代码基本在文章中已经贴出来了，如果还不清楚，可以在<strong>南瓜慢说</strong>公众号回复&lt;<strong>SpringbootMongoDB</strong>&gt;获取代码。</p>
+<hr>
+<p>欢迎访问<a href="https://www.pkslow.com/">南瓜慢说 www.pkslow.com</a> 获取更多精彩文章！</p>
+<p>欢迎关注微信公众号&lt;<strong>南瓜慢说</strong>&gt;，将持续为你更新...</p>
+<p><img src="https://img2020.cnblogs.com/other/946674/202004/946674-20200420070106207-1876552389.jpg" alt=""></p>
+<p><strong>多读书，多分享；多写作，多整理。</strong></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+        </div>
+        <p class="postfoot">
+            posted on 
+<span id="post-date">2020-04-20 07:01</span>&nbsp;
+<a href="https://www.cnblogs.com/larrydpk/">南瓜慢说</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735620" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12735620);return false;">收藏</a>
+        </p>
+    </div>
+</div>
+
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 548387, cb_blogApp = 'larrydpk', cb_blogUserGuid = '4d26c142-e90c-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 12735620, cb_entryCreatedDate = '2020-04-20 07:01', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+    <li>
+        <a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/larrydpk/">
+首页</a>
+
+    </li>
+    <li>
+        
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%97%E7%93%9C%E6%85%A2%E8%AF%B4">
+联系</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/larrydpk/rss/">
+订阅</a>
+        
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/larrydpk/rss/">
+    <img src="/skins/anothereon001/images/xml.gif" alt="订阅" />
+</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+    </li>
+</ul>
+
+
+<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 南瓜慢说
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+</div>
+</div>
+
+
+    
+</body>
+</html>

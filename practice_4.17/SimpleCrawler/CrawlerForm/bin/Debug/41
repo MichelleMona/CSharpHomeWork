@@ -1,0 +1,536 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>schaepher - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/schaepher/custom.css?v=&#x2B;gGS7U1XGTRzpfj8NORi&#x2B;ddtpAI=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/schaepher/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/schaepher/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/schaepher/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 244067;
+        var currentBlogApp = 'schaepher';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/schaepher/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/schaepher/">Schaepher</a>
+</h1>
+<h2>
+深透理解，熟练运用；似懂非懂，其实不懂。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/schaepher/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/schaepher">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/schaepher/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+91&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+259</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2017/03/13.html">2017年3月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/6542329.html">
+[置顶]    2017春季 JMU 1414软工助教 链接汇总
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：每次作业的评分、优秀作业的汇总和其他有用的博客链接            <a href="https://www.cnblogs.com/schaepher/p/6542329.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-03-13 13:15 schaepher 阅读 (530) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6542329" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/12735619.html">
+    Camunda 流程引擎的一种 Adapter 层实现
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：上一篇说明了选择 Camunda 的理由。这一篇说明如何实现适配层。 当前还没有专门写一篇对 Camunda 各个功能的详细介绍。如果要获得比较直观的感受，可以下载 Modeler 或者使用在线版的 Modeler 。 &quot;https://demo.bpmn.io/&quot; 目录： 1. 为什么要做适配层？            <a href="https://www.cnblogs.com/schaepher/p/12735619.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-20 06:57 schaepher 阅读 (44) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735619" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/12731709.html">
+    【做中学】第一个 Go 语言程序：漫画下载器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文地址： 第一个 Go 语言程序：漫画下载器： &quot;https://schaepher.github.io/2020/04/11/golang first comic downloader&quot; 之前学了点 Go 语言，但没有写出一个比较有用的工具，基本上算白学。得选一个又简单又比较有有价值的功能来实现            <a href="https://www.cnblogs.com/schaepher/p/12731709.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-19 15:23 schaepher 阅读 (130) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12731709" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2020/04/07.html">2020年4月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/12655569.html">
+    【PHP源码】PHP 函数调用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：想法 我以前对于 C 语言的印象是有很强的确定性，而 PHP 在执行的时候会被翻译为 C 语言执行，所以一直很好奇 PHP 怎么调用底层函数。 换句话说就是已知函数名字的情况下如何调用 C 语言中对应名字的函数？ 解决这个问题前，首先根据过往的经验做出假设，然后再去验证。 之前在写《用 C 语言实现            <a href="https://www.cnblogs.com/schaepher/p/12655569.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-07 19:50 schaepher 阅读 (114) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12655569" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2020/03/26.html">2020年3月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/12571944.html">
+    流程引擎 —— Camunda
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：2019 年初我在重新设计我们组负责的流程系统时，选择了 Camunda 流程引擎，并基于该流程引擎实现了一套适配方案。以前就想做一次总结，但总拖着。 最近公司中台在做流程引擎选型，相关同事找我了解 Camunda 以及基于 Camunda 的应用方案。经过我一番说明，对方表示收获很大。我想着也是时            <a href="https://www.cnblogs.com/schaepher/p/12571944.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-26 09:17 schaepher 阅读 (105) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12571944" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2020/03/18.html">2020年3月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/12515102.html">
+    从源码看 PHP 7 数组的实现
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文所用源码为 PHP 7.4.4 的版本。 PHP 7 数组概述 PHP 中的数组实际上是一个有序映射。映射是一种把 values 关联到 keys 的类型。此类型在很多方面做了优化，因此可以把它当成真正的数组，或列表（向量），散列表（是映射的一种实现），字典，集合，栈，队列以及更多可能性。由于数            <a href="https://www.cnblogs.com/schaepher/p/12515102.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-18 09:02 schaepher 阅读 (180) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12515102" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2020/03/15.html">2020年3月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/12498512.html">
+    C 语言初步实现面向对象的三个基本特征
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这篇文章所使用代码的完整版见： &quot;https://github.com/schaepher/c objcet oriented&quot; 原文链接： &quot;C 语言实现面向对象（一）：初步实现三个基本特征&quot; 相关背景知识 面向对象 面向对象的三个基本特征是：封装、继承、多态。 封装 隐藏成员变量及成员方法。 继            <a href="https://www.cnblogs.com/schaepher/p/12498512.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-15 16:57 schaepher 阅读 (31) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12498512" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2018/07/14.html">2018年7月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/9310352.html">
+    入职一年啦
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：从入职到现在已经过了一年，然而博客几乎没有更新。本来毕业时和过年前后是打算写点总结什么的，写着写着就没有继续。 但不写点回顾的话，心里总感觉难受。以后要是想回忆一下当初都做了啥，结果没想起什么，感觉都是在浪费时间，这就不好了。 这几天刚好是我们这批新人入职满一年，脑中“写点什么回顾一下吧”的想法频繁            <a href="https://www.cnblogs.com/schaepher/p/9310352.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-07-14 17:43 schaepher 阅读 (263) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9310352" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/9308596.html">
+    我的博客园主题配置
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：皮肤 在 &quot;配置页面&quot; 选择 SimpleMemory 博文内容 css 配置 在 【页面定制CSS代码】 填入以下内容：            <a href="https://www.cnblogs.com/schaepher/p/9308596.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-07-14 09:53 schaepher 阅读 (647) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9308596" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2018/04/25.html">2018年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/8939616.html">
+    php+xdebug+dbgp远程调试（多人）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：目录 1. 创建 DBGP 服务 2. 配置 如果已经有人配置好，其他人如果也想要调试的话，只需按照这里的 2 和 3 配置。 3. 调试 创建 DBGP 服务 1. 到 &quot;下载页面&quot; ，下载 python 版本的 dbgp 到服务器上。 2. 解压后执行 pydbgpproxy。 如果提示找不到             <a href="https://www.cnblogs.com/schaepher/p/8939616.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-04-25 08:16 schaepher 阅读 (2397) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8939616" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/schaepher/archive/2017/09/17.html">2017年9月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/schaepher/p/7533826.html">
+    Vim 插件管理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：介绍 Vundle 安装，NERDTree 插件的安装示例，以及几个好用的插件及使用            <a href="https://www.cnblogs.com/schaepher/p/7533826.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-09-17 01:20 schaepher 阅读 (8990) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7533826" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/schaepher/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 schaepher
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

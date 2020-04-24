@@ -1,0 +1,839 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="dubbo作为分布式远程调用框架，要保证的点很多，比如：服务注册与发现、故障转移、高性能通信、负载均衡等等！ 负载均衡的目的是为了特定场景下，能够将请求合理地平分到各服务实例上，以便发挥所有机器的叠加" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dubbo（三）：负载均衡实现解析 - 等你归去来 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/yougewe/custom.css?v=P8TSMG0CFucThY7zv658b3Zxvwk=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/yougewe/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/yougewe/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/yougewe/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 251865;
+        var currentBlogApp = 'yougewe';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/yougewe/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/yougewe/">等你归去来</a>
+</h1>
+<h2>
+我约我期，要么求变，否则忍受，等你归去来！
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/yougewe/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%AD%89%E4%BD%A0%E5%BD%92%E5%8E%BB%E6%9D%A5">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/yougewe/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+215&nbsp; </span>
+<span id="stats_article_count">文章 - 
+31&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+294</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/yougewe/p/12734558.html">Dubbo（三）：负载均衡实现解析</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>　　dubbo作为分布式远程调用框架，要保证的点很多，比如：服务注册与发现、故障转移、高性能通信、负载均衡等等！</p>
+<p>　　负载均衡的目的是为了特定场景下，能够将请求合理地平分到各服务实例上，以便发挥所有机器的叠加作用。主要考虑的点如：不要分配请求到挂掉的机器，性能越好的机器可以分配更多的请求。。。</p>
+<p>　　一般负载均衡是借助外部工具，硬件负载均衡或软件负载均衡，如F5/nginx。当然了，在当前分布式环境遍地开花的情况下，客户端的负载均衡看起来就更轻量级，显得不可或缺。</p>
+<p>　　今天我们就来看看dubbo是如何进行负载均衡的吧！</p>
+<h3>1. dubbo负载均衡的作用？</h3>
+<p>　　其出发点，自然也就是普通的负载均衡器的出发点了。将负载均衡功能实现在rpc客户端侧，以便能够随时适应外部的环境变化，更好地发挥硬件作用。而且客户端的负载均衡天然地就避免了单点问题。定制化的自有定制化的优势和劣势。</p>
+<p>　　它可以从配置文件中指定，也可以在管理后台进行配置修改。</p>
+<p>　　事实上，它支持 服务端服务/方法级别、客户端服务/方法级别 的负载均衡配置。</p>
+<p>&nbsp;</p>
+<h3>2. dubbo有哪些负载均衡方式？</h3>
+<p>　　即dubbo提供了哪些负载均衡策略呢？</p>
+<p>Dubbo内置了4种负载均衡策略:</p>
+<p>　　RandomLoadBalance:随机负载均衡。随机的选择一个。是Dubbo的默认负载均衡策略。</p>
+<p>　　RoundRobinLoadBalance:轮询负载均衡。轮询选择一个。</p>
+<p>　　LeastActiveLoadBalance:最少活跃调用数，相同活跃数的随机。活跃数指调用前后计数差。使慢的 Provider 收到更少请求，因为越慢的 Provider 的调用前后计数差会越大。</p>
+<p>　　ConsistentHashLoadBalance:一致性哈希负载均衡。相同参数的请求总是落在同一台机器上。</p>
+<p>&nbsp;</p>
+<h3>3. 如何配置dubbo负载均衡策略？</h3>
+<p>　　其实在第一点时已经提过，有多种级别的配置：服务端服务/方法级别、客户端服务/方法级别; 具体配置如下:</p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 服务端服务级别 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dubbo:service </span><span style="color: #ff0000;">interface</span><span style="color: #0000ff;">="..."</span><span style="color: #ff0000;"> loadbalance</span><span style="color: #0000ff;">="roundrobin"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 客户端服务级别 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dubbo:reference </span><span style="color: #ff0000;">interface</span><span style="color: #0000ff;">="..."</span><span style="color: #ff0000;"> loadbalance</span><span style="color: #0000ff;">="roundrobin"</span> <span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 服务端方法级别 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dubbo:service </span><span style="color: #ff0000;">interface</span><span style="color: #0000ff;">="..."</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dubbo:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="hello"</span><span style="color: #ff0000;"> loadbalance</span><span style="color: #0000ff;">="roundrobin"</span><span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dubbo:service</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 客户端方法级别 </span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dubbo:reference </span><span style="color: #ff0000;">interface</span><span style="color: #0000ff;">="..."</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dubbo:method </span><span style="color: #ff0000;">name</span><span style="color: #0000ff;">="hello"</span><span style="color: #ff0000;"> loadbalance</span><span style="color: #0000ff;">="roundrobin"</span><span style="color: #0000ff;">/&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dubbo:reference</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>　　多个配置是有覆盖关系的, 配置的优先级是:</p>
+<p><span style="color: #ff9900;"> 　　　　1. 客户端方法级别配置;(最优先)</span><br /><span style="color: #ff9900;">	　　　　2. 客户端接口级别配置;</span><br /><span style="color: #ff9900;">	　　　　3. 服务端方法级别配置;</span><br /><span style="color: #ff9900;">	　　　　4. 服务端接口级别配置;(最后使用)</span></p>
+<p>　　注意: 虽说以上配置有全封闭服务端配置的，有针对客户端配置的，但是，真正使负载均衡起作用的是，客户端在发起调用的时候，使用相应负载均衡算法进行选择调用。（服务端不可能有这能力）</p>
+<p>　　负载均衡器的初始化过程如下：</p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #008000;">//</span><span style="color: #008000;"> 调用提供者服务入口
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker#invoke</span>
+<span style="color: #000000;">    @Override
+    </span><span style="color: #0000ff;">public</span> Result invoke(<span style="color: #0000ff;">final</span> Invocation invocation) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> RpcException {
+        checkWhetherDestroyed();
+
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> binding attachments into invocation.</span>
+        Map&lt;String, Object&gt; contextAttachments =<span style="color: #000000;"> RpcContext.getContext().getAttachments();
+        </span><span style="color: #0000ff;">if</span> (contextAttachments != <span style="color: #0000ff;">null</span> &amp;&amp; contextAttachments.size() != 0<span style="color: #000000;">) {
+            ((RpcInvocation) invocation).addAttachments(contextAttachments);
+        }
+
+        List</span>&lt;Invoker&lt;T&gt;&gt; invokers =<span style="color: #000000;"> list(invocation);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 根据可用的提供者列表和要调用的方法，决定选取的负载均衡器</span>
+        LoadBalance loadbalance =<span style="color: #000000;"> initLoadBalance(invokers, invocation);
+        RpcUtils.attachInvocationIdIfAsync(getUrl(), invocation);
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> doInvoke(invocation, invokers, loadbalance);
+    }
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 实例化一个负载均衡器，以备后续使用
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> org.apache.dubbo.rpc.cluster.support.AbstractClusterInvoker#initLoadBalance</span>
+    <span style="color: #008000;">/**</span><span style="color: #008000;">
+     * Init LoadBalance.
+     * &lt;p&gt;
+     * if invokers is not empty, init from the first invoke's url and invocation
+     * if invokes is empty, init a default LoadBalance(RandomLoadBalance)
+     * &lt;/p&gt;
+     *
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> invokers   invokers
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> invocation invocation
+     * </span><span style="color: #808080;">@return</span><span style="color: #008000;"> LoadBalance instance. if not need init, return null.
+     </span><span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">protected</span> LoadBalance initLoadBalance(List&lt;Invoker&lt;T&gt;&gt;<span style="color: #000000;"> invokers, Invocation invocation) {
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (CollectionUtils.isNotEmpty(invokers)) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 从provider 的 url 地址中取出 loadbalance=xxx 配置，如果没有仍使用 random 策略</span>
+            <span style="color: #0000ff;">return</span> ExtensionLoader.getExtensionLoader(LoadBalance.<span style="color: #0000ff;">class</span>).getExtension(invokers.get(0<span style="color: #000000;">).getUrl()
+                    .getMethodParameter(RpcUtils.getMethodName(invocation), LOADBALANCE_KEY, DEFAULT_LOADBALANCE));
+        } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 默认是 random 策略</span>
+            <span style="color: #0000ff;">return</span> ExtensionLoader.getExtensionLoader(LoadBalance.<span style="color: #0000ff;">class</span><span style="color: #000000;">).getExtension(DEFAULT_LOADBALANCE);
+        }
+    }</span></pre>
+</div>
+<p>　　所以，事实上，到最终客户端决定使用哪个负载均衡策略时，只是从请求参数中取出 loadbalance=xxx 的参数，进而决定具体实例。前面所有的配置，也都是为决定这个参数做出的努力。</p>
+<p>&nbsp;</p>
+<h3>4. dubbo负载均衡的实现？</h3>
+<p>　　前面我们看到，dubbo中提供了4种负载均衡策略，功能也是很明了。那么他们都是如何实现的呢？</p>
+<p>　　先来看下其继承图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/830731/202004/830731-20200419215953910-1093289977.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;　　很明显，多个负载均衡器都有一些共同点，所以统一使用 AbstractLoadBalance 进行抽象模板方法，差异点由各子算法决定即可。</p>
+<p>　　那么抽象类中，到底有多少公用功能被抽取出来了呢？到底什么是公用的呢？</p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #008000;">//</span><span style="color: #008000;"> org.apache.dubbo.rpc.cluster.loadbalance.AbstractLoadBalance#select</span>
+<span style="color: #000000;">    @Override
+    </span><span style="color: #0000ff;">public</span> &lt;T&gt; Invoker&lt;T&gt; select(List&lt;Invoker&lt;T&gt;&gt;<span style="color: #000000;"> invokers, URL url, Invocation invocation) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 没有可用的提供者，没得选</span>
+        <span style="color: #0000ff;">if</span><span style="color: #000000;"> (CollectionUtils.isEmpty(invokers)) {
+            </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 只有一个提供者，没得均衡的，直接用</span>
+        <span style="color: #0000ff;">if</span> (invokers.size() == 1<span style="color: #000000;">) {
+            </span><span style="color: #0000ff;">return</span> invokers.get(0<span style="color: #000000;">);
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 然后就是各自均衡算法的实现了</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> doSelect(invokers, url, invocation);
+    }</span></pre>
+</div>
+<p>　　好吧，看起来是我想多了。抽象方法并没有太多的职责，仅做普通判空操作而已。不过它倒是提供几个公用方法被调用，如 getWeight();</p>
+<p>　　事实上，模板方法更多地存在于集群的抽象调用方法中。AbstractClusterInvoker 。</p>
+<p>　　整个负载均衡的功能，都被统一放在 cluster 模块下的 loadbalance 包下，一看即明了。</p>
+<p><img src="https://img2020.cnblogs.com/blog/830731/202004/830731-20200419220138675-372423396.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;　　还是来看具体的实现好玩些！</p>
+<h4>4.1. 随机负载均衡的实现</h4>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">/**</span><span style="color: #008000;">
+ * This class select one provider from multiple providers randomly.
+ * You can define weights for each provider:
+ * If the weights are all the same then it will use random.nextInt(number of invokers).
+ * If the weights are different then it will use random.nextInt(w1 + w2 + ... + wn)
+ * Note that if the performance of the machine is better than others, you can set a larger weight.
+ * If the performance is not so good, you can set a smaller weight.
+ </span><span style="color: #008000;">*/</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> RandomLoadBalance <span style="color: #0000ff;">extends</span><span style="color: #000000;"> AbstractLoadBalance {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 标识自身</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> String NAME = "random"<span style="color: #000000;">;
+
+    </span><span style="color: #008000;">/**</span><span style="color: #008000;">
+     * Select one invoker between a list using a random criteria
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> invokers List of possible invokers
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> url URL
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> invocation Invocation
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> &lt;T&gt;
+     * </span><span style="color: #808080;">@return</span><span style="color: #008000;"> The selected invoker
+     </span><span style="color: #008000;">*/</span><span style="color: #000000;">
+    @Override
+    </span><span style="color: #0000ff;">protected</span> &lt;T&gt; Invoker&lt;T&gt; doSelect(List&lt;Invoker&lt;T&gt;&gt;<span style="color: #000000;"> invokers, URL url, Invocation invocation) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> Number of invokers</span>
+        <span style="color: #0000ff;">int</span> length =<span style="color: #000000;"> invokers.size();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> Every invoker has the same weight?</span>
+        <span style="color: #0000ff;">boolean</span> sameWeight = <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> the weight of every invokers</span>
+        <span style="color: #0000ff;">int</span>[] weights = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">[length];
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> the first invoker's weight</span>
+        <span style="color: #0000ff;">int</span> firstWeight = getWeight(invokers.get(0<span style="color: #000000;">), invocation);
+        weights[</span>0] =<span style="color: #000000;"> firstWeight;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> The sum of weights</span>
+        <span style="color: #0000ff;">int</span> totalWeight =<span style="color: #000000;"> firstWeight;
+        </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 1; i &lt; length; i++<span style="color: #000000;">) {
+            </span><span style="color: #0000ff;">int</span> weight =<span style="color: #000000;"> getWeight(invokers.get(i), invocation);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> save for later use</span>
+            weights[i] =<span style="color: #000000;"> weight;
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 计算出所有权重和，以便在进行随机时设定范围</span>
+            totalWeight +=<span style="color: #000000;"> weight;
+            </span><span style="color: #0000ff;">if</span> (sameWeight &amp;&amp; weight !=<span style="color: #000000;"> firstWeight) {
+                sameWeight </span>= <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+            }
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 针对各提供供者权重不一的情况，则找到第一个大于随机数的提供者即可</span>
+        <span style="color: #0000ff;">if</span> (totalWeight &gt; 0 &amp;&amp; !<span style="color: #000000;">sameWeight) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> If (not every invoker has the same weight &amp; at least one invoker's weight&gt;0), select randomly based on totalWeight.</span>
+            <span style="color: #0000ff;">int</span> offset =<span style="color: #000000;"> ThreadLocalRandom.current().nextInt(totalWeight);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> Return a invoker based on the random value.</span>
+            <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; length; i++<span style="color: #000000;">) {
+                offset </span>-=<span style="color: #000000;"> weights[i];
+                </span><span style="color: #0000ff;">if</span> (offset &lt; 0<span style="color: #000000;">) {
+                    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> invokers.get(i);
+                }
+            }
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> If all invokers have the same weight value or totalWeight=0, return evenly.
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 如果大家权重都一样，则直接以个数进行随机即可得到提供者</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> invokers.get(ThreadLocalRandom.current().nextInt(length));
+    }
+
+}</span></pre>
+</div>
+<p>　　稍微有点小技巧的就是，针对不一样权重的随机实现，以相减的方式找到第一个为负的提供者即可。注意，此处计算各提供者权重的算法，倒成了难点了有木有。</p>
+<p>&nbsp;</p>
+<h4>4.2. 轮询负载均衡的实现</h4>
+<div class="cnblogs_code">
+<pre>    
+<span style="color: #008000;">/**</span><span style="color: #008000;">
+ * Round robin load balance.
+ </span><span style="color: #008000;">*/</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> RoundRobinLoadBalance <span style="color: #0000ff;">extends</span><span style="color: #000000;"> AbstractLoadBalance {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 自身标识</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> String NAME = "roundrobin"<span style="color: #000000;">;
+    
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span> RECYCLE_PERIOD = 60000<span style="color: #000000;">;
+    
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> WeightedRoundRobin {
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> weight;
+        </span><span style="color: #0000ff;">private</span> AtomicLong current = <span style="color: #0000ff;">new</span> AtomicLong(0<span style="color: #000000;">);
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">long</span><span style="color: #000000;"> lastUpdate;
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> getWeight() {
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> weight;
+        }
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> setWeight(<span style="color: #0000ff;">int</span><span style="color: #000000;"> weight) {
+            </span><span style="color: #0000ff;">this</span>.weight =<span style="color: #000000;"> weight;
+            current.set(</span>0<span style="color: #000000;">);
+        }
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">long</span><span style="color: #000000;"> increaseCurrent() {
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> current.addAndGet(weight);
+        }
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> sel(<span style="color: #0000ff;">int</span><span style="color: #000000;"> total) {
+            current.addAndGet(</span>-1 *<span style="color: #000000;"> total);
+        }
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">long</span><span style="color: #000000;"> getLastUpdate() {
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> lastUpdate;
+        }
+        </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> setLastUpdate(<span style="color: #0000ff;">long</span><span style="color: #000000;"> lastUpdate) {
+            </span><span style="color: #0000ff;">this</span>.lastUpdate =<span style="color: #000000;"> lastUpdate;
+        }
+    }
+
+    </span><span style="color: #0000ff;">private</span> ConcurrentMap&lt;String, ConcurrentMap&lt;String, WeightedRoundRobin&gt;&gt; methodWeightMap = <span style="color: #0000ff;">new</span> ConcurrentHashMap&lt;String, ConcurrentMap&lt;String, WeightedRoundRobin&gt;&gt;<span style="color: #000000;">();
+    </span><span style="color: #0000ff;">private</span> AtomicBoolean updateLock = <span style="color: #0000ff;">new</span><span style="color: #000000;"> AtomicBoolean();
+    
+    </span><span style="color: #008000;">/**</span><span style="color: #008000;">
+     * get invoker addr list cached for specified invocation
+     * &lt;p&gt;
+     * &lt;b&gt;for unit test only&lt;/b&gt;
+     * 
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> invokers
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> invocation
+     * </span><span style="color: #808080;">@return</span>
+     <span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">protected</span> &lt;T&gt; Collection&lt;String&gt; getInvokerAddrList(List&lt;Invoker&lt;T&gt;&gt;<span style="color: #000000;"> invokers, Invocation invocation) {
+        String key </span>= invokers.get(0).getUrl().getServiceKey() + "." +<span style="color: #000000;"> invocation.getMethodName();
+        Map</span>&lt;String, WeightedRoundRobin&gt; map =<span style="color: #000000;"> methodWeightMap.get(key);
+        </span><span style="color: #0000ff;">if</span> (map != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> map.keySet();
+        }
+        </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+    }
+    
+    @Override
+    </span><span style="color: #0000ff;">protected</span> &lt;T&gt; Invoker&lt;T&gt; doSelect(List&lt;Invoker&lt;T&gt;&gt;<span style="color: #000000;"> invokers, URL url, Invocation invocation) {
+        String key </span>= invokers.get(0).getUrl().getServiceKey() + "." +<span style="color: #000000;"> invocation.getMethodName();
+        ConcurrentMap</span>&lt;String, WeightedRoundRobin&gt; map =<span style="color: #000000;"> methodWeightMap.get(key);
+        </span><span style="color: #0000ff;">if</span> (map == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+            methodWeightMap.putIfAbsent(key, </span><span style="color: #0000ff;">new</span> ConcurrentHashMap&lt;String, WeightedRoundRobin&gt;<span style="color: #000000;">());
+            map </span>=<span style="color: #000000;"> methodWeightMap.get(key);
+        }
+        </span><span style="color: #0000ff;">int</span> totalWeight = 0<span style="color: #000000;">;
+        </span><span style="color: #0000ff;">long</span> maxCurrent =<span style="color: #000000;"> Long.MIN_VALUE;
+        </span><span style="color: #0000ff;">long</span> now =<span style="color: #000000;"> System.currentTimeMillis();
+        Invoker</span>&lt;T&gt; selectedInvoker = <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        WeightedRoundRobin selectedWRR </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">for</span> (Invoker&lt;T&gt;<span style="color: #000000;"> invoker : invokers) {
+            String identifyString </span>=<span style="color: #000000;"> invoker.getUrl().toIdentityString();
+            WeightedRoundRobin weightedRoundRobin </span>=<span style="color: #000000;"> map.get(identifyString);
+            </span><span style="color: #0000ff;">int</span> weight =<span style="color: #000000;"> getWeight(invoker, invocation);
+
+            </span><span style="color: #0000ff;">if</span> (weightedRoundRobin == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                weightedRoundRobin </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> WeightedRoundRobin();
+                weightedRoundRobin.setWeight(weight);
+                map.putIfAbsent(identifyString, weightedRoundRobin);
+            }
+            </span><span style="color: #0000ff;">if</span> (weight !=<span style="color: #000000;"> weightedRoundRobin.getWeight()) {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">weight changed</span>
+<span style="color: #000000;">                weightedRoundRobin.setWeight(weight);
+            }
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 自增权重</span>
+            <span style="color: #0000ff;">long</span> cur =<span style="color: #000000;"> weightedRoundRobin.increaseCurrent();
+            weightedRoundRobin.setLastUpdate(now);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 获取最大权重项，并以对应的 invoker 作为本次选择的实例</span>
+            <span style="color: #0000ff;">if</span> (cur &gt;<span style="color: #000000;"> maxCurrent) {
+                maxCurrent </span>=<span style="color: #000000;"> cur;
+                selectedInvoker </span>=<span style="color: #000000;"> invoker;
+                selectedWRR </span>=<span style="color: #000000;"> weightedRoundRobin;
+            }
+            totalWeight </span>+=<span style="color: #000000;"> weight;
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 当invoker数量发生变化时，需要能感知到，以便清理 map, 避免内存泄露</span>
+        <span style="color: #0000ff;">if</span> (!updateLock.get() &amp;&amp; invokers.size() !=<span style="color: #000000;"> map.size()) {
+            </span><span style="color: #0000ff;">if</span> (updateLock.compareAndSet(<span style="color: #0000ff;">false</span>, <span style="color: #0000ff;">true</span><span style="color: #000000;">)) {
+                </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> copy -&gt; modify -&gt; update reference
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 超出计数周期，则清空原来的 WeightedRoundRobin</span>
+                    ConcurrentMap&lt;String, WeightedRoundRobin&gt; newMap = <span style="color: #0000ff;">new</span> ConcurrentHashMap&lt;&gt;<span style="color: #000000;">(map);
+                    newMap.entrySet().removeIf(item </span>-&gt; now - item.getValue().getLastUpdate() &gt;<span style="color: #000000;"> RECYCLE_PERIOD);
+                    methodWeightMap.put(key, newMap);
+                } </span><span style="color: #0000ff;">finally</span><span style="color: #000000;"> {
+                    updateLock.set(</span><span style="color: #0000ff;">false</span><span style="color: #000000;">);
+                }
+            }
+        }
+        </span><span style="color: #0000ff;">if</span> (selectedInvoker != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 将本次选中的invoker, 权重置为最低, 以便下次不会再被选中</span>
+<span style="color: #000000;">            selectedWRR.sel(totalWeight);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> selectedInvoker;
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> should not happen here</span>
+        <span style="color: #0000ff;">return</span> invokers.get(0<span style="color: #000000;">);
+    }
+
+}</span></pre>
+</div>
+<p>　　依次从最大权重的invoker开始选择，然后将选中的项放到最后，轮流选中。使用一个 ConcurrentHashMap 来保存每个url的权重信息，且维护其活跃性。</p>
+<p>&nbsp;</p>
+<h4>4.3. 最少活跃调用数负载均衡的实现</h4>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">/**</span><span style="color: #008000;">
+ * LeastActiveLoadBalance
+ * &lt;p&gt;
+ * Filter the number of invokers with the least number of active calls and count the weights and quantities of these invokers.
+ * If there is only one invoker, use the invoker directly;
+ * if there are multiple invokers and the weights are not the same, then random according to the total weight;
+ * if there are multiple invokers and the same weight, then randomly called.
+ </span><span style="color: #008000;">*/</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> LeastActiveLoadBalance <span style="color: #0000ff;">extends</span><span style="color: #000000;"> AbstractLoadBalance {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 自身标识</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> String NAME = "leastactive"<span style="color: #000000;">;
+
+    @Override
+    </span><span style="color: #0000ff;">protected</span> &lt;T&gt; Invoker&lt;T&gt; doSelect(List&lt;Invoker&lt;T&gt;&gt;<span style="color: #000000;"> invokers, URL url, Invocation invocation) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> Number of invokers</span>
+        <span style="color: #0000ff;">int</span> length =<span style="color: #000000;"> invokers.size();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> The least active value of all invokers</span>
+        <span style="color: #0000ff;">int</span> leastActive = -1<span style="color: #000000;">;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> The number of invokers having the same least active value (leastActive)</span>
+        <span style="color: #0000ff;">int</span> leastCount = 0<span style="color: #000000;">;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> The index of invokers having the same least active value (leastActive)</span>
+        <span style="color: #0000ff;">int</span>[] leastIndexes = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">[length];
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> the weight of every invokers</span>
+        <span style="color: #0000ff;">int</span>[] weights = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">[length];
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> The sum of the warmup weights of all the least active invokers</span>
+        <span style="color: #0000ff;">int</span> totalWeight = 0<span style="color: #000000;">;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> The weight of the first least active invoker</span>
+        <span style="color: #0000ff;">int</span> firstWeight = 0<span style="color: #000000;">;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> Every least active invoker has the same weight value?</span>
+        <span style="color: #0000ff;">boolean</span> sameWeight = <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+
+
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> Filter out all the least active invokers</span>
+        <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; length; i++<span style="color: #000000;">) {
+            Invoker</span>&lt;T&gt; invoker =<span style="color: #000000;"> invokers.get(i);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> Get the active number of the invoker</span>
+            <span style="color: #0000ff;">int</span> active =<span style="color: #000000;"> RpcStatus.getStatus(invoker.getUrl(), invocation.getMethodName()).getActive();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> Get the weight of the invoker's configuration. The default value is 100.</span>
+            <span style="color: #0000ff;">int</span> afterWarmup =<span style="color: #000000;"> getWeight(invoker, invocation);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> save for later use</span>
+            weights[i] =<span style="color: #000000;"> afterWarmup;
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> If it is the first invoker or the active number of the invoker is less than the current least active number</span>
+            <span style="color: #0000ff;">if</span> (leastActive == -1 || active &lt;<span style="color: #000000;"> leastActive) {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Reset the active number of the current invoker to the least active number</span>
+                leastActive =<span style="color: #000000;"> active;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Reset the number of least active invokers</span>
+                leastCount = 1<span style="color: #000000;">;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Put the first least active invoker first in leastIndexes</span>
+                leastIndexes[0] =<span style="color: #000000;"> i;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Reset totalWeight</span>
+                totalWeight =<span style="color: #000000;"> afterWarmup;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Record the weight the first least active invoker</span>
+                firstWeight =<span style="color: #000000;"> afterWarmup;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Each invoke has the same weight (only one invoker here)</span>
+                sameWeight = <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> If current invoker's active value equals with leaseActive, then accumulating.</span>
+            } <span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span> (active ==<span style="color: #000000;"> leastActive) {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Record the index of the least active invoker in leastIndexes order</span>
+                leastIndexes[leastCount++] =<span style="color: #000000;"> i;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Accumulate the total weight of the least active invoker</span>
+                totalWeight +=<span style="color: #000000;"> afterWarmup;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> If every invoker has the same weight?</span>
+                <span style="color: #0000ff;">if</span> (sameWeight &amp;&amp; i &gt; 0
+                        &amp;&amp; afterWarmup !=<span style="color: #000000;"> firstWeight) {
+                    sameWeight </span>= <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+                }
+            }
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> Choose an invoker from all the least active invokers</span>
+        <span style="color: #0000ff;">if</span> (leastCount == 1<span style="color: #000000;">) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 如果只有一个最小则直接返回
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> If we got exactly one invoker having the least active value, return this invoker directly.</span>
+            <span style="color: #0000ff;">return</span> invokers.get(leastIndexes[0<span style="color: #000000;">]);
+        }
+        </span><span style="color: #0000ff;">if</span> (!sameWeight &amp;&amp; totalWeight &gt; 0<span style="color: #000000;">) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> If (not every invoker has the same weight &amp; at least one invoker's weight&gt;0), select randomly based on 
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> totalWeight.
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 如果权重不相同且权重大于0则按总权重数随机
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 并确定随机值落在哪个片断上（第一个相减为负的值）</span>
+            <span style="color: #0000ff;">int</span> offsetWeight =<span style="color: #000000;"> ThreadLocalRandom.current().nextInt(totalWeight);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> Return a invoker based on the random value.</span>
+            <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; leastCount; i++<span style="color: #000000;">) {
+                </span><span style="color: #0000ff;">int</span> leastIndex =<span style="color: #000000;"> leastIndexes[i];
+                offsetWeight </span>-=<span style="color: #000000;"> weights[leastIndex];
+                </span><span style="color: #0000ff;">if</span> (offsetWeight &lt; 0<span style="color: #000000;">) {
+                    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> invokers.get(leastIndex);
+                }
+            }
+        }
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> If all invokers have the same weight value or totalWeight=0, return evenly.</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> invokers.get(leastIndexes[ThreadLocalRandom.current().nextInt(leastCount)]);
+    }
+}</span></pre>
+</div>
+<p>　　官方解释：最少活跃调用数，相同活跃数的随机，活跃数指调用前后计数差，使慢的机器收到更少。</p>
+<p>　　额，有点难以理解的样子。</p>
+<p>&nbsp;</p>
+<h4>4.4. 一致性哈希负载均衡的实现</h4>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">/**</span><span style="color: #008000;">
+ * ConsistentHashLoadBalance
+ </span><span style="color: #008000;">*/</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> ConsistentHashLoadBalance <span style="color: #0000ff;">extends</span><span style="color: #000000;"> AbstractLoadBalance {
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> String NAME = "consistenthash"<span style="color: #000000;">;
+
+    </span><span style="color: #008000;">/**</span><span style="color: #008000;">
+     * Hash nodes name
+     * 通过 指定 hash.nodes=0,1,2... 可以自定义参与一致性hash的参数列表
+     </span><span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> String HASH_NODES = "hash.nodes"<span style="color: #000000;">;
+
+    </span><span style="color: #008000;">/**</span><span style="color: #008000;">
+     * Hash arguments name
+     </span><span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> String HASH_ARGUMENTS = "hash.arguments"<span style="color: #000000;">;
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 使用selector 保存某个固定状态时 invoker 的映射关系</span>
+    <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">final</span> ConcurrentMap&lt;String, ConsistentHashSelector&lt;?&gt;&gt; selectors = <span style="color: #0000ff;">new</span> ConcurrentHashMap&lt;String, ConsistentHashSelector&lt;?&gt;&gt;<span style="color: #000000;">();
+
+    @SuppressWarnings(</span>"unchecked"<span style="color: #000000;">)
+    @Override
+    </span><span style="color: #0000ff;">protected</span> &lt;T&gt; Invoker&lt;T&gt; doSelect(List&lt;Invoker&lt;T&gt;&gt;<span style="color: #000000;"> invokers, URL url, Invocation invocation) {
+        String methodName </span>=<span style="color: #000000;"> RpcUtils.getMethodName(invocation);
+        String key </span>= invokers.get(0).getUrl().getServiceKey() + "." +<span style="color: #000000;"> methodName;
+        </span><span style="color: #0000ff;">int</span> identityHashCode =<span style="color: #000000;"> System.identityHashCode(invokers);
+        ConsistentHashSelector</span>&lt;T&gt; selector = (ConsistentHashSelector&lt;T&gt;<span style="color: #000000;">) selectors.get(key);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 第一次进入或者 identityHashCode 不相等时（invoker环境发生了变化）</span>
+        <span style="color: #0000ff;">if</span> (selector == <span style="color: #0000ff;">null</span> || selector.identityHashCode !=<span style="color: #000000;"> identityHashCode) {
+            selectors.put(key, </span><span style="color: #0000ff;">new</span> ConsistentHashSelector&lt;T&gt;<span style="color: #000000;">(invokers, methodName, identityHashCode));
+            selector </span>= (ConsistentHashSelector&lt;T&gt;<span style="color: #000000;">) selectors.get(key);
+        }
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> selector.select(invocation);
+    }
+
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">class</span> ConsistentHashSelector&lt;T&gt;<span style="color: #000000;"> {
+
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">final</span> TreeMap&lt;Long, Invoker&lt;T&gt;&gt;<span style="color: #000000;"> virtualInvokers;
+
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> replicaNumber;
+
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> identityHashCode;
+
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">[] argumentIndex;
+
+        ConsistentHashSelector(List</span>&lt;Invoker&lt;T&gt;&gt; invokers, String methodName, <span style="color: #0000ff;">int</span><span style="color: #000000;"> identityHashCode) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 存放虚拟节点</span>
+            <span style="color: #0000ff;">this</span>.virtualInvokers = <span style="color: #0000ff;">new</span> TreeMap&lt;Long, Invoker&lt;T&gt;&gt;<span style="color: #000000;">();
+            </span><span style="color: #0000ff;">this</span>.identityHashCode =<span style="color: #000000;"> identityHashCode;
+            URL url </span>= invokers.get(0<span style="color: #000000;">).getUrl();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> hash.nodes 默认是 160</span>
+            <span style="color: #0000ff;">this</span>.replicaNumber = url.getMethodParameter(methodName, HASH_NODES, 160<span style="color: #000000;">);
+            String[] index </span>= COMMA_SPLIT_PATTERN.split(url.getMethodParameter(methodName, HASH_ARGUMENTS, "0"<span style="color: #000000;">));
+            argumentIndex </span>= <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">int</span><span style="color: #000000;">[index.length];
+            </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; index.length; i++<span style="color: #000000;">) {
+                argumentIndex[i] </span>=<span style="color: #000000;"> Integer.parseInt(index[i]);
+            }
+            </span><span style="color: #0000ff;">for</span> (Invoker&lt;T&gt;<span style="color: #000000;"> invoker : invokers) {
+                String address </span>=<span style="color: #000000;"> invoker.getUrl().getAddress();
+                </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; replicaNumber / 4; i++<span style="color: #000000;">) {
+                    </span><span style="color: #0000ff;">byte</span>[] digest = md5(address +<span style="color: #000000;"> i);
+                    </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> h = 0; h &lt; 4; h++<span style="color: #000000;">) {
+                        </span><span style="color: #0000ff;">long</span> m =<span style="color: #000000;"> hash(digest, h);
+                        virtualInvokers.put(m, invoker);
+                    }
+                }
+            }
+        }
+
+        </span><span style="color: #0000ff;">public</span> Invoker&lt;T&gt;<span style="color: #000000;"> select(Invocation invocation) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 取出参与一致性hash计算的参数信息</span>
+            String key =<span style="color: #000000;"> toKey(invocation.getArguments());
+            </span><span style="color: #0000ff;">byte</span>[] digest =<span style="color: #000000;"> md5(key);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 根据hash值选取 invoker</span>
+            <span style="color: #0000ff;">return</span> selectForKey(hash(digest, 0<span style="color: #000000;">));
+        }
+
+        </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String toKey(Object[] args) {
+            StringBuilder buf </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> StringBuilder();
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 按照指定的参与hash的参数，调用 toString() 方法，得到参数标识信息</span>
+            <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span><span style="color: #000000;"> i : argumentIndex) {
+                </span><span style="color: #0000ff;">if</span> (i &gt;= 0 &amp;&amp; i &lt;<span style="color: #000000;"> args.length) {
+                    buf.append(args[i]);
+                }
+            }
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> buf.toString();
+        }
+
+        </span><span style="color: #0000ff;">private</span> Invoker&lt;T&gt; selectForKey(<span style="color: #0000ff;">long</span><span style="color: #000000;"> hash) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> ceilingEntry</span>
+            Map.Entry&lt;Long, Invoker&lt;T&gt;&gt; entry =<span style="color: #000000;"> virtualInvokers.ceilingEntry(hash);
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 如果没有找到，取第一个值</span>
+            <span style="color: #0000ff;">if</span> (entry == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                entry </span>=<span style="color: #000000;"> virtualInvokers.firstEntry();
+            }
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> entry.getValue();
+        }
+
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">long</span> hash(<span style="color: #0000ff;">byte</span>[] digest, <span style="color: #0000ff;">int</span><span style="color: #000000;"> number) {
+            </span><span style="color: #0000ff;">return</span> (((<span style="color: #0000ff;">long</span>) (digest[3 + number * 4] &amp; 0xFF) &lt;&lt; 24<span style="color: #000000;">)
+                    </span>| ((<span style="color: #0000ff;">long</span>) (digest[2 + number * 4] &amp; 0xFF) &lt;&lt; 16<span style="color: #000000;">)
+                    </span>| ((<span style="color: #0000ff;">long</span>) (digest[1 + number * 4] &amp; 0xFF) &lt;&lt; 8<span style="color: #000000;">)
+                    </span>| (digest[number * 4] &amp; 0xFF<span style="color: #000000;">))
+                    </span>&amp; 0xFFFFFFFFL<span style="color: #000000;">;
+        }
+
+        </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">byte</span><span style="color: #000000;">[] md5(String value) {
+            MessageDigest md5;
+            </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+                md5 </span>= MessageDigest.getInstance("MD5"<span style="color: #000000;">);
+            } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (NoSuchAlgorithmException e) {
+                </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span><span style="color: #000000;"> IllegalStateException(e.getMessage(), e);
+            }
+            md5.reset();
+            </span><span style="color: #0000ff;">byte</span>[] bytes =<span style="color: #000000;"> value.getBytes(StandardCharsets.UTF_8);
+            md5.update(bytes);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> md5.digest();
+        }
+
+    }
+
+}</span></pre>
+</div>
+<p>　　主要就是取第多少个参数，参与hashCode的计算，然后按照一致性hash算法，定位invoker. 它使用一个 TreeMap 来保存一致性哈希虚拟节点，hashCode-&gt;invoker形式存储，使用 ceilingEntry(hash) 的方式获取最近的虚拟节点（天然的一致性hash应用）。</p>
+<p>　　值得一提的是，一致性哈希负载均衡策略是唯一一个没有使用到权重项的负载均衡算法。而前面几种均衡算法，多少都与权重相关。该负载均衡的应用场景嘛，还得自己找了。</p>
+<p>&nbsp;</p>
+<h3>5. 更多的负载均衡策略？</h3>
+<p>　　dubbo实现了4种负载均衡策略，是否就只能是这么多呢？一个好的设计是不会的，对扩展开放。基于dubbo的SPI机制，可以自行实现任意的负载均衡策略！</p>
+<p> 　　1. 实现 LoadBalance 接口;<br />	　　2. 添加资源文件 添加文件:src/main/resource/META-INF/dubbo/com.alibaba.dubbo.rpc.cluster.LoadBalance;</p>
+<div class="cnblogs_code">
+<pre>　　demo=my=com.demo.dubbo.DemoLoadBalance</pre>
+</div>
+<p>　　3. 设置负载均衡策略为自己实现的demo;</p>
+<p>&nbsp;</p>
+<h3>6. 有了负载均衡就可以保证高可用了吗？</h3>
+<p>　　当然不能。负载均衡只是保证了在发生调用的时候，可以将流量按照既定规定均摊到各机器上。然而，均摊是不是最合理的方式却是不一定的。另外，如果发生异常，此次负载均衡就失败了，从而成功躲过了高可用。</p>
+<p>　　事实上，dubbo用三种方式协同保证了高可用：</p>
+<p> 　　　　1. 负载均衡<br />		　　　　2. 集群容错<br />		　　　　3. 服务路由</p>
+<p>　　以下故事描述摘自官网：</p>
+<blockquote>
+<p> 这3个概念容易混淆。他们都描述了怎么从多个 Provider 中选择一个来进行调用。那他们到底有什么区别呢?下面我来举一个简单的例子，把这几个概念阐述清楚吧。<br />	有一个Dubbo的用户服务，在北京部署了10个，在上海部署了20个。一个杭州的服务消费方发起了一次调用，然后发生了以下的事情:<br />	根据配置的路由规则，如果杭州发起的调用，会路由到比较近的上海的20个 Provider。<br />	根据配置的随机负载均衡策略，在20个 Provider 中随机选择了一个来调用，假设随机到了第7个 Provider。<br />	结果调用第7个 Provider 失败了。<br />	根据配置的Failover集群容错模式，重试其他服务器。<br />	重试了第13个 Provider，调用成功。<br />	上面的第1，2，4步骤就分别对应了路由，负载均衡和集群容错。 Dubbo中，先通过路由，从多个 Provider 中按照路由规则，选出一个子集。再根据负载均衡从子集中选出一个 Provider 进行本次调用。如果调用失败了，根据集群容错策略，进行重试或定时重发或快速失败等。 可以看到Dubbo中的路由，负载均衡和集群容错发生在一次RPC调用的不同阶段。最先是路由，然后是负载均衡，最后是集群容错。&nbsp;</p>
+<p>&nbsp;</p>
+
+
+</blockquote>
+<p>&nbsp;</p>
+<p>　　</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-19 22:10</span>&nbsp;
+<a href="https://www.cnblogs.com/yougewe/">等你归去来</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12734558" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12734558);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 251865, cb_blogApp = 'yougewe', cb_blogUserGuid = '85007e7e-9780-e511-9fc1-ac853d9f53cc';
+    var cb_entryId = 12734558, cb_entryCreatedDate = '2020-04-19 22:10', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 等你归去来
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script language="javascript" type="text/javascript">
+// 生成目录索引列表
+// ref: http://www.cnblogs.com/wangqiguo/p/4355032.html
+// modified by: zzq
+function GenerateContentList()
+{
+    var mainContent = $('#cnblogs_post_body');
+	var h2_ele = 'h3';
+	var h3_ele = 'h4';
+    var h2_list = $('#cnblogs_post_body ' + h2_ele);//如果你的章节标题不是h2,只需要将这里的h2换掉即可
+ 
+    if(mainContent.length < 1)
+        return;
+  
+    if(h2_list.length>0)
+    {
+        var content = '<a name="_labelTop"></a>';
+        content += '<div id="navCategory" style="color:#152e97;">';
+        content += '<p style="font-size:18px;"><b>目录</b></p>';
+        content += '<ul>';
+        for(var i=0; i<h2_list.length; i++)
+        {
+            var go_to_top = '<div style="text-align: right;"><a href="#_labelTop" style="color:#f68a33">返回顶部</a><a name="_label' + i + '"></a></div>';
+            $(h2_list[i]).before(go_to_top);
+             
+            var h3_list = $(h2_list[i]).nextAll(h3_ele);
+            var li3_content = '';
+            for(var j=0; j<h3_list.length; j++)
+            {
+                var tmp = $(h3_list[j]).prevAll(h2_ele).first();
+                if(!tmp.is(h2_list[i]))
+                    break;
+                var li3_anchor = '<a name="_label' + i + '_' + j + '"></a>';
+                $(h3_list[j]).before(li3_anchor);
+                li3_content += '<li><a href="#_label' + i + '_' + j + '">' + $(h3_list[j]).text() + '</a></li>';
+            }
+             
+            var li2_content = '';
+            if(li3_content.length > 0)
+                li2_content = '<li><a href="#_label' + i + '">' + $(h2_list[i]).text() + '</a><ul>' + li3_content + '</ul></li>';
+            else
+                li2_content = '<li><a href="#_label' + i + '">' + $(h2_list[i]).text() + '</a></li>';
+            content += li2_content;
+        }
+        content += '</ul>';
+        content += '</div><p> </p>';
+        content += '<hr style="height:1px;border:none;border-top:1px dashed #0066CC;"/>';
+        if($('#cnblogs_post_body').length != 0 )
+        {
+            $($('#cnblogs_post_body')[0]).prepend(content);
+        }
+    }  
+}
+ 
+GenerateContentList();
+</script>
+    </div>
+</body>
+</html>

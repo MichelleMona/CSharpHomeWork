@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>波多尔斯基 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/podolski/custom.css?v=ailkZnJy5SEtevoTepStsXvnAYc=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/podolski/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/podolski/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/podolski/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 180064;
+        var currentBlogApp = 'podolski';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/podolski/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/podolski/">波多尔斯基</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/podolski/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/podolski/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+26&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+177</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/12734603.html">
+    IdentityServer4 QuckStart 授权与自定义Claims
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近在折腾IdentityServer4，为了简单，直接使用了官方给的QuickStart示例项目作为基础进行搭建。有一说一，为了保护一个API，感觉花费的时间比写一个API还要多。 本文基于ASP.NET CORE 3.1, IdentityServer4 3.1.3。代码皆为关键代码，贴全了太多            <a href="https://www.cnblogs.com/podolski/p/12734603.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-19 22:17 波多尔斯基 阅读 (142) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12734603" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2020/04/13.html">2020年4月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/12692888.html">
+     .NET项目升级：可为空引用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：c 8引入了新特性：“可为空引用”（ &quot;详情&quot; ），这个功能个人觉得挺好的，能够非常明确的表现程序设计者的意图，编译器能够进行检查，尽最大可能减小NullReferenceException错误。 如果是新项目，那么上手很简单，一点点搭建起来，遇山开山，遇河渡河。但是对于我这种手头上的项目大多都是以            <a href="https://www.cnblogs.com/podolski/p/12692888.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-13 17:55 波多尔斯基 阅读 (452) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12692888" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2020/04/11.html">2020年4月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/12682978.html">
+    ASP.NET CORE WEBAPI文件下载
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近要使用ASP.NET CORE WEBAPI用来下载文件，使用的.NET CORE 3.1。考虑如下场景： 1. 文件是程序生成的。 2. 文件应该能兼容各种格式。 3. 浏览器可以感知进行下载。 准备 经过简单的调研，得到以下结论。 ASP.NET CORE 提供FileResult这种类型的            <a href="https://www.cnblogs.com/podolski/p/12682978.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-11 23:12 波多尔斯基 阅读 (514) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12682978" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2019/08/31.html">2019年8月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/11440485.html">
+    xunit测试无法找到testhost或没有可用测试的问题解决方法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：xunit进行测试，需要安装如下几个包： 1. Microsoft.TestPlatform.TestHost 2. Microsoft.NET.Test.Sdk 3. xunit.runner.visualstudio 4. xunit 不安装1、2会出现找不到testhost，不安装第三个会出现            <a href="https://www.cnblogs.com/podolski/p/11440485.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-31 21:09 波多尔斯基 阅读 (161) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11440485" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2019/05/09.html">2019年5月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/10836241.html">
+    强迫症福利--收起.NET程序的dll来
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作为上床后需要下床检查好几次门关了没有的资深强迫症患者，有一个及其搞我的问题，就是dll问题。 曾几何时，在没有nuget的年代，当有依赖项需要引用的时候，只能通过文件引用来管理引用问题，版本问题，更新问题层出不穷，很是难受。 后来出来nuget，喜大普奔，总算解决了引用的问题。开心之余，依然还有一            <a href="https://www.cnblogs.com/podolski/p/10836241.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-05-09 01:22 波多尔斯基 阅读 (2421) 评论 (10)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10836241" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2019/05/04.html">2019年5月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/10807204.html">
+    使用高性能Pipelines构建.NET通讯程序
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：.NET Standard支持一组新的API，System.Span, System.Memory，还有System.IO.Pipelines。这几个新的API极大了提升了.NET程序的效能，将来.NET很多基础API都会使用它们进行重写。 Pipelines旨在解决.NET编写Socket通信程序            <a href="https://www.cnblogs.com/podolski/p/10807204.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-05-04 00:26 波多尔斯基 阅读 (5339) 评论 (17)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10807204" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2018/12/02.html">2018年12月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/10054286.html">
+    ASP.NET Core使用TopShelf部署Windows服务
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：asp.net core很大的方便了跨平台的开发者，linux的开发者可以使用apache和nginx来做反向代理，windows上可以用IIS进行反向代理。 反向代理可以提供很多特性，固然很好。但是还有复杂性，我们也可以使用windows service来直接启动kestrel。 asp.net             <a href="https://www.cnblogs.com/podolski/p/10054286.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-12-02 17:37 波多尔斯基 阅读 (4089) 评论 (20)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10054286" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2018/05/04.html">2018年5月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/8988683.html">
+    .NET Standard库引用导致的FileNotFoundException探究
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：微软近几年推出.NET Standard，将.NET Framework,.NET Core,Xamarin等目标平台的api进行标准化和统一化，极大地方便了类库编写人员的工作。简单的说，类库编写人员在发布库的时候，只需要基于.NET Standard进行发布，那么编写的程序可以在各个目标平台上都能            <a href="https://www.cnblogs.com/podolski/p/8988683.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-05-04 01:29 波多尔斯基 阅读 (889) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8988683" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2018/05/03.html">2018年5月3日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/8987595.html">
+    C#编译器优化那点事
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：使用C 编写程序，给最终用户的程序，是需要使用release配置的，而release配置和debug配置，有一个关键区别，就是release的 编译器 优化默认是启用的。 优化代码开关即optimize开关，和debug开关一起，有以下几种组合。 在Visual Sutdio中新建一个C 项目时，             <a href="https://www.cnblogs.com/podolski/p/8987595.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-05-03 21:22 波多尔斯基 阅读 (2345) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8987595" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/podolski/archive/2017/12/25.html">2017年12月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/podolski/p/8111734.html">
+    你为什么还坚持.NET
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：C 换什么比较合适？ 从TIOBE来看，Java、C++、C、Python都好，对了，还不能忘了JS。 Sql Server换什么比较合适？ MySql挺好，Oracle也不错，也还有不少选择。 都挺好，那问题来了，你为什么要换呢？ 最初踏进.NET的世界，很多人都是为了能够快速开发一个程序，解决一            <a href="https://www.cnblogs.com/podolski/p/8111734.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-25 23:45 波多尔斯基 阅读 (9626) 评论 (60)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8111734" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/podolski/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 波多尔斯基
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>
