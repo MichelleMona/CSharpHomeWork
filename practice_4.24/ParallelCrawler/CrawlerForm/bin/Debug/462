@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="一、前言 Redis 提供了5种数据类型：String（字符串）、Hash（哈希）、List（列表）、Set（集合）、Zset（有序集合），理解每种数据类型的特点对于redis的开发和运维非常重要。 " />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>《闲扯Redis五》List数据类型底层之quicklist - jstarseven - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jstarseven/custom.css?v=&#x2B;ZbMu/Wm9kZoWFdM1tWMgt3&#x2B;Z6Q=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jstarseven/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jstarseven/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jstarseven/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 199051;
+        var currentBlogApp = 'jstarseven';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jstarseven/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jstarseven/">jstarseven </a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jstarseven/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/jstarseven">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jstarseven/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+151&nbsp; </span>
+<span id="stats_article_count">文章 - 
+22&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+84</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12765251.html">《闲扯Redis五》List数据类型底层之quicklist</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <hr>
+<h2 id="一、前言">一、前言</h2>
+<blockquote>
+<p><strong>Redis</strong> 提供了5种数据类型：String（字符串）、Hash（哈希）、List（列表）、Set（集合）、Zset（有序集合），理解每种数据类型的特点对于redis的开发和运维非常重要。</p>
+</blockquote>
+<p align="right"><a href="http://www.yund.tech/zdetail.html?type=1&id=b07bd6866fa5c4840e2f389c749db4af">原文解析</a></p>
+<p><img src="http://www.yund.tech/yund-cms//sys/common/view/files/20200402/list-2.png" alt="Redis五种数据类型"></p>
+<p><strong>Redis</strong> 中的 list 是我们经常使用到的一种数据类型，根据使用方式的不同，可以应用到很多场景中。</p>
+<h2 id="二、底层解析">二、底层解析</h2>
+<h3 id="1、上节回顾">1、上节回顾</h3>
+<p> 上节<strong>《闲扯Redis四》List数据类型底层编码转换</strong> 说道，在 3.0 版本的 Redis 中，List 类型有两种实现方式：</p>
+<blockquote>
+<p>1、使用压缩列表（ziplist）实现的列表对象。</p>
+</blockquote>
+<blockquote>
+<p>2、使用双端链表（linkedlist）实现的列表对象。</p>
+</blockquote>
+<p>在 3.2 版本后新增了 <strong>quicklist</strong> 数据结构实现了 list，现在就来分析下 <strong>quicklist</strong> 的结构</p>
+<h3 id="2、官方描述">2、官方描述</h3>
+<p> 先来看看 Redis 官方对 quicklist 的描述：</p>
+<pre><code>    A doubly linked list of ziplists
+
+    A generic doubly linked quicklist implementation
+</code></pre>
+<p> 可见 quicklist 是一个双向链表，并且是一个 ziplist 的双向链表，也就是说 quicklist 的每个节点都是一个 ziplist。而通过前面的文章咱们可以知道，ziplist 本身也是一个能维持数据项先后顺序的列表，而且数据项保存在一个连续的内存块中。那是不是意味着 quicklist 结合了压缩列表和双端链表的特点呢！<center><img src="http://www.yund.tech/yund-cms//sys/common/view/files/20200326/redis-lzyw.jpg" alt="Redis五种数据类型"></center></p>
+<h3 id="3、结构分析">3、结构分析</h3>
+<h4 id="quicklist-结构定义">quicklist 结构定义</h4>
+<pre><code class="language-java">/* 
+ * quicklist
+ */
+typedef struct quicklist {
+    //头结点
+    quicklistNode *head; 
+    //尾节点
+    quicklistNode *tail; 
+    //所有ziplist中entry数量
+    unsigned long count; 
+    //quicklistNodes节点数量
+    unsigned int len;   
+    //ziplist中entry能保存的数量,由list-max-ziplist-size配置项控制 
+    int fill : 16;       
+    //压缩深度,由list-compress-depth配置项控制
+    unsigned int compress : 16; 
+} quicklist;
+</code></pre>
+<h4 id="quicklist-结构属性注释">quicklist 结构属性注释</h4>
+<p>注释：</p>
+<blockquote>
+<p><strong>fill</strong> ：ziplist 中 entry 能保存的数量,由 list-max-ziplist-size 配置项控制</p>
+</blockquote>
+<pre><code>    表示了单个节点(quicklistNode)的负载比例(fill factor)，负数限制 quicklistNode 中的 ziplist 的字节长度, 
+    正数限制 quicklistNode 中的 ziplist 的最大长度。
+</code></pre>
+<pre><code class="language-xml">-5: 最大存储空间: 64 Kb &lt;-- 通常情况下不要设置这个值
+-4: 最大存储空间: 32 Kb &lt;-- 非常不推荐
+-3: 最大存储空间: 16 Kb &lt;-- 不推荐
+-2: 最大存储空间: 8 Kb &lt;-- 推荐
+-1: 最大存储空间: 4 Kb &lt;-- 推荐
+对于正整数则表示最多能存储到你设置的那个值, 当前的节点就装满了
+通常在 -2 (8 Kb size) 或 -1 (4 Kb size) 时, 性能表现最好
+</code></pre>
+<blockquote>
+<p><strong>compress</strong> ：压缩深度,由 list-compress-depth 配置项控制</p>
+</blockquote>
+<pre><code>    表示 quicklist 中的节点 quicklistNode, 除开最两端的 compress 个节点之后, 中间的节点都会被压缩（LZF压缩算法）。
+</code></pre>
+<h4 id="quicklistnode-结构定义">quicklistNode 结构定义</h4>
+<pre><code class="language-java">typedef struct quicklistNode {
+    //前节点指针
+    struct quicklistNode *prev; 
+    //后节点指针
+    struct quicklistNode *next; 
+    //数据指针。当前节点的数据没有压缩，那么它指向一个ziplist结构；否则，它指向一个quicklistLZF结构。
+    unsigned char *zl;
+    //zl指向的ziplist实际占用内存大小。需要注意的是：如果ziplist被压缩了，那么这个sz的值仍然是压缩前的ziplist大小
+    unsigned int sz;  
+    //ziplist里面包含的数据项个数
+    unsigned int count : 16;   
+    //ziplist是否压缩。取值：1--ziplist，2--quicklistLZF 
+    unsigned int encoding : 2; 
+    //存储类型，目前使用固定值2 表示使用ziplist存储
+    unsigned int container : 2; 
+    //当我们使用类似lindex这样的命令查看了某一项本来压缩的数据时，需要把数据暂时解压，这时就设置recompress=1做一个标记，等有机会再把数据重新压缩
+    unsigned int recompress : 1;
+    unsigned int attempted_compress : 1; /* node can't compress; too small */
+    unsigned int extra : 10; /* more bits to steal for future usage */
+} quicklistNode;
+</code></pre>
+<h4 id="quicklistlzf-结构定义">quicklistLZF 结构定义</h4>
+<pre><code class="language-java">typedef struct quicklistLZF {
+    unsigned int sz;  //压缩后的ziplist大小
+    char compressed[];//柔性数组，存放压缩后的ziplist字节数组
+} quicklistLZF;
+</code></pre>
+<h3 id="4、quicklist-结构图">4、quicklist 结构图</h3>
+<p> 根据上述结构体定义，咱们可以绘制一下 quicklist 的结构：<center><img src="http://www.yund.tech/yund-cms//sys/common/view/files/20200414/quicklist-2.png" alt="Redis五种数据类型"></center></p>
+<h2 id="三、要点总结">三、要点总结</h2>
+<h3 id="1、双端链表">1、双端链表</h3>
+<blockquote>
+<p>1.双端链表便于在表的两端进行 push 和 pop 操作，但是它的内存开销比较大；</p>
+</blockquote>
+<blockquote>
+<p>2.双端链表每个节点上除了要保存数据之外，还要额外保存两个指针；</p>
+</blockquote>
+<blockquote>
+<p>3.双端链表的各个节点是单独的内存块，地址不连续，节点多了容易产生内存碎片；</p>
+</blockquote>
+<h3 id="2、压缩列表">2、压缩列表</h3>
+<blockquote>
+<p>1.ziplist 由于是一整块连续内存，所以存储效率很高；</p>
+</blockquote>
+<blockquote>
+<p>2.ziplist 不利于修改操作，每次数据变动都会引发一次内存的 realloc；</p>
+</blockquote>
+<blockquote>
+<p>3.当 ziplist 长度很长的时候，一次 realloc 可能会导致大批量的数据拷贝，进一步降低性能；</p>
+</blockquote>
+<h3 id="3、quicklist">3、quicklist</h3>
+<blockquote>
+<p>1.空间效率和时间效率的折中；</p>
+</blockquote>
+<blockquote>
+<p>2.结合了双端链表和压缩列表的优点；<br>
+<br><center><img src="https://img2018.cnblogs.com/blog/675297/201909/675297-20190902100403256-127012580.png" alt="Redis五种数据类型"></center></p>
+</blockquote>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 09:11</span>&nbsp;
+<a href="https://www.cnblogs.com/jstarseven/">jstarseven</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765251" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12765251);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 199051, cb_blogApp = 'jstarseven', cb_blogUserGuid = '25540cbb-fb42-e411-b908-9dcfd8948a71';
+    var cb_entryId = 12765251, cb_entryCreatedDate = '2020-04-24 09:11', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 jstarseven
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

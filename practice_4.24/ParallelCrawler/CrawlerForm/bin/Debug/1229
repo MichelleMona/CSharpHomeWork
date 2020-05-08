@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="强烈推荐WPF入门学习网站： https://www.wpf-tutorial.com/ INotifyPropertyChanged：如果是类实例里的属性更改需要触发XAML改变，则该类需实现INo" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>WPF入门学习 - 舒碧 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=MH15aYd6DmX-6TABpA2xkiKENy3GAhiM2dh5rOPH89I" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/bibi-feiniaoyuan/custom.css?v=M1piyaPeL6fC8ioyk5m1IpAcBkc=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=X7swQJ1TyCJAf6FMVjDPbYhUAiMdNFddEy1-m0_TbFQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/bibi-feiniaoyuan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/bibi-feiniaoyuan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/bibi-feiniaoyuan/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 294943;
+        var currentBlogApp = 'bibi-feiniaoyuan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleBlue';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/bibi-feiniaoyuan/"></a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/bibi-feiniaoyuan/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+</li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/bibi-feiniaoyuan/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+100&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+19</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/bibi-feiniaoyuan/p/wpf.html">WPF入门学习</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p><span class="postTitle2">强烈推荐WPF入门学习网站：</span></p>
+<ol>
+<li><span class="postTitle2"><a href="https://www.wpf-tutorial.com/">https://www.wpf-tutorial.com/ </a></span></li>
+</ol>
+<p>&nbsp;</p>
+<p><span class="postTitle2">INotifyPropertyChanged：<span style="color: #000080;">如果是类实例里的属性更改需要触发XAML改变，则该类需实现<span class="postTitle2">INotifyPropertyChanged</span>接口。</span></span></p>
+<ul>
+<li><span class="postTitle2"><a title="https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html " href="https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html%20" target="_blank">https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html </a>第一节。</span></li>
+</ul>
+<p>Binding：绑定源可以是Wpf元素，.Net公用属性，自定义数据，ado.net数据、xml数据等。UpdateSourceTrigger有Default、Explict、LostFocus、PropertyChanged。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/zhili/p/WPFBinding.html">https://www.cnblogs.com/zhili/p/WPFBinding.html</a>第一、二、三节。</li>
+</ul>
+<p>Binding:来源有Source、DataContext、Element、RelativeSource。RelativeSource有FindAncestor、PreviousData、Self、TemplatedParent。</p>
+<ul>
+<li><a href="https://www.c-sharpcorner.com/UploadFile/yougerthen/relativesources-in-wpf/">https://www.c-sharpcorner.com/UploadFile/yougerthen/relativesources-in-wpf/</a></li>
+</ul>
+<p>优先级绑定：哪个先有值，就先赋值</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-implement-prioritybinding">https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/how-to-implement-prioritybinding</a></li>
+</ul>
+<p><span class="postTitle2"><span class="postTitle2">ObservableCollection</span>和List对比：<span style="color: #000080;">ObservableCollection更耗性能；ObservableCollection实现了INotifyCollectionChanged、INotifyPropertyChanged接口，集合里每一条数据增删，都能触发改变。</span></span></p>
+<ul>
+<li><span class="postTitle2"><span class="postTitle2"><a title="https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html " href="https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html%20" target="_blank">https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html </a>第二节。</span></span></li>
+</ul>
+<p>BindingMode的OneTime、OneWay、TwoWay：<span style="color: #000080;">OneTime性能较高，字段只需一次性设置则最好设置BindingMode为OneTime。</span></p>
+<ul>
+<li><a title="https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html" href="https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html" target="_blank">https://www.cnblogs.com/jax/archive/2009/10/13/1582128.html</a> 第三节。</li>
+</ul>
+<p>属性触发器：<span style="color: #000080;">当依赖属性的值改变时调用。</span></p>
+<ul>
+<li><a href="https://blog.csdn.net/cokeboxs/article/details/17372367">https://blog.csdn.net/cokeboxs/article/details/17372367</a></li>
+</ul>
+<p>数据触发器：<span style="color: #000080;">当.Net普通属性的值改变时调用；监听其他控件的属性值改变时调用。</span></p>
+<ul>
+<li><a href="https://www.cnblogs.com/sirkevin/archive/2012/10/08/2715036.html" target="_blank">https://www.cnblogs.com/sirkevin/archive/2012/10/08/2715036.html</a></li>
+<li><a href="https://www.wpf-tutorial.com/styles/trigger-datatrigger-event-trigger/">https://www.wpf-tutorial.com/styles/trigger-datatrigger-event-trigger/</a></li>
+</ul>
+<p>事件触发器：<span style="color: #000080;">指定的路由事件启动一组动作，永无终止。</span></p>
+<ul>
+<li><a href="https://www.wpf-tutorial.com/styles/trigger-datatrigger-event-trigger/">https://www.wpf-tutorial.com/styles/trigger-datatrigger-event-trigger/</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.eventtrigger?view=netframework-4.8">https://docs.microsoft.com/en-us/dotnet/api/system.windows.eventtrigger?view=netframework-4.8</a>。</li>
+</ul>
+<p>多触发器和多数据触发器：<span style="color: #000080;">满足多个条件时，改变属性或行为。</span></p>
+<ul>
+<li><a title="https://www.wpf-tutorial.com/zh/94/wpf%E6%A0%B7%E5%BC%8F/wpf%E5%A4%9A%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%A4%9A%E6%95%B0%E6%8D%AE%E8%A7%A6%E5%8F%91%E5%99%A8/" href="https://www.wpf-tutorial.com/zh/94/wpf%E6%A0%B7%E5%BC%8F/wpf%E5%A4%9A%E8%A7%A6%E5%8F%91%E5%99%A8%E5%92%8C%E5%A4%9A%E6%95%B0%E6%8D%AE%E8%A7%A6%E5%8F%91%E5%99%A8/" target="_blank">多触发器和多数据触发器。</a></li>
+</ul>
+<p>控件模板：<span style="color: #000080;">自定义控件的外观，相对Style，可以实现更高程度的改变。</span></p>
+<ul>
+<li><a href="https://www.cnblogs.com/huangxincheng/archive/2012/06/28/2566595.html" target="_blank">https://www.cnblogs.com/huangxincheng/archive/2012/06/28/2566595.html</a></li>
+</ul>
+<p>数据模板：控制数据的显示方式。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/huangxincheng/archive/2012/06/28/2566595.html">https://www.cnblogs.com/huangxincheng/archive/2012/06/28/2566595.html</a></li>
+</ul>
+<p>面板模板：自定义存放item的容器，控制item的排序方式。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/huangxincheng/archive/2012/06/28/2566595.html">https://www.cnblogs.com/huangxincheng/archive/2012/06/28/2566595.html</a></li>
+</ul>
+<p>层级模板：针对层级数据结构设计，每一个层级上都可以做DataTemplate。使用控件：TreeViewItem、MenuItem。</p>
+<ul>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/api/system.windows.hierarchicaldatatemplate?view=netframework-4.8">https://docs.microsoft.com/zh-cn/dotnet/api/system.windows.hierarchicaldatatemplate?view=netframework-4.8</a></li>
+</ul>
+<p>模板选择器：动态的选择模板，继承DataTemplateSelector，覆盖SelectTemplate方法。</p>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.datatemplateselector?view=netframework-4.8">https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.datatemplateselector?view=netframework-4.8</a></li>
+</ul>
+<p>逻辑树和可视化树：wpf控件的模板是视觉树、wpf控件之间的层次结构是逻辑树。</p>
+<ul>
+<li><a href="https://www.wpftutorial.net/LogicalAndVisualTree.html" target="_blank">https://www.wpftutorial.net/LogicalAndVisualTree.html</a></li>
+</ul>
+<p>依赖属性：1、使用属性对依赖属性进行包装，关键字有DependencyObject、DependencyProperty、Register；2、可以多处设置依赖属性值、但是有优先级之分，但有些值必须先满足某些条件才能显示；3、使得依赖属性可以被继承，被继承的依赖属性在注册时设置元数据默认值模式为&ldquo;继承&rdquo;，继承元素依赖属性使用&ldquo;AddOwer&rdquo;方法；4、只读依赖属性，private DependencyPropertyKey 代替 public DependencyProperty，RegisterReadOnly代替Register，属性包装器的SetValue方法设为私有或去掉。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/zhili/p/WPFDependencyProperty.html">https://www.cnblogs.com/zhili/p/WPFDependencyProperty.html</a></li>
+<li><a href="https://riptutorial.com/wpf/example/9859/read-only-dependency-properties">https://riptutorial.com/wpf/example/9859/read-only-dependency-properties</a></li>
+</ul>
+<p>附加属性：和依赖属性的不同，Register换为RegisterAttached，属性包装器换成静态方法。</p>
+<ul>
+<li><a href="https://www.c-sharpcorner.com/UploadFile/vikie4u/attached-properties-in-wpf/">https://www.c-sharpcorner.com/UploadFile/vikie4u/attached-properties-in-wpf/</a></li>
+</ul>
+<p>自定义路由事件：RouteEvent、RouteEventArgs，触发路由事件，路由事件策略。</p>
+<ul>
+<li><a href="https://docs.microsoft.com/zh-cn/dotnet/framework/wpf/advanced/how-to-create-a-custom-routed-event">https://docs.microsoft.com/zh-cn/dotnet/framework/wpf/advanced/how-to-create-a-custom-routed-event</a></li>
+</ul>
+<p>附加事件：附加事件是路由事件的一种，路由事件的宿主是UI元素，附加事件的宿主是非UI元素。</p>
+<ul>
+<li><a href="https://yq.aliyun.com/articles/677947" target="_blank">https://yq.aliyun.com/articles/677947</a></li>
+</ul>
+<p>命令：可以和数据绑定集成。通常，应用程序逻辑应该总是通过命令的方式来实现的，而不是事件处理程序。对于很多需要直接挂接到事件处理过程上的常见例子，用触发器来处理更好。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/smiler/p/3222938.html">https://www.cnblogs.com/smiler/p/3222938.html</a></li>
+</ul>
+<p>转换器：实现IValueConverter接口，Convert方法是指源到目标的转换，ConvertBack是指目标到源的转换。返回值DependencyProperty.UnsetValue表示转换器没有生成任何值。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/tianma3798/p/5927470.html" target="_blank">https://www.cnblogs.com/tianma3798/p/5927470.html</a></li>
+</ul>
+<p>跨线程调用控件：获取控件Dispatcher，然后Invoke对控件的修改。</p>
+<ul>
+<li><a href="https://blog.csdn.net/lwwl12/article/details/76343771" target="_blank">https://blog.csdn.net/lwwl12/article/details/76343771</a></li>
+</ul>
+<p>Style：属性、资源、触发器。显示、隐式设置Style。Style的Merge、优先级、BaseOn继承、换肤。</p>
+<ul>
+<li><a href="https://www.cnblogs.com/Zhouyongh/archive/2011/08/01/2123610.html" target="_blank">https://www.cnblogs.com/Zhouyongh/archive/2011/08/01/2123610.html</a></li>
+</ul>
+<p>MVVM: View对应一个ViewModel，ViewModel可以聚合N个Model，ViewModel可以对应多个View</p>
+<ul>
+<li><a href="https://www.cnblogs.com/fly-bird/p/8699105.html" target="_blank">https://www.cnblogs.com/fly-bird/p/8699105.html</a></li>
+</ul>
+<p>Resource：StaticResource只解析一次，DynamicResource则发生更改就解析。资源类型也可以是各种CLR对象。资源范围可以分三种：特定控件的本地化，窗口级别，Application级别。可以通过key关键字显示引用资源。查找资源都是向上找的，先更本地化的特定控件，再窗口，再到应用程序，只要找到了就终止。</p>
+<ul>
+<li><a href="https://www.wpf-tutorial.com/wpf-application/resources/">https://www.wpf-tutorial.com/wpf-application/resources/</a></li>
+</ul>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 19:00</span>&nbsp;
+<a href="https://www.cnblogs.com/bibi-feiniaoyuan/">舒碧</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12721188" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12721188);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 294943, cb_blogApp = 'bibi-feiniaoyuan', cb_blogUserGuid = 'd800a194-e14c-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 12721188, cb_entryCreatedDate = '2020-04-25 19:00', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 舒碧
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

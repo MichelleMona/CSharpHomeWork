@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html 两种异常(CPU异常、用户模拟异常)的收集 文章的核心：异常收集的" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>两种异常(CPU异常、用户模拟异常)的收集 - OneTrainee - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=MH15aYd6DmX-6TABpA2xkiKENy3GAhiM2dh5rOPH89I" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=X7swQJ1TyCJAf6FMVjDPbYhUAiMdNFddEy1-m0_TbFQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/onetrainee/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/onetrainee/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/onetrainee/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 550226;
+        var currentBlogApp = 'onetrainee';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleBlue';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/onetrainee/">OneTrainee</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/onetrainee/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/OneTrainee">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/onetrainee/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+196&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+14</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12765370.html">两种异常(CPU异常、用户模拟异常)的收集</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>&nbsp;<strong><span style="font-size: 18pt;"><strong><span style="font-size: 18pt;"><strong><span style="font-size: 18pt;"><span style="font-size: 14px;"><span style="font-size: 14px;"><span style="font-size: 14px;"><strong><span style="font-size: 14px;"><a href="https://www.cnblogs.com/onetrainee/p/11675224.html" target="_blank">Windows内核分析索引目录</a>：https://www.cnblogs.com/onetrainee/p/11675224.html</span></strong></span></span></span></span></strong></span></strong></span></strong></p>
+<p style="text-align: center;"><strong><span style="font-size: 18pt;">两种异常(CPU异常、用户模拟异常)的收集<br /></span></strong></p>
+<p><strong>&nbsp;<em>文章的核心：异常收集的是什么？（TrapFrame与ExceptionRecord）；如何收集异常？（看文章）。</em></strong></p>
+<p>&nbsp;</p>
+<p><strong><em><span style="font-size: 16px;">1. 异常的分类</span></em></strong></p>
+<p><em><span style="font-size: 16px;">　　① CPU指令异常 （比如除零异常） CPU运行检测到；<br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　② 用户模拟异常 （throw 1）<br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　其在收集是存在不同，但在派发时和处理时是完全相同的，下面我们就来分析一下其存在的不同。</span></em></p>
+<p>&nbsp;</p>
+<p><strong><em><span style="font-size: 16px;">2. CPU指令异常 - 除零异常（分析）</span></em></strong></p>
+<p><em><span style="font-size: 16px;">　　1）Trap00函数分析<br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　　　除零异常会引发中断，其执行 Trap00 函数，该函数逆向分析如下，我们在三环进零环时，已经学习过一个_TrapFrame结构，其本质也是填写该结构。<br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　　　注意，我们应该清楚，TrapFrame结构不只是三环进零环使用，而是只要走IDT表都要使用该结构，其是通过TrapFrame怎么返回，至于从三环还是零环进来这不重要。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　其分析情况如下图，Trap00总结做已下事情：</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　① 保存TrapFrame基本的信息；<br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　　　② 检查DebugActive是否存在调试器，若存在调试器，则保存Dr相关寄存器；</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　③ 判断来自内核或三环，来确定其错误号(0xc0000094/0xc0000095)；<br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　　　④ 其最后有三次机会走CommonDispatchException函数。<br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424093100956-118373017.png" alt=""></span></em></p>
+<p><em><span style="font-size: 16px;">　　2) CommonDispatchException 异常记录函数分析</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　该函数就是生成ExceptionRecord这个结构体，填写完成，然后调用nt!KiDispatchException进行下一步分析（三环的模拟异常直接在三环形成，然后拷贝到零环）。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　我们要知道ExceptionRecord的作用：存储了<strong>异常码</strong>、<strong>异常属性、异常记录（链表，多次出现异常时记录）</strong>、<strong>异常发生地址</strong>、<strong>异常有关参数</strong>。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　其中该函数的重要一点：其ExceptionFlags置为0，我们之后关注KiDispatchException如何处理的。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424094321396-1164248573.png" alt=""></span></em></p>
+<p>&nbsp;</p>
+<p><em><span style="font-size: 16px;"><strong>3.用户模拟异常分析</strong><br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　像thorw 1 这种引发的是用户模拟异常，我们下面就来分析一下如下代码：<br /></span></em></p>
+<div class="cnblogs_code">
+<pre>#include <span style="color: #800000;">"</span><span style="color: #800000;">stdafx.h</span><span style="color: #800000;">"</span><span style="color: #000000;">
+#include </span>&lt;windows.h&gt;
+
+<span style="color: #0000ff;">int</span> main(<span style="color: #0000ff;">int</span> argc, <span style="color: #0000ff;">char</span>*<span style="color: #000000;"> argv[])
+{
+    </span><span style="color: #0000ff;">throw</span> <span style="color: #800080;">11</span><span style="color: #000000;">;
+    
+    </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></pre>
+</div>
+<p>　　<em><span style="font-size: 16px;">9:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; throw 11;</span></em><br /><em><span style="font-size: 16px;">　　00401028&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dword ptr [ebp-4],0Bh</span></em><br /><em><span style="font-size: 16px;">　　0040102F&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; offset __TI1H (00423580)</span></em><br /><em><span style="font-size: 16px;">　　00401034&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eax,[ebp-4]</span></em><br /><em><span style="font-size: 16px;">　　00401037&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eax</span></em><br /><em><span style="font-size: 16px;">　　00401038&nbsp;&nbsp; call&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; __CxxThrowException@8 (004011e0)</span></em></p>
+<p><em><span style="font-size: 16px;">　　1）CxxThrowException反汇编分析</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　如下是CxxThrowException函数的反汇编，该函数需要两个参数，一个是我们模拟的代码，另外一个是ExceptionList，我们下面详细分析该段代码的执行流程：</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　004011E0&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ebp</span></em><br /><em><span style="font-size: 16px;">　　　　004011E1&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ebp,esp</span></em><br /><em><span style="font-size: 16px;">　　　　004011E3&nbsp;&nbsp; sub&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; esp,20h</span></em><br /><em><span style="font-size: 16px;">　　　　004011E6&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; esi</span></em><br /><em><span style="font-size: 16px;">　　　　004011E7&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edi</span></em><br /><em><span style="font-size: 16px;">　　　　004011E8&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ecx,8</span></em><br /><em><span style="font-size: 16px;">　　　　004011ED&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; esi,offset string "The value of ESP was not properl"...+0E0h (00422118)</span></em><br /><em><span style="font-size: 16px;">　　　　004011F2&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edi,[ebp-20h]</span></em><br /><em><span style="font-size: 16px;">　　　　004011F5&nbsp;&nbsp; rep movs&nbsp;&nbsp;&nbsp; dword ptr [edi],dword ptr [esi]</span></em><br /><em><span style="font-size: 16px;">　　　　// 复制一段结构体</span></em><br /><em><span style="font-size: 16px;">　　　　004011F7&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eax,dword ptr [ebp+8]</span></em><br /><em><span style="font-size: 16px;">　　　　004011FA&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dword ptr [ebp-8],eax</span></em><br /><em><span style="font-size: 16px;">　　　　004011FD&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ecx,dword ptr [ebp+0Ch]</span></em><br /><em><span style="font-size: 16px;">　　　　00401200&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dword ptr [ebp-4],ecx</span></em><br /><em><span style="font-size: 16px;">　　　　// 传入参数</span></em><br /><em><span style="font-size: 16px;">　　　　00401203&nbsp;&nbsp; lea&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edx,[ebp-0Ch]</span></em><br /><em><span style="font-size: 16px;">　　　　00401206&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edx&nbsp; // 参数指针</span></em><br /><em><span style="font-size: 16px;">　　　　00401207&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eax,dword ptr [ebp-10h]</span></em><br /><em><span style="font-size: 16px;">　　　　0040120A&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eax // 参数个数</span></em><br /><em><span style="font-size: 16px;">　　　　0040120B&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ecx,dword ptr [ebp-1Ch]</span></em><br /><em><span style="font-size: 16px;">　　　　0040120E&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ecx // 异常标志位</span></em><br /><em><span style="font-size: 16px;">　　　　0040120F&nbsp;&nbsp; mov&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edx,dword ptr [ebp-20h]</span></em><br /><em><span style="font-size: 16px;">　　　　00401212&nbsp;&nbsp; push&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; edx&nbsp; // 异常码</span></em><br /><em><span style="font-size: 16px;">　　　　00401213&nbsp;&nbsp; call&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dword ptr [__imp__RaiseException@16 (0042a154)]</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　该代码所做的事情如下：</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　① 先从内存中拷贝一段0x20字节的固定结构体到堆栈中;</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　② 将ExceptionList也拷贝到堆栈中（该结构体内部）;</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　③ 传入有关参数调用RaiseException函数。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　可能光看比较抽象，下面画出其详细的栈帧图就知道了，注意，ThrowCode虽然从用户代码传入进来，但分析其函数并没有用到，而是直接调用一段固定的异常码。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　而&amp;ThrowCode以及异常链被作为其参数存储，这样通过分析就可以轻易找到其ThrowCode值，其作为参考之后来处理SEH。</span></em></p>
+<p>　　　　　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424121344505-1575211163.png" alt=""></p>
+<p>&nbsp;　　<em><span style="font-size: 16px;">2）kernel32!RaiseException函数分析</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　前面分析过，其CxxThrowException函数调用该函数，该函数的本质就是生成一个ExceptionRecord结构体，</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　我们之前分析过，如果是CPU指令异常，其在CommonDispatchException函数中生成该结构体；</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　函数分析如下，该过程比较好理解，注意其触发异常的地址标记为该地址，并不是ThrowCode的地址，这个是你要明确的，后续在将异常处理时这里用到SEH异常，我们再继续分析</span></em></p>
+<p>　　　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424114640358-1816485259.png" alt=""></p>
+<p>&nbsp;<em><span style="font-size: 16px;">　　3）ntdll!RtlRaiseException函数分析</span></em></p>
+<p>　<em><span style="font-size: 16px;">　　　该函数分析如下，其在三环进入零环前在堆栈中保存了一个_CONTEXT结构体，我们之前在用户APC分析过，返回三环时要在零环向三环堆栈中写入一个CONTEXT用于保存。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　来自用户层的异常我们确定其必须返回，，则就进零环之前就直接在三环中预先保存了一个_CONTEXT结构体，至于其如何使用，我们在异常的处理中会详细分析到。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　这里我们要关注CONTEXT几个比较重要的点：eip与esp，因为其是程序的重要落脚点，发现其是该函数的返回地址与上一个函数的堆栈图（本质就是kernel!RaiseException调用时的现场）。</span></em></p>
+<p>　　　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424123333239-1668597157.png" alt=""></p>
+<p>&nbsp;<em><span style="font-size: 16px;">　　4）nt!RtlRaiseException函数分析分析</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　上面我们经过分析<em><span style="font-size: 16px;">ntdll!RtlRaiseException</span></em>，发现其调用ZwRaiseException函数进内核，其对应nt!NtRaiseException函数，其分析如下图</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　该函数如下所示，其中值得注意的一点是：KThread.TrapFrame保存着TrapFrame.ebx,进零环时，mov edx,esp，其esp保存着call的返回地址，即ebx保存着三环栈顶，也是三环的返回地址。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　这是这里一个比较重要的细节，你是一定要明确的。</span></em></p>
+<p>　　　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424145528920-229207694.png" alt=""></p>
+<p>&nbsp;<em><span style="font-size: 16px;">　　5）nt!KiRaiseException函数分析</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　我们之前在三环生成了ExceptionRecord与Context，但是我们要在零环使用，其如何使用的呢？</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　分析了这个函数你就会明白，其在<em><span style="font-size: 16px;">nt!KiRaiseException</span></em>函数中调用完成的两者的复制，之后将Context转换为TrapFrame其KiDispatchException要使用。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　之前我们存在一个疑问，为什么不能使用三环进零环的一个TrapFrame而非得从三环拿过来一个Context转换？</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　猜想：因为该TrapFrame必须是异常现场的TrapFrame，而CPU中断直接调用IDT异常表很容易保存，但是用户模拟的必须是从三环到零环的，其TrapFrame是关于系统调用的。</span></em></p>
+<p><em><span style="font-size: 16px;">　　　　　　因此必须调用<em><span style="font-size: 16px;">ntdll!RtlRaiseException</span></em>三环保存的Context，这是直接记录异常现场的，这样你就能很好理解其中的逻辑。</span></em>　　　　　　　　　　　　　　　　</p>
+<p>　　　　　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424153451208-1077833131.png" alt=""></p>
+<p><em><span style="font-size: 16px;"><strong><em><span style="font-size: 16px;">4. 总结</span></em></strong> <br /></span></em></p>
+<p><em><span style="font-size: 16px;">　　到此为止，我们分析过上面两种异常的收集流程，其最终都会流向nt!KiDispatchException函数，下面一张图简单汇总，如果看详情，直接回去看有关函数，都说的很详细。</span></em></p>
+<p><em><span style="font-size: 16px;">　　我们要知道异常收集的是什么-ExceptionRecord以及TrapFrame，怎么收集的？按上面来分析即可。</span></em></p>
+<p><em><span style="font-size: 16px;">　　<img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200424154114669-81134993.png" alt=""></span></em></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><em><span style="font-size: 16px;">5.通过异常来进行三环与零环通信的思路</span></em></strong></p>
+<p><em><span style="font-size: 16px;">　　对于异常，我们存在一种思路，即通过除零异常触发，然后hook除零异常，接收到消息，然后读取全局变量或者节区。</span></em></p>
+<p><em><span style="font-size: 16px;">　　我们将数据存储在全局变量或者存放在一个专门的PE节区中，我们在Hook的除零异常代码中读取，然后执行，这样就很好理解了。</span></em></p>
+<p><em><span style="font-size: 16px;">　　之后我们会通过这个猜想来实现我们的代码。</span></em></p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 15:46</span>&nbsp;
+<a href="https://www.cnblogs.com/onetrainee/">OneTrainee</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765370" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12765370);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 550226, cb_blogApp = 'onetrainee', cb_blogUserGuid = '589460dc-e936-4cad-545f-08d74caabfe3';
+    var cb_entryId = 12765370, cb_entryCreatedDate = '2020-04-24 15:46', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 OneTrainee
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

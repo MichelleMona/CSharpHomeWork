@@ -1,0 +1,352 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="作者： 曾凡松 阿里云云原生应用平台高级技术专家 张振 阿里云云原生应用平台高级技术专家 导读 ：本文描述了阿里巴巴在容器管理领域的技术演进历程，解读了为什么 K8s 最终能够大获成功的原因，以及到今" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>为什么 K8s 在阿里能成功？| 问底中国 IT 技术演进 - 阿里巴巴云原生 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/alisystemsoftware/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/alisystemsoftware/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/alisystemsoftware/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 435351;
+        var currentBlogApp = 'alisystemsoftware';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/alisystemsoftware/">阿里系统软件技术</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/alisystemsoftware/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%BA%91%E5%8E%9F%E7%94%9F">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/alisystemsoftware/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+320&nbsp;</span>
+<span id="stats_article_count">文章 - 
+1&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+119</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12221622.html">为什么 K8s 在阿里能成功？| 问底中国 IT 技术演进</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>作者：<br>
+曾凡松 阿里云云原生应用平台高级技术专家<br>
+张振 阿里云云原生应用平台高级技术专家</p>
+<blockquote>
+<p><strong>导读</strong>：本文描述了阿里巴巴在容器管理领域的技术演进历程，解读了为什么 K8s 最终能够大获成功的原因，以及到今年 双11 阿里巴巴内部的 K8s 应用情况。内容着重描述了阿里巴巴基于 K8s 的云原生改造实践过程的三大能力升级，在对应能力升级过程中沉淀的技术解决方案，以及通过这些能力升级所取得的业务价值。</p>
+</blockquote>
+<p>从 2015 年 Google 牵头成立 CNCF 以来，云原生技术开始进入公众的视线并取得快速的发展，到 2018 年包括 Google、AWS、Azure、Alibaba Cloud 等大型云计算供应商都加入了 CNCF，云原生技术也从原来的应用容器化发展出包括容器、Service Mesh、微服务、不可变基础设施、Serverless、FaaS 等众多技术方向，CFCF 旗下也囊括了越来多的开源项目。</p>
+<p>Kubernetes 作为 CNCF 的第一个项目从诞生之初就就令人瞩目，Kubernetes 由 Google 工程师基于 Google 内部多年集群管理系统 Borg 的设计经验，结合云计算时代的基础设施特点重新设计而得，旨在帮助企业解决大规模 IT 基础设施的应用容器编排难题。</p>
+<p>Google 在 2014 年 6 月开源 Kubernetes 以后，在 Redhat、Microsoft、Alibaba 等厂商和众多开源爱好者共同的努力下，成长为如今容器编排领域的事实标准，极大的推动了云原生领域的发展。</p>
+<p>今天为大家分享来自阿里云的 Kubernetes 大规模实践经验，展现阿里云如何基于 Kubernetes 推动阿里巴巴应用运维技术栈走向云原生，如何推动 Kubernetes自身的技术进步，充分挖掘云原生时代的红利助力阿里巴巴大幅降低 双11 的 IT 成本。</p>
+<h1 id="容器在阿里巴巴的发展历程">容器在阿里巴巴的发展历程</h1>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/b5e1891bc62843b3ab80704017d88ca8.png" alt="1.png"></p>
+<p>在 2011 年之前，阿里巴巴使用 VM 虚拟化技术将一个物理机切分为 3 个虚拟机，用于部署淘宝服务，而随着淘宝业务的飞速发展，基于 VM 的技术方案在灵活性上跟不上业务的步伐。</p>
+<p>因此，阿里巴巴在 2011 年就开始探索基于 Linux lxc 的容器技术，用于替代传统基于 VM 的应用部署方案，到 2013 年，研发了基于 Linux lxc 的 T4 容器和 AI 容器编排系统。这在当时已是非常领先的技术方案，但自己研发的容器技术与基于 VM 时代的运维系统始终存在一些兼容性问题。</p>
+<p>在 2013 年随着 Docker 容器镜像方案的出现，阿里巴巴技术人员立即看到了基于容器 + Docker 镜像技术的未来，开始大力投入到这一领域的研究当中，到 2015 年 Aliswarm、Zeus、Hippo 等容器编排系统蓬勃发展，各自开疆扩土服务了阿里巴巴经济体的一部分业务。诸多的系统在解决了业务运维成本的同时，也带来了一定的重复建设成本，同时也导致了阿里巴巴内部的资源分布比较分散，无法统一调度多样的业务类型发挥出不同业务错峰使用资源的优势。</p>
+<p>正是在这样的背景下，Sigma 系统应运而出并在 2017 年统一了阿里巴巴的资源池，统一调度阿里巴巴所有的核心业务，并第一次支持将在线服务与离线作业运行在同一个物理机上，大幅提高数据中心的资源利用效率并降低了阿里巴巴的 IT 成本。</p>
+<p>随着云原生技术的高速发展，阿里巴巴也看到了云原生技术的潜力，以及未来企业 IT 全面上云的必然趋势，从 2018 年开始转型到 Kubernetes 技术，通过 Kubernetes 扩展能力将 Sigma 积累多年的调度能力通过 Kubernetes 的方式提供出来。</p>
+<p>在 2019 年阿里巴巴宣布全面上云，阿里巴巴开始全面拥抱 Kubernetes，并将 Sigma 调度系统全面的迁移到基于 Kubernetes 的调度系统，该系统也正是支持了今年最大规模 双11 电商交易系统的底层基础设施，稳定的支持了大促前后数百次的应用变更并提供极速的应用发布与扩容体验，为 双11 的顺畅的购物体验立下悍马功劳。</p>
+<h1 id="为什么-k8s-在阿里能成功">为什么 K8s 在阿里能成功</h1>
+<p>Kubernetes 在众多的技术中脱颖而出，概括起来可以归纳为以下三个方面。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/9f8562be467347ea9d7730cac4c40e03.png" alt="2.png"></p>
+<ul>
+<li>首先是其在诞生之初就为云时代而生，拥有超前的眼光和先进的设计理念，加之最初由天才的 Google 工程师基于其内部 Borg 多年的经验设计而来，诞生之后就飞速发展；</li>
+</ul>
+<p>后来随着 RedHat、IBM、微软、Vmware、阿里云等来自全球的优秀工程师大力投入，打造了繁荣的社区和生态系统，成为企业容器编排系统的首选。</p>
+<p>阿里巴巴经济体拥有众多的子公司，这些子公司在加入阿里巴巴大家庭时或多或少都会有一套自有的容器编排系统，在融入阿里巴巴的基础设施过程中，Kubernetes 是最标准也最容易被经济体内外的客户所接受的一个方案。</p>
+<ul>
+<li>其次，Kubernetes 倡导的申明式 API 的设计理念，也贴合了阿里巴巴在应用运维领域的经验与教训；</li>
+</ul>
+<p>传统的运维系统通常是基于过程式的设计，而过程式的运维系统在较长的系统调用链路下，通常会出现因异常处理复杂而导致的系统效率低下。</p>
+<p>在大规模应用运维系统中复杂又繁多的状态处理也是一个大难题，基于过程式的系统设计很难确保系统的一致性，针对这些边界异常的处理通常又导致运维系统变得非常复杂，最终为异常兜底的只能依赖运维人员的人工操作。基本上可以认为基于过程式的运维系统难以应对超大规模的应用管理，而 Kubernetes 提供的申明式 API 却是解决应用运维状态轮转的一剂良药，是提高运维技术栈整体链路效率的最佳实践原则。</p>
+<ul>
+<li>第三，Kubernetes 模块化、可扩展的架构设计，满足阿里巴巴的定制化改造以支持众多业务运维场景的需求。</li>
+</ul>
+<p>在阿里巴巴内部，即有大量的无状态核心电商系统，也有大量的缓存、消息队列等中间件有状态系统，也包括大量带有倒排索引数据的检索系统，还有大量的 AI 计算任务，不用的应用类型对底层容器管理平台的要求也有所不同。</p>
+<p>因此，一个模块化方便迁入自定义应用管理策略、易于扩展调度模型的设计显得至关重要，是能够服务阿里内部众多应用形态、提供统一容器管理基础设施的关键，Kubernetes 基本上提供了这些关键基础能力，虽然在实际应用过程中仍然会遇到非常多的实际问题。</p>
+<h1 id="阿里巴巴的-k8s-应用情况">阿里巴巴的 K8s 应用情况</h1>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/6b153d803f5c4069a3f321711cfd327e.png" alt="3.png"></p>
+<p>在 2019 年 双11，阿里巴巴内部核心业务主要运行在神龙、ECS、ECI 三种资源类型的基础设施之上，而这些不同类型的基础设施资源均通过 Kubernetes 统一管理，以容器的形态提供给上层应用使用，完成了核心业务的支撑。</p>
+<p>有别于以往的 双11，今年核心电商业务应用大规模部署在神龙裸金属服务器上。如果有关注过阿里云技术的发展，应该不会对神龙服务器感到陌生，它是阿里云自主研发的新一代云服务器，通过“软硬一体”的技术开创性的将云计算的虚拟化开销分摊到低价硬件板卡上，彻底的释放 CPU 的计算能力，第一次真正的做到了云计算虚拟化的“零”开销。</p>
+<p>容器也是一种轻量级的虚拟化方案，神龙+容器+Kubernetes 的结合正是云原生时代的最佳拍档，支撑了今年最大规模的 双11，也将是未来的主流技术形态。</p>
+<p>阿里巴巴也在继续使用 ECS 作为 Kubernetes 的底层资源供给，ECS 作为传统的云计算虚拟化方式支撑了部门集团内部业务，同时结合灵活性更好的弹性容器实例 ECI 用于应对业务突发的流量峰值，为业务带来了云计算的弹性价值，真正实现了按需申请、释放资源的极致弹性能力，降低了业务需要提前规划资源所带来的成本。</p>
+<p>这些分布在海内外的数十万个节点的资源，被数十个 Kubernetes 集群托管，运行着阿里巴巴上万个应用，共计超过百万的容器，其规模之大前所未有。在今年的 双11 中，阿里巴巴内部最大的 Kubernetes 集群规模达到万级；当然这并不是Kubernetes 的技术极限，而是我们考虑数据中心资源效率与基础设施容灾能力之间所取的平衡，在将来如果有需要这个数字也可能变得更大。</p>
+<h1 id="基于-k8s-的云原生改造实践">基于 K8s 的云原生改造实践</h1>
+<p>Kubernetes 作为云原生技术的代表，已经成为了容器编排领域的事实标准，阿里巴巴自 2017 年开始探索，到 2018 年确认技术转型到使用 Kubernetes 来管理生产的容器。</p>
+<p>在落地 K8s 的过程中，我们主要面临着两大难题：</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/8c3df8e12c9848cc9d1f0165e29230db.png" alt="4.png"></p>
+<ul>
+<li>其一，上层多样的业务运维平台；</li>
+</ul>
+<p>为了支撑阿里巴巴内部多样的业务形态，在内部发展出来了多个典型的业务运维平台，每一个运维平台的基础设施、流程控制、应用发布策或多或少都会存在一些差别，缺少一个统一的应用运维标准。在调度与集群管理的技术演进过程中，如何牵引整个运维体系升级的同时并保持多个业务的平台及其上业务的稳定性，这是一个巨大的工程。</p>
+<ul>
+<li>其二，随着阿里巴巴经济体全面上云战略的实施，整个底层基础设施包括存储、网络、基础运维软件的技术演进也非常迅速。调度与集群管理需要在支持好基础设施快速演进的同时，迭代自身的技术架构，并同时保证业务的稳定性。</li>
+</ul>
+<p>基于 K8s 的云原生技术改造正是在这样的背景下诞生，发展到 2019 年 Kubernetes 在内部已大规模部署，所有的核心业务也都已经运行在 K8s 集群管理中。但在这几年的实践过程中，有一个问题始终萦绕在工程师头脑中，在阿里巴巴这么大体量、这么复杂的业务下，遗留了大量传统的运维习惯以及支撑这些习惯的运维体系，在这样的背景下落地Kubernetes （内部一个形象的比喻叫做给高速飞行的飞机更换发动机）到底是在坚持什么，哪些地方可以妥协，哪些地方必须改变？</p>
+<p>这一章节， 将为大家分享我们这几年对这个问题的一些思考，特别是经过了今年的 双11 考验后，这个问题的答案基本上得到了工程师群里的集体认可。</p>
+<p>负责顶层设计的架构师终于可以喘一口气：拥抱 Kubernetes 本身并不是目的，而通过拥抱 Kubernetes 翘动业务的云原生改造，通过 Kubernetes 的能力治理传统运维体系下的沉疴顽疾，真正释放云的弹性能力，为业务的应用交付解绑提速，才是这次技术变革的最大价值所在。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/9bb1f0bfe7b242a19db5c889ef639458.png" alt="5.png"></p>
+<h1 id="面向终态升级">面向终态升级</h1>
+<p>在传统的运维体系下，应用的变更都是运维通过创建操作工单发起工作流，继而对容器平台发起一个个的变更来完成的。比如升级一个服务下的 3000 个实例，工单会被提前计算并生成出多个批次的子任务，并逐个的调用容器平台的接口完成变更应用的变更。</p>
+<p>为了确保应用发布工单的顺利执行，在每一个子工单内部，每一个容器的发布也是一个工作流，包括监控开管、镜像拉取、容器启停、服务注册、配置推送等等，如果一切正常该流程会按预期有序的进行。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/7578c6f54cea494c9a5003b2b04bc732.png" alt="6.png"></p>
+<p>在大规模应用发布的场景中，诸如宿主机宕机、磁盘异常、IO 异常、网络异常、内核异常等几乎是必然存在的，如果发布流程中的某一个步骤出现了错误，通常情况下需要运维平台按照一定的策略来重试，直到超过该批次的超时阈值，这将会带来三个问题，下面逐一展开。</p>
+<ul>
+<li>其一是重试带来的效率问题；</li>
+</ul>
+<p>每一个子任务的执行时间将被任务内的长尾发布所拖累，假设将 3000 个容器分为 30 批次每批 100 个（仅为示意并非最佳实践），每一批次内出现一个容器发布异常时，该批次的发布时间将被重试拉长。</p>
+<ul>
+<li>其二是失败带来的一致性问题；</li>
+</ul>
+<p>对于发布异常的容器，在工单结束之后通常只能通过外围链路巡检的方式来治理，而事实上通常的巡检是依赖运维人员手工操作的，带来了极大的人工成本和不确定性。</p>
+<ul>
+<li>第三是应用并发变更冲突问题。</li>
+</ul>
+<p>如果在应用发布的过程中，同时提交了应用扩容的请求，由 3000 扩容到 3200 个实例，扩容的 200 个实例应该采用旧版本还是新版本，采用旧版本扩容将面临的问题是谁最终负责这 200 个旧版本实例的升级，采用新版本扩容将面临的是稳定性问题，如果新版本存在问题新扩容的实例将产生较大的影响。</p>
+<p>正是因为这些复杂的问题导致多数运维系统拒绝了并发的应用变更，导致并发操作效率非常底下。</p>
+<p>K8s 为应用管理所提供的申明式 API 的设计理念同时解决了解决了这三个问题，用户只需要描述期望的最终状态以及达成期望状态的过程中需要遵守的限制条件，达成终态所需要执行的复杂操作全部交由 K8s 的来完成。</p>
+<p>在应用发布过程中，通常情况下 K8s 通过控制并发度及最大不可用实例数来约束应用发布对服务的影响，对于发布过程中失败的实例通过最终一致的方式在系统内部解决。正是基于这一设计，用户发起服务变更时只是更新了应用的预期状态，并不需要等待任何任务的结束，一并解决了应用发布效率、线上配置的一致性和并发变更冲突效率的问题。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/c1933e6f198d4893a9f63a7eaefc5f56.png" alt="7.png"></p>
+<p>基于面向终态的理念管理应用，我们开发 Advanced StatefulSet 的应用管理工作模型，顾名思义它基于 Kubernetes 官方的 StatefulSet 扩展而来。</p>
+<p>在官方的工作模型中，应用通过滚动的方式完成版本升级，也就是创建新的 Pod 同时删除旧版本的 Pod，直到整个应用切换为新的版本。</p>
+<p>这种方式简单直接，但存在效率的问题，比如所有应用的 Pod 需要重新的调度，这在大规模应用发布场景将给调度器带来很大的压力；同时，因为新版本 Pod 为全新创建，需要重新分配 IP 并挂载远程卷，这对云计算网络、存储基础设施也将是很大的挑战；再者，因为容器是被全新调度出来的，在机器上需要重新下载新的应用镜像，这将大幅降低应用发布的效率。</p>
+<p>为了提高应用发布的效率和资源的确定性，开发了这一工作负载模型，它支持原地发布应用，应用发布前后应用所在的位置保持不变，同时支持了并发更新、容错暂停等丰富的发布策略，高效的满足了阿里巴巴内部电商应用的发布需求。因为应用发布前后位置不变，因此我们可以在灰度发布的过程中预先下载并解压即将要发布的容器镜像，从而大幅提高应用发布的效率。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/ca177f6357404f20ae4b0f881e7094bd.png" alt="8.png"></p>
+<p>在面向终态的应用管理中，复杂的运维过程被 K8s 内部所实现，K8s根据用户的期望及现状计算出需要执行的动作，并逐步的变更直到终态。面向终态带来了卓越的运维效率提升，但同时也为系统工程架构提出了更高的要求。</p>
+<p>我们知道在 K8s 内部是一个模块化、分布式的系统，通往终态的运维决策分散在内部的多个模块中，这些模块都有可能对容器发起一些运维动作，比如控制器、运维 Operator、重调度器甚至是 kubelet。在高度自动化的系统中，一旦出现预期外的异常，其杀伤力可能会对其上运行的业务造成灾难性的后果，加之 K8s 中决策分散在众多的模块中，所带来的问题是系统风险的控制变得更加困难，对这个系统设计的质量有很高的要求。</p>
+<p>为了控制整个系统的风险，如上图所示，我们在 K8s 系统的关键位置对关键行为行为进行了埋点，针对性的制定了限流及熔断的策略，使得整个系统即使在出现极端错误的场景下，也能够最大化的保护其上运行的业务。</p>
+<h1 id="自愈能力升级">自愈能力升级</h1>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/c0ea8d3585074219b93891fe8e815ea0.png" alt="9.png"></p>
+<p>在阿里巴巴传统的运维体系下，容器平台仅生产资源，应用的启动以及服务发现是在容器启动后由运维平台系统来完成的，这种分层的方法给了运维系统最大的自由度，也在容器化后促进了阿里巴巴的容器生态繁荣。</p>
+<p>但是这种方式有一个严重的问题，因为容器调度平台无法自主地去触发容器的扩缩容，而需要和一个个运维平台来做复杂的联动，上层运维系统也因为需要感知到底层基础设施的信息，从而导致进行了很多重复建设的工作。</p>
+<p>在工程实践上，这些复杂性使得即使经过了细心的设计与大量的投入其工作效率也不高，严重妨碍宿主机发生故障、重启，容器中进程发生崩溃、卡住等异常时的自愈修复效率，同时也让应用弹性伸缩的实现变得非常的复杂和低效。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/eafa84e959a14a1b9aed2b0f3380555d.png" alt="10.png"></p>
+<p>我们解决这一问题的思路是通过 K8s 中提供了容器命令以及生命周期钩子，将启动应用以及检查应用启动状态这一正个流程内置到 pod 中，包括与监控、VIP、服务中心、配置中心等基础设施的交互，通过 Pod 实现容器与应用实例的生命周期统一。</p>
+<p>容器平台不再是仅生产资源，而是交付可以直接为业务使用的服务，从而使得可以在 K8s 系统内部完成故障自愈闭环，极大地简化了应用故障自愈以及自动弹性扩缩容能力的建设。提高系统自愈的效率，实际上也是帮助业务获得更好的运行时稳定性和应用运维效率。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/9cba4d958e3b4210a9a46c7a74fededf.png" alt="11.png"></p>
+<p>在完成了容器与应用实例的生命周期统一之后，我们正在打造一个统一控制器编程框架：Operator Platform。</p>
+<p>Operator Platform 由中心的控制组件与一个 sidecar 框架容器以及客户端代码组成，通过对通用的控制器能力的抽象，包括：事件通知、灰度管理、版本控制、缓存、命令管道等能力的封装集成，支持多语言编写operator，使得开发者无需要理解 K8s 的众多的接口细节及错误处理，从而降低了基于 operator 的自动化运维能力的开发难度，使得越来越多的运维能力通过operator 的方式沉淀到 K8s 生态体系中来，让更多的有状态应用能够自动化地部署，提高整个运维体系的运转效率。</p>
+<p>通过这种方式，构建了整个机器故障自愈的体系，高效的串联起包括机器锁定、应用驱逐、机器线下、异常修复等流程，确保了集群宿主机的在线率以及业务的可用性。未来，我们期望通过将 operator 编写标准化的方式去推动多个运维平台的基础运维能力能够被最大化的复用，减少重复建设的成本。</p>
+<h1 id="不可变基础设施">不可变基础设施</h1>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/a25c904ccd7e4f90a36a227f90af4c67.png" alt="12.png"></p>
+<p>第三个重要的能力升级是对不可变基础设施的升级。</p>
+<p>我知道 Docker 提供了一种统一的应用交付的形式，通过把应用的二进制、配置、依赖文件在构建过程中打到一个镜像中，从而确保了应用被一次构建出来之后在多个环境中交付的确定性，避免了环境不一致带来的诸多问题。</p>
+<p>而 K8s 更进一步，通过将不同用途的 Docker 容器组装在一起成为一个 pod，通常情况下在升级 pod 时需要整个的销毁重建，从而确保应用镜像、卷、资源规格的一致性。在落地 K8s 的过程中，坚持了不可变基础设施的设计理念，通过 K8s pod 将原本运行在一个富容器中的应用与运维基础组件分离到不同的容器中，并通过升级容器镜像的方式完成应用的升级。</p>
+<p>这里有一个概念需要澄清，并不是使用 K8s 就等于践行了不可变基础设施的理念，而是必须要确保应用运维通过镜像升级而不是动态发布文件的方式完成，而事实上因为一些历史原因，这一用法在行业中普遍存在。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/9bd58bac980c420c8c4cec2a43f7f3ec.png" alt="13.png"></p>
+<p>当然，与 K8s 有所不同的是，我们并未强制坚持 pod 的不可变而是取了一个折中的方式，即坚持容器不可变。</p>
+<p>原因是我们将应用容器与运维基础设施容器分离之后，运维容器作为应用容器的 sidecar 容器，其拥有着不同的版本迭代策略。应用容器由应用运维人员负责发布，其策略因应用的不同而不同，比如电商应用使用 StatefulSet 而本地生活使用 Deployment 来管理应用，而基础设施容器则由基础设施运维负责，其发布策略与应用本身也存在一些差别。</p>
+<p>为了解决这个问题，我们开发了一个叫做 SidecarSet 的基础设施容器管理模型，它使用同一个集合统一管理多个应用的运维容器，将基础设施的变更与应用容器的变更进行分离，从而支持基础设施的快速演进。将基础设施容器定义从应用 pod 中抽离出来后，应用管理员不再关心基础容器的启动参数，而是交由基础设施运维人员通过配置 SidecarSet 自动为应用注入运维容器，简化了应用运维的复杂性。</p>
+<p>可以看到，这种关注点分离的设计，同时简化了应用运维与基础设施运维的负担。</p>
+<h1 id="总结与展望">总结与展望</h1>
+<p>阿里云通过落地 K8s 推动阿里巴巴运维体系走向云原生，在应用容器发布管理效率、服务稳定性以及企业 IT 成本方面取得了很大的突破。</p>
+<p>我们一直在思考，通过什么样的方式能够将阿里巴巴的应用管理经验输出到更多的场景，解决更多客户面临的应用管理难题，在企业全面云化这样的趋势下，如何解决企业在公有云、私有云、混合云以及多云场景的应用管理复杂性。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/de5241632cbb4b2aa1809ee77e1bd820.png" alt="14.png"></p>
+<p>正是在这样的背景下，阿里云与微软在 2019 年 11 月联合推出了一款用于构建和交付云原生应用的标准规范，即<a href="https://github.com/oam-dev/rudr"> Open Application Model（简称 OAM）</a>。</p>
+<p>OAM 提出了一种通用的模型，让各平台可以在统一的高层抽象上透出应用部署和运维能力，解决跨平台的应用交付问题。同时，<a href="https://github.com/oam-dev/rudr">OAM</a> 以标准化的方式沟通和连接应用开发者、运维人员、应用基础设施，让云原生应用交付和管理流程更加连贯、一致。</p>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/236fb9f1d1ef454da5950d01e89d1b2f.png" alt="15.png"></p>
+<p>通过应用交付标准化的方法，我们期望未来在云上部署一个应用，就像手机在应用商店中安装一个淘宝一样便捷与高效。</p>
+<p>最后，本文提到的阿里巴巴在云原生改造上完成的相关能力升级，我们都已经或者即将开源到<a href="https://openkruise.io">OpenKruise 项目</a>中，欢迎大家关注与交流！</p>
+<p>参与方式：</p>
+<ul>
+<li>钉钉扫码进入 OAM 项目中文讨论群</li>
+</ul>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/5a29961a00554c24a37ad33856f701bb.png" alt="16.png"><br>
+<strong>（钉钉扫码加入交流群）</strong></p>
+<ul>
+<li><a href="https://gitter.im/oam-dev/">通过 Gitter 直接参与讨论</a></li>
+<li><a href="https://github.com/oam-dev/rudr">OAM 开源实现地址</a></li>
+<li><a href="https://github.com/oam-dev/rudr">star 一下</a></li>
+</ul>
+<h1 id="云原生实践峰会即将开幕">云原生实践峰会即将开幕</h1>
+<p><img src="https://ucc.alicdn.com/pic/developer-ecology/a06381ff574248d1bc12fbd543fc05d7.png" alt="17.png"></p>
+<blockquote>
+<p>“<a href="https://developer.aliyun.com/group/alisoftwaretech/">阿里巴巴云原生</a>关注微服务、Serverless、容器、Service Mesh 等技术领域、聚焦云原生流行技术趋势、云原生大规模的落地实践，做最懂云原生开发者的技术圈。”</p>
+</blockquote>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-01-21 14:27</span>&nbsp;
+<a href="https://www.cnblogs.com/alisystemsoftware/">阿里巴巴云原生</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12221622" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12221622);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 435351, cb_blogApp = 'alisystemsoftware', cb_blogUserGuid = '0461b870-c6b1-4287-28b6-08d5c3af5c24';
+    var cb_entryId = 12221622, cb_entryCreatedDate = '2020-01-21 14:27', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 阿里巴巴云原生
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

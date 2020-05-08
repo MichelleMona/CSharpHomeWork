@@ -1,0 +1,861 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>编码砖家 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=MH15aYd6DmX-6TABpA2xkiKENy3GAhiM2dh5rOPH89I" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/xiaoyangjia/custom.css?v=G3&#x2B;tSsp9vi7/XyXAHqEke7MJuD4=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=X7swQJ1TyCJAf6FMVjDPbYhUAiMdNFddEy1-m0_TbFQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xiaoyangjia/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xiaoyangjia/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xiaoyangjia/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 34640;
+        var currentBlogApp = 'xiaoyangjia';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleBlue';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <a class="git-link" target="_blank" href="https://github.com/xiaoyangjia"></a>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xiaoyangjia/">编码砖家</a>
+</div>
+<div class="subtitle">
+既是专家也是砖家，分享编程经验、系统架构、程序员成长等知识
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xiaoyangjia/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%BC%96%E7%A0%81%E7%A0%96%E5%AE%B6">
+联系</a></li>
+    <li id="nav_rss">
+</li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+71&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+160</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/16.html">2019年10月16日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11650927.html">
+[置顶]    算法天天练系列汇总
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：算法每日练习，这些算法题来自leetcode，涉及到字符串处理、TOP N查找、链表操作等等            <a href="https://www.cnblogs.com/xiaoyangjia/p/11650927.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-16 11:33 编码砖家 阅读 (191) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11650927" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/08.html">2019年10月8日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11577091.html">
+[置顶]    面试连环炮系列汇总
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：面试连环炮系列汇总，涉及Java基础、数据库、分布式理论、中间件等等            <a href="https://www.cnblogs.com/xiaoyangjia/p/11577091.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-08 16:08 编码砖家 阅读 (506) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11577091" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/11/14.html">2019年11月14日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11535486.html">
+    如何高效的学习技术
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：我们相信努力学习一定会有收获，但是方法不当，会让人身心疲惫，也没有切实的效果。职场上无法成功升迁的原因多种多样的，没有持续学习、学习效果不佳、无法通过心仪公司的面试，一定是很重要的原因。现在把自己当成一台计算机，既有输入，也要有输出，用输出倒逼输入。            <a href="https://www.cnblogs.com/xiaoyangjia/p/11535486.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-11-14 17:37 编码砖家 阅读 (19735) 评论 (95)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11535486" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11833857.html">
+    面试连环炮系列（二十三）： StringBuffer与StringBuild的区别
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. StringBuffer与StringBuild的区别 频繁修改字符串时，建议使用StringBuffer和StringBuilder类。StringBuilder相较于StringBuffer有速度优势，要求线程安全的情况下，必须使用StringBuffer类。 2. 为什么拼接String            <a href="https://www.cnblogs.com/xiaoyangjia/p/11833857.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-11-14 10:07 编码砖家 阅读 (348) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11833857" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/25.html">2019年10月25日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11736420.html">
+    面试连环炮系列（二十二）：常用的设计模式有哪些
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. 常用的设计模式有哪些，作用是什么 设计模式一共23种，常用的设计模式有： 1. 工厂模式: 构建多个对象的工厂。 1. 单例模式：单例类负责创建自己的对象，同时确保只有单个对象被创建 1. 代理模式：代理其他类，增强原来类的功能。 1. 外观模式：包装多个类的复杂性，对外提供统一的方法。 1.            <a href="https://www.cnblogs.com/xiaoyangjia/p/11736420.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-25 09:51 编码砖家 阅读 (234) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11736420" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/21.html">2019年10月21日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11713602.html">
+    算法天天练709：字符串转小写
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：将字符串内的所有大写字母转为小写            <a href="https://www.cnblogs.com/xiaoyangjia/p/11713602.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-21 14:57 编码砖家 阅读 (114) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11713602" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11713238.html">
+    面试连环炮系列（二十一）：你们的项目怎么使用kafka
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. 你们的项目怎么使用kafka? 我们采用kafka进行日志采集，准确点说是ELK方案，即elasticsearch + logstash + kibana + kafka。通过Spring AOP的方式收集日志，通过kafaka发送出去。 2. kafa存在丢消息的情况吗，怎么解决？ 1. p            <a href="https://www.cnblogs.com/xiaoyangjia/p/11713238.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-21 14:01 编码砖家 阅读 (208) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11713238" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/17.html">2019年10月17日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11692702.html">
+    算法天天练771：查找字符串出现的次数
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：题目来源： https://leetcode.com/problems/jewels and stones/ 问题描述： 两个字符串J和S，找出S中出现过多少次J字符串里面包含的字符。 举例说明： 字符串J|字符串S|结果 |: |: : aA|aAAbsdfe|3 b|BBAAAA|0 解决方案             <a href="https://www.cnblogs.com/xiaoyangjia/p/11692702.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-17 16:06 编码砖家 阅读 (80) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11692702" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11691889.html">
+    初次进入职场如何工作与学习
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：每年毕业季，大量的毕业生参加工作，成为真正的职场人士。有的同学在学校里组织过各种学生活动，或者实习经历很丰富，在职场的表现就很好。但是有的同学，由于性格或者其他种种原因，在职场里显得迟钝和平庸。首先，我们要接受自己的现状，不抱怨不放弃，然后认清自己的缺点，用正确的方法改进。怎么样才能更好的工作和学习，获得领导与同事的赏识，获得技术上的提升呢？            <a href="https://www.cnblogs.com/xiaoyangjia/p/11691889.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-17 15:29 编码砖家 阅读 (504) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11691889" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11690664.html">
+    面试连环炮系列（二十）：TCP的滑动窗口协议是什么
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. TCP的滑动窗口协议是什么 滑动窗口协议，用于网络数据传输时的流量控制，以避免拥塞的发生。该协议允许发送方在停止并等待确认前发送多个数据分组。由于发送方不必每发一个分组就停下来等待确认，因此该协议可以加速数据的传输，提高网络吞吐量。它本质上是描述接收方的TCO数据报缓冲区大小的数据，发送方根据            <a href="https://www.cnblogs.com/xiaoyangjia/p/11690664.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-17 10:55 编码砖家 阅读 (146) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11690664" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/16.html">2019年10月16日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11650927.html">
+    算法天天练系列汇总
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：算法每日练习，这些算法题来自leetcode，涉及到字符串处理、TOP N查找、链表操作等等            <a href="https://www.cnblogs.com/xiaoyangjia/p/11650927.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-16 11:33 编码砖家 阅读 (191) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11650927" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11684467.html">
+    算法天天练334：字符串翻转
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：题目来源： https://leetcode.com/problems/reverse string/ 问题描述： 颠倒一个char数组里面的字符串顺序，只能修改原始数组的值，不允许分配额外的空间。 举例说明： 输入|输出 |: [&quot;h&quot;,&quot;e&quot;,&quot;l&quot;,&quot;l&quot;,&quot;o&quot;]|[&quot;o&quot;,&quot;l&quot;,&quot;l&quot;,            <a href="https://www.cnblogs.com/xiaoyangjia/p/11684467.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-16 11:32 编码砖家 阅读 (73) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11684467" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11684310.html">
+    面试连环炮系列（十九）：分布式锁的实现方案
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. 分布式锁的实现方案? 相比单例锁，分布式锁需要解决的问题： 互斥性：任意时刻只能有一个客户端拥有锁，不能同时多个客户端获取。 安全性：锁只能被持有该锁的用户删除，而不能被其他用户删除。 死锁：获取锁的客户端因为某些原因而宕机，而未能释放锁，其他客户端无法获取此锁，需要有机制来避免该类问题的发生            <a href="https://www.cnblogs.com/xiaoyangjia/p/11684310.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-16 11:14 编码砖家 阅读 (166) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11684310" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/15.html">2019年10月15日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11676587.html">
+    面试连环炮系列（十八）：了解康威定律吗
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. 了解康威定律吗 定律一：组织沟通方式会通过系统设计表达出来，就是说架构的布局和组织结构会有相似。 定律二：时间再多一件事情也不可能做的完美，但总有时间做完一件事情。一口气吃不成胖子，先搞定能搞定的。 定律三：线型系统和线型组织架构间有潜在的异质同态特性。种瓜得瓜，做独立自治的子系统减少沟通成本            <a href="https://www.cnblogs.com/xiaoyangjia/p/11676587.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-15 11:25 编码砖家 阅读 (126) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11676587" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/14.html">2019年10月14日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11460070.html">
+    面试连环炮系列（十七）：你们的项目为什么要分库分表
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. 你们的项目为什么要分库分表？ 随着业务的发展，公司项目的日活翻了几十倍，订单表Order每月新增数据100万左右，有部分场景查询效率不太高了。通过升级配置、业务规避、缓存集群、归档历史数据等手段，也能够满足当前的查询要求。但是业务是呈加速度增长的，未来的数据会更多。虽然深知过早优化的弊端，但是            <a href="https://www.cnblogs.com/xiaoyangjia/p/11460070.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-14 15:05 编码砖家 阅读 (236) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11460070" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/12.html">2019年10月12日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11662123.html">
+    面试连环炮系列（十六）：线程池的使用场景有哪些
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. 线程池的使用场景有哪些 线程池适合单系统的大量的异步任务处理，比如发送短信、保存日志。 2. 说说创建线程池的重要参数 corePoolSize：线程池的大小。线程池创建之后不会立即去创建线程，而是等待线程的到来。当前执行的线程数大于该值时，线程会加入到缓冲队列。 maximumPoolSiz            <a href="https://www.cnblogs.com/xiaoyangjia/p/11662123.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-12 16:04 编码砖家 阅读 (430) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11662123" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/11.html">2019年10月11日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11657039.html">
+    算法天天练415：拼接整数字符串
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：计算字符串num1和num2的和值字符串，num1和num2只包含数字，不允许将字符串转化为整型再计算            <a href="https://www.cnblogs.com/xiaoyangjia/p/11657039.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-11 21:31 编码砖家 阅读 (80) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11657039" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/10.html">2019年10月10日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11650903.html">
+    算法天天练2：根据和值找到数组元素下标
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：问题描述：从数组中取出任意两个元素计算和值，根据和值反推元素下标。            <a href="https://www.cnblogs.com/xiaoyangjia/p/11650903.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-10 22:02 编码砖家 阅读 (129) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11650903" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/09.html">2019年10月9日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11639997.html">
+    面试连环炮系列（十五）：说说Eureka的高可用方案
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. 说说Eureka的高可用方案 至少3个Eureka实例才能满足高可用，配置方法如下： 1. 准备三个节点node1，node2，node3。 1. 在每个实例的application.xml文件里加入 ，address是其他节点的地址。如果是node1，address就是 ，其他节点依次类推。            <a href="https://www.cnblogs.com/xiaoyangjia/p/11639997.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-09 10:15 编码砖家 阅读 (356) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11639997" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaoyangjia/archive/2019/10/08.html">2019年10月8日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11577091.html">
+    面试连环炮系列汇总
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：面试连环炮系列汇总，涉及Java基础、数据库、分布式理论、中间件等等            <a href="https://www.cnblogs.com/xiaoyangjia/p/11577091.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-08 16:08 编码砖家 阅读 (506) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11577091" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11635965.html">
+    面试连环炮系列（十四）： HTTP状态码302的跳转逻辑
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：1. HTTP状态码302的跳转逻辑 302状态码表示重定向，浏览器在拿到服务器返回的这个状态码后会自动跳转到一个新的URL地址，这个地址可以从响应的Location首部中获取（用户看到的效果就是他输入的地址A瞬间变成了另一个地址B。 2. 302与301的区别和使用场景 301是永久重定向，而30            <a href="https://www.cnblogs.com/xiaoyangjia/p/11635965.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-08 16:06 编码砖家 阅读 (315) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11635965" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaoyangjia/p/11634018.html">
+    算法天天练1：计算最长子串
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：问题描述：计算一个字符串的最长子串的长度，子串不允许包含重复字符            <a href="https://www.cnblogs.com/xiaoyangjia/p/11634018.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-08 10:49 编码砖家 阅读 (218) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11634018" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/xiaoyangjia/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 编码砖家
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    <div id="page_end_html">
+        <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1278093327&web_id=1278093327"></script>
+    </div>
+</body>
+</html>

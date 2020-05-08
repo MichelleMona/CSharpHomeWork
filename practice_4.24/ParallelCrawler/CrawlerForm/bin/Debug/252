@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="如需转载请私信或者表明转载地址 https://www.cnblogs.com/lewisyoung/p/12769084.html 目录 &amp;quot;一、什么是自动装箱自动拆箱&amp;quot; &amp;quo" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Java的自动装箱和拆箱 - LewisYoung - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/lewisyoung/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/lewisyoung/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/lewisyoung/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 566763;
+        var currentBlogApp = 'lewisyoung';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/lewisyoung/">LewisYoung</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lewisyoung/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/LewisYoung">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/lewisyoung/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+3&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+0</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lewisyoung/p/12769084.html">Java的自动装箱和拆箱</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p><strong>如需转载请私信或者表明转载地址<br>
+<a href="https://www.cnblogs.com/lewisyoung/p/12769084.html">https://www.cnblogs.com/lewisyoung/p/12769084.html</a></strong></p>
+<h4 id="目录">目录</h4>
+<ul>
+<li><a href="#what">一、什么是自动装箱自动拆箱</a></li>
+<li><a href="#how">二、自动装箱自动拆箱的实质</a></li>
+<li><a href="#points">三、需要注意的点</a></li>
+<li><a href="#related">四、其他一些问题</a></li>
+<li><a href="#conclusion">五、总结</a></li>
+</ul>
+<h4 id="一、什么是自动装箱自动拆箱"><a id="what">一、什么是自动装箱自动拆箱</a></h4>
+<p>自动装箱自动拆箱是在JDK5以后引入的一个特性。在学习Java的过程中，我们认识到有八种基础类型，以及他们对应的包装类型。</p>
+<table>
+<thead>
+<tr>
+<th>基本类型</th>
+<th style="text-align:center">包装类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>byte</td>
+<td style="text-align:center">Byte</td>
+</tr>
+<tr>
+<td>short</td>
+<td style="text-align:center">Short</td>
+</tr>
+<tr>
+<td>int</td>
+<td style="text-align:center">Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td style="text-align:center">Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td style="text-align:center">Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td style="text-align:center">Double</td>
+</tr>
+<tr>
+<td>char</td>
+<td style="text-align:center">Character</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td style="text-align:center">Boolean</td>
+</tr>
+</tbody>
+</table>
+<p>简单的来说，自动装箱就是讲基础类型转换成包装类型，自动拆箱就是讲包装类型转换成基础类型。说是自动的，是因为我们没有在代码中显示的调用相关方法，转换过程由编译器自动帮我们完成。<br>
+比如下面代码：</p>
+<pre><code>	int i0 = 0;    //创建基础类型
+    Integer i1 = i0;    //自动装箱
+    int i2 = i1;    //自动拆箱
+</code></pre>
+<h4 id="二、自动装箱自动拆箱的实质"><a id="how">二、自动装箱自动拆箱的实质</a></h4>
+<p>想要知道自动拆箱自动装箱的实质，我们就得跟着代码走一走。这里我们用 int 和 Integer 类型为例（用的比较多），其他的基本类型和包装类型大家自己可以试一下。<br>
+比如下面这个文件，SolutionTest.java</p>
+<pre><code>public class SolutionTest {
+	 public static void main(String[] args) {
+		 int i0 = 0;    //创建基础类型
+		 Integer i1 = i0;    //自动装箱
+		 int i2 = i1;    //自动拆箱
+	 }
+}
+</code></pre>
+<p>我们对其进行编译和反编译后，得到的结果</p>
+<pre><code>Compiled from &quot;SolutionTest.java&quot;
+public class SolutionTest {
+  public SolutionTest();
+    Code:
+       0: aload_0
+       1: invokespecial #1          // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: iload_1
+       3: invokestatic  #2          // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       6: astore_2
+       7: aload_2
+       8: invokevirtual #3          // Method java/lang/Integer.intValue:()I
+      11: istore_3
+      12: return
+}
+</code></pre>
+<p>我们可以看到在<code>Integer i1 = i0;</code>时，系统执行的是 Integer.valueOf 的方法，在<code>int i2 = i1;</code>时，系统执行了 Integer.intValue 方法。<br>
+哪路红豆，原来自动装箱和自动拆箱其实就是调用了 Integer 类的两个方法啊！那我们再来看看 Integer 的源码：</p>
+<pre><code>public static Integer valueOf(int i) {
+    if (i &gt;= IntegerCache.low &amp;&amp; i &lt;= IntegerCache.high)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+    return new Integer(i);
+}
+</code></pre>
+<p>这个方法里面实现了两个步骤：<br>
+1、首先判断缓存池中有没有值为 i 的对象，有的话就返回该对象。（ps：IntegerCache是Integer的静态内部类，cache是一个Integer类型的数组）<br>
+2、如果缓存池中不存在值值为 i 的对象，那就建一个并返回呗。</p>
+<p>然后是intValue方法：</p>
+<pre><code>public int intValue() {
+    return value;
+}
+</code></pre>
+<p>这个就直接返回了 Integer 的内部成员 value。值得一提的是，Integer 里面保存值的其实还是一个 int 类型的 value ，而 value 是用 final 修饰的，就是说你无法改变 Integer 实例的值，你看起来改变值的其实都是返回了另一个实例（这跟 IntegerCache 的缓存池有关，思考一下）。<br>
+好了，这下就明白为啥了。</p>
+<h4 id="三、需要注意的点"><a id="points">三、需要注意的点</a></h4>
+<p>注意的点主要分为两块：1、实际开发过程中遇到的问题；2、面试可能会问到的问题。<br>
+实际开发中的问题主要涉及到的就是 Object 类的 equals 方法和 == 运算符的区别。比如下面代码：</p>
+<pre><code>	int i0 = 0;    
+    Integer i1 = i0;
+    int i2 = i1; 
+    System.out.println(i0 == i1);    // true
+    System.out.println(i1 == i2);    // true
+    System.out.println(i0 == i2);    // true
+    System.out.println(i0.equals(i1));    // 编译错误
+    System.out.println(i1.equals(i2));    // true
+    System.out.println(i2.equals(i0));    // 编译错误
+</code></pre>
+<p>除了不能编译的，其他的都为 true。在反编译之前，我们先自己结合上面的知识思考一下为什么呢？<br>
+没错，因为在使用 == 运算符的时候自动拆箱装箱了，而 equals 方法代码如下:</p>
+<pre><code>public boolean equals(Object obj) {
+    if (obj instanceof Integer) {
+        return value == ((Integer)obj).intValue();
+    }
+    return false;
+}
+</code></pre>
+<p>看的出来本质上还是 int 类型的比较。<br>
+把编译错误的代码注释掉，反编译看一下猜想是否正确。</p>
+<pre><code>Compiled from &quot;SolutionTest.java&quot;
+public class SolutionTest {
+  public SolutionTest();
+    Code:
+       0: aload_0
+       1: invokespecial #1          // Method java/lang/Object.&quot;&lt;init&gt;&quot;:()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: iconst_0
+       1: istore_1
+       2: iload_1
+       3: invokestatic  #2          // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+       6: astore_2
+       7: aload_2
+       8: invokevirtual #3          // Method java/lang/Integer.intValue:()I
+      11: istore_3
+      12: getstatic     #4          // Field java/lang/System.out:Ljava/io/PrintStream;
+      15: iload_1
+      16: aload_2
+      17: invokevirtual #3          // Method java/lang/Integer.intValue:()I
+      20: if_icmpne     27
+      23: iconst_1
+      24: goto          28
+      27: iconst_0
+      28: invokevirtual #5          // Method java/io/PrintStream.println:(Z)V
+      31: getstatic     #4          // Field java/lang/System.out:Ljava/io/PrintStream;
+      34: aload_2
+      35: invokevirtual #3          // Method java/lang/Integer.intValue:()I
+      38: iload_3
+      39: if_icmpne     46
+      42: iconst_1
+      43: goto          47
+      46: iconst_0
+      47: invokevirtual #5          // Method java/io/PrintStream.println:(Z)V
+      50: getstatic     #4          // Field java/lang/System.out:Ljava/io/PrintStream;
+      53: iload_1
+      54: iload_3
+      55: if_icmpne     62
+      58: iconst_1
+      59: goto          63
+      62: iconst_0
+      63: invokevirtual #5          // Method java/io/PrintStream.println:(Z)V
+      66: getstatic     #4          // Field java/lang/System.out:Ljava/io/PrintStream;
+      69: aload_2
+      70: iload_3
+      71: invokestatic  #2          // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+      74: invokevirtual #6          // Method java/lang/Integer.equals:(Ljava/lang/Object;)Z
+      77: invokevirtual #5          // Method java/io/PrintStream.println:(Z)V
+      80: return
+}
+
+</code></pre>
+<p>从结果看的出来，在 equals 的时候，int 参数先被自动装箱为 Integer 类型，然后进行比较。在 == 比较时，Integer 类型自动拆箱。</p>
+<p>面试中可能碰到的问题，比如说：<code>Integer i1 = 0;</code>这句代码经过了什么流程，缓存池什么时候建立、初始化的大小、什么时候扩充、扩充多少等问题。这些看源码就好啦。<br>
+1、<code>Integer i1 = 0;</code>这句代码经过了什么流程？<br>
+调用valueOf方法 -&gt; 判断是否在缓存池中 -&gt;有？返回缓存池中对象：返回新建对象<br>
+2、缓存池什么时候建立？<br>
+缓存池是 Integer 的静态内部类 IntegerCache 静态方法中初始化的，那么也就是说第一次 Integer 类加载的时候就全部加载了。<br>
+3、初始化的大小？<br>
+默认是 -127 ~ 128。但看代码可以知道，这个虚拟机中的属性有关：</p>
+<pre><code>static {
+    // high value may be configured by property
+    int h = 127;
+    String integerCacheHighPropValue =
+        VM.getSavedProperty(&quot;java.lang.Integer.IntegerCache.high&quot;);
+    if (integerCacheHighPropValue != null) {
+        try {
+            int i = parseInt(integerCacheHighPropValue);
+            i = Math.max(i, 127);
+            // Maximum array size is Integer.MAX_VALUE
+            h = Math.min(i, Integer.MAX_VALUE - (-low) -1);
+        } catch( NumberFormatException nfe) {
+            // If the property cannot be parsed into an int, ignore it.
+        }
+    }
+    high = h;
+
+    cache = new Integer[(high - low) + 1];
+    int j = low;
+    for(int k = 0; k &lt; cache.length; k++)
+        cache[k] = new Integer(j++);
+
+    // range [-128, 127] must be interned (JLS7 5.1.7)
+    assert IntegerCache.high &gt;= 127;
+        }
+
+        private IntegerCache() {}
+}
+</code></pre>
+<p>4、什么时候扩充以及扩充多少？<br>
+啊。。。源码中没看到，不太清楚。</p>
+<h4 id="四、其他一些问题"><a id="related">四、其他一些问题</a></h4>
+<p>1、在使用集合类时，都用 Integer 而不能用 int。<br>
+2、下面代码能编译通过但是运行时会报空指针异常：</p>
+<pre><code>	Integer i1 = null;
+	int i2 = i1;
+</code></pre>
+<p>原因是自动拆箱时对一个 null 对象进行 intValue ，自然会报错。</p>
+<h4 id="五、总结"><a id="conclusion">五、总结</a></h4>
+<p>1、自动装箱就是讲基础类型转换成包装类型，自动拆箱就是讲包装类型转换成基础类型。<br>
+2、自动拆箱装箱实际上是调用了包装类的方法。<br>
+3、缓存池的存在以及使用。<br>
+4、== 比较时: 基础类型之间不用说，基础类型和包装类型会进行自动拆箱，包装类型和包装类型之间是正常类型的比较。<br>
+5、equals 方法，参数为基础类型时会进行自动装箱。装箱后变成取 intValue 后基础类型值的比较。</p>
+<p><strong>如需转载请私信或者表明转载地址<br>
+<a href="https://www.cnblogs.com/lewisyoung/p/12769084.html">https://www.cnblogs.com/lewisyoung/p/12769084.html</a></strong></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 17:51</span>&nbsp;
+<a href="https://www.cnblogs.com/lewisyoung/">LewisYoung</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12769084" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12769084);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 566763, cb_blogApp = 'lewisyoung', cb_blogUserGuid = 'a6d0c9a9-f235-46d3-c436-08d77885435f';
+    var cb_entryId = 12769084, cb_entryCreatedDate = '2020-04-24 17:51', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 LewisYoung
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

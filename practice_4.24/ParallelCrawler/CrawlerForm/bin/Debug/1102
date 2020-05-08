@@ -1,0 +1,466 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>阿里巴巴云原生 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/alisystemsoftware/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/alisystemsoftware/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/alisystemsoftware/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 435351;
+        var currentBlogApp = 'alisystemsoftware';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/alisystemsoftware/">阿里系统软件技术</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/alisystemsoftware/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%BA%91%E5%8E%9F%E7%94%9F">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/alisystemsoftware/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+320&nbsp;</span>
+<span id="stats_article_count">文章 - 
+1&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+119</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12766832.html">
+    Istio 将被捐赠给开源基金会 | 云原生生态周报 Vol. 47
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：云原生一周生态要闻总览            <a href="https://www.cnblogs.com/alisystemsoftware/p/12766832.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-24 13:16 阿里巴巴云原生 阅读 (4) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766832" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12766710.html">
+    K8s 从懵圈到熟练-集群伸缩原理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：阿里云 K8s 集群的一个重要特性，是集群的节点可以动态的增加或减少。有了这个特性，集群才能在计算资源不足的情况下扩容新的节点，同时也可以在资源利用率降低的时候，释放节点以节省费用。这篇文章，我们将讨论阿里云 K8s 集群扩容与缩容的实现原理。理解实现原理，在遇到问题的时候，我们就可以高效地排查并定位原因。            <a href="https://www.cnblogs.com/alisystemsoftware/p/12766710.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-24 12:42 阿里巴巴云原生 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766710" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12760704.html">
+    Service Mesh 最火项目 Istio 分层架构，你真的了解吗？
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：本文摘自于由阿里云高级技术专家王夕宁撰写的《Istio 服务网格技术解析与实践》一书，文章从基础概念入手，介绍了什么是服务网格及 Istio，针对 2020 服务网格的三大发展趋势，体系化、全方位地介绍了 Istio 服务网格的相关知识。            <a href="https://www.cnblogs.com/alisystemsoftware/p/12760704.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-23 14:44 阿里巴巴云原生 阅读 (16) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12760704" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12753841.html">
+    阿里开源的那个牛X的问题排查工具——Arthas，推出IDEA插件了！
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：本文简单介绍了 Arthas IDEA 插件的安装与使用技巧，该插件解放了大家对于 Arthas 使用的一些记忆、机械性的重复工作，欢迎大家试用！            <a href="https://www.cnblogs.com/alisystemsoftware/p/12753841.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-22 18:01 阿里巴巴云原生 阅读 (36) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12753841" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12751557.html">
+    Serverless 风起云涌，为什么阿里，微软，AWS 却开始折腾 OAM？
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：近日，AWS ECS 团队在官方 GitHub 上发布了一个名叫：Amazon ECS for Open Application Model 的开源项目，越来越多的厂商开始探索 OAM 的落地实践。OAM 到底有什么魅力，让多家云厂商联合起来共同拥抱呢？            <a href="https://www.cnblogs.com/alisystemsoftware/p/12751557.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-22 13:41 阿里巴巴云原生 阅读 (29) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12751557" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2020/04/21.html">2020年4月21日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12744254.html">
+    Argo 项目入驻 CNCF，一文解析 Kubernetes 原生工作流
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：近期，CNCF 技术监督委员会（Technical Oversight Committee，TOC）投票决定接受 Argo 作为孵化级别的托管项目。作为一个新加入的项目，Argo 主要关注于 Kubernetes 原生的工作流，持续部署等方面。            <a href="https://www.cnblogs.com/alisystemsoftware/p/12744254.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-21 14:07 阿里巴巴云原生 阅读 (20) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12744254" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12737597.html">
+    回顾 | Alibaba Cloud Native Day 杭州场圆满结束（附 PPT 下载）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：关注“ 阿里巴巴云原生 ”公众号，回复“ 666 ” 即可获取直播回看链接及活动 PPT合集。            <a href="https://www.cnblogs.com/alisystemsoftware/p/12737597.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 14:29 阿里巴巴云原生 阅读 (17) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12737597" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12722092.html">
+    电子书下载 | 超实用！阿里售后专家的 K8s 问题排查案例合集
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：关注公众号，回复“排查”获取下载链接            <a href="https://www.cnblogs.com/alisystemsoftware/p/12722092.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-17 19:42 阿里巴巴云原生 阅读 (35) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12722092" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12720588.html">
+    在生产环境中，阿里云如何构建高性能云原生容器网络？（含 PPT 下载）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：关注“阿里巴巴云原生”公众号，后台回复 “416” 即可下载 PPT。            <a href="https://www.cnblogs.com/alisystemsoftware/p/12720588.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-17 16:06 阿里巴巴云原生 阅读 (25) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720588" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/alisystemsoftware/p/12720126.html">
+    SIG Cloud Provider Alibaba 网研会第 2 期顺利召开 | 云原生生态周报 Vol. 46
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：云原生一周生态要闻总览            <a href="https://www.cnblogs.com/alisystemsoftware/p/12720126.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-17 15:09 阿里巴巴云原生 阅读 (13) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720126" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/alisystemsoftware/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 阿里巴巴云原生
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

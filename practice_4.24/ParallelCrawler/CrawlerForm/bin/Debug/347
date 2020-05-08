@@ -1,0 +1,763 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>微笑刺客D - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/CKExp/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/CKExp/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/CKExp/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 343689;
+        var currentBlogApp = 'CKExp';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/CKExp/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/CKExp/">微笑刺客D</a>
+</h1>
+<h2>
+除了自渡，他人爱莫能助。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/CKExp/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%BE%AE%E7%AC%91%E5%88%BA%E5%AE%A2D">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/CKExp/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+73&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+131</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2019/04/18.html">2019年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/10732751.html">
+[置顶]    Asp.Net Core&amp;钉钉开发系列
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：阿里钉钉在商业领域的规模越来越大，基于钉钉办公的企业越来越多，将一个企业内现有用到的工具(如钉钉)能够更融入到他们的工作中，提高工作效率，那便需要开发者不断的学习、应用了，同时，个人也有一个预感，未来围绕钉钉作为企业办公的必备利器，将会减少我们在软件开发过程中一些基础设施的建设，如部门、用户等这些的            <a href="https://www.cnblogs.com/CKExp/p/10732751.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-04-18 22:36 微笑刺客D 阅读 (917) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10732751" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2018/12/25.html">2018年12月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/10119022.html">
+[置顶]    KnockoutJS知识规整目录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：对于Web开发来讲，前端接触是避免不了的，特别是对于中小公司，没有严格的职位区分，前后端人员互相身兼是常有的事情，使用一些好的框架，能够帮助我们快速开发并完成需要的功能，对于前端的JS框架来讲MVVM框架一直处于火热状态，现有名的三大巨头，Angular、Vue和React受众多人喜爱并且也用于公司            <a href="https://www.cnblogs.com/CKExp/p/10119022.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-12-25 19:34 微笑刺客D 阅读 (144) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10119022" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2018/11/10.html">2018年11月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/9860427.html">
+[置顶]    生成流水线搭建过程目录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：设计初衷，之前有过手动维护五个项目的经历，且项目之间存在关联关系，当时是用Docker承载，也没有使用Jenkins，直接在服务器上装了Git，把代码Pull下来，然后靠手动执行编译部署，每次新代码进来，需要进入到每一个Docker容器中执行编译然后运行，哪个有改动，就进哪个容器中，在那时感觉也没什            <a href="https://www.cnblogs.com/CKExp/p/9860427.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-11-10 20:41 微笑刺客D 阅读 (432) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9860427" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12772824.html">
+    初探Redis-基础类型String
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Redis存在五种基础类型：字符串(String)、队列(List)、哈希(Hash)、集合(Set)、有序集合(Sorted Set)。String的出镜率算是最高的。本次列举出String的常用操作。 Redis官网：https://redis.io/ 一、字符串(String)介绍 字符串(S            <a href="https://www.cnblogs.com/CKExp/p/12772824.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 16:29 微笑刺客D 阅读 (64) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12772824" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12763683.html">
+    初探Redis-基础篇
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作为向Web而生的Redis，现已经使用得十分广泛了。依靠其高性能、简洁设计等深受开发者们喜欢。对Redis从基础学起，抱着知其然到知其所以然的想法，先学会怎么用，再去深入了解内部运转。 Redis官网：https://redis.io/ 一、Redis简单介绍 Redis英文全称为Remote D            <a href="https://www.cnblogs.com/CKExp/p/12763683.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 14:13 微笑刺客D 阅读 (4) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12763683" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/04/12.html">2020年4月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12682687.html">
+    X-Admin&amp;ABP框架开发-版本管理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：多租户系统中，针对于不同租户开放不同功能，或是按照不同功能进行收费管理，需要从宿主本身去管理租户的版本信息，如同酒店人员对不同房间收取不同费用，依据房间内部设施，房间大小等设置不同收费标准。Abp系统中默认是多租户的，并且在Zero模块中实现了版本管理功能。 演示地址：http://119.3.13            <a href="https://www.cnblogs.com/CKExp/p/12682687.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-12 11:38 微笑刺客D 阅读 (1028) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12682687" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/03/20.html">2020年3月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12531789.html">
+    UML图例之时序图
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：利用时序图显示对象之间交互，通过描述对象之间发送消息的时间顺序显示多个对象之间的动态协作，用来表示用例中的行为顺序。 一、时序图特点 1、描述用例的具体细节。 2、对复杂的调用、函数和操作的逻辑关系进行建模。 3、表明对象、组件之间是如何交互的。 4、理解旧代码，规划新场景。 二、基本元素 角色(A            <a href="https://www.cnblogs.com/CKExp/p/12531789.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-20 15:47 微笑刺客D 阅读 (65) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12531789" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/02/06.html">2020年2月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12262919.html">
+    UML图例之状态图
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：利用状态图模拟响应系统，反应系统模型声明周期，将静态的业务可以动态流动起来，按照预定的状态进行业务描述。 一、基本概念 状态(state)是指在对象的生命期中的某个条件或状况，在此期间对象将满足某些条件、执行某些活动或等待某些事件。所有对象都具有状态，状态是对象执行了一系列活动的结果，当某个事件发生            <a href="https://www.cnblogs.com/CKExp/p/12262919.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-06 12:03 微笑刺客D 阅读 (105) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12262919" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/01/22.html">2020年1月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12221861.html">
+    UML图例之用例图
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：用例图主要用来描述“用户、需求、系统功能单元”之间的关系，在需求分析阶段，常会借助用例图，从用户的角度描述系统的功能，以图形可视化的方式作为开发团队与客户的交流，同时也有助于形成统一语言。 一、用例图描述 用例图（Use Case Diagrame）：描述了人们希望如何使用一个系统，将相关用户、用户            <a href="https://www.cnblogs.com/CKExp/p/12221861.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-22 11:58 微笑刺客D 阅读 (213) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12221861" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/01/21.html">2020年1月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12213176.html">
+    UML图例之活动图
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作为UML图例中的重要角色，活动图描述的是对象活动的顺序关系所遵循的规则，作为用例实现的描述，非常适合于和用户沟通，同时也有助于为开发提供指导。 一、活动图简介 活动图（activity diagram）是阐明了业务用例实现的工作流程。业务工作流程说明了业务为向所服务的业务主角提供其所需要的价值而必            <a href="https://www.cnblogs.com/CKExp/p/12213176.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-21 11:43 微笑刺客D 阅读 (70) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12213176" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/01/19.html">2020年1月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12213648.html">
+    UML图例之类图
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作为UML图例中的重要角色，通过许多（静态）说明性的模型元素（例如类、包和它们之间的关系，这些元素和它们的内容互相连接）描述系统静态结构，帮助我们快速了解、理清系统中对象之间的关系。 一、类图中的几种关系 泛化关系：在代码中体现为继承关系，设计上用空心箭头实线表示。 实现关系：在代码中体现在接口和实            <a href="https://www.cnblogs.com/CKExp/p/12213648.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-19 14:53 微笑刺客D 阅读 (71) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12213648" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/01/12.html">2020年1月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12182009.html">
+    Deepin安装NodeJS和NPM
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：NodeJS使用范围越来越广，从想尝试看看typescript怎么用到electron想玩一玩，看个前后端分离的项目前端模块都还得用到NodeJS。因此，特意去百度一波安装教程，可是没找到几个可以一次点亮的，特此记录下本次点亮之旅。 系统环境：Deepin v15.11 一、官网下载安装包 百度搜索            <a href="https://www.cnblogs.com/CKExp/p/12182009.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-12 21:06 微笑刺客D 阅读 (37) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12182009" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/01/11.html">2020年1月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/11930140.html">
+    X-Admin&amp;ABP框架开发-租户管理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：软件即服务概念的推动，定制化到通用化的发展，用一套代码完成适应不同企业的需求，利用多租户技术可以去做到这一点。ABP里提供了多租户这一概念并且也在Zero模块中实现了这一概念。 一、多租户的概念 单部署-单数据库：部署应用程序的单个实例和单个数据库。在每个数据表（关系型数据库）里用一个TenantI            <a href="https://www.cnblogs.com/CKExp/p/11930140.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-11 16:47 微笑刺客D 阅读 (1114) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11930140" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2020/01/01.html">2020年1月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/11996382.html">
+    X-Admin&amp;ABP框架开发-代码生成器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在日常开发中，有时会遇到一些相似的代码，甚至是只要CV一次，改几个名称，就可以实现功能了，而且总归起来，都可以由一些公用的页面更改而来，因此，结合我日常开发中使用到的页面，封装一个适合自己的代码生成器，仅处于入门阶段，包括生成的代码结构都仅是把框架展示出来，内部详细暂时没得，针对于应用服务中的接口和            <a href="https://www.cnblogs.com/CKExp/p/11996382.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-01 00:02 微笑刺客D 阅读 (670) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11996382" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2019/12/06.html">2019年12月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/11997260.html">
+    .Net Core控制台&amp;EFCore连接Mysql
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在用惯了Asp.Net Core提供的基架后，反过来想一想，貌似忘记了控制台如何去连接数据库了，因此，写一篇文章来借此巩固下并以后再来回顾时，加快步骤。 1、新建一个.Net Core控制台，然后安装Nuget包 2、添加一个文件夹Models，并增加一个实体类Company，增加该实体类一系列属性            <a href="https://www.cnblogs.com/CKExp/p/11997260.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-06 19:51 微笑刺客D 阅读 (688) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11997260" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2019/11/17.html">2019年11月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/11815015.html">
+    X-Admin&amp;ABP框架开发-RBAC
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在业务系统需求规划过程中，通常对于诸如组织机构、用户和角色等这种基础功能，通常是将这部分功能规划到通用子域中，这也说明了，对于这部分功能来讲，是系统的基石，整个业务体系是建立于这部分基石之上的，当然，还有诸如多语言、设置管理、认证和授权等。对于这部分功能，ABP中存在这些概念，并且通过Module             <a href="https://www.cnblogs.com/CKExp/p/11815015.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-17 19:45 微笑刺客D 阅读 (625) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11815015" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2019/10/31.html">2019年10月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/11767985.html">
+    .Net轻量状态机Stateless的简单应用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：对于大部分系统中流程的变更，是十分正常的事情，小到一个状态的切换，大到整个系统都是围绕业务流再走，复杂点的有工作流引擎，简单点的几个if/else收工，但是往往有那种，心有余而力不足的，比简单复杂，比复杂简单，最近，对业务流程的变更这一块一直再琢磨，没有找到一些让我豁然开朗的资料，本次只能是讲讲我的            <a href="https://www.cnblogs.com/CKExp/p/11767985.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-31 20:06 微笑刺客D 阅读 (785) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11767985" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/CKExp/archive/2019/09/22.html">2019年9月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/CKExp/p/11564882.html">
+    .Net轻量状态机Stateless
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：很多业务系统开发中，不可避免的会出现状态变化，通常采用的情形可能是使用工作流去完成，但是对于简单场景下，用工作流有点大财小用感觉，比如订单业务中，订单状态的变更，涉及到的状态量不是很多，即使通过简单的if-else也能足够使用，甚至是用上switch去减少if-else的使用，都是可以的，尽管这会丧            <a href="https://www.cnblogs.com/CKExp/p/11564882.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-22 15:50 微笑刺客D 阅读 (2107) 评论 (11)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11564882" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/CKExp/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 微笑刺客D
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

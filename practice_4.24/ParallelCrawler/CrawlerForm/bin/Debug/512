@@ -1,0 +1,501 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>耶low - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/lbhym/custom.css?v=/bNcoqoCmLiTu3EIkfiCTX1tFFw=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/lbhym/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/lbhym/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/lbhym/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 524632;
+        var currentBlogApp = 'lbhym';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/lbhym/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/lbhym/">耶low的博客</a>
+</h1>
+<h2>
+路途遥远
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lbhym/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%80%B6low">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/lbhym/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+52&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+9</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12753314.html">
+    Netty入门与实战教程总结分享
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言：都说Netty是Java程序员必须要掌握的一项技能，带着不止要知其然还要知其所以然的目的，在慕课上找了一个学习Netty源码的教程，看了几章后着实有点懵逼。虽然用过Netty，并且在自己的个人网站上实现了聊天室的功能。但是使用的还是Netty很少一部分功能，很多组件都没涉及，很多API也似懂非            <a href="https://www.cnblogs.com/lbhym/p/12753314.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 14:53 耶low 阅读 (104) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12753314" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12720944.html">
+    手动搭建I/O网络通信框架4：AIO编程模型，聊天室终极改造
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：第一章：手动搭建I/O网络通信框架1：Socket和ServerSocket入门实战，实现单聊 第二章：手动搭建I/O网络通信框架2：BIO编程模型实现群聊 第三章：手动搭建I/O网络通信框架3：NIO编程模型，升级改造聊天室 上一章讲到的NIO编程模型比较主流，非常著名的Netty就是基于NIO编            <a href="https://www.cnblogs.com/lbhym/p/12720944.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 16:49 耶low 阅读 (256) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720944" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/04/14.html">2020年4月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12698309.html">
+    手动搭建I/O网络通信框架3：NIO编程模型，升级改造聊天室
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：第一章：手动搭建I/O网络通信框架1：Socket和ServerSocket入门实战，实现单聊 第二章：手动搭建I/O网络通信框架2：BIO编程模型实现群聊 第四章：手动搭建I/O网络通信框架4：AIO编程模型，聊天室终极改造 在第二章中用BIO编程模型，简单的实现了一个聊天室。但是其最大的问题在解            <a href="https://www.cnblogs.com/lbhym/p/12698309.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-14 15:27 耶low 阅读 (376) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12698309" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/04/11.html">2020年4月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12681787.html">
+    手动搭建I/O网络通信框架2：BIO编程模型实现群聊
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：第一章：手动搭建I/O网络通信框架1：Socket和ServerSocket入门实战，实现单聊 第三章：手动搭建I/O网络通信框架3：NIO编程模型，升级改造聊天室 第四章：手动搭建I/O网络通信框架4：AIO编程模型，聊天室终极改造 在第一章中运用Socket和ServerSocket简单的实现了            <a href="https://www.cnblogs.com/lbhym/p/12681787.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-11 19:40 耶low 阅读 (192) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12681787" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/04/10.html">2020年4月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12673470.html">
+    手动搭建I/O网络通信框架1：Socket和ServerSocket入门实战，实现单聊
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：资料：慕课网 第二章：手动搭建I/O网络通信框架2：BIO编程模型实现群聊 第三章：手动搭建I/O网络通信框架3：NIO编程模型，升级改造聊天室 第四章：手动搭建I/O网络通信框架4：AIO编程模型，聊天室终极改造 这个基础项目会作为BIO、NIO、AIO的一个前提，后面会有数篇博客会基于这个小项目            <a href="https://www.cnblogs.com/lbhym/p/12673470.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-10 14:48 耶low 阅读 (93) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12673470" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/03/25.html">2020年3月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12551021.html">
+    Java高效编程：总结分享
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：参考资料：慕课网：Java高效编程收费实战课程、博客园、CSDN、菜鸟教程以及其他文档。 篇幅受限，不太想针对每个点都写篇博客，有的地方可能写的不是很详细，一笔带过了。如果你觉得那个点在项目中用得上可以另行搜索一些相关的更详细的博客或文档。 1.Lambda和函数式编程 函数式编程即可以把函数当作变            <a href="https://www.cnblogs.com/lbhym/p/12551021.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-25 19:21 耶low 阅读 (295) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12551021" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/03/20.html">2020年3月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12529886.html">
+    Redis的几种应用实战
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1.分布式锁: 实现：用set key value ex time nx指令实现，这个指令以及其参数是原子性的操作。释放锁用del key，释放之前先比较一下value是否与当前的value一样，原因见后面。key为锁名。value为随机数并用一个变量记录这个随机数。ex是个set指令的参数，代表t            <a href="https://www.cnblogs.com/lbhym/p/12529886.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-20 10:05 耶low 阅读 (38) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12529886" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/03/15.html">2020年3月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12497212.html">
+    SpringBoot+Netty+WebSocket实现实时通信
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这篇随笔暂时不讲原理，首先搭建起一个简单的可以实现通信的Demo。之后的一系列随笔会进行一些原理上的分享。 不过在这之前大家最好了解一下Netty的线程模型和NIO编程模型，会对它的整体逻辑有所了解。 更新一篇关于NIO的博客：手动搭建I/O网络通信框架3：NIO编程模型，升级改造聊天室 首先创建好            <a href="https://www.cnblogs.com/lbhym/p/12497212.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-15 13:40 耶low 阅读 (453) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12497212" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/03/10.html">2020年3月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12458990.html">
+    深入理解Java虚拟机第三版，总结笔记【随时更新】
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近一直在看《深入理解Java虚拟机》第三版，无意中发现了第三版是最近才发行的，听说讲解的JDK版本升级，新增了近50%的内容。 这种神书，看懂了，看进去了，真的看的很快，并没有想象中的晦涩难懂，毕竟是公认的经典，作者书面描述能力肯定了得。虽然这种书，不会让你的代码能力马上提升，但是真正的让你知其然            <a href="https://www.cnblogs.com/lbhym/p/12458990.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-10 21:46 耶low 阅读 (432) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12458990" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/lbhym/archive/2020/02/21.html">2020年2月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12334582.html">
+    深入了解MySQL，一篇简短的总结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：MySQL的基本语法 这里作为MySQL部分模块的深入了解，大部分都是理论方面的笔记，不会写具体用法。 具体用法会记录在下面这个随笔分类下，不过暂时还没更新完，等过段时间会更新下事务、存储过程、索引等用法，虽然都很简单，就当做个完整的笔记。 https://www.cnblogs.com/lbhym            <a href="https://www.cnblogs.com/lbhym/p/12334582.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-21 11:48 耶low 阅读 (283) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12334582" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/lbhym/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 耶low
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

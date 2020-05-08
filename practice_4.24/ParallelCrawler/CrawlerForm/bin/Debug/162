@@ -1,0 +1,907 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>网易云 - 博客园</title>
+    <link rel="stylesheet" href="//common.cnblogs.com/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/yun163/bundle-yun163.min.css?v=zfb1V6AjkKrrF174m-01O0jTFJW6yRjRaNP8MPPCVGc" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/163yun/custom.css?v=T95AjECLzF/q/6kjOc&#x2B;bkK8a4Ak=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/yun163/bundle-yun163-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/163yun/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/163yun/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/163yun/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 386785;
+        var currentBlogApp = '163yun';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'yun163';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <div class="top_banner">
+        <a href="https://www.163yun.com/product-nsf?fromnsf=M_cnblogs_top" target="_blank">
+
+            <img alt="" src="https://nos.netease.com/cloud-website-bucket/201909051029208a939972-7f3b-4eec-9d76-fad9ca585b3b.jpeg" />
+            
+        </a>
+
+</div>
+<div class="navs">
+      <div class="nav-lf">
+        <a href="https://www.163yun.com" class="logo" target="_blank">
+        <img src="https://nos.netease.com/cloud-website-bucket/4ce1a3f807838c4628c0bebc4533df18.png" alt="" title="" class="" >
+        </a>
+        <ul class="nav-list">
+          <li class="navs-item"><a href="https://www.163yun.com/?tag=M_cnblogs_menu" class="nav-link" target="_blank">产品</a></li>
+          <li class="navs-item"><a href="https://www.163yun.com/product-nsf?tag=M_cnblogs_menu" class="nav-link" target="_blank">微服务</a></li>
+          <li class="navs-item"><a href="https://www.163yun.com/product-npc?tag=M_cnblogs_menu" class="nav-link" target="_blank">私有云</a></li>
+          <li class="navs-item"><a href="https://www.163yun.com/product/youdata?tag=M_cnblogs_menu" class="nav-link" target="_blank">大数据</a></li>
+          <li class="navs-item"><a href="https://www.163yun.com/help?tag=M_cnblogs_menu" class="nav-link" target="_blank">文档与支持</a></li>
+          <li class="navs-item"><a href="https://nic.163yun.com/?tag=M_cnblogs_menu" class="nav-link" target="_blank">合作与生态</a></li>
+          <li class="navs-item"><a href="https://sq.163yun.com/?tag=M_cnblogs_menu" class="nav-link" target="_blank">社区</a></li>
+          <li class="navs-item"><a href="https://icp.163yun.com/?tag=M_cnblogs_menu" class="nav-link" target="_blank">备案</a></li>
+          <li class="navs-item"><a href="https://id.163yun.com/login?referrer=https://console.163yun.com&h=wyygw&tag=M_cnblogs_menu" class="nav-link" target="_blank">控制台</a></li>
+        </ul>
+      </div>
+      <div class="nav-rg">
+        <a href="https://id.163yun.com/login?referrer=https://console.163yun.com&h=wyygw&tag=M_cnblogs_menu" class="login" target="_blank">登录</a>
+        <a href="https://id.163yun.com/register?h=wyygw&referrer=https://console.163yun.com&tag=M_cnblogs_menu" class="account" target="_blank">注册有礼</a>
+      </div>
+    </div>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://163yun.cnblogs.com" class="navbar-brand">
+                <img src="//common.cnblogs.com/images/logo.png" alt="logo" /><span class="split">|</span><span class="text">网易云专区</span></a>
+        </div>
+        <div class="navbar-collapse collapse hide">
+            <ul class="nav navbar-nav">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container body-content">
+    <div class="banner">
+        <a href="https://yc.163yun.com/?tag=M_jssq_bky_dt001_ycdh" target="_blank">
+            <img src="https://images2018.cnblogs.com/blog/35695/201806/35695-20180625210937647-2014981771.jpg" alt="" /></a>
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="main">
+                <div class="slide">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <a href="https://yc.163yun.com/?tag=M_jssq_bky_zb001_ycdh" target="_blank">
+                                    <img src="https://images2018.cnblogs.com/blog/35695/201806/35695-20180625211000071-117697830.jpg" alt="" class="img-responsive" /></a>
+                            </div>
+                            <div class="item">
+                                <a href="https://www.163yun.com/product-ndc?tag=M_cnblogs_zq_201" target="_blank">
+                                    <img src="/skins/yun163/images/slide01.jpg" alt="" class="img-responsive" /></a>
+                            </div>
+                            <div class="item">
+                                <a href="https://www.163yun.com/solution/financial?tag=M_cnblogs_zq_202" target="_blank">
+                                    <img src="/skins/yun163/images/slide02.jpg" alt="" class="img-responsive" /></a>
+                            </div>
+                            <div class="item">
+                                <a href="https://www.163yun.com/cooperation/partner?tag=M_cnblogs_zq_203" target="_blank">
+                                    <img src="/skins/yun163/images/slide03.jpg" alt="" class="img-responsive" /></a>
+                            </div>
+                        </div>
+                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="top-links">
+                    <div class="top-link">
+                        <a href="http://blog.163yun.com/archives/1333?tag=M_cnblogs_zq_301" target="_blank">
+                            <img src="/skins/yun163/images/follownetcase.png" alt="" />
+                            <div class="top-link-title">关注网易云</div>
+                            <div class="top-link-decription">揭秘网易云背后的故事</div>
+                        </a>
+                    </div>
+                    <div class="top-link">
+                        <a href="https://www.163yun.com/gift?tag=M_cnblogs_zq_302" target="_blank">
+                            <img src="/skins/yun163/images/new-user.png" alt="" />
+                            <div class="top-link-title">新用户专享</div>
+                            <div class="top-link-decription">新用户专享代金券大放送</div>
+                        </a>
+                    </div>
+                    <div class="top-link">
+                        <a href="https://www.163yun.com/help?tag=M_cnblogs_zq_303" target="_blank">
+                            <img src="/skins/yun163/images/start-guide.png" alt="" />
+                            <div class="top-link-title">入门指南</div>
+                            <div class="top-link-decription">助您轻松玩转网易云</div>
+                        </a>
+                    </div>
+                    <div class="top-link">
+                        <a href="https://www.163yun.com/salon?tag=M_cnblogs_zq_304" target="_blank">
+                            <img src="/skins/yun163/images/salon.png" alt="" />
+                            <div class="top-link-title">网易云创沙龙</div>
+                            <div class="top-link-decription">全国巡回闭门沙龙</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="blog-content">
+                    
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2019/12/10.html">
+2019年12月10日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12016727.html">
+[置顶]    网易数据中台建设实践
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：数据中台无疑是今年大数据圈最火的名词，不仅是互联网企业，就连很多传统企业都参与到数据中台的建设中，基于数据提高企业运营效率。作为网易集团公共技术研发部门，网易杭州研究院在过去一年一直致力于数据中台支撑产品的研发，推动数据中台在网易电商、音乐、传媒等业务的落地。本文将结合网易数据中台的建设实践，对数据            <a href="https://www.cnblogs.com/163yun/p/12016727.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-12-10 15:02 网易云 阅读 (164) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12016727" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12016698.html">
+[置顶]    【杭研大咖说】温正湖：6年，从不会写SQL到数据库专家
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：他是业界主流数据库技术会议的明星讲师，开源社区各种分享活动的活跃分子；他累计申请了10多个技术发明专利，已授权8个；他近一年发布60多篇高质量技术博客文章，阅读量数十万；他和团队对MyRocks的优化实践，被网易技术委员会评选为年度大奖；他与同事合著的《MySQL内核：InnoDB存储引擎 卷1》在            <a href="https://www.cnblogs.com/163yun/p/12016698.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-12-10 14:59 网易云 阅读 (83) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12016698" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12016676.html">
+[置顶]    从自动化到智能化，网易杭研的AIOps探索与实践
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在大数据时代下，我们借助机器学习、数据仓库、大数据平台等大数据技术手段，将运维产生的数据进行分析、处理，得出最佳运维策略，以期实现对故障的事先干预，将风险降低到最低，从而降低运维成本，提升运维效率，最终实现运维智能化。本文分享网易杭州研究院在这个领域的实践经验。 本文由作者授权发布，未经许可，请勿转            <a href="https://www.cnblogs.com/163yun/p/12016676.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-12-10 14:56 网易云 阅读 (336) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12016676" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12016661.html">
+[置顶]    特征选择之经典三刀
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文由作者授权发布，未经许可，请勿转载。作者：侯江畔，网易杭州研究院算法工程师数据决定了模型的上限，而算法只是去逼近这个上限。如何从海量特征中科学提取关键特征呢？特征选择（Feature Selection）和特征提取（Feature Extraction）是特征工程（Feature Enginee            <a href="https://www.cnblogs.com/163yun/p/12016661.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-12-10 14:55 网易云 阅读 (69) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12016661" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12016607.html">
+[置顶]    【杭研大咖说】王新勇：死磕云原生的“懒人”
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在生活中，作为户外运动爱好者，王新勇常常于周末爬山，享受攀越高峰之后见到的无限风光 ；在工作上，作为网易杭州研究院（网易杭研）的系统开发专家，王新勇则钟情于征服云计算领域的一座座“山峰”。业务部门邀请他去排查问题，常常惊异于他找出异常的速度和解决故障的效率，心悦诚服地称他为“大神”。然而，在王新勇看            <a href="https://www.cnblogs.com/163yun/p/12016607.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-12-10 14:48 网易云 阅读 (42) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12016607" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2019/10/11.html">
+2019年10月11日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/11654820.html">
+[置顶]    这里有一张福利票，送你和史炎、俊平大魔王、虎扑大佬面对面“蹦科技迪”
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：想知道目前人工智能技术最新的进展吗？想知道打造出《吐槽大会》、《脱口秀大会》的笑果文化，是怎么玩转年轻喜剧产业链的吗？想知道现在“直文化”下的男性经济有什么运营秘诀吗？想知道围绕女性圈层 的“她经济”长盛不衰的秘密吗？想知道如何与Z世代消费者做注意力沟通？快来2019CITC现场吧！邀请你与：中国工            <a href="https://www.cnblogs.com/163yun/p/11654820.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-10-11 16:05 网易云 阅读 (57) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11654820" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2019/08/16.html">
+2019年8月16日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/11364252.html">
+[置顶]    互联网公司的中台实践：网易杭研的中台往事
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：编者按：本文转载自网易副总裁、网易杭州研究院执行院长汪源的个人公众号“冷技术热思考”（欢迎搜索关注）。本文是中台系列的第三篇，《什么是中台？所有的中台都是业务中台》厘清中台概念，第二篇《如何建设中台？中台建设的组织、支撑技术和方法论》介绍了建设中台的方法，这篇将介绍网易杭研在中台道路上十多年的探索和            <a href="https://www.cnblogs.com/163yun/p/11364252.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-08-16 15:34 网易云 阅读 (238) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11364252" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/11363925.html">
+[置顶]    如何建设中台？中台建设的组织、支撑技术和方法论
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：编者按：本文转载自网易副总裁，网易杭州研究院执行院长汪源的个人公众号“冷技术热思考”（欢迎搜索关注）。上一篇中台系列的文章重点阐述了中台的概念，本文是系列文章的第二篇，目的是说明什么情况下可以考虑建设中台，如果要建怎么建的问题，可以作为企业思考中台建设的大框架。以下为原文（有少量改动）：本文将例举典            <a href="https://www.cnblogs.com/163yun/p/11363925.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-08-16 14:57 网易云 阅读 (769) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11363925" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/11363838.html">
+[置顶]    什么是中台？所有的中台都是业务中台
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：编者按：本文转载自网易副总裁，网易杭州研究院执行院长汪源的个人公众号“冷技术热思考”（欢迎搜索关注）。7.26的云创峰会上，汪源承诺会写三篇文章，力求说清楚什么是中台，什么时候要考虑建中台，怎么建中台。今天是第一篇，目标是厘清什么是中台。以下为原文：中台的概念一热，很多似是而非的东西都在往中台的概念            <a href="https://www.cnblogs.com/163yun/p/11363838.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-08-16 14:46 网易云 阅读 (1872) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11363838" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2019/07/23.html">
+2019年7月23日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/11232292.html">
+[置顶]    微服务架构转型又遇新挑战，看轻舟如何破局而立
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：数字化时代，传统企业在各个方面都受到互联网公司的影响，从商业模式，到业务前台，进而已经逐步下沉到底层的技术支撑，甚至是技术架构。如果说技术的创新带给企业的是燃料的升级，技术架构的创新带来的则是从马车到汽车的根本转变。只有技术架构的改变，才能充分发挥新技术的价值。而微服务架构有助于企业快速拥抱变化，高            <a href="https://www.cnblogs.com/163yun/p/11232292.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2019-07-23 15:55 网易云 阅读 (217) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11232292" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2020/04/24.html">
+2020年4月24日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12769646.html">
+    网易严选案例|下单峰值增长10倍,毫秒级处理,轻舟助力练就电商必杀技
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：轻舟基于容器云和CodePipeline为网易严选提供DevOps解决方案，采用容器化部署方式，构建高效、持续的软件研发流水线，业务交付效率提升5倍，大大适应了运营活动中高速迭代的需求。同时，通过对服务进行拆分，并通过无侵入的轻舟服务网格，拉齐不同语言栈的服务治理能力，真正实现业务与基础设施的高度解耦，使得网易严选可以在异构技术栈下低成本、大幅度地提升业务迭代效率。            <a href="https://www.cnblogs.com/163yun/p/12769646.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-04-24 19:29 网易云 阅读 (0) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12769646" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2020/04/17.html">
+2020年4月17日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12719797.html">
+    网易轻舟服务网格产品升级，全面拥抱下一代微服务技术
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：业务的升级离不开底层架构的升级，随着越来越多的企业将数字化列为战略目标，微服务架构已经成为企业数字化转型升级战略的基石。但微服务带来的系统和交互的复杂性，却让很多传统企业望而却步。
+为此，轻舟微服务基于开源Istio推出服务网格（Service Mesh）平台，提供完整的微服务生命周期管理、流量管理和非侵入式的服务治理解决方案，支持熔断、降级、流控、负载均衡、容错、高级路由等服务治理功能，同时摆脱服务开发框架和开发语言的束缚，助力企业快速转型微服务架构。
+早在去年网易云创大会期间，轻舟微服务就已经发布了对服务网格的产品化，并在网易严选进行了大型生产环境的实践。历经半年多的锤炼，轻舟服务网格基于用户实际生产中的需求，进行了多项产品改进，形成6大优势和5大应用场景。            <a href="https://www.cnblogs.com/163yun/p/12719797.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-04-17 14:31 网易云 阅读 (79) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12719797" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2020/04/16.html">
+2020年4月16日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12711491.html">
+    rancher 和 Kubernetes有什么区别？
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：总体来说，Rancher和k8s都是用来作为容器的调度与编排系统。但是rancher不仅能够管理应用容器，更重要的一点是能够管理k8s集群。Rancher2.x底层基于k8s调度引擎，通过Rancher的封装，用户可以在不熟悉k8s概念的情况下轻松的通过Rancher来部署容器到k8s集群当中。 为            <a href="https://www.cnblogs.com/163yun/p/12711491.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-04-16 11:24 网易云 阅读 (296) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12711491" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2020/03/31.html">
+2020年3月31日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12606540.html">
+    从ISTIO熔断说起-轻舟网关熔断
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近大家经常被熔断洗脑，股市的动荡，让熔断再次出现在大家眼前。微服务中的熔断即服务提供方在一定时间内，因为访问压力太大或依赖异常等原因，而出现异常返回或慢响应，熔断即停止该服务的访问，防止发生雪崩效应。轻舟网关基于Envoy实现，在社区熔断思路上进行扩展。本文从Istio中熔断说起，拨云见日，漫谈轻舟网关熔断。            <a href="https://www.cnblogs.com/163yun/p/12606540.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-03-31 17:14 网易云 阅读 (207) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12606540" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2020/03/13.html">
+2020年3月13日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12487079.html">
+    数据库与数据仓库的区别是什么
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我们知道，大部分公司都拥有了自己的财务，OA，CRM 等系统。这些系统都有自己的独立数据库，记录着企业运行情况某个方面的数据。但是单独看这些系统的报表，并不一定能对企业运行情况有全面客观的了解。就像只凭身高不能判断一个人是否健康，所以体检的时候我们需要化验许多指标，做各种检测，就是为了对身体情况有更            <a href="https://www.cnblogs.com/163yun/p/12487079.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-03-13 16:03 网易云 阅读 (38) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12487079" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2020/03/12.html">
+2020年3月12日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12469561.html">
+    API是什么
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：API就是接口，就是通道，负责一个程序和其他软件的沟通，本质是预先定义的函数。譬如我们去办事，窗口就类似一个API，如果对于某一件不简单的事情，这个窗口能做到让我们“最多跑一次”，“只盖一枚章”，这个API就是不错的。（当然，API不太一样，适用接口隔离原则，即使用多个隔离的接口，如用户注册与用户登            <a href="https://www.cnblogs.com/163yun/p/12469561.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-03-12 15:25 网易云 阅读 (26) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12469561" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/163yun/archive/2020/03/11.html">
+2020年3月11日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12463583.html">
+    要想业务中台建得快，最好用Service Mesh来带
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：中国企业数字化转型进入深水区，业务中台及下一代微服务Service Mesh（服务网格）被越来越多的人关注，本文结合网易轻舟微服务Service Mesh实践，解析业务中台为什么需要Service Mesh，以及实施Service Mesh的技术方案。 业务中台呼唤Service Mesh 当业务系            <a href="https://www.cnblogs.com/163yun/p/12463583.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-03-11 17:05 网易云 阅读 (29) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12463583" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12463545.html">
+    中台建设之路-中台建设怎么做？建设中台需要具备什么？
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：开宗明义：要建设中台，需要考虑组织、支撑技术、方法论这三个方面，往往还需要咨询服务。 中台作为一种有业务属性的共性能力，首先就需要一个懂业务、承担业务职责的专职的组织机构来负责。要不要建中台，首先要看领导有没有魄力去整合建立一个中台组织。因为原来的平台部通常不懂业务，懂业务的人各自分散在前台业务部门            <a href="https://www.cnblogs.com/163yun/p/12463545.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-03-11 17:02 网易云 阅读 (59) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12463545" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12463536.html">
+    为什么要建设中台
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：要建设中台，首先要考虑要不要建设中台。这个问题需要先做个初略的判断。 业务中台的典型场景 一、对业务中台来说，比较符合的场景主要有： 1、业务系统研发团队至少大几十人（含外包的），需求多变化快，系统又涉及多个领域（比如做ERP、电商的），业务逻辑比较复杂。这时业务中台可以把系统和业务领域划分清楚，提            <a href="https://www.cnblogs.com/163yun/p/12463536.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-03-11 17:01 网易云 阅读 (17) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12463536" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/163yun/p/12463520.html">
+    数据中台解决了什么问题？
+</a>
+
+			</div>
+			<div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：数据中台是企业级大数据通过系统化的方式实现统一、标准、安全、共享的数据组织，以服务化的方式赋能前台数据应用，提高数据的使用效率。那么数据中台到底解决了什么问题。归结起来，主要是三个：效率、质量和成本。 一、效率 效率问题可以分为数据研发的效率、数据发现的效率和数据分析的效率。 首先是数据研发的效率，            <a href="https://www.cnblogs.com/163yun/p/12463520.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+			<div class="clear"></div>
+			<div class="postDesc">
+
+posted @ 2020-03-11 16:59 网易云 阅读 (18) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12463520" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="clear"></div>
+
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/163yun/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+                </div>
+                <script>
+                    if ($('#post_detail').length > 0) {
+                        $('.slide').hide();
+                        $('.top-links').hide();
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="sidebar">
+                <div class="follow">
+                    <div class="title">关注网易云</div>
+                    <img src="/skins/yun163/images/wechat.png" alt="" />
+                    <div class="text">微信公众号</div>
+
+                </div>
+                <div class="products">
+                    <div class="title">推荐产品</div>
+                    <div class="product">
+                        <a href="https://www.163yun.com/product-secure?tag=M_cnblogs_zq_401" target="_blank">
+                            <img src="/skins/yun163/images/cloud-security.png" alt="" />
+                            <div class="product-name">云安全</div>
+                        </a>
+                        <div class="product-description">为互联网各行业提供反垃圾、验证码、注册保护、登录保护、活动反作弊、应用加固、DDoS防护等整体安全解决方案。</div>
+                    </div>
+                    <div class="product">
+                        <a href="https://youliao.163yun.com/?tag=M_cnblogs_zq_402" target="_blank">
+                            <img src="/skins/yun163/images/youliao.png" alt="" />
+                            <div class="product-name">网易有料</div>
+                        </a>
+                        <div class="product-description">将定制化信息流和精准广告快速对接到您的产品中，向终端用户提供个性化内容分发服务。</div>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.163yun.com/product-media?tag=M_cnblogs_zq_403" target="_blank">
+                            <img src="/skins/yun163/images/communication.png" alt="" />
+                            <div class="product-name">通信与视频</div>
+                        </a>
+                        <div class="product-description">打造真正稳定易用的多媒体通信云平台，为您提供 IM 、音视频、直播、点播、短信等多种通信能力。</div>
+                    </div>
+                    <div class="product">
+                        <a href="https://www.163yun.com/product-cloudcompute?tag=M_cnblogs_zq_404" target="_blank">
+                            <img src="/skins/yun163/images/basic-service.png" alt="" />
+                            <div class="product-name">云基础服务</div>
+                        </a>
+                        <div class="product-description">深度整合了 IaaS 、Pass 及容器技术，提供了弹性计算，DevOps 工具链及微服务基础设施等服务。</div>
+                    </div>
+                    <div class="product">
+                        <a href="https://bigdata.163yun.com/?tag=M_cnblogs_zq_405" target="_blank">
+                            <img src="/skins/yun163/images/big-data.png" alt="" />
+                            <div class="product-name">大数据</div>
+                        </a>
+                        <div class="product-description">一站式大数据管理和应用开发平台，企业级大数据可视化分析平台。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; 2018 - <a href="https://www.163yun.com/" target="_blank">网易云</a></p>
+    </footer>
+</div>
+<script src="//common.cnblogs.com/scripts/bootstrap.min.js"></script>
+
+
+    <div id="page_end_html">
+        <div class="container">
+
+    <div class="bottom_banner">
+        <a href="https://www.163yun.com/product-nsf?fromnsf=M_cnblogs_end" target="_blank">
+            <img alt="" src="https://nos.netease.com/cloud-website-bucket/201909051029208a939972-7f3b-4eec-9d76-fad9ca585b3b.jpeg" style="width: 880px;height: 100px;"/>
+        </a>
+    </div>
+<!--
+-->
+
+    <div id="ad">
+          <a href="https://sq.163yun.com/blog/article/223314524268601344" target="_blank">
+              【推荐】怎样有效杜绝“羊毛党“？
+          </a>
+          <br>
+    </div>
+<div id="ad">
+          <a href="https://sq.163yun.com/blog/article/190197645319094272" target="_blank">
+              【推荐】网站被黑客扫描撞库该怎么应对防范？
+          </a>
+          <br>
+          <br>
+          <br>
+    </div>
+
+</div>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110853334-5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-110853334-5');
+</script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="通过实战来理解数据可视化，使用金融数据可视化理解和使用pygal模块" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Python数据可视化---pygal模块 - merlin& - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/cherish-hao/custom.css?v=4hqAigoQxKQLWBBM94IuOEs8LkI=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/cherish-hao/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/cherish-hao/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/cherish-hao/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 586242;
+        var currentBlogApp = 'cherish-hao';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/cherish-hao/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/cherish-hao/">merlin&</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/cherish-hao/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/merlin%26">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/cherish-hao/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+12&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+1</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/cherish-hao/p/12734554.html">Python数据可视化---pygal模块</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        通过实战来理解数据可视化，使用金融数据可视化理解和使用pygal模块
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p><div class="toc"><div class="toc-container-header">目录</div><ul><li><a href="#pygal模块">pygal模块</a><ul><li><a href="#安装pygal模块">安装pygal模块</a></li><li><a href="#pygal模块介绍">pygal模块介绍</a><ul><li><a href="#柱状图">柱状图</a><ul><li><a href="#单列柱状图">单列柱状图</a></li><li><a href="#堆叠柱状图">堆叠柱状图</a></li><li><a href="#横向柱状图">横向柱状图</a></li></ul></li><li><a href="#折线图">折线图</a><ul><li><a href="#简单折线图">简单折线图</a></li><li><a href="#纵向折线图">纵向折线图</a></li><li><a href="#堆叠折线图">堆叠折线图</a></li></ul></li><li><a href="#饼状图">饼状图</a><ul><li><a href="#简单饼状图">简单饼状图</a></li><li><a href="#多级饼状图">多级饼状图</a></li><li><a href="#圆环图">圆环图</a></li><li><a href="#半圆图">半圆图</a></li></ul></li><li><a href="#雷达图">雷达图</a><ul><li><a href="#基础雷达图">基础雷达图</a></li></ul></li></ul></li><li><a href="#其他图表介绍">其他图表介绍</a></li></ul></li><li><a href="#爬取中国福彩网彩票数据并以图表形式显示">爬取中国福彩网彩票数据并以图表形式显示</a><ul><li><a href="#网页分析">网页分析</a></li><li><a href="#数据提取">数据提取</a></li><li><a href="#转换数据">转换数据</a></li><li><a href="#将数据转换成图表">将数据转换成图表</a></li><li><a href="#完整代码">完整代码</a></li><li><a href="#实现结果">实现结果</a></li></ul></li></ul></div></p>
+<h2 id="pygal模块">pygal模块</h2>
+<h3 id="安装pygal模块">安装pygal模块</h3>
+<p>pygal模块的安装非常简单，只需输入一行pip命令即可</p>
+<pre><code>pip install pygal
+</code></pre>
+<p>安装完成：<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419224758992-598851840.png" alt=""></p>
+<h3 id="pygal模块介绍">pygal模块介绍</h3>
+<p><a href="http://www.pygal.org/en/stable/">pygal官网地址</a><br>
+pygal是Python的第三方库，他的主要功能就是数据可视化，即将数字转化成图表的形式来呈现，它提供的图表样式有柱状图、折线图、饼状图、雷达图......</p>
+<h4 id="柱状图">柱状图</h4>
+<p><a href="http://www.pygal.org/en/stable/documentation/types/bar.html#stacked">pygal柱状图官方文档</a></p>
+<h5 id="单列柱状图">单列柱状图</h5>
+<pre><code>import pygal
+
+view = pygal.Bar()
+#图表名
+view.title = '柱状图'
+#添加数据
+view.add('numbers', [0,2,4,6,8,10])
+#在浏览器中查看
+#view.render_in_browser()
+#保存为view.svg(也可以保存为jpg)
+view.render_to_file('view.svg')
+</code></pre>
+<p>效果图：<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419233125318-1773289848.png" alt=""><br>
+<font color=red>注意：svg图片用系统自带浏览器打开可能会显示全黑色，可以尝试使用Google浏览器打开</font><br>
+多列柱状图</p>
+<pre><code>#添加数据
+view.add('numbers', [0,2,4,6,8,10])
+view.add('numbers_2', [0,1,3,5,7,9])
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419233508006-1397780072.png" alt=""></p>
+<h5 id="堆叠柱状图">堆叠柱状图</h5>
+<pre><code>view = pygal.StackedBar()
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419235331021-1081916941.png" alt=""></p>
+<h5 id="横向柱状图">横向柱状图</h5>
+<pre><code>view = pygal.HorizontalStackedBar()
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419233813089-913895710.png" alt=""></p>
+<h4 id="折线图">折线图</h4>
+<p><a href="http://www.pygal.org/en/stable/documentation/types/line.html">pygal折线图官方文档</a></p>
+<h5 id="简单折线图">简单折线图</h5>
+<pre><code>import pygal
+
+view = pygal.Line()
+#图表名
+view.title = '折线图'
+#添加数据
+view.add('numbers', [0,2,4,6,8,10])
+view.add('numbers_2', [0,1,3,5,7,9])
+#在浏览器中查看
+#view.render_in_browser()
+#保存为view.svg(也可以保存为jpg)
+view.render_to_file('view.svg')
+</code></pre>
+<p>效果图：<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419234805202-1425423449.png" alt=""></p>
+<h5 id="纵向折线图">纵向折线图</h5>
+<pre><code>view = pygal.HorizontalLine()
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419234935501-2103983264.png" alt=""></p>
+<h5 id="堆叠折线图">堆叠折线图</h5>
+<pre><code>view = pygal.StackedLine(fill=True)
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419235105361-992460179.png" alt=""></p>
+<h4 id="饼状图">饼状图</h4>
+<p><a href="http://www.pygal.org/en/stable/documentation/types/pie.html">pygal饼状图官方文档</a></p>
+<h5 id="简单饼状图">简单饼状图</h5>
+<pre><code>import pygal
+
+view = pygal.Pie()
+#图表名
+view.title = '饼状图'
+#添加数据
+view.add('A', 31)
+view.add('B', 55)
+view.add('C', 14)
+#保存为view.svg(也可以保存为jpg)
+view.render_to_file('view.svg')
+</code></pre>
+<p>效果图：<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200420000436161-1900161650.png" alt=""></p>
+<h5 id="多级饼状图">多级饼状图</h5>
+<pre><code>#添加数据
+view.add('A', [31,25])
+view.add('B', [55,38])
+view.add('C', [14,37])
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200420000730251-191735563.png" alt=""></p>
+<h5 id="圆环图">圆环图</h5>
+<pre><code>#设置空心圆半径
+view = pygal.Pie(inner_radius=0.4)
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200420001010605-948794203.png" alt=""></p>
+<h5 id="半圆图">半圆图</h5>
+<pre><code>view = pygal.Pie(half_pie=True)
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200420001141901-362043494.png" alt=""></p>
+<h4 id="雷达图">雷达图</h4>
+<p><a href="http://www.pygal.org/en/stable/documentation/types/radar.html">pygal官方文档</a></p>
+<h5 id="基础雷达图">基础雷达图</h5>
+<pre><code>import pygal
+
+view = pygal.Radar()
+#图表名
+view.title = '雷达图'
+#添加数据(可以为任意个)
+view.add('A', [31,56,34,67,34])
+view.add('B', [23,18,57,45,35])
+view.add('C', [14,45,76,34,76])
+#保存为view.svg(也可以保存为jpg)
+view.render_to_file('view.svg')
+</code></pre>
+<p>效果图：<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200420001716742-1805726616.png" alt=""></p>
+<h3 id="其他图表介绍">其他图表介绍</h3>
+<p><a href="http://www.pygal.org/en/stable/documentation/types/histogram.html">直方图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/box.html">盒子图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/dot.html">圆点图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/xy.html">坐标图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/funnel.html">锥形图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/solidgauge.html">环状图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/gauge.html">仪表图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/pyramid.html">塔形图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/treemap.html">树图</a><br>
+<a href="http://www.pygal.org/en/stable/documentation/types/maps/index.html">地图</a></p>
+<h2 id="爬取中国福彩网彩票数据并以图表形式显示">爬取中国福彩网彩票数据并以图表形式显示</h2>
+<h3 id="网页分析">网页分析</h3>
+<p>首先打开中国福彩网，点击双色球，选择<a href="http://www.cwl.gov.cn/kjxx/ssq/kjgg/">往期开奖</a>栏目<br>
+进入栏目后，选定往期的奖金数目作为我们想要爬取的目标内容<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419205023147-391174530.png" alt=""></p>
+<p>明确目标后，开始寻找数据所在的位置<br>
+鼠标右击页面，打开网页源代码，在源代码中搜索是否存在奖金金额数目<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419205426486-1990450707.png" alt=""></p>
+<p>搜索过后，发现这个金额数据没有在网页的源代码中，所以想到用抓包的方式来尝试获取这些金额数据<br>
+右击检查，选择network选项卡，按下ctrl+r键刷新界面，开始捕捉数据包<br>
+在过滤掉一些png、jpg的数据包之后，我们锁定了一个以<font color=red>findDrawNotice</font>开头的数据包，打开观察数据包的内容，发现这个正是我们想要抓取的数据包<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419210959587-498357956.png" alt=""></p>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419210436417-1232399063.png" alt=""></p>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419210448024-1831990999.png" alt=""><br>
+现在已经找到了想要抓包的内容，现在可以开始着手写代码了</p>
+<h3 id="数据提取">数据提取</h3>
+<p>我们分析过网页之后，选定了要抓取的数据包，开始使用requests请求来获取数据</p>
+<pre><code>url = 'http://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice?name=ssq&amp;issueCount=30'
+headers = {
+    &quot;User-Agent&quot;:&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36&quot;,
+    &quot;Referer&quot;:&quot;http://www.cwl.gov.cn/kjxx/ssq/&quot;
+           }
+response = requests.get(url,headers=headers).text
+</code></pre>
+<p>这个网页可能会有一个小的反爬措施，于是我们就在headers中加入user-agent和referer两个头信息<br>
+我们使用print语句来打印一下response的内容<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419211437092-1643372430.png" alt=""></p>
+<p>print之后会发现这个内容是以字符串的格式打印出来的，如果我们想从中提取数据，则必须将它转换成字典的格式</p>
+<pre><code>data_json = json.loads(response)     #将数据转换为json格式
+</code></pre>
+<p>将数据转换之后，我们就可以使用键值对的方式来提取我们想要的数据了</p>
+<pre><code>datas = data_json[&quot;result&quot;]
+for data in datas:
+    prizegrades = data[&quot;prizegrades&quot;]          #包含中奖金额的字典提取
+    for item in prizegrades:
+        print(item)
+        typemoney = item['typemoney']        #中奖金额提取
+        print(typemoney)
+</code></pre>
+<p>这里我们尝试着逐层提取彩票的奖金信息，提取到最近的一层时，将数据打印出来分析数据<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419213252304-803200815.png" alt=""></p>
+<p>可以看到前三个和我们想要提取的数据内容是一致的，这些type后面的数字指的是奖金的等级，就是说对应到的号码是多少就是几等奖<br>
+到此为止，我们已经将需要获取的中奖金额提取出来了</p>
+<h3 id="转换数据">转换数据</h3>
+<p>等我们看到这些数据的时候，虽然看到的是数字形式，但是他的数据类型确是字符形，通过此前对pygal模块的了解，我们知道这个模块只可以将<font color=red>整形</font>的数字转换成图表格式。<br>
+所以我们需要做的就是将每一个数字提取出来，并且转换成整形存入到列表中<br>
+由于我们想要提取的只是一等奖的奖金金额（因为二、三等奖的金额远小于一等奖，不适合在图表中观察），所以这里我加上了一个if语句判断</p>
+<pre><code>money_list = []       #创建空列表
+for data in datas:
+    prizegrades = data[&quot;prizegrades&quot;]
+    for item in prizegrades:
+        type_num = item['type']
+        typemoney = item['typemoney']
+        if type_num == 1:       #判断奖金等级是否为1
+            money_list.append(int(typemoney))
+</code></pre>
+<p>但是我在运行这段代码的时候会提示错误，经过我的一番疯狂分析(百度求助),发现出错的原因是在提取奖金的时候会出现下划线和空字符串的干扰，而int转换数据类型则只能装换纯数字组成的字符串，所以转换的过程中会报错。但是这并不是一个大问题，我们只需要写一个if语句来跳过非法字符串就可以解决了，下面是正确的代码：</p>
+<pre><code>money_list = []       #创建空列表
+for data in datas:
+    prizegrades = data[&quot;prizegrades&quot;]
+    for item in prizegrades:
+        typemoney = item['typemoney']
+                if type_num == 1:            #判断奖金等级是否为1
+            if typemoney == &quot;&quot;:       #忽略空字符
+                pass
+            elif typemoney == &quot;_&quot;:     #忽略下划线
+                pass
+            else:           #将其他的可用数字放入列表
+                money_list.append(int(typemoney))
+print(money_list)
+</code></pre>
+<p>观察输出：<br>
+<img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200419220719559-339613767.png" alt=""></p>
+<h3 id="将数据转换成图表">将数据转换成图表</h3>
+<pre><code>#设置图表样式为柱状图
+view = pygal.Bar()
+#图表名
+view.title = '奖金金额（￥）'
+#将数据填入图表
+view.add('money',money_list)
+#在浏览器中显示图表
+view.render_in_browser()
+</code></pre>
+<h3 id="完整代码">完整代码</h3>
+<pre><code class="language-import">import json
+import pygal
+
+url = 'http://www.cwl.gov.cn/cwl_admin/kjxx/findDrawNotice?name=ssq&amp;issueCount=30'
+headers = {
+    &quot;User-Agent&quot;:&quot;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.113 Safari/537.36&quot;,
+    &quot;Referer&quot;:&quot;http://www.cwl.gov.cn/kjxx/ssq/&quot;
+           }
+response = requests.get(url,headers=headers).text
+data_json = json.loads(response)
+datas = data_json[&quot;result&quot;]
+money_list = []       #创建空列表
+for data in datas:
+    prizegrades = data[&quot;prizegrades&quot;]
+    for item in prizegrades:
+        type_num = item['type']
+        typemoney = item['typemoney']
+        if type_num == 1:                         #判断奖金等级是否为1
+            if typemoney == &quot;&quot;:       #忽略空字符
+                pass
+            elif typemoney == &quot;_&quot;:     #忽略下划线
+                pass
+            else:           #将其他的可用数字放入列表
+                money_list.append(int(typemoney))
+
+#设置图表样式为柱状图
+view = pygal.Bar()
+#图表名
+view.title = '奖金金额（￥）'
+#将数据填入图表
+view.add('money',money_list)
+#在浏览器中显示图表
+view.render_in_browser()
+</code></pre>
+<h3 id="实现结果">实现结果</h3>
+<p><img src="https://img2020.cnblogs.com/blog/1971945/202004/1971945-20200420003520502-1345885488.png" alt=""></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-20 00:36</span>&nbsp;
+<a href="https://www.cnblogs.com/cherish-hao/">merlin&</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12734554" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12734554);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 586242, cb_blogApp = 'cherish-hao', cb_blogUserGuid = '32837683-d4e5-4daf-ffe3-08d7c7fac060';
+    var cb_entryId = 12734554, cb_entryCreatedDate = '2020-04-20 00:36', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 merlin&amp;
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            //jsonpath控制显示那个小萝莉模型，下面这个就是我觉得最可爱的小萝莉模型，替换时后面名字也要替换掉
+            jsonPath: "https://unpkg.com/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "left", //看板娘的表现位置
+            "width": 70,  //小萝莉的宽度
+            "height": 150, //小萝莉的高度
+            "hOffset": 0,
+            "vOffset": -20
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7,
+            "opacityOnHover": 0.2
+        }
+    });
+</script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>linkenzhou - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/clearscreen01/bundle-clearscreen01.min.css?v=Lre07MVLM1ssP_zeeaFmIiSPNiLEPexTlMB5QLtwxVM" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/clearscreen01/bundle-clearscreen01-mobile.min.css?v=9os0cr0RRtH-K22KR_N_kaZTOBLDtkEEaUcVEKeFc_0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zy0209/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zy0209/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zy0209/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 402758;
+        var currentBlogApp = 'zy0209';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'ClearScreen01';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zy0209/">linkenzhou</a>
+<br>
+		
+
+
+	</div>
+</div>
+
+
+</div>
+<div id="mylinks">
+
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zy0209/">
+首页</a>
+&nbsp;&nbsp;::&nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/linkenzhou">
+联系</a>&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zy0209/rss/">
+订阅</a>&nbsp;
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/zy0209/rss/">
+    <img src="/skins/clearscreen01/images/xml.gif" alt="订阅" />
+</a>&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+<div id="mytopmenu">
+	
+		<DIV id="mystats">
+			<!--done-->
+<div class="blogStats">
+posts - 
+22,&nbsp;
+comments - 
+7,&nbsp;
+trackbacks - 
+0
+
+</div>
+
+</DIV>
+	
+</div>
+<div id="main">
+    <div id="leftcontent">
+	    
+		    <DIV id="leftcontentcontainer">
+			    
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			    <div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	    
+    </div>
+    <div id="centercontent">
+	    
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2020/04/24.html"></a>
+        &nbsp;
+        2020年4月24日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/12769466.html">
+    监控日志中的报错并进行邮件报警
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在测试过程中，注意力往往都在功能上，如果功能正常，是基本不会查看日志的，反之会查看日志定位问题。但是表面上的功能正常不能确保日志没有报错，不能确保其他功能点没有问题，这时我们就需要日志的监控，一旦有报错就触发报警机制（报警机制可以有邮件报警、钉钉微信发消息报警等），我选择的是发邮件报警。 这里先说一            <a href="https://www.cnblogs.com/zy0209/p/12769466.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-04-24 19:02 linkenzhou 阅读 (24) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12769466" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2019/10/12.html"></a>
+        &nbsp;
+        2019年10月12日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11663268.html">
+    jenkins Exec exit status not zero. Status [-1]
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：jenkins是使用ssh连接服务器后，如果使用grep获取进程并kill时，会jenkins Exec exit status not zero. Status [-1]，解决办法：在获取进程时，使用grep -v grep进行反向过滤，就不会kill掉jenkins的进程了 eg：ps -ef|            <a href="https://www.cnblogs.com/zy0209/p/11663268.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-10-12 18:24 linkenzhou 阅读 (310) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11663268" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2019/09/03.html"></a>
+        &nbsp;
+        2019年9月3日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11455130.html">
+    git本地仓库远程仓库地址更改
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：git remote rm origingit remote add origin git@52.82.8.87:iot3.0-service/test.gitgit push -u origin --allgit push -u origin --tags            <a href="https://www.cnblogs.com/zy0209/p/11455130.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-09-03 19:49 linkenzhou 阅读 (233) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11455130" rel="nofollow">
+    编辑
+</a>
+</div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11453328.html">
+    gitlab 更换服务器后访问 Integrations 出现 500 错误
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：异常问题解决方案：问题：gitlab 更换服务器后访问 Integrations 出现 500 错误解决方案：从原服务器上将 /etc/gitlab/gitlab-secrets.json 复制过来覆盖已有同名文件，之后执行配置初始化命令【gitlab-ctl reconfigure】即可。            <a href="https://www.cnblogs.com/zy0209/p/11453328.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-09-03 15:30 linkenzhou 阅读 (117) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11453328" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2019/08/14.html"></a>
+        &nbsp;
+        2019年8月14日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11350020.html">
+    安装postman时遇到“无法定位程序输入点 SetDefaultDllDirectories于动态链接库KERNEL32.dll 上.”的问题
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：安装postman时遇到“无法定位程序输入点 SetDefaultDllDirectories于动态链接库KERNEL32.dll 上.”的问题 解决办法： 1.安装系统更新补丁KB2533623，下载地址： https://support.microsoft.com/en-us/help/2533            <a href="https://www.cnblogs.com/zy0209/p/11350020.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-08-14 09:45 linkenzhou 阅读 (7088) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11350020" rel="nofollow">
+    编辑
+</a>
+</div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11350011.html">
+    安装python3.7.4时报错：Service Pack 1 is required to continue installation
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：python3.7.4安装失败：Service Pack 1 is required to continue installation 解决办法： https://www.microsoft.com/zh-CN/download/details.aspx?id=5842，下载红框处文件，下载完成后双            <a href="https://www.cnblogs.com/zy0209/p/11350011.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-08-14 09:43 linkenzhou 阅读 (215) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11350011" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2019/07/29.html"></a>
+        &nbsp;
+        2019年7月29日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11265158.html">
+    gogs迁移至gitlab
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：一、先来聊一聊迁移的思路，不管是gogs迁移至gitlab，还是gitlab迁移至gogs，亦或gitlab迁移至gitlab，手动迁移的步骤都是如下图所示（在gitlab上新建一个空项目就会有这样的提示）， 1.进入项目的仓库，删除原来的远程地址（在第一步这块我用的命令是git remote rm            <a href="https://www.cnblogs.com/zy0209/p/11265158.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-07-29 17:19 linkenzhou 阅读 (643) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11265158" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2019/07/26.html"></a>
+        &nbsp;
+        2019年7月26日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11247808.html">
+    怎么才能写出更全面的测试用例
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：总结如下： 1.业务闭环 在写测试用例时，一定要搞清楚需求，从头到尾能画出流程图，在写的时候，每个流程都要涉及到，写的时候也应该按照流程来写，以防遗漏。 2.功能深挖 在写用例时，每到一个小的测试点，我们就要搬出用例的设计方法（等价类、边界值、因果图、正交分解、错误推测等），如登录功能的两个输入框有            <a href="https://www.cnblogs.com/zy0209/p/11247808.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-07-26 00:18 linkenzhou 阅读 (222) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11247808" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2019/06/19.html"></a>
+        &nbsp;
+        2019年6月19日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/11050982.html">
+    monkey的使用
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：转载于https://blog.csdn.net/zhq217217/article/details/53099880            <a href="https://www.cnblogs.com/zy0209/p/11050982.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-06-19 14:13 linkenzhou 阅读 (49) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11050982" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zy0209/archive/2019/05/23.html"></a>
+        &nbsp;
+        2019年5月23日
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zy0209/p/10912908.html">
+    es报错org.frameworkset.elasticsearch.ElasticSearchException: {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by: [FORBIDDEN/12/index read-only / allow delete (api)];&quot;}],
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：今天es在保存数据的时候报错 org.frameworkset.elasticsearch.ElasticSearchException: {&quot;error&quot;:{&quot;root_cause&quot;:[{&quot;type&quot;:&quot;cluster_block_exception&quot;,&quot;reason&quot;:&quot;blocked by:             <a href="https://www.cnblogs.com/zy0209/p/10912908.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-05-23 16:50 linkenzhou 阅读 (1210) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10912908" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/zy0209/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+    </div>
+</div>
+<!--done-->
+<div class="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 linkenzhou
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+
+
+
+    
+</body>
+</html>

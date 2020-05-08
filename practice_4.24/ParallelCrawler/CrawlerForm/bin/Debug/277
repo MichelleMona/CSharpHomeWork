@@ -1,0 +1,501 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>凉鞋的笔记 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=Fx4xdLkGuHnlaG7xntG_wAnZrnorJWp5u_TWKqbvMF0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=cYvlxMu_nd6MVfg-vi7YqOC6FaZ7VHFsDM166vO_ekA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/liangxiegame/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/liangxiegame/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/liangxiegame/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 262744;
+        var currentBlogApp = 'liangxiegame';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlackLowKey';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/liangxiegame/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/liangxiegame/">凉鞋的笔记</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/liangxiegame/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%87%89%E9%9E%8B%E7%9A%84%E7%AC%94%E8%AE%B0">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/liangxiegame/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+71&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+46</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12684789.html">
+    Unity 游戏框架搭建 2019 (三十二、三十三) 类的命名 &amp; 代码文件命名
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：昨天我们完成了第八个示例的第二个 MenuItem 菜单顺序的调整。 我们今天再往下接着调整。 我们来看下接下来的 MenuItem 代码如下: CommonUtil 已经提取成第二个示例了。 Exporter.GenerateUnityPackageName() 这个方法的定义在第八个示例 Pre            <a href="https://www.cnblogs.com/liangxiegame/p/12684789.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 17:19 凉鞋的笔记 阅读 (73) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12684789" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12684785.html">
+    Unity 游戏框架搭建 2019 (三十、三十一) MenuItem 显示顺序问题 &amp;  类的提取
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在上一篇，我们得出了两个核心的学习思路: 1. 根据问题去学习，并收集。 2. 主动学习，并思考适用场景。 我们今天解决 MenuItem 显示顺序问题。 目前 MenuItem 显示如图所示: 我们来看下 MenuItem 这个属性构造的定义。 第二个参数是，是否是验证方法，目前不用理解，官网上默            <a href="https://www.cnblogs.com/liangxiegame/p/12684785.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 18:14 凉鞋的笔记 阅读 (148) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12684785" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12684783.html">
+    Unity 游戏框架搭建 2019 (二十九) 方法所在类命名问题诞生的原因
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我们在整理阶段解决了一些意外的问题。但是这些问题仅仅只是被解决而已，我们并没有去思考过这些问题是为什么产生的？以及在以后我们如何去避免这些问题的产生？ 方法所在类的命名问题，最后我们通过方法分类解决了，并且学习了类的第一作用:方法的集合。 解决之后导致了大量的弃用代码，为了标记弃用代码，我们又简单学            <a href="https://www.cnblogs.com/liangxiegame/p/12684783.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 12:30 凉鞋的笔记 阅读 (121) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12684783" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/13.html">2020年4月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12684780.html">
+    Unity 游戏框架搭建 2019 (二十七、二十八）弃用的代码警告解决&amp;弃用的代码删除
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在前两篇，我们把所有的示例重头到尾整理了一遍。 当前的状态如下: 1. 要做的事情: (完成) 备份:导出文件，并取一个合理的名字。 2. 遗留问题: (完成) 第八个示例与之前的示例代码重复，功能重复。 (完成) 方法所在类的命名有问题。 菜单栏显示顺序问题。 弃用的代码警告 3. 约定和规则:             <a href="https://www.cnblogs.com/liangxiegame/p/12684780.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-13 19:23 凉鞋的笔记 阅读 (162) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12684780" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/11.html">2020年4月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12681553.html">
+    Unity 游戏框架搭建 2019 (二十六) 第一轮整理完结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：昨天呢我们把第八个示例整理完了。整理之后学习了类的第一作用：方法的集合，还有 Obselete 这个 API。并且在进行整理的时候贯彻了我们新的约定和规则：先确保功能有效，再去做变更和删除。 今天我们在往下接着整理第九个示例 第九个示例 类的名字没有问题，但是到这里笔者发现这个类里的方法是可以和 第            <a href="https://www.cnblogs.com/liangxiegame/p/12681553.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-11 18:45 凉鞋的笔记 阅读 (189) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12681553" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/10.html">2020年4月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12671758.html">
+    Unity 游戏框架搭建 2019 (二十五) 类的第一个作用 与 Obselete 属性
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在上一篇我们整理到了第七个示例，我们今天再接着往下整理。我们来看第八个示例: 其实代码量还是比较多的。 而在上一篇中，我们就知道了，这个示例有类命名的问题。我们运气比较好，刚好可以试着解决一下。 关于类，我们在写第一个示例的时候就去接触了，不过笔者并没有讲它，是因为作为一个代码设计的工具，类是非常重            <a href="https://www.cnblogs.com/liangxiegame/p/12671758.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-10 10:30 凉鞋的笔记 阅读 (142) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12671758" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/09.html">2020年4月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12665002.html">
+    Unity 游戏框架搭建 2019 (二十三、二十四) 备份与版本号&amp;危险的操作
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：先列出上一篇的总结: 1. 要做的事情: 备份:导出文件，并取一个合理的名字。 2. 遗留问题: 第八个示例与之前的示例代码重复，功能重复。 3. 约定和规则: 每个示例在 QFramework 目录下创建一个文件夹，文件夹的格式是: 数字.示例的功能 每个示例写一个脚本，脚本中包含可复用的静态方法            <a href="https://www.cnblogs.com/liangxiegame/p/12665002.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-09 10:13 凉鞋的笔记 阅读 (177) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12665002" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/08.html">2020年4月8日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12658383.html">
+    Unity 游戏框架搭建 2019 (二十一、二十二) 第三章简介&amp;整理前的准备
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：整理前的准备 到目前为止，我们积攒了很多示例了，并且每个示例也都贯彻了最的约定和规则。 在上一篇的小结也说了一个比较新的东西:编程体验优化。 在之前我们还积攒了一个问题：代码重复问题。 我们可是忍住整理的冲动忍了好久了。 所以现在也是时候准备着手整理了。 知识点和问题总结 遗留问题 我们写列出来之前            <a href="https://www.cnblogs.com/liangxiegame/p/12658383.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-08 10:38 凉鞋的笔记 阅读 (214) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12658383" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/05.html">2020年4月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12638744.html">
+    Unity 游戏框架搭建 2019 (十八~二十) 概率函数 &amp; GameObject 显示、隐藏简化 &amp; 第二章 小结与快速复习
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在笔者刚做项目的时候，遇到了一个需求。第一个项目是一个跑酷游戏，而跑酷游戏是需要一条一条跑道拼接成的。每个跑道的长度是固定的，而怪物的出现位置也是在跑道上固定好的。那么怪物出现的概率决定一部分关卡的难度。 以上有点绕，其实就是，到某一个时刻，怪物是否要出现。而是否要出现是根据概率来决定的。如果一个怪            <a href="https://www.cnblogs.com/liangxiegame/p/12638744.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-05 19:54 凉鞋的笔记 阅读 (132) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12638744" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/liangxiegame/archive/2020/04/02.html">2020年4月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12617707.html">
+    Unity 游戏框架搭建 2019 (十六、十七) localPosition 简化与Transform 重置
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在上一篇我们收集了一个 屏幕分辨率检测的一个小工具。今天呢再往下接着探索。 问题 我们今天在接着探索。不管是写 UI 还是写 GamePlay，多多少少都需要操作 Transform。 而在笔者刚接触 Unity 的时候有一个非常不习惯的地方。就是对 transform 的位置、角度、缩放进行赋值。            <a href="https://www.cnblogs.com/liangxiegame/p/12617707.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-02 09:41 凉鞋的笔记 阅读 (263) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12617707" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/liangxiegame/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 凉鞋的笔记
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

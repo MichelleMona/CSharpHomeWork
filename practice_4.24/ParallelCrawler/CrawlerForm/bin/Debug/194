@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是分布式专题的第14篇文章，我们一起来看看NoSQL数据库。 其实我很早就想写写分布式数据库相关的文章，既是我现在正在学习的，也是我" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MySQL不香吗，为什么还要有noSQL？ - TechFlow2019 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/techflow/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/techflow/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/techflow/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 569749;
+        var currentBlogApp = 'techflow';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/techflow/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/techflow/">TechFlow2019</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/techflow/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/TechFlow2019">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/techflow/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+120&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+46</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/techflow/p/12774900.html">MySQL不香吗，为什么还要有noSQL？</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>本文始发于个人公众号：<strong>TechFlow</strong>，原创不易，求个关注</p>
+<br>
+<section id="nice" data-tool="mdnice编辑器" data-website="https://www.mdnice.com" style="font-size: 16px; color: black; padding: 0 10px; line-height: 1.6; word-spacing: 0px; letter-spacing: 0px; word-break: break-word; word-wrap: break-word; text-align: left; font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: -10px;"><p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">今天是<strong style="font-weight: bold; color: rgb(71, 193, 168);">分布式专题的第14篇</strong>文章，我们一起来看看NoSQL数据库。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">其实我很早就想写写分布式数据库相关的文章，既是我现在正在学习的，也是我很感兴趣的内容。但是谈到分布式数据库，会涉及很多相关的技术细节，等把相关的一些细节写明白的时候，已经十几篇文章过去了XD。所以如果想要了解<strong style="font-weight: bold; color: rgb(71, 193, 168);">B/B+树、LSMT、CAP</strong>等技术细节的，可以翻翻之前的文章。今天我们来聊聊NoSQL这个概念。</p>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; font-weight: bold; font-size: 22px; border-bottom: 2px solid rgb(89,89,89); margin-bottom: 30px; color: rgb(89,89,89);"><span class="prefix" style="display: none;"></span><span class="content" style="font-size: 22px; display: inline-block; border-bottom: 2px solid rgb(89,89,89);">noSQL的大概意思</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">noSQL现在非常火，我看过的简历里面十个有九个都写了熟悉noSQL，但是对于noSQL背后的细节却很少有人能讲清楚，甚至连noSQL里面的这个no是什么意思都很多人搞错。这个no并不是not的意思，而是<strong style="font-weight: bold; color: rgb(71, 193, 168);">not only</strong>的缩写。不得不说这个缩写实在是很坑爹，单从字面上应该没人能猜出来它是这个意思。而且即使解读成not only SQL，还是有点云里雾里，不是很能精准地get到它的点。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">因为SQL的英文全写是structured query language，也就是结构化查询语言的意思。它可以认为是一门特殊的编程语言，但“不仅仅是SQL”是啥意思？的确令人费解，所以我们从字面意思上去理解是不行的，我们需要从<strong style="font-weight: bold; color: rgb(71, 193, 168);">实际应用场景</strong>去理解。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">SQL的应用场景是关系型数据库，比如我们常用的Oracle、MySQL，这些就是关系型数据库。我们理解数据库的时候，往往会从表的结构入手去理解。数据库当中存储的是一张张的表，表呢是一行行数据组成的，而每一行数据都有固定的字段。我想这点大家应该非常熟悉，即使没有学过数据库或者是像我这样已经还给老师的，应该或多或少都有印象。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">但是<strong style="font-weight: bold; color: rgb(71, 193, 168);">为什么它会被叫做关系型数据库，而不是表结构数据库呢？</strong></p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">因为在数据库当中，<strong style="font-weight: bold; color: rgb(71, 193, 168);">关系要比表结构更重要</strong>。表结构只是一种形式，而数据库当中核心的设计理念其实是关系。这也是为什么我们学习数据库的时候都需要从ER图开始，而不是上来就讲数据库使用的方法，或者是SQL语言的细节。如果你想不明白这句话的含义，也没有关系，我们先放一放，最后再回到这个话题来。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">问题来了，我们知道了常用的SQL数据库是关系型数据库，那么noSQL代表的数据库又是什么呢？</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">关于noSQL概念我至少看到了两种说法，一种说法是<strong style="font-weight: bold; color: rgb(71, 193, 168);">非关系型数据库</strong>，另一种说法是<strong style="font-weight: bold; color: rgb(71, 193, 168);">文档型数据库</strong>。我个人在理解的时候觉得这两种说法都不是非常完美，但相比之下显然是第二种更好，因为第一种说法完全没有给我们提供任何信息。文档型数据库这里的文档，并不是我们常规理解的一篇文档的含义，而是指的数据存储的结构和核心逻辑。</p>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; font-weight: bold; font-size: 22px; border-bottom: 2px solid rgb(89,89,89); margin-bottom: 30px; color: rgb(89,89,89);"><span class="prefix" style="display: none;"></span><span class="content" style="font-size: 22px; display: inline-block; border-bottom: 2px solid rgb(89,89,89);">一个生动的例子</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">和大多数技术上的概念一样，noSQL也比较晦涩，很难单纯用语言将它描述清楚。所以我决定举一个生动活泼，大家都耳熟能详的例子——就是万能的X宝。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">下面是一张X宝当中的商品详情页的图（<strong style="font-weight: bold; color: rgb(71, 193, 168);">随便选取，并非广告，如有巧合，请付推广费</strong>）：</p>
+<figure data-tool="mdnice编辑器" style="margin: 0; margin-top: 10px; margin-bottom: 10px;"><img src="https://user-gold-cdn.xitu.io/2020/4/25/171b127d452f0fbf?w=1080&amp;h=2337&amp;f=jpeg&amp;s=198492" alt="" style="display: block; margin: 0 auto; max-width: 100%"></figure>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">这张图大家应该都很熟悉了，在我们平时的网上购物的活动当中，一定见过了许多次。它看起来有些眼花缭乱，我们把上面的内容做个抽象和精简，画成一张草图，它大概是这样的（的确有些草率）：</p>
+<figure data-tool="mdnice编辑器" style="margin: 0; margin-top: 10px; margin-bottom: 10px;"><img src="https://user-gold-cdn.xitu.io/2020/4/25/171b127dcc42d692?w=1444&amp;h=1080&amp;f=jpeg&amp;s=65055" alt="" style="display: block; margin: 0 auto; max-width: 100%"></figure>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">也就是说我们把一个商品详情页展示的内容大概分成了三个部分，一个部分是<strong style="font-weight: bold; color: rgb(71, 193, 168);">商品图</strong>，一个部分是商品的一些<strong style="font-weight: bold; color: rgb(71, 193, 168);">介绍说明</strong>，还有一个部分是<strong style="font-weight: bold; color: rgb(71, 193, 168);">用户的评论</strong>。各大电商公司商品详情页的设计大同小异，也许有些细节不太一样，但是整体上的模块都相差不大。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">为了简化问题，我们就假设商品详情页需要关联图片信息、文字说明和用户评论这三张表。其实这样划分不太科学，比如文字介绍和商品图可以都存在商品详情页的表中，比如除了这些信息之外，还有商品的售卖信息，比如库存、价格、当前的优惠、活动等等，但是这些和我们最后的结论关系不大，可以简单这么理解。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">根据上面的划分方式，我们应该根据itemId去查询商品的图片、文字以及评论信息，这从表面上看当然没有问题。但实际上这是有问题的，问题在于<strong style="font-weight: bold; color: rgb(71, 193, 168);">这些数据都不是一对一的关系，而是一对多的关系</strong>。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">比如头部展示的图片往往不止一张，文字说明可能也不止一段，同样用户的评论可能也不止一条。这个问题怎么解决呢？</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">你可能会想出办法来，这不难啊，我们在img和text以及comment的表里都加入itemId这个字段，在我们查询的时候通过itemId进行关联，不就OK了么？</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">这样做当然可以，假设你是负责这个项目的程序员，你做出了这个更新，成功上线了之后，<strong style="font-weight: bold; color: rgb(71, 193, 168);">产品又给你提了一个新的需求</strong>。她说我想要在文字介绍和用户评论里面都展示图片，虽然系统一开始不是这么设计的，但是我不管，我就是需要，立刻马上。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">你翻了好一会白眼，冷静了许久，想了想，终于想到了两种方案，第一个方案是在目前的图片表上加上字段，用来判断图片的用途是详情页展示还是评论页展示，把之后要加的文本介绍和评论页中的图片依然存在这张表上。第二个方案是重新建新的表，专表专用，专门负责存放评论页和说明页的图片。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">第一个方案的好处是我们<strong style="font-weight: bold; color: rgb(71, 193, 168);">不用建新的表，避免了表的冗余</strong>，如果每一个需求都需要建新的表，显然对于后续的维护是一个巨大的负担。但是它的缺点是我们<strong style="font-weight: bold; color: rgb(71, 193, 168);">需要批量修正之前所有的数据</strong>，因为之前的数据里没有来源这个字段。当然你也可以不加这个字段，直接用id区分，但是这是不符合规范的，而且必然会留下安全隐患。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">第二个方案的优点是操作简单，不需要变更之前的数据，安全风险较小，但问题是<strong style="font-weight: bold; color: rgb(71, 193, 168);">需要占用新的资源</strong>，利用率低，因为有些详情页的图片和顶部的图片是可以共用的，这样分开存储的话就需要存储多份。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">这两个方案各有优缺点，似乎都还不错，但坑爹的是它们都有一个共同的缺点，就是都会<strong style="font-weight: bold; color: rgb(71, 193, 168);">增加目前系统和查询的复杂度</strong>。一个是要增加查询时候传入的字段，一个是要发起额外的查询，不论选择哪一个，都会让系统越来越复杂。到了后来，一个用户请求传来，会<strong style="font-weight: bold; color: rgb(71, 193, 168);">带动数十个联动请求</strong>，才能拼装出完整的数据。现在最新版本的X宝的详情页商品介绍的部分一律用图片展示，没有了文字，也许背后就是受到这个问题的驱动。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">我们回顾一下这个例子，为什么我们的查询会很复杂，其实就和数据库的核心理念有关。关系型数据库存储的数据是关系，在这个问题当中，我们一个详情页的查询，需要查询商品和图片的关系，商品和说明的关系，商品和评论的关系，评论和图片的关系等等。也就是说我们最终看到的页面，其实是这一系列关系拧在一起的结果，每一次查询的背后都是一个关系分解再合并的过程，因此会非常复杂。</p>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; font-weight: bold; font-size: 22px; border-bottom: 2px solid rgb(89,89,89); margin-bottom: 30px; color: rgb(89,89,89);"><span class="prefix" style="display: none;"></span><span class="content" style="font-size: 22px; display: inline-block; border-bottom: 2px solid rgb(89,89,89);">文档型数据库</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">我们刚才看了关系型数据库在电商场景下的问题，我们再来看下文档型数据库在同样场景下的表现。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">和关系型数据库不同，文档型数据库存储的核心是<strong style="font-weight: bold; color: rgb(71, 193, 168);">文档</strong>。当然这里的文档指的不是我们通常意义上的文档，而是json或者是xml格式的数据。在目前的noSQL数据库当中，json类型的数据更加常用一些。我们还用刚才详情页的例子来看下在noSQL数据库当中，这份数据是如何存储的：</p>
+<pre class="custom" data-tool="mdnice编辑器" style="margin-top: 10px; margin-bottom: 10px;"><code class="hljs" style="overflow-x: auto; padding: 16px; color: #333; background: #f8f8f8; display: -webkit-box; font-family: Operator Mono, Consolas, Monaco, Menlo, monospace; border-radius: 0px; font-size: 12px; -webkit-overflow-scrolling: touch;">{<br>&nbsp;&nbsp;<span class="hljs-attr" style="line-height: 26px;">"itemID"</span>:&nbsp;<span class="hljs-number" style="color: #008080; line-height: 26px;">123</span>,<br>&nbsp;&nbsp;<span class="hljs-attr" style="line-height: 26px;">"itemName"</span>:&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"iPad&nbsp;Pro"</span>,<br>&nbsp;&nbsp;<span class="hljs-attr" style="line-height: 26px;">"topImgs"</span>:&nbsp;[<span class="hljs-string" style="color: #d14; line-height: 26px;">"imgs1.path"</span>,&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"imgs2.path"</span>],<br>&nbsp;&nbsp;<span class="hljs-attr" style="line-height: 26px;">"desc"</span>:&nbsp;[{<span class="hljs-attr" style="line-height: 26px;">"text"</span>:&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"iPad&nbsp;Pro"</span>,&nbsp;<span class="hljs-attr" style="line-height: 26px;">"img"</span>:&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">""</span>},&nbsp;{<span class="hljs-attr" style="line-height: 26px;">"text"</span>:&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"2020&nbsp;new&nbsp;version"</span>,&nbsp;<span class="hljs-attr" style="line-height: 26px;">"img"</span>:&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"imgs1.path"</span>}],<br>&nbsp;&nbsp;<span class="hljs-attr" style="line-height: 26px;">"comments"</span>:&nbsp;[{<span class="hljs-attr" style="line-height: 26px;">"userName"</span>:&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"chengzhi"</span>,&nbsp;<span class="hljs-attr" style="line-height: 26px;">"comment"</span>:&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"good&nbsp;product"</span>,&nbsp;<span class="hljs-attr" style="line-height: 26px;">"imgs"</span>:&nbsp;[<span class="hljs-string" style="color: #d14; line-height: 26px;">"imgs3.path"</span>,&nbsp;<span class="hljs-string" style="color: #d14; line-height: 26px;">"img4.path"</span>]}]<br>}<br></code></pre>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">你看，在文档型数据库当中刚才复杂的、需要经过多次查询经过一系列处理才可以拧到一起的数据，我们<strong style="font-weight: bold; color: rgb(71, 193, 168);">通过itemID一次查询就可以获取到了</strong>。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">单纯从使用上来说，它比关系型数据库要方便了许多，但是它也并不是没有缺点的。这其中一个很大的问题是，我们把所有数据都直接存储在了文档当中，这一方面造成了<strong style="font-weight: bold; color: rgb(71, 193, 168);">数据的冗余</strong>，另一方面也<strong style="font-weight: bold; color: rgb(71, 193, 168);">限制了拓展性</strong>。比如说，同一个商家下类似的商品不能共享图片，而必须存储多份，这造成了空间的浪费。再比如，假设我们希望支持用户修改之前过去的评论会非常麻烦，因为我们必须要找到所有存储了用户评论的文档进行修改（假设在其他场景下也用到了用户评论），这往往是跨系统并且非常不方便的。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">这个问题也并不是不可解的，比如我们可以把文档当中存储的具体数据换成一个id，比如comment当中不再存储具体的图片和评论信息，而存储一个评论的id，在使用的时候再去关联。由于文档型数据库由于架构的原因，<strong style="font-weight: bold; color: rgb(71, 193, 168);">对于关联的支持并不好</strong>，往往需要我们手动根据ID再去查询来模拟连接，这也会带来额外的开销。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">另外一个小瑕疵是在文档型数据库当中我们访问数据的路径变长了，举个例子，加入我们要获取商品评论当中的第二条中的第一张图片。我们需要写成<strong style="font-weight: bold; color: rgb(71, 193, 168);">item['comments'][1]['imgs'][0]</strong>，而在关系型数据库当中，由于图片是通过关系直接查询得到的，因此要方便一些。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">除了这些之外，noSQL数据库发展的年限和MySQL这些较成熟的关系型数据库相比要短得多，因此<strong style="font-weight: bold; color: rgb(71, 193, 168);">支持的特性相对比较少</strong>。</p>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; font-weight: bold; font-size: 22px; border-bottom: 2px solid rgb(89,89,89); margin-bottom: 30px; color: rgb(89,89,89);"><span class="prefix" style="display: none;"></span><span class="content" style="font-size: 22px; display: inline-block; border-bottom: 2px solid rgb(89,89,89);">总结</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">通过一个例子，我们很生动地对比了关系型数据库和noSQL数据库之间的差别。我们再回到文章开头的那个问题，为什么我们在学习数据库的时候需要先从ER图开始，而不是直接学习数据库的原理和它的使用方法呢？</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">我想理解了上面的例子之后，再来看这个问题应该会简单许多。因为关系型数据库的<strong style="font-weight: bold; color: rgb(71, 193, 168);">核心逻辑就是存储关系</strong>，使用规范、各种技巧和特性，本质上都是围绕这个核心展开的。如果我们没有get到这一层就来使用数据库很容易走偏，很多匪夷所思的操作就是这么来的，比如有人在数据库当中存储前端页面的代码，比如把id拼接成一个字符串来实现存储多个值等等。这也说明了经典教材上的内容没有废话，每一个章节都有它预期的作用，因此当我们觉得某些内容没有用的时候，可能并不是教材错了，只是我们没有理解到位。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; margin: 0; line-height: 26px; color: rgb(89,89,89);">今天的文章就是这些，如果觉得有所收获，请顺手点个<strong style="font-weight: bold; color: rgb(71, 193, 168);">关注或者转发</strong>吧，你们的举手之劳对我来说很重要。</p>
+</section>
+<p><img src="https://user-gold-cdn.xitu.io/2020/4/25/171b1280d8ef77f1?w=258&amp;h=258&amp;f=png&amp;s=23988" alt=""></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 19:47</span>&nbsp;
+<a href="https://www.cnblogs.com/techflow/">TechFlow2019</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774900" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12774900);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 569749, cb_blogApp = 'techflow', cb_blogUserGuid = '9eb32f80-09d7-4c19-e763-08d7804a3aa0';
+    var cb_entryId = 12774900, cb_entryCreatedDate = '2020-04-25 19:47', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 TechFlow2019
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        
+
+    </div>
+</body>
+</html>

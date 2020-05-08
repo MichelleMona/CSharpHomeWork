@@ -1,0 +1,709 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="这是 Mybatis 系列博客的第四篇，我本来打算详细讲解 mybatis 的配置、映射器、动态 sql 等，但 Mybatis官方中文文档 对这部分内容的介绍已经足够详细了，有需要的可以直接参考。所" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Mybatis源码详解系列(四)--你不知道的Mybatis用法和细节 - 子月生 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/ZhangZiSheng001/custom.css?v=BVYkRZ1sTQ2PadLYTKDX4YZQqUk=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ZhangZiSheng001/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ZhangZiSheng001/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ZhangZiSheng001/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 562068;
+        var currentBlogApp = 'ZhangZiSheng001';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/ZhangZiSheng001/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/ZhangZiSheng001/">子月生</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/ZhangZiSheng001/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+15&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+9</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12773971.html">Mybatis源码详解系列(四)--你不知道的Mybatis用法和细节</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        这是 Mybatis 系列博客的第四篇，我本来打算详细讲解 mybatis 的配置、映射器、动态 sql 等，但 Mybatis官方中文文档 对这部分内容的介绍已经足够详细了，有需要的可以直接参考。所以，我将扩展一些其他特性或使用细节，掌握它们可以更优雅、高效地使用 mybatis。
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="简介">简介</h1>
+<p>这是 <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12603885.html">Mybatis</a> 系列博客的第四篇，我本来打算详细讲解 mybatis 的配置、映射器、动态 sql 等，但<a href="https://Mybatis.org/Mybatis-3/zh/index.html/">Mybatis官方中文文档</a>对这部分内容的介绍已经足够详细了，有需要的可以直接参考。所以，我将扩展一些其他特性或使用细节，掌握它们可以更优雅、高效地使用 mybatis。</p>
+<p>这里补充一点，本文的所有测试例子都是基于本系列 <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12603885.html">Mybatis</a> 第一篇文章的项目，其他相关博客如下：</p>
+<p><a href="https://www.cnblogs.com/ZhangZiSheng001/p/12603885.html">Mybatis源码详解系列(一)--持久层框架解决了什么及如何使用Mybatis</a></p>
+<p><a href="https://www.cnblogs.com/ZhangZiSheng001/p/12704076.html">Mybatis源码详解系列(二)--Mybatis如何加载配置及初始化</a></p>
+<p><a href="https://www.cnblogs.com/ZhangZiSheng001/p/12761376.html">Mybatis源码详解系列(三)--从Mapper接口开始看Mybatis的执行逻辑</a></p>
+<h1 id="强大的结果处理器--resulthandler">强大的结果处理器--ResultHandler</h1>
+<h2 id="do转vo--常用方式">DO转VO--常用方式</h2>
+<p>通常情况下，我们的持久层的对象不会（不应该）直接响应给调用者，需要转换为 VO 对象再响应出去。基于本系列博客的使用例子，这里假设我需要在  web 层返回下面的 VO 对象，如下。在这个类中，除了员工表的字段外，还包括了部门表的字段。</p>
+<pre><code class="language-java">public class EmployeeVO implements Converter&lt;Employee, EmployeeVO&gt;, Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    private String id;
+
+    private String name;
+
+    private String genderStr;
+
+    private String no;
+
+    private String password;
+
+    private String phone;
+
+    private String address;
+
+    private Byte status;
+
+    private String departmentId;
+    
+    private String departmentName;
+    
+    private String departmentNo;
+    
+        @Override
+    public EmployeeVO convert(Employee value) {
+        EmployeeVO employeeVO = new EmployeeVO();
+        BeanUtils.copyProperties(employeeVO, value);
+        employeeVO.setGenderStr(value.getGender()?&quot;男&quot;:&quot;女&quot;);
+        Department department = value.getDepartment();
+        if(department != null) {
+            employeeVO.setDepartmentName(department.getName());
+            employeeVO.setDepartmentNo(department.getNo());
+        }
+        return employeeVO;
+    }
+    
+    // 省略其他方法
+}
+</code></pre>
+<p>web 层的操作大致是这样的，我先查询出<code>Employee</code>的集合，然后再进行对象转换。</p>
+<pre><code class="language-java">    @RequestMapping(&quot;/getList&quot;)
+	public ResponseData testResultHandler(@RequestBody EmployeeCondition con) {
+        List&lt;Employee&gt; list = employeeService.list(con);
+        return ResultDataUtil.getResultSucess(ConvertUtil.convertList(list, new EmployeeVO()));
+    }
+</code></pre>
+<h2 id="do转vo--resulthandler方式">DO转VO--ResultHandler方式</h2>
+<p>使用 Mybatis 的话，其实还有另外一种方案来处理 DO 转 VO 的问题，就是采用结果处理器--<code>ResultHandler</code>，如下。</p>
+<pre><code class="language-java">public interface ResultHandler&lt;T&gt; {
+  void handleResult(ResultContext&lt;? extends T&gt; resultContext);
+}
+</code></pre>
+<p>这是一个接口，实现类需要我们自己定义。作为测试例子，这里我简单定义了一个。</p>
+<pre><code class="language-java">public class MyResultHandler&lt;T, R&gt; implements ResultHandler&lt;T&gt; {
+    private List&lt;R&gt; list = new ArrayList&lt;R&gt;();
+    private Converter&lt;T, R&gt; converter;
+    
+    public MyResultHandler(Converter&lt;T, R&gt; converter) {
+        this.converter = converter;
+    }
+    
+    @Override
+    public void handleResult(ResultContext&lt;? extends T&gt; resultContext) {
+        list.add(ConvertUtils.convertObject(resultContext.getResultObject(), converter));
+    }
+    
+    public List&lt;R&gt; getList(){
+        return list;
+    }
+}
+</code></pre>
+<p><strong>使用<code>ResultHandler</code>时，Mapper 接口的方法定义需要调整，入参需传入<code>ResultHandler</code>，且返回值必须为 void</strong>。至于 xml 对应的方法内容，还是和常用方式一样，不需要更改。下面两个方法共用一个 xml 的 select 节点不会出问题的，这一点不用担心。</p>
+<pre><code class="language-java">    // 常用的方式
+	List&lt;Employee&gt; selectByCondition(@Param(&quot;con&quot;) EmployeeCondition con);	
+	// ResultHandler的方式
+	void selectByCondition(@Param(&quot;con&quot;) EmployeeCondition con, ResultHandler&lt;Employee&gt; resultHandler);
+</code></pre>
+<p>最后回到我们的 web 层，至于 service 层的代码就忽略不看了。当调用 service 层时，我已经拿到了转换好的 VO 对象，我不需要再做处理。</p>
+<pre><code class="language-java">    @RequestMapping(&quot;/getList&quot;)
+	public ResponseData testResultHandler(@RequestBody EmployeeCondition con) {
+         MyResultHandler&lt;Employee, EmployeeVO&gt; resultHandler = new MyResultHandler&lt;&gt;(new EmployeeVO());
+        employeeService.list(con, resultHandler);
+        return ResultDataUtil.getResultSucess(resultHandler.getList());
+    }
+</code></pre>
+<p>上一篇博客在分析源码过程中有提到过这个接口，<strong>当 Mapper 接口的方法入参包含<code>ResultHandler</code>且返回类型为 void，Mybatis 会对这种情况特殊处理：当遍历结果集进行映射时，每映射完一个对象都会调用一次<code>ResultHandler</code>并将映射好的对象传入，这时，我们可以随意地对对象进行处理，包括我们常见的 DO 转 VO，当然，它的功能并不局限于此</strong>。</p>
+<h1 id="分页不需要插件--rowbounds">分页不需要插件--RowBounds</h1>
+<p>本系列使用篇中提到使用 pagehelper 来支持分页功能，本质上是使用了插件对 sql 植入分页参数。其实，Mybatis 已经提供了<code>RowBounds</code>这类来支持分页功能，这种方式不需要安装插件，MybatisPlus 本质上就是使用了这种方式。</p>
+<p>和<code>ResultHandler</code>一样，我们只需要改造下 Mapper 接口的方法，如下。</p>
+<pre><code class="language-java">    List&lt;Employee&gt; selectByCondition(@Param(&quot;con&quot;) EmployeeCondition con, RowBounds rowBounds);
+</code></pre>
+<p>这里我简单编写个测试类，直接使用<code>RowBounds</code>对象，实际上最好对<code>RowBounds</code>进行更多的包装。</p>
+<pre><code class="language-java">    /**
+     * &lt;p&gt;测试RowBounds&lt;/p&gt;
+     */
+    @Test
+    public void testRowBounds() {
+        EmployeeCondition con = new EmployeeCondition();
+        // 设置条件
+        con.setAddress(&quot;北京&quot;);
+
+        // 执行，获取员工对象
+        RowBounds rowBounds = new RowBounds(1, 4);
+        List&lt;Employee&gt; list = employeeRepository.list(con, rowBounds);
+
+        // 打印
+        list.forEach(System.out::println);
+    }
+</code></pre>
+<p>测试以上代码，可看到打出的语句植入了分页参数：</p>
+<pre><code class="language-sql">SELECT e.id, e.`name`, e.gender, e.no, e.password
+	, e.phone, e.address, e.status, e.deleted, e.department_id
+	, e.gmt_create, e.gmt_modified
+FROM demo_employee e
+WHERE 1 = 1
+	AND e.address = ?
+LIMIT ?, ?
+</code></pre>
+<p>相比使用插件，这种方式是否更加简单呢？</p>
+<h1 id="延迟加载">延迟加载</h1>
+<h2 id="回顾使用篇的内容">回顾使用篇的内容</h2>
+<p>我们知道，在 resultMap 中使用嵌套 select 查询，并且全局声明使用懒加载，可以实现按需加载嵌套属性。</p>
+<pre><code class="language-xml">    &lt;settings&gt;
+        &lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot; /&gt;
+    &lt;/settings&gt;
+</code></pre>
+<p>还是回到使用篇中例子，mapper 的配置如下，员工对象关联了部门（一对一）、角色（一对多）、菜单（一对多）：</p>
+<pre><code class="language-xml">    &lt;!-- 基础映射表：嵌套 Select查询映射 --&gt;
+    &lt;resultMap id=&quot;BaseResultMap&quot; type=&quot;Employee&quot;&gt;
+        &lt;id column=&quot;id&quot; property=&quot;id&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;department_id&quot; property=&quot;departmentId&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;gmt_create&quot; property=&quot;create&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+        &lt;result column=&quot;gmt_modified&quot; property=&quot;modified&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+        &lt;association property=&quot;department&quot; 
+            column=&quot;department_id&quot;
+            select=&quot;cn.zzs.mybatis.mapper.DepartmentMapper.selectByPrimaryKey&quot; /&gt;
+        &lt;collection property=&quot;roles&quot; 
+            column=&quot;id&quot; 
+            select=&quot;cn.zzs.mybatis.mapper.RoleMapper.selectByEmployeeId&quot; /&gt;
+        &lt;collection property=&quot;menus&quot; 
+            column=&quot;id&quot; 
+            select=&quot;cn.zzs.mybatis.mapper.MenuMapper.selectByEmployeeId&quot; /&gt;
+    &lt;/resultMap&gt;
+    &lt;!-- 根据id查询--&gt;
+    &lt;select id=&quot;selectByPrimaryKey&quot; parameterType=&quot;java.lang.String&quot; resultMap=&quot;BaseResultMap&quot;&gt;
+        select
+        &lt;include refid=&quot;Base_Column_List&quot;&gt;&lt;/include&gt;
+        from
+        demo_employee e
+        where
+        e.id = #{id,jdbcType=VARCHAR}
+    &lt;/select&gt;
+</code></pre>
+<p>测试代码中，我们注释掉第1、3 和 4 点的代码，即只调用<code>getDepartment()</code>方法。</p>
+<pre><code class="language-java">    /**
+     * &lt;p&gt;测试懒加载触发&lt;/p&gt;
+     */
+    @Test
+    public void testGetLazy() {
+        // 设置输出代理类到指定路径
+        // -Dcglib.debugLocation=D:/growUp/test
+        String id = &quot;cc6b08506cdb11ea802000fffc35d9fe&quot;;
+
+        // 执行，获取员工对象
+        Employee employee = employeeRepository.get(id);
+        
+        // 1.打印员工
+        // System.out.println(employee);
+        // 2.打印部门
+        System.out.println(employee.getDepartment());
+        // 3.打印角色
+        // employee.getRoles().forEach(System.out::println);
+        // 4.打印菜单
+        // employee.getMenus().forEach(System.out::println);
+
+    }
+</code></pre>
+<p>测试以上代码，可以看到，只有部门被加载出来，而角色和菜单没有，很好地实现了按需加载。</p>
+<img src="https://img2020.cnblogs.com/blog/1731892/202004/1731892-20200425170125790-1415716274.png" alt="mybatis_extend_01">
+<p>接着我们放开第 1 点，即增加打印员工，注意，使用例子中我并没有重写<code>toString()</code>方法，所以方法中也不会用到关联对象。</p>
+<pre><code class="language-java">    @Test
+    public void testGetLazy() {
+        // 设置输出代理类到指定路径
+        // -Dcglib.debugLocation=D:/growUp/test
+        String id = &quot;cc6b08506cdb11ea802000fffc35d9fe&quot;;
+
+        // 执行，获取员工对象
+        Employee employee = employeeRepository.get(id);
+        System.out.println(&quot;================&quot;);
+        
+        // 1.打印员工
+        System.out.println(employee);
+        // 2.打印部门
+        // System.out.println(employee.getDepartment());
+        // 3.打印角色
+        // employee.getRoles().forEach(System.out::println);
+        // 4.打印菜单
+        // employee.getMenus().forEach(System.out::println);
+
+    }
+</code></pre>
+<p>测试以上代码，我们惊讶地发现，这时部门、角色和菜单都被打印出来了，说好的按需加载呢？</p>
+<p><img src="https://img2020.cnblogs.com/blog/1731892/202004/1731892-20200425170151060-1710900558.png" alt="mybatis_extend_02"></p>
+<p>这就很奇怪了，我调用的方法并没用到关联对象啊，为什么它们会被加载出来？</p>
+<h2 id="什么时候触发延迟加载">什么时候触发延迟加载</h2>
+<p>在上面的例子中，我们的按需加载失效了吗？</p>
+<p>其实并没有，<strong>对于 Mybatis 而言，它可以知道<code>getDepartment()</code>这样的方法会使用到关联对象，但是<code>toString()</code>这样的方法，它就没办法知道了</strong>。考虑我们会在重写<code>toString</code>方法时使用到嵌套对象，所以，Mybatis 默认这个方法会触发延迟加载。同样道理，<code>equals()</code>,<code>clone()</code>,<code>hashCode()</code>等方法也是一样的，项目中要重点关注<code>equals()</code>和<code>hashCode()</code>。</p>
+<p>那么，我们如何控制这种行为呢？Mybatis 提供了 lazyLoadTriggerMethods 配置项指定对象的哪些方法触发延迟加载：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">设置名</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">有效值</th>
+<th style="text-align:left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lazyLoadTriggerMethods</td>
+<td style="text-align:left">指定哪些方法触发加载该对象的所有延迟加载属性。</td>
+<td style="text-align:left">用逗号分隔的方法列表。</td>
+<td style="text-align:left">equals,clone,hashCode,toString</td>
+</tr>
+</tbody>
+</table>
+<p>我们将配置修改如下：</p>
+<pre><code class="language-xml">&lt;setting name=&quot;lazyLoadingEnabled&quot; value=&quot;true&quot; /&gt;
+&lt;setting name=&quot;lazyLoadTriggerMethods&quot; value=&quot;equals,clone,hashCode&quot; /&gt;
+</code></pre>
+<p>再次测试上面的例子。这时，嵌套对象都没有被加载出来。<br>
+<img src="https://img2020.cnblogs.com/blog/1731892/202004/1731892-20200425170219562-335207668.png" alt="mybatis_extend_03"></p>
+<p>这里再补充下，还有另一个配置项 aggressiveLazyLoading 也会影响延迟加载的触发，这个配置项在 3.4.1 之后我们保持默认就行，如果不是必须，强烈建议不要配置成 true。<strong>如果你将 aggressiveLazyLoading 配置为 true，即使你只是 getId() 也会将所有嵌套对象加载出来</strong>。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">设置名</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">有效值</th>
+<th style="text-align:left">默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">aggressiveLazyLoading</td>
+<td style="text-align:left">开启时，几乎任一方法的调用都会加载该对象的所有延迟加载属性。 <br>否则，每个延迟加载属性会按需加载。</td>
+<td style="text-align:left">true | false</td>
+<td style="text-align:left">false （在 3.4.1 及之前的版本中默认为 true）</td>
+</tr>
+</tbody>
+</table>
+<p>作为延迟加载部分的总结，这里对比下不同配置项组合的效果：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">aggressiveLazyLoading</th>
+<th style="text-align:left">lazyLoadTriggerMethods</th>
+<th style="text-align:left">效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">true</td>
+<td style="text-align:left">/</td>
+<td style="text-align:left"><font color='red'>员工类中任一方法</font>、equals、clone、hashCode、toString被调用，会触发延迟加</td>
+</tr>
+<tr>
+<td style="text-align:left">false</td>
+<td style="text-align:left">equals,clone,hashCode,toString</td>
+<td style="text-align:left"><font color='red'>员工类中关联对象的getter方法</font>、equals、clone、hashCode、toString被调用，会触发延迟加载</td>
+</tr>
+<tr>
+<td style="text-align:left">false</td>
+<td style="text-align:left">equals</td>
+<td style="text-align:left"><font color='red'>员工类中关联对象的getter方法</font>、equals被调用，会触发延迟加载</td>
+</tr>
+</tbody>
+</table>
+<h2 id="有的延迟？有的不延迟">有的延迟？有的不延迟</h2>
+<p>如果我希望部分关联对象不用延迟加载，部分关联对象又需要，例如，查询员工对象时，部门跟着查出来，而角色等到需要用的时候再加载。针对这种情况，可以在映射关系中使用 <code>fetchType</code>来覆盖延迟加载的开关状态：</p>
+<pre><code class="language-xml">		&lt;association property=&quot;department&quot; 
+            column=&quot;department_id&quot;
+            fetchType=&quot;eager&quot; 
+            select=&quot;cn.zzs.mybatis.mapper.DepartmentMapper.selectByPrimaryKey&quot; /&gt;
+        &lt;collection property=&quot;roles&quot; 
+            column=&quot;id&quot; 
+            select=&quot;cn.zzs.mybatis.mapper.RoleMapper.selectByEmployeeId&quot; /&gt;
+        &lt;collection property=&quot;menus&quot; 
+            column=&quot;id&quot; 
+            select=&quot;cn.zzs.mybatis.mapper.MenuMapper.selectByEmployeeId&quot; /&gt;
+</code></pre>
+<h1 id="嵌套结果映射的一个大坑">嵌套结果映射的一个大坑</h1>
+<p>在使用篇里我说过这么一句话：<strong>嵌套结果里如果是<code>collection</code>的话，分页总数会存在问题，所以，嵌套结果映射的方式最好仅针对 association 使用</strong>。</p>
+<p>当时我没有解释具体原因，这里我补充下吧。</p>
+<h2 id="错误的总数">错误的总数</h2>
+<p>还是回到使用篇的例子，mapper 的 resultMap 是这样配置的：</p>
+<pre><code class="language-xml">    &lt;!-- 基础映射表：嵌套结果映射--&gt;
+    &lt;resultMap id=&quot;BaseResultMap2&quot; type=&quot;Employee&quot; autoMapping=&quot;true&quot;&gt;
+        &lt;id column=&quot;id&quot; property=&quot;id&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;department_id&quot; property=&quot;departmentId&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;gmt_create&quot; property=&quot;create&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+        &lt;result column=&quot;gmt_modified&quot; property=&quot;modified&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+        &lt;association property=&quot;department&quot; 
+            columnPrefix=&quot;d_&quot;
+            resultMap=&quot;cn.zzs.mybatis.mapper.DepartmentMapper.BaseResultMap&quot; /&gt;
+    &lt;/resultMap&gt;
+</code></pre>
+<p>编写测试方法如下。这里会采用分页插件 pagehelper 来统计查询总数，及进行分页。如果使用<code>RowBounds</code>，也不影响测试结果。注意，<strong>数据库中的“zzs001”只有一条记录，所查询到的总数和映射对象都会是一条</strong>。</p>
+<pre><code class="language-java">    @Test
+    public void testlistPage() {
+        EmployeeCondition con = new EmployeeCondition();
+        // 设置条件
+        con.setName(&quot;zzs001&quot;);
+        con.setJoinDepartment(true);
+        // con.setJoinRole(true);// 这个注释待会放开
+        
+        // 设置分页信息
+        PageHelper.startPage(0, 3);
+
+        // 执行查询
+        List&lt;Employee&gt; list = employeeRepository.list2(con);
+        // 遍历结果
+        list.forEach(System.out::println);
+
+        // 封装分页模型
+        PageInfo&lt;Employee&gt; pageInfo = new PageInfo&lt;&gt;(list);
+
+        // 取分页模型的数据
+        System.out.println(Long.valueOf(pageInfo.getTotal()).intValue() == list.size());
+    }
+</code></pre>
+<p>测试代码，可以看到分页统计的总数和实际数量都会是一条，完全没问题。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1731892/202004/1731892-20200425170244108-1501397730.png" alt="mybatis_extend_04"></p>
+<p>接下来我再 resultMap 中增加一个 collection 类型的嵌套对象。</p>
+<pre><code class="language-xml">    &lt;!-- 基础映射表：嵌套结果映射--&gt;
+    &lt;resultMap id=&quot;BaseResultMap2&quot; type=&quot;Employee&quot; autoMapping=&quot;true&quot;&gt;
+        &lt;id column=&quot;id&quot; property=&quot;id&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;department_id&quot; property=&quot;departmentId&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;gmt_create&quot; property=&quot;create&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+        &lt;result column=&quot;gmt_modified&quot; property=&quot;modified&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+        &lt;association property=&quot;department&quot; 
+            columnPrefix=&quot;d_&quot;
+            resultMap=&quot;cn.zzs.mybatis.mapper.DepartmentMapper.BaseResultMap&quot; /&gt;
+        &lt;collection property=&quot;roles&quot; 
+            columnPrefix=&quot;r_&quot; 
+            resultMap=&quot;cn.zzs.mybatis.mapper.RoleMapper.BaseResultMap&quot; /&gt;
+    &lt;/resultMap&gt;
+</code></pre>
+<p>放开测试代码中的注释，测试如下。映射对象一条，没错，但是查询总数，竟然是 2 条？？？</p>
+<img src="https://img2020.cnblogs.com/blog/1731892/202004/1731892-20200425170313879-858825016.png.png" alt="mybatis_extend_05">
+<p>这就是我提到的嵌套结果映射的一个大坑。</p>
+<h2 id="原因分析">原因分析</h2>
+<p>难道是统计错了？让我们执行下控制台的 sql，记录竟然也是 2 条，哪里冒出来的？？？</p>
+<img src="https://img2020.cnblogs.com/blog/1731892/202004/1731892-20200425170335509-221674877.png" alt="mybatis_extend_06">
+<p>其实，根本原因确实出在我们的使用方法上，<strong>collection 的嵌套结果映射就不应该被用在涉及到统计的场景</strong>。我们的 sql 查出来有两条，仔细观察就会发现，这两条记录的 id 是一模一样的，我们再查询出 1 个字段：</p>
+<img src="https://img2020.cnblogs.com/blog/1731892/202004/1731892-20200425170351919-1121405273.png" alt="mybatis_extend_07">
+<p>看到这里应该就明白了吧，统计出错主要是联表造成的。员工和角色是一对多的关系，当员工拥有多个角色时联表查询将出现比员工数量更多的记录，而这些记录，在 Mybatis 映射对象时会将其合并起来。</p>
+<p>这就造成了所谓的错误总数问题。所以，collection 的嵌套结果映射并不适合统计场景。</p>
+<h1 id="自动映射">自动映射</h1>
+<h2 id="开启自动映射">开启自动映射</h2>
+<p>mybatis 的结果自动映射默认是开启的，可以在使用 setting 配置项进行修改，它有三种自动映射等级：</p>
+<ul>
+<li><code>NONE</code> - 禁用自动映射。仅对手动映射的属性进行映射。</li>
+<li><code>PARTIAL</code> - 对除在内部定义了嵌套结果映射（也就是连接的属性）以外的属性进行映射。默认配置。</li>
+<li><code>FULL</code> - 自动映射所有属性。</li>
+</ul>
+<p>默认使用 PARTIAL，另外， 无论设置的自动映射等级是哪种，你都可以通过在映射文件中设置 resultMap 的 <code>autoMapping</code> 属性来为指定的结果映射设置启用/禁用自动映射。</p>
+<pre><code class="language-xml">    &lt;resultMap id=&quot;BaseResultMap2&quot; type=&quot;Employee&quot; autoMapping=&quot;true&quot;&gt;
+        &lt;id column=&quot;id&quot; property=&quot;id&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+    &lt;/resultMap&gt;
+</code></pre>
+<h2 id="自动映射驼峰命名的属性">自动映射驼峰命名的属性</h2>
+<p>当自动映射查询结果时，MyBatis 会获取结果中返回的列名并在 Java 类中查找相同名字的属性（忽略大小写）。如果列名和实体中的属性名对不上，则需要显式地配置。在使用例子中，我们使用<code>resultMap</code>来映射表和对象，如下：</p>
+<pre><code class="language-xml">    &lt;!-- 基础映射表 --&gt;
+    &lt;resultMap id=&quot;BaseResultMap&quot; type=&quot;cn.zzs.mybatis.entity.Employee&quot;&gt;
+        &lt;id column=&quot;id&quot; property=&quot;id&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;department_id&quot; property=&quot;departmentId&quot; javaType=&quot;string&quot; jdbcType=&quot;VARCHAR&quot; /&gt;
+        &lt;result column=&quot;gmt_create&quot; property=&quot;create&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+        &lt;result column=&quot;gmt_modified&quot; property=&quot;modified&quot; javaType=&quot;date&quot; jdbcType=&quot;TIMESTAMP&quot; /&gt;
+    &lt;/resultMap&gt;
+    &lt;!-- 基础字段 --&gt;
+    &lt;sql id=&quot;Base_Column_List&quot;&gt;
+        e.id,
+        e.`name`,
+        e.gender,
+        e.no,
+        e.password,
+        e.phone,
+        e.address,
+        e.status,
+        e.deleted,
+        e.department_id,
+        e.gmt_create,
+        e.gmt_modified
+    &lt;/sql&gt;
+    &lt;!-- 根据id查询 --&gt;
+    &lt;select id=&quot;selectByPrimaryKey&quot; parameterType=&quot;java.lang.String&quot; resultMap=&quot;BaseResultMap&quot;&gt;
+        select
+        &lt;include refid=&quot;Base_Column_List&quot; /&gt;
+        from
+        demo_employee e
+        where
+        e.id = #{id}
+    &lt;/select&gt;
+</code></pre>
+<p>除了表列名和实体的属性名一致的情况，其他的字段都需要我们手动配置映射，这样做比较麻烦。但是，大部分情况下，我们都会遵循驼峰命名的规则来定义实体的属性名，是否可以直接通过这种规则来自动映射呢？</p>
+<p>mybatis 提供了<code>mapUnderscoreToCamelCase</code>配置项来处理这种情况。</p>
+<pre><code class="language-xml">    &lt;settings&gt;
+        &lt;setting name=&quot;mapUnderscoreToCamelCase&quot; value=&quot;true&quot; /&gt;
+    &lt;/settings&gt;
+</code></pre>
+<h1 id="参考资料">参考资料</h1>
+<p><a href="https://Mybatis.org/Mybatis-3/zh/index.html/">Mybatis官方中文文档</a></p>
+<blockquote>
+<p>相关源码请移步：<a href="https://github.com/ZhangZiSheng001/mybatis-projects/tree/master/mybatis-demo">mybatis-demo</a></p>
+</blockquote>
+<blockquote>
+<p>本文为原创文章，转载请附上原文出处链接：<a href="https://www.cnblogs.com/ZhangZiSheng001/p/12773971.html">https://www.cnblogs.com/ZhangZiSheng001/p/12773971.html </a></p>
+</blockquote>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 17:06</span>&nbsp;
+<a href="https://www.cnblogs.com/ZhangZiSheng001/">子月生</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773971" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12773971);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 562068, cb_blogApp = 'ZhangZiSheng001', cb_blogUserGuid = 'e627d452-3f99-4bec-108a-08d6fed13219';
+    var cb_entryId = 12773971, cb_entryCreatedDate = '2020-04-25 17:06', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 子月生
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <!--音乐解析-->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script
+	src="https://blog-static.cnblogs.com/files/ZhangZiSheng001/APlayer.min.js"
+	defer=""></script>
+<script src="https://unpkg.com/meting@1.2.0/dist/Meting.min.js" defer=""></script>
+<div id="aplayer" class="aplayer aplayer-withlrc aplayer-withlist" data-id="3134690790" data-server="netease" data-type="playlist" data-fixed="false" data-listfolded="true" data-order="random" data-theme="#2D8CF0" style="display: block;"></div>
+
+<!--dplayer-->
+<link rel="stylesheet"
+	href="https://blog-static.cnblogs.com/files/ZhangZiSheng001/DPlayer.min.css">
+<script
+	src="https://blog-static.cnblogs.com/files/ZhangZiSheng001/DPlayer.min.js"
+	defer=""></script>
+
+<!--念两句诗-->
+<!-- <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"
+    charset="utf-8" defer=""></script> -->
+<!--代码复制-->
+<script
+	src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"
+	defer=""></script>
+<!--主题-->
+<script
+	src="https://blog-static.cnblogs.com/files/ZhangZiSheng001/gshang.js"
+	defer=""></script>
+
+<!-- import Vue.js -->
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js" defer=""></script>
+
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?58b74026a7ca39825b239d308ad89164";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+    </div>
+</body>
+</html>

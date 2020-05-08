@@ -1,0 +1,1012 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="前言：都说Netty是Java程序员必须要掌握的一项技能，带着不止要知其然还要知其所以然的目的，在慕课上找了一个学习Netty源码的教程，看了几章后着实有点懵逼。虽然用过Netty，并且在自己的个人网" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Netty入门与实战教程总结分享 - 耶low - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/lbhym/custom.css?v=/bNcoqoCmLiTu3EIkfiCTX1tFFw=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/lbhym/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/lbhym/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/lbhym/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 524632;
+        var currentBlogApp = 'lbhym';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/lbhym/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/lbhym/">耶low的博客</a>
+</h1>
+<h2>
+路途遥远
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lbhym/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%80%B6low">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/lbhym/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+52&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+9</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12753314.html">Netty入门与实战教程总结分享</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p><span style="font-size: 16px;">　　前言：都说Netty是Java程序员必须要掌握的一项技能，带着不止要知其然还要知其所以然的目的，在慕课上找了一个学习Netty源码的教程，看了几章后着实有点懵逼。虽然用过Netty，并且在自己的个人网站上实现了聊天室的功能。但是使用的还是Netty很少一部分功能，很多组件都没涉及，很多API也似懂非懂。基础都没打牢，学习源码肯定懵逼。正好在掘金小册上找到了一个Netty入门的教程，链接放在最后【非广告】。学习过后，整理出了这么一篇博客。写这篇博客的目的一个是为了分享，另一个目的就是为了做个笔记，之后自己也可以当资料回顾一下。</span></p>
+<p><span style="font-size: 16px;">　　在学习Netty前的必需知识：NIO。如果不了解可以看这篇：</span><span style="font-size: 16px;"><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12698309.html">手动搭建I/O网络通信框架3：NIO编程模型，升级改造聊天室</a>。对于BIO和AIO可以只看文字了解一下，但是NIO编程模型最好还是动手实践一下，毕竟NIO目前是使用最广的。还有一篇Netty实战</span><span style="font-size: 16px;"><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lbhym/p/12497212.html">SpringBoot+Netty+WebSocket实现实时通信</a>。这</span><span style="font-size: 16px;">是我实现个人网站的聊天室时写的一篇，文字内容很少，主要是代码，最好粗略看看代码，因为下面有几个地方会和这篇代码做一些比较，下面统称Netty实战。如果现在看不懂，等你认真看到这篇博客的pipeline那里，应该都会看懂。Netty实战中的客户端是Web，配合一些前端IM框架，客户端实现起来非常简单。但是聊天通讯的功能在APP中多一些，所以下面会说到Netty在客户端中的使用。下面所有代码都确保可以正确运行，如果哪里有问题，请留言指出，谢谢。</span></p>
+<h2>Netty是什么？</h2>
+<p><span style="font-size: 16px;">　　官方定义：Netty 是一个异步事件驱动的网络应用框架，用于快速开发可维护的高性能服务器和客户端。</span></p>
+<p><span style="font-size: 16px;">　　简单地说Netty封装了JDK的NIO，不用再写一大堆复杂的代码。既然代替了原生的NIO，肯定有比它好的理由，主要有如下几点：</span></p>
+<p><span style="font-size: 16px;">　　1.Netty底层IO模型可以随意切换，比如可以从NIO切换到BIO，但一般很少会这么做。</span></p>
+<p><span style="font-size: 16px;">　　2.Netty自带拆包解包，从NIO各种繁复的细节中脱离出来，让开发者重点关心业务逻辑。</span></p>
+<p><span style="font-size: 16px;">　　3.Netty解决了NIO中Selector空轮询BUG，这个BUG应该很多人听说过，虽然官方声明jdk1.6的update18修复了该问题，只不过是降低了发生的概率。</span></p>
+<p><span style="font-size: 16px;">　　4.对Selector做了很多细小的优化，reactor线程模型能做到高效的并发处理。</span></p>
+<h1>&nbsp;</h1>
+<h2>服务端启动类详解</h2>
+<p><span style="font-family: 宋体;">　　<span style="font-size: 16px; font-family: 'Microsoft YaHei';">精简的服务端</span></span><span style="font-size: 16px; font-family: 'Microsoft YaHei';">Demo，与上面那篇Netty实战中的代码相比只有一个启动类，少了业务代码和初始化器。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> NettyServer {
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+        NioEventLoopGroup bossGroup </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> NioEventLoopGroup();
+        NioEventLoopGroup workerGroup </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> NioEventLoopGroup();
+
+        ServerBootstrap serverBootstrap </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> ServerBootstrap();
+        serverBootstrap
+                .group(bossGroup, workerGroup)
+                .channel(NioServerSocketChannel.</span><span style="color: #0000ff;">class</span><span style="color: #000000;">)
+                .childHandler(</span><span style="color: #0000ff;">new</span> ChannelInitializer&lt;NioSocketChannel&gt;<span style="color: #000000;">() {
+                    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(NioSocketChannel ch) {
+                    }
+                });
+
+        serverBootstrap.bind(</span>8000<span style="color: #000000;">);
+    }
+}</span></pre>
+</div>
+<ul>
+<li>
+<p><span style="font-size: 16px;">两个NioEventLoopGroup对象，可以看作两个线程组。bossGroup的作用是监听客户端请求。workerGroup的作用是处理每条连接的数据读写。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">ServerBootstrap是一个引导类，其对象的作用是引导服务器的启动工作。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">.group是配置上面两个线程组的角色，也就是谁去监听谁去处理读写。上面只是创建了两个线程组，并没有实际使用。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">.channel是配置服务端的IO模型，上面代码配置的是NIO模型。也可以配置为BIO，如OioServerSocketChannel.class。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">.childHandler用于配置每条连接的数据读写和业务逻辑等。上面代码用的是匿名内部类，并没有什么内容。实际使用中为了规范起见，一般会再写一个单独的类也就是初始化器，在里面写上需要的操作。就如Netty实战那篇中的代码一样。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">最后就是绑定监听端口了。</span></p>
+</li>
+</ul>
+<p><span style="font-size: 16px;">　　引导类最小化的参数配置就是如上四个：配置线程组、IO模型、处理逻辑、绑定端口。</span></p>
+<p><span style="font-size: 18px;"><strong>引导类serverBootstrap 的其他方法：</strong></span></p>
+<p><span style="font-size: 16px;">　　1.handler（）方法：上面的cildHandler是处理连接的读写逻辑，这个是用于指定服务端启动中的逻辑.</span></p>
+<div class="cnblogs_code">
+<pre>serverBootstrap.handler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;NioServerSocketChannel&gt;<span style="color: #000000;">() {
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(NioServerSocketChannel ch) {
+        System.out.println(</span>"服务端启动中"<span style="color: #000000;">);
+    }
+})</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　2.attr（）方法：给服务端的channel指定一些自定义属性。然后通过channel.attr（）取出这个属性，其实就是给channel维护一个map。一般也用不上。</span></p>
+<p><span style="font-size: 16px;">　　3.childAttr（）方法：作用和上面一样，这个是针对客户端的channel。</span></p>
+<p><span style="font-size: 16px;">　　4.option（）方法：给服务端的channel设置属性，如</span></p>
+<div class="cnblogs_code">
+<pre>serverBootstrap.option(ChannelOption.SO_BACKLOG, 1024)</pre>
+</div>
+<p><span style="font-size: 16px;">　　上面代码表示系统用于临时存放已完成三次握手的请求的队列的最大长度，如果连接建立频繁，服务器处理创建新连接较慢，可以适当调大这个参数</span></p>
+<p><span style="font-size: 16px;">　　5.childOption（）方法：大家肯定已经明白了Netty的命名规律，这个是给每条客户端连接设置TCP相关的属性，如</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">serverBootstrap
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">开启TCP底层心跳机制</span>
+        .childOption(ChannelOption.SO_KEEPALIVE, <span style="color: #0000ff;">true</span><span style="color: #000000;">)
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">开启Nagle算法，如果要求高实时性，有数据发送时就马上发送，就关闭，如果需要减少发送次数减少网络交互，就开启。</span>
+        .childOption(ChannelOption.TCP_NODELAY, <span style="color: #0000ff;">true</span>)</pre>
+</div>
+<h1>&nbsp;</h1>
+<h2>客户端启动类</h2>
+<p><span style="font-family: 宋体;">　</span><span style="font-size: 16px;">　还是说说那篇Netty实战，里面的客户端是Web，所以用到了WebSocket。主要的重点还是在服务端上，客户端实现起来相对容易，因为它只用发送消息和接收消息。下面依旧写出一个精简的客户端Demo，可以根据自己的项目类型还选择客户端的实现。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> NettyClient {
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+        NioEventLoopGroup workerGroup </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> NioEventLoopGroup();
+        Bootstrap bootstrap </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> Bootstrap();
+        bootstrap
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> 1.指定线程模型</span>
+<span style="color: #000000;">                .group(workerGroup)
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> 2.指定 IO 类型为 NIO</span>
+                .channel(NioSocketChannel.<span style="color: #0000ff;">class</span><span style="color: #000000;">)
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> 3.IO 处理逻辑</span>
+                .handler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;SocketChannel&gt;<span style="color: #000000;">() {
+                    @Override
+                    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(SocketChannel ch) {
+                    }
+                });
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 4.建立连接</span>
+        bootstrap.connect("127.0.0.1", 8000).addListener(future -&gt;<span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (future.isSuccess()) {
+                System.out.println(</span>"连接成功!"<span style="color: #000000;">);
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                System.err.println(</span>"连接失败!"<span style="color: #000000;">);
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">重新连接</span>
+<span style="color: #000000;">            }
+        });
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　弄懂服务端代码后，客户端就很好理解了，就不再一一说明了。主要作用就在注释中。</span></p>
+<p><strong><span style="font-size: 18px;">重新连接</span></strong></p>
+<p>　　<span style="font-size: 16px;">网络环境差的情况下，客户端第一次连接可能会失败，所以我们需要尝试重新连接。可以把连接connect上面的代码封装起来，然后传入一个Bootstrap类型的对象，通过这个对象循环连接。但是一般情况下，连接失败后不会马上重连，而是会通过一个指数退避的方式，比如每隔1s、2s、4s、8s....重新连接。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">int</span> MAX_RETRY=5<span style="color: #000000;">;
+connect(bootstrap, </span>"127.0.0.1", 8000<span style="color: #000000;">, MAX_RETRY);
+</span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span> connect(Bootstrap bootstrap, String host, <span style="color: #0000ff;">int</span> port, <span style="color: #0000ff;">int</span><span style="color: #000000;"> retry) {
+    bootstrap.connect(host, port).addListener(future </span>-&gt;<span style="color: #000000;"> {
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (future.isSuccess()) {
+            System.out.println(</span>"连接成功!"<span style="color: #000000;">);
+        } </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span> (retry == 0<span style="color: #000000;">) {
+            System.err.println(</span>"重试次数已用完，放弃连接！"<span style="color: #000000;">);
+        } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 第几次重连</span>
+            <span style="color: #0000ff;">int</span> order = (MAX_RETRY - retry) + 1<span style="color: #000000;">;
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 本次重连的间隔，1&lt;&lt;order相当于1乘以2的order次方</span>
+            <span style="color: #0000ff;">int</span> delay = 1 &lt;&lt;<span style="color: #000000;"> order;
+            System.err.println(</span><span style="color: #0000ff;">new</span> Date() + ": 连接失败，第" + order + "次重连&hellip;&hellip;"<span style="color: #000000;">);
+            bootstrap.config().group().schedule(() </span>-&gt; connect(bootstrap, host, port, retry - 1<span style="color: #000000;">), delay, TimeUnit
+                    .SECONDS);
+        }
+    });
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　在上面的代码中，我们看到，我们定时任务是调用&nbsp;bootstrap.config().group().schedule(), 其中&nbsp;bootstrap.config()&nbsp;这个方法返回的是&nbsp;BootstrapConfig，他是对&nbsp;Bootstrap&nbsp;配置参数的抽象，然后&nbsp;bootstrap.config().group()&nbsp;返回的就是我们在一开始的时候配置的线程模型&nbsp;workerGroup，调&nbsp;workerGroup&nbsp;的&nbsp;schedule&nbsp;方法即可实现定时任务逻辑。</span></p>
+<p><span style="font-size: 16px;">　　在&nbsp;schedule&nbsp;方法块里面，前面四个参数我们原封不动地传递，最后一个重试次数参数减掉一，就是下一次建立连接时候的上下文信息。我们可以自行修改代码，更改到一个连接不上的服务端 Host 或者 Port，查看控制台日志就可以看到5次重连日志。</span></p>
+<p><span style="font-size: 16px;">　　bootstrap的其他方法，attr（）和option（）。作用和服务端的方法一样。attr设置自定义属性，option设置TCP相关的属性。</span></p>
+<h1>&nbsp;</h1>
+<h2>数据传输的载体：ByteBuf</h2>
+<p>　　<span style="font-size: 16px;">NIO中经常使用的ByteBuffer，但它还有一些缺陷：</span></p>
+<p><span style="font-size: 16px;">　　1.长度固定。2.读写状态需要通过filp（）和rewind（）手动转换。3.功能有限。</span></p>
+<p><span style="font-size: 16px;">　　如果看过上面NIO那篇博客中聊天室Demo，其实都会发现这些问题。长度设置固定的1024个字节，读写也要用filp（）转换。所以Netty为了解决ByteBuffer的这些缺陷，设计了ByteBuf。其结构如下：</span></p>
+<p><span style="font-size: 16px;"><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200422170412865-742900127.png" alt="" width="690" height="300"></span></p>
+<ol>
+<li>
+<p><span style="font-size: 16px;">ByteBuf 是一个字节容器，容器里面的的数据分为三个部分，第一个部分是已经丢弃的字节，这部分数据是无效的；第二部分是可读字节，这部分数据是 ByteBuf 的主体数据， 从 ByteBuf 里面读取的数据都来自这一部分;最后一部分的数据是可写字节，所有写到 ByteBuf 的数据都会写到这一段。最后一部分虚线表示的是该 ByteBuf 最多还能扩容多少容量。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">以上三段内容是被两个指针给划分出来的，从左到右，依次是读指针（readerIndex）、写指针（writerIndex），然后还有一个变量 capacity，表示 ByteBuf 底层内存的总容量。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">从 ByteBuf 中每读取一个字节，readerIndex 自增1，ByteBuf 里面总共有 writerIndex-readerIndex 个字节可读, 由此可以推论出当 readerIndex 与 writerIndex 相等的时候，ByteBuf 不可读。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">写数据是从 writerIndex 指向的部分开始写，每写一个字节，writerIndex 自增1，直到增到 capacity，这个时候，表示 ByteBuf 已经不可写了。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">ByteBuf 里面其实还有一个参数 maxCapacity，当向 ByteBuf 写数据的时候，如果容量不足，那么这个时候可以进行扩容，直到 capacity 扩容到 maxCapacity，超过 maxCapacity 就会报错。</span></p>
+</li>
+</ol>
+<p><strong><span style="font-size: 18px;">ByteBuf的API</span></strong></p>
+<p><span style="font-size: 16px;"><strong>　　capacity</strong>()：表示ByteBuf底层占用了多少字节，包括丢弃字节、可读字节、可写字节。</span></p>
+<p><span style="font-size: 16px;">　　maxCapacity()：表示ByteBuf最大能占用多少字节，也就是包括后面的可扩容的内存。</span></p>
+<p><span style="font-size: 16px;">　　readableBytes() 与 isReadable()：前者表示当前可读字节数，也就是写指针-读指针。后者表示是否可读。</span></p>
+<p><span style="font-size: 16px;">　　writableBytes()、 isWritable() 与 maxWritableBytes()：第一个表示可写字节数。第二个表示是否可写。第三个表示最大可写字节数。</span></p>
+<p><span style="font-size: 16px;">　　readerIndex() 与 readerIndex(int)：前者返回当前的读指针。后者可以设置读指针。</span></p>
+<p><span style="font-size: 16px;">　　writeIndex() 与 writeIndex(int)：和上面一样，只是读指针变成了写指针。</span></p>
+<p><span style="font-size: 16px;">　　markReaderIndex() 与 resetReaderIndex()：前者表示把当前读指针保存起来。后者表示把当前的读指针恢复到保存时的值。他们的功能其实readerIndex() 与 readerIndex(int)一样可以实现，但一般会选择下面两句，因为不用定义一个变量。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">int</span> readerIndex =<span style="color: #000000;"> buffer.readerIndex();
+buffer.readerIndex(readerIndex);
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">和上面两句等价</span>
+<span style="color: #000000;">buffer.markReaderIndex();
+buffer.resetReaderIndex();</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　writeBytes(byte[] src) 与 buffer.readBytes(byte[] dst)：前者表示把src写到ByteBuf。后者表示把ByteBuf全部数据读取到dst。</span></p>
+<p><span style="font-size: 16px;">　　writeByte(byte b) 与 buffer.readByte()：前者表示把字节b写道ByteBuf。后者表示从ByteBuf读取一个字节。类似的 API 还有 writeBoolean()、writeChar()、writeShort()、writeInt()、writeLong()、writeFloat()、writeDouble() 与 readBoolean()、readChar()、readShort()、readInt()、readLong()、readFloat()、readDouble() 这里就不一一赘述了。</span></p>
+<p><span style="font-size: 16px;">　　release() 与 retain()：由于 Netty 使用了堆外内存，而堆外内存是不被 jvm 直接管理的，也就是说申请到的内存无法被垃圾回收器直接回收，所以需要我们手动回收。Netty 的 ByteBuf 是通过引用计数的方式管理的，如果一个 ByteBuf 没有地方被引用到，需要回收底层内存。默认情况下，当创建完一个 ByteBuf，它的引用为1，然后每次调用 retain() 方法， 它的引用就加一， release() 方法原理是将引用计数减一，减完之后如果发现引用计数为0，则直接回收 ByteBuf 底层的内存。</span></p>
+<p><span style="font-size: 16px;">　　slice()、duplicate()、copy()：这三个都会返回一个新的ByteBuf。第一个是截取读指针到写指针范围内的一段内容。第二个是截取整个ByteBuf，包括数据和指针信息。第三个是拷贝所有信息，除了第二个API的内容还包括底层信息，因此拷贝后的新ByteBuf任何操作不会影响原始的ByteBuf。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>实战：服务端和客户端双向通信</h2>
+<p><span style="font-size: 16px;">　　了解客户端、服务端的启动类和ByteBuf以后，可以进行一个简单的实战了。</span></p>
+<p><span style="font-size: 16px;">　　首先看看前面的客户端代码，.handler里重写的initChannel方法并没实际内容。现在加上逻辑处理器，其实就是一个执行逻辑代码的类，怎么叫无所谓，明白它的意思就行。</span></p>
+<p><strong><span style="font-size: 16px;">　　客户端</span></strong></p>
+<div class="cnblogs_code">
+<pre>.handler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;SocketChannel&gt;<span style="color: #000000;">() {
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(SocketChannel ch) {
+        ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> FirstClientHandler());
+    }
+});</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　ch.pipeline().addLast()就是添加一个逻辑处理器。我们在FirstClientHandler里添加对应的逻辑代码就行。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> FirstClientHandler <span style="color: #0000ff;">extends</span><span style="color: #000000;"> ChannelInboundHandlerAdapter {
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelActive(ChannelHandlerContext ctx) {
+        System.out.println(</span>"客户端发送消息..."<span style="color: #000000;">);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 1. 获取数据</span>
+        ByteBuf buffer =<span style="color: #000000;"> getByteBuf(ctx);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 2. 写数据</span>
+<span style="color: #000000;">        ctx.channel().writeAndFlush(buffer);
+    }
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> ByteBuf getByteBuf(ChannelHandlerContext ctx) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 1. 获取二进制抽象 ByteBuf</span>
+        ByteBuf buffer =<span style="color: #000000;"> ctx.alloc().buffer();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 2. 准备数据，指定字符串的字符集为 utf-8</span>
+        <span style="color: #0000ff;">byte</span>[] bytes = ("【客户端】:这是客户端发送的消息："+<span style="color: #0000ff;">new</span> Date()).getBytes(Charset.forName("utf-8"<span style="color: #000000;">));
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 3. 填充数据到 ByteBuf</span>
+<span style="color: #000000;">        buffer.writeBytes(bytes);
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> buffer;
+    }
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead(ChannelHandlerContext ctx, Object msg) {
+        ByteBuf byteBuf </span>=<span style="color: #000000;"> (ByteBuf) msg;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">接收服务端的消息并打印</span>
+        System.out.println(byteBuf.toString(Charset.forName("utf-8"<span style="color: #000000;">)));
+    }
+}</span></pre>
+</div>
+<ul>
+<li>
+<p><span style="font-size: 16px;">channelActive()方法会在客户端与服务器建立连接后调用。所以我们可以在这里面编写逻辑代码</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">.alloc().buffer()的作用是把字符串的二进制数据填充到ByteBuf。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">.writeBytes()的作用是把数据写到服务器。</span></p>
+</li>
+<li>
+<p><span style="font-size: 16px;">channelRead()在接受到服务端的消息后调用。</span></p>
+</li>
+</ul>
+<p><span style="font-size: 16px;"><strong>　　服务端</strong></span></p>
+<p><span style="font-family: 宋体;">　</span><span style="font-size: 16px;">　同样的我们需要在initChannel()里添加一个逻辑处理器。</span></p>
+<div class="cnblogs_code">
+<pre>.childHandler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;NioSocketChannel&gt;<span style="color: #000000;">() {
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(NioSocketChannel ch) {
+        ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> FirstServerHandler());
+    }
+});</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　逻辑处理器里的代码</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> FirstServerHandler <span style="color: #0000ff;">extends</span><span style="color: #000000;"> ChannelInboundHandlerAdapter {
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead(ChannelHandlerContext ctx, Object msg) {
+        ByteBuf byteBuf </span>=<span style="color: #000000;"> (ByteBuf) msg;
+        System.out.println(</span><span style="color: #0000ff;">new</span> Date() + ": 服务端读到数据 -&gt; " + byteBuf.toString(Charset.forName("utf-8"<span style="color: #000000;">)));
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">接收到客户端的消息后我们再回复客户端</span>
+        ByteBuf out =<span style="color: #000000;"> getByteBuf(ctx);
+        ctx.channel().writeAndFlush(out);
+    }
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> ByteBuf getByteBuf(ChannelHandlerContext ctx) {
+        </span><span style="color: #0000ff;">byte</span>[] bytes = "【服务器】:我是服务器，我收到你的消息了！".getBytes(Charset.forName("utf-8"<span style="color: #000000;">));
+        ByteBuf buffer </span>=<span style="color: #000000;"> ctx.alloc().buffer();
+        buffer.writeBytes(bytes);
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> buffer;
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　channelRead()方法在接收到客户端发来的数据后调用。</span></p>
+<p><span style="font-size: 16px;">　　最后我们启动客户端和服务端的启动类，效果如下：</span></p>
+<p><span style="font-size: 16px;"><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200423163727910-213326205.png" alt="" width="492" height="215"></span></p>
+<p>&nbsp;</p>
+<p><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200423163741550-1755022454.png" alt="" width="490" height="320"></p>
+<p>&nbsp;</p>
+<h2>自定义客户端与服务端的通信协议</h2>
+<p><strong><span style="font-size: 18px;">什么是通信协议？</span></strong></p>
+<p><span style="font-size: 16px;">　　TCP通信的数据包格式均为二进制，协议指的就是客户端与服务端制定一个规则，这个规则规定了每个二进制数据包中每一段的字节代表什么含义。客户端与服务端通信的过程如下。</span></p>
+<p><span style="font-size: 16px;"><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200423163925105-617865029.png" alt="" width="684" height="295"></span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px;">　　客户端首先把一个Java对象转换成二进制数据，然后通过网络传输给服务端。这里的传输过程属于TCP/IP协议负责，与我们应用层无关。</span></p>
+<p><strong><span style="font-size: 18px;">通信协议的设计</span></strong></p>
+<p><span style="font-size: 16px;"><strong><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200423164009289-278550447.png" alt="" width="894" height="132"></strong></span></p>
+<p><span style="font-size: 16px;">　　1.第一个字段是魔数，可以理解为识别这条二进制数据类型的字段。在《深入理解Java虚拟机》中这么解释：使用魔数而不是扩展名来进行识别主要是基于安全方面的考虑，因为文件扩展名可以随意地改动。文件格式的制定者可以自由地选择魔数值，只要这个魔数值还没有被广泛采用过同时又不会引起混淆即可。</span></p>
+<p><span style="font-size: 16px;">　　2.第二个是版本号，就像IPV4和IPV6一样。能够支持协议的升级。</span></p>
+<p><span style="font-size: 16px;">　　3.第三个表示如何把Java对象转换成二进制数据和把二进制数据转回Java对象。</span></p>
+<p><span style="font-size: 16px;">　　4.第四个用于区分这条数据是干嘛的或者说叫数据类型，如：这是发送的消息，还是登录的请求等。服务端就可以根据这个指令执行不同的逻辑代码。</span></p>
+<p><span style="font-size: 16px;">　　5.第五个代表后面的数据长度。</span></p>
+<p><span style="font-size: 16px;">　　6.第六个代表发送的数据，如果指令表明这是个登录数据，里面存储的就是账号密码。</span></p>
+<p><strong><span style="font-size: 18px;">通信协议的实现</span></strong></p>
+<p><span style="font-size: 16px;">　　以实现登录为例，下面接口和类有点多，建议先把代码拷贝到IDE里，分好包写好注释，助于理解它们的关系。</span></p>
+<p><span style="font-size: 16px;">　　1.首先创建一个Java对象，这里以登录时的请求响应为例</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">@Data
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">abstract</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Packet {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">协议版本</span>
+    <span style="color: #0000ff;">private</span> Byte version = 1<span style="color: #000000;">;
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">获取数据类型</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">abstract</span><span style="color: #000000;"> Byte getCommand();
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　@Date注解由lombok提供，不了解的可以看看这个<span style="text-decoration: underline;"><a href="https://www.cnblogs.com/lbhym/p/12551021.html">https://www.cnblogs.com/lbhym/p/12551021.html</a></span></span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> Command {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">定义登录请求指令和响应指令为1和2，其他的指令同理如MESSAGE_REQUEST等</span>
+    Byte LOGIN_REQUEST = 1<span style="color: #000000;">;
+    Byte LOGIN_RESPONSE </span>= 2<span style="color: #000000;">;
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">这个是登录请求数据包的Java对象，所以调用的是上面接口的登录请求指令，其他类型的数据包同理</span>
+<span style="color: #000000;">@Data
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> LoginRequestPacket <span style="color: #0000ff;">extends</span><span style="color: #000000;"> Packet {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">定义用户信息</span>
+    <span style="color: #0000ff;">private</span><span style="color: #000000;"> Integer userId;
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String username;
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String password;
+    @Override
+    </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> Byte getCommand() {
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> LOGIN_REQUEST;
+    }
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">@Data
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> LoginResponsePacket <span style="color: #0000ff;">extends</span><span style="color: #000000;"> Packet {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">是否登录成功</span>
+    <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">boolean</span><span style="color: #000000;"> success;
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">如果失败，返回的信息</span>
+    <span style="color: #0000ff;">private</span><span style="color: #000000;"> String reason;
+    @Override
+    </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> Byte getCommand() {
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> LOGIN_RESPONSE;
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　2.Java对象创建完了，再定义Java对象转换的规则</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">序列化接口</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> Serializer {
+    Serializer DEFAULT </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> JSONSerializer();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">序列化算法</span>
+    <span style="color: #0000ff;">byte</span><span style="color: #000000;"> getSerializerAlogrithm();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">java 对象转换成二进制</span>
+    <span style="color: #0000ff;">byte</span><span style="color: #000000;">[] serialize(Object object);
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">二进制转换成 java 对象</span>
+    &lt;T&gt; T deserialize(Class&lt;T&gt; clazz, <span style="color: #0000ff;">byte</span><span style="color: #000000;">[] bytes);
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　接口定义完后开始实现接口。这里的序列化算法使用的是fastjson里面的。需要在pom.xml里导入。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">interface</span><span style="color: #000000;"> SerializerAlgorithm {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">json序列化标识，如果你有其他的序列化方式可以在这注明标识，类似上面的登录指令</span>
+    <span style="color: #0000ff;">byte</span> JSON = 1<span style="color: #000000;">;
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">实现上面定义的序列化接口</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> JSONSerializer <span style="color: #0000ff;">implements</span><span style="color: #000000;"> Serializer {
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">byte</span><span style="color: #000000;"> getSerializerAlgorithm() {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">获取上面的序列化标识</span>
+        <span style="color: #0000ff;">return</span><span style="color: #000000;"> SerializerAlgorithm.JSON;
+    } 
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">byte</span><span style="color: #000000;">[] serialize(Object object) {
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> JSON.toJSONBytes(object);
+    }
+    @Override
+    </span><span style="color: #0000ff;">public</span> &lt;T&gt; T deserialize(Class&lt;T&gt; clazz, <span style="color: #0000ff;">byte</span><span style="color: #000000;">[] bytes) {
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> JSON.parseObject(bytes, clazz);
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　3.创建一个类PacketCodeC，里面写上编解码的方法。这里再说一点，因为使用了@Data注解，所以有的get方法在语法检测阶段会报错，可以在IDEA里面下载Lombok插件。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> PacketCodeC {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">自定义一个魔数</span>
+    <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span> MAGIC_NUMBER = 0x12345678<span style="color: #000000;">;
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">创建一个静态实例供外部调用</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> PacketCodeC INSTANCE=<span style="color: #0000ff;">new</span><span style="color: #000000;"> PacketCodeC();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">创建两个map，一个存储数据类型，如：是登录数据还是普通消息等。第二个是存储序列化类型。
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">这样在解码时就可以把数据转换为对应的类型。如：这个byte数组是LOGIN_REQUEST类型，就把它转换成LoginRequestPacket类型的Java对象</span>
+    <span style="color: #0000ff;">private</span>  <span style="color: #0000ff;">final</span> Map&lt;Byte, Class&lt;? <span style="color: #0000ff;">extends</span> Packet&gt;&gt;<span style="color: #000000;"> packetTypeMap;
+    </span><span style="color: #0000ff;">private</span>  <span style="color: #0000ff;">final</span> Map&lt;Byte, Serializer&gt;<span style="color: #000000;"> serializerMap;
+
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> PacketCodeC() {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">初始化map并添加数据类型和序列化类型，如果有其他数据类型，记得在这里添加</span>
+        packetTypeMap = <span style="color: #0000ff;">new</span> HashMap&lt;&gt;<span style="color: #000000;">();
+        packetTypeMap.put(LOGIN_REQUEST, LoginRequestPacket.</span><span style="color: #0000ff;">class</span><span style="color: #000000;">);
+        packetTypeMap.put(LOGIN_RESPONSE, LoginResponsePacket.</span><span style="color: #0000ff;">class</span><span style="color: #000000;">);
+        serializerMap </span>= <span style="color: #0000ff;">new</span> HashMap&lt;&gt;<span style="color: #000000;">();
+        Serializer serializer </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> JSONSerializer();
+        serializerMap.put(serializer.getSerializerAlogrithm(), serializer);
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">编码</span>
+    <span style="color: #0000ff;">public</span><span style="color: #000000;"> ByteBuf encode(ByteBufAllocator bufAllocator,Packet packet) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 1. 创建 ByteBuf 对象</span>
+        ByteBuf byteBuf =<span style="color: #000000;"> bufAllocator.ioBuffer();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 2. 序列化 Java 对象</span>
+        <span style="color: #0000ff;">byte</span>[] bytes =<span style="color: #000000;"> Serializer.DEFAULT.serialize(packet);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 3. 实际编码过程，把通信协议几个部分，一一编码</span>
+<span style="color: #000000;">        byteBuf.writeInt(MAGIC_NUMBER);
+        byteBuf.writeByte(packet.getVersion());
+        byteBuf.writeByte(Serializer.DEFAULT.getSerializerAlogrithm());
+        byteBuf.writeByte(packet.getCommand());
+        byteBuf.writeInt(bytes.length);
+        byteBuf.writeBytes(bytes);
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> byteBuf;
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">解码</span>
+    <span style="color: #0000ff;">public</span><span style="color: #000000;"> Packet decode(ByteBuf byteBuf) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 跳过魔数</span>
+        byteBuf.skipBytes(4<span style="color: #000000;">);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 跳过版本号</span>
+        byteBuf.skipBytes(1<span style="color: #000000;">);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 序列化算法标识</span>
+        <span style="color: #0000ff;">byte</span> serializeAlgorithm =<span style="color: #000000;"> byteBuf.readByte();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 指令</span>
+        <span style="color: #0000ff;">byte</span> command =<span style="color: #000000;"> byteBuf.readByte();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 数据包长度</span>
+        <span style="color: #0000ff;">int</span> length =<span style="color: #000000;"> byteBuf.readInt();
+        </span><span style="color: #0000ff;">byte</span>[] bytes = <span style="color: #0000ff;">new</span> <span style="color: #0000ff;">byte</span><span style="color: #000000;">[length];
+        byteBuf.readBytes(bytes);
+        Class</span>&lt;? <span style="color: #0000ff;">extends</span> Packet&gt; requestType =<span style="color: #000000;"> getRequestType(command);
+        Serializer serializer </span>=<span style="color: #000000;"> getSerializer(serializeAlgorithm);
+        </span><span style="color: #0000ff;">if</span> (requestType != <span style="color: #0000ff;">null</span> &amp;&amp; serializer != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> serializer.deserialize(requestType, bytes);
+        }
+        </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">获取序列化类型</span>
+    <span style="color: #0000ff;">private</span> Serializer getSerializer(<span style="color: #0000ff;">byte</span><span style="color: #000000;"> serializeAlgorithm) {
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> serializerMap.get(serializeAlgorithm);
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">获取数据类型</span>
+    <span style="color: #0000ff;">private</span> Class&lt;? <span style="color: #0000ff;">extends</span> Packet&gt; getRequestType(<span style="color: #0000ff;">byte</span><span style="color: #000000;"> command) {
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> packetTypeMap.get(command);
+    }
+}</span></pre>
+</div>
+<p><strong><span style="font-size: 18px;">使用自定义通信协议</span></strong></p>
+<p><span style="font-size: 16px;">　　最后通过一个登录示例，来使用一下上面自定义的通信协议。</span></p>
+<p><span style="font-size: 16px;">　　基于上面的代码，首先更换一下客户端和服务端的逻辑处理器，直接在原来的逻辑处理器里面修改逻辑代码也行。</span></p>
+<div class="cnblogs_code">
+<pre>.handler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;SocketChannel&gt;<span style="color: #000000;">() {
+            @Override
+            </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(SocketChannel ch) {
+                ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> ClientHandler());
+            }
+        });</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre>.childHandler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;NioSocketChannel&gt;<span style="color: #000000;">() {
+            </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(NioSocketChannel ch) {
+                ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> ServerHandler());
+            }
+        }</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　客户端在连接上服务端后立即登录，下面为客户端登录代码</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> ClientHandler <span style="color: #0000ff;">extends</span><span style="color: #000000;"> ChannelInboundHandlerAdapter{
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelActive(ChannelHandlerContext ctx) {
+        System.out.println(</span><span style="color: #0000ff;">new</span> Date() + ": 客户端开始登录"<span style="color: #000000;">);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 创建登录对象</span>
+        LoginRequestPacket loginRequestPacket = <span style="color: #0000ff;">new</span><span style="color: #000000;"> LoginRequestPacket();
+        loginRequestPacket.setUserId(</span><span style="color: #0000ff;">new</span> Random(<span style="color: #000000;">).nextInt(10000));
+        loginRequestPacket.setUsername(</span>"username"<span style="color: #000000;">);
+        loginRequestPacket.setPassword(</span>"pwd"<span style="color: #000000;">);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 编码</span>
+        ByteBuf buffer =<span style="color: #000000;"> PacketCodeC.INSTANCE.encode(ctx.alloc(), loginRequestPacket);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 写数据</span>
+<span style="color: #000000;">        ctx.channel().writeAndFlush(buffer);
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">接收服务端信息</span>
+<span style="color: #000000;">    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead(ChannelHandlerContext ctx, Object msg) {
+        ByteBuf byteBuf </span>=<span style="color: #000000;"> (ByteBuf) msg;
+        Packet packet </span>=<span style="color: #000000;"> PacketCodeC.INSTANCE.decode(byteBuf);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">如果数据类型是登录，就进行登录判断
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">同理可以判断数据是否是普通消息，还是其他类型的数据</span>
+        <span style="color: #0000ff;">if</span> (packet <span style="color: #0000ff;">instanceof</span><span style="color: #000000;"> LoginResponsePacket) {
+            LoginResponsePacket loginResponsePacket </span>=<span style="color: #000000;"> (LoginResponsePacket) packet;
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (loginResponsePacket.isSuccess()) {
+                System.out.println(</span><span style="color: #0000ff;">new</span> Date() + ": 客户端登录成功"<span style="color: #000000;">);
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                System.out.println(</span><span style="color: #0000ff;">new</span> Date() + ": 客户端登录失败，原因：" +<span style="color: #000000;"> loginResponsePacket.getReason());
+            }
+        }
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　下面是服务端代码</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> ServerHandler <span style="color: #0000ff;">extends</span><span style="color: #000000;"> ChannelInboundHandlerAdapter {
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead(ChannelHandlerContext ctx, Object msg) {
+        ByteBuf requestByteBuf </span>=<span style="color: #000000;"> (ByteBuf) msg;
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 解码</span>
+        Packet packet =<span style="color: #000000;"> PacketCodeC.INSTANCE.decode(requestByteBuf);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 判断是否是登录请求数据包</span>
+        <span style="color: #0000ff;">if</span> (packet <span style="color: #0000ff;">instanceof</span><span style="color: #000000;"> LoginRequestPacket) {
+            LoginRequestPacket loginRequestPacket </span>=<span style="color: #000000;"> (LoginRequestPacket) packet;
+            LoginResponsePacket loginResponsePacket</span>=<span style="color: #0000ff;">new</span><span style="color: #000000;"> LoginResponsePacket();
+            loginResponsePacket.setVersion(packet.getVersion());
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 登录校验</span>
+            <span style="color: #0000ff;">if</span><span style="color: #000000;"> (valid(loginRequestPacket)) {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> 校验成功</span>
+                loginResponsePacket.setSuccess(<span style="color: #0000ff;">true</span><span style="color: #000000;">);
+                System.out.println(</span>"客户端登录成功！"<span style="color: #000000;">);
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> 校验失败</span>
+                loginResponsePacket.setReason("账号或密码错误"<span style="color: #000000;">);
+                loginResponsePacket.setSuccess(</span><span style="color: #0000ff;">false</span><span style="color: #000000;">);
+                System.out.println(</span>"客户端登录失败！"<span style="color: #000000;">);
+            }
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 编码，结果发送给客户端</span>
+            ByteBuf responseByteBuf =<span style="color: #000000;"> PacketCodeC.INSTANCE.encode(ctx.alloc(), loginResponsePacket);
+            ctx.channel().writeAndFlush(responseByteBuf);
+        }
+    }
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">boolean</span><span style="color: #000000;"> valid(LoginRequestPacket loginRequestPacket) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">这里可以查询数据库，验证用户的账号密码是否正确</span>
+        <span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　最后演示效果如图所示：</span></p>
+<p><span style="font-size: 16px;"><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200423164834146-352361073.png" alt="" width="360" height="271"></span></p>
+<p><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200423164843208-1634925236.png" alt="" width="437" height="255"></p>
+<p><span style="font-size: 18px;"><strong>自己实现收发消息</strong></span></p>
+<p><span style="font-size: 16px;">　　按照上面的登录功能，可以自己尝试实现一下收发消息的功能。首先还是要定义一个收发消息的Java对象。还需要在Command里面加上收发消息的指令，在编解码类里面的map添加Java对象。收发消息前，肯定需要登录。那么怎么判断一个客户端是否登录呢？可以通过ctx获取channel，然后通过channel的attr方法设置属性。如果登录成功这个属性就设为true。然后在客户端的启动类里连接成功后，新建一个线程专门监听用户的输入，新建输入线程前判断一下登录属性是否为true就行了。其他的地方跟登录就没有太大差别了。</span></p>
+<p>&nbsp;</p>
+<h2>pipeline与channelHandler</h2>
+<p><span style="font-size: 16px;">　　通过上面的一些实战，可以发现我们所有的逻辑代码都写在了一个Handler类里面，幸好现在需要处理的业务不是很多。如果以后功能拓展，这个类会变得非常臃肿。Netty中的pipeline和channelHandler就是解决这个问题的，它们通过责任链设计模式来组织代码逻辑，并且能够支持逻辑的添加和删除，能够支持各类协议拓展，如HTTP、Websocket等。可以看看Netty实战博客中的初始化器类，里面就是通过pipeline添加了各类协议和一些逻辑代码。</span></p>
+<p><span style="font-size: 18px;"><strong>pipeline与channelHandler的构成</strong></span></p>
+<p><span style="font-size: 18px;"><strong>　　<img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200425143606980-1113433442.png" alt="" width="760" height="266"></strong></span></p>
+<p><span style="font-size: 16px;">　　我们知道一个连接对应一个channel，这个channel的所有处理逻辑在一个ChannelPipeline对象里，就是上图中的pipeline，这是它的对象名。然后这个对象里面是一个双向链表结构，每个节点是一个ChannelHandlerContext对象。这个对象能拿到与channel相关的所有上下文信息，这个对象还包含一个重要的对象：ChannelHandler，它的分类如下。</span></p>
+<p><span style="font-size: 16px;"><img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200425143647797-1878478495.png" alt="" width="790" height="370"></span></p>
+<p><span style="font-size: 16px;">　　简单地说，它包含两个接口和这两个接口的实现类，图中左边的实现类是不是很熟悉，就是我们自己写的逻辑处理器里的继承的类。从名字就可以看出，它们的作用分别是读数据和写数据，或理解为入站和出战。最重要的两个方法分别为channelRead()：消息入站。和write()：消息出战。</span></p>
+<p><span style="font-size: 18px;"><strong>构建客户端与服务端的pipeline</strong></span></p>
+<p><span style="font-size: 16px;">　　下面的代码基于上面的登录示例改造。</span></p>
+<p><span style="font-size: 16px;">　　我们先了解一下ByteToMessageDecoder这个类。不论客户端还是服务端收到数据后，都会先进行解码，这个类就是Netty提供的专门做这个事情的。使用如下：</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> PacketDecoder <span style="color: #0000ff;">extends</span><span style="color: #000000;"> ByteToMessageDecoder {
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> decode(ChannelHandlerContext ctx, ByteBuf in, List out) {
+        out.add(PacketCodeC.INSTANCE.decode(in));
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　这个类有一个好处就是，ByteBuf默认使用的是堆外内存，而它会帮你自动释放内存，无需我们关心。上面是解码，对应的Netty也准备了一个类来专门编码:MessageToByteEncoder.</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> PacketEncoder <span style="color: #0000ff;">extends</span> MessageToByteEncoder&lt;Packet&gt;<span style="color: #000000;"> {
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> encode(ChannelHandlerContext ctx, Packet packet, ByteBuf out) {
+        PacketCodeC.INSTANCE.encode(out, packet);
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　注意encode传入的参数，第一个参数变成了ByteBuf的类型，所以我们需要把PacketCodeC里的encode方法的参数改过来，也不需要第一行创建一个ByteBuf对象了。</span></p>
+<p><span style="font-size: 16px;">　　如果不明白为什么要用到这两个类的话，我先展示一段Netty实战博客里面的代码：</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> NettyServerInitializer <span style="color: #0000ff;">extends</span> ChannelInitializer&lt;SocketChannel&gt;<span style="color: #000000;"> {
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span> initChannel(SocketChannel socketChannel) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> Exception {
+        ChannelPipeline pipeline</span>=<span style="color: #000000;"> socketChannel.pipeline();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">http解码器</span>
+        pipeline.addLast(<span style="color: #0000ff;">new</span><span style="color: #000000;"> HttpServerCodec());
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">....
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">websocket支持,设置路由</span>
+        pipeline.addLast(<span style="color: #0000ff;">new</span> WebSocketServerProtocolHandler("/ws"<span style="color: #000000;">));
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">添加自定义的助手类（逻辑处理器）</span>
+        pipeline.addLast(<span style="color: #0000ff;">new</span><span style="color: #000000;"> NettyHandler());
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　在这篇实战中我没有实现自己的编解码器，而是直接使用了http的解码器。类似的，我们可以把自己的编解码器也通过pepeline添加到逻辑链中。就像前面说的，可以添加删除逻辑代码，每个功能各司其职，而不是一股脑的全在一个地方。<strong>用这两个类还有一个好处就是Netty会自动识别这两个类，从而自动编解码而不需要我们自己去调用</strong>。</span></p>
+<p><span style="font-size: 16px;">　　编解码的问题解决了，再看看逻辑处理器类。看看登录的代码，如果我们不止实现登录功能，还有收发等其他功能，是不是要用<strong>大量的if else把各个消息类型分开，然后执行不同的逻辑</strong>。不同的逻辑都挤在一个方法中，显然也太拥挤了。因此Netty基于这种考虑，抽象出了SimpleChannelInboundHandler。下面看看它是如何解决这个问题的：</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> ClientLoginHandler <span style="color: #0000ff;">extends</span> SimpleChannelInboundHandler&lt;LoginResponsePacket&gt;<span style="color: #000000;">{
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelActive(ChannelHandlerContext ctx) {
+        System.out.println(</span>"客户端开始登录...."<span style="color: #000000;">);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 创建登录对象</span>
+        LoginRequestPacket loginRequestPacket = <span style="color: #0000ff;">new</span><span style="color: #000000;"> LoginRequestPacket();
+        loginRequestPacket.setUserId(</span><span style="color: #0000ff;">new</span> Random().nextInt(10000<span style="color: #000000;">));
+        loginRequestPacket.setUsername(</span>"username"<span style="color: #000000;">);
+        loginRequestPacket.setPassword(</span>"pwd"<span style="color: #000000;">);
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 写数据</span>
+<span style="color: #000000;">        ctx.channel().writeAndFlush(loginRequestPacket);
+    }
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead0(ChannelHandlerContext ctx, LoginResponsePacket loginResponsePacket) {
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (loginResponsePacket.isSuccess()) {
+            System.out.println(</span><span style="color: #0000ff;">new</span> Date() + ": 客户端登录成功"<span style="color: #000000;">);
+        } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+            System.out.println(</span><span style="color: #0000ff;">new</span> Date() + ": 客户端登录失败，原因：" +<span style="color: #000000;"> loginResponsePacket.getReason());
+        }
+    }
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> ServerLoginHandler <span style="color: #0000ff;">extends</span> SimpleChannelInboundHandler&lt;LoginRequestPacket&gt;<span style="color: #000000;"> {
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead0(ChannelHandlerContext ctx, LoginRequestPacket loginRequestPacket) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">服务端登录逻辑</span>
+<span style="color: #000000;">        ctx.channel().writeAndFlush(login(loginRequestPacket));
+    }
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> LoginResponsePacket login(LoginRequestPacket loginRequestPacket) {
+        LoginResponsePacket loginResponsePacket </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> LoginResponsePacket();
+        loginResponsePacket.setVersion(loginRequestPacket.getVersion());
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 登录校验(自行判断用户信息是否正确)</span>
+        <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">true</span><span style="color: #000000;">) {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 校验成功</span>
+            loginResponsePacket.setSuccess(<span style="color: #0000ff;">true</span><span style="color: #000000;">);
+            System.out.println(</span>"客户端登录成功！"<span style="color: #000000;">);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> loginResponsePacket;
+        } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> 校验失败</span>
+            loginResponsePacket.setReason("账号或密码错误"<span style="color: #000000;">);
+            loginResponsePacket.setSuccess(</span><span style="color: #0000ff;">false</span><span style="color: #000000;">);
+            System.out.println(</span>"客户端登录失败！"<span style="color: #000000;">);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> loginResponsePacket;
+        }
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　类似的，收发消息也可以这么做。Netty会自动根据抽象类后面的泛型来区分它要调用哪个类。比如我们发送的是一个SendMessage类型的Java对象，它就会在继承了SimpleChannelInboundHandler的类中找到泛型为SendMessage的类去执行。</span></p>
+<p><span style="font-size: 16px;">　　最后我们要把这些逻辑代码根据服务端和客户端不同的需求添加到它们的pipeline中。</span></p>
+<p><strong>　　<span style="font-size: 16px;">客户端</span></strong></p>
+<div class="cnblogs_code">
+<pre>.handler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;SocketChannel&gt;<span style="color: #000000;">() {
+                    @Override
+                    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(SocketChannel ch) {
+                        </span><span style="color: #008000;">//</span><span style="color: #008000;">解码一定要放在第一个，在这里pipeline按顺序执行，不然接收消息无法正常使用</span>
+                        ch.pipeline().addLast(<span style="color: #0000ff;">new</span><span style="color: #000000;"> PacketDecoder());
+                        ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> LoginResponseHandler());
+                        ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> PacketEncoder());
+                    }
+                });</span></pre>
+</div>
+<p><span style="font-size: 16px;"><strong>　　服务端</strong></span></p>
+<div class="cnblogs_code">
+<pre>.childHandler(<span style="color: #0000ff;">new</span> ChannelInitializer&lt;NioSocketChannel&gt;<span style="color: #000000;">() {
+                    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initChannel(NioSocketChannel ch) {
+                        ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> PacketDecoder());
+                        ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> LoginRequestHandler());
+                        ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> PacketEncoder());
+                    }
+                });</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　最后的运行结果和登录示例一样。看到这里，Netty实战中的代码，应该可以全部看懂了。</span></p>
+<p><span style="font-size: 18px;"><strong>channelHandler的生命周期</strong></span></p>
+<p><span style="font-size: 16px;">　　我们在重写ChannelInboundHandlerAdapter或者SimpleChannelInboundHandler里的方法的时候，只用到了读和Active，其他一大堆没用上的方法是干嘛的？现在就一一说明一下，这些方法运作的整个过程，我们可以理解为这个channelHandler的生命周期。以ChannelInboundHandlerAdapter为例，SimpleChannelInboundHandler继承于ChannelInboundHandlerAdapter，所以也差不多，个别方法名不一样而已。下面的API，从上到下，就是触发的顺序。</span></p>
+<p><span style="font-size: 16px;">　　handlerAdded():逻辑处理器被添加后触发。</span></p>
+<p><span style="font-size: 16px;">　　channelRegistered():channel绑定到线程组后触发。</span></p>
+<p><span style="font-size: 16px;">　　channelActive():channel准备就绪，或者说连接完成。</span></p>
+<p><span style="font-size: 16px;">　　channelRead()：channel有数据可读。</span></p>
+<p><span style="font-size: 16px;">　　channelReadComplete()：channel某次数据读完了。</span></p>
+<p><span style="font-size: 16px;">　　channelInactive()：channel被关闭</span></p>
+<p><span style="font-size: 16px;">　　channelUnregistered()：channel取消线程的绑定</span></p>
+<p><span style="font-size: 16px;">　　handlerRemoved()：逻辑处理器被移除。</span></p>
+<p>&nbsp;</p>
+<h2>拆包和粘包</h2>
+<p><span style="font-size: 16px;">　　以上面客户端和服务端双向通信的代码为例。简单修改一下，在建立连接后，客户端用一个循环向服务器发送消息。然后服务端打印这些消息。</span></p>
+<p><span style="font-size: 16px;">等次数多了以后，服务端打印时会发现一些问题，比如我们发送的字符串为&ldquo;123456789&rdquo;，大部分打印的是123456789；有一部分变成了123456789123，这就是粘包；有一部分变为了1234，这就是拆包。</span></p>
+<p><span style="font-size: 18px;"><strong>为什么会有这种现象？</strong></span></p>
+<p><span style="font-size: 16px;">　　虽然在我们代码层面，传输的数据单位是ByteBuf。但是到了更底层，用到了TCP协议，终究会按照字节流发送数据。而底层并不知道应用层数据的具体含义，它会根据TCP缓冲区的实际情况进行数据包的划分。所以最终到达服务端的数据产生上面的现象。</span></p>
+<p><span style="font-size: 18px;"><strong>如何解决？</strong></span></p>
+<p><span style="font-size: 16px;">　　Netty为我们提供了4种解决方法：</span></p>
+<p><span style="font-size: 16px;">　　1.FixedLengthFrameDecoder：固定长度拆包器，每个数据包长度都是固定的。</span></p>
+<p><span style="font-size: 16px;">　　2.LineBasedFrameDecoder：行拆包器，每个数据包之间以换行符作为分隔。</span></p>
+<p><span style="font-size: 16px;">　　3.DelimiterBasedFrameDecoder：类似行拆包器，不过我们可以自定义分隔符。</span></p>
+<p><span style="font-size: 16px;">　　4.LengthFieldBasedFrameDecoder：基于长度域拆包器，最常用的，只要你的自定义协议中包含数据长度这个部分，就可以使用。它需要三个参数，第一个是数据包最大长度、第二个是参数长度域偏移量、第三个是长度域长度。</span></p>
+<p><span style="font-size: 16px;">　　<img src="https://img2020.cnblogs.com/blog/1383122/202004/1383122-20200425144254261-1102259668.png" alt="" width="738" height="109"></span></p>
+<p><span style="font-size: 16px;">　　看看前面通信协议的图，所谓长度域就是数据长度就是数据长度占用的字节，这里是4。长度域偏移量就是数据长度这个部分在通信协议组成部分中的位置，前面几个部分加起来是7，所以它的偏移量就是7。</span></p>
+<p><span style="font-size: 18px;"><strong>使用LengthFieldBasedFrameDecoder</strong></span></p>
+<p><span style="font-size: 16px;">　　添加到客户端和服务端pipeline中就行了，注意要放在第一个。以服务端为例。</span></p>
+<div class="cnblogs_code">
+<pre>ch.pipeline().addLast(<span style="color: #0000ff;">new</span> LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 7, 4<span style="color: #000000;">));
+ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> PacketDecoder());
+ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> LoginRequestHandler());
+ch.pipeline().addLast(</span><span style="color: #0000ff;">new</span> PacketEncoder());</pre>
+</div>
+<p><span style="font-size: 16px;">　　如果和我一样，客户端用到的是WebSocket，没有自定义协议，就不用添加拆包器了，Netty已经帮我们做好了。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>心跳与空闲检测</h2>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px;">　　网络应用程序普遍会遇到的一个问题就是连接假死。简单地说就是因为网络或其他问题导致某一端实际上(TCP)已经断开连接，但是应用程序没有检测到，以为还连接着。对服务端来说，这会浪费系统资源，导致性能下降。对于客户端来说，假死会造成数据发送超时，影响体验。</span></p>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: 18px;">如何解决这个问题？</span></strong></p>
+<p>&nbsp;</p>
+<p><span style="font-family: 宋体;">　　</span><span style="font-size: 16px;">只需要客户端每隔一段时间打个招呼，表示它还活着就行了，就是所谓的心跳。Netty自带的IdleStateHandler&nbsp;就可以实现这个功能。下面就来实现它。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px;"><strong>　　服务端</strong></span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">心跳检测类</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> IMIdleStateHandler <span style="color: #0000ff;">extends</span><span style="color: #000000;"> IdleStateHandler {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">读空闲时间，也就是多久没读到数据了</span>
+    <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span> READER_IDLE_TIME = 15<span style="color: #000000;">;
+    </span><span style="color: #0000ff;">public</span><span style="color: #000000;"> IMIdleStateHandler() {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">调用父类构造函数，四个参数分别为：
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">读空闲时间、写空闲时间、读写空闲时间、时间单位</span>
+        <span style="color: #0000ff;">super</span>(READER_IDLE_TIME, 0, 0<span style="color: #000000;">, TimeUnit.SECONDS);
+    }
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelIdle(ChannelHandlerContext ctx, IdleStateEvent evt) {
+        System.out.println(READER_IDLE_TIME </span>+ "秒内未读到数据，关闭连接"<span style="color: #000000;">);
+        ctx.channel().close();
+    }
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">回复客户端发送的心跳数据包</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> HeartBeatRequestHandler <span style="color: #0000ff;">extends</span> SimpleChannelInboundHandler&lt;HeartBeatRequestPacket&gt;<span style="color: #000000;"> {
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> HeartBeatRequestHandler INSTANCE = <span style="color: #0000ff;">new</span><span style="color: #000000;"> HeartBeatRequestHandler();
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> HeartBeatRequestHandler() {
+    }
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead0(ChannelHandlerContext ctx, HeartBeatRequestPacket requestPacket) {
+        ctx.writeAndFlush(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> HeartBeatResponsePacket());
+    }
+}</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre>ch.pipeline().addLast(<span style="color: #0000ff;">new</span> IMIdleStateHandler());<span style="color: #008000;">//</span><span style="color: #008000;">添加到最前面</span>
+  ch.pipeline().addLast(HeartBeatRequestHandler.INSTANCE);<span style="color: #008000;">//</span><span style="color: #008000;">添加到解码和登录请求之后</span></pre>
+</div>
+<p><span style="font-size: 16px;"><strong>　　客户端</strong></span></p>
+<p><span style="font-size: 16px;">　　服务端实现了检测读空闲，客户端肯定就需要发送一个数据。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> HeartBeatTimerHandler <span style="color: #0000ff;">extends</span><span style="color: #000000;"> ChannelInboundHandlerAdapter {
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">心跳数据包发送时间间隔，这里设为5秒，实际使用时建议服务端和客户端都设成分钟级别</span>
+    <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span> HEARTBEAT_INTERVAL = 5<span style="color: #000000;">;
+    @Override
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> channelActive(ChannelHandlerContext ctx) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> Exception {
+        scheduleSendHeartBeat(ctx);
+        </span><span style="color: #0000ff;">super</span><span style="color: #000000;">.channelActive(ctx);
+    }
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> scheduleSendHeartBeat(ChannelHandlerContext ctx) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">schedule类似延时任务，每隔5秒发送心跳数据包</span>
+        ctx.executor().schedule(() -&gt;<span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (ctx.channel().isActive()) {
+                ctx.writeAndFlush(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> HeartBeatRequestPacket());
+                scheduleSendHeartBeat(ctx);
+            }
+        }, HEARTBEAT_INTERVAL, TimeUnit.SECONDS);
+    }
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　客户端发送心跳数据包后，也需要检测服务端是否回复了自己，所以也需要个检测类，与服务端的代码一样，就不写了。也需要和服务端一样，pipeline添加到相同的位置。</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 16px;">　　最后：如果服务端在读到数据后，不要再read方法里面直接访问数据库或者其他比较复杂的操作，可以把这些耗时的操作放进我们的业务线程池中去执行。如：</span></p>
+<div class="cnblogs_code">
+<pre>ThreadPool threadPool =<span style="color: #000000;"> xxx;
+</span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead0(ChannelHandlerContext ctx, T packet) {
+    threadPool.submit(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> Runnable() {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 1. balabala 一些逻辑
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 2. 数据库或者网络等一些耗时的操作
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 3. writeAndFlush()</span>
+<span style="color: #000000;">    })
+}</span></pre>
+</div>
+<p><span style="font-size: 16px;">　　如果我们想统计某个操作的响应时间，直接用System.currentTimeMillis()其实是不准确的，因为有些操作是异步的，它马上就返回了，所以我们要判断异步结果是否完成再计算结束时间。</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> channelRead0(ChannelHandlerContext ctx, T packet) {
+    threadPool.submit(</span><span style="color: #0000ff;">new</span><span style="color: #000000;"> Runnable() {
+        </span><span style="color: #0000ff;">long</span> begin =<span style="color: #000000;"> System.currentTimeMillis();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 1. balabala 一些逻辑
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 2. 数据库或者网络等一些耗时的操作
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 3. writeAndFlush</span>
+        xxx.writeAndFlush().addListener(future -&gt;<span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (future.isDone()) {
+                </span><span style="color: #0000ff;">long</span> time =  System.currentTimeMillis() -<span style="color: #000000;"> begin;
+            }
+        });
+    })
+}</span></pre>
+</div>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: 16px;">资料：<a href="https://juejin.im/book/5b4bc28bf265da0f60130116">https://juejin.im/book/5b4bc28bf265da0f60130116</a></span></strong></p>
+<p>&nbsp;</p>
+<p class="MsoNormal" style="margin-left: 0pt; text-indent: 21pt;">&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 14:53</span>&nbsp;
+<a href="https://www.cnblogs.com/lbhym/">耶low</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12753314" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12753314);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 524632, cb_blogApp = 'lbhym', cb_blogUserGuid = '35e67917-dc39-41b2-3962-08d5a8229c33';
+    var cb_entryId = 12753314, cb_entryCreatedDate = '2020-04-25 14:53', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 耶low
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,535 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="昨天我们完成了第八个示例的第二个 MenuItem 菜单顺序的调整。 我们今天再往下接着调整。 我们来看下接下来的 MenuItem 代码如下: CommonUtil 已经提取成第二个示例了。 Exp" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Unity 游戏框架搭建 2019 (三十二、三十三) 类的命名 &amp; 代码文件命名 - 凉鞋的笔记 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=Fx4xdLkGuHnlaG7xntG_wAnZrnorJWp5u_TWKqbvMF0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=cYvlxMu_nd6MVfg-vi7YqOC6FaZ7VHFsDM166vO_ekA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/liangxiegame/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/liangxiegame/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/liangxiegame/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 262744;
+        var currentBlogApp = 'liangxiegame';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlackLowKey';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/liangxiegame/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/liangxiegame/">凉鞋的笔记</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/liangxiegame/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%87%89%E9%9E%8B%E7%9A%84%E7%AC%94%E8%AE%B0">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/liangxiegame/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+71&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+46</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/liangxiegame/p/12684789.html">Unity 游戏框架搭建 2019 (三十二、三十三) 类的命名 &amp; 代码文件命名</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>昨天我们完成了第八个示例的第二个 MenuItem 菜单顺序的调整。</p>
+<p>我们今天再往下接着调整。</p>
+<p>我们来看下接下来的 MenuItem</p>
+<p>代码如下:</p>
+<pre><code class="language-cs">		[MenuItem(&quot;QFramework/8.总结之前的方法/3.生成文件名到剪切板&quot;)]
+		private static void MenuClicked3()
+		{
+			CommonUtil.CopyText(Exporter.GenerateUnityPackageName());		
+		}
+</code></pre>
+<p>CommonUtil 已经提取成第二个示例了。<br>
+Exporter.GenerateUnityPackageName() 这个方法的定义在第八个示例 PreviousFunctions 类的上方。它属于专门为导出功能定制的代码，也就是在其他情况下不适用的。</p>
+<p>而这个 MenuItem 本身呢，现在没有太大的用处。有用的部分是 Exporter.GenerateUnityPackageName 的方法定义和所在的类。</p>
+<p>所以这个 MenuItem  就直接删除了。</p>
+<p>删除之后，我们把 Exporter 这个类移动到第一个示例里，因为第一个示例是导出功能所在的地方，Exporter 类呢本身就是一个导出功能的一部分。</p>
+<p>第一个示例原来的代码如下:</p>
+<pre><code class="language-cs">using System.IO;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+using UnityEngine;
+
+namespace QFramework
+{
+	public class CustomShortCut : MonoBehaviour
+	{
+#if UNITY_EDITOR
+		[MenuItem(&quot;QFramework/1.导出 UnityPackage %e&quot;,false,1)]
+		private static void MenuClicked()
+		{
+			var generatePackageName = Exporter.GenerateUnityPackageName();
+			
+			EditorUtil.ExportPackage(&quot;Assets/QFramework&quot;,generatePackageName + &quot;.unitypackage&quot;);
+			
+			EditorUtil.OpenInFolder(Path.Combine(Application.dataPath, &quot;../&quot;));
+		}
+#endif
+	}
+}
+</code></pre>
+<p>移动 Exporter 类之后变成如下:</p>
+<pre><code class="language-cs">using System;
+using System.IO;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+using UnityEngine;
+
+namespace QFramework
+{	
+	public class Exporter
+	{
+		public static string GenerateUnityPackageName()
+		{
+			return &quot;QFramework_&quot; + DateTime.Now.ToString(&quot;yyyyMMdd_hh&quot;);
+		}
+	}
+	
+	public class CustomShortCut : MonoBehaviour
+	{
+#if UNITY_EDITOR
+		[MenuItem(&quot;QFramework/1.导出 UnityPackage %e&quot;,false,1)]
+		private static void MenuClicked()
+		{
+			var generatePackageName = Exporter.GenerateUnityPackageName();
+			
+			EditorUtil.ExportPackage(&quot;Assets/QFramework&quot;,generatePackageName + &quot;.unitypackage&quot;);
+			
+			EditorUtil.OpenInFolder(Path.Combine(Application.dataPath, &quot;../&quot;));
+		}
+#endif
+	}
+}
+</code></pre>
+<p>到这里，我们发现，Exporter 类可以和 CunstomShortCut 类进行合并，合并之后的类名是 Exporter，而代码的文件名改成了 Exporter.cs。</p>
+<p>代码如下:<br>
+Exporter.cs</p>
+<pre><code class="language-cs">using System;
+using System.IO;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+using UnityEngine;
+
+namespace QFramework
+{	
+	public class Exporter
+	{
+#if UNITY_EDITOR
+		[MenuItem(&quot;QFramework/1.导出 UnityPackage %e&quot;,false,1)]
+		private static void MenuClicked()
+		{
+			var generatePackageName = Exporter.GenerateUnityPackageName();
+			
+			EditorUtil.ExportPackage(&quot;Assets/QFramework&quot;,generatePackageName + &quot;.unitypackage&quot;);
+			
+			EditorUtil.OpenInFolder(Path.Combine(Application.dataPath, &quot;../&quot;));
+		}
+#endif
+		
+		public static string GenerateUnityPackageName()
+		{
+			return &quot;QFramework_&quot; + DateTime.Now.ToString(&quot;yyyyMMdd_hh&quot;);
+		}
+	}
+}
+</code></pre>
+<p>目录结构如下:<br>
+<img src="http://file.liangxiegame.com/6a8d898c-831a-4fb5-a660-8e734a1d2903.png" alt="006tNc79gy1fzfrcaihnsj30km0ikjud.jpg"></p>
+<p>这样第八个示例的第三个 MenuItem 就整理完毕了。</p>
+<h2 id="小结">小结</h2>
+<p>其实在整理第一个示例的时候，第一个示例的类的名字 CustomShortCut 就有很大的问题。我们第一个示例的功能是 导出 UnityPackage，类名却叫 自定义快捷键，这样比较奇怪。但是当时没有发现，因为只去关注菜单名是否和文件夹名是否一致了，没有考虑类名是否合理。</p>
+<p>所以呢，我们的规范和约定要加入上一个条例:</p>
+<ol>
+<li>要给类/代码文件取合适的命名。</li>
+</ol>
+<p>加上之后如下:</p>
+<p>约定和规则:</p>
+<ul>
+<li>每个示例在 QFramework 目录下创建一个文件夹，文件夹的格式是: 数字.示例的功能
+<ul>
+<li>每个示例写一个脚本，脚本中包含可复用的静态方法和 MenuItem 方法。</li>
+<li>每写一个示例进行一次导出，导出的文件名后边加上日期和时间，这个功能已经在导出功能里内置了。</li>
+<li>每次有 API 变更的时候做一次备份，备份的名字采用 QFramework_vX.Y.Z 格式。</li>
+<li>每次进行整理的时候要确保是在功能有效的情况下进行删除和变更。</li>
+<li>确保菜单名和文件夹名一致（新增）</li>
+<li>要给类/代码文件取合适的命名（新增)</li>
+<li>在删除弃用代码的步骤:
+<ol>
+<li>消除弃用警告。</li>
+<li>搜索弃用方法的引用，并逐个升级为最新的方法。</li>
+<li>全局搜索方法名，并根据情况逐个升级为新的方法。</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>在上面 我们通过第八个示例的第三个 MenuItem 方法，我们更新了约定和规则。</p>
+<p>我们接着往下整理。</p>
+<h2 id="第八个示例的第四个-menuitem-方法">第八个示例的第四个 MenuItem 方法</h2>
+<pre><code class="language-cs">		[MenuItem(&quot;QFramework/8.总结之前的方法/4.导出 UnityPackage&quot;)]
+		private static void MenuClicked4()
+		{
+			EditorUtil.ExportPackage(&quot;Assets/QFramework&quot;,Exporter.GenerateUnityPackageName() + &quot;.unitypackage&quot;);
+		}
+</code></pre>
+<p>这个 MenuItem 可以删除了，因为功能已经在第一个示例实现过了。</p>
+<h2 id="第八个示例的第五个-menuitem-方法">第八个示例的第五个 MenuItem 方法</h2>
+<pre><code class="language-cs">		[MenuItem(&quot;QFramework/8.总结之前的方法/5.打开所在文件夹&quot;)]
+		private static void MenuClicked5()
+		{
+			EditorUtil.OpenInFolder(Application.dataPath);
+		}
+</code></pre>
+<p>同样也删除了。</p>
+<h2 id="第八个示例的第六个-menuitem-方法">第八个示例的第六个 MenuItem 方法</h2>
+<pre><code class="language-cs">		[MenuItem(&quot;QFramework/8.总结之前的方法/6.MenuItem 复用&quot;)]
+		private static void MenuClicked6()
+		{
+			EditorUtil.CallMenuItem(&quot;QFramework/8.总结之前的方法/4.导出 UnityPackage&quot;);
+			EditorUtil.OpenInFolder(Path.Combine(Application.dataPath, &quot;../&quot;));
+		}
+</code></pre>
+<p>这个不能马上删除，因为这是 EditorUtil.CallMenuItem 仅有的一个调用的地方。</p>
+<p>所以要留着，但是这个功能其实已经失效了，因为 &quot;QFramework/8.总结之前的方法/4.导出 UnityPackage&quot; 这个 MenuItem 被我们刚才删掉了。好吧，这种危险的操作又做了一次。</p>
+<p>不过没关系，因为不是很重要的功能，还好损失不大。那么这个 MenuItem 方法呢，要改成如下:</p>
+<pre><code class="language-cs">	public class PreviousFunctions : MonoBehaviour
+	{		
+#if UNITY_EDITOR		
+        [MenuItem(&quot;QFramework/3.MenuItem 复用&quot;,false,3)]
+		private static void MenuClicked()
+		{
+			EditorUtil.CallMenuItem(&quot;QFramework/2.复制文本到剪切板&quot;);
+		}
+#endif
+	}
+</code></pre>
+<p>代码很容易理解。菜单名字改变了，所以我们的文件夹和类名都要改变。</p>
+<p>更改后的目录如下:<br>
+<img src="http://file.liangxiegame.com/d11aa2d6-d0f6-482e-8292-91b5696eae9b.png" alt="006tNc79gy1fzfrddmxuoj30io0kin05.jpg"></p>
+<p>代码如下:</p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+using UnityEngine;
+using System;
+using System.IO;
+
+namespace QFramework
+{
+	public class EditorUtil
+	{
+#if UNITY_EDITOR
+		public static void CallMenuItem(string menuPath)
+		{
+			EditorApplication.ExecuteMenuItem(menuPath);
+		}
+
+		public static void OpenInFolder(string folderPath)
+		{
+			Application.OpenURL(&quot;file:///&quot; + folderPath);
+		}
+		
+		public static void ExportPackage(string assetPathName,string fileName)
+		{
+			AssetDatabase.ExportPackage(assetPathName, fileName, ExportPackageOptions.Recurse);
+		}
+#endif
+	}
+
+	public class ReuseMenuItem : MonoBehaviour
+	{		
+#if UNITY_EDITOR		
+		[MenuItem(&quot;QFramework/3.MenuItem 复用&quot;,false, 3)]
+		private static void MenuClicked()
+		{
+			EditorUtil.CallMenuItem(&quot;QFramework/2.复制文本到剪切板&quot;);
+		}
+#endif
+	}
+ }
+</code></pre>
+<p>我们发现其实还有一个类 EditorUtil，刚好 ReuseMenuItem 是 EditorUtil 中 CallMenuItem 的使用代码。<br>
+所以可以进行合并，合并之后代码如下:</p>
+<pre><code class="language-cs">#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+using UnityEngine;
+
+namespace QFramework
+{
+	public class EditorUtil
+	{
+#if UNITY_EDITOR
+		[MenuItem(&quot;QFramework/3.MenuItem 复用&quot;,false,3)]
+		private static void MenuClicked()
+		{
+			CallMenuItem(&quot;QFramework/2.复制文本到剪切板&quot;);
+		}
+
+		public static void CallMenuItem(string menuPath)
+		{
+			EditorApplication.ExecuteMenuItem(menuPath);
+		}
+
+		public static void OpenInFolder(string folderPath)
+		{
+			Application.OpenURL(&quot;file:///&quot; + folderPath);
+		}
+
+		public static void ExportPackage(string assetPathName, string fileName)
+		{
+			AssetDatabase.ExportPackage(assetPathName, fileName, ExportPackageOptions.Recurse);
+		}
+#endif
+	}
+}
+</code></pre>
+<p>但是类的名字，改变了，而类所在的文件名还是 ReuseMenuItem，这应该怎么办？</p>
+<p>这是一个规则之间的互相制衡导致的冲突。</p>
+<p>笔者的解决办法就是，把代码名字改成 EditorUtil，最起码类名和文件名一致了。功能名和菜单名也一致了。而 EditorUtil 总好过一个 CustomShortCut 或者 PreviousFunctions 这样的命名。而为什么 EditorUtil 更好，那么这个以后会专门讲，现在呢，我们就先这样做就好了。</p>
+<p>文件名改完之后，目录结构如下图所示.<br>
+<img src="http://file.liangxiegame.com/bfad3626-384e-4cb8-8955-9001ee79bb64.png" alt="006tNc79gy1fzfrdgs8gkj30ka0i6god.jpg"></p>
+<p>这样完整的第八个示例，就全部整理完了，通过第八个示例整理出来了第三个示例。删除了很多冗余代码，很有成就感。</p>
+<p>今天的内容就这些。拜拜~</p>
+<p>转载请注明地址：凉鞋的笔记：<a href="http://liangxiegame.com">liangxiegame.com</a></p>
+<h2 id="更多内容">更多内容</h2>
+<ul>
+<li>
+<p>QFramework 地址：<a href="https://github.com/liangxiegame/QFramework">https://github.com/liangxiegame/QFramework</a></p>
+</li>
+<li>
+<p>QQ 交流群：<a href="http://shang.qq.com/wpa/qunwpa?idkey=706b8eef0fff3fe4be9ce27c8702ad7d8cc1bceabe3b7c0430ec9559b3a9ce66">623597263</a></p>
+</li>
+<li>
+<p><strong>Unity 进阶小班</strong>：</p>
+<ul>
+<li>主要训练内容：
+<ul>
+<li>框架搭建训练（第一年）</li>
+<li>跟着案例学 Shader（第一年）</li>
+<li>副业的孵化（第二年、第三年）</li>
+</ul>
+</li>
+<li>权益、授课形式等具体详情请查看<a href="https://liangxiegame.com/master/intro">《小班产品手册》</a>：<a href="https://liangxiegame.com/master/intro">https://liangxiegame.com/master/intro</a></li>
+</ul>
+</li>
+<li>
+<p>关注公众号：liangxiegame 获取第一时间更新通知及更多的免费内容。<br>
+<img src="http://file.liangxiegame.com/38eccb55-40b2-4845-93d6-f5fb50ff9492.png" alt=""></p>
+</li>
+</ul>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 17:19</span>&nbsp;
+<a href="https://www.cnblogs.com/liangxiegame/">凉鞋的笔记</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12684789" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12684789);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 262744, cb_blogApp = 'liangxiegame', cb_blogUserGuid = '6e7beccf-e9b6-e511-9fc1-ac853d9f53cc';
+    var cb_entryId = 12684789, cb_entryCreatedDate = '2020-04-24 17:19', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 凉鞋的笔记
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

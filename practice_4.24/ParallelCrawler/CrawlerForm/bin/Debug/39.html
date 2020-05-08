@@ -1,0 +1,416 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="原子类AtomicInteger的ABA问题 连环套路 从AtomicInteger引出下面的问题 CAS Unsafe CAS底层思想 ABA 原子引用更新 如何规避ABA问题 ABA问题是什么 狸" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>原子类的ABA问题 - MXC肖某某 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/coffee/bundle-coffee.min.css?v=pdMIVgsH8kXt-vOWnlL0N20TlHt3UyP9HzGgocfsP4s" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee-mobile.min.css?v=na9bpAY4yh7uEWCcrXj3vfJM3VBse8YtU6-5fUUQPz0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/bbgs-xc/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/bbgs-xc/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/bbgs-xc/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 433655;
+        var currentBlogApp = 'bbgs-xc';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'coffee';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/bbgs-xc/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/bbgs-xc/">MXC</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/bbgs-xc/">
+首页</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/MXC%E8%82%96%E6%9F%90%E6%9F%90">
+联系</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/bbgs-xc/rss/">
+订阅</a>
+	
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/bbgs-xc/rss/">
+    <img src="/skins/coffee/images/xml.gif" alt="订阅" />
+</a></li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+随笔- 
+14&nbsp;
+文章- 
+0&nbsp;
+评论- 
+6&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class = "postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/bbgs-xc/p/12774199.html">原子类的ABA问题</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="原子类atomicinteger的aba问题">原子类AtomicInteger的ABA问题</h1>
+<h2 id="连环套路">连环套路</h2>
+<p>从AtomicInteger引出下面的问题</p>
+<p>CAS -&gt; Unsafe -&gt; CAS底层思想 -&gt; ABA -&gt; 原子引用更新 -&gt; 如何规避ABA问题</p>
+<h2 id="aba问题是什么">ABA问题是什么</h2>
+<p>狸猫换太子</p>
+<p><img src="https://img2020.cnblogs.com/blog/1405595/202004/1405595-20200425170822424-737995084.png" alt=""></p>
+<p>假设现在有两个线程，分别是T1 和 T2，然后T1执行某个操作的时间为10秒，T2执行某个时间的操作是2秒，最开始AB两个线程，分别从主内存中获取A值，但是因为B的执行速度更快，他先把A的值改成B，然后在修改成A，然后执行完毕，T1线程在10秒后，执行完毕，判断内存中的值为A，并且和自己预期的值一样，它就认为没有人更改了主内存中的值，就快乐的修改成B，但是实际上 可能中间经历了 ABCDEFA 这个变换，也就是中间的值经历了狸猫换太子。</p>
+<p>所以ABA问题就是，在进行获取主内存值的时候，该内存值在我们写入主内存的时候，已经被修改了N次，但是最终又改成原来的值了</p>
+<h2 id="cas导致aba问题">CAS导致ABA问题</h2>
+<p>CAS算法实现了一个重要的前提，需要取出内存中某时刻的数据，并在当下时刻比较并替换，那么这个时间差会导致数据的变化。</p>
+<p>比如说一个线程one从内存位置V中取出A，这时候另外一个线程two也从内存中取出A，并且线程two进行了一些操作将值变成了B，然后线程two又将V位置的数据变成A，这时候线程one进行CAS操作发现内存中仍然是A，然后线程one操作成功</p>
+<p><code>尽管线程one的CAS操作成功，但是不代表这个过程就是没有问题的</code></p>
+<h2 id="aba问题">ABA问题</h2>
+<p>CAS只管开头和结尾，也就是头和尾是一样，那就修改成功，中间的这个过程，可能会被人修改过</p>
+<h2 id="原子引用">原子引用</h2>
+<p>原子引用其实和原子包装类是差不多的概念，就是将一个java类，用原子引用类进行包装起来，那么这个类就具备了原子性</p>
+<pre><code>/**
+ * 原子类引用
+ */
+@Data
+@AllArgsConstructor
+class User {
+    String userName;
+    int age;
+}
+public class AtomicReferenceDemo {
+
+    public static void main(String[] args) {
+
+        User aaa = new User(&quot;aaa&quot;, 20);
+        User bbb = new User(&quot;bbb&quot;, 30);
+
+        // 创建原子引用包装类
+        AtomicReference&lt;User&gt; atomicReference = new AtomicReference&lt;&gt;();
+        // 现在主物理内存的共享变量，为aaa
+        atomicReference.set(aaa);
+
+        // 比较并交换，如果现在主物理内存的值为aaa，那么交换成bbb
+        System.out.println(atomicReference.compareAndSet(aaa, bbb) + &quot;\t &quot; + atomicReference.get().toString());
+        // 比较并交换，现在主物理内存的值是bbb了，但是预期为aaa，因此交换失败
+        System.out.println(atomicReference.compareAndSet(aaa, bbb) + &quot;\t &quot; + atomicReference.get().toString());
+    }
+}
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/1405595/202004/1405595-20200425171547770-588959723.png" alt=""></p>
+<h3 id="基于原子引用的aba问题">基于原子引用的ABA问题</h3>
+<p>我们首先创建了两个线程，然后T1线程，执行一次ABA的操作，T2线程在一秒后修改主内存的值</p>
+<pre><code>/**
+ * 基于CAS引出ABA问题
+ */
+public class ABADemo {
+
+    static AtomicReference&lt;Integer&gt; atomicReference = new AtomicReference&lt;Integer&gt;(100);
+
+    public static void main(String[] args) {
+        new Thread(()-&gt;{
+            // 把100 改成 127 然后在改成100，也就是ABA
+            atomicReference.compareAndSet(100, 127);
+            //特别强调在AtomicReference(Integer)中value超出-128~127,会生成一个新的对象而造成无法修改
+            //但是在AtomicInteger中则不会存在这样的问题
+            atomicReference.compareAndSet(127, 100);
+        },&quot;t1&quot;).start();
+
+        new Thread(()-&gt;{
+            try {
+                // 睡眠一秒，保证t1线程，完成了ABA操作
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            // 把100 改成 127 然后在改成100，也就是ABA
+            System.out.println(atomicReference.compareAndSet(100, 2021)+&quot;\t&quot;+atomicReference.get());
+        },&quot;t2&quot;).start();
+    }
+}
+</code></pre>
+<p>我们发现，它能够成功的修改，这就是ABA问题</p>
+<p><img src="https://img2020.cnblogs.com/blog/1405595/202004/1405595-20200425172718863-534986936.png" alt=""></p>
+<h2 id="解决aba问题">解决ABA问题</h2>
+<p>新增一种机制，也就是修改版本号，类似于时间戳的概念</p>
+<p>T1：  100 1                      2020 2</p>
+<p>T2：  100 1     127 2       100  3</p>
+<p>如果T1修改的时候，版本号为2，落后于现在的版本号3，所以要重新获取最新值，这里就提出了一个使用时间戳版本号，来解决ABA问题的思路</p>
+<h2 id="atomicstampedreference">AtomicStampedReference</h2>
+<p>时间戳原子引用，来这里应用于版本号的更新，也就是每次更新的时候，需要比较期望值和当前值，以及期望版本号和当前版本号</p>
+<pre><code>/**
+ * 基于CAS引出ABA问题并采用AtomicStampedReference解决
+ */
+public class ABADemo {
+
+    static AtomicReference&lt;Integer&gt; atomicReference = new AtomicReference&lt;Integer&gt;(100);
+
+    static AtomicStampedReference&lt;Integer&gt; atomicStampedReference = new AtomicStampedReference&lt;&gt;(100, 1);
+
+    public static void main(String[] args) {
+        System.out.println(&quot;============以下是ABA问题的产生==========&quot;);
+
+        new Thread(() -&gt; {
+            // 把100 改成 101 然后在改成100，也就是ABA
+            atomicReference.compareAndSet(100, 127);
+            atomicReference.compareAndSet(127, 100);
+        }, &quot;t1&quot;).start();
+
+        new Thread(() -&gt; {
+            try {
+                // 睡眠一秒，保证t1线程，完成了ABA操作
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            // 把100 改成 101 然后在改成100，也就是ABA
+            System.out.println(atomicReference.compareAndSet(100, 2020) + &quot;\t&quot; + atomicReference.get());
+
+        }, &quot;t2&quot;).start();
+
+        //main线程和gc线程之外如果还有线程就处于等待
+        while (Thread.activeCount() &gt; 2) {
+            Thread.yield();
+        }
+        System.out.println(&quot;============以下是ABA问题的解决==========&quot;);
+
+        new Thread(() -&gt; {
+
+            // 获取版本号
+            int stamp = atomicStampedReference.getStamp();
+            System.out.println(Thread.currentThread().getName() + &quot;\t 第一次版本号&quot; + stamp);
+
+            // 暂停t3一秒钟
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            // 传入4个值，期望值，更新值，期望版本号，更新版本号
+            atomicStampedReference.compareAndSet(100, 127, atomicStampedReference.getStamp(), atomicStampedReference.getStamp()+1);
+
+            System.out.println(Thread.currentThread().getName() + &quot;\t 第二次版本号&quot; + atomicStampedReference.getStamp());
+
+            atomicStampedReference.compareAndSet(127, 100, atomicStampedReference.getStamp(), atomicStampedReference.getStamp()+1);
+
+            System.out.println(Thread.currentThread().getName() + &quot;\t 第三次版本号&quot; + atomicStampedReference.getStamp());
+
+        }, &quot;t3&quot;).start();
+
+        new Thread(() -&gt; {
+
+            // 获取版本号
+            int stamp = atomicStampedReference.getStamp();
+            System.out.println(Thread.currentThread().getName() + &quot;\t 第一次版本号&quot; + stamp);
+
+            // 暂停t4 3秒钟，保证t3线程也进行一次ABA问题
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            boolean result = atomicStampedReference.compareAndSet(100, 2020, stamp, stamp+1);
+
+            System.out.println(Thread.currentThread().getName() + &quot;\t 修改成功否：&quot; + result + &quot;\t 当前最新实际版本号：&quot; + atomicStampedReference.getStamp());
+
+            System.out.println(Thread.currentThread().getName() + &quot;\t 当前实际最新值&quot; + atomicStampedReference.getReference());
+
+
+        }, &quot;t4&quot;).start();
+    }
+}
+</code></pre>
+<p>运行结果为：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1405595/202004/1405595-20200425174527376-283826963.png" alt=""></p>
+<p>我们能够发现，线程t3，在进行ABA操作后，版本号变更成了3，而线程t4在进行操作的时候，就出现操作失败了，因为版本号和当初拿到的不一样</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 17:48</span>&nbsp;
+<a href="https://www.cnblogs.com/bbgs-xc/">MXC肖某某</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774199" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12774199);return false;">收藏</a></div>
+	</div>
+	
+	
+</div><!--end: topics 文章、评论容器-->
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 433655, cb_blogApp = 'bbgs-xc', cb_blogUserGuid = '142b21a2-5a20-4604-3ff5-08d5bd671cf8';
+    var cb_entryId = 12774199, cb_entryCreatedDate = '2020-04-25 17:48', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 MXC肖某某
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

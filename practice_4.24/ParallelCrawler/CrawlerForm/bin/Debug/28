@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>码大叔 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/madashu/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/madashu/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/madashu/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 544171;
+        var currentBlogApp = 'madashu';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/madashu/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/madashu/">码大叔</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/madashu/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%A0%81%E5%A4%A7%E5%8F%94">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/madashu/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+9&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+6</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12735752.html">
+     千亿级平台技术架构：为了支撑高并发，我把身份证存到了JS里
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这才是真正的前后端分离，支撑亿级并发完全不是事            <a href="https://www.cnblogs.com/madashu/p/12735752.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-20 08:47 码大叔 阅读 (129) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735752" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/04/13.html">2020年4月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12689276.html">
+    千亿级互联网平台技术架构及背后那些事
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：以挑剔的眼光、现在的能力、现在的经验回过头来回顾这个产品，回顾这个项目，回顾整个系统的技术架构设计，甚至是回顾到某一个案例下现在的代码应该是什么样子。            <a href="https://www.cnblogs.com/madashu/p/12689276.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-13 08:47 码大叔 阅读 (518) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12689276" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/04/07.html">2020年4月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12651351.html">
+    AI学习笔记：特征工程
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、概述 Andrew Ng ：Coming up with features is difficult, time consuming, requires expert knowledge. “Applied machine learning” is basically feature engin            <a href="https://www.cnblogs.com/madashu/p/12651351.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-07 09:02 码大叔 阅读 (97) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12651351" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/03/30.html">2020年3月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12596421.html">
+    读Hadoop3.2源码，深入了解java调用HDFS的常用操作和HDFS原理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文将通过一个演示工程来快速上手java调用HDFS的常见操作。接下来通过阅读HDFS的源码，一步步展开HDFS相关原理、理论知识的说明。            <a href="https://www.cnblogs.com/madashu/p/12596421.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-30 08:23 码大叔 阅读 (160) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12596421" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/03/26.html">2020年3月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12572184.html">
+    AI学习笔记：人工智能与机器学习概述
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、人工智能基本概念 1.1 基本概念 数据分析 ：对历史规律的展现、对未来数据的预测。 机器学习 ：机器学习是指从一系列的原始数据中找到规律，提取人们可以识别的特征，然后通过学习这些特征，最终产生一个模型。 流程 ：原始数据 特征提取 模型。机器学习偏向于算法。 人工智能 ：Artificial             <a href="https://www.cnblogs.com/madashu/p/12572184.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-26 09:11 码大叔 阅读 (213) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12572184" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/03/23.html">2020年3月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12550149.html">
+    我成功攻击了Tomcat服务器之后
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Tomcat是一个开源的轻量级Web应用服务器，在我们平常工作过程中接触得非常多。代码也非常经典，很多人为了提升自己的技术也会去阅读学习Tomcat的源码。但正如著名诗人李白所说的：世界上本没有漏洞，使用的人多了，也就发现了漏洞。比如今年的2月份就爆出了存在文件包含漏洞。今天我们选择 两个 比较直观            <a href="https://www.cnblogs.com/madashu/p/12550149.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-23 08:53 码大叔 阅读 (371) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12550149" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/03/17.html">2020年3月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12508416.html">
+    从千万级数据查询来聊一聊索引结构和数据库原理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在日常工作中我们不可避免地会遇到慢SQL问题，比如笔者在之前的公司时会定期收到DBA彪哥发来的Oracle AWR报告，并特别提示我某条sql近阶段执行明显很慢，可能要优化一下等。对于这样的问题通常大家的第一反应就是看看sql是不是写的不合理啊诸如： “避免使用in和not in，否则可能会导致全表            <a href="https://www.cnblogs.com/madashu/p/12508416.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-17 08:10 码大叔 阅读 (750) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12508416" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/03/15.html">2020年3月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12497025.html">
+    一文深入了解史上最强的Java堆内缓存框架Caffeine
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：它提供了一个近乎最佳的命中率。从性能上秒杀其他一堆进程内缓存框架，Spring5更是为了它放弃了使用多年的GuavaCache 缓存，在我们的日常开发中用的非常多，是我们应对各种性能问题支持高并发的一大利器。我们熟知的缓存有堆缓存（Ehcache3.x、Guava Cache等）、堆外缓存（Ehca            <a href="https://www.cnblogs.com/madashu/p/12497025.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-15 13:03 码大叔 阅读 (354) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12497025" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/madashu/archive/2020/03/11.html">2020年3月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/madashu/p/12460197.html">
+    SpringCloud第二代实战系列：一文搞定Nacos实现服务注册与发现
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、背景：SpringCloud 生态圈 在正式开始本篇文章之前我们先岔开来讲一下SpringCloud的生态圈。 SpringCloud大家都比较熟悉了，它制定了分布式系统的标准规范，做了高度抽象和封装，然后将业界公司比较成熟以及经得起实际考验的框架整合起来。通过Spring Boot风格进行再封            <a href="https://www.cnblogs.com/madashu/p/12460197.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-11 08:14 码大叔 阅读 (536) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12460197" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 码大叔
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>LuxBai - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/LuxBai/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/LuxBai/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/LuxBai/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 462943;
+        var currentBlogApp = 'LuxBai';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/LuxBai/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/LuxBai/">LuxBai</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/LuxBai/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/LuxBai">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/LuxBai/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+7&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12775298.html">
+[置顶]    JUC并发编程基石AQS之主流程源码解析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 由于AQS的源码太过凝练，而且有很多分支比如取消排队、等待条件等，如果把所有的分支在一篇文章的写完可能会看懵，所以这篇文章主要是从正常流程先走一遍，重点不在取消排队等分支，之后会专门写一篇取消排队和等待条件的分支逻辑。读源码千万别在每个代码分支中来回游走，先按一个正常的分支把流程看明白，之后再            <a href="https://www.cnblogs.com/LuxBai/p/12775298.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 21:12 LuxBai 阅读 (0) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775298" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12775298.html">
+    JUC并发编程基石AQS之主流程源码解析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 由于AQS的源码太过凝练，而且有很多分支比如取消排队、等待条件等，如果把所有的分支在一篇文章的写完可能会看懵，所以这篇文章主要是从正常流程先走一遍，重点不在取消排队等分支，之后会专门写一篇取消排队和等待条件的分支逻辑。读源码千万别在每个代码分支中来回游走，先按一个正常的分支把流程看明白，之后再            <a href="https://www.cnblogs.com/LuxBai/p/12775298.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 21:12 LuxBai 阅读 (0) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775298" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12731496.html">
+    JUC并发编程基石AQS源码之结构篇
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 AQS(AbstractQueuedSynchronizer)算是JUC包中最重要的一个类了，如果你想了解JUC提供的并发编程工具类的代码逻辑，这个类绝对是你绕不过的。我相信如果你是第一次看AQS源码肯定是一脸懵逼，一个个方法跳来跳去一会就绕蒙了。所以把整个代码骨架搞明白是你看懂AQS源码的第            <a href="https://www.cnblogs.com/LuxBai/p/12731496.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-19 20:02 LuxBai 阅读 (73) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12731496" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2020/04/12.html">2020年4月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12680910.html">
+    流程图加源码方式理解Spring如何解决循环依赖
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：抛个问题 为什么构造器的循环依赖不能解决，setter循环依赖可以解决？ 构造器的依赖，自定义了构造方法，且构造方法中依赖其他Bean。 前驱知识点 我们平常使用最多的Spring容器ApplicationContext初始化时会实例化所有的单例Bean。 Bean默认加载方式为 非 懒加载方式 B            <a href="https://www.cnblogs.com/LuxBai/p/12680910.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-12 15:14 LuxBai 阅读 (42) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12680910" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2020/04/05.html">2020年4月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12638855.html">
+    Java Thread基础知识
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Java Thread基础知识 java程序中只有一种途径去启动一个线程，即调用Thread类的start()方法。 java中的线程状态 在Thread类中有一个内部的枚举类State描述了线程的各个状态。 线程常用方法 start 调用start()会开始执行一个线程，此时java虚拟机启动一个            <a href="https://www.cnblogs.com/LuxBai/p/12638855.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-05 20:25 LuxBai 阅读 (18) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12638855" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2020/01/16.html">2020年1月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12203341.html">
+    通过自己实现接口来加深理解SpringMVC的执行流程
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：功能介绍 上篇文章【 &quot;从源码角度了解SpringMVC的执行流程&quot; 】通过接口源码向大家介绍了SpringMVC的执行流程，主要偏重于源码。这篇文件我们来自己实现那几个关键接口，来真实体验下SpringMVC关键的流程，以此来加深理解。功能很简单，通过访问一个地址 /mymvc 来自动跳转到工程首            <a href="https://www.cnblogs.com/LuxBai/p/12203341.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-16 21:30 LuxBai 阅读 (169) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12203341" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2020/01/11.html">2020年1月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12180668.html">
+    从源码角度了解SpringMVC的执行流程
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：从源码角度了解SpringMVC的执行流程 SpringMVC的执行流程网上有很多帖子都有讲解，流程图和文字描述都很详细，但是你如果没有通过具体源码自己走一遍流程，其实只是死记硬背。所以想开个帖子从源码角度再梳理一遍SpringMVC的执行流程，加深印象。 [TOC] SpringMVC介绍 Spr            <a href="https://www.cnblogs.com/LuxBai/p/12180668.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-11 18:21 LuxBai 阅读 (98) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12180668" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/LuxBai/archive/2018/09/23.html">2018年9月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/9693339.html">
+    IDEA使用笔记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1、跳转 ALT+数字 跳转各个小界面&#160;例如 alt + 4 即跳转到 run 界面 再按esc键则返回代码编辑窗口 多个窗口之间的跳转，当你打开多个项目分别在不同的窗口中时 3、最近文件，列出你最近打开的文件 ctrl+e 4、查找action 5、最近改变的文件 ctrl+shift+e 6、最            <a href="https://www.cnblogs.com/LuxBai/p/9693339.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-09-23 18:21 LuxBai 阅读 (472) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9693339" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 LuxBai
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <div id="MySignature" style="display: block"><div>
+<img style="float: left; margin-right: 10px" src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200419144323931-518666785.jpg" width="125">
+<div>
+     作者：
+    <a href="http://itwild.cnblogs.com/" target="_blank">LuxBai</a> 
+   </div> 
+ <div>
+     微信公众号：
+    <a href="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200419144528134-693137418.png" target="_blank">LuxBai</a> 
+   </div> 
+   <div>
+     出处：
+    <a href="https://www.cnblogs.com/LuxBai/" target="_blank">https://www.cnblogs.com/LuxBai/</a> 
+   </div> 
+   <div> 
+    <div>
+     <a name="dntbottom">本文版权归作者和博客园共有。欢迎转载，但必须保留此段声明，且在文章页面明显位置给出原文连接！</a>
+    </div> 
+   </div></div></div>
+    </div>
+</body>
+</html>

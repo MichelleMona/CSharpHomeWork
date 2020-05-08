@@ -1,0 +1,646 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>授客 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/shouke/custom.css?v=7JLgEfPLckg788oZXRHrEUdpDvg=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shouke/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shouke/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shouke/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 483634;
+        var currentBlogApp = 'shouke';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/shouke/">授客的博客</a>
+</div>
+<div class="subtitle">
+专业软件测试知识分享平台
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome">
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/shouke/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%8E%88%E5%AE%A2">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/shouke/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+506&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+11</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12774743.html">
+    Vue 结合html2canvas和jsPDF实现html页面转pdf
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：结合html2canvas和jsPDF实现html页面转pdf By：授客 QQ：103355122 实践环境 win10 Vue 2.9.6 axios 0.18.0 html2canvas 1.0.0-rc.3 jspdf 1.5.3 安装 html2canvas 进入vue项目所在目录,然后执            <a href="https://www.cnblogs.com/shouke/p/12774743.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-25 19:27 授客 阅读 (7) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774743" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12735278.html">
+    Vue 修改网页标题和图标
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Vue 修改网页标题和图标 by:授客 QQ：1033553122 开发环境 Win 10 Vue 2.5.2 需求描述 如下，想更改网页的标题和图标 解决方法 编辑项目根目录下的index.html，如下： 更改标题： 修改&lt;title&gt;元素内容即可 修改图标： 把要修改的图片放static目录下            <a href="https://www.cnblogs.com/shouke/p/12735278.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 00:23 授客 阅读 (99) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735278" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/04/12.html">2020年4月12日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12685235.html">
+    Python 使用Python操作xmind文件
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：使用Python操作xmind文件 by:授客 QQ：1033553122 测试环境 Win10 Python 3.5.4 XMind-1.2.0.tar.gz 下载地址： https://files.pythonhosted.org/packages/7c/8c/e13a82fa9b0394c0d            <a href="https://www.cnblogs.com/shouke/p/12685235.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-12 14:54 授客 阅读 (99) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12685235" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/04/07.html">2020年4月7日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12656478.html">
+    MySQL 递归查询实践总结
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：MySQL复杂查询使用实例 By:授客 QQ：1033553122 表结构设计 SELECT id, `name`, parent_id FROM `tb_testcase_suite` 说明： parent_id值关联表自身id列的值，如果其值为-1，则表示该记录不存在父级记录，否则表示该记录存在            <a href="https://www.cnblogs.com/shouke/p/12656478.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-07 22:01 授客 阅读 (45) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12656478" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12656425.html">
+    禅道 给禅道缺陷增加缺陷责任人字段
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：给禅道缺陷增加缺陷责任人字段 by:授客 QQ：1033553122 实践环境 禅道项目管理软件9.2.1 、8.0开源Linux版 给数据库表zt_bug新增自定义字段 ALTER TABLE `zt_bug` ADD COLUMN personLiable VARCHAR(50) AFTER r            <a href="https://www.cnblogs.com/shouke/p/12656425.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-07 21:55 授客 阅读 (48) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12656425" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12656390.html">
+    禅道 给禅道缺陷增加是否遗留及来源渠道自定义字段
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：给禅道缺陷增加是否遗留及来源渠道自定义字段 by:授客 QQ：1033553122 实践环境 禅道项目管理软件9.2.1 、8.0开源Linux版 给数据库表zt_bug新增自定义字段 ALTER TABLE `zt_bug` ADD COLUMN isHistory VARCHAR(10) AFT            <a href="https://www.cnblogs.com/shouke/p/12656390.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-07 21:51 授客 阅读 (27) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12656390" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/03/29.html">2020年3月29日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12595708.html">
+    禅道 给禅道缺陷增加自定义字段供不同的缺陷操作页面使用
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：给禅道缺陷增加自定义字段供不同的缺陷操作页面使用 by:授客 QQ：1033553122 实践环境 禅道项目管理软件9.2.1 、8.0开源Linux版 需求描述 在禅道创建、修改、查看、关闭缺陷页面添加一个自定义字段 一个单选下拉选框，并针对不同的页面做是否必填校验。 给数据库表zt_bug新增自            <a href="https://www.cnblogs.com/shouke/p/12595708.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-29 22:55 授客 阅读 (114) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12595708" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/03/22.html">2020年3月22日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12549153.html">
+    Vue 基于node npm &amp; vue-cli &amp; element UI创建vue单页应用
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：基于node npm &amp; vue-cli &amp; element UI创建vue单页应用 开发环境 Win 10 node-v10.15.3-x64.msi 下载地址： https://nodejs.org/en/ 安装node 安装vue-cli 1、安装node-v10.15.3-x64.msi 2            <a href="https://www.cnblogs.com/shouke/p/12549153.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-22 22:59 授客 阅读 (49) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12549153" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/03/13.html">2020年3月13日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12489381.html">
+    测试思想-流程规范 用例优先级定义与使用规范 V1.0
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：用例优先级定义与使用规范 V1.0 By：授客 1. 规范说明 目的 对软件测试过程中的用例级别进行详细描述及标准化定义，明确不同测试阶段的测试范围，减少测试冗余投入，提高测试效率，建立测试质量基线，减少生产故障事件。 适用范围 xx内部研发项目 传达对象 xx测试团队 优化记录 暂无 2. 规范正            <a href="https://www.cnblogs.com/shouke/p/12489381.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-13 22:04 授客 阅读 (115) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12489381" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/02/10.html">2020年2月10日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12292052.html">
+    Vue 实现动态路由及登录&amp;404页面跳转控制&amp;页面刷新空白解决方案
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Vue实现动态路由及登录&amp;404页面跳转控制&amp;页面刷新空白解决方案 by:授客 QQ：1033553122 开发环境 Win 10 Vue 2.9.6 node-v10.15.3-x64.msi 下载地址： https://nodejs.org/en/ 代码片段(router/index.js) 说            <a href="https://www.cnblogs.com/shouke/p/12292052.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-10 18:36 授客 阅读 (537) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12292052" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2020/01/13.html">2020年1月13日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12186730.html">
+    Vue 嵌套路由使用总结
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Vue 嵌套路由使用总结 by:授客 QQ：1033553122 开发环境 Win 10 node-v10.15.3-x64.msi 下载地址： https://nodejs.org/en/ 需求场景 如下图，我们希望点击导航栏不同菜单时，导航栏下方加载不同的组件，进而展示不同的页面内容 解决方案             <a href="https://www.cnblogs.com/shouke/p/12186730.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-01-13 12:33 授客 阅读 (415) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12186730" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12186717.html">
+    Git 把码云上被fork项目源码merge到fork出来的分支项目
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Git 把码云上被fork项目源码merge到fork出来的分支项目 By:授客 QQ：1033553122 需求描述 被fork的项目有更新代码，希望把更新的代码merge到fork分支项目 解决方法 1、clone fork分支项目到本地，并入切换当前分支为目标分支。 2、增加被fork项目源码            <a href="https://www.cnblogs.com/shouke/p/12186717.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-01-13 12:27 授客 阅读 (172) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12186717" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2019/12/24.html">2019年12月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12090905.html">
+    Vue Vue项目目录结构梳理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Vue项目目录结构梳理 by:授客 QQ：1033553122 1. 结构梳理 . ├── build/ # webpack 配置文件； │ └── ... ├── config/ # 与项目构建相关的常用的配置选项； │ ├── index.js # 主配置文件 │ ├── dev.env.js             <a href="https://www.cnblogs.com/shouke/p/12090905.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-24 12:56 授客 阅读 (86) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12090905" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12090900.html">
+    Vue 基于node npm &amp; vue-cli &amp; element UI创建vue单页应用
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：基于node npm &amp; vue-cli &amp; element UI创建vue单页应用 开发环境 Win 10 node-v10.15.3-x64.msi 下载地址： https://nodejs.org/en/ 安装node 安装vue-cli 1、安装node-v10.15.3-x64.msi 2            <a href="https://www.cnblogs.com/shouke/p/12090900.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-24 12:54 授客 阅读 (85) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12090900" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/shouke/archive/2019/12/14.html">2019年12月14日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/shouke/p/12039600.html">
+    Vue ES6箭头函数使用总结
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Vue ES6箭头函数使用总结 by:授客 QQ：1033553122 箭头函数 ES6允许使用“箭头”（=&gt;）定义函数： 函数不带参数 定义方法：函数名称 = () =&gt; 函数体 let func = () =&gt; 1 等同于 function func() { return 1; } 函数只带一个            <a href="https://www.cnblogs.com/shouke/p/12039600.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-14 15:05 授客 阅读 (393) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12039600" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/shouke/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 授客
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    <div id="page_end_html">
+        <script type="text/javascript">
+var enableGoogleAd = false;
+</script>
+    </div>
+</body>
+</html>

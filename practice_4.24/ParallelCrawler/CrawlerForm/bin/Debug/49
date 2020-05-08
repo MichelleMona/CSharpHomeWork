@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="阅读本文之前，请先看以下几个问题： 1、String变量是什么不变？final修饰变量时的不变性指的又是什么不变，是引用？还是内存地址？还是值？ 2、java对象进行重赋值或者改变属性时在内存中是如何" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>通过String的不变性案例分析Java变量的可变性 - 淡墨痕 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/sea/bundle-sea.min.css?v=Jpv_XRZqv7HnW0FXxHohZmb1TG6nYuWdNSwqJML5lHA" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/sea/bundle-sea-mobile.min.css?v=GEzW0neGdNE-VMws0ftJENKA__n-moeEPmS2Y9XCJis" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zzq6032010/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zzq6032010/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zzq6032010/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 480915;
+        var currentBlogApp = 'zzq6032010';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'sea';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zzq6032010/">张曾经</a>
+<br>
+		
+
+
+	</div>
+</div>
+
+
+</div>
+
+<div id="mytopmenu">
+	
+		<div id="mylinks">
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+ &nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zzq6032010/">
+首页</a>
+ &nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+ &nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%B7%A1%E5%A2%A8%E7%97%95">
+联系</a> &nbsp;
+
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zzq6032010/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/zzq6032010/rss/">
+    <img src="/skins/sea/images/xml.gif" alt="订阅" />
+</a>&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+		<DIV id="mystats">随笔-
+57&nbsp;
+评论-
+30&nbsp;
+文章-
+0&nbsp;
+<!--trackbacks-<partial name="./Shared/_PingTrackCount.cshtml" model="BlogServer.Web.Models.DetailBlogPage" />-->
+
+</DIV>
+	
+</div>
+<div id="centercontent">
+	<div id="post_detail">
+<div class="post">
+	<h1 class = "postTitle">
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12727141.html">通过String的不变性案例分析Java变量的可变性</a>
+</h1>
+	
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>阅读本文之前，请先看以下几个问题：</p>
+<p>1、String变量是什么不变？final修饰变量时的不变性指的又是什么不变，是引用？还是内存地址？还是值？</p>
+<p>2、java对象进行重赋值或者改变属性时在内存中是如何实现的？</p>
+<p>3、以下是AQS中的一个方法代码，请问第一次进入这个方法时，执行到return的时候，t==node？ head==tail？node.prev==head？head.next==node？这四个比较分别是true还是false？</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">private</span> Node enq(<span style="color: #0000ff;">final</span><span style="color: #000000;"> Node node) {
+</span><span style="color: #008080;"> 2</span>         <span style="color: #0000ff;">for</span><span style="color: #000000;"> (;;) {
+</span><span style="color: #008080;"> 3</span>             Node t =<span style="color: #000000;"> tail;
+</span><span style="color: #008080;"> 4</span>             <span style="color: #0000ff;">if</span> (t == <span style="color: #0000ff;">null</span>) { <span style="color: #008000;">//</span><span style="color: #008000;"> Must initialize</span>
+<span style="color: #008080;"> 5</span>                 <span style="color: #0000ff;">if</span> (compareAndSetHead(<span style="color: #0000ff;">new</span><span style="color: #000000;"> Node()))
+</span><span style="color: #008080;"> 6</span>                     tail =<span style="color: #000000;"> head;
+</span><span style="color: #008080;"> 7</span>             } <span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+</span><span style="color: #008080;"> 8</span>                 node.prev =<span style="color: #000000;"> t;
+</span><span style="color: #008080;"> 9</span>                 <span style="color: #0000ff;">if</span><span style="color: #000000;"> (compareAndSetTail(t, node)) {
+</span><span style="color: #008080;">10</span>                     t.next =<span style="color: #000000;"> node;
+</span><span style="color: #008080;">11</span>                     <span style="color: #0000ff;">return</span><span style="color: #000000;"> t;
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">                }
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">            }
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">15</span>     }</pre>
+</div>
+<p>如果你对以上几个问题统统能很清晰的答出来，那么就不用阅读本文了，否则还请慢慢读来。</p>
+<p><span style="background-color: #c0c0c0; font-size: 18px;"><strong>正文</strong></span></p>
+<p><strong>1、从工作中的问题出发</strong></p>
+<p>写这篇文章的起因，是工作中遇到了一个场景，大体是这样的。</p>
+<p>公司项目用Apollo作为配置中心，现在有5个短信验证码的发送场景，每个场景都有最大发送次数上限，因为场景不同所以这个上限也彼此不同。每次发送短信前都会校验一下已发送次数是否已经超过这个上限，并且上限可能随时动态调整所以需要将每个场景的发送次数上限作为apollo配置项配置起来。而作为一个有追求的开发攻城狮，不能容忍通过场景码用if else这种粗糙的手段来获取配置项，所以BZ想到了Map。初步实现是这样的：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #000000;">@Component
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">@Getter
+</span><span style="color: #008080;"> 3</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> ApolloDemo {
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span>     @Value("scene1.times"<span style="color: #000000;">)
+</span><span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene1Times;
+</span><span style="color: #008080;"> 7</span>     @Value("scene2.times"<span style="color: #000000;">)
+</span><span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene2Times;
+</span><span style="color: #008080;"> 9</span>     @Value("scene3.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">10</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene3Times;
+</span><span style="color: #008080;">11</span>     @Value("scene4.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">12</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene4Times;
+</span><span style="color: #008080;">13</span>     @Value("scene5.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">14</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene5Times;
+</span><span style="color: #008080;">15</span> 
+<span style="color: #008080;">16</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> Map&lt;String, String&gt; sceneMap = <span style="color: #0000ff;">new</span> HashMap&lt;&gt;<span style="color: #000000;">();
+</span><span style="color: #008080;">17</span> 
+<span style="color: #008080;">18</span> <span style="color: #000000;">    @PostConstruct
+</span><span style="color: #008080;">19</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initMap () {
+</span><span style="color: #008080;">20</span>         sceneMap.put("scene_code1"<span style="color: #000000;">, scene1Times);
+</span><span style="color: #008080;">21</span>         sceneMap.put("scene_code2"<span style="color: #000000;">, scene2Times);
+</span><span style="color: #008080;">22</span>         sceneMap.put("scene_code3"<span style="color: #000000;">, scene3Times);
+</span><span style="color: #008080;">23</span>         sceneMap.put("scene_code4"<span style="color: #000000;">, scene4Times);
+</span><span style="color: #008080;">24</span>         sceneMap.put("scene_code5"<span style="color: #000000;">, scene5Times);
+</span><span style="color: #008080;">25</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">26</span> }</pre>
+</div>
+<p>但BZ是一个颇具智慧的攻城狮，这样的代码很明显存在问题：因为String是不变的，所以在initMap中初始化了Map之后，如果后续成员变量scene1Times改变了值，Map中的值是不会同步改变的。所以BZ采用了如下的改进版：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> com.mydemo;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> lombok.Getter;
+</span><span style="color: #008080;"> 4</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.beans.factory.annotation.Value;
+</span><span style="color: #008080;"> 5</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.stereotype.Component;
+</span><span style="color: #008080;"> 6</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.stereotype.Service;
+</span><span style="color: #008080;"> 7</span> 
+<span style="color: #008080;"> 8</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> javax.annotation.PostConstruct;
+</span><span style="color: #008080;"> 9</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.lang.reflect.Method;
+</span><span style="color: #008080;">10</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.HashMap;
+</span><span style="color: #008080;">11</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> java.util.Map;
+</span><span style="color: #008080;">12</span> 
+<span style="color: #008080;">13</span> <span style="color: #000000;">@Component
+</span><span style="color: #008080;">14</span> <span style="color: #000000;">@Getter
+</span><span style="color: #008080;">15</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> ApolloDemo {
+</span><span style="color: #008080;">16</span> 
+<span style="color: #008080;">17</span>     @Value("scene1.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">18</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene1Times;
+</span><span style="color: #008080;">19</span>     @Value("scene2.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">20</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene2Times;
+</span><span style="color: #008080;">21</span>     @Value("scene3.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">22</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene3Times;
+</span><span style="color: #008080;">23</span>     @Value("scene4.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">24</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene4Times;
+</span><span style="color: #008080;">25</span>     @Value("scene5.times"<span style="color: #000000;">)
+</span><span style="color: #008080;">26</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String scene5Times;
+</span><span style="color: #008080;">27</span> 
+<span style="color: #008080;">28</span>     <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> Map&lt;String, String&gt; sceneMap = <span style="color: #0000ff;">new</span> HashMap&lt;&gt;<span style="color: #000000;">();
+</span><span style="color: #008080;">29</span> 
+<span style="color: #008080;">30</span> <span style="color: #000000;">    @PostConstruct
+</span><span style="color: #008080;">31</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> initMap () {
+</span><span style="color: #008080;">32</span>         sceneMap.put("scene_code1", "getScene1Times"<span style="color: #000000;">);
+</span><span style="color: #008080;">33</span>         sceneMap.put("scene_code2", "getScene2Times"<span style="color: #000000;">);
+</span><span style="color: #008080;">34</span>         sceneMap.put("scene_code3", "getScene3Times"<span style="color: #000000;">);
+</span><span style="color: #008080;">35</span>         sceneMap.put("scene_code4", "getScene4Times"<span style="color: #000000;">);
+</span><span style="color: #008080;">36</span>         sceneMap.put("scene_code5", "getScene5Times"<span style="color: #000000;">);
+</span><span style="color: #008080;">37</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">38</span> 
+<span style="color: #008080;">39</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> String getTimesByScene(String sceneCode){
+</span><span style="color: #008080;">40</span>         String methodName =<span style="color: #000000;"> sceneMap.get(sceneCode);
+</span><span style="color: #008080;">41</span>         <span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+</span><span style="color: #008080;">42</span>             Method method = ApolloDemo.<span style="color: #0000ff;">class</span><span style="color: #000000;">.getMethod(methodName);
+</span><span style="color: #008080;">43</span>             Object result = method.invoke(<span style="color: #0000ff;">this</span>, <span style="color: #0000ff;">null</span><span style="color: #000000;">);
+</span><span style="color: #008080;">44</span>             <span style="color: #0000ff;">return</span><span style="color: #000000;"> (String)result;
+</span><span style="color: #008080;">45</span>         } <span style="color: #0000ff;">catch</span><span style="color: #000000;"> (Exception e) {
+</span><span style="color: #008080;">46</span> <span style="color: #000000;">            e.printStackTrace();
+</span><span style="color: #008080;">47</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">48</span>         <span style="color: #0000ff;">return</span> ""<span style="color: #000000;">;
+</span><span style="color: #008080;">49</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">50</span> }</pre>
+</div>
+<p>通过反射调用get方法来获取实时的apollo配置值，功能算是交付出去了。但问题却刚刚开始。</p>
+<p>我们都知道String是不可变的，那它为什么不可变呢？因为它的类由final修饰不可继承，而它用于存放字符串的成员变量char[]也是由final修饰的。继续追问，final修饰的变量不可变是指什么不可变？<strong>不可变有两种，一种是引用不可变，一种是值不可变</strong>。此处答案是<strong>引用不可变</strong>。其实Java中，不管是给对象赋值，还是给对象中的属性赋值，赋的值其实都是引用。针对String的不可变是引用不可变的结论，通过一个例子就可以证明：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> main(String[] args) {
+</span><span style="color: #008080;"> 2</span>         String text = "text"<span style="color: #000000;">;
+</span><span style="color: #008080;"> 3</span> <span style="color: #000000;">        System.out.println(text);
+</span><span style="color: #008080;"> 4</span>         <span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+</span><span style="color: #008080;"> 5</span>             Field value = text.getClass().getDeclaredField("value"<span style="color: #000000;">);
+</span><span style="color: #008080;"> 6</span>             value.setAccessible(<span style="color: #0000ff;">true</span><span style="color: #000000;">);
+</span><span style="color: #008080;"> 7</span>             <span style="color: #0000ff;">char</span>[] valueArr = (<span style="color: #0000ff;">char</span><span style="color: #000000;">[])value.get(text);
+</span><span style="color: #008080;"> 8</span>             valueArr[1]='a'<span style="color: #000000;">;
+</span><span style="color: #008080;"> 9</span>         } <span style="color: #0000ff;">catch</span><span style="color: #000000;"> (Exception e) {
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">            e.printStackTrace();
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">        System.out.println(text);
+</span><span style="color: #008080;">13</span>     }</pre>
+</div>
+<p>执行结果：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">text
+taxt</span></pre>
+</div>
+<p>BZ通过反射改变了String的值，说明它的值是可变的，如果用反射执行&nbsp;value.set(text, "aaa")，则会报错不让改，即引用不可变。</p>
+<p>由此问题1得到了解答，内存地址只是用于迷惑人的，一个对象创建完成之后，其内存地址是不可改变的，直到被回收后重新分配。</p>
+<p>&nbsp;</p>
+<p><strong>2、问题2与问题3一起分析</strong></p>
+<p>针对问题3的方法，BZ用内存示意图来分析：</p>
+<p>1）、刚进入enq方法时，tail、head、node的内存布局是这样：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1558028/202004/1558028-20200419182122092-794963135.png" alt="" width="910" height="497" /></p>
+<p>&nbsp;</p>
+<p>2）、走完第一遍循环并之后，完成了对head和tail的赋值，此时内存分布是这样：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1558028/202004/1558028-20200419182624150-1323026231.png" alt="" width="910" height="453" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;3）、进入第二遍循环中，走完第三行代码&nbsp;Node t = tail 和node.prev=t之后的内存分布如下，因为赋值都是引用赋值，所以局部变量t和node.prev均指向了new Node()的引用地址。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1558028/202004/1558028-20200419183147761-1034432553.png" alt="" width="908" height="455" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;4）、走完CAS tail之后是这样，即CAS是将tail的引用从new Node()改为了 node：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1558028/202004/1558028-20200419183621733-1229874122.png" alt="" width="905" height="456" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;5）、走完最后一行t.next=node，内存分布如下所示，t指向的一直都是new Node()，而将node赋值给t.next之后，node和new Node()就组成了一个双向链表，new Node()是头，正好head指向它；node是尾，正好tail指向它，至此完成了AQS中双向链表的构建。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1558028/202004/1558028-20200419183837655-354341359.png" alt="" width="904" height="459" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;通过上面5张截图的变化，相信能对于问题2已经有答案了，至于问题3的答案，看最后一张图也就水落石出了，t==node？ head==tail？node.prev==head？head.next==node？答案分别是：false；false；true；true。</p>
+<p>本文到此为止，其中有描述不清楚的或者理解不到位的地方，还请各位看官批评指正，谢谢！</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+	<div class="postDesc">posted on 
+<span id="post-date">2020-04-19 23:05</span>&nbsp;
+<a href="https://www.cnblogs.com/zzq6032010/">淡墨痕</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12727141" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12727141);return false;">收藏</a></div>
+</div>
+
+
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 480915, cb_blogApp = 'zzq6032010', cb_blogUserGuid = '3d5cc4e6-adaa-4c3d-a002-08d65c9406c0';
+    var cb_entryId = 12727141, cb_entryCreatedDate = '2020-04-19 23:05', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script><br>
+			<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	
+</div>
+<!--done-->
+<div class="footer">
+	Powered by: <a href="http://www.cnblogs.com">博客园</a>
+	Copyright &copy; 2020 淡墨痕
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+
+
+
+
+    
+</body>
+</html>

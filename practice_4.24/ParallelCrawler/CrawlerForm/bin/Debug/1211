@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="背景 数据库中有一张叫 的表,每天都有几百万新的小姐姐插到表中,光阴荏苒,夜以继日,日久生情,时间长了,表中就有了几十亿的 数据,看到几十亿的小姐姐,每到晚上,我可愁死了,这么多小姐姐,我翻张牌呢? " />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>聊一聊数据库中的锁 - 码农阿宇 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/CoderAyu/custom.css?v=nlNRJHkT9C9ZP9QN5ojsvytNR8Y=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/CoderAyu/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/CoderAyu/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/CoderAyu/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 413735;
+        var currentBlogApp = 'CoderAyu';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/CoderAyu/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/CoderAyu/">码农阿宇</a>
+</h1>
+<h2>
+Always coding,always writing!
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/CoderAyu/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%A0%81%E5%86%9C%E9%98%BF%E5%AE%87">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/CoderAyu/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+91&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+594</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/CoderAyu/p/11375088.html">聊一聊数据库中的锁</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="背景">背景</h1>
+<p>数据库中有一张叫<code>后宫佳丽</code>的表,每天都有几百万新的小姐姐插到表中,光阴荏苒,夜以继日,日久生情,时间长了,表中就有了几十亿的<code>小姐姐</code>数据,看到几十亿的小姐姐,每到晚上,我可愁死了,这么多小姐姐,我翻张牌呢?<br>
+办法当然是精兵简政,删除那些<code>age&gt;18</code>的,给年轻的小姐姐们留位置...<br>
+于是我在数据库中添加了一个定时执行的小程序,每到周日,就自动运行如下的脚本</p>
+<pre><code class="language-sql">delete from `后宫佳丽` where age&gt;18
+</code></pre>
+<p>一开始还自我感觉良好,后面我就发现不对了,每到周日,这个脚本一执行就是一整天,运行的时间有点长是小事,重点是这大好周日,我再想读这张表的数据,怎么也读不出来了,怎是一句空虚了得,我好难啊!</p>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/%E9%9A%BE.gif" alt="Alt text"></p>
+<h1 id="为什么">为什么</h1>
+<p>编不下去了,真实背景是公司中遇到的一张有海量数据表,每次一旦执行历史数据的清理,我们的程序就因为读不到这张表的数据,疯狂地报错,后面一查了解到,原来是因为定时删除的语句设计不合理,导致数据库中数据由行锁(<code>Row lock</code>)升级为表锁(<code>Table lock</code>)了😂.<br>
+解决这个问题的过程中把数据库锁相关的学习了一下,这里把学习成果,分享给大家,希望对大家有所帮助.<br>
+我将讨论SQL Server锁机制以及如何使用SQL Server标准动态管理视图监视SQL Server 中的锁,相信其他数据的锁也大同小异,具有一定参考意义.</p>
+<h1 id="铺垫知识">铺垫知识</h1>
+<p>在我开始解释SQL Server锁定体系结构之前，让我们花点时间来描述ACID（原子性，一致性，隔离性和持久性）是什么。ACID是指数据库管理系统（DBMS）在写入或更新资料的过程中，为保证事务（transaction）是正确可靠的，所必须具备的四个特性：原子性（atomicity，或称不可分割性）、一致性（consistency）、隔离性（isolation，又称独立性）、持久性（durability）。</p>
+<h2 id="acid">ACID</h2>
+<h3 id="原子性atomicity">原子性(Atomicity)</h3>
+<p>一个事务（transaction）中的所有操作，或者全部完成，或者全部不完成，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。即，事务不可分割、不可约简。</p>
+<h3 id="一致性consistency">一致性(Consistency)</h3>
+<p>在事务开始之前和事务结束以后，数据库的完整性没有被破坏。这表示写入的资料必须完全符合所有的预设约束、触发器、级联回滚等。</p>
+<h3 id="隔离性isolation">隔离性(Isolation)</h3>
+<p>数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括未提交读（Read uncommitted）、提交读（read committed）、可重复读（repeatable read）和串行化（Serializable）。</p>
+<h3 id="持久性durability">持久性(Durability)</h3>
+<p>事务处理结束后，对数据的修改就是永久的，即便系统故障也不会丢失。</p>
+<p>来源:维基百科 <a href="https://zh.wikipedia.org/wiki/ACID">https://zh.wikipedia.org/wiki/ACID</a></p>
+<h2 id="事务-transaction">事务 (Transaction:)</h2>
+<p>事务是进程中最小的堆栈，不能分成更小的部分。此外，某些事务处理组可以按顺序执行，但正如我们在原子性原则中所解释的那样，即使其中一个事务失败，所有事务块也将失败。</p>
+<h2 id="锁定-lock">锁定 (Lock)</h2>
+<p>锁定是一种确保数据一致性的机制。SQL Server在事务启动时锁定对象。事务完成后，SQL Server将释放锁定的对象。可以根据SQL Server进程类型和隔离级别更改此锁定模式。这些锁定模式是：</p>
+<h3 id="锁定层次结构">锁定层次结构</h3>
+<p>SQL Server具有锁定层次结构，用于获取此层次结构中的锁定对象。数据库位于层次结构的顶部，行位于底部。下图说明了SQL Server的锁层次结构。</p>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/hierarchy.png" alt="Alt text"></p>
+<h3 id="共享（s）锁-shared-s-locks">共享（S）锁 (Shared (S) Locks)</h3>
+<p>当需要读取对象时，会发生此锁定类型。这种锁定类型不会造成太大问题。</p>
+<h3 id="独占（x）锁定-exclusive-x-locks">独占（X）锁定 (Exclusive (X) Locks)</h3>
+<p>发生此锁定类型时，会发生以防止其他事务修改或访问锁定对象。</p>
+<h3 id="更新（u）锁-update-u-locks">更新（U）锁 (Update (U) Locks)</h3>
+<p>此锁类型与独占锁类似，但它有一些差异。我们可以将更新操作划分为不同的阶段：读取阶段和写入阶段。在读取阶段，SQL Server不希望其他事务有权访问此对象以进行更改,因此，SQL Server使用更新锁。</p>
+<h3 id="意图锁定-intent-locks">意图锁定 (Intent Locks)</h3>
+<p>当SQL Server想要在锁定层次结构中较低的某些资源上获取共享（S）锁定或独占（X）锁定时，会发生意图锁定。实际上，当SQL Server获取页面或行上的锁时，表中需要设置意图锁。</p>
+<h1 id="sql-server-locking">SQL Server locking</h1>
+<p>了解了这些背景知识后，我们尝试再SQL Server找到这些锁。SQL Server提供了许多动态管理视图来访问指标。要识别SQL Server锁，我们可以使用sys.dm_tran_locks视图。在此视图中，我们可以找到有关当前活动锁管理的大量信息。</p>
+<p>在第一个示例中，我们将创建一个不包含任何索引的演示表，并尝试更新此演示表。</p>
+<pre><code class="language-sql">CREATE TABLE TestBlock
+(Id INT ,
+Nm VARCHAR(100))
+
+INSERT INTO TestBlock
+values(1,'CodingSight')
+In this step, we will create an open transaction and analyze the locked resources.
+BEGIN TRAN
+UPDATE TestBlock SET   Nm='NewValue_CodingSight' where Id=1
+select @@SPID
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/update-demo-table.png" alt="Alt text"></p>
+<p>再获取到了SPID后，我们来看看<code>sys.dm_tran_lock</code>视图里有什么。</p>
+<pre><code class="language-sql">select * from sys.dm_tran_locks  WHERE request_session_id=74
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/sys.dm_tran_lock-view-1.png" alt="Alt text"></p>
+<p>此视图返回有关活动锁资源的大量信息,但是是一些我们难以理解的一些数据。因此，我们必须将<code>sys.dm_tran_locks</code> join 一些其他表。</p>
+<pre><code class="language-sql">SELECT dm_tran_locks.request_session_id,
+       dm_tran_locks.resource_database_id,
+       DB_NAME(dm_tran_locks.resource_database_id) AS dbname,
+       CASE
+           WHEN resource_type = 'OBJECT'
+               THEN OBJECT_NAME(dm_tran_locks.resource_associated_entity_id)
+           ELSE OBJECT_NAME(partitions.OBJECT_ID)
+       END AS ObjectName,
+       partitions.index_id,
+       indexes.name AS index_name,
+       dm_tran_locks.resource_type,
+       dm_tran_locks.resource_description,
+       dm_tran_locks.resource_associated_entity_id,
+       dm_tran_locks.request_mode,
+       dm_tran_locks.request_status
+FROM sys.dm_tran_locks
+LEFT JOIN sys.partitions ON partitions.hobt_id = dm_tran_locks.resource_associated_entity_id
+LEFT JOIN sys.indexes ON indexes.OBJECT_ID = partitions.OBJECT_ID AND indexes.index_id = partitions.index_id
+WHERE resource_associated_entity_id &gt; 0
+  AND resource_database_id = DB_ID()
+ and request_session_id=74
+ORDER BY request_session_id, resource_associated_entity_id
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/join-sys.dm_tran_locks-view-to-other-views-1.png" alt="Alt text"></p>
+<p>在上图中，您可以看到锁定的资源。SQL Server获取该行中的独占锁。（RID：用于锁定堆中单个行的行标识符）同时，SQL Server获取页中的独占锁和TestBlock表意向锁。这意味着在SQL Server释放锁之前，任何其他进程都无法读取此资源,这是SQL Server中的基本锁定机制。</p>
+<p>现在，我们将在测试表上填充一些合成数据。</p>
+<pre><code class="language-sql">TRUNCATE TABLE 	  TestBlock
+DECLARE @K AS INT=0
+WHILE @K &lt;8000
+BEGIN
+INSERT TestBlock VALUES(@K, CAST(@K AS varchar(10)) + ' Value' )
+SET @K=@K+1
+ END
+--After completing this step, we will run two queries and check the sys.dm_tran_locks view.
+BEGIN TRAN
+ UPDATE TestBlock  set Nm ='New_Value' where Id&lt;5000
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/check-sys.dm_tran_locks-view-2.png" alt="Alt text"></p>
+<p>在上面的查询中，SQL Server获取每一行的独占锁。现在，我们将运行另一个查询。</p>
+<pre><code class="language-sql">BEGIN TRAN
+ UPDATE TestBlock  set Nm ='New_Value' where Id&lt;7000
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/run-another-query-1.png" alt="Alt text"></p>
+<p>在上面的查询中，SQL Server在表上创建了独占锁，因为SQL Server尝试为这些将要更新的行获取大量RID锁,这种情况会导致数据库引擎中的大量资源消耗,因此，SQL Server会自动将此独占锁定移动到锁定层次结构中的上级对象(Table)。我们将此机制定义为Lock Escalation, 这就是我开篇所说的锁升级,它由行锁升级成了表锁。</p>
+<p>根据官方文档的描述存在以下任一条件，则会触发锁定升级：</p>
+<ul>
+<li>
+<p>单个Transact-SQL语句在单个非分区表或索引上获取至少5,000个锁。</p>
+</li>
+<li>
+<p>单个Transact-SQL语句在分区表的单个分区上获取至少5,000个锁，并且ALTER TABLE SET LOCK_ESCALATION选项设置为AUTO。</p>
+</li>
+<li>
+<p>数据库引擎实例中的锁数超过了内存或配置阈值。</p>
+</li>
+</ul>
+<p><a href="https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms184286(v=sql.105)">https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008-r2/ms184286(v=sql.105)</a></p>
+<h1 id="如何避免锁升级">如何避免锁升级</h1>
+<p>防止锁升级的最简单，最安全的方法是保持事务的简短，并减少昂贵查询的锁占用空间，以便不超过锁升级阈值,有几种方法可以实现这一目标.</p>
+<h2 id="将大批量操作分解为几个较小的操作">将大批量操作分解为几个较小的操作</h2>
+<p>例如，在我开篇所说的在几十亿条数据中删除小姐姐的数据：</p>
+<pre><code class="language-sql">delete from `后宫佳丽` where age&gt;18
+</code></pre>
+<p>我们可以不要这么心急,一次只删除500个，可以显着减少每个事务累积的锁定数量并防止锁定升级。例如：</p>
+<pre><code class="language-sql">SET ROWCOUNT 500
+delete_more:
+     delete from `后宫佳丽` where age&gt;18
+IF @@ROWCOUNT &gt; 0 GOTO delete_more
+SET ROWCOUNT 0
+</code></pre>
+<h2 id="创建索引使查询尽可能高效来减少查询的锁定占用空间">创建索引使查询尽可能高效来减少查询的锁定占用空间</h2>
+<p>如果没有索引会造成表扫描可能会增加锁定升级的可能性, 更可怕的是，它增加了死锁的可能性，并且通常会对并发性和性能产生负面影响。<br>
+根据查询条件创建合适的索引,最大化提升索引查找的效率,此优化的一个目标是使索引查找返回尽可能少的行，以最小化查询的的成本。</p>
+<h2 id="如果其他spid当前持有不兼容的表锁，则不会发生锁升级">如果其他SPID当前持有不兼容的表锁，则不会发生锁升级</h2>
+<p>锁定升级始总是升级成表锁，而不会升级到页面锁定。如果另一个SPID持有与升级的表锁冲突的IX（intent exclusive）锁定，则它会获取更细粒度的级别（行，key或页面）锁定，定期进行额外的升级尝试。表级别的IX（intent exclusive）锁定不会锁定任何行或页面，但它仍然与升级的S（共享）或X（独占）TAB锁定不兼容。<br>
+如下所示,如果有个操作始终在不到一小时内完成，您可以创建包含以下代码的sql，并安排在操作的前执行</p>
+<pre><code class="language-sql">BEGIN TRAN
+SELECT * FROM mytable (UPDLOCK, HOLDLOCK) WHERE 1=0
+WAITFOR DELAY '1:00:00'
+COMMIT TRAN
+</code></pre>
+<p>此查询在mytable上获取并保持IX锁定一小时，这可防止在此期间对表进行锁定升级。</p>
+<h1 id="happy-ending">Happy Ending</h1>
+<p>好了,不说了,小姐姐们因为不想离我开又打起来了(死锁).</p>
+<p><img src="https://raw.githubusercontent.com/liuzhenyulive/GitDisk/blogs/pic/TalkAboutLockInDatabase/ending.png" alt="Alt text"></p>
+<p>参考文献:<br>
+SQL Server Transaction Locking and Row Versioning Guide <a href="https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-guides/jj856598(v=sql.110)">https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-guides/jj856598(v=sql.110)</a><br>
+SQL Server, Locks Object <a href="https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/sql-server-locks-object?view=sql-server-2017">https://docs.microsoft.com/en-us/sql/relational-databases/performance-monitor/sql-server-locks-object?view=sql-server-2017</a><br>
+How to resolve blocking problems that are caused by lock escalation in SQL Server <a href="https://support.microsoft.com/es-ve/help/323630/how-to-resolve-blocking-problems-that-are-caused-by-lock-escalation-in">https://support.microsoft.com/es-ve/help/323630/how-to-resolve-blocking-problems-that-are-caused-by-lock-escalation-in</a><br>
+Main concept of SQL Server locking <a href="https://codingsight.com/main-concept-of-sql-server-locking/">https://codingsight.com/main-concept-of-sql-server-locking/</a></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2019-08-19 08:14</span>&nbsp;
+<a href="https://www.cnblogs.com/CoderAyu/">码农阿宇</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11375088" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(11375088);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 413735, cb_blogApp = 'CoderAyu', cb_blogUserGuid = 'f15f21cd-47e0-4e59-3d59-08d52fc34315';
+    var cb_entryId = 11375088, cb_entryCreatedDate = '2019-08-19 08:14', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 码农阿宇
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

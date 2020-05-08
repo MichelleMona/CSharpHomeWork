@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>稻草堆上打着滚儿 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=MH15aYd6DmX-6TABpA2xkiKENy3GAhiM2dh5rOPH89I" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=X7swQJ1TyCJAf6FMVjDPbYhUAiMdNFddEy1-m0_TbFQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/sayook/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/sayook/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/sayook/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 383968;
+        var currentBlogApp = 'sayook';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleBlue';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/sayook/">稻草堆上打着滚儿</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/sayook/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%A8%BB%E8%8D%89%E5%A0%86%E4%B8%8A%E6%89%93%E7%9D%80%E6%BB%9A%E5%84%BF">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/sayook/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+8&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+6</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/12766018.html">
+    设计模式-原型模式（Prototype）【重点：浅复制与深复制】
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：讲故事 最近重温了一下星爷的《唐伯虎点秋香》，依然让我捧腹不已，幻想着要是我也能有一名秋香如此的侍女，夫复何求呀，带着这个美好的幻想沉沉睡去... 突然想到，我是一名程序猿呀，想要什么对象不是易如反掌吗，New一个呗，不光是秋香，春、夏、冬都要，身材要超A的，百度好三围（82, 54, 86），开干            <a href="https://www.cnblogs.com/sayook/p/12766018.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-24 11:01 稻草堆上打着滚儿 阅读 (116) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766018" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/12759319.html">
+    设计模式-观察者模式（Observer）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：讲故事(user story) 假设我们是一个优惠券提供平台，故事就发生在顾客在我们平台采购完成支付成功后。 支付完成后平台要进行的一些操作: 1. 短信通知客户已经生成订单 2. 增加顾客的积分 3. 开始按订单需求制券 ​ 。。。(可能会有许多操作) 接下来就是将故事以代码的形式展现出来。。。             <a href="https://www.cnblogs.com/sayook/p/12759319.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-23 11:05 稻草堆上打着滚儿 阅读 (25) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12759319" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2018/11/23.html">2018年11月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/10008315.html">
+    【Parallel】.Net 并行执行程序的使用心得
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、摘要 官方介绍：提供对并行循环和区域的支持。 命名空间：using System.Threading.Tasks 三个静态方法：Parallel.Invoke，Parallel.For，Parallel.ForEach 常用到的参数类型：ParallelLoopResult，ParallelOp            <a href="https://www.cnblogs.com/sayook/p/10008315.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-11-23 18:47 稻草堆上打着滚儿 阅读 (73) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10008315" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2018/09/26.html">2018年9月26日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/9681217.html">
+    个人对【依赖倒置(DIP)】、【控制反转(IOC)】、【依赖注入(DI)】浅显理解
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、依赖倒置（Dependency Inversion Principle） 依赖倒置是面向对象设计领域的一种软件设计原则。（其他的设计原则还有：单一职责原则、开放封闭原则、里式替换原则、接口分离原则，合称SOLID） 话说设计原则有什么用呢？ 设计原则是无数编程前辈总结下来的经验，好似编程界的金科            <a href="https://www.cnblogs.com/sayook/p/9681217.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-09-26 15:44 稻草堆上打着滚儿 阅读 (603) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9681217" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2018/06/05.html">2018年6月5日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/9141537.html">
+    设计模式-建造者模式（Builder）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：简介： 将一个复杂的对象的构建与它的表示分离，使得同样的构建过程创建出不同的表示。 结构图： 优点： 使得创建代码和表示代码分离，建造者隐藏了该产品是如何组装的，所以若需要改变一个产品内部的表示，只需要再定义一个具体的建造者就可以了； 便于控制细节风险。 缺点： 产品必须有共同点，范围有限制； 若内            <a href="https://www.cnblogs.com/sayook/p/9141537.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-06-05 19:49 稻草堆上打着滚儿 阅读 (236) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9141537" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2018/06/01.html">2018年6月1日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/9121978.html">
+    设计模式-策略模式（Strategy）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：简介： 定义了算法家族，分别封装起来，可以让他们之间相互替换。此模式可以让算法的变化，不会影响到使用算法的客户。【行为型模式】 结构图： 优点： 策略模式是一种定义一系列算法的方法，从概念上来看，这些算法都是完成相同的工作，只是实现不同。它可以以相同的方式调用所有的算法，减少了各种算法类与调用算法类            <a href="https://www.cnblogs.com/sayook/p/9121978.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-06-01 15:43 稻草堆上打着滚儿 阅读 (113) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9121978" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2018/05/29.html">2018年5月29日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/9104655.html">
+    设计模式-代理模式（Proxy）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：简介： 为其他对象提供一种代理以控制对这个对象的访问。（在访问真实对象时，引入一定程度的间接性，因为这种间接性可以附加多种用途）【结构型模式】 结构图： 优点： 高扩展性； 代理作为调用者和真实对象的中间层，降低了模块间的耦合性。 缺点： 由于在客户端和真实对象之间增加了代理对象，因此有些类型的代理            <a href="https://www.cnblogs.com/sayook/p/9104655.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-05-29 16:24 稻草堆上打着滚儿 阅读 (148) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9104655" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/sayook/archive/2018/05/28.html">2018年5月28日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/sayook/p/9101376.html">
+    设计模式-装饰模式（Decorator）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：简介： 动态的给一个对象添加一些额外的职责，就增加功能来说，装饰模式比生产子类更加灵活——《大话设计模式》。【结构型模式】 结构图： 优点： 装饰类和被装饰类可以独立发展，不会相互耦合； 动态的扩展一个对象的功能； 可以对一个对象进行多次装饰，让其具备更多的功能。 缺点： 多层装饰比较复杂，相应增加            <a href="https://www.cnblogs.com/sayook/p/9101376.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-05-28 17:49 稻草堆上打着滚儿 阅读 (582) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9101376" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 稻草堆上打着滚儿
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

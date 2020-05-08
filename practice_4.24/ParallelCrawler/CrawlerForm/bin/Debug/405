@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>nineyang - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/nineyang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/nineyang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/nineyang/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 360683;
+        var currentBlogApp = 'nineyang';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/nineyang/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/nineyang/">nineyang</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/nineyang/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/nineyang">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/nineyang/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+10&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+9</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/12765439.html">
+    Stream—一个早产的婴儿
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：当你会关注这篇文章时，那么意味着你对 或多或少有些了解，甚至你在许多业务中有所应用。正如你所知，业界对 、`lambda Stream`相关的api的确提供了诸多的便利，如果你愿意花时间去理解和使用的话；然而另一方面，它像一个早产的婴儿，当你去阅读它源码时，你会觉得诧异，像是一个临时拼凑而成的模块。            <a href="https://www.cnblogs.com/nineyang/p/12765439.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 09:46 nineyang 阅读 (375) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765439" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/12726384.html">
+    Java函数式编程的前生今世
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：随着 的发布，大家翘首以待的 (函数式编程，后文皆以FP简称)终于面世。其实早在 这个版本就已经准备发布，但是由于还属于 刚被收购的磨合期所耽误。而 这个版本也一再延误才终于发布。 早些时候说起 ，大家对他的第一印象就是冗长，虽然我们可以通过 等工具帮我们解决这些问题，但是可读性差的问题仍无法避免。            <a href="https://www.cnblogs.com/nineyang/p/12726384.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 16:05 nineyang 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12726384" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/12726375.html">
+    关于微服务划分的一些思考
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我们公司落地微服务架构已多年，而我也接触开发了一段时间了。恰好，最近又抽空把《微服务设计》一书随手翻了一遍，便有了抒写此文的念头，虽然文中所述并非具有很强的普适性，倒也权当自己近来的总结和思考罢了。 我想对于许多初始接触微服务开发的人员来说，都会或多或少有这样的疑问 微服务应该如何划分？ 我的服务粒            <a href="https://www.cnblogs.com/nineyang/p/12726375.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 16:04 nineyang 阅读 (191) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12726375" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2018/03/21.html">2018年3月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/8618469.html">
+    如何更优雅的给控制器 “减负”
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：`MVC MVC Controller Model I/O BUG Service`时就显得极为困难。 因此，是时候给我们的控制器做一些“减负”了。这里的减负并不意味着会违背 的设计思想，而是把我们的控制器层的业务适当的分给其他部分。 有使用过一些主流框架的朋友应该都知道，其实很多框架都给 层做了一            <a href="https://www.cnblogs.com/nineyang/p/8618469.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-03-21 17:35 nineyang 阅读 (70) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8618469" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2017/10/26.html">2017年10月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/7738354.html">
+    PHP简洁之道
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 原文地址:https://github.com/jupeter/clean code php &quot;译文&quot; 地址:https://github.com/nineyang/clean php code 欢迎 。 变量 使用更有意义和更加直白的命名方式 不友好的: 友好的: 对于同一实体使用相同变量名            <a href="https://www.cnblogs.com/nineyang/p/7738354.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-26 18:35 nineyang 阅读 (502) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7738354" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2017/09/20.html">2017年9月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/7559991.html">
+    Laravel 源码解读系列第四篇-Auth 机制
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 有一个神器: 能够快速的帮我们完成一套注册和登录的认证机制，但是这套机制具体的是怎么跑起来的呢？我们不妨来一起看看他的源码。不过在这篇文章中，我只会阐述大致的流程，至于一些具体的细节，比如他的登录次数限制是怎么完成的之类的不妨自己去寻找答案。 &quot;源码解读系列&quot; ，有兴趣的小伙伴可以点个star            <a href="https://www.cnblogs.com/nineyang/p/7559991.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-09-20 10:03 nineyang 阅读 (1782) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7559991" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2017/09/11.html">2017年9月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/7504434.html">
+    实现一个简单的Laravel的dd库
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前几天写了一个简单的 的 &quot;dd&quot; 库。 为什么自己要写一个这样的库？ 本身已经实现了自己的输出 函数，但是我之所以要写这样一个库，一来是因为 本身对这个库的封装没办法很好的解剖出来，另一方面，他的实现过于复杂。 安装方式 1. composer 安装 2. 直接下载 clone 下来即可 使用 1            <a href="https://www.cnblogs.com/nineyang/p/7504434.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-09-11 12:50 nineyang 阅读 (1636) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7504434" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2017/09/03.html">2017年9月3日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/7469120.html">
+    聊一聊Redis的数据结构
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：如果没有记错的话，应该是在两个月前把 《Redis设计与实践》 这本书啃完了，确实是一本讲 的不可多得的好书，但是一直迟迟没有写自己的一些总结。一来是因为没有时间，二来是没有找到一个合适的思考点。 本身支持很多种不同的类型，能让我们在不同的复杂的业务逻辑中游刃有余。 也可以说是万物皆对象，他就是一个            <a href="https://www.cnblogs.com/nineyang/p/7469120.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-09-03 11:19 nineyang 阅读 (542) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7469120" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2017/08/11.html">2017年8月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/7323878.html">
+    如何通过binlog获取我们想要的MySql语句?
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 的`binlog`一般用于我们对数据的恢复，以及从数据库对主数据库的复制和更新。 假设此时我们有一个需要查询和读取 最近操作 的信息，我们需要怎么处理？ 聪明的你可能已经想到了，我们可以使用 工具读取啊！的确， 对于 或者 格式的 文件确实会很方便读取，但是你要知道，从 开始， 就是默认的 ，            <a href="https://www.cnblogs.com/nineyang/p/7323878.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-11 21:12 nineyang 阅读 (1985) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7323878" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/nineyang/archive/2017/08/09.html">2017年8月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/nineyang/p/7323965.html">
+    Mysql自动填充测试数据
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 最近写了两个小脚本，一个应用于 &quot;Mysql&quot; 的自动填充测试数据，另外一个是 &quot;bash&quot; 写的定期删除日志文件，两个脚本如何使用，在 上面都有所说明，这里不再赘述，这里主要是想聊一下 的`存储过程`以及自动填充测试数据。 为什么要写一个自动填充测试数据的脚本？ 网上其实也有一些简单的给 填            <a href="https://www.cnblogs.com/nineyang/p/7323965.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-09 10:42 nineyang 阅读 (1328) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7323965" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 nineyang
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

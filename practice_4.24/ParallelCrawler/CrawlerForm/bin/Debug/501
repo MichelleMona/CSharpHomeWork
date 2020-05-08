@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>抑菌 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/tanshaoshenghao/custom.css?v=ETVPzQp9R3E93k6xfN48Z6r//zY=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/bluesky/bundle-bluesky-mobile.min.css?v=s2piIyFV3NYqZWTmizb6uafQjmZFRhUBr8YMAdV85mA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/tanshaoshenghao/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/tanshaoshenghao/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/tanshaoshenghao/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 500766;
+        var currentBlogApp = 'tanshaoshenghao';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlueSky';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <!--评论-->
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/hafiz/feedback.css">
+
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/miangao/maodian.css">
+
+<!--右上角的github标签-->
+<a href="https://github.com/liuyj24" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #333;color:#fff;position: absolute;top: 0;border: 0;right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<!-- 鼠标点击效果 -->
+<script src="https://blog-static.cnblogs.com/files/e-cat/cursor-effects.js" defer></script>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/tanshaoshenghao/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/tanshaoshenghao/">炭烧生蚝</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/tanshaoshenghao/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%8A%91%E8%8F%8C">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/tanshaoshenghao/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+44&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+82</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2019/05/02.html">2019年5月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/10801547.html">
+[置顶]    记一次博客页面美化过程,分享代码.
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：[TOC] 注册博客园账号有一个多月了, 一切都很好, 但就一直觉得自己的博客页面比较老土. 在首页浏览时候发现一位博主的页面挺干净整洁的, 而且他分享了制作的思路, 于是下定决心美化一番。 本文将介绍美化的思路, 并贴上所有代码, 俗话说授之以鱼也要授之以渔。 感谢热心博主分享的攻略 致谢要写在前            <a href="https://www.cnblogs.com/tanshaoshenghao/p/10801547.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-05-02 07:41 抑菌 阅读 (1625) 评论 (31)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10801547" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/12767414.html">
+    Java讲解RPC的基本实现
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：RPC远程过程调用可以说是分布式系统的基础，本文将通过Java演示一次普通的rpc调用到底发生了什么。 我曾经在网上看到有人提问，为什么RPC要叫作远程过程调用，而不叫作RMC远程方法调用。个人认为RPC的叫法才是合理的，远程调用的是某个过程，不一定是一个具体的方法，你只要看过第一个版本的代码就能懂            <a href="https://www.cnblogs.com/tanshaoshenghao/p/12767414.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 14:49 抑菌 阅读 (206) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12767414" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2020/03/26.html">2020年3月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/12577100.html">
+    项目中用到了Redis分布式锁，了解一下背后的原理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 以前在学校做小项目的时候，用到Redis，基本也只是用来当作缓存。现在博主在某金融平台实习，发现Redis在生产中并不只是当作缓存这么简单。在我接触到的项目中，Redis起到了一个分布式锁的作用，具体情况是这样的： 该项目在金融平台中负责某块业务，是一个分布式系统，线上大概跑着10个左右的实例            <a href="https://www.cnblogs.com/tanshaoshenghao/p/12577100.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-26 20:23 抑菌 阅读 (482) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12577100" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/12572841.html">
+    为什么Mysql的常用引擎都默认使用B+树作为索引？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 为了讲清楚这个问题，我们要先了解什么是索引。 我记得刚刚学习数据库的时候，老师喜欢用书本的目录来类比数据库的索引，并告诉我们索引能够像目录一样，让我们更快地找到想要找到的数据。 如果是第一次接触索引，这个比喻能够让我们有一个直观的印象。但是当深入去学习索引的时候，我们不能继续持有索引即目录            <a href="https://www.cnblogs.com/tanshaoshenghao/p/12572841.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-26 10:56 抑菌 阅读 (70) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12572841" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2020/02/20.html">2020年2月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/12336782.html">
+    关于浮点数与精确小数计算的理解
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：下面这篇文章探讨的是关于浮点数与精确小数计算的理解。 小数在大家的生活中太常见了，这玩意小学就教，计算机程序里也经常用到，所以它可能不太被人注意。 但现实是，如果你不了解小数在计算机的世界里是怎么玩的，你就很可能在程序中因错误使用小数而犯错。 本文不深入剖析小数在计算机中的表示形式（IEEE 754            <a href="https://www.cnblogs.com/tanshaoshenghao/p/12336782.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-20 18:06 抑菌 阅读 (127) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12336782" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2020/01/16.html">2020年1月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/12202986.html">
+    通过模拟Mybatis动态代理生成Mapper代理类，讲解Mybatis核心原理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文将通过模拟Mybatis动态代理生成Mapper代理类，讲解Mybatis原理 1.平常我们是如何使用Mapper的 先写一个简单的UserMapper，它包含一个全表查询的方法，代码如下 然后大家思考一个问题，我们平时是怎么使用这个UserMapper的？ 很多时候我们会把Mybatis和Sp            <a href="https://www.cnblogs.com/tanshaoshenghao/p/12202986.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-16 19:55 抑菌 阅读 (233) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12202986" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2020/01/12.html">2020年1月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/12184454.html">
+    初识事务，事务隔离级别，事务传播行为
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本篇文章会介绍以下几个概念：事务，事务隔离级别，spring事务的传播模式。在介绍事务时会引出原子性的概念，在介绍事务隔离级别的时候会引出脏读和幻读的概念。 事务 什么是事务？ 事务最开始是数据库中的概念，它把一系列的操作统一为一个整体，这一系列的操作要么同时成功，要么同时失败。一个事务基本的操作是            <a href="https://www.cnblogs.com/tanshaoshenghao/p/12184454.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-12 19:44 抑菌 阅读 (177) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12184454" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2019/11/11.html">2019年11月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/11835679.html">
+    总结12道最常见的计算机网络面试题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 请详细介绍一下 TCP 的三次握手机制，为什么要三次握手？ 在讲三次握手之前首先要介绍 TCP 报文中两个重要的字段：一个是序号字段，另一个是确认号字段，这两个字段将在握手阶段以及整个信息传输过程起到重要作用。 1. 第一步：客户端 TCP 向服务端的TCP发送一个不带额外数据的特殊 TCP             <a href="https://www.cnblogs.com/tanshaoshenghao/p/11835679.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-11 15:52 抑菌 阅读 (151) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11835679" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2019/10/16.html">2019年10月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/11684727.html">
+    浅谈分布式事务与TX-LCN
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近做项目使用到了分布式事务，下面这篇文章将给大家介绍一下对分布式事务的一些见解，并讲解分布式事务处理框架TX LCN的执行原理，初学入门，错误之处望各位不吝指正。 什么情况下需要使用分布式事务？ 使用的场景很多，先举一个常见的：在微服务系统中，如果一个业务需要使用到不同的微服务，并且不同的微服务对            <a href="https://www.cnblogs.com/tanshaoshenghao/p/11684727.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-16 12:07 抑菌 阅读 (833) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11684727" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2019/08/30.html">2019年8月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/11433999.html">
+    手写迷你SpringMVC框架
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：注：本文总结自慕课网同名课程 前言 学习如何使用Spring，SpringMVC是很快的，但是在往后使用的过程中难免会想探究一下框架背后的原理是什么，本文将通过讲解如何手写一个简单版的springMVC框架，直接从代码上看框架中请求分发，控制反转和依赖注入是如何实现的。 建议配合示例源码阅读，git            <a href="https://www.cnblogs.com/tanshaoshenghao/p/11433999.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-30 11:19 抑菌 阅读 (639) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11433999" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/tanshaoshenghao/archive/2019/05/27.html">2019年5月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/10932306.html">
+    详解Tomcat系列(一)-从源码分析Tomcat的启动
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在整个Tomcat系列文章讲解之前, 我想说的是虽然整个Tomcat体系比较复杂, 但是Tomcat中的代码并不难读, 只要认真花点功夫, 一定能啃下来. 由于篇幅的原因, 很难把Tomcat所有的知识点都放到同一篇文章中, 我将把Tomcat系列文章分为Tomcat的启动, Tomcat中各模块的            <a href="https://www.cnblogs.com/tanshaoshenghao/p/10932306.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-05-27 18:25 抑菌 阅读 (3814) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10932306" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/tanshaoshenghao/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 抑菌
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    $('.buryit').remove();
+    initCommentData();
+});
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+$(document).ajaxComplete(function(event, xhr, settings) {
+  // 监听获取评论ajax事件
+  if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+  }
+});
+</script>
+
+<script src="https://files.cnblogs.com/files/hafiz/jquery-migrate-1.2.1.js"></script>
+<div id="scrollTop" style="display:none;">
+      <div class="level-2"></div>
+      <div class="level-3"></div>
+</div>
+<script src="https://files.cnblogs.com/files/hafiz/scroll2top.js"></script>
+<script type="text/javascript">
+    UI.global_search();
+    var uvOptions = {};
+    // !important
+    (function() {
+        initScrollTop();
+    })();
+</script>
+
+<script src="https://files.cnblogs.com/files/miangao/bootstrap.min.js"></script>
+
+<!--图片放大功能-->
+<script type="text/javascript" src="https://blog-static.cnblogs.com/files/jajian/img.enlarge.js"></script>
+<div id="outerdiv" style="text-align: center;position: fixed;z-index: 1000;top: 0;left: 0;
+    width: 100%;height: 100%;background-color: rgba(255,255,255,.9);">
+    <img id="bigimg" style="height: auto;width: 65%;border: 5px solid #7e8c8d; 
+        margin: auto;position: absolute;top: 0;bottom: 0;left: 0;right: 0;" src="" />
+</div>
+    </div>
+</body>
+</html>

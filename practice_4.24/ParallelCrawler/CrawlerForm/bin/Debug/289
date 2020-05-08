@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>子月生 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/ZhangZiSheng001/custom.css?v=BVYkRZ1sTQ2PadLYTKDX4YZQqUk=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ZhangZiSheng001/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ZhangZiSheng001/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ZhangZiSheng001/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 562068;
+        var currentBlogApp = 'ZhangZiSheng001';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/ZhangZiSheng001/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/ZhangZiSheng001/">子月生</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/ZhangZiSheng001/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+15&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+9</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12773971.html">
+    Mybatis源码详解系列(四)--你不知道的Mybatis用法和细节
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这是 Mybatis 系列博客的第四篇，我本来打算详细讲解 mybatis 的配置、映射器、动态 sql 等，但 Mybatis官方中文文档 对这部分内容的介绍已经足够详细了，有需要的可以直接参考。所以，我将扩展一些其他特性或使用细节，掌握它们可以更优雅、高效地使用 mybatis。            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12773971.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 17:06 子月生 阅读 (62) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773971" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12761376.html">
+    Mybatis源码详解系列(三)--从Mapper接口开始看Mybatis的执行逻辑
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文继续分析Mybatis的源码，第1点内容上一篇博客已经讲过，本文将针对 2 和 3 点继续分析：
+1. 加载配置、初始化SqlSessionFactory；
+2. 获取SqlSession和Mapper；
+3. 执行Mapper方法。            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12761376.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 15:54 子月生 阅读 (192) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12761376" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12704076.html">
+    Mybatis源码详解系列(二)--Mybatis如何加载配置及初始化
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前面已经说完 mybatis 的使用，现在开始分析源码，和使用例子一样，我用的 mybatis 是 3.5.4 版本的。考虑连贯性，我会按下面的顺序来展开分析，计划两篇博客写完，本文只涉及第一点内容：
+1. 加载配置、初始化SqlSessionFactory；
+2. 获取SqlSession和Mapper；
+3. 执行Mapper方法。            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12704076.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 11:23 子月生 阅读 (225) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12704076" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/03/31.html">2020年3月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12603885.html">
+    Mybatis源码详解系列(一)--持久层框架解决了什么及如何使用Mybatis
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文是这个系列的第一篇文章，将从以下两个问题展开 ：
+1. 持久层框架解决了哪些问题？
+2. 如何使用 Mybatis（这里会从入门到深入）？            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12603885.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-31 11:21 子月生 阅读 (306) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12603885" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/03/20.html">2020年3月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12532074.html">
+    详解POI的使用方法(DOM和SAX的方式)及存在的不足
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文包含以下内容，由于篇幅较长，可以根据需要选择阅读：
+1. POI的介绍
+2. 如何使用POI及POI的不足
+3. 如何使用easyexcel            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12532074.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-20 15:32 子月生 阅读 (190) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12532074" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/02/19.html">2020年2月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12329937.html">
+    源码详解系列(八) ------ 全面讲解HikariCP的使用和源码
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文将包含以下内容(因为篇幅较长，可根据需要选择阅读)：
+1. HikariCP 的使用方法（入门案例、JDNI 使用、JMX 使用）
+2. HikariCP 的配置参数详解
+3. HikariCP 源码分析            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12329937.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-19 09:59 子月生 阅读 (200) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12329937" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/01/31.html">2020年1月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12246122.html">
+    源码详解系列(七) ------ 全面讲解logback的使用和源码
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文将介绍以下内容，由于篇幅较长，可根据需要选择阅读：
+1. 如何使用 logback：将日志输出到控制台、文件和数据库，以及使用 JMX 配置 logback；
+2. logback 配置文件详解；
+3. logback 的源码分析。            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12246122.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-31 18:02 子月生 阅读 (207) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12246122" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/01/10.html">2020年1月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12175893.html">
+    源码详解系列(六) ------ 全面讲解druid的使用和源码
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文将包含以下内容(因为篇幅较长，可根据需要选择阅读)：
+1. `druid`的使用方法（入门案例、`JDNI`使用、监控统计、防御SQL注入）
+2. `druid`的配置参数详解
+3. `druid`主要源码分析            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12175893.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-10 14:13 子月生 阅读 (361) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12175893" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2020/01/01.html">2020年1月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12128915.html">
+    如何使用JMX来管理程序？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文将介绍以下内容：
+
+1. 什么是`JMX`；
+2. `JMX`的基础架构；
+3. 如何使用`JMX`。            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12128915.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-01 15:02 子月生 阅读 (258) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12128915" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZhangZiSheng001/archive/2019/12/29.html">2019年12月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZhangZiSheng001/p/12114744.html">
+    使用SPI解耦你的实现类
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文主要讲解SPI，包含以下内容：
+1. SPI的介绍
+2. SPI的入门案例
+3. SPI在JDBC中的应用
+4. SPI源码分析            <a href="https://www.cnblogs.com/ZhangZiSheng001/p/12114744.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-29 13:14 子月生 阅读 (213) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12114744" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/ZhangZiSheng001/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 子月生
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <!--音乐解析-->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script
+	src="https://blog-static.cnblogs.com/files/ZhangZiSheng001/APlayer.min.js"
+	defer=""></script>
+<script src="https://unpkg.com/meting@1.2.0/dist/Meting.min.js" defer=""></script>
+<div id="aplayer" class="aplayer aplayer-withlrc aplayer-withlist" data-id="3134690790" data-server="netease" data-type="playlist" data-fixed="false" data-listfolded="true" data-order="random" data-theme="#2D8CF0" style="display: block;"></div>
+
+<!--dplayer-->
+<link rel="stylesheet"
+	href="https://blog-static.cnblogs.com/files/ZhangZiSheng001/DPlayer.min.css">
+<script
+	src="https://blog-static.cnblogs.com/files/ZhangZiSheng001/DPlayer.min.js"
+	defer=""></script>
+
+<!--念两句诗-->
+<!-- <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"
+    charset="utf-8" defer=""></script> -->
+<!--代码复制-->
+<script
+	src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"
+	defer=""></script>
+<!--主题-->
+<script
+	src="https://blog-static.cnblogs.com/files/ZhangZiSheng001/gshang.js"
+	defer=""></script>
+
+<!-- import Vue.js -->
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js" defer=""></script>
+
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?58b74026a7ca39825b239d308ad89164";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+    </div>
+</body>
+</html>

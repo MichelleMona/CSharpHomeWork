@@ -1,0 +1,312 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="就简单用队列调度器实现了并发的爬虫。" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>golang实现并发爬虫三(用队列调度器实现） - 公子若不胖天下谁胖 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/sea/bundle-sea.min.css?v=Jpv_XRZqv7HnW0FXxHohZmb1TG6nYuWdNSwqJML5lHA" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/anmutu/custom.css?v=QMxAnkUqgKBiyEH1cEAIv06DRk8=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/sea/bundle-sea-mobile.min.css?v=GEzW0neGdNE-VMws0ftJENKA__n-moeEPmS2Y9XCJis" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/anmutu/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/anmutu/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/anmutu/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 154627;
+        var currentBlogApp = 'anmutu';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'sea';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/anmutu/">杜少</a>
+<br>
+		
+
+
+	</div>
+</div>
+
+
+</div>
+
+<div id="mytopmenu">
+	
+		<div id="mylinks">
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+ &nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/anmutu/">
+首页</a>
+ &nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+ &nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%85%AC%E5%AD%90%E8%8B%A5%E4%B8%8D%E8%83%96%E5%A4%A9%E4%B8%8B%E8%B0%81%E8%83%96">
+联系</a> &nbsp;
+
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/anmutu/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/anmutu/rss/">
+    <img src="/skins/sea/images/xml.gif" alt="订阅" />
+</a>&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+		<DIV id="mystats">随笔-
+79&nbsp;
+评论-
+227&nbsp;
+文章-
+0&nbsp;
+<!--trackbacks-<partial name="./Shared/_PingTrackCount.cshtml" model="BlogServer.Web.Models.DetailBlogPage" />-->
+
+</DIV>
+	
+</div>
+<div id="centercontent">
+	<div id="post_detail">
+<div class="post">
+	<h1 class = "postTitle">
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/anmutu/p/12765207.html">golang实现并发爬虫三(用队列调度器实现）</a>
+</h1>
+	
+    <div id="cnblogs_post_description" style="display: none">
+        就简单用队列调度器实现了并发的爬虫。
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>欲看此文，<span style="text-decoration: line-through;">必先</span>可先看：<span style="text-decoration: line-through;"><br /></span></p>
+<p><a href="https://www.cnblogs.com/anmutu/p/12725642.html" target="_blank">golang实现并发爬虫一（单任务版本爬虫功能）</a></p>
+<p><a href="https://www.cnblogs.com/anmutu/p/12734031.html" target="_blank">gollang实现并发爬虫二（简单调度器）</a></p>
+<p>&nbsp;</p>
+<p>上文中的用简单的调度器实现了并发爬虫。</p>
+<p>并且，也提到了这种并发爬虫的实现可以提高爬取效率。</p>
+<p>当workerCount为1和workerCount为10时其爬取效率是有明显不同的。</p>
+<p>然而，文末其实也提到了这个简单调度器实现的爬虫有个不可控或者说是控制力太小了的问题。</p>
+<p>究其原因就是因为我们实现的方法是来一个request就给创建一个groutine。</p>
+<p>为了让这个程序变得更为可控。得想想怎么可以优化下了。</p>
+<p>&nbsp;</p>
+<p>现在，非常明显，优化点就是我不想要来一个request就创建一个这个实现过程。</p>
+<p>那么，我们可以想到队列。</p>
+<p>把request放到request队列里。</p>
+<p>那么，request队列里一定是会有一个request的头的，我们就可以把这个request的头元素给到worker去做实现。</p>
+<p>也就是这样：</p>
+<p><img src="https://img2020.cnblogs.com/blog/532336/202004/532336-20200423113734542-1593229710.png" alt="" width="425" height="170"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;but，这样是没有对worker进行一个控制的。</p>
+<p>我们希望request可以选择我们想要的一个worker。</p>
+<p>那么，我们也可以让scheduler维护一个worker的队列。</p>
+<p><img src="https://img2020.cnblogs.com/blog/532336/202004/532336-20200424084615414-209927350.png" alt="" width="522" height="247"></p>
+<p>&nbsp;</p>
+<p>&nbsp;这里用了三个并行的模块：</p>
+<p>1.engine&nbsp;引擎模块。</p>
+<p>2.scheduler&nbsp;调度器模块。</p>
+<p>3.worker&nbsp;工作模块。</p>
+<p>这三者通信都是通过channel来通信的。</p>
+<p>&nbsp;</p>
+<p>上图中可知道调度器模块实际上是维护了2个channel,一个是request的channel,一个是worker的channel。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">队列调度器
+</span><span style="color: #008000;">//</span><span style="color: #008000;">这个scheduler与engine和worker之间的通信都是通过channel来连接的。
+</span><span style="color: #008000;">//</span><span style="color: #008000;">故尔它的肚子里应该有request相关的channel和worker相关的channel.
+</span><span style="color: #008000;">//</span><span style="color: #008000;">另外注意这里worker的channel的类型是chan Request。</span>
+type QueuedScheduler <span style="color: #0000ff;">struct</span><span style="color: #000000;"> {
+    requestChan chan con_engine.Request
+    workerChan  chan chan con_engine.Request
+}</span></pre>
+</div>
+<p>那么，我们就只需要在这个scheduler调度器的两个channel里，各取一个元素，即取request和worker(chan&nbsp;con_engine.Request),把request发给worker就可以了。</p>
+<p>一直不断的去取和发送，这就是这个队列调度器要做的事情了。</p>
+<p>那个弯曲的箭头也就是指的这个事情了。在request的队列里找到合适的request发给worker队列里合适的worker就好。</p>
+<p>这就是一个整体的思想了。</p>
+<p>&nbsp;</p>
+<p>稍微说下关于维护如何两个队列的代码。</p>
+<p>重点在于怎么才能做到各读取一个元素。</p>
+<p>channel的读取是会阻塞的。</p>
+<p>如果我先读取request，如果读取不到，那么在等待的时候就没有办法取到worker了。</p>
+<p>解决方案就是用select,因为select会保证一点，select里的每一个case都会被执行到且会很快速的执行。</p>
+<div class="cnblogs_code">
+<pre>func (s *<span style="color: #000000;">QueuedScheduler) Run() {
+    s.requestChan </span>= make(chan con_engine.Request) <span style="color: #008000;">//</span><span style="color: #008000;">指针接收者才能改变里面的内容。</span>
+    s.workerChan =<span style="color: #000000;"> make(chan chan con_engine.Request)
+    go func() {
+        </span><span style="color: #0000ff;">var</span><span style="color: #000000;"> requestQ []con_engine.Request
+        </span><span style="color: #0000ff;">var</span><span style="color: #000000;"> workerQ []chan con_engine.Request
+        </span><span style="color: #0000ff;">for</span><span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">var</span><span style="color: #000000;"> activeRequest con_engine.Request
+            </span><span style="color: #0000ff;">var</span><span style="color: #000000;"> activeWorker chan con_engine.Request
+            </span><span style="color: #0000ff;">if</span> len(requestQ) &gt; <span style="color: #800080;">0</span> &amp;&amp; len(workerQ) &gt; <span style="color: #800080;">0</span><span style="color: #000000;"> {
+                activeRequest </span>= requestQ[<span style="color: #800080;">0</span><span style="color: #000000;">]
+                activeWorker </span>= workerQ[<span style="color: #800080;">0</span><span style="color: #000000;">]
+            }
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">收到一个request就让request排队，收到一个worker就让worker排队。所有的channel操作都放到select里。</span>
+            <span style="color: #0000ff;">select</span><span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">case</span> r := &lt;-<span style="color: #000000;">s.requestChan:
+                requestQ </span>=<span style="color: #000000;"> append(requestQ, r)
+            </span><span style="color: #0000ff;">case</span> w := &lt;-<span style="color: #000000;">s.workerChan:
+                workerQ </span>=<span style="color: #000000;"> append(workerQ, w)
+            </span><span style="color: #0000ff;">case</span> activeWorker &lt;-<span style="color: #000000;"> activeRequest:
+                requestQ </span>= requestQ[<span style="color: #800080;">1</span><span style="color: #000000;">:]
+                workerQ </span>= workerQ[<span style="color: #800080;">1</span><span style="color: #000000;">:]
+            }
+        }
+    }()
+}</span></pre>
+</div>
+<p>select就是在做三件事情：</p>
+<p>1.从requestChan里收一个request,将这个request存在变量requestQ里。</p>
+<p>2.从workerChan里收一个worker，将这个worker存在变量workerQ里。</p>
+<p>3.把第一个requestQ里的第一个元素发给第一个workerQ里的第一个元素。　　</p>
+<p>&nbsp;</p>
+<p>其他代码就感兴趣的同学自己看吧。</p>
+<p>作者就先说到这里。</p>
+<p>总体调度的思想上面的图中。</p>
+<p>具体的实现在源码里。</p>
+<p>欢迎大家留言指教。</p>
+<p>&nbsp;</p>
+<p>源码：</p>
+<p><a href="https://github.com/anmutu/du_crawler/tree/master/04crawler">https://github.com/anmutu/du_crawler/tree/master/04crawler</a></p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+	<div class="postDesc">posted on 
+<span id="post-date">2020-04-24 09:00</span>&nbsp;
+<a href="https://www.cnblogs.com/anmutu/">公子若不胖天下谁胖</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765207" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12765207);return false;">收藏</a></div>
+</div>
+
+
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 154627, cb_blogApp = 'anmutu', cb_blogUserGuid = 'f1589c3c-9bc4-e211-8d02-90b11c0b17d6';
+    var cb_entryId = 12765207, cb_entryCreatedDate = '2020-04-24 09:00', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script><br>
+			<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	
+</div>
+<!--done-->
+<div class="footer">
+	Powered by: <a href="http://www.cnblogs.com">博客园</a>
+	Copyright &copy; 2020 公子若不胖天下谁胖
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+
+
+
+
+    
+</body>
+</html>

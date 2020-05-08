@@ -1,0 +1,592 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="前言： 上篇文章 &amp;quot;HBase Filter 过滤器概述&amp;quot; 对HBase过滤器的组成及其家谱进行简单介绍，本篇文章主要对HBase过滤器之比较器作一个补充介绍，也算是HBase F" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HBase Filter 过滤器之 Comparator 原理及源码学习 - 周蓬勃 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zpb2016/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zpb2016/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zpb2016/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 297036;
+        var currentBlogApp = 'zpb2016';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/zpb2016/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zpb2016/">禅克</a>
+</h1>
+<h2>
+我欲疯，便成疯。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zpb2016/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%91%A8%E8%93%AC%E5%8B%83">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zpb2016/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+50&nbsp; </span>
+<span id="stats_article_count">文章 - 
+2&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+1</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/zpb2016/p/12775374.html">HBase Filter 过滤器之 Comparator 原理及源码学习</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <blockquote>
+<p><strong>前言：</strong>上篇文章<a href="https://mp.weixin.qq.com/s/76y5NIBQMwvR11Cx2Mbt3w">HBase Filter 过滤器概述</a>对HBase过滤器的组成及其家谱进行简单介绍，本篇文章主要对HBase过滤器之比较器作一个补充介绍，也算是HBase Filter学习的必备低阶魂技吧。本篇文中源码基于HBase 1.1.2.2.6.5.0-292 HDP版本。</p>
+</blockquote>
+<p>HBase所有的比较器实现类都继承于父类ByteArrayComparable，而ByteArrayComparable又实现了Comparable接口；不同功能的比较器差别在于对父类compareTo()方法的重写逻辑不同。</p>
+<p>下面分别对HBase Filter默认实现的七大比较器一一进行介绍。</p>
+<h2 id="1-binarycomparator">1. BinaryComparator</h2>
+<p><strong>介绍：</strong>二进制比较器，用于按字典顺序比较指定字节数组。</p>
+<p>先看一个小例子：</p>
+<pre><code>public class BinaryComparatorDemo {
+
+    public static void main(String[] args) {
+
+        BinaryComparator bc = new BinaryComparator(Bytes.toBytes(&quot;bbb&quot;));
+
+        int code1 = bc.compareTo(Bytes.toBytes(&quot;bbb&quot;), 0, 3);
+        System.out.println(code1); // 0
+        int code2 = bc.compareTo(Bytes.toBytes(&quot;aaa&quot;), 0, 3);
+        System.out.println(code2); // 1
+        int code3 = bc.compareTo(Bytes.toBytes(&quot;ccc&quot;), 0, 3);
+        System.out.println(code3); // -1
+        int code4 = bc.compareTo(Bytes.toBytes(&quot;bbf&quot;), 0, 3);
+        System.out.println(code4); // -4
+        int code5 = bc.compareTo(Bytes.toBytes(&quot;bbbedf&quot;), 0, 6);
+        System.out.println(code5); // -3
+    }
+}
+</code></pre>
+<p>不难看出，该比较器的比较规则如下：</p>
+<ul>
+<li>两个字符串首字母不同，则该方法返回首字母的asc码的差值</li>
+<li>参与比较的两个字符串如果首字符相同，则比较下一个字符，直到有不同的为止，返回该不同的字符的asc码差值</li>
+<li>两个字符串不一样长，可以参与比较的字符又完全一样，则返回两个字符串的长度差值</li>
+</ul>
+<p>看一下以上规则对应其compareTo()方法的源码实现：<br>
+实现一：</p>
+<pre><code>static enum UnsafeComparer implements Bytes.Comparer&lt;byte[]&gt; {
+INSTANCE;
+....
+public int compareTo(byte[] buffer1, int offset1, int length1, byte[] buffer2, int offset2, int length2) {
+	if (buffer1 == buffer2 &amp;&amp; offset1 == offset2 &amp;&amp; length1 == length2) {
+		return 0;
+	} else {
+		int minLength = Math.min(length1, length2);
+		int minWords = minLength / 8;
+		long offset1Adj = (long)(offset1 + BYTE_ARRAY_BASE_OFFSET);
+		long offset2Adj = (long)(offset2 + BYTE_ARRAY_BASE_OFFSET);
+		int j = minWords &lt;&lt; 3;
+
+		int offset;
+		for(offset = 0; offset &lt; j; offset += 8) {
+			long lw = theUnsafe.getLong(buffer1, offset1Adj + (long)offset);
+			long rw = theUnsafe.getLong(buffer2, offset2Adj + (long)offset);
+			long diff = lw ^ rw;
+			if (diff != 0L) {
+				return lessThanUnsignedLong(lw, rw) ? -1 : 1;
+			}
+		}
+
+		offset = j;
+		int b;
+		int a;
+		if (minLength - j &gt;= 4) {
+			a = theUnsafe.getInt(buffer1, offset1Adj + (long)j);
+			b = theUnsafe.getInt(buffer2, offset2Adj + (long)j);
+			if (a != b) {
+				return lessThanUnsignedInt(a, b) ? -1 : 1;
+			}
+
+			offset = j + 4;
+		}
+
+		if (minLength - offset &gt;= 2) {
+			short sl = theUnsafe.getShort(buffer1, offset1Adj + (long)offset);
+			short sr = theUnsafe.getShort(buffer2, offset2Adj + (long)offset);
+			if (sl != sr) {
+				return lessThanUnsignedShort(sl, sr) ? -1 : 1;
+			}
+
+			offset += 2;
+		}
+
+		if (minLength - offset == 1) {
+			a = buffer1[offset1 + offset] &amp; 255;
+			b = buffer2[offset2 + offset] &amp; 255;
+			if (a != b) {
+				return a - b;
+			}
+		}
+
+		return length1 - length2;
+	}
+}
+</code></pre>
+<p>实现二：</p>
+<pre><code>static enum PureJavaComparer implements Bytes.Comparer&lt;byte[]&gt; {
+	INSTANCE;
+
+	private PureJavaComparer() {
+	}
+
+	public int compareTo(byte[] buffer1, int offset1, int length1, byte[] buffer2, int offset2, int length2) {
+		if (buffer1 == buffer2 &amp;&amp; offset1 == offset2 &amp;&amp; length1 == length2) {
+			return 0;
+		} else {
+			int end1 = offset1 + length1;
+			int end2 = offset2 + length2;
+			int i = offset1;
+
+			for(int j = offset2; i &lt; end1 &amp;&amp; j &lt; end2; ++j) {
+				int a = buffer1[i] &amp; 255;
+				int b = buffer2[j] &amp; 255;
+				if (a != b) {
+					return a - b;
+				}
+
+				++i;
+			}
+
+			return length1 - length2;
+		}
+	}
+}
+</code></pre>
+<p>实现一是对实现二的一个优化，都引自Bytes类，HBase优先执行实现一方案，如果有异常再执行实现二方案。如下：</p>
+<pre><code>public static int compareTo(byte[] buffer1, int offset1, int length1, byte[] buffer2, int offset2, int length2) {
+	return Bytes.LexicographicalComparerHolder.BEST_COMPARER.compareTo(buffer1, offset1, length1, buffer2, offset2, length2);
+}
+...
+...
+
+static final String UNSAFE_COMPARER_NAME = Bytes.LexicographicalComparerHolder.class.getName() + &quot;$UnsafeComparer&quot;;
+static final Bytes.Comparer&lt;byte[]&gt; BEST_COMPARER = getBestComparer();
+static Bytes.Comparer&lt;byte[]&gt; getBestComparer() {
+	try {
+		Class&lt;?&gt; theClass = Class.forName(UNSAFE_COMPARER_NAME);
+		Bytes.Comparer&lt;byte[]&gt; comparer = (Bytes.Comparer)theClass.getEnumConstants()[0];
+		return comparer;
+	} catch (Throwable var2) {
+		return Bytes.lexicographicalComparerJavaImpl();
+	}
+}
+</code></pre>
+<h2 id="2-binaryprefixcomparator">2. BinaryPrefixComparator</h2>
+<p><strong>介绍：</strong>二进制比较器，只比较前缀是否与指定字节数组相同。</p>
+<p>先看一个小例子：</p>
+<pre><code>public class BinaryPrefixComparatorDemo {
+
+    public static void main(String[] args) {
+
+        BinaryPrefixComparator bc = new BinaryPrefixComparator(Bytes.toBytes(&quot;b&quot;));
+
+        int code1 = bc.compareTo(Bytes.toBytes(&quot;bbb&quot;), 0, 3);
+        System.out.println(code1); // 0
+        int code2 = bc.compareTo(Bytes.toBytes(&quot;aaa&quot;), 0, 3);
+        System.out.println(code2); // 1
+        int code3 = bc.compareTo(Bytes.toBytes(&quot;ccc&quot;), 0, 3);
+        System.out.println(code3); // -1
+        int code4 = bc.compareTo(Bytes.toBytes(&quot;bbf&quot;), 0, 3);
+        System.out.println(code4); // 0
+        int code5 = bc.compareTo(Bytes.toBytes(&quot;bbbedf&quot;), 0, 6);
+        System.out.println(code5); // 0
+        int code6 = bc.compareTo(Bytes.toBytes(&quot;ebbedf&quot;), 0, 6);
+        System.out.println(code6); // -3
+    }
+}
+</code></pre>
+<p>该比较器只是基于BinaryComparator比较器稍作更改而已，以下代码一目了然：</p>
+<pre><code>public int compareTo(byte[] value, int offset, int length) {
+	return Bytes.compareTo(this.value, 0, this.value.length, value, offset, this.value.length &lt;= length ? this.value.length : length);
+}
+</code></pre>
+<p>看一下同BinaryComparator方法的异同：</p>
+<pre><code>public int compareTo(byte[] value, int offset, int length) {
+	return Bytes.compareTo(this.value, 0, this.value.length, value, offset, length);
+}
+</code></pre>
+<p>区别只在于最后一个传参，即length=min(this.value.length,value.length)，取小。这样在后面的字节逐位比较时，即只需比较min length次。</p>
+<h2 id="3-bitcomparator">3. BitComparator</h2>
+<p><strong>介绍：</strong>位比价器，通过BitwiseOp提供的AND（与）、OR（或）、NOT（非）进行比较。返回结果要么为1要么为0，仅支持 EQUAL 和非 EQUAL。</p>
+<p>先看一个小例子：</p>
+<pre><code>public class BitComparatorDemo {
+
+    public static void main(String[] args) {
+
+        // 长度相同按位或比较：由低位起逐位比较，每一位按位或比较都为0，则返回1，否则返回0。
+        BitComparator bc1 = new BitComparator(new byte[]{0,0,0,0}, BitComparator.BitwiseOp.OR);
+        int i = bc1.compareTo(new byte[]{0,0,0,0}, 0, 4);
+        System.out.println(i); // 1
+        // 长度相同按位与比较：由低位起逐位比较，每一位按位与比较都为0，则返回1，否则返回0。
+        BitComparator bc2 = new BitComparator(new byte[]{1,0,1,0}, BitComparator.BitwiseOp.AND);
+        int j = bc2.compareTo(new byte[]{0,1,0,1}, 0, 4);
+        System.out.println(j); // 1
+        // 长度相同按位异或比较：由低位起逐位比较，每一位按位异或比较都为0，则返回1，否则返回0。
+        BitComparator bc3 = new BitComparator(new byte[]{1,0,1,0}, BitComparator.BitwiseOp.XOR);
+        int x = bc3.compareTo(new byte[]{1,0,1,0}, 0, 4);
+        System.out.println(x); // 1
+        // 长度不同，返回1，否则按位比较
+        BitComparator bc4 = new BitComparator(new byte[]{1,0,1,0}, BitComparator.BitwiseOp.XOR);
+        int y = bc4.compareTo(new byte[]{1,0,1}, 0, 3);
+        System.out.println(y); // 1
+    }
+}
+
+</code></pre>
+<p>上述注释阐述的规则，对应以下代码：<br>
+···<br>
+public int compareTo(byte[] value, int offset, int length) {<br>
+if (length != this.value.length) {<br>
+return 1;<br>
+} else {<br>
+int b = 0;</p>
+<pre><code>	for(int i = length - 1; i &gt;= 0 &amp;&amp; b == 0; --i) {
+		switch(this.bitOperator) {
+		case AND:
+			b = this.value[i] &amp; value[i + offset] &amp; 255;
+			break;
+		case OR:
+			b = (this.value[i] | value[i + offset]) &amp; 255;
+			break;
+		case XOR:
+			b = (this.value[i] ^ value[i + offset]) &amp; 255;
+		}
+	}
+
+	return b == 0 ? 1 : 0;
+}
+</code></pre>
+<p>}<br>
+···<br>
+核心思想就是：由低位起逐位比较，直到b!=0退出循环。</p>
+<h2 id="4-longcomparator">4. LongComparator</h2>
+<p><strong>介绍：</strong>Long 型专用比较器，返回值：0 -1 1。上篇概述没有提到，这里补上。</p>
+<p>先看一个小例子：</p>
+<pre><code>public class LongComparatorDemo {
+
+    public static void main(String[] args) {
+        LongComparator longComparator = new LongComparator(1000L);
+        int i = longComparator.compareTo(Bytes.toBytes(1000L), 0, 8);
+        System.out.println(i); // 0
+        int i2 = longComparator.compareTo(Bytes.toBytes(1001L), 0, 8);
+        System.out.println(i2); // -1
+        int i3 = longComparator.compareTo(Bytes.toBytes(998L), 0, 8);
+        System.out.println(i3); // 1
+    }
+}
+</code></pre>
+<p>这个比较器实现相当简单,不多说了，如下：</p>
+<pre><code>public int compareTo(byte[] value, int offset, int length) {
+	Long that = Bytes.toLong(value, offset, length);
+	return this.longValue.compareTo(that);
+}
+</code></pre>
+<h2 id="5-nullcomparatordemo">5. NullComparatorDemo</h2>
+<p><strong>介绍：</strong>控制比较式，判断当前值是不是为null。是null返回0，不是null返回1，仅支持 EQUAL 和非 EQUAL。</p>
+<p>先看一个小例子：</p>
+<pre><code>public class NullComparatorDemo {
+
+    public static void main(String[] args) {
+        NullComparator nc = new NullComparator();
+        int i1 = nc.compareTo(Bytes.toBytes(&quot;abc&quot;));
+        int i2 = nc.compareTo(Bytes.toBytes(&quot;&quot;));
+        int i3 = nc.compareTo(null);
+        System.out.println(i1); // 1
+        System.out.println(i2); // 1
+        System.out.println(i3); // 0
+    }
+}
+</code></pre>
+<p>这个比较器实现相当简单,不多说了，如下：</p>
+<pre><code>public int compareTo(byte[] value) {
+	return value != null ? 1 : 0;
+}
+</code></pre>
+<h2 id="6-regexstringcomparator">6. RegexStringComparator</h2>
+<p><strong>介绍：</strong>提供一个正则的比较器，支持正则表达式的值比较，仅支持 EQUAL 和非 EQUAL。匹配成功返回0，匹配失败返回1。</p>
+<p>先看一个小例子：</p>
+<pre><code>public class RegexStringComparatorDemo {
+
+    public static void main(String[] args) {
+        RegexStringComparator rsc = new RegexStringComparator(&quot;abc&quot;);
+        int abc = rsc.compareTo(Bytes.toBytes(&quot;abcd&quot;), 0, 3);
+        System.out.println(abc); // 0
+        int bcd = rsc.compareTo(Bytes.toBytes(&quot;bcd&quot;), 0, 3);
+        System.out.println(bcd); // 1
+
+        String check = &quot;^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$&quot;;
+        RegexStringComparator rsc2 = new RegexStringComparator(check);
+        int code = rsc2.compareTo(Bytes.toBytes(&quot;zpb@163.com&quot;), 0, &quot;zpb@163.com&quot;.length());
+        System.out.println(code); // 0
+        int code2 = rsc2.compareTo(Bytes.toBytes(&quot;zpb#163.com&quot;), 0, &quot;zpb#163.com&quot;.length());
+        System.out.println(code2); // 1
+    }
+}
+</code></pre>
+<p>其compareTo()方法有两种引擎实现，对应两套正则匹配规则，分别是JAVA版和JONI版（面向JRuby），默认为RegexStringComparator.EngineType.JAVA。如下：</p>
+<pre><code>public int compareTo(byte[] value, int offset, int length) {
+	return this.engine.compareTo(value, offset, length);
+}
+
+public static enum EngineType {
+	JAVA,
+	JONI;
+
+	private EngineType() {
+	}
+}
+</code></pre>
+<p>具体实现都很简单，都是调用正则语法匹配。以下是JAVA EngineType 实现：</p>
+<pre><code>public int compareTo(byte[] value, int offset, int length) {
+	String tmp;
+	if (length &lt; value.length / 2) {
+		tmp = new String(Arrays.copyOfRange(value, offset, offset + length), this.charset);
+	} else {
+		tmp = new String(value, offset, length, this.charset);
+	}
+
+	return this.pattern.matcher(tmp).find() ? 0 : 1;
+}
+</code></pre>
+<p>JONI EngineType 实现：</p>
+<pre><code>public int compareTo(byte[] value, int offset, int length) {
+	Matcher m = this.pattern.matcher(value);
+	return m.search(offset, length, this.pattern.getOptions()) &lt; 0 ? 1 : 0;
+}
+</code></pre>
+<p>都很容易理解，不多说了。</p>
+<h2 id="7-substringcomparator">7. SubstringComparator</h2>
+<p><strong>介绍：</strong>判断提供的子串是否出现在value中，并且不区分大小写。包含字串返回0，不包含返回1，仅支持 EQUAL 和非 EQUAL。</p>
+<p>先看一个小例子：</p>
+<pre><code>public class SubstringComparatorDemo {
+
+    public static void main(String[] args) {
+        String value = &quot;aslfjllkabcxxljsl&quot;;
+        SubstringComparator sc = new SubstringComparator(&quot;abc&quot;);
+        int i = sc.compareTo(Bytes.toBytes(value), 0, value.length());
+        System.out.println(i); // 0
+
+        SubstringComparator sc2 = new SubstringComparator(&quot;abd&quot;);
+        int i2 = sc2.compareTo(Bytes.toBytes(value), 0, value.length());
+        System.out.println(i2); // 1
+
+        SubstringComparator sc3 = new SubstringComparator(&quot;ABC&quot;);
+        int i3 = sc3.compareTo(Bytes.toBytes(value), 0, value.length());
+        System.out.println(i3); // 0
+    }
+}
+</code></pre>
+<p>这个比较器实现也相当简单,不多说了，如下：</p>
+<pre><code>public int compareTo(byte[] value, int offset, int length) {
+	return Bytes.toString(value, offset, length).toLowerCase().contains(this.substr) ? 0 : 1;
+}
+</code></pre>
+<p>到此，七种比较器就介绍完了。如果对源码不敢兴趣，也建议一定要看看文中的小例子，熟悉下每种比较器的构造函数及结果输出。后续在使用HBase过滤器的过程中，会经常用到。当然除了这七种比较器，大家也可以自定义比较器。</p>
+<p><img src="https://img2020.cnblogs.com/other/1001353/202004/1001353-20200425212745724-1722916805.png" alt="扫描二维码关注博主公众号"></p>
+<blockquote>
+<p>转载请注明出处！欢迎关注本人微信公众号【HBase工作笔记】</p>
+</blockquote>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 21:28</span>&nbsp;
+<a href="https://www.cnblogs.com/zpb2016/">周蓬勃</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775374" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12775374);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 297036, cb_blogApp = 'zpb2016', cb_blogUserGuid = 'a54ac34f-5d56-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 12775374, cb_entryCreatedDate = '2020-04-25 21:28', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 周蓬勃
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

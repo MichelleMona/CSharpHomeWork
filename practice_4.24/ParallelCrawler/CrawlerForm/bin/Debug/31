@@ -1,0 +1,494 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="最近加入同事文博组织的虚拟PMO团队--Thor，大家在交流分享结构化思维时，方才意识到自己在学习线程池上花了很多时间，还是不能清楚的描述它，更本原因就是没有从宏观上认识，建立初始知识体系，没有这个基" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>啃不透--线程池 - 2J - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd.min.css?v=gS0FloTY-RBJQcN3GCAKG6fAr6HHKtDMTw60VxjN79c" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jijunjian/custom.css?v=WI3eRo7midbwNzmh7EMewRylXm0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd-mobile.min.css?v=VacchHeVg6bp3gCO8NqMH8D8fhA8iyRbb0JgoDUvn4o" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jijunjian/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jijunjian/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jijunjian/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 139716;
+        var currentBlogApp = 'jijunjian';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'iMetro_HD';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jijunjian/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jijunjian/">成为一名优秀的程序员</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jijunjian/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/2J">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jijunjian/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+25&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+424</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/12724640.html">啃不透--线程池</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        最近加入同事文博组织的虚拟PMO团队--Thor，大家在交流分享结构化思维时，方才意识到自己在学习线程池上花了很多时间，还是不能清楚的描述它，更本原因就是没有从宏观上认识，建立初始知识体系，没有这个基础，零散学习只是增加了很多无效时间。这也就是为啥有的人学习快，有些慢；有的人可以举一反三，有的确不能。
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h1 class="postTitle">引子　　　</h1>
+<p>　　上一篇文章《<a href="https://www.cnblogs.com/jijunjian/p/12637246.html" target="_blank">火焰图--记一次cpu降温过程</a>》提到接手了单车投放的应用，上周已经有大量流量切到新应用，然而心中还是惴惴不安的，投放动作业务逻辑复杂，使用了线程池异步处理。对于线程池认知只是停留在一个模糊的状态。这是一个什么状态呢：感觉什么都懂，就是说不出来（就像考试前啥都懂，考试时咬笔杆）。每次使用线程遇到问题都不能用已经有知识去思考，比如3个核心参数应该如何设置，阻塞队列应该用什么...通过搜索引擎查询后，又感觉自己懂了，实际上只是做了一次无用的循环，这次输入的内容，因为没有体系根基，很快又被新的内容冲刷得毫无痕迹。</p>
+<p>　　最近加入同事文博组织的虚拟PMO团队--Thor，大家在交流分享结构化思维时，方才意识到自己在学习线程池上花了很多时间，还是不能清楚的描述它，更本原因就是没有从宏观上认识，建立初始知识体系，没有这个基础，零散学习只是增加了很多无效时间。这也就是为啥有的人学习快，有些慢；有的人可以举一反三，有的确不能。</p>
+<p>　　一个良好的学习过程应该是：</p>
+<p>　　1，找到初始化知识体系。</p>
+<p>&nbsp; &nbsp; &nbsp; 2，补充丰富知识体系。</p>
+<p>&nbsp; &nbsp; &nbsp; 我们都知道系统学习可以建立初始化知识体系，比如阅读一本相关书籍，写一些文章。那么如何补充丰富呢，一句话：拿到锤子，看到什么都是钉子。那应该如何理解这句话呢：这篇文章就是这个的实践。</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/88102/202004/88102-20200418152242063-982651930.png" alt="" width="619" height="301" /></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 文博分享的关于结构化思维的脑图</p>
+<p>&nbsp;</p>
+<h1 class="postTitle">为什么要用线程池</h1>
+<p>　　随着处理器的核心越来越多，利用多线程技术可以把计算逻辑拆分成多个片段，分配到多个核心上，可以显著减少处理时间，提高效率；复杂的业务逻辑，可以使用多线程并发处理，缩短响应时间，提高用户体验。java的线程机制是抢占式协作多线程， 调用机制会周期性的中断线程，将上下文切换到另一个进程，线程越多，竞争会越多，切换会更频繁。所以增加线程带来的性能增加不是线性的，这就是amdahl定律。</p>
+<p>　　再者，线程的创建与销毁，上下文切换都不是免费的。《并发编程实战》一书中对于线程创建与销毁开销说明：</p>
+<blockquote>
+<p>Thread lifecycle overhead. Thread creation and teardown are not free. The actual overhead varies across platforms, but thread creation takes time, introducing latency into request processing, and requires some processing activity by the JVM and OS. If requests are frequent and lightweight, as in most server applications, creating a new thread for each request can consume significative computing resources.</p>
+</blockquote>
+<p>　　大意如下：&ldquo;线程生命周期开销：创建和销毁都是有代价的。实际开销虽因平台有所不同，但是都要消耗时间，jvm和os 需要执行一些处理程序；在大数请求频繁的服务端应用中，如果为每个请求创建一个线程将消耗非常可观的计算机资源&rdquo;。以上概念层的开销，那一个java线程的创建实际开销则是这样的：　　</p>
+<ul>
+<li><span data-preserver-spaces="true">A large block of memory has to be allocated and initialized for the thread stack. 为线程栈分配内存</span></li>
+<li><span data-preserver-spaces="true">System calls need to be made to create / register the native thread with the host OS.&nbsp; 为os 创建和注册本地线程进行系统调用</span></li>
+<li><span data-preserver-spaces="true">Descriptors needs to be created, initialized and added to JVM internal data structures.&nbsp; 创建和初始化描述符，添加到jvm内部的数据结构。</span></li>
+</ul>
+<p>　 上下问切换（context switching）也是有开销的，需要分配内存存储当前状态，克隆系统调用等，具体可以参考文末参考资料[2]</p>
+<p>&nbsp;</p>
+<p>&nbsp; &nbsp; 正是因为创建线程的代价是如此昂贵的（expensive），所以线程池出现了， 它以&ldquo;池化&rdquo;思想来管理资源，按需创建，分配，回收；并重复利用已有的线程资源。既然大家都用线程池，那么它的&rdquo;真面目&ldquo;是怎么样的呢-- 从源开开始。</p>
+<p>&nbsp;</p>
+<h1 class="postTitle">源码分析</h1>
+<p>　　java为多线程编程提供了良好的，考究并且一致的编程模型，让我们只需关注问题本身，而ThreadPoolExecutor类就是java为我们提供的线程池模型，其继承体系如下图，顶层接口定义了统一的行为，并将任务提交与任务执行的策略解藕开来；而AbstractExecutorService 抽象任务执行流程并串连起来；如此，子类只用关注某个具体方法了。</p>
+<p>　　　　　　　　　　　　　　　　　　<img src="https://img2020.cnblogs.com/blog/88102/202004/88102-20200419103201404-2119962936.png" alt="" width="297" height="365" /></p>
+<p>&nbsp;</p>
+<p>　　 一般而言&nbsp;ThreadPoolExecutor.execute(Runnable()) 是我们使用线程池的入口</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public&nbsp;void&nbsp;execute(Runnable command) {<br />    if</span> (command == <span style="color: #0000ff;">null</span><span style="color: #000000;">)</span><span style="color: #000000;">
+    // 三种情况：
+    </span><span style="color: #0000ff;">int</span> c =<span style="color: #000000;"> ctl.get();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">1，线程数 少于 核心线程 直接创建线程</span>
+    <span style="color: #0000ff;">if</span> (workerCountOf(c) &lt;<span style="color: #000000;"> corePoolSize) {
+        </span><span style="color: #0000ff;">if</span> (addWorker(command, <span style="color: #0000ff;">true</span><span style="color: #000000;">))
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+        c </span>=<span style="color: #000000;"> ctl.get();
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">线程数数超过 核心线程，但是blockqueue 未满，enqueue.</span>
+    <span style="color: #0000ff;">if</span> (isRunning(c) &amp;&amp;<span style="color: #000000;"> workQueue.offer(command)) {
+        </span><span style="color: #0000ff;">int</span> recheck =<span style="color: #000000;"> ctl.get();
+        </span><span style="color: #0000ff;">if</span> (! isRunning(recheck) &amp;&amp;<span style="color: #000000;"> remove(command))
+            reject(command);
+        </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span> (workerCountOf(recheck) == 0<span style="color: #000000;">)
+            addWorker(</span><span style="color: #0000ff;">null</span>, <span style="color: #0000ff;">false</span><span style="color: #000000;">);
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> queue 已经满，直接创建线程（超过max  reject）</span>
+    <span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span> (!addWorker(command, <span style="color: #0000ff;">false</span><span style="color: #000000;">))
+        reject(command);
+}</span></pre>
+</div>
+<p>　　execute方法的三个分支，决定了线程池中线程的创建执行策略（面试中经常碰到的场景就是：添加了多个任务时，创建了多少个线程）：</p>
+<div>　　1，线程数 少于 核心线程 直接创建线程</div>
+<div>　　2，线程数数超过 核心线程，但是blockqueue 未满，enqueue.</div>
+<div>　　3, queue 已经满，直接创建线程（超过max reject）</div>
+<div>　　</div>
+<div>　　下图展示了线程的创建过程</div>
+<p><!--5f39ae17-8c62-4a45-bc43-b32064c9388a:W3siYmxvY2tJZCI6Ijc3MTEtMTU4NjgzOTU5NjE3MyIsImJsb2NrVHlwZSI6InBhcmFncmFwaCIsInN0eWxlcyI6eyJhbGlnbiI6ImxlZnQiLCJpbmRlbnQiOjAsInRleHQtaW5kZW50IjowLCJsaW5lLWhlaWdodCI6MS43NSwiYmFjay1jb2xvciI6IiIsInBhZGRpbmciOiIifSwidHlwZSI6InBhcmFncmFwaCIsInJpY2hUZXh0Ijp7ImRhdGEiOlt7ImNoYXIiOiIgIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiICIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuiwgyIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuW6piIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuWIhiIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuS4iSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuenjSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuaDhSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuWGtSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6Iu+8miIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19XSwiaXNSaWNoVGV4dCI6dHJ1ZSwia2VlcExpbmVCcmVhayI6dHJ1ZX19LHsiYmxvY2tJZCI6IjkwMTMtMTU4NjgzOTY3MjkzMyIsImJsb2NrVHlwZSI6InBhcmFncmFwaCIsInN0eWxlcyI6eyJhbGlnbiI6ImxlZnQiLCJpbmRlbnQiOjAsInRleHQtaW5kZW50IjowLCJsaW5lLWhlaWdodCI6MS43NSwiYmFjay1jb2xvciI6IiIsInBhZGRpbmciOiIifSwidHlwZSI6InBhcmFncmFwaCIsInJpY2hUZXh0Ijp7ImRhdGEiOlt7ImNoYXIiOiIxIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi77yMIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi57q/Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi56iLIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5pWwIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiICIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuWwkSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IuS6jiIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IiAiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLmoLgiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLlv4MiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLnur8iLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLnqIsiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiIgIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi55u0Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5o6lIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5YibIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5bu6Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi57q/Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi56iLIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX1dLCJpc1JpY2hUZXh0Ijp0cnVlLCJrZWVwTGluZUJyZWFrIjp0cnVlfX0seyJibG9ja0lkIjoiMjk5MC0xNTg2ODM5Njk1NTk2IiwiYmxvY2tUeXBlIjoicGFyYWdyYXBoIiwic3R5bGVzIjp7ImFsaWduIjoibGVmdCIsImluZGVudCI6MCwidGV4dC1pbmRlbnQiOjAsImxpbmUtaGVpZ2h0IjoxLjc1LCJiYWNrLWNvbG9yIjoiIiwicGFkZGluZyI6IiJ9LCJ0eXBlIjoicGFyYWdyYXBoIiwicmljaFRleHQiOnsiZGF0YSI6W3siY2hhciI6IjIiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLvvIwiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLnur8iLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLnqIsiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLmlbAiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLmlbAiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLotoUiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLov4ciLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiIgIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5qC4Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5b+DIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi57q/Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi56iLIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi77yMIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5L2GIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5pivIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiYiIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6ImwiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJvIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiYyIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6ImsiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJxIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoidSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6ImUiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJ1Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiZSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IiAiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLmnKoiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLmu6EiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLvvIwiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJlIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoibiIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6InEiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJ1Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiZSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6InUiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJlIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiLiIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19XSwiaXNSaWNoVGV4dCI6dHJ1ZSwia2VlcExpbmVCcmVhayI6dHJ1ZX19LHsiYmxvY2tJZCI6IjIwNjItMTU4NjgzOTc4Njk5NCIsImJsb2NrVHlwZSI6InBhcmFncmFwaCIsInN0eWxlcyI6eyJhbGlnbiI6ImxlZnQiLCJpbmRlbnQiOjAsInRleHQtaW5kZW50IjowLCJsaW5lLWhlaWdodCI6MS43NSwiYmFjay1jb2xvciI6IiIsInBhZGRpbmciOiIifSwidHlwZSI6InBhcmFncmFwaCIsInJpY2hUZXh0Ijp7ImRhdGEiOlt7ImNoYXIiOiIzIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiLCIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IiAiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiIgIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoicSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6InUiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJlIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoidSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6ImUiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiIgIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5beyIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi57uPIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5ruhIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi77yMIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi55u0Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5o6lIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5YibIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi5bu6Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi57q/Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi56iLIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi77yIIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi6LaFIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoi6L+HIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoibSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6ImEiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJ4Iiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiICIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6IiAiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJyIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiZSIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6ImoiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiJlIiwic3R5bGVzIjp7Iml0YWxpYyI6dHJ1ZSwiZm9udC1zaXplIjoxMiwiY29sb3IiOiIjODA4MDgwIiwiYmFjay1jb2xvciI6IiNmZmZmZmYifX0seyJjaGFyIjoiYyIsInN0eWxlcyI6eyJpdGFsaWMiOnRydWUsImZvbnQtc2l6ZSI6MTIsImNvbG9yIjoiIzgwODA4MCIsImJhY2stY29sb3IiOiIjZmZmZmZmIn19LHsiY2hhciI6InQiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fSx7ImNoYXIiOiLvvIkiLCJzdHlsZXMiOnsiaXRhbGljIjp0cnVlLCJmb250LXNpemUiOjEyLCJjb2xvciI6IiM4MDgwODAiLCJiYWNrLWNvbG9yIjoiI2ZmZmZmZiJ9fV0sImlzUmljaFRleHQiOnRydWUsImtlZXBMaW5lQnJlYWsiOnRydWV9fV0=--></p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/88102/202004/88102-20200419111530497-1652214821.png" alt="" width="658" height="391" /></p>
+<p>&nbsp;　 上面的代码中的判断条件中有两个：workerCountOf(c) -- 获取当前线程数；&nbsp;isRunning(c)&nbsp; -- 线程池是否是运行状态。这两个方法的参数都是一个int类型，那么一个int是如何能同时表示两个类型呢。一个int 4个字节，32位，这里就是用指定位数（3位）来表示状态，剩下的29位表示线程数，下图展示了这个关系。jdk中还有一些其他类也同步用了这样方法，比如：ReentrantReadWriteLock，高16位表示共享锁的数量，低16位表示互斥锁的数量。</p>
+<p>&nbsp;</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/88102/202004/88102-20200419124944794-824825447.png" alt="" width="570" height="155" /></p>
+<p>&nbsp;　</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;"> CAPACITY= 00011111111111111111111111111111(29个1)<br />// 获取当前线程数
+</span><span style="color: #008000;">//</span><span style="color: #008000;"> 线程池的最大数就是2^29-1</span>
+<span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">int</span> workerCountOf(<span style="color: #0000ff;">int</span><span style="color: #000000;"> c)  {
+ </span><span style="color: #0000ff;">return</span> c &amp;<span style="color: #000000;"> CAPACITY; 
+}<br /><br /></span></pre>
+</div>
+<p>&nbsp;</p>
+<p>　　线程池做为一个对象，有自己的状态机，其状态变化是有内部事件驱动的。下图展示了每个状态以及对应值（状态值是3位二进制），及对应的行为。这里有个插曲：以前面试被问到线程池shutwon和stop的差别。当时认识不清说得特别含糊，其实从这两个状态的英文单词的含义就可以看出7，8分了。 showdown 牛津翻译为：the act of closing a factory or business or stopping a large machine from working, either temporarily or permanently。体现的是进行时，closing，stopping；stop 意思比较多，但都是表示的一个意思：end /&nbsp;&nbsp;not continue。大师的变量名命名那真是相当精确的，要不怎么都提倡程序员学好英语呢。</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/88102/202004/88102-20200419133041823-301633840.png" alt="" width="759" height="300" /></p>
+<p>&nbsp;　　看完了线程池的调度入口，了解了线程池的状态机，我们继续来看下方法&nbsp;addWorker(Runnable firstTask, boolean core)，前文说到线程池的把任务的提交和执行解藕，那就是如何串连的呢，addWorker方法就很好的完成的这个串连。这个方法主要分两个部分：</p>
+<p>　　1，根据线程池状态及线程数判断是返回还是继续。其中第一个 if 条件尤为复杂，已经有注释。</p>
+<p>　　2，创建工作进程对象&nbsp;Worker w ，并执行其持有的线程对象thread 的start 方法。顺利让解藕的执行部分开始工作。</p>
+<p>　　这里的代码逻辑不复杂，有一个标记还是有意思的： retry:(标记，可以写成任意如：abc:) / continue retry ;(跳出当前循环) /break retry; （跳出外层循环）。 以后跳出双重循环是不是也可以这样写？</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">boolean</span> addWorker(Runnable firstTask, <span style="color: #0000ff;">boolean</span><span style="color: #000000;"> core) {
+        retry:
+        </span><span style="color: #0000ff;">for</span><span style="color: #000000;"> (;;) {
+            </span><span style="color: #0000ff;">int</span> c =<span style="color: #000000;"> ctl.get();
+            </span><span style="color: #0000ff;">int</span> rs =<span style="color: #000000;"> runStateOf(c);
+
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> Check if queue empty only if necessary.<br />　　　　　　　</span></pre>
+<div><span style="color: #00ffff;">　　<span style="color: #0000ff;">　　　　　　// 如果 是shutdown 以上， 后在有三个条件 都满足才可以接续执行</span></span></div>
+<div><span style="color: #0000ff;">　　　　　　　　1， shutdown 执行原有任务，可能加新任务。</span></div>
+<div><span style="color: #0000ff;">　　　　　　　　2， firstTask 必须为空。</span></div>
+<div><span style="color: #0000ff;">　　　　　　　　3， queue 不能为空（有任务才能接续执行。）</span></div>
+<pre>            <span style="color: #0000ff;">if</span> (rs &gt;= SHUTDOWN &amp;&amp;
+                ! (rs == SHUTDOWN &amp;&amp;<span style="color: #000000;">
+                   firstTask </span>== <span style="color: #0000ff;">null</span> &amp;&amp;
+                   !<span style="color: #000000;"> workQueue.isEmpty()))
+                </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+
+            </span><span style="color: #0000ff;">for</span><span style="color: #000000;"> (;;) {
+                </span><span style="color: #0000ff;">int</span> wc =<span style="color: #000000;"> workerCountOf(c);
+                </span><span style="color: #0000ff;">if</span> (wc &gt;= CAPACITY ||<span style="color: #000000;">
+                    wc </span>&gt;= (core ?<span style="color: #000000;"> corePoolSize : maximumPoolSize))
+                    </span><span style="color: #0000ff;">return</span> <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+                </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (compareAndIncrementWorkerCount(c))
+                    </span><span style="color: #0000ff;">break</span><span style="color: #000000;"> retry;
+                c </span>= ctl.get();  <span style="color: #008000;">//</span><span style="color: #008000;"> Re-read ctl</span>
+                <span style="color: #0000ff;">if</span> (runStateOf(c) !=<span style="color: #000000;"> rs)
+                    </span><span style="color: #0000ff;">continue</span><span style="color: #000000;"> retry;
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> else CAS failed due to workerCount change; retry inner loop</span>
+<span style="color: #000000;">            }
+        }
+
+        </span><span style="color: #0000ff;">boolean</span> workerStarted = <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">boolean</span> workerAdded = <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+        Worker w </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            w </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> Worker(firstTask);
+            </span><span style="color: #0000ff;">final</span> Thread t =<span style="color: #000000;"> w.thread;
+            </span><span style="color: #0000ff;">if</span> (t != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                </span><span style="color: #0000ff;">final</span> ReentrantLock mainLock = <span style="color: #0000ff;">this</span><span style="color: #000000;">.mainLock;
+                mainLock.lock();
+                </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Recheck while holding lock.
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Back out on ThreadFactory failure or if
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> shut down before lock acquired.</span>
+                    <span style="color: #0000ff;">int</span> rs =<span style="color: #000000;"> runStateOf(ctl.get());
+
+                    </span><span style="color: #0000ff;">if</span> (rs &lt; SHUTDOWN ||<span style="color: #000000;">
+                        (rs </span>== SHUTDOWN &amp;&amp; firstTask == <span style="color: #0000ff;">null</span><span style="color: #000000;">)) {
+                        </span><span style="color: #0000ff;">if</span> (t.isAlive()) <span style="color: #008000;">//</span><span style="color: #008000;"> precheck that t is startable</span>
+                            <span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span><span style="color: #000000;"> IllegalThreadStateException();
+                        workers.add(w);
+                        </span><span style="color: #0000ff;">int</span> s =<span style="color: #000000;"> workers.size();
+                        </span><span style="color: #0000ff;">if</span> (s &gt;<span style="color: #000000;"> largestPoolSize)
+                            largestPoolSize </span>=<span style="color: #000000;"> s;
+                        workerAdded </span>= <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+                    }
+                } </span><span style="color: #0000ff;">finally</span><span style="color: #000000;"> {
+                    mainLock.unlock();
+                }
+                </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (workerAdded) {
+                    t.start();
+                    workerStarted </span>= <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+                }
+            }
+        } </span><span style="color: #0000ff;">finally</span><span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;"> workerStarted)
+                addWorkerFailed(w);
+        }
+        </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> workerStarted;
+    }</span></pre>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;　　接下来任务的执行就交给了工作线程 Worker w 了，这是一个内部类实现了接口 Runnable，构造函数中对的 属性thread初始化传是this,&nbsp; 如此&nbsp;addWorker 方法中的&nbsp;t.start(); 就顺利调用了Worker的run 方法了，而run方法又调用&nbsp;runWorker。所以真正执行任务的最终方法在这里 --&nbsp;runWorker。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">Worker 
+Worker(Runnable firstTask) {
+    setState(</span>-1); <span style="color: #008000;">//</span><span style="color: #008000;"> inhibit interrupts until runWorker</span>
+    <span style="color: #0000ff;">this</span>.firstTask =<span style="color: #000000;"> firstTask;
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 注意：这里，这个线程 传的runnable 是this, 也就是 worker本身， 所以start()后进入runnable状态，等到获取时间片后，就执行 run方法。</span>
+    <span style="color: #0000ff;">this</span>.thread = getThreadFactory().newThread(<span style="color: #0000ff;">this</span><span style="color: #000000;">);
+}
+}<br /></span></pre>
+<pre>/** Delegates main run loop to outer runWorker  */<br />public void run() {<br />    runWorker(this);<br />}</pre>
+<pre><span style="color: #000000;">&nbsp;</span></pre>
+</div>
+<p>　　我们继续来读最关键的方法runWorker，我删除了一些判断以及异常处理的代码，让我们可以清晰看到处理逻辑：获取任务，执行，回收线程。获取任务有两种情况：1，线程数小于核心数和队列满了但线程未到最大线程数时直接传入了任务；2，从阻塞获取任务，getTask()方法完成了这一任务</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">final</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> runWorker(Worker w) {
+        Thread wt </span>=<span style="color: #000000;"> Thread.currentThread();
+        Runnable task </span>=<span style="color: #000000;"> w.firstTask;
+        w.firstTask </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        w.unlock(); </span><span style="color: #008000;">//</span><span style="color: #008000;"> allow interrupts</span>
+        <span style="color: #0000ff;">boolean</span> completedAbruptly = <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">while</span> (task != <span style="color: #0000ff;">null</span> || (task = getTask()) != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                w.lock();</span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+                    Throwable thrown </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+                    </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+                        task.run();</span><span style="color: #000000;">
+                    }<br />　　　　　　　　　　　　</span>afterExecute(task, thrown);<br /><br /><span>                    } </span><span style="color: #0000ff;">finally</span><span> { task </span>= <span style="color: #0000ff;">null</span><span>;</span></pre>
+<pre><span style="color: #000000;">　　　　　　　　　　　　// 统计完成任务数
+                    w.completedTasks</span>++<span style="color: #000000;">;
+                    w.unlock();
+                }
+            }
+            completedAbruptly </span>= <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+        } </span><span style="color: #0000ff;">finally</span><span style="color: #000000;"> {<br />            <span style="color: #0000ff;">//回收工作线程，尝试更新状态。</span>
+            processWorkerExit(w, completedAbruptly);
+        }
+    }</span></pre>
+</div>
+<p>　　</p>
+<p>　　　ThreadPoolExecutor 中定义了&nbsp;HashSet&lt;Worker&gt;<span class="s1">worker 工作</span>线程队列，BlockingQueue&lt;Runnable&gt;<span class="s1">workQueue&nbsp;</span><span class="s2">任务队列 来实现了工作线程和任务管理与解藕。到里线程的任务添加流程和执行过程就分析完了，当然中间抛弃了大量细节，比如锁的使用，比如状态机的变化等等。还是如前文所说，先建立初始化知识体系，后面再研究细节补充体系，每次的投入都是在强化它，再也不是无效时间了。简版调用时序图如下：</span></p>
+<p><span class="s2">　　<img src="https://img2020.cnblogs.com/blog/88102/202004/88102-20200419150745534-355412420.png" alt="" width="673" height="476" /></span></p>
+<p>&nbsp;</p>
+<h1 class="postTitle">线程池监控</h1>
+<p>　　 文章开头提到流量增大，心中不安，很大一部分原因，就是因为无法监控到线上线程池的状态，比如阻塞队列中的任务数，活跃线程数，线程池大小等等。当然这也是原于早前的无知，平时我们写代码主要分成两部分：功能性代码，实现业务功能；运维性代码，监控程序状态，分析问题。大师的代码也不例外，只是优雅很多。ThreadPoolExecutor 中有提供了相关运维代码，并在runWorker 中使用模板方法设计模式，为我们获取线程池状态等信息提供接口了，比如：<em style="font-family: 'Courier New'; font-size: 12px;">beforeExecute(wt, task);&nbsp;&nbsp;</em>afterExecute(task, thrown);&nbsp; &nbsp;ThreadPoolExecutor中这两个方法都是空实现，我们可以继承，并重写完成状态的获取。获取线程池运维状态提代了如下方法下图。</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/88102/202004/88102-20200419152917277-1380770419.png" alt="" width="420" height="141" /></p>
+<p>　　参考了一位网友的代码(忘记出处了)，继承ThreadPoolExecutor ，重写afterExecute，打印线程池相关信息</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('d8490d0f-d317-43cd-a468-8ce2e20fdbc2')"><img id="code_img_closed_d8490d0f-d317-43cd-a468-8ce2e20fdbc2" class="code_img_closed" src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_d8490d0f-d317-43cd-a468-8ce2e20fdbc2" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('d8490d0f-d317-43cd-a468-8ce2e20fdbc2',event)" src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_d8490d0f-d317-43cd-a468-8ce2e20fdbc2" class="cnblogs_code_hide">
+<pre><span style="color: #000000;">@Slf4j
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span> ThreadPoolMonitor  <span style="color: #0000ff;">extends</span><span style="color: #000000;"> ThreadPoolExecutor {
+
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String poolName;
+
+    </span><span style="color: #008000;">/**</span><span style="color: #008000;">
+     * 调用线程池的构造方法，并记录线程池名
+     *
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> corePoolSize    线程池核心线程数
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> maximumPoolSize 线程池最大线程数
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> keepAliveTime   线程的最大空闲时间
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> unit            空闲时间的单位
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> workQueue       保存被提交任务的队列
+     * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> poolName        线程池名称
+     </span><span style="color: #008000;">*/</span>
+    <span style="color: #0000ff;">public</span> ThreadPoolMonitor(<span style="color: #0000ff;">int</span> corePoolSize, <span style="color: #0000ff;">int</span> maximumPoolSize, <span style="color: #0000ff;">long</span><span style="color: #000000;"> keepAliveTime,
+                             TimeUnit unit, BlockingQueue</span>&lt;Runnable&gt;<span style="color: #000000;"> workQueue, String poolName) {
+        </span><span style="color: #0000ff;">super</span><span style="color: #000000;">(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue,
+                </span><span style="color: #0000ff;">new</span><span style="color: #000000;"> HamThreadFactory(poolName));
+        </span><span style="color: #0000ff;">this</span>.poolName =<span style="color: #000000;"> poolName;
+    }
+
+    </span><span style="color: #008000;">/**</span><span style="color: #008000;">
+     * 任务执行之后，将相关状态记录日志。
+     </span><span style="color: #008000;">*/</span><span style="color: #000000;">
+    @Override
+    </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> afterExecute(Runnable r, Throwable t) {
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 统计任务耗时、初始线程数、核心线程数、正在执行的任务数量、
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 已完成任务数量、任务总数、队列里缓存的任务数量、池中存在的最大线程数、
+        </span><span style="color: #008000;">//</span><span style="color: #008000;"> 最大允许的线程数、线程空闲时间、线程池是否关闭、线程池是否终止</span>
+        log.info("{}-pool-monitor: " +
+                        " PoolSize: {}, CorePoolSize: {}, Active: {}, " +
+                        "Completed: {}, Task: {}, Queue: {}, LargestPoolSize: {}, " +
+                        "MaximumPoolSize: {},  KeepAliveTime: {}, isShutdown: {}, isTerminated: {}"<span style="color: #000000;">,
+                </span><span style="color: #0000ff;">this</span>.poolName, <span style="color: #0000ff;">this</span>.getPoolSize(), <span style="color: #0000ff;">this</span>.getCorePoolSize(), <span style="color: #0000ff;">this</span><span style="color: #000000;">.getActiveCount(),
+                </span><span style="color: #0000ff;">this</span>.getCompletedTaskCount(), <span style="color: #0000ff;">this</span>.getTaskCount(), <span style="color: #0000ff;">this</span>.getQueue().size(), <span style="color: #0000ff;">this</span><span style="color: #000000;">.getLargestPoolSize(),
+                </span><span style="color: #0000ff;">this</span>.getMaximumPoolSize(), <span style="color: #0000ff;">this</span>.getKeepAliveTime(TimeUnit.MILLISECONDS), <span style="color: #0000ff;">this</span>.isShutdown(), <span style="color: #0000ff;">this</span><span style="color: #000000;">.isTerminated());
+    }
+
+}</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<h1 class="postTitle">&nbsp;</h1>
+<p>　<span style="font-size: 2em;">结语</span></p>
+<p>　　最近学习一直停留在输入（看）层面，所看内容无法转化成自己的知识体系，因而很多东西都无法深入，我们当然知道原因，但是总是说忙得没时间整理。入职哈啰后看到很多优秀的人都是每天大量记录心得感想。等到文博和我们分享他的读书笔记时，从震撼到忏愧。知识只有经历了 输入-消化-输出 才会最终成为我们拥有的。为此文博还在Thor团队发起对赌打卡 -- 哈哈哈，我们当然要应战。</p>
+<p>　　文章到这里就结束了，因为个人经验还有很多不足，文章中的分析也比较粗浅，甚至有错误的地方，希望大家可以拍砖，狠狠的拍。</p>
+<p>&nbsp;</p>
+<p>　　&nbsp;成为一名优秀的程序员！</p>
+<p>　　 参考资料：</p>
+<p>　　[1]&nbsp;<a href="https://intellipaat.com/community/36170/why-is-creating-a-thread-said-to-be-expensive">https://intellipaat.com/community/36170/why-is-creating-a-thread-said-to-be-expensive</a></p>
+<p>　　[2]&nbsp;<strong>https://eli.thegreenplace.net/2018/measuring-context-switching-and-memory-overheads-for-linux-threads/</strong></p>
+<p>　　[3]&nbsp;<a href="https://mp.weixin.qq.com/s/baYuX8aCwQ9PP6k7TDl2Ww">https://mp.weixin.qq.com/s/baYuX8aCwQ9PP6k7TDl2Ww</a></p>
+<p>　　[4] 《java并发编程》</p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-20 08:37</span>&nbsp;
+<a href="https://www.cnblogs.com/jijunjian/">2J</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12724640" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12724640);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 139716, cb_blogApp = 'jijunjian', cb_blogUserGuid = '3f24f67b-fea0-de11-ba8f-001cf0cd104b';
+    var cb_entryId = 12724640, cb_entryCreatedDate = '2020-04-20 08:37', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 2J
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

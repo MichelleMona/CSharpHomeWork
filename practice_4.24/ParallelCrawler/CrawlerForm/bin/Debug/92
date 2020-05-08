@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>用户登录 - 博客园</title>
+    <link rel="shortcut icon" href="//common.cnblogs.com/favicon.ico" type="image/x-icon" />
+    
+    <script src="/assets/auth/signin-iconfont.js?v=ScSUS6QBHt6IK6lejnNeI02uhIViv6D0I_6BLl3z0Zs"></script>
+
+    <link rel="stylesheet" href="/assets/commons.bundle.css?v=nNKmP76bZzat_qQJxJjAS-_HXFD1OFqCp4B3dD68Zus" />
+    <link rel="stylesheet" href="/assets/shared/_card.css?v=ZhvhCOaGAbcMXONJVzp3sISsPQcfpOrAn9G7NqbwPAQ" />
+    
+    <link rel="stylesheet" href="/assets/auth/signin.css?v=qAftVAj2D6KWk-QbO8Wz-drBxU2CTxAQOjKZLdvPHlc" />
+
+</head>
+<body>
+    <!--[if IE]>
+    <div class="unsupported-browser">
+        该页面不支持 Internet Explorer 浏览器，建议使用
+        <a href="https://www.google.cn/intl/zh-CN/chrome/">Google Chrome</a>,
+        <a href="https://www.mozilla.org/zh-CN/firefox/">Firefox</a> 或
+        <a href="https://www.microsoftedgeinsider.com/zh-CN/">Microsoft Edge</a>
+    </div>
+<![endif]-->
+    <div class="center-container ">
+        <div class="center-body card  h-sm-100">
+            <div class="card-body">
+                
+
+
+<div class="login-top text-center">
+    <span class="login-title">博客园用户登录</span>
+    <a href="https://www.cnblogs.com/">
+        <svg class="login-sign">
+            <use xlink:href="#icon-login-sign"></use>
+        </svg>
+    </a>
+    <div class="login-info">代码改变世界</div>
+</div>
+<form id="loginForm" method="post" onsubmit="return false">
+    
+        <div class="form-group">
+            <input tabindex="1" class="form-control" placeholder="登录用户名 / 邮箱" autofocus type="text" data-val="true" data-val-required="请输入登录用户名" id="LoginName" name="LoginName" value="">
+            <span class="invalid-feedback field-validation-valid" data-valmsg-for="LoginName" data-valmsg-replace="true"></span>
+            <a class="txt-forget-sign" href="/forgotloginname">忘记登录用户名</a>
+        </div>
+        <div class="form-group">
+            <input tabindex="2" class="form-control" placeholder="密码" type="password" data-val="true" data-val-required="请输入密码" id="Password" name="Password">
+            <span class="invalid-feedback field-validation-valid" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+            <a class="txt-forget-sign" href="/resetpassword">忘记密码</a>
+        </div>
+        <div class="form-remember custom-control custom-checkbox">
+            <input tabindex="3" type="checkbox" id="IsRemember" name="IsRemember" value="true" class="custom-control-input">
+            <label class="custom-control-label" for="IsRemember">记住我</label>
+        </div>
+
+        <button tabindex="4" id="submitBtn" type="submit" class="btn-login btn btn-primary btn-sm ladda-button px-4" data-style="slide-down">
+            <span class="ladda-label">登录</span>
+        </button>
+        <div class="login-footer">
+            <div class="ajax-error-box">
+                <div class="ajax-error mb-2"></div>
+            </div>
+            <span>没有账户，<a href="/signup">立即注册</a></span>
+        </div>
+    
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8B9DwO68dQFBg9xIizKsC6TOBhRxvo9x3552FtCDjjytD-hmKlliJ2MLaeWH7YSvxvJB1PKD5e74fyJhHFcxWaRy1icGeoyDTYbG4Wgt5UghGZbWnh9MBPG3ZukqBRrh9F3jAlscCKJ5wqA_Ykr21mQ" /></form>
+
+<input type="hidden" id="PublicKey" name="PublicKey" value="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCp0wHYbg/NOPO3nzMD3dndwS0MccuMeXCHgVlGOoYyFwLdS24Im2e7YyhB0wrUsyYf0/nhzCzBK8ZC9eCWqd0aHbdgOQT6CuFQBMjbyGYvlVYU2ZP7kG9Ft6YV6oc9ambuO7nPZh&#x2B;bvXH0zDKfi02prknrScAKC0XhadTHT3Al0QIDAQAB" />
+
+
+            </div>
+        </div>
+    </div>
+    <script src="/assets/commons.bundle.js?v=IxMOY2-wnd2nfxGV5wZPNtFHvvDwjd9YoIqUHSGAmtI"></script>
+    <script src="/assets/shared/_withoutnav.js?v=7w8Bt4qZautbWhX633AlbT6fS0VTr0EZG1vZ-jRoTDU"></script>
+    
+    <script src="/assets/auth/signin.js?v=5PB5Dcfyu2z0JeTIbS7zzICzKIhR7ch1V_QBoPK092w"></script>
+
+</body>
+</html>

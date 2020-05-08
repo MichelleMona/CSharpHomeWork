@@ -1,0 +1,828 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="拉阅读量第二弹，希望你能有所收获。 &amp;quot;我不想听你放那么多屁，我只想知道怎么加速 ！&amp;quot; digitalWrite有多慢 这个程序测试调用10次某语句需要的时间。在山寨版Uno Rev" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>巧用模板加速引脚电平读写 - jerry_fuyi - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy.min.css?v=Nm_ujJtGKDq5SpJ2XERB3wgoRnlvEg7NAIZvC-SzytE" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jerry-fuyi/custom.css?v=QxGDGimsRKr9CZUobyVFO1mi8HA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jerry-fuyi/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jerry-fuyi/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jerry-fuyi/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 525569;
+        var currentBlogApp = 'jerry-fuyi';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'MTTrendy';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<div id="top">
+
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jerry-fuyi/">jerry_fuyi</a>
+</h1>
+<p id="tagline">
+
+</p>
+
+
+</div>
+
+<div id="rightmenu">
+
+	
+<h3>My Links</h3>
+<ul>
+			<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+			<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jerry-fuyi/">
+首页</a>
+</li>
+			<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/jerry_fuyi">
+联系</a></li>
+			<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+订阅</a> 
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+    <img src="/skins/mttrendy/images/xml.gif" alt="订阅" />
+</a></li>
+			<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+	<h3>Blog Stats</h3>
+	<ul>
+		<li>Posts - 
+76</li>
+		<li>Stories - 
+0</li>
+		<li>Comments - 
+13</li>
+		<li>Trackbacks - 
+0
+	</li>
+</ul>
+
+
+	
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+	<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+
+<div id="main">
+	<div id="post_detail">
+	<div class="post">
+		<h2>
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/12773955.html">巧用模板加速引脚电平读写</a>
+
+		</h2>
+		
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p><a href="https://www.cnblogs.com/jerry-fuyi/p/atmega328p_timer.html" target="_blank">拉阅读量</a>第二弹，希望你能有所收获。</p>
+<p><a href="#skip">我不想听你放那么多屁，我只想知道怎么加速<code>digitalWrite</code>！</a></p>
+<h3 id="digitalwrite有多慢">digitalWrite有多慢</h3>
+<pre><code>template&lt;typename T&gt;
+inline void test(T&amp;&amp; f)
+{
+  auto start = micros();
+  f(); f(); f(); f(); f();
+  f(); f(); f(); f(); f();
+  auto finish = micros();
+  Serial.println(finish - start);
+}
+
+void setup() {
+  Serial.begin(9600);
+  test([] { });
+  test([] { pinMode(2, OUTPUT); });
+  test([] { digitalWrite(2, HIGH); });
+  test([] { shiftOut(2, 4, LSBFIRST, 0); });
+}
+
+void loop() {
+  digitalWrite(2, LOW);
+  digitalWrite(2, HIGH);
+}
+</code></pre>
+<p>这个程序测试调用10次某语句需要的时间。在山寨版Uno Rev3上运行，程序输出：</p>
+<pre><code>0
+36
+44
+888
+</code></pre>
+<p>第一组空函数是对照组，<code>0</code>的结果表明<code>test</code>函数没有什么overhead。第二组<code>pinMode</code>的成绩为36μs，无所谓，毕竟<code>pinMode</code>是放在初始化里只调用一次的。第三组<code>digitalWrite</code>为44μs，平均每次4.4μs，看起来还行，但是第四组<code>shiftOut</code>就不太乐观了，每一次需要88.8μs——实际上它调用了24次<code>digitalWrite</code>。</p>
+<p>最后，我还用<code>loop</code>函数在<code>2</code>号引脚上输出了方波，利用逻辑分析仪测得其频率为135kHz。</p>
+<p>通常情况下，这个速度已经够了，但是总有追求极致的人，比如我，或者追求极致的项目，不想浪费单片机的每一点性能。</p>
+<h3 id="数字io寄存器">数字IO寄存器</h3>
+<p><a href="https://www.cnblogs.com/jerry-fuyi/p/11620890.html" target="_blank">AVR单片机教程——数字IO寄存器</a>：</p>
+<blockquote>
+<p>在AVR架构tiny与mega系列的单片机中，每个端口都有3个寄存器控制数字信号IO，分别是PORTx、DDRx和PINx。这里的x是A、B、C或D，由于这4个端口在数字IO方面完全相同，就把它们合并起来讲。相应地，对于每个引脚Pxn，有PORTxn、DDxn（没有R）和PINxn三个bit控制其数字IO。</p>
+<p>DDxn控制引脚方向：当DDxn为1时，Pxn为输出；当DDxn为0时，Pxn为输入。</p>
+<p>当Pxn为输入时，如果PORTxn为1，则该引脚通过一个上拉电阻连接到VCC；否则引脚悬空。</p>
+<p>当Pxn为输出时，如果PORTxn为1，引脚输出高电平；否则输出低电平。</p>
+<p>PINxn的值为Pxn引脚的电平。如果给PINxn写入1，PORTxn的值会翻转。</p>
+</blockquote>
+<p>Arduino Uno Rev3的原理图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200424213532802-320830852.jpg" alt=""></p>
+<p>开发板引脚与单片机引脚的对应关系：</p>
+<table>
+<thead>
+<tr>
+<th>开发板引脚</th>
+<th>单片机引脚</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>PD0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>PD1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PD2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PD3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PD4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PD5</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PD6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>PD7</td>
+</tr>
+<tr>
+<td>8</td>
+<td>PB0</td>
+</tr>
+<tr>
+<td>9</td>
+<td>PB1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>PB2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>PB3</td>
+</tr>
+<tr>
+<td>12</td>
+<td>PB4</td>
+</tr>
+<tr>
+<td>13</td>
+<td>PB5</td>
+</tr>
+<tr>
+<td>A0</td>
+<td>PC0</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>PC1</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>PC2</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>PC3</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>PC4</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>PC5</td>
+</tr>
+</tbody>
+</table>
+<p>把<code>digitalWrite</code>换成寄存器操作，重新测试：</p>
+<pre><code>template&lt;typename T&gt;
+inline void test(T&amp;&amp; f)
+{
+  auto start = micros();
+  f(); f(); f(); f(); f();
+  f(); f(); f(); f(); f();
+  auto finish = micros();
+  Serial.println(finish - start);
+}
+
+void myShiftOut(uint8_t val)
+{
+  uint8_t i;
+  for (i = 0; i &lt; 8; i++)
+  {
+    if (val &amp; 1 &lt;&lt; i)
+      PORTD |= 1 &lt;&lt; PORTD2;
+    else
+      PORTD &amp;= ~(1 &lt;&lt; PORTD2);
+    PORTD |= 1 &lt;&lt; PORTD4;
+    PORTD &amp;= ~(1 &lt;&lt; PORTD4);
+  }
+}
+
+void setup() {
+  Serial.begin(9600);
+  test([] { });
+  test([] { pinMode(2, OUTPUT); });
+  test([] { digitalWrite(2, HIGH); });
+  test([] { shiftOut(2, 4, LSBFIRST, 0); });
+  test([] { DDRD |= 1 &lt;&lt; DDD2; });
+  test([] { PORTD |= 1 &lt;&lt; PORTD2; });
+  test([] { myShiftOut(0); });
+}
+
+void loop() {
+//  digitalWrite(2, LOW);
+//  digitalWrite(2, HIGH);
+  PORTD |= 1 &lt;&lt; PORTD2;
+  PORTD &amp;= ~(1 &lt;&lt; PORTD2);
+}
+</code></pre>
+<p>输出：</p>
+<pre><code>0
+36
+44
+888
+8
+12
+52
+</code></pre>
+<p>引脚<code>2</code>上方波低电平62.5ns，高电平437.5ns（不准确，仪器只有16MHz采样率），频率2.0MHz。</p>
+<p>原来，<code>loop</code>中的两句寄存器操作会编译为以下汇编代码：</p>
+<pre><code>cbi 0x0b, 2
+sbi 0x0b, 2
+</code></pre>
+<p><code>sbi</code>和<code>cbi</code>都是双周期指令，单片机频率16MHz，理论上用软件最快可以输出4MHz方波。</p>
+<h3 id="digitalwrite为何慢">digitalWrite为何慢</h3>
+<p>编程中充满了权衡。Arduino库偏向可移植性与易用性，因此性能较差也是常理之中。</p>
+<pre><code>#define digitalPinToPort(P) ( pgm_read_byte( digital_pin_to_port_PGM + (P) ) )
+#define digitalPinToBitMask(P) ( pgm_read_byte( digital_pin_to_bit_mask_PGM + (P) ) )
+#define digitalPinToTimer(P) ( pgm_read_byte( digital_pin_to_timer_PGM + (P) ) )
+#define portOutputRegister(P) ( (volatile uint8_t *)( pgm_read_word( port_to_output_PGM + (P))) )
+
+const uint16_t PROGMEM port_to_output_PGM[] = {
+  NOT_A_PORT,
+  NOT_A_PORT,
+  (uint16_t) &amp;PORTB,
+  (uint16_t) &amp;PORTC,
+  (uint16_t) &amp;PORTD,
+};
+
+const uint8_t PROGMEM digital_pin_to_port_PGM[] = {
+  /*  0 */ PD, PD, PD, PD, PD, PD, PD, PD,
+  /*  8 */ PB, PB, PB, PB, PB, PB,
+  /* 14 */ PC, PC, PC, PC, PC, PC,
+};
+
+const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
+  /*  0, port D */ _BV(0), _BV(1), _BV(2), _BV(3), _BV(4), _BV(5), _BV(6), _BV(7),
+  /*  8, port B */ _BV(0), _BV(1), _BV(2), _BV(3), _BV(4), _BV(5),
+  /* 14, port C */ _BV(0), _BV(1), _BV(2), _BV(3), _BV(4), _BV(5),
+};
+
+const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
+  /* 0 - port D */ NOT_ON_TIMER, NOT_ON_TIMER, NOT_ON_TIMER, TIMER2B, NOT_ON_TIMER, TIMER0B, TIMER0A, NOT_ON_TIMER,
+  /* 8 - port B */ NOT_ON_TIMER, TIMER1A, TIMER1B, TIMER2A, NOT_ON_TIMER, NOT_ON_TIMER,
+  /* 14 - port C */ NOT_ON_TIMER, NOT_ON_TIMER, NOT_ON_TIMER, NOT_ON_TIMER, NOT_ON_TIMER, NOT_ON_TIMER,
+};
+
+void digitalWrite(uint8_t pin, uint8_t val)
+{
+  uint8_t timer = digitalPinToTimer(pin);
+  uint8_t bit = digitalPinToBitMask(pin);
+  uint8_t port = digitalPinToPort(pin);
+  volatile uint8_t *out;
+
+  if (port == NOT_A_PIN) return;
+
+  // If the pin that support PWM output, we need to turn it off
+  // before doing a digital write.
+  if (timer != NOT_ON_TIMER) turnOffPWM(timer);
+
+  out = portOutputRegister(port);
+
+  uint8_t oldSREG = SREG;
+  cli();
+
+  if (val == LOW) {
+    *out &amp;= ~bit;
+  } else {
+    *out |= bit;
+  }
+
+  SREG = oldSREG;
+}
+</code></pre>
+<p><code>digitalWrite</code>的实现分为三个部分：</p>
+<ol>
+<li>
+<p>把<code>pin</code>映射到<code>timer</code>、<code>bit</code>和<code>port</code>，分别表示<code>pin</code>在哪个定时器上、对应的bit mask和<code>PORTx</code>寄存器的编号，如果在定时器上还要关闭定时器的PWM；</p>
+</li>
+<li>
+<p>把编号<code>port</code>映射到<code>PORTx</code>的指针<code>out</code>；</p>
+</li>
+<li>
+<p>关闭全局中断，通过<code>out</code>指针对寄存器<code>PORTx</code>进行位操作，最后恢复中断状态。</p>
+</li>
+</ol>
+<p>每一步映射都是常数时间的，但是4次加起来就是比较可观的时间了，还要考虑中断，还要通过指针访问寄存器，难怪<code>digitalWrite</code>很慢。</p>
+<p>我想要加速<code>digitalWrite</code>，但是又不想硬编码，即使用<code>digitalWrite_1(LOW)</code>这样的形式，需要参数化的引脚编号，怎么办呢？是时候让模板出场了。</p>
+<h3 id="c模板">C++模板</h3>
+<p>三五行字肯定讲不清模板，这里只介绍一些基本概念和后面会用到的语法。</p>
+<p>在C++中，模板是一系列类、一系列函数或一系列变量（C++14），对于每一组模板参数，类/函数/变量模板都会实例化为一个模板类/函数/变量。模板参数可以是类型、非类型常量或另一个模板。</p>
+<p>对于非类型模板参数，实例化所用参数必须是编译期常量。参数可以进行隐式类型转换，包括整值提升但不包括窄化转换。</p>
+<p>对于函数模板，如果可以从函数参数类型推导出模板参数，则可以无需指明模板参数。在重载决议时，模板函数的优先级位于非模板函数之后。</p>
+<p>模板可以特化，为一种或一系列特定的模板参数提供特殊的实现，其他的仍然遵循主模板的实现。模板参数全部指定的称为全特化，部分指定的称为偏特化，模板函数不能偏特化。从C++11开始，主模板可以是<code>delete</code>的。所有特化都必须出现在第一次实例化之前。</p>
+<h3 id="digitalwrite函数模板">digitalWrite函数模板</h3>
+<p><a id="skip"></a><code>digitalWrite</code>可以改写成函数模板，引脚编号为模板参数：</p>
+<pre><code>template&lt;int P&gt;
+void digitalWrite(uint8_t) = delete;
+
+template&lt;&gt;
+inline void digitalWrite&lt;0&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD0;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD0);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;1&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD1;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD1);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;2&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD2;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD2);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;3&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD3;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD3);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;4&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD4;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD4);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;5&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD5;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD5);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;6&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD6;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD6);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;7&gt;(uint8_t level)
+{
+  if (level)
+    PORTD |= 1 &lt;&lt; PORTD7;
+  else
+    PORTD &amp;= ~(1 &lt;&lt; PORTD7);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;8&gt;(uint8_t level)
+{
+  if (level)
+    PORTB |= 1 &lt;&lt; PORTB0;
+  else
+    PORTB &amp;= ~(1 &lt;&lt; PORTB0);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;9&gt;(uint8_t level)
+{
+  if (level)
+    PORTB |= 1 &lt;&lt; PORTB1;
+  else
+    PORTB &amp;= ~(1 &lt;&lt; PORTB1);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;10&gt;(uint8_t level)
+{
+  if (level)
+    PORTB |= 1 &lt;&lt; PORTB2;
+  else
+    PORTB &amp;= ~(1 &lt;&lt; PORTB2);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;11&gt;(uint8_t level)
+{
+  if (level)
+    PORTB |= 1 &lt;&lt; PORTB3;
+  else
+    PORTB &amp;= ~(1 &lt;&lt; PORTB3);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;12&gt;(uint8_t level)
+{
+  if (level)
+    PORTB |= 1 &lt;&lt; PORTB4;
+  else
+    PORTB &amp;= ~(1 &lt;&lt; PORTB4);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;13&gt;(uint8_t level)
+{
+  if (level)
+    PORTB |= 1 &lt;&lt; PORTB5;
+  else
+    PORTB &amp;= ~(1 &lt;&lt; PORTB5);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;A0&gt;(uint8_t level)
+{
+  if (level)
+    PORTC |= 1 &lt;&lt; PORTC0;
+  else
+    PORTC &amp;= ~(1 &lt;&lt; PORTC0);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;A1&gt;(uint8_t level)
+{
+  if (level)
+    PORTC |= 1 &lt;&lt; PORTC1;
+  else
+    PORTC &amp;= ~(1 &lt;&lt; PORTC1);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;A2&gt;(uint8_t level)
+{
+  if (level)
+    PORTC |= 1 &lt;&lt; PORTC2;
+  else
+    PORTC &amp;= ~(1 &lt;&lt; PORTC2);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;A3&gt;(uint8_t level)
+{
+  if (level)
+    PORTC |= 1 &lt;&lt; PORTC3;
+  else
+    PORTC &amp;= ~(1 &lt;&lt; PORTC3);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;A4&gt;(uint8_t level)
+{
+  if (level)
+    PORTC |= 1 &lt;&lt; PORTC4;
+  else
+    PORTC &amp;= ~(1 &lt;&lt; PORTC4);
+}
+template&lt;&gt;
+inline void digitalWrite&lt;A5&gt;(uint8_t level)
+{
+  if (level)
+    PORTC |= 1 &lt;&lt; PORTC5;
+  else
+    PORTC &amp;= ~(1 &lt;&lt; PORTC5);
+}
+</code></pre>
+<p>测试一下性能：</p>
+<pre><code>template&lt;typename T&gt;
+inline void test(T&amp;&amp; f)
+{
+  auto start = micros();
+  f(); f(); f(); f(); f();
+  f(); f(); f(); f(); f();
+  auto finish = micros();
+  Serial.println(finish - start);
+}
+
+void setup() {
+  Serial.begin(9600);
+  test([] { });
+  test([] { digitalWrite(2, HIGH); });
+  test([] { PORTD |= 1 &lt;&lt; PORTD2; });
+  test([] { digitalWrite&lt;2&gt;(HIGH); });
+  pinMode(2, OUTPUT);
+}
+
+void loop() {
+//  digitalWrite(2, LOW);
+//  digitalWrite(2, HIGH);
+//  PORTD |= 1 &lt;&lt; PORTD2;
+//  PORTD &amp;= ~(1 &lt;&lt; PORTD2);
+  digitalWrite&lt;2&gt;(HIGH);
+  digitalWrite&lt;2&gt;(LOW);
+}
+</code></pre>
+<p>程序输出：</p>
+<pre><code>0
+36
+8
+8
+</code></pre>
+<p>逻辑分析仪测得方波频率为2.0MHz，这表明模板<code>digitalWrite</code>的性能与直接寄存器操作相当。</p>
+<h3 id="讨论">讨论</h3>
+<p>高性能源于信息的编译期可知性。<code>digitalWrite&lt;Pin&gt;(HIGH)</code>中的<code>Pin</code>必须是编译期常量，这使编译器可以调用对应的函数，无需表格、寻址等一系列操作。<code>Pin</code>不能是函数参数，这限制了它的适用范围。</p>
+<p>为了在保留非模板<code>digitalWrite</code>的通用性的同时获得模板<code>digitalWrite</code>的高性能，由于参数数量不同，两个版本可以共存，客户可以按需取用。如果Arduino库中同时存在两者，较好的实现方法是定义函数指针数组存放模板<code>digitalWrite</code>的指针，非模板<code>digitalWrite</code>通过函数指针调用。</p>
+<p>Arduino的<code>digitalWrite</code>实现是分组讨论的，可以减少代码长度，而模板<code>digitalWrite</code>必须对每一个引脚进行特化。解决方案有：</p>
+<ol>
+<li>
+<p>仅对有需求的引脚特化模板，其余沿用非模板<code>digitalWrite</code>，用20%的时间优化80%的代码，把工作量花在刀刃上；</p>
+</li>
+<li>
+<p>见思考题3；</p>
+</li>
+<li>
+<p>使用特殊的模板技巧：</p>
+</li>
+</ol>
+<pre><code>namespace std
+{
+  template&lt;bool B, typename T = void&gt;
+  struct enable_if { };
+  template&lt;typename T&gt;
+  struct enable_if&lt;true, T&gt;
+  {
+    using type = T;
+  };
+  template&lt;bool B, typename T = void&gt;
+  using enable_if_t = typename enable_if&lt;B, T&gt;::type;
+}
+
+namespace detail
+{
+  inline void digitalWriteImpl(bool level, volatile uint8_t&amp; reg, uint8_t bit)
+  {
+    if (level)
+      reg |= 1 &lt;&lt; bit;
+    else
+      reg &amp;= ~(1 &lt;&lt; bit);
+  }
+}
+
+template&lt;int P&gt;
+inline std::enable_if_t&lt;(P &gt;= 0 &amp;&amp; P &lt; 8)&gt; digitalWrite(uint8_t level)
+{
+  detail::digitalWriteImpl(level, PORTD, P);
+}
+
+template&lt;int P&gt;
+inline std::enable_if_t&lt;(P &gt;= 8 &amp;&amp; P &lt; 14)&gt; digitalWrite(uint8_t level)
+{
+  detail::digitalWriteImpl(level, PORTB, P - 8);
+}
+
+template&lt;int P&gt;
+inline std::enable_if_t&lt;(P &gt;= 14 &amp;&amp; P &lt; 20)&gt; digitalWrite(uint8_t level)
+{
+  detail::digitalWriteImpl(level, PORTC, P - 14);
+}
+</code></pre>
+<p>模板<code>digitalWrite</code>声明为<code>inline</code>，事实上在头文件中定义<code>inline</code>函数和声明并在源文件中实现都是可行的。当编译器或链接器内联该函数时，代码体积增加，运行性能提高。对于<code>inline</code>函数和“偏特化”的函数，头文件中需要提供实现，无法隐藏，但是Arduino作为开源社区很少考虑这一点。</p>
+<p>调用处的模板参数不能来自函数参数，但可以来自调用者的模板参数，基于非模板<code>digitalWrite</code>的函数都可以改写成基于模板<code>digitalWrite</code>的模板函数，如<code>shiftOut</code>：</p>
+<pre><code>void myShiftOut(uint8_t val)
+{
+  uint8_t i;
+  for (i = 0; i &lt; 8; i++)
+  {
+    if (val &amp; 1 &lt;&lt; i)
+      PORTD |= 1 &lt;&lt; PORTD2;
+    else
+      PORTD &amp;= ~(1 &lt;&lt; PORTD2);
+    PORTD |= 1 &lt;&lt; PORTD4;
+    PORTD &amp;= ~(1 &lt;&lt; PORTD4);
+  }
+}
+
+template&lt;int Data, int Clock&gt;
+void shiftOut(uint8_t bitOrder, uint8_t val)
+{
+  uint8_t i;
+  for (i = 0; i &lt; 8; i++)
+  {
+    if (bitOrder == LSBFIRST)
+      digitalWrite&lt;Data&gt;(val &amp; 1 &lt;&lt; i);
+    else
+      digitalWrite&lt;Data&gt;(val &amp; 1 &lt;&lt; (7 - i));
+    digitalWrite&lt;Clock&gt;(HIGH);
+    digitalWrite&lt;Clock&gt;(LOW);
+  }
+}
+
+template&lt;typename T&gt;
+inline void test(T&amp;&amp; f)
+{
+  auto start = micros();
+  f(); f(); f(); f(); f();
+  f(); f(); f(); f(); f();
+  auto finish = micros();
+  Serial.println(finish - start);
+}
+
+void setup() {
+  Serial.begin(9600);
+  test([] { });
+  test([] { shiftOut(2, 4, LSBFIRST, 0); });
+  test([] { myShiftOut(0); });
+  test([] { shiftOut&lt;2, 4&gt;(LSBFIRST, 0); });
+  pinMode(2, OUTPUT);
+}
+
+void loop() {
+  
+}
+</code></pre>
+<p>非模板情况下<code>shiftOut(2, 4, LSBFIRST, 0)</code>和<code>shiftOut(7, 8, LSBFIRST, 0)</code>是同一个函数，而模板函数<code>shiftOut&lt;2, 4&gt;(LSBFIRST, 0)</code>和<code>shiftOut&lt;7, 8&gt;(LSBFIRST, 0)</code>则是两个函数，当模板实例较多时程序体积会显著增大，而换来的则是15倍以上的速度提升。</p>
+<h3 id="思考题">思考题</h3>
+<ol>
+<li>
+<p>把更多函数改写成模板形式，如<code>pinMode</code>、<code>digitalRead</code>、<code>analogWrite</code>、<code>shiftIn</code>等。</p>
+</li>
+<li>
+<p>* 把模板<code>shiftOut</code>的参数<code>bitOrder</code>改为模板参数。</p>
+</li>
+<li>
+<p>模板<code>digitalWrite</code>的编写过程非常机械，尝试写一个程序，用配置文件来生成代码。</p>
+</li>
+</ol>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		<p class="postfoot">
+			posted on 
+<span id="post-date">2020-04-25 17:04</span>&nbsp;
+<a href="https://www.cnblogs.com/jerry-fuyi/">jerry_fuyi</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773955" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12773955);return false;">收藏</a>
+		</p>
+	</div>
+	
+	
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 525569, cb_blogApp = 'jerry-fuyi', cb_blogUserGuid = '976af27c-3f06-453c-e544-08d7006bad27';
+    var cb_entryId = 12773955, cb_entryCreatedDate = '2020-04-25 17:04', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 jerry_fuyi
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+
+
+    
+</body>
+</html>

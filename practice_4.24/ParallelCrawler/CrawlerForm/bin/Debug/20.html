@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="1 前言 之所以写本文章，是因为在我停止维护多年前写的 &amp;quot;NetworkSocket&amp;quot; 组件两年多来，还是有一些开发者在关注这个项目，我希望有类似需求的开发者明白为什么要停止更新，" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>深入理解kestrel的应用 - jiulang - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/kewei/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/kewei/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/kewei/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 76161;
+        var currentBlogApp = 'kewei';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/kewei/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/kewei/">老九</a>
+</h1>
+<h2>
+366193849@qq.com
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/kewei/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/jiulang">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/kewei/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+56&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+344</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/kewei/p/12775469.html">深入理解kestrel的应用</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h3 id="1-前言">1 前言</h3>
+<p>之所以写本文章，是因为在我停止维护多年前写的<a href="https://github.com/xljiulang/NetworkSocket">NetworkSocket</a>组件两年多来，还是有一些开发者在关注这个项目，我希望有类似需求的开发者明白为什么要停止更新，可以使用什么更好的方式来替换(其实很大原因是我把时间花在开发<a href="https://github.com/dotnetcore/WebApiClient">WebApiClient</a>上面了)。那时.netcore还没有生下来，asp.net除了蜗居在iis里处理http，其它什么也不能干，而NetworkSocket是这样定义的：</p>
+<blockquote>
+<p>NetworkSocket是一个以中间件(middleware)扩展通讯协议，以插件(plug)扩展服务器功能的支持SSL安全传输的通讯框架；目前支持http、websocket、fast、flex策略与silverlight策略协议。</p>
+</blockquote>
+<h3 id="2-kestrel是什么">2 Kestrel是什么</h3>
+<p>谈到asp.netcore，人们自然就想到它的默认服务器<a href="https://github.com/dotnet/aspnetcore/tree/master/src/Servers/Kestrel">kestrel</a>，在很多场景中，人们甚至认为kestrel等于Web服务器，或者说它只能处理http和http之上的东西。本文先在此下个定义：Kestrel是一款基于中间件来处理tcp连接的服务器，并内置了http(包含websocket、SignalR)解析中间件。也就是说，我们完全可以给kestrel添加其它中间件，用来处理非http的连接的业务场景，让kestrel使用一个端口支持多种协议或多协议一个端口一种协议的要求。</p>
+<h4 id="21-kestrel的中间件是什么">2.1 Kestrel的中间件是什么</h4>
+<p>在asp.netcore的Startup里，我们使用app.UseXXX的扩展方法来应用各种中间件，比如UseRouting、UseStaticFiles等等，它本质上还是调用了<code>IApplicationBuilder.Use(Func&lt;RequestDelegate, RequestDelegate&gt; middleware)</code>，也就说<code>Func&lt;RequestDelegate, RequestDelegate&gt;</code>就是一个中间件。</p>
+<p>对应的，在kestrel世界里，也有一个<code>IConnectionBuilder.Use(Func&lt;ConnectionDelegate, ConnectionDelegate&gt; middleware)</code>，<code>Func&lt;ConnectionDelegate, ConnectionDelegate&gt;</code>就是kestrel的中间件，我们可以如下安装kestrel的中间件：</p>
+<pre><code>kestrel.ListenAnyIP(port: 80, listen =&gt;
+{
+    listen.Use(next =&gt; context =&gt;
+    {
+        if(true)
+        {
+            // 中间件1的逻辑 
+        }else
+        {
+            return next(context);
+        }
+    })
+    .Use(next =&gt; context =&gt;
+    {
+        if(true)
+        {
+            // 中间件2的逻辑
+        }else
+        {
+            return next(context);
+        }
+    });
+});
+</code></pre>
+<p>值得注意的是，kestrel的最后一个中间处理者是http中间件，以上代码，实际的kestrel已经包含3种处理者(文章后部分有中间件的篇幅，然后就容易理解了)，逻辑1、逻辑2和http解析，我们可以简单理解为Startup的app对象，对应kestrel的内置的那个最后中间件。</p>
+<h4 id="22-kestrel的connectioncontext">2.2 Kestrel的ConnectionContext</h4>
+<p>在kestrel中间件里，最重要的对象就是ConnectionDelegate，它等同于<code>Func&lt;ConnectionContext,Task&gt;</code>，我们可以理解为它就是一个Hanlder，传入连接上下文，剩下就是我们要干的工作了，而中间件是除了这个Handler之外，我们还能拿到一个叫next的Handler，我们可以选择是否调用它，如果不调用，流程终止。</p>
+<p>ConnectionContext是kestrel的一个Tcp连接抽象，其核心属性是Transport，表示双工传输层的操作对象，另外提供Abort()方法用于服务端主动关闭连接。基于ConnectionContext，很容易实现一个自定义协议的tcp双工通讯服务器，相比从Socket写起，我们可能可以减少100倍代码量，而得到的是更高性能的服务。</p>
+<h3 id="3-基于kestrel的signalrredis的推送服务">3 基于Kestrel的SignalR+Redis的推送服务</h3>
+<p>本实战中，我们使用asp.netcore内置的SignalR功能，外加自己实现的部分Redis协议（只简单实现发布订阅功能），来做一个消息从云端推送到客户端的服务，我们的服务对客户端支持redis协议订阅或Signal协议订阅，同时我们提供redis+signalR+http三种协议接口给云端其它微服务来发布消息，发布者不用关心客户端是什么协议，只需要选择自己喜欢的协议的发布接口来调用发布。</p>
+<h4 id="31-协议与connectioncontext的关系">3.1 协议与ConnectionContext的关系</h4>
+<p>在我们的这个应用里，一个连接不允许同时使用SignalR和Redis并存协议，也就是说，一个连接在发起第一个请求里，就确定了它整个生命周期里的协议。所以，我们需要分析连接读取到的第一个数据包，确定它是否为Redis协议，如果不是redis协议，我们要将ConnectionContext传达到下一个中间件(即http中间件)。</p>
+<h4 id="32-使用redis中间件">3.2 使用Redis中间件</h4>
+<p>如下代码，Use里面就是Redis中间件，里面的个协议分析逻辑：</p>
+<pre><code>kestrel.ListenAnyIP(options.Port, listen =&gt;
+{
+    listen.Use(next =&gt; async context =&gt;
+    {
+        if (await Protocol.IsRedisAsync(context))
+        {
+            logger.LogDebug($&quot;{context.RemoteEndPoint} {nameof(ClientType.Redis)} 连接&quot;);
+            await redis.HandleAsync(context);
+            logger.LogDebug($&quot;{context.RemoteEndPoint} {nameof(ClientType.Redis)} 断开&quot;);
+        }
+        else
+        {
+            logger.LogDebug($&quot;{context.RemoteEndPoint} {nameof(ClientType.SignalR)} 连接&quot;);
+            await next(context);
+            logger.LogDebug($&quot;{context.RemoteEndPoint} {nameof(ClientType.SignalR)} 断开&quot;);
+        }
+    });
+});
+</code></pre>
+<p>Protocol类</p>
+<pre><code>/// &lt;summary&gt;
+/// 连接的协议判断
+/// &lt;/summary&gt;
+public static class Protocol
+{
+    /// &lt;summary&gt;
+    /// 返回连接是否为redis协议
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;connection&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public static async Task&lt;bool&gt; IsRedisAsync(ConnectionContext connection)
+    {
+        var result = await connection.Transport.Input.ReadAsync();
+        var state = IsRedis(result);
+        connection.Transport.Input.AdvanceTo(result.Buffer.Start);
+        return state;
+    }
+
+    /// &lt;summary&gt;
+    /// 返回数据是否为redis协议
+    /// 这里不必严格检查，只要能区分是http还是redis就行
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;result&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    private static bool IsRedis(ReadResult result)
+    {
+        if (result.Buffer.IsEmpty)
+        {
+            return false;
+        }
+
+        var span = result.Buffer.FirstSpan;
+        return span.Length &gt; 0 &amp;&amp; span[0] == '*';
+    }
+}
+</code></pre>
+<h4 id="33-redisconnectionhandler">3.3 RedisConnectionHandler</h4>
+<p>在3.2代码里，有一个await redis.HandleAsync(context);这个redis就是RedisConnectionHandler实例，它的功能是处理一个redis连接从建立成功之后到断开的所有逻辑。</p>
+<p>我们知道，Redis有好几十个命令，单单是实现发布和订阅功能，我们也要实现必要的8个命令。说到这里，我的脑海里又闪现出一个长长的switch(收到的cmd) case xxx的代码了，我们甚至还需要在switch之前写公共性的代码，比如打印收到的cmd内容，还需要在switch里特别强调default分支：我们不支持这个命令。。。</p>
+<p>既然kestrel基于连接处理中间件，上层的asp.netcore也是基于请求处理中间件，我们完全也可以也依葫芦画瓢，造一个Redis命令中间件Builder，最后将所有Redis中间件串起来，Buid得一个Redis处理委托。</p>
+<pre><code>var builder = new PipelineBuilder&lt;RedisContext&gt;(appServices, context =&gt;
+{
+    // 没有handler来处理
+    return context.Client.ResponseAsync(RedisResponse.Error(&quot;unsupported cmd&quot;));
+})
+.Use((context, next) =&gt;
+{
+    this.logger.LogDebug(context.ToString());
+
+    // 验证客户端是否已授权
+    return context.Cmd.Name != RedisCmdName.Auth &amp;&amp; context.Client.IsAuthed == false
+        ? context.Client.ResponseAsync(RedisResponse.Error(&quot;need auth password&quot;))
+        : next();
+});
+
+// 添加各个cmd对应的handler条件分支
+appServices
+    .GetServices&lt;IRedisCmdHanler&gt;()
+    .ForEach(item =&gt; builder.When(item.CanHandle, item.HandleAsync));
+
+this.handler = builder.Build();
+</code></pre>
+<p>在RedisConnectionHandler，每收一个Redis命令，将命令包装为RedisContext，然后使用build出来的handler对象来处理这个RedisContext就行。剩下的工作，就是我们一个命令实现一个IRedisCmdHanler对象就行，逻辑完全分开。</p>
+<p>IRedisCmdHanler接口：</p>
+<pre><code>/// &lt;summary&gt;
+/// 定义redis命令处理者
+/// &lt;/summary&gt;
+interface IRedisCmdHanler
+{
+    /// &lt;summary&gt;
+    /// 返回是否可以处理
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;context&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    bool CanHandle(RedisContext context);
+
+    /// &lt;summary&gt;
+    /// 处理
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;context&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    Task HandleAsync(RedisContext context);
+}
+</code></pre>
+<h4 id="34-统一redis和signal客户端操作接口">3.4 统一Redis和Signal客户端操作接口</h4>
+<p>在Signal和Redis订阅之后，我们将他们的连接包装为统一接口的IClient对象，IClient提供PublishAsync()方法用于发布消息。</p>
+<pre><code>/// &lt;summary&gt;
+/// 定义客户端的接口
+/// &lt;/summary&gt;
+public interface IClient
+{
+    /// &lt;summary&gt;
+    /// 获取唯一标识
+    /// &lt;/summary&gt;
+    string Id { get; }
+
+    /// &lt;summary&gt;
+    /// 获取连接时间
+    /// &lt;/summary&gt;
+    DateTime ConnectedTime { get; }
+
+    /// &lt;summary&gt;
+    /// 获取客户端类型
+    /// &lt;/summary&gt;
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    ClientType ClientType { get; }
+
+    /// &lt;summary&gt;
+    /// 发送消息
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;message&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    Task&lt;bool&gt; SendMessageAsync(Message message);
+}
+</code></pre>
+<h4 id="35-iclient管理器">3.5 IClient管理器</h4>
+<p>我们还需要维护一份单例的IClient管理器对象，用于维护正在订阅的客户端，在发布消息时，从这个管理器里查找IClient，并调用SendMessageAsync()方法发布消息内容。</p>
+<h4 id="36-signalr部分">3.6 SignalR部分</h4>
+<p>由于SignalR的内容非常简单，官方文档细节齐全，这里将不作任何讲解了。</p>
+<h3 id="4-总结">4 总结</h3>
+<p>由于要讲解的内部比较多，篇幅和时间都有限，本文就只从思路上大概讲解Kestrel在多协议连接的场景的使用方式。一句话，中间件的使用，使得这些场景变得简单，那问题来了，什么是中间件，你理解了吗？</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 21:42</span>&nbsp;
+<a href="https://www.cnblogs.com/kewei/">jiulang</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775469" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12775469);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 76161, cb_blogApp = 'kewei', cb_blogUserGuid = '8cfa08e8-2ac4-df11-ac81-842b2b196315';
+    var cb_entryId = 12775469, cb_entryCreatedDate = '2020-04-25 21:42', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 jiulang
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

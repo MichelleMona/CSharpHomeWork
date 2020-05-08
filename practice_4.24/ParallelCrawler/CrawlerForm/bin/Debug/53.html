@@ -1,0 +1,978 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="在NLP任务中，训练数据一般是一句话（中文或英文），输入序列数据的每一步是一个字母。我们需要对数据进行的预处理是：先对这些字母使用独热编码再把它输入到RNN中，如字母a表示为(1, 0, 0, 0, " />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>词向量表示：word2vec与词嵌入 - 凌逆战 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/LXP-Never/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/LXP-Never/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/LXP-Never/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 442694;
+        var currentBlogApp = 'LXP-Never';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <!-- fork github 控件 -->
+<a href="https://github.com/dashboard" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#000000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media(max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+<!-- 自定制样式文件以及脚本 -->
+<link rel="stylesheet" href="https://files.cnblogs.com/files/LXP-Never/new_6_cnblog.min.css" />
+<script src="https://files.cnblogs.com/files/LXP-Never/new_bad.min.js" defer></script>
+
+<!--显示公式-->
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+
+<!-- 背景动画 -->
+<canvas id="c_n9" width="1920" height="990" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
+<script src="https://files.cnblogs.com/files/LXP-Never/new_canvas-nest.min.js" defer></script>
+
+<!-- 动态标题 -->
+<script src="https://files.cnblogs.com/files/LXP-Never/new_title2.js" defer></script>
+<link rel="stylesheet" href="https://files.cnblogs.com/files/LXP-Never/new_1_title.css" />
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/LXP-Never/">凌逆战</a>
+</div>
+<div class="subtitle">
+Never give up, become better yourself. Fight for my family!
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/LXP-Never/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%87%8C%E9%80%86%E6%88%98">
+联系</a></li>
+    <li id="nav_rss">
+</li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+165&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+147</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/LXP-Never/p/12614422.html">词向量表示：word2vec与词嵌入</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>　　在NLP任务中，训练数据一般是一句话（中文或英文），输入序列数据的每一步是一个字母。我们需要对数据进行的预处理是：先对这些字母使用独热编码再把它输入到RNN中，如字母a表示为(1, 0, 0, 0, &hellip;,0)，字母b表示为(0, 1, 0, 0, &hellip;, 0)。如果只考虑小写字母a~z，那么每一步输入的向量的长度是26。如果一句话有1000个单词，我们需要使用 (1000, ) 维度的独热编码表示每一个单词。</p>
+<p><span style="font-size: 16px;"><strong>缺点</strong></span>：</p>
+<ul>
+<li>每一步输入的向量维数会非常大</li>
+<li>在独热表示中，所有的单词之间都是平等的，单词间的依赖关系被忽略</li>
+</ul>
+<p><span style="font-size: 16px;"><strong>解决方法</strong></span>：</p>
+<ul>
+<li>使用word2vec，学习一种映射关系f，将一个高维词语<span style="color: #888888;">(word)</span>变成一个低维向量<span style="color: #888888;">(vector)</span>，vec=f(word)。</li>
+</ul>
+<p>实现词嵌入一般来说有两种方法：</p>
+<ul>
+<li>基于&ldquo;<span style="color: #ff0000; font-size: 16px;"><strong>计数</strong></span>&rdquo;的方法
+<ul>
+<li>在大型语料库中，计算一个词语和另一个词语同时出现的概率，将经常出现的词映射到向量空间的相似位置。</li>
+</ul>
+</li>
+<li>基于&ldquo;<span style="font-size: 16px;"><strong><span style="color: #ff0000;">预测</span></strong></span>&rdquo;的方法
+<ul>
+<li>从一个词或几个词出发，预测它们可能的相邻词，在预测过程中自然而然地学习到了词嵌入的映射f。</li>
+</ul>
+</li>
+</ul>
+<p>　　通常使用的是<span style="color: #008080;">基于预测</span>的方法。具体来讲，又有两种基于预测的方法，分别叫<span style="color: #008080;"><strong>CBOW</strong></span>和<span style="color: #008080;"><strong>Skip-Gram</strong></span>，接下来会分别介绍它们的原理。</p>
+<h2>CBOW实现词嵌入的原理</h2>
+<p>　　CBOW（Continuous Bag of Words）连续词袋模型，利用某个词语的上下文预测这个词语。<span style="color: #808080;">例如：The manfell in love with the woman。如果只看句子的前半部分，即The man fell in love with the_____，也可以大概率猜到横线处填的是&ldquo;woman&rdquo;</span>。CBOW就是要训练一个模型，用上下文（在上面的句子里是&ldquo;The man fell inlove with the&rdquo;）来预测可能出现的单词（如woman）。</p>
+<p>　　先来考虑用一个单词来预测另外一个单词的情况，对应的网络结构如下图所示：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1433301/202004/1433301-20200424162225314-693268923.bmp" alt="" width="580" height="259"></p>
+<p style="text-align: center;">&nbsp;CBOW模型：用一个单词预测一个单词</p>
+<p>　　在这里，输入的单词还是被独热表示为x，经过一个全连接层得到隐含层h，h再经过一个全连接层得到输出y。</p>
+<p style="text-align: left;">　　V是词汇表中的单词的数量，因此独热表示的x的维度是(V, )。另外输出y相当于做Softmax操作前的logits，它的形状也是(V, )，这是用一个单词预测另一个单词。隐层的神经元数量为N, N一般设定为小于V的值，<span style="color: #008080; font-size: 16px;"><strong>训练完成后，隐层的值被当作是词的嵌入表示</strong></span>，即word2vec中的&ldquo;vec&rdquo;。</p>
+<p>　　如何用多个词来预测一个词呢？答案很简单，可以先对它们做同样的全连接操作，将得到的值全部加起来得到隐含层的值。对应的结构如下图所示。</p>
+<p>&nbsp; &nbsp; &nbsp;　　<img src="https://img2020.cnblogs.com/blog/1433301/202004/1433301-20200424162339182-2007980964.bmp" alt="" width="359" height="383">&nbsp;<img src="https://img2020.cnblogs.com/i1/1433301/202004/1433301-20200401175820589-1622179263.png" alt=""></p>
+<p style="text-align: center;">左图：CBOW模型：用多个单词预测一个单词；右图：CBOW模型的另外一种表示</p>
+<p style="text-align: left;">　　在上图中，上下文是&ldquo;the cat sits on the&rdquo;，要预测的单词为&ldquo;mat&rdquo;。图中的&sum;g(embeddings)表示将the、cat、sits、on、the这5个单词的词嵌入表示加起来（即隐含层的值相加）。</p>
+<p style="text-align: left;">　　在上述结构中，整个网络相当于是一个V类的分类器。V是单词表中单词的数量，这个值往往非常大，所以比较难以训练，通常会简单修改网络的结构，将V类分类变成两类分类。</p>
+<p>　　具体来说，设要预测的目标词汇是&ldquo;mat&rdquo;，会在整个单词表中，随机地取出一些词作为&ldquo;噪声词汇&rdquo;，如&ldquo;computer&rdquo;、&ldquo;boy&rdquo;、&ldquo;fork&rdquo;。模型会做一个两类分类：判断一个词汇是否属于&ldquo;噪声词汇&rdquo;。一般地，设上下文为h，该上下文对应的真正目标词汇为$w_t$，噪声词汇为$\tilde{w}$，优化函数是</p>
+<p>$$J=\ln Q_{\theta}\left(D=1 | \boldsymbol{w}_{t}, \boldsymbol{h}\right)+k \underset{\tilde{\boldsymbol{w}}-P_{\min }}{E}\left[\ln Q_{\theta}(D=0 | \tilde{\boldsymbol{w}}, \boldsymbol{h})\right]$$</p>
+<p>　　$Q_{\theta}\left(D=1 | \boldsymbol{w}_{t}, \boldsymbol{h}\right)$代表的是利用真实词汇$w_t$和上下文$h$对应的词嵌入向量进行一次Logistic回归得到的概率。这样的Logistic回归实际可以看作一层神经网络。因为$w_t$为真实的目标单词，所以希望对应的D=1。另外噪声词汇$\tilde{w}$为与句子没关系的词汇，所以希望对应的D=0，即$\ln Q_{\theta}(D=0 | \tilde{w}_{t},{h})$。另外，$\underset{\tilde{w}-P_{noise}}{E}$表示期望，实际计算的时候不可能精确计算这样一个期望，通常的做法是随机取一些噪声单词去预估这个期望的值。该损失对应的网络结构如下图所示。</p>
+<p style="text-align: center;"><img src="https://img2020.cnblogs.com/i1/1433301/202004/1433301-20200401181003982-1640775213.png" alt=""></p>
+<p style="text-align: center;">选取噪声词进行两类分类的CBOW模型</p>
+<p style="text-align: left;">　　<strong>通过优化二分类损失函数来训练模型后，最后得到的模型中的隐含层可以看作是word2vec中的&ldquo;vec&rdquo;向量</strong>。对于一个单词，先将它独热表示输入模型，隐含层的值是对应的词嵌入表示。另外，在TensorFlow中，这里使用的损失被称为NCE损失，对应的函数为tf.nn.nce_loss。</p>
+<h2>Skip-Gram实现词嵌入的原理</h2>
+<p>　　有了CBOW的基础后，Skip-Gram的原理比较好理解了。在CBOW方法中，是使用上下文来预测出现的词，如上下文是：&ldquo;The man fell in love with the&rdquo;，要预测的词是&ldquo;woman&rdquo;。Skip-Gram方法和CBOW方法正好相反：使用&ldquo;出现的词&rdquo;来预测它&ldquo;上下文文中词&rdquo;。例如：The manfell in love with the woman。如果只看句子的前半部分，即The man fell in love with the_____，Skip-Gram是使用&ldquo;woman&rdquo;，来预测&ldquo;man&rdquo;、&ldquo;fell&rdquo;等单词。所以，可以把Skip-Gram方法看作从一个单词预测另一个单词的问题。</p>
+<p>　　在损失的选择上，和CBOW一样，取出一些&ldquo;噪声词&rdquo;，训练一个两类分类器（即同样使用NCE损失）。</p>
+<h1>在TensorFlow中实现词嵌入</h1>
+<p>　　我们以Skip-Gram方法为例，在TensorFlow中训练一个词嵌入模型。</p>
+<h2>下载数据集</h2>
+<p>首先导入一些需要的库：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">import</span><span style="color: #000000;"> collections
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> math
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> os
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> random
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> zipfile
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> numpy as np
+</span><span style="color: #0000ff;">from</span> six.moves <span style="color: #0000ff;">import</span><span style="color: #000000;"> urllib
+</span><span style="color: #0000ff;">from</span> six.moves <span style="color: #0000ff;">import</span> xrange  <span style="color: #008000;">#</span><span style="color: #008000;"> pylint: disable=redefined-builtin</span>
+<span style="color: #0000ff;">import</span> tensorflow as tf</pre>
+</div>
+<p>　　为了用Skip-Gram方法训练语言模型，需要下载对应语言的语料库。在网站<a href="http://mattmahoney.net/dc/" target="_blank">http://mattmahoney.net/dc/</a>上提供了大量英语语料库供下载，为了方便学习，使用一个比较小的语料库<a href="http://mattmahoney.net/dc/text8.zip" target="_blank">http://mattmahoney.net/dc/text8.zip</a>作为示例训练模型。程序会自动下载这个文件：</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('dedb07cb-620d-4d86-9aea-140ebbad0e4a')"><img id="code_img_closed_dedb07cb-620d-4d86-9aea-140ebbad0e4a" class="code_img_closed" src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img id="code_img_opened_dedb07cb-620d-4d86-9aea-140ebbad0e4a" class="code_img_opened" style="display: none" src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="">
+<div id="cnblogs_code_open_dedb07cb-620d-4d86-9aea-140ebbad0e4a" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> 第一步: 在下面这个地址下载语料库</span>
+url = <span style="color: #800000;">'</span><span style="color: #800000;">http://mattmahoney.net/dc/</span><span style="color: #800000;">'</span>
+
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> maybe_download(filename, expected_bytes):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    这个函数的功能是：
+        如果filename不存在，就在上面的地址下载它。
+        如果filename存在，就跳过下载。
+        最终会检查文字的字节数是否和expected_bytes相同。
+    </span><span style="color: #800000;">"""</span>
+    <span style="color: #0000ff;">if</span> <span style="color: #0000ff;">not</span><span style="color: #000000;"> os.path.exists(filename):
+        </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">start downloading...</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+        filename, _ </span>= urllib.request.urlretrieve(url +<span style="color: #000000;"> filename, filename)
+    statinfo </span>=<span style="color: #000000;"> os.stat(filename)
+    </span><span style="color: #0000ff;">if</span> statinfo.st_size ==<span style="color: #000000;"> expected_bytes:
+        </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Found and verified</span><span style="color: #800000;">'</span><span style="color: #000000;">, filename)
+    </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+        </span><span style="color: #0000ff;">print</span><span style="color: #000000;">(statinfo.st_size)
+        </span><span style="color: #0000ff;">raise</span><span style="color: #000000;"> Exception(
+            </span><span style="color: #800000;">'</span><span style="color: #800000;">Failed to verify </span><span style="color: #800000;">'</span> + filename + <span style="color: #800000;">'</span><span style="color: #800000;">. Can you get to it with a browser?</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> filename
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 下载语料库text8.zip并验证下载</span>
+filename = maybe_download(<span style="color: #800000;">'</span><span style="color: #800000;">text8.zip</span><span style="color: #800000;">'</span>, 31344016)</pre>
+</div>
+<span class="cnblogs_code_collapse">下载语料库代码</span></div>
+<p>　　正如注释中所说的，这段程序会从地址http://mattmahoney.net/dc/text8.zip下载该语料库，并保存为text8.zip文件。如果在当前目录中text8.zip已经存在了，则不会去下载。此外，这段程序还会验证text8.zip的字节数是否正确。</p>
+<p>　　如果读者运行这段程序后，发现没有办法正常下载文件，可以尝试使用上述的url手动下载，并将下载好的文件放在当前目录下。</p>
+<p>　　下载、验证完成后，使用下面的程序将语料库中的数据读出来：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> 将语料库解压，并转换成一个word的list</span>
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> read_data(filename):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    这个函数的功能是：
+        将下载好的zip文件解压并读取为word的list
+    </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+    with zipfile.ZipFile(filename) as f:
+        data </span>=<span style="color: #000000;"> tf.compat.as_str(f.read(f.namelist()[0])).split()
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> data
+
+
+vocabulary </span>=<span style="color: #000000;"> read_data(filename)
+</span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Data size</span><span style="color: #800000;">'</span>, len(vocabulary))  <span style="color: #008000;">#</span><span style="color: #008000;"> 总长度为1700万左右</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 输出前100个词。</span>
+<span style="color: #0000ff;">print</span>(vocabulary[0:100])</pre>
+</div>
+<p>　　这段程序会把text8.zip解压，并读取为Python中的列表，列表中的每一个元素是一个单词，如：</p>
+<div class="cnblogs_code">
+<pre>[<span style="color: #800000;">'</span><span style="color: #800000;">anarchism</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">originated</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">as</span><span style="color: #800000;">'</span>,...,<span style="color: #800000;">'</span><span style="color: #800000;">although</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">there</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">are</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">differing</span><span style="color: #800000;">'</span>]</pre>
+</div>
+<p>这个单词列表原本是一些连续的句子，只是在语料库的预处理中被去掉了标点。它是原始的语料库。</p>
+<h2>制作词表</h2>
+<p>　　下载并取出语料库后，来制作一个单词表，它可以将单词映射为一个数字，这个数字是该单词的id。如原来的数据是['anarchism', 'originated', 'as', 'a', 'term', 'of','abuse', 'first', ....., ]，那么映射之后的数据是[5234, 3081,12, 6, 195, 2, 3134, 46, ....]，其中5234代表单词anarchism,3081代表单词originated，依此类推。</p>
+<p>　　一般来说，因为在语料库中有些词只出现有限的几次，如果单词表中包含了语料库中的所有词，会过于庞大。所以，单词表一般只包含最常用的那些词。对于剩下的不常用的词，会将它替换为一个罕见词标记&ldquo;UNK&rdquo;。所有的罕见词都会被映射为同一个单词id。</p>
+<p>　　制作词表并对之前的语料库进行转换的代码为：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> 第二步: 制作一个词表，将不常见的词变成一个UNK标识符</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 词表的大小为5万（即我们只考虑最常出现的5万个词）</span>
+vocabulary_size = 50000
+
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> build_dataset(words, n_words):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    函数功能：将原始的单词表示变成index
+    </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+    count </span>= [[<span style="color: #800000;">'</span><span style="color: #800000;">UNK</span><span style="color: #800000;">'</span>, -1<span style="color: #000000;">]]
+    count.extend(collections.Counter(words).most_common(n_words </span>- 1<span style="color: #000000;">))
+    dictionary </span>=<span style="color: #000000;"> dict()
+    </span><span style="color: #0000ff;">for</span> word, _ <span style="color: #0000ff;">in</span><span style="color: #000000;"> count:
+        dictionary[word] </span>=<span style="color: #000000;"> len(dictionary)
+    data </span>=<span style="color: #000000;"> list()
+    unk_count </span>=<span style="color: #000000;"> 0
+    </span><span style="color: #0000ff;">for</span> word <span style="color: #0000ff;">in</span><span style="color: #000000;"> words:
+        </span><span style="color: #0000ff;">if</span> word <span style="color: #0000ff;">in</span><span style="color: #000000;"> dictionary:
+            index </span>=<span style="color: #000000;"> dictionary[word]
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            index </span>= 0  <span style="color: #008000;">#</span><span style="color: #008000;"> UNK的index为0</span>
+            unk_count += 1<span style="color: #000000;">
+        data.append(index)
+    count[0][</span>1] =<span style="color: #000000;"> unk_count
+    reversed_dictionary </span>=<span style="color: #000000;"> dict(zip(dictionary.values(), dictionary.keys()))
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> data, count, dictionary, reversed_dictionary
+
+
+data, count, dictionary, reverse_dictionary </span>=<span style="color: #000000;"> build_dataset(vocabulary,
+                                                            vocabulary_size)
+</span><span style="color: #0000ff;">del</span> vocabulary  <span style="color: #008000;">#</span><span style="color: #008000;"> 删除已节省内存</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 输出最常出现的5个单词</span>
+<span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Most common words (+UNK)</span><span style="color: #800000;">'</span>, count[:5<span style="color: #000000;">])
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 输出转换后的数据库data，和原来的单词（前10个）</span>
+<span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Sample data</span><span style="color: #800000;">'</span>, data[:10], [reverse_dictionary[i] <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> data[:10<span style="color: #000000;">]])
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 我们下面就使用data来制作训练集</span>
+data_index = 0</pre>
+</div>
+<p>　　在这里的程序中，单词表中只包含了最常用的50000个单词。请注意，在这个实现中，名词的单复数形式（如boy和boys），动词的不同时态（如make和made）都被算作是不同的单词。原来的训练数据vocabulary是一个单词的列表，在经过转换后，它变成了一个单词id的列表，即程序中的变量data，它的形式是[5234, 3081, 12, 6, 195, 2,3134, 46, ....]。</p>
+<h2>生成每步的训练样本</h2>
+<p>　　上一步中得到的变量data包含了训练集中所有的数据，现在把它转换成训练时使用的batch数据。一个batch可以看作是一些&ldquo;单词对&rdquo;的集合，如woman -&gt; man, woman-&gt; fell，箭头左边表示&ldquo;出现的单词&rdquo;，右边表示该单词所在的&ldquo;上下文&rdquo;中的单词，这是在第14.2.2节中所说的Skip-Gram方法。</p>
+<p>　　制作训练batch的详细程序如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> 第三步：定义一个函数，用于生成skip-gram模型用的batch</span>
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> generate_batch(batch_size, num_skips, skip_window):
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> data_index相当于一个指针，初始为0</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 每次生成一个batch，data_index就会相应地往后推</span>
+    <span style="color: #0000ff;">global</span><span style="color: #000000;"> data_index
+    </span><span style="color: #0000ff;">assert</span> batch_size % num_skips ==<span style="color: #000000;"> 0
+    </span><span style="color: #0000ff;">assert</span> num_skips &lt;= 2 *<span style="color: #000000;"> skip_window
+    batch </span>= np.ndarray(shape=(batch_size), dtype=<span style="color: #000000;">np.int32)
+    labels </span>= np.ndarray(shape=(batch_size, 1), dtype=<span style="color: #000000;">np.int32)
+    span </span>= 2 * skip_window + 1  <span style="color: #008000;">#</span><span style="color: #008000;"> [ skip_window target skip_window ]</span>
+    buffer = collections.deque(maxlen=<span style="color: #000000;">span)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> data_index是当前数据开始的位置</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 产生batch后就往后推1位（产生batch）</span>
+    <span style="color: #0000ff;">for</span> _ <span style="color: #0000ff;">in</span><span style="color: #000000;"> range(span):
+        buffer.append(data[data_index])
+        data_index </span>= (data_index + 1) %<span style="color: #000000;"> len(data)
+    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(batch_size //<span style="color: #000000;"> num_skips):
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 利用buffer生成batch</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> buffer是一个长度为 2 * skip_window + 1长度的word list</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 一个buffer生成num_skips个数的样本</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;">     print([reverse_dictionary[i] for i in buffer])</span>
+        target = skip_window  <span style="color: #008000;">#</span><span style="color: #008000;"> target label at the center of the buffer</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;">     targets_to_avoid保证样本不重复</span>
+        targets_to_avoid =<span style="color: #000000;"> [skip_window]
+        </span><span style="color: #0000ff;">for</span> j <span style="color: #0000ff;">in</span><span style="color: #000000;"> range(num_skips):
+            </span><span style="color: #0000ff;">while</span> target <span style="color: #0000ff;">in</span><span style="color: #000000;"> targets_to_avoid:
+                target </span>= random.randint(0, span - 1<span style="color: #000000;">)
+            targets_to_avoid.append(target)
+            batch[i </span>* num_skips + j] =<span style="color: #000000;"> buffer[skip_window]
+            labels[i </span>* num_skips + j, 0] =<span style="color: #000000;"> buffer[target]
+        buffer.append(data[data_index])
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 每利用buffer生成num_skips个样本，data_index就向后推进一位</span>
+        data_index = (data_index + 1) %<span style="color: #000000;"> len(data)
+    data_index </span>= (data_index + len(data) - span) %<span style="color: #000000;"> len(data)
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> batch, labels
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 默认情况下skip_window=1, num_skips=2</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 此时就是从连续的3(3 = skip_window*2 + 1)个词中生成2(num_skips)个样本。</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 如连续的三个词['used', 'against', 'early']</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 生成两个样本：against -&gt; used, against -&gt; early</span>
+batch, labels = generate_batch(batch_size=8, num_skips=2, skip_window=1<span style="color: #000000;">)
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(8<span style="color: #000000;">):
+    </span><span style="color: #0000ff;">print</span><span style="color: #000000;">(batch[i], reverse_dictionary[batch[i]],
+          </span><span style="color: #800000;">'</span><span style="color: #800000;">-&gt;</span><span style="color: #800000;">'</span>, labels[i, 0], reverse_dictionary[labels[i, 0]])</pre>
+</div>
+<p>&nbsp;</p>
+<p>　　尽管代码中已经给出了注释，但为了便于读者理解，还是对这段代码做进一步详细的说明。这里生成一个batch的语句为：batch, labels=generate_batch(batch_size=8,num_skips=2, skip_window=1)，每运行一次generate_batch函数，会产生一个batch以及对应的标签labels。注意到该函数有三个参数，batch_size、num_skips和skip_window，下面来说明这三个参数的作用。</p>
+<p>　　参数batch_size应该是最好理解的，它表示一个batch中单词对的个数。generate_batch返回两个值batch和labels，前者表示Skip-Gram方法中&ldquo;出现的单词&rdquo;，后者表示&ldquo;上下文&rdquo;中的单词，它们的形状分别为(batch_size, )和(batch_size, 1)。</p>
+<p>　　再来看参数num_skips和skip_window。在生成单词对时，会在语料库中先取出一个长度为skip_window*2+1连续单词列表，这个连续的单词列表是上面程序中的变量buffer。buffer中最中间的那个单词是Skip-Gram方法中&ldquo;出现的单词&rdquo;，其余skip_window*2个单词是它的&ldquo;上下文&rdquo;。会在skip_window*2个单词中随机选取num_skips个单词，放入的标签labels。</p>
+<p>　　如skip_window=1 , num_skips=2的情况。会首先选取一个长度为3的buffer，假设它是['anarchism', 'originated','as']，此时originated为中心单词，剩下的两个单词为它的上下文。再在这两个单词中选择num_skips形成标签。由于num_skips=2，所以实际只能将这两个单词都选上（标签不能重复），最后生成的训练数据为originated -&gt;anarchism和originated -&gt; as。</p>
+<p>　　又如skip_window=3, num_skips=2，会首先选取一个长度为7的buffer，假设是['anarchism', 'originated', 'as','a', 'term', 'of', 'abuse']，此时中心单词为a，再在剩下的单词中随机选取两个，构成单词对。比如选择term和of，那么训练数据是a -&gt; term, a-&gt; of。</p>
+<p>　　由于每一次都是在skip*2个单词中选择num_skips个单词，并且单词不能重复，所以要求skip_window*2&gt;=num_skips。这在程序中也有所体现（对应的语句是assert num_skips &lt;=2 * skip_window）。</p>
+<p>　　在接下来的训练步骤中，每一步都会调用一次generate_batch函数，并用返回的batch和labels作为训练数据进行训练。</p>
+<h2>定义模型</h2>
+<p>　　此处的模型实际可以抽象为：用一个单词预测另一个单词，在输出时，不使用Softmax损失，而使用NCE损失，即再选取一些&ldquo;噪声词&rdquo;，作为负样本进行两类分类。对应的定义模型代码为：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> 第四步: 建立模型.</span>
+<span style="color: #000000;">
+batch_size </span>= 128<span style="color: #000000;">
+embedding_size </span>= 128  <span style="color: #008000;">#</span><span style="color: #008000;"> 词嵌入空间是128维的。即word2vec中的vec是一个128维的向量</span>
+skip_window = 1  <span style="color: #008000;">#</span><span style="color: #008000;"> skip_window参数和之前保持一致</span>
+num_skips = 2  <span style="color: #008000;">#</span><span style="color: #008000;"> num_skips参数和之前保持一致</span>
+
+<span style="color: #008000;">#</span><span style="color: #008000;"> 在训练过程中，会对模型进行验证 </span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 验证的方法就是找出和某个词最近的词。</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 只对前valid_window的词进行验证，因为这些词最常出现</span>
+valid_size = 16  <span style="color: #008000;">#</span><span style="color: #008000;"> 每次验证16个词</span>
+valid_window = 100  <span style="color: #008000;">#</span><span style="color: #008000;"> 这16个词是在前100个最常见的词中选出来的</span>
+valid_examples = np.random.choice(valid_window, valid_size, replace=<span style="color: #000000;">False)
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 构造损失时选取的噪声词的数量</span>
+num_sampled = 64<span style="color: #000000;">
+
+graph </span>=<span style="color: #000000;"> tf.Graph()
+
+with graph.as_default():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 输入的batch</span>
+    train_inputs = tf.placeholder(tf.int32, shape=<span style="color: #000000;">[batch_size])
+    train_labels </span>= tf.placeholder(tf.int32, shape=[batch_size, 1<span style="color: #000000;">])
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 用于验证的词</span>
+    valid_dataset = tf.constant(valid_examples, dtype=<span style="color: #000000;">tf.int32)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 下面采用的某些函数还没有gpu实现，所以我们只在cpu上定义模型</span>
+    with tf.device(<span style="color: #800000;">'</span><span style="color: #800000;">/cpu:0</span><span style="color: #800000;">'</span><span style="color: #000000;">):
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 定义1个embeddings变量，相当于一行存储一个词的embedding</span>
+        embeddings =<span style="color: #000000;"> tf.Variable(
+            tf.random_uniform([vocabulary_size, embedding_size], </span>-1.0, 1.0<span style="color: #000000;">))
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 利用embedding_lookup可以轻松得到一个batch内的所有的词嵌入</span>
+        embed =<span style="color: #000000;"> tf.nn.embedding_lookup(embeddings, train_inputs)
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 创建两个变量用于NCE Loss（即选取噪声词的二分类损失）</span>
+        nce_weights =<span style="color: #000000;"> tf.Variable(
+            tf.truncated_normal([vocabulary_size, embedding_size],
+                                stddev</span>=1.0 /<span style="color: #000000;"> math.sqrt(embedding_size)))
+        nce_biases </span>=<span style="color: #000000;"> tf.Variable(tf.zeros([vocabulary_size]))
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> tf.nn.nce_loss会自动选取噪声词，并且形成损失。</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 随机选取num_sampled个噪声词</span>
+    loss =<span style="color: #000000;"> tf.reduce_mean(
+        tf.nn.nce_loss(weights</span>=<span style="color: #000000;">nce_weights,
+                       biases</span>=<span style="color: #000000;">nce_biases,
+                       labels</span>=<span style="color: #000000;">train_labels,
+                       inputs</span>=<span style="color: #000000;">embed,
+                       num_sampled</span>=<span style="color: #000000;">num_sampled,
+                       num_classes</span>=<span style="color: #000000;">vocabulary_size))
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 得到loss后，我们就可以构造优化器了</span>
+    optimizer = tf.train.GradientDescentOptimizer(1.0<span style="color: #000000;">).minimize(loss)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 计算词和词的相似度（用于验证）</span>
+    norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keep_dims=<span style="color: #000000;">True))
+    normalized_embeddings </span>= embeddings /<span style="color: #000000;"> norm
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 找出和验证词的embedding并计算它们和所有单词的相似度</span>
+    valid_embeddings =<span style="color: #000000;"> tf.nn.embedding_lookup(
+        normalized_embeddings, valid_dataset)
+    similarity </span>=<span style="color: #000000;"> tf.matmul(
+        valid_embeddings, normalized_embeddings, transpose_b</span>=<span style="color: #000000;">True)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 变量初始化步骤</span>
+    init = tf.global_variables_initializer()</pre>
+</div>
+<p>　　先定义了一个embeddings变量，这个变量的形状是(vocabulary_size, embedding_size)，相当于每一行存了一个单词的嵌入向量。例如，单词id为0的嵌入是embeddings[0, :]，单词id为1的嵌入是embeddings[1,:]，依此类推。对于输入数据train_inputs，用一个tf.nn.embedding_lookup函数，可以根据embeddings变量将其转换成对应的词嵌入向量embed。对比embed和输入数据的标签train_labels，用tf.nn.nce_loss函数可以直接定义其NCE损失。</p>
+<p>　　另外，在训练模型时，还希望对模型进行验证。此处采取的方法是选出一些&ldquo;验证单词&rdquo;，计算在嵌入空间中与其最相近的词。由于直接得到的embeddings矩阵可能在各个维度上有不同的大小，为了使计算的相似度更合理，先对其做一次归一化，用归一化后的normalized_embeddings计算验证词和其他单词的相似度。</p>
+<h2>执行训练</h2>
+<p>　　完成了模型定义后，就可以进行训练了，对应的代码比较简单：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> 第五步：开始训练</span>
+num_steps = 100001<span style="color: #000000;">
+
+with tf.Session(graph</span>=<span style="color: #000000;">graph) as session:
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 初始化变量</span>
+<span style="color: #000000;">    init.run()
+    </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Initialized</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+
+    average_loss </span>=<span style="color: #000000;"> 0
+    </span><span style="color: #0000ff;">for</span> step <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(num_steps):
+        batch_inputs, batch_labels </span>=<span style="color: #000000;"> generate_batch(
+            batch_size, num_skips, skip_window)
+        feed_dict </span>=<span style="color: #000000;"> {train_inputs: batch_inputs, train_labels: batch_labels}
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 优化一步</span>
+        _, loss_val = session.run([optimizer, loss], feed_dict=<span style="color: #000000;">feed_dict)
+        average_loss </span>+=<span style="color: #000000;"> loss_val
+
+        </span><span style="color: #0000ff;">if</span> step % 2000 ==<span style="color: #000000;"> 0:
+            </span><span style="color: #0000ff;">if</span> step &gt;<span style="color: #000000;"> 0:
+                average_loss </span>/= 2000
+            <span style="color: #008000;">#</span><span style="color: #008000;"> 2000个batch的平均损失</span>
+            <span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Average loss at step </span><span style="color: #800000;">'</span>, step, <span style="color: #800000;">'</span><span style="color: #800000;">: </span><span style="color: #800000;">'</span><span style="color: #000000;">, average_loss)
+            average_loss </span>=<span style="color: #000000;"> 0
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 每1万步，我们进行一次验证</span>
+        <span style="color: #0000ff;">if</span> step % 10000 ==<span style="color: #000000;"> 0:
+            </span><span style="color: #008000;">#</span><span style="color: #008000;"> sim是验证词与所有词之间的相似度</span>
+            sim =<span style="color: #000000;"> similarity.eval()
+            </span><span style="color: #008000;">#</span><span style="color: #008000;"> 一共有valid_size个验证词</span>
+            <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(valid_size):
+                valid_word </span>=<span style="color: #000000;"> reverse_dictionary[valid_examples[i]]
+                top_k </span>= 8  <span style="color: #008000;">#</span><span style="color: #008000;"> 输出最相邻的8个词语</span>
+                nearest = (-sim[i, :]).argsort()[1:top_k + 1<span style="color: #000000;">]
+                log_str </span>= <span style="color: #800000;">'</span><span style="color: #800000;">Nearest to %s:</span><span style="color: #800000;">'</span> %<span style="color: #000000;"> valid_word
+                </span><span style="color: #0000ff;">for</span> k <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(top_k):
+                    close_word </span>=<span style="color: #000000;"> reverse_dictionary[nearest[k]]
+                    log_str </span>= <span style="color: #800000;">'</span><span style="color: #800000;">%s %s,</span><span style="color: #800000;">'</span> %<span style="color: #000000;"> (log_str, close_word)
+                </span><span style="color: #0000ff;">print</span><span style="color: #000000;">(log_str)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> final_embeddings是我们最后得到的embedding向量</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 它的形状是[vocabulary_size, embedding_size]</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 每一行就代表着对应index词的词嵌入表示</span>
+    final_embeddings = normalized_embeddings.eval()</pre>
+</div>
+<p>　　每执行1万步，会执行一次验证，即选取一些&ldquo;验证词&rdquo;，选取在当前的嵌入空间中，与其距离最近的几个词，并将这些词输出。例如，在网络初始化时（step=0），模型的验证输出为：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">Nearest to they: uniformity, aiding, cei, hutcheson, roca, megawati, ginger, celled,
+Nearest to would: scores, amp, ethyl, takes, gopher, agni, somalis, ideogram,
+Nearest to nine: anglophones, leland, fdi, scavullo, woven, sepp, tonle, allying,
+Nearest to three: geschichte, physically, awarded, walden, idm, drift, devries, sure,
+Nearest to but: duplicate, marcel, phosphorus, paths, devout, borrowing, zap, schism,</span></pre>
+</div>
+<p>　　可以发现这些输出完全是随机的，并没有特别的意义。</p>
+<p>　　但训练到10万步时，验证输出变为：</p>
+<div class="cnblogs_code">
+<pre>Nearest to they: we, there, he, you, it, she, <span style="color: #0000ff;">not</span><span style="color: #000000;">, who,
+Nearest to would: will, can, could, may, must, might, should, to,
+Nearest to nine: eight, seven, six, five, zero, four, three, circ,
+Nearest to three: five, four, two, six, seven, eight, thaler, mico,
+Nearest to but: however, </span><span style="color: #0000ff;">and</span>, although, which, microcebus, <span style="color: #0000ff;">while</span>, thaler, <span style="color: #0000ff;">or</span>,</pre>
+</div>
+<p>　　此时，embedding空间中的向量表示已经具备了一定含义。例如，和单词that最相近的是which，与many最相似的为some，与its最相似的是their等。这些相似性都是容易理解的。如果增加训练的步数，并且合理调节模型中的参数，还会得到更精确的词嵌入表示。</p>
+<p>　　最终，得到的词嵌入向量为final_embeddings，它是归一化后的词嵌入向量，形状为(vocabulary_size,embedding_size), final_embeddings[0, :]是id为0的单词对应的词嵌入表示，final_embeddings[1, :]是id为1的单词对应的词嵌入表示，依此类推。</p>
+<h2>可视化</h2>
+<p>　　其实，程序得到final_embeddings之后就可以结束了，不过可以更进一步，对词的嵌入空间进行可视化表示。由于之前设定的embedding_size=128，即每个词都被表示为一个128维的向量。虽然没有方法把128维的空间直接画出来，但下面的程序使用了t-SNE方法把128维空间映射到了2维，并画出最常使用的500个词的位置。画出的图片保存为tsne.png文件：</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> Step 6: 可视化</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 可视化的图片会保存为&ldquo;tsne.png&rdquo;</span>
+
+<span style="color: #0000ff;">def</span> plot_with_labels(low_dim_embs, labels, filename=<span style="color: #800000;">'</span><span style="color: #800000;">tsne.png</span><span style="color: #800000;">'</span><span style="color: #000000;">):
+    </span><span style="color: #0000ff;">assert</span> low_dim_embs.shape[0] &gt;= len(labels), <span style="color: #800000;">'</span><span style="color: #800000;">More labels than embeddings</span><span style="color: #800000;">'</span><span style="color: #000000;">
+    plt.figure(figsize</span>=(18, 18))  <span style="color: #008000;">#</span><span style="color: #008000;"> in inches</span>
+    <span style="color: #0000ff;">for</span> i, label <span style="color: #0000ff;">in</span><span style="color: #000000;"> enumerate(labels):
+        x, y </span>=<span style="color: #000000;"> low_dim_embs[i, :]
+        plt.scatter(x, y)
+        plt.annotate(label,
+                     xy</span>=<span style="color: #000000;">(x, y),
+                     xytext</span>=(5, 2<span style="color: #000000;">),
+                     textcoords</span>=<span style="color: #800000;">'</span><span style="color: #800000;">offset points</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+                     ha</span>=<span style="color: #800000;">'</span><span style="color: #800000;">right</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+                     va</span>=<span style="color: #800000;">'</span><span style="color: #800000;">bottom</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+
+    plt.savefig(filename)
+
+
+</span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> pylint: disable=g-import-not-at-top</span>
+    <span style="color: #0000ff;">from</span> sklearn.manifold <span style="color: #0000ff;">import</span><span style="color: #000000;"> TSNE
+    </span><span style="color: #0000ff;">import</span><span style="color: #000000;"> matplotlib
+
+    matplotlib.use(</span><span style="color: #800000;">'</span><span style="color: #800000;">agg</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    </span><span style="color: #0000ff;">import</span><span style="color: #000000;"> matplotlib.pyplot as plt
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 因为我们的embedding的大小为128维，没有办法直接可视化</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 所以我们用t-SNE方法进行降维</span>
+    tsne = TSNE(perplexity=30, n_components=2, init=<span style="color: #800000;">'</span><span style="color: #800000;">pca</span><span style="color: #800000;">'</span>, n_iter=5000<span style="color: #000000;">)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 只画出500个词的位置</span>
+    plot_only = 500<span style="color: #000000;">
+    low_dim_embs </span>=<span style="color: #000000;"> tsne.fit_transform(final_embeddings[:plot_only, :])
+    labels </span>= [reverse_dictionary[i] <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(plot_only)]
+    plot_with_labels(low_dim_embs, labels)
+
+</span><span style="color: #0000ff;">except</span><span style="color: #000000;"> ImportError:
+    </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Please install sklearn, matplotlib, and scipy to show embeddings.</span><span style="color: #800000;">'</span>)</pre>
+</div>
+<p>&nbsp;</p>
+<p>　　在运行这段代码时，如果是通过ssh连接服务器的方式执行，则可能会出现类似于&ldquo;RuntimeError: InvalidDISPLAY variable&rdquo;之类的错误。此时只需要在语句&ldquo;import matplotlib.pyplot as plt&rdquo;之前加上下面两条语句即可成功运行：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">import</span><span style="color: #000000;"> matplotlib
+    matplotlib.use(</span><span style="color: #800000;">'</span><span style="color: #800000;">agg</span><span style="color: #800000;">'</span>)   <span style="color: #008000;">#</span><span style="color: #008000;"> must be before importing matplotlib.pyplot or pylab</span></pre>
+</div>
+<p>生成的&ldquo;tsne.jpg&rdquo;如图14-5所示。</p>
+<p style="text-align: center;"><img src="https://img2020.cnblogs.com/i1/1433301/202004/1433301-20200402181654108-29669530.png" alt=""></p>
+<p style="text-align: center;">使用t-SNE方法可视化词嵌入</p>
+<p>　　相似词之间的距离比较近。如下图所示为放大后的部分词嵌入分布。</p>
+<p style="text-align: center;">&nbsp;<img src="https://img2020.cnblogs.com/i1/1433301/202004/1433301-20200402182041033-677040416.png" alt=""></p>
+<p style="text-align: center;">放大后的部分词嵌入分布</p>
+<p>　　很显然，his、her、its、their几个词性相近的词被排在了一起。</p>
+<p>　　除了相似性之外，嵌入空间中还有一些其他的有趣的性质，如图14-7所示，在词嵌入空间中往往可以反映出man-woman, king-queen的对应关系，动词形式的对应关系，国家和首都的对应关系等。</p>
+<p style="text-align: center;"><img src="https://img2020.cnblogs.com/i1/1433301/202004/1433301-20200402182207591-1151713016.png" alt=""></p>
+<p style="text-align: center;">词嵌入空间中的对应关系</p>
+<p>　　在第12章训练Char RNN时，也曾提到对汉字做&ldquo;embedding&rdquo;，那么第12章中的embedding和本章中的word2vec有什么区别呢？事实上，不管是在训练CharRNN时，还是在训练word2vec模型，都是加入了一个&ldquo;词嵌入层&rdquo;，只不过对象有所不同&mdash;&mdash;一个是汉字，一个是英文单词。这个词嵌入层可以把输入的汉字或英文单词嵌入到一个更稠密的空间中，这有助于模型性能的提升。训练它们的方式有所不同，在第12章中，是采用CharRNN的损失，通过预测下一个时刻的字符来训练模型，&ldquo;顺带&rdquo;得到了词嵌入。在本章中，是采用Skip-Gram方法，通过预测单词的上下文来训练词嵌入。</p>
+<p>　　最后，如果要训练一个以单词为输入单位的CharRNN（即模型的每一步的输入都是单词，输入的每一步也是单词，而不是字母），那么可以用本章中训练得到的词嵌入作为要训练的Char RNN的词嵌入层的初始值，这样做可以大大提高收敛速度。对于汉字或是汉字词语，也可以采取类似的方法。</p>
+<p>　　我把整个代码放在这里</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('a5f87679-028d-4f64-80b5-5c8bdd1d4732')"><img id="code_img_closed_a5f87679-028d-4f64-80b5-5c8bdd1d4732" class="code_img_closed" src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt=""><img id="code_img_opened_a5f87679-028d-4f64-80b5-5c8bdd1d4732" class="code_img_opened" style="display: none" src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="">
+<div id="cnblogs_code_open_a5f87679-028d-4f64-80b5-5c8bdd1d4732" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> coding: utf-8</span>
+
+<span style="color: #008000;">#</span><span style="color: #008000;"> Copyright 2015 The TensorFlow Authors. All Rights Reserved.</span><span style="color: #008000;">
+#
+#</span><span style="color: #008000;"> Licensed under the Apache License, Version 2.0 (the "License");</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> you may not use this file except in compliance with the License.</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> You may obtain a copy of the License at</span><span style="color: #008000;">
+#
+#</span><span style="color: #008000;">     http://www.apache.org/licenses/LICENSE-2.0</span><span style="color: #008000;">
+#
+#</span><span style="color: #008000;"> Unless required by applicable law or agreed to in writing, software</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> distributed under the License is distributed on an "AS IS" BASIS,</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> See the License for the specific language governing permissions and</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> limitations under the License.</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> ==============================================================================</span>
+<span style="color: #800000;">"""</span><span style="color: #800000;">Basic word2vec example.</span><span style="color: #800000;">"""</span>
+
+<span style="color: #008000;">#</span><span style="color: #008000;"> 导入一些需要的库</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> from __future__ import absolute_import</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> from __future__ import division</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> from __future__ import print_function</span>
+
+<span style="color: #0000ff;">import</span><span style="color: #000000;"> collections
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> math
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> os
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> random
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> zipfile
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> numpy as np
+</span><span style="color: #0000ff;">from</span> six.moves <span style="color: #0000ff;">import</span><span style="color: #000000;"> urllib
+</span><span style="color: #0000ff;">from</span> six.moves <span style="color: #0000ff;">import</span> xrange  <span style="color: #008000;">#</span><span style="color: #008000;"> pylint: disable=redefined-builtin</span>
+<span style="color: #0000ff;">import</span><span style="color: #000000;"> tensorflow as tf
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 第一步: 在下面这个地址下载语料库</span>
+url = <span style="color: #800000;">'</span><span style="color: #800000;">http://mattmahoney.net/dc/</span><span style="color: #800000;">'</span>
+
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> maybe_download(filename, expected_bytes):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    这个函数的功能是：
+        如果filename不存在，就在上面的地址下载它。
+        如果filename存在，就跳过下载。
+        最终会检查文字的字节数是否和expected_bytes相同。
+    </span><span style="color: #800000;">"""</span>
+    <span style="color: #0000ff;">if</span> <span style="color: #0000ff;">not</span><span style="color: #000000;"> os.path.exists(filename):
+        </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">start downloading...</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+        filename, _ </span>= urllib.request.urlretrieve(url +<span style="color: #000000;"> filename, filename)
+    statinfo </span>=<span style="color: #000000;"> os.stat(filename)
+    </span><span style="color: #0000ff;">if</span> statinfo.st_size ==<span style="color: #000000;"> expected_bytes:
+        </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Found and verified</span><span style="color: #800000;">'</span><span style="color: #000000;">, filename)
+    </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+        </span><span style="color: #0000ff;">print</span><span style="color: #000000;">(statinfo.st_size)
+        </span><span style="color: #0000ff;">raise</span><span style="color: #000000;"> Exception(
+            </span><span style="color: #800000;">'</span><span style="color: #800000;">Failed to verify </span><span style="color: #800000;">'</span> + filename + <span style="color: #800000;">'</span><span style="color: #800000;">. Can you get to it with a browser?</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> filename
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 下载语料库text8.zip并验证下载</span>
+filename = maybe_download(<span style="color: #800000;">'</span><span style="color: #800000;">text8.zip</span><span style="color: #800000;">'</span>, 31344016<span style="color: #000000;">)
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 将语料库解压，并转换成一个word的list</span>
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> read_data(filename):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    这个函数的功能是：
+        将下载好的zip文件解压并读取为word的list
+    </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+    with zipfile.ZipFile(filename) as f:
+        data </span>=<span style="color: #000000;"> tf.compat.as_str(f.read(f.namelist()[0])).split()
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> data
+
+
+vocabulary </span>=<span style="color: #000000;"> read_data(filename)
+</span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Data size</span><span style="color: #800000;">'</span>, len(vocabulary))  <span style="color: #008000;">#</span><span style="color: #008000;"> 总长度为1700万左右</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 输出前100个词。</span>
+<span style="color: #0000ff;">print</span>(vocabulary[0:100<span style="color: #000000;">])
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 第二步: 制作一个词表，将不常见的词变成一个UNK标识符</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 词表的大小为5万（即我们只考虑最常出现的5万个词）</span>
+vocabulary_size = 50000
+
+
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> build_dataset(words, n_words):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">
+    函数功能：将原始的单词表示变成index
+    </span><span style="color: #800000;">"""</span><span style="color: #000000;">
+    count </span>= [[<span style="color: #800000;">'</span><span style="color: #800000;">UNK</span><span style="color: #800000;">'</span>, -1<span style="color: #000000;">]]
+    count.extend(collections.Counter(words).most_common(n_words </span>- 1<span style="color: #000000;">))
+    dictionary </span>=<span style="color: #000000;"> dict()
+    </span><span style="color: #0000ff;">for</span> word, _ <span style="color: #0000ff;">in</span><span style="color: #000000;"> count:
+        dictionary[word] </span>=<span style="color: #000000;"> len(dictionary)
+    data </span>=<span style="color: #000000;"> list()
+    unk_count </span>=<span style="color: #000000;"> 0
+    </span><span style="color: #0000ff;">for</span> word <span style="color: #0000ff;">in</span><span style="color: #000000;"> words:
+        </span><span style="color: #0000ff;">if</span> word <span style="color: #0000ff;">in</span><span style="color: #000000;"> dictionary:
+            index </span>=<span style="color: #000000;"> dictionary[word]
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            index </span>= 0  <span style="color: #008000;">#</span><span style="color: #008000;"> UNK的index为0</span>
+            unk_count += 1<span style="color: #000000;">
+        data.append(index)
+    count[0][</span>1] =<span style="color: #000000;"> unk_count
+    reversed_dictionary </span>=<span style="color: #000000;"> dict(zip(dictionary.values(), dictionary.keys()))
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> data, count, dictionary, reversed_dictionary
+
+
+data, count, dictionary, reverse_dictionary </span>=<span style="color: #000000;"> build_dataset(vocabulary,
+                                                            vocabulary_size)
+</span><span style="color: #0000ff;">del</span> vocabulary  <span style="color: #008000;">#</span><span style="color: #008000;"> 删除已节省内存</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 输出最常出现的5个单词</span>
+<span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Most common words (+UNK)</span><span style="color: #800000;">'</span>, count[:5<span style="color: #000000;">])
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 输出转换后的数据库data，和原来的单词（前10个）</span>
+<span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Sample data</span><span style="color: #800000;">'</span>, data[:10], [reverse_dictionary[i] <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> data[:10<span style="color: #000000;">]])
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 我们下面就使用data来制作训练集</span>
+data_index =<span style="color: #000000;"> 0
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 第三步：定义一个函数，用于生成skip-gram模型用的batch</span>
+<span style="color: #0000ff;">def</span><span style="color: #000000;"> generate_batch(batch_size, num_skips, skip_window):
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> data_index相当于一个指针，初始为0</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 每次生成一个batch，data_index就会相应地往后推</span>
+    <span style="color: #0000ff;">global</span><span style="color: #000000;"> data_index
+    </span><span style="color: #0000ff;">assert</span> batch_size % num_skips ==<span style="color: #000000;"> 0
+    </span><span style="color: #0000ff;">assert</span> num_skips &lt;= 2 *<span style="color: #000000;"> skip_window
+    batch </span>= np.ndarray(shape=(batch_size), dtype=<span style="color: #000000;">np.int32)
+    labels </span>= np.ndarray(shape=(batch_size, 1), dtype=<span style="color: #000000;">np.int32)
+    span </span>= 2 * skip_window + 1  <span style="color: #008000;">#</span><span style="color: #008000;"> [ skip_window target skip_window ]</span>
+    buffer = collections.deque(maxlen=<span style="color: #000000;">span)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> data_index是当前数据开始的位置</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 产生batch后就往后推1位（产生batch）</span>
+    <span style="color: #0000ff;">for</span> _ <span style="color: #0000ff;">in</span><span style="color: #000000;"> range(span):
+        buffer.append(data[data_index])
+        data_index </span>= (data_index + 1) %<span style="color: #000000;"> len(data)
+    </span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(batch_size //<span style="color: #000000;"> num_skips):
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 利用buffer生成batch</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> buffer是一个长度为 2 * skip_window + 1长度的word list</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;"> 一个buffer生成num_skips个数的样本</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;">     print([reverse_dictionary[i] for i in buffer])</span>
+        target = skip_window  <span style="color: #008000;">#</span><span style="color: #008000;"> target label at the center of the buffer</span>
+        <span style="color: #008000;">#</span><span style="color: #008000;">     targets_to_avoid保证样本不重复</span>
+        targets_to_avoid =<span style="color: #000000;"> [skip_window]
+        </span><span style="color: #0000ff;">for</span> j <span style="color: #0000ff;">in</span><span style="color: #000000;"> range(num_skips):
+            </span><span style="color: #0000ff;">while</span> target <span style="color: #0000ff;">in</span><span style="color: #000000;"> targets_to_avoid:
+                target </span>= random.randint(0, span - 1<span style="color: #000000;">)
+            targets_to_avoid.append(target)
+            batch[i </span>* num_skips + j] =<span style="color: #000000;"> buffer[skip_window]
+            labels[i </span>* num_skips + j, 0] =<span style="color: #000000;"> buffer[target]
+        buffer.append(data[data_index])
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 每利用buffer生成num_skips个样本，data_index就向后推进一位</span>
+        data_index = (data_index + 1) %<span style="color: #000000;"> len(data)
+    data_index </span>= (data_index + len(data) - span) %<span style="color: #000000;"> len(data)
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> batch, labels
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 默认情况下skip_window=1, num_skips=2</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 此时就是从连续的3(3 = skip_window*2 + 1)个词中生成2(num_skips)个样本。</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 如连续的三个词['used', 'against', 'early']</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 生成两个样本：against -&gt; used, against -&gt; early</span>
+batch, labels = generate_batch(batch_size=8, num_skips=2, skip_window=1<span style="color: #000000;">)
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> range(8<span style="color: #000000;">):
+    </span><span style="color: #0000ff;">print</span><span style="color: #000000;">(batch[i], reverse_dictionary[batch[i]],
+          </span><span style="color: #800000;">'</span><span style="color: #800000;">-&gt;</span><span style="color: #800000;">'</span><span style="color: #000000;">, labels[i, 0], reverse_dictionary[labels[i, 0]])
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 第四步: 建立模型.</span>
+<span style="color: #000000;">
+batch_size </span>= 128<span style="color: #000000;">
+embedding_size </span>= 128  <span style="color: #008000;">#</span><span style="color: #008000;"> 词嵌入空间是128维的。即word2vec中的vec是一个128维的向量</span>
+skip_window = 1  <span style="color: #008000;">#</span><span style="color: #008000;"> skip_window参数和之前保持一致</span>
+num_skips = 2  <span style="color: #008000;">#</span><span style="color: #008000;"> num_skips参数和之前保持一致</span>
+
+<span style="color: #008000;">#</span><span style="color: #008000;"> 在训练过程中，会对模型进行验证 </span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 验证的方法就是找出和某个词最近的词。</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 只对前valid_window的词进行验证，因为这些词最常出现</span>
+valid_size = 16  <span style="color: #008000;">#</span><span style="color: #008000;"> 每次验证16个词</span>
+valid_window = 100  <span style="color: #008000;">#</span><span style="color: #008000;"> 这16个词是在前100个最常见的词中选出来的</span>
+valid_examples = np.random.choice(valid_window, valid_size, replace=<span style="color: #000000;">False)
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 构造损失时选取的噪声词的数量</span>
+num_sampled = 64<span style="color: #000000;">
+
+graph </span>=<span style="color: #000000;"> tf.Graph()
+
+with graph.as_default():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 输入的batch</span>
+    train_inputs = tf.placeholder(tf.int32, shape=<span style="color: #000000;">[batch_size])
+    train_labels </span>= tf.placeholder(tf.int32, shape=[batch_size, 1<span style="color: #000000;">])
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 用于验证的词</span>
+    valid_dataset = tf.constant(valid_examples, dtype=<span style="color: #000000;">tf.int32)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 下面采用的某些函数还没有gpu实现，所以我们只在cpu上定义模型</span>
+    with tf.device(<span style="color: #800000;">'</span><span style="color: #800000;">/cpu:0</span><span style="color: #800000;">'</span><span style="color: #000000;">):
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 定义1个embeddings变量，相当于一行存储一个词的embedding</span>
+        embeddings =<span style="color: #000000;"> tf.Variable(
+            tf.random_uniform([vocabulary_size, embedding_size], </span>-1.0, 1.0<span style="color: #000000;">))
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 利用embedding_lookup可以轻松得到一个batch内的所有的词嵌入</span>
+        embed =<span style="color: #000000;"> tf.nn.embedding_lookup(embeddings, train_inputs)
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 创建两个变量用于NCE Loss（即选取噪声词的二分类损失）</span>
+        nce_weights =<span style="color: #000000;"> tf.Variable(
+            tf.truncated_normal([vocabulary_size, embedding_size],
+                                stddev</span>=1.0 /<span style="color: #000000;"> math.sqrt(embedding_size)))
+        nce_biases </span>=<span style="color: #000000;"> tf.Variable(tf.zeros([vocabulary_size]))
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> tf.nn.nce_loss会自动选取噪声词，并且形成损失。</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 随机选取num_sampled个噪声词</span>
+    loss =<span style="color: #000000;"> tf.reduce_mean(
+        tf.nn.nce_loss(weights</span>=<span style="color: #000000;">nce_weights,
+                       biases</span>=<span style="color: #000000;">nce_biases,
+                       labels</span>=<span style="color: #000000;">train_labels,
+                       inputs</span>=<span style="color: #000000;">embed,
+                       num_sampled</span>=<span style="color: #000000;">num_sampled,
+                       num_classes</span>=<span style="color: #000000;">vocabulary_size))
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 得到loss后，我们就可以构造优化器了</span>
+    optimizer = tf.train.GradientDescentOptimizer(1.0<span style="color: #000000;">).minimize(loss)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 计算词和词的相似度（用于验证）</span>
+    norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keep_dims=<span style="color: #000000;">True))
+    normalized_embeddings </span>= embeddings /<span style="color: #000000;"> norm
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 找出和验证词的embedding并计算它们和所有单词的相似度</span>
+    valid_embeddings =<span style="color: #000000;"> tf.nn.embedding_lookup(
+        normalized_embeddings, valid_dataset)
+    similarity </span>=<span style="color: #000000;"> tf.matmul(
+        valid_embeddings, normalized_embeddings, transpose_b</span>=<span style="color: #000000;">True)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 变量初始化步骤</span>
+    init =<span style="color: #000000;"> tf.global_variables_initializer()
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> 第五步：开始训练</span>
+num_steps = 100001<span style="color: #000000;">
+
+with tf.Session(graph</span>=<span style="color: #000000;">graph) as session:
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 初始化变量</span>
+<span style="color: #000000;">    init.run()
+    </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Initialized</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+
+    average_loss </span>=<span style="color: #000000;"> 0
+    </span><span style="color: #0000ff;">for</span> step <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(num_steps):
+        batch_inputs, batch_labels </span>=<span style="color: #000000;"> generate_batch(
+            batch_size, num_skips, skip_window)
+        feed_dict </span>=<span style="color: #000000;"> {train_inputs: batch_inputs, train_labels: batch_labels}
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 优化一步</span>
+        _, loss_val = session.run([optimizer, loss], feed_dict=<span style="color: #000000;">feed_dict)
+        average_loss </span>+=<span style="color: #000000;"> loss_val
+
+        </span><span style="color: #0000ff;">if</span> step % 2000 ==<span style="color: #000000;"> 0:
+            </span><span style="color: #0000ff;">if</span> step &gt;<span style="color: #000000;"> 0:
+                average_loss </span>/= 2000
+            <span style="color: #008000;">#</span><span style="color: #008000;"> 2000个batch的平均损失</span>
+            <span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Average loss at step </span><span style="color: #800000;">'</span>, step, <span style="color: #800000;">'</span><span style="color: #800000;">: </span><span style="color: #800000;">'</span><span style="color: #000000;">, average_loss)
+            average_loss </span>=<span style="color: #000000;"> 0
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> 每1万步，我们进行一次验证</span>
+        <span style="color: #0000ff;">if</span> step % 10000 ==<span style="color: #000000;"> 0:
+            </span><span style="color: #008000;">#</span><span style="color: #008000;"> sim是验证词与所有词之间的相似度</span>
+            sim =<span style="color: #000000;"> similarity.eval()
+            </span><span style="color: #008000;">#</span><span style="color: #008000;"> 一共有valid_size个验证词</span>
+            <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(valid_size):
+                valid_word </span>=<span style="color: #000000;"> reverse_dictionary[valid_examples[i]]
+                top_k </span>= 8  <span style="color: #008000;">#</span><span style="color: #008000;"> 输出最相邻的8个词语</span>
+                nearest = (-sim[i, :]).argsort()[1:top_k + 1<span style="color: #000000;">]
+                log_str </span>= <span style="color: #800000;">'</span><span style="color: #800000;">Nearest to %s:</span><span style="color: #800000;">'</span> %<span style="color: #000000;"> valid_word
+                </span><span style="color: #0000ff;">for</span> k <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(top_k):
+                    close_word </span>=<span style="color: #000000;"> reverse_dictionary[nearest[k]]
+                    log_str </span>= <span style="color: #800000;">'</span><span style="color: #800000;">%s %s,</span><span style="color: #800000;">'</span> %<span style="color: #000000;"> (log_str, close_word)
+                </span><span style="color: #0000ff;">print</span><span style="color: #000000;">(log_str)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> final_embeddings是我们最后得到的embedding向量</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 它的形状是[vocabulary_size, embedding_size]</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 每一行就代表着对应index词的词嵌入表示</span>
+    final_embeddings =<span style="color: #000000;"> normalized_embeddings.eval()
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> Step 6: 可视化</span><span style="color: #008000;">
+#</span><span style="color: #008000;"> 可视化的图片会保存为&ldquo;tsne.png&rdquo;</span>
+
+<span style="color: #0000ff;">def</span> plot_with_labels(low_dim_embs, labels, filename=<span style="color: #800000;">'</span><span style="color: #800000;">tsne.png</span><span style="color: #800000;">'</span><span style="color: #000000;">):
+    </span><span style="color: #0000ff;">assert</span> low_dim_embs.shape[0] &gt;= len(labels), <span style="color: #800000;">'</span><span style="color: #800000;">More labels than embeddings</span><span style="color: #800000;">'</span><span style="color: #000000;">
+    plt.figure(figsize</span>=(18, 18))  <span style="color: #008000;">#</span><span style="color: #008000;"> in inches</span>
+    <span style="color: #0000ff;">for</span> i, label <span style="color: #0000ff;">in</span><span style="color: #000000;"> enumerate(labels):
+        x, y </span>=<span style="color: #000000;"> low_dim_embs[i, :]
+        plt.scatter(x, y)
+        plt.annotate(label,
+                     xy</span>=<span style="color: #000000;">(x, y),
+                     xytext</span>=(5, 2<span style="color: #000000;">),
+                     textcoords</span>=<span style="color: #800000;">'</span><span style="color: #800000;">offset points</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+                     ha</span>=<span style="color: #800000;">'</span><span style="color: #800000;">right</span><span style="color: #800000;">'</span><span style="color: #000000;">,
+                     va</span>=<span style="color: #800000;">'</span><span style="color: #800000;">bottom</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+
+    plt.savefig(filename)
+
+
+</span><span style="color: #0000ff;">try</span><span style="color: #000000;">:
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> pylint: disable=g-import-not-at-top</span>
+    <span style="color: #0000ff;">from</span> sklearn.manifold <span style="color: #0000ff;">import</span><span style="color: #000000;"> TSNE
+    </span><span style="color: #0000ff;">import</span><span style="color: #000000;"> matplotlib
+    matplotlib.use(</span><span style="color: #800000;">'</span><span style="color: #800000;">agg</span><span style="color: #800000;">'</span>)   <span style="color: #008000;">#</span><span style="color: #008000;"> must be before importing matplotlib.pyplot or pylab</span>
+    <span style="color: #0000ff;">import</span><span style="color: #000000;"> matplotlib.pyplot as plt
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 因为我们的embedding的大小为128维，没有办法直接可视化</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 所以我们用t-SNE方法进行降维</span>
+    tsne = TSNE(perplexity=30, n_components=2, init=<span style="color: #800000;">'</span><span style="color: #800000;">pca</span><span style="color: #800000;">'</span>, n_iter=5000<span style="color: #000000;">)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> 只画出500个词的位置</span>
+    plot_only = 500<span style="color: #000000;">
+    low_dim_embs </span>=<span style="color: #000000;"> tsne.fit_transform(final_embeddings[:plot_only, :])
+    labels </span>= [reverse_dictionary[i] <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span><span style="color: #000000;"> xrange(plot_only)]
+    plot_with_labels(low_dim_embs, labels)
+
+</span><span style="color: #0000ff;">except</span><span style="color: #000000;"> ImportError:
+    </span><span style="color: #0000ff;">print</span>(<span style="color: #800000;">'</span><span style="color: #800000;">Please install sklearn, matplotlib, and scipy to show embeddings.</span><span style="color: #800000;">'</span>)</pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>&nbsp;</p>
+<h1>参考</h1>
+<p>论文《<a href="https://arxiv.org/abs/1301.3781" target="_blank">Efficient Estimation of WordRepresentations in Vector Space</a>》CBOW模型和Skip-Gram模型</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 15:28</span>&nbsp;
+<a href="https://www.cnblogs.com/LXP-Never/">凌逆战</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12614422" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12614422);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 442694, cb_blogApp = 'LXP-Never', cb_blogUserGuid = 'd47a4b2b-c3e6-4485-4d9d-08d5ddce222f';
+    var cb_entryId = 12614422, cb_entryCreatedDate = '2020-04-25 15:28', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 凌逆战
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

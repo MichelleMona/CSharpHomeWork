@@ -1,0 +1,1381 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>xhload3d - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/cogitation/bundle-cogitation.min.css?v=PJ48NAY_dmbjZZ0ZTev3Avl3BcTMJe39d3Pc83CPcig" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/cogitation/bundle-cogitation-mobile.min.css?v=jLHKTG0H_smj72y-Z2j0JGYUmhBVGTu4_QpAGb1B_sA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xhload3d/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xhload3d/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xhload3d/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 171723;
+        var currentBlogApp = 'xhload3d';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Cogitation';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="top">
+	
+<div>
+	<table>
+		<tr>
+			<td class="HeaderTitles">
+				<h1 class="HeaderTitle"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xhload3d/">xhload3d</a>
+</h1>
+				<p id="tagline">
+www.hightopo.com
+</p>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="HeaderBar">
+	<table id="HeaderBar" class="HeaderBar" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="HeaderBarTab" nowrap>
+&nbsp;
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+ ::
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xhload3d/">
+首页</a>
+ ::
+<a href="http://q.cnblogs.com" class="menu">博问</a> ::
+<a href="http://home.cnblogs.com/ing/" class="menu">闪存</a> ::
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+ ::
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/xhload3d">
+联系</a> ::
+
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/xhload3d/rss/">
+订阅</a>
+
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/xhload3d/rss/">
+    <img src="/skins/cogitation/images/xml.gif" alt="订阅" />
+</a> ::
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+ ::
+
+
+</td>
+			<td><img id="Header1_BlueTab" src="/skins/cogitation/images/BlueTabRight.gif" align="absmiddle" alt=""/></td>
+			<td class="HeaderBarTabBack" nowrap width="100%">
+				<div class="BlogStatsBar">
+	<table class="BlogStatsBar">
+		<tr>
+			<td width="100%">
+			</td>
+			<td class="BlogStatsBar" nowrap>
+				&nbsp;
+				
+233 
+				随笔&nbsp;::
+				
+1 文章
+				::
+				
+427 评论
+				::
+				
+0 引用
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+</div>
+<div id="leftmenu">	
+
+	    <div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+		
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+		<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+	
+</div>
+<div id="main">
+	
+
+
+
+
+		
+<p class="date">
+	2020年4月20日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/20.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12735213.html">
+[置顶]    基于 HTML5 WebGL 的 CPU 监控系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200418180728283-618653237.gif" class="desc_img">  科技改变生活，科技的发展带来了生活方式的巨大改变。随着通信技术的不断演进，5G 技术应运而生，随时随地万物互联的时代已经来临。5G 技术不仅带来了更快的连接速度和前所未有的用户体验，也为制造业，微电子及集成电路发展带来了巨大的发展机遇和挑战。 5G 技术商业实施过程中，5G 网络芯片面临低功耗、低延时、高可靠性和高精度的技术挑战。 本文将以大家熟悉的 CPU 为例，介绍以 HT 为基础，应用 JavaScript，WebGL 和 HTML5 技术开发的 CPU 监控系统。在大型数据中心，实时监控 CPU 的温度，使用率等具有重要的意义。在服务器级别进行 CPU 温度监控，能够实时了解服务器 CPU 的温度，及时发现能效问题，防止出现服务延迟、服务器宕机，从而节约成本。实时监控 CPU 使用率等，能够实时查看服务器的 CPU 使用情况，合理分配服务器资源。            <a href="https://www.cnblogs.com/xhload3d/p/12735213.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-20 00:04 xhload3d 阅读 (157) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735213" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月15日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/15.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12709672.html">
+[置顶]    基于 HTML5 WebGL 的楼宇智能化集成系统（三）
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200405184700868-733454514.gif" class="desc_img">      2018年7月，信息化部印发了《工业互联网平台建设及推广指南》和《工业互联网平台评价方法》，掀起了 工业互联网 的浪潮，并成为热词写入了报告中。同为信息发展下的产物 建筑智能化集成系统 也是兼具着信息与管理的重要体现，数据化信息通过可视化的管理系统展示出一套互联网智能优化的解决方案，而本系列文章便结合了 HT  的 2D/3D 可视化工具的运用，结合面板的数据展示和大楼建模场景的可视化管理，前面的内容已经讲解了 3D 模型和 2D 面板的融合体现，本次的内容将带您探讨 智慧楼宇管理系统、电梯监控系统 以及 停车场管理系统 的实现方式和整体系统的联合优化体现。            <a href="https://www.cnblogs.com/xhload3d/p/12709672.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-15 23:53 xhload3d 阅读 (377) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12709672" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月12日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/12.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12688752.html">
+[置顶]    基于 HTML5 WebGL 的 水泥工厂可视化系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200411173958932-2101980099.png" class="desc_img">如今的制造行业，基于数据进行生产策略制定与管理已经成为一种趋势，特别是 工业4.0 的浪潮下，数据战略已经成为很多制造企业的优先战略，而数据可视化以更直观的方式，帮助指导决策，成为数据分析传递信息的重要工具。通过数据可视化系统助力实现数据驱动的工业世界，为 工业4.0 提供更加灵活、敏捷、高效、个性化的数据支撑。今天就给大家带来一个采用 Hightopo 的 HT for Web 产品实现了一个水泥工厂可视化系统。            <a href="https://www.cnblogs.com/xhload3d/p/12688752.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-12 23:50 xhload3d 阅读 (455) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12688752" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月9日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/09.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12664019.html">
+[置顶]    基于 HTML5 WebGL 的楼宇智能化集成系统（二）
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/common/1496396/202002/1496396-20200225200053329-1065733339.jpg" class="desc_img"> 一套完整的可视化操作交互上，必不可少 2D/3D 的融合，在上期我们介绍了有关 3D 场景的环视漫游、巡视漫游以及动画效果，还包括了冷站场景、热站场景以及智慧末端的实现原理，本期主要介绍关于 2D 图纸面板的动画效果以及面板视频的嵌入。通过 2D/3D 融合的体验，达成场景数据可视化的直观体现以及面板动画交互体验的舒适体验。            <a href="https://www.cnblogs.com/xhload3d/p/12664019.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-09 00:07 xhload3d 阅读 (371) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12664019" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月7日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/07.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12650621.html">
+[置顶]    基于 HTML5 WebGL 的楼宇智能化集成系统（一）
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200405041331985-437729178.gif" class="desc_img">随着现代通信技术、计算机技术、控制技术的飞速发展，智能建筑已经成为现代建筑发展的主流。智能建筑是以建筑物为平台，兼备信息设施系统、信息化应用系统、建筑设备管理系统、公共安全系统等。集结构、系统、服务、管理及其优化组合为一体，向人们提供一个安全、高效、便携、节能、环保、健康的建筑环境。            <a href="https://www.cnblogs.com/xhload3d/p/12650621.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-07 00:04 xhload3d 阅读 (390) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12650621" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月2日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/02.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12616772.html">
+[置顶]    基于 HTML5 WebGL 的故宫人流量动态监控系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200327093342037-1377090739.png" class="desc_img">在当代社会，故宫已经成为一个具有多元意义的文化符号，在历史、艺术、文化等不同领域发挥着重要的作用，在国际上也成为能够代表中国文化甚至中国形象的国际符号。近几年故宫的观众接待量逐年递增，年接待量已突破千万，根据故宫的文物特点与开放模式，必须及时建立一套完整的集监控与防患应急于一体的现代化监控系统。            <a href="https://www.cnblogs.com/xhload3d/p/12616772.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-02 00:02 xhload3d 阅读 (717) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12616772" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月29日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/29.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12596014.html">
+[置顶]    基于 HTML5 WebGL 的 智慧楼宇能源监控系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200305162158704-673972071.png" class="desc_img">21世纪，在能源危机和全球气候变暖的压力下，太阳能等可再生能源越来越受到关注，其中光伏建筑一体化逐渐成为绿色发展方式和生活方式，加强节能降耗，支持低碳产业和新能源、可再生能源发展，也已经成为国家战略，所以基于数据进行管理和监控的智慧楼宇能源系统已经成为了一种趋势。通过数据我们可以直观对建筑执行能耗量化管理以及效果评估，来控制降低建筑运营过程中所消耗的能量，最终降低建筑的运营成本，提高能源使用效率。今天就给大家带来一个采用 Hightopo 的 HT for Web 产品实现智慧楼宇的能耗监控系统。            <a href="https://www.cnblogs.com/xhload3d/p/12596014.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-29 23:50 xhload3d 阅读 (444) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12596014" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月26日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/26.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12571377.html">
+[置顶]    基于 HTML5 Canvas 的拓扑组件 ToolTip 应用
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200320171132013-1454064707.png" class="desc_img">ToolTip 效果是网页制作中常见的使用特效。当用户将鼠标悬浮在某个控件上时，ToolTip 显示并向用户展示相应的提示信息；当鼠标离开时，ToolTip 隐藏。一般情况下，我们使用 ToolTip 只是显示一句话或几个字，其实我们还可以展示很多信息。而今天的重点则是通过 Hightopo 的 HT for Web 产品来制作多种样式的 ToolTip。            <a href="https://www.cnblogs.com/xhload3d/p/12571377.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-26 09:49 xhload3d 阅读 (267) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12571377" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月22日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/22.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12549527.html">
+[置顶]    基于 HTML5 WebGL 与 GIS 的智慧机场大数据可视化分析
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200322130329569-487668784.gif" class="desc_img">前言：大数据，人工智能，工业物联网，5G已经或者正在潜移默化地改变着我们的生活。在信息技术快速发展的时代，谁能抓住数据的核心，利用有效的方法对数据做数据挖掘和数据分析，从数据中发现趋势，谁就能做到精准控制，实时分析，有的放矢，从而获取更快速、更平稳、更长远地发展。在航空领域，机场、航班和航线信息是至关重要的数据，本文将介绍 以HT 为平台，应用 JavaScript、HTML5、GIS 等技术开发的全球航线实例。            <a href="https://www.cnblogs.com/xhload3d/p/12549527.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-22 23:57 xhload3d 阅读 (385) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12549527" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月19日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/19.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12520693.html">
+[置顶]    基于 HTML5 WebGL  的发动机 3D 可视化系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/i-beta/1496396/202002/1496396-20200205161952589-658210919.png" class="desc_img">工业机械产品大多体积庞大、运输成本高，在参加行业展会或向海外客户销售时，如果没有实物展示，仅凭静态、简单的图片说明书介绍，无法让客户全面了解产品，不仅工作人员制作麻烦，客户看得也费力。如果能在 Web 上做 3D 设备展示，销售人员可以不限平台随时给客户介绍演示。还可以不受现实条件限制，演示设备拆分和组装的过程，展示产品内部结构和动态运作时的效果，让客户更直观了解产品的部件组成，更准确、全面地了解产品的功能和特点，大大降低了沟通成本。为了解决这些行业痛点，本篇文章采用 Hightopo 的 HT for Web 产品实现了一个发动机设备 3D 可视化案例。            <a href="https://www.cnblogs.com/xhload3d/p/12520693.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-19 00:01 xhload3d 阅读 (470) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12520693" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月15日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/15.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12500800.html">
+[置顶]    基于 HTML + WebGL 结合 23D 的疫情地图实时大屏 PC 版
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200304190648394-1333884077.gif" class="desc_img">2019年12月以来，湖北省武汉市陆续发现了多例肺炎病例，现已证实为一种新型冠状病毒感染引起的急性呼吸道传染病并蔓延全国，肺炎疫情牵动人心，人们每天起来都要看一眼疫情进展，期望这场天灾早日结束，社会回归正常秩序。虽然已经有不少疫情地图可以让人们方便地查阅，但是图扑科技长期在 2D，3D 的积淀很方便地能创造出观感，互动性都很优秀的疫情地图来，给大家增加一个疫情动态实时查阅的方式。不久前在前端小伙伴和设计小伙伴的合作下我们推出了移动版疫情地图，而这次我们又推出了PC版的疫情地图，在电脑等大屏上更直观地展示出疫情的最新动态和历史数据。            <a href="https://www.cnblogs.com/xhload3d/p/12500800.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-15 23:54 xhload3d 阅读 (563) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12500800" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月8日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/08.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12421857.html">
+[置顶]    用 HTML5 造个有诚意的 23D 招聘稿
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200305163125670-1065884322.gif" class="desc_img">
+招聘对于一个公司来说是相当重要的一个环节，首先它影响着公司未来发展的趋势，其次它为公司注入新鲜血液，使公司更具有活力。当然在工业互联网，物联网大背景下诞生的 HT 也是需要注入新鲜的血液来进一步提升公司的技术和能力。本文不会像传统的招聘文案简单的列举一系列的岗位，一系列的福利来诱惑你们的加入，而是会通过如何使用 HT 完成一个 2D 结合 3D 的招聘 DEMO 来让你们体会到我们的设计审美能力，技术能力从而来诱惑你们的加入。因为这篇文章来自一位 HT 的前端工程师，所以希望通过讲解这个 DEMO 所涉及的一些交互，动画来让你提前了解 HT 的部分基础知识，从而对 HT 有一个简单的整体认识。            <a href="https://www.cnblogs.com/xhload3d/p/12421857.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-08 23:59 xhload3d 阅读 (340) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12421857" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月2日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/02.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12374499.html">
+[置顶]    基于 HTML5 Canvas 的 3D 热力云图效果
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/common/1496396/202001/1496396-20200103115548049-1948363290.gif" class="desc_img">数据蕴藏价值，但数据的价值需要用 IT 技术去发现、探索，可视化可以帮助人更好的去分析数据，信息的质量很大程度上依赖于其呈现方式。在数据分析上，热力图无疑是一种很好的方式。在很多行业中都有着广泛的应用。最近刚好项目中需要用到 3D 热力图的效果展示。网上搜了相关资料，发现大多数是 2D 效果或者伪 3D 的，而 3D 粒子效果对于性能上的体验不是很好，于是取巧写了个 3D 热力图的效果 。            <a href="https://www.cnblogs.com/xhload3d/p/12374499.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-02 00:03 xhload3d 阅读 (545) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12374499" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年2月26日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/02/26.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12365739.html">
+[置顶]    基于 HTML5 和 Canvas 实现的 3D 垃圾分类系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/blog/1496396/201910/1496396-20191007142121636-79685654.gif" class="desc_img">
+垃圾分类，一般是指按一定规定或标准将垃圾分类储存、分类投放和分类搬运，从而转变成公共资源的一系列活动的总称。分类的目的是提高垃圾的资源价值和经济价值，力争物尽其用。垃圾在分类储存阶段属于公众的私有品，垃圾经公众分类投放后成为公众所在小区或社区的区域性准公共资源，垃圾分类搬运到垃圾集中点或转运站后成为没有排除性的公共资源。从国内外各城市对生活垃圾分类的方法来看，大致都是根据垃圾的成分、产生量，结合本地垃圾的资源利用和处理方式来进行分类的。到2019年6月25日，生活垃圾分类制度将入法。一套应用于工业物联网的智能一体化的垃圾分类机械臂将随之而来，由此，我应用 HT for Web 的图型化编辑工具打造了一款形象生动的例子：Garbage classification，也借此机会与大家一起分享和学习。            <a href="https://www.cnblogs.com/xhload3d/p/12365739.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-02-26 11:05 xhload3d 阅读 (108) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12365739" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年2月24日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/02/24.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12355678.html">
+[置顶]    数百个 HT 工业互联网 2D 3D 可视化应用案例分享 - 2019 篇
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="http://www.hightopo.com/blog/wp-content/uploads/2020/02/Screen-Shot-2020-02-08-at-4.33.31-PM.jpg" class="desc_img">继《分享数百个 HT 工业互联网 2D 3D 可视化应用案例》2018 篇，图扑软件定义 2018 为国内工业互联网可视化的元年后，2019 年里我们与各行业客户进行了更深度合作，拓展了 HT for  Web 在更多新领域的应用，图扑软件作为在工业可视化领域的一线重度参与者，我            <a href="https://www.cnblogs.com/xhload3d/p/12355678.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-02-24 09:47 xhload3d 阅读 (115) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12355678" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年2月21日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/02/21.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12340372.html">
+[置顶]    使用 H5 和 webGL 的智慧城市 3D 监控
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/common/1496396/201912/1496396-20191216104216733-519120101.gif" class="desc_img">要提升基础设施互联互通水平，打造数字长三角，协同建设新一代信息基础设施，共同推动重点领域智慧应用。大力发展基于物联网、大数据、人工智能的专业化服务，提升各领域融合发展、信息化协同和精细化管理水平。围绕城市公共管理、公共服务、公共安全等领域，支持有条件的城市建设基于人工智能和 5G 物联的城市大脑集群。
+城市治理和管理不仅是国家治理体系的重要组成部分，同时也是全球互联网治理体系的重要载体和构建网络空间命运共同体的重要基础。上个月我们发布了一篇文章《基于 HTML5 WebGL 构建智能城市 3D 场景》，大体介绍了如何使用 ht.js 快速 3D  建模，展示了良好的可视化效果，今天继续探讨智慧城市的应用。            <a href="https://www.cnblogs.com/xhload3d/p/12340372.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-02-21 10:10 xhload3d 阅读 (114) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12340372" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年2月19日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/02/19.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12330400.html">
+[置顶]    基于 H5和 3D WebVR 的可视化虚拟现实培训系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/blog/591709/202001/591709-20200105142740798-574522666.gif" class="desc_img">2019 年 VR, AR, XR, 5G, 工业互联网等名词频繁出现在我们的视野中，信息的分享与虚实的结合已经成为大势所趋，5G 是新一代信息通信技术升级的重要方向，工控业等行业数字化转型的重要驱动力。“5G + VR + 工业互联网”必将成为新的一年不变的话题，如何将当前工业中遇到的问题通过虚拟现实结合起来，让我们可以更近的去交流，去感受技术带给我们的变化。在今年苹果的发布会上，相信大家都知道苹果的 5G 手机没有问世，说明 5G 的应用和发展还处在快速发展的阶段，但是手机结合 AR 功能的 APP 已经早就问世，5G 的速度加上 AR, VR 的身临其境，让我们感受到的不仅仅是技术的革新，更是让我们感受到技术在不同领域的实际应用            <a href="https://www.cnblogs.com/xhload3d/p/12330400.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-02-19 11:21 xhload3d 阅读 (119) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12330400" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年2月17日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/02/17.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12321119.html">
+[置顶]     2019 篇 - 分享数百个 HT的工业互联网 2D 3D 可视化应用案例
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="http://www.hightopo.com/blog/wp-content/uploads/2020/02/Screen-Shot-2020-02-08-at-4.33.31-PM.jpg" class="desc_img">继《分享数百个 HT 工业互联网 2D 3D 可视化应用案例》2018 篇，图扑软件定义 2018 为国内工业互联网可视化的元年后，2019 年里我们与各行业客户进行了更深度合作，拓展了 HT for  Web 在更多新领域的应用，图扑软件作为在工业可视化领域的一线重度参与者，我们觉得有必要将该话题作为系列文章，在此对 2019 年做个总结回顾和分享，依然希望：激发行业和学术工作者对可视化的深度思考，为推进国内工业互联网发展出份薄力！            <a href="https://www.cnblogs.com/xhload3d/p/12321119.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-02-17 12:10 xhload3d 阅读 (357) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12321119" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年2月14日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/02/14.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12306412.html">
+[置顶]    基于 H5与WebGL 的科幻风机 3D 展示
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://i.ibb.co/qnHg8sJ/TD-ECQ5-DLC6-D-G-9-X0-I.png" class="desc_img">
+在中国可以形成产业的新能源主要包括水能（主要指小型水电站）、风能、生物质能、太阳能、地热能等，是可循环利用的清洁能源。新能源产业的发展既是整个能源供应系统的有效补充手段，也是环境治理和生态保护的重要措施，是满足人类社会可持续发展需要的最终能源选择。风电具有可再生、无污染、能量大的特点，备受能源界关注。 而今，工业互联网的崛起更是让我们对风力发电的注意，大数据 + 互联网技术可以使风机更利于维护、也使我们能清楚的了解风机的内部结构及其功能。            <a href="https://www.cnblogs.com/xhload3d/p/12306412.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-02-14 10:14 xhload3d 阅读 (121) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12306412" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年2月12日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/02/12.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12297836.html">
+[置顶]    基于H5与webGL的 3D 电子围栏展示
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img-blog.csdnimg.cn/20191008224557612.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTMxNjE0OTU=,size_16,color_FFFFFF,t_70" class="desc_img">现代工业化的推进在极大加速现代化进程的同时也带来的相应的安全隐患，在传统的可视化监控领域，一般都是基于 Web SCADA 的前端技术来实现 2D 可视化监控，本系统采用 Hightopo 的 HT for Web 产品来构造轻量化的 3D 可视化场景，该 3D 场景从正面展示了一个现代化工厂的现实场景，包括工厂工人的实时位置、电子围栏的范围、现场的安全情况等等，帮助我们直观的了解当前工厂人员的安全状况。本篇文章通过对工厂可视化场景的搭建和模型的加载，人物实时定位代码的实现、电子围栏和轨迹图的实现进行阐述，帮助我们了解如何通过使用HT实现一个简单的3D电子            <a href="https://www.cnblogs.com/xhload3d/p/12297836.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-02-12 09:30 xhload3d 阅读 (410) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12297836" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月20日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/20.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12735213.html">
+    基于 HTML5 WebGL 的 CPU 监控系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200418180728283-618653237.gif" class="desc_img">  科技改变生活，科技的发展带来了生活方式的巨大改变。随着通信技术的不断演进，5G 技术应运而生，随时随地万物互联的时代已经来临。5G 技术不仅带来了更快的连接速度和前所未有的用户体验，也为制造业，微电子及集成电路发展带来了巨大的发展机遇和挑战。 5G 技术商业实施过程中，5G 网络芯片面临低功耗、低延时、高可靠性和高精度的技术挑战。 本文将以大家熟悉的 CPU 为例，介绍以 HT 为基础，应用 JavaScript，WebGL 和 HTML5 技术开发的 CPU 监控系统。在大型数据中心，实时监控 CPU 的温度，使用率等具有重要的意义。在服务器级别进行 CPU 温度监控，能够实时了解服务器 CPU 的温度，及时发现能效问题，防止出现服务延迟、服务器宕机，从而节约成本。实时监控 CPU 使用率等，能够实时查看服务器的 CPU 使用情况，合理分配服务器资源。            <a href="https://www.cnblogs.com/xhload3d/p/12735213.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-20 00:04 xhload3d 阅读 (157) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735213" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月15日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/15.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12709672.html">
+    基于 HTML5 WebGL 的楼宇智能化集成系统（三）
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200405184700868-733454514.gif" class="desc_img">      2018年7月，信息化部印发了《工业互联网平台建设及推广指南》和《工业互联网平台评价方法》，掀起了 工业互联网 的浪潮，并成为热词写入了报告中。同为信息发展下的产物 建筑智能化集成系统 也是兼具着信息与管理的重要体现，数据化信息通过可视化的管理系统展示出一套互联网智能优化的解决方案，而本系列文章便结合了 HT  的 2D/3D 可视化工具的运用，结合面板的数据展示和大楼建模场景的可视化管理，前面的内容已经讲解了 3D 模型和 2D 面板的融合体现，本次的内容将带您探讨 智慧楼宇管理系统、电梯监控系统 以及 停车场管理系统 的实现方式和整体系统的联合优化体现。            <a href="https://www.cnblogs.com/xhload3d/p/12709672.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-15 23:53 xhload3d 阅读 (377) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12709672" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月12日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/12.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12688752.html">
+    基于 HTML5 WebGL 的 水泥工厂可视化系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200411173958932-2101980099.png" class="desc_img">如今的制造行业，基于数据进行生产策略制定与管理已经成为一种趋势，特别是 工业4.0 的浪潮下，数据战略已经成为很多制造企业的优先战略，而数据可视化以更直观的方式，帮助指导决策，成为数据分析传递信息的重要工具。通过数据可视化系统助力实现数据驱动的工业世界，为 工业4.0 提供更加灵活、敏捷、高效、个性化的数据支撑。今天就给大家带来一个采用 Hightopo 的 HT for Web 产品实现了一个水泥工厂可视化系统。            <a href="https://www.cnblogs.com/xhload3d/p/12688752.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-12 23:50 xhload3d 阅读 (455) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12688752" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月9日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/09.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12664019.html">
+    基于 HTML5 WebGL 的楼宇智能化集成系统（二）
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/common/1496396/202002/1496396-20200225200053329-1065733339.jpg" class="desc_img"> 一套完整的可视化操作交互上，必不可少 2D/3D 的融合，在上期我们介绍了有关 3D 场景的环视漫游、巡视漫游以及动画效果，还包括了冷站场景、热站场景以及智慧末端的实现原理，本期主要介绍关于 2D 图纸面板的动画效果以及面板视频的嵌入。通过 2D/3D 融合的体验，达成场景数据可视化的直观体现以及面板动画交互体验的舒适体验。            <a href="https://www.cnblogs.com/xhload3d/p/12664019.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-09 00:07 xhload3d 阅读 (371) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12664019" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月7日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/07.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12650621.html">
+    基于 HTML5 WebGL 的楼宇智能化集成系统（一）
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202004/1496396-20200405041331985-437729178.gif" class="desc_img">随着现代通信技术、计算机技术、控制技术的飞速发展，智能建筑已经成为现代建筑发展的主流。智能建筑是以建筑物为平台，兼备信息设施系统、信息化应用系统、建筑设备管理系统、公共安全系统等。集结构、系统、服务、管理及其优化组合为一体，向人们提供一个安全、高效、便携、节能、环保、健康的建筑环境。            <a href="https://www.cnblogs.com/xhload3d/p/12650621.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-07 00:04 xhload3d 阅读 (390) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12650621" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年4月2日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/04/02.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12616772.html">
+    基于 HTML5 WebGL 的故宫人流量动态监控系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200327093342037-1377090739.png" class="desc_img">在当代社会，故宫已经成为一个具有多元意义的文化符号，在历史、艺术、文化等不同领域发挥着重要的作用，在国际上也成为能够代表中国文化甚至中国形象的国际符号。近几年故宫的观众接待量逐年递增，年接待量已突破千万，根据故宫的文物特点与开放模式，必须及时建立一套完整的集监控与防患应急于一体的现代化监控系统。            <a href="https://www.cnblogs.com/xhload3d/p/12616772.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-04-02 00:02 xhload3d 阅读 (717) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12616772" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月29日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/29.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12596014.html">
+    基于 HTML5 WebGL 的 智慧楼宇能源监控系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200305162158704-673972071.png" class="desc_img">21世纪，在能源危机和全球气候变暖的压力下，太阳能等可再生能源越来越受到关注，其中光伏建筑一体化逐渐成为绿色发展方式和生活方式，加强节能降耗，支持低碳产业和新能源、可再生能源发展，也已经成为国家战略，所以基于数据进行管理和监控的智慧楼宇能源系统已经成为了一种趋势。通过数据我们可以直观对建筑执行能耗量化管理以及效果评估，来控制降低建筑运营过程中所消耗的能量，最终降低建筑的运营成本，提高能源使用效率。今天就给大家带来一个采用 Hightopo 的 HT for Web 产品实现智慧楼宇的能耗监控系统。            <a href="https://www.cnblogs.com/xhload3d/p/12596014.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-29 23:50 xhload3d 阅读 (444) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12596014" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月26日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/26.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12571377.html">
+    基于 HTML5 Canvas 的拓扑组件 ToolTip 应用
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200320171132013-1454064707.png" class="desc_img">ToolTip 效果是网页制作中常见的使用特效。当用户将鼠标悬浮在某个控件上时，ToolTip 显示并向用户展示相应的提示信息；当鼠标离开时，ToolTip 隐藏。一般情况下，我们使用 ToolTip 只是显示一句话或几个字，其实我们还可以展示很多信息。而今天的重点则是通过 Hightopo 的 HT for Web 产品来制作多种样式的 ToolTip。            <a href="https://www.cnblogs.com/xhload3d/p/12571377.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-26 09:49 xhload3d 阅读 (267) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12571377" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月22日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/22.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12549527.html">
+    基于 HTML5 WebGL 与 GIS 的智慧机场大数据可视化分析
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2020.cnblogs.com/blog/1496396/202003/1496396-20200322130329569-487668784.gif" class="desc_img">前言：大数据，人工智能，工业物联网，5G已经或者正在潜移默化地改变着我们的生活。在信息技术快速发展的时代，谁能抓住数据的核心，利用有效的方法对数据做数据挖掘和数据分析，从数据中发现趋势，谁就能做到精准控制，实时分析，有的放矢，从而获取更快速、更平稳、更长远地发展。在航空领域，机场、航班和航线信息是至关重要的数据，本文将介绍 以HT 为平台，应用 JavaScript、HTML5、GIS 等技术开发的全球航线实例。            <a href="https://www.cnblogs.com/xhload3d/p/12549527.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-22 23:57 xhload3d 阅读 (385) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12549527" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+		
+<p class="date">
+	2020年3月19日		  
+	<a href="https://www.cnblogs.com/xhload3d/archive/2020/03/19.html"></a>
+</p>
+
+
+		<div class="post">
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/xhload3d/p/12520693.html">
+    基于 HTML5 WebGL  的发动机 3D 可视化系统
+</a>
+
+			</div>
+			
+			<div class="postText">
+				
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/i-beta/1496396/202002/1496396-20200205161952589-658210919.png" class="desc_img">工业机械产品大多体积庞大、运输成本高，在参加行业展会或向海外客户销售时，如果没有实物展示，仅凭静态、简单的图片说明书介绍，无法让客户全面了解产品，不仅工作人员制作麻烦，客户看得也费力。如果能在 Web 上做 3D 设备展示，销售人员可以不限平台随时给客户介绍演示。还可以不受现实条件限制，演示设备拆分和组装的过程，展示产品内部结构和动态运作时的效果，让客户更直观了解产品的部件组成，更准确、全面地了解产品的功能和特点，大大降低了沟通成本。为了解决这些行业痛点，本篇文章采用 Hightopo 的 HT for Web 产品实现了一个发动机设备 3D 可视化案例。            <a href="https://www.cnblogs.com/xhload3d/p/12520693.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			
+			<div class="postFoot">
+				
+
+posted @ 2020-03-19 00:01 xhload3d 阅读 (470) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12520693" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<br>
+
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/xhload3d/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+</div>
+<div class="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 xhload3d
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+</div>
+
+
+    
+</body>
+</html>

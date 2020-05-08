@@ -1,0 +1,1086 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>leesf - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/leesf456/custom.css?v=DsK/RMQqoqC&#x2B;MavenrEGp99aRzA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/leesf456/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/leesf456/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/leesf456/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 236150;
+        var currentBlogApp = 'leesf456';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <a href="https://github.com/leesf" target="_blank"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://files.cnblogs.com/files/leesf456/fork_me_on_github.ico"></a>
+
+
+
+<script>
+window.tctipConfig = {
+        imagePrefix: "https://files.cnblogs.com/files/kdy11/",
+        cssPrefix:     "https://files.cnblogs.com/files/kdy11",
+        buttonImageId:  4,
+        buttonTip:  "dashang",
+        list:{
+            alipay: {qrimg: "https://files-cdn.cnblogs.com/files/leesf456/alipay1.gif"},
+            weixin:{qrimg: "https://files.cnblogs.com/files/leesf456/weixin.gif"},
+        }
+};
+</script>
+<script src="https://files.cnblogs.com/files/kdy11/tctip.min.js" defer></script>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/leesf456/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/leesf456/">leesf</a>
+</h1>
+<h2>
+掌控之中，才会成功；掌控之外，注定失败。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/leesf456/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/leesf">
+联系</a></li>
+<li>
+
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+190&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+428</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2016/03/25.html">2016年3月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/5317574.html">
+[置顶]    【字符编码】彻底理解字符编码
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 在解决昨天的问题时，又引出了很多新的问题，如为什么要进行编码，这些编码的关系如何，如ASCII，IOS-8859-1，GB2312，GBK，Unicode之间的关系，笔者想要彻底理解字符编码背后的故事，遂进行了探索，具体笔记如下。如园友能读完本篇文章，我相信会解开很多疑惑。 二、字符编码             <a href="https://www.cnblogs.com/leesf456/p/5317574.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2016-03-25 10:46 leesf 阅读 (25373) 评论 (9)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5317574" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2016/01/30.html">2016年1月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/5170212.html">
+[置顶]    【小型系统】简单的刷票系统（突破IP限制进行投票）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 相信大家平时肯定会收到朋友发来的链接，打开一看，哦，需要投票。投完票后弹出一个页面（恭喜您，您已经投票成功），再次点击的时候发现，啊哈，您的IP（***.***.***.***）已经投过票了，不能重复投票。这时候，我们可能会想，能不能突破ip地址的限制进行刷票呢？有了这样的想法，那就去做吧            <a href="https://www.cnblogs.com/leesf456/p/5170212.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2016-01-30 08:49 leesf 阅读 (12167) 评论 (28)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5170212" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/12773101.html">
+    实战 | 将Apache Hudi数据集写入阿里云OSS
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 引入 云上对象存储的廉价让不少公司将其作为主要的存储方案，而Hudi作为数据湖解决方案，支持对象存储也是必不可少。之前AWS EMR已经内置集成Hudi，也意味着可以在S3上无缝使用Hudi。当然国内用户可能更多使用阿里云OSS作为云上存储方案，那么如果用户想基于OSS构建数据湖，那么Hudi            <a href="https://www.cnblogs.com/leesf456/p/12773101.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 14:58 leesf 阅读 (79) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773101" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/12728603.html">
+    实战|使用Spark Structured Streaming写入Hudi
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 项目背景 传统数仓的组织架构是针对离线数据的OLAP（联机事务分析）需求设计的，常用的导入数据方式为采用sqoop或spark定时作业逐批将业务库数据导入数仓。随着数据分析对实时性要求的不断提高，按小时、甚至分钟级的数据同步越来越普遍。由此展开了基于spark/flink流处理机制的（准）实时            <a href="https://www.cnblogs.com/leesf456/p/12728603.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 22:21 leesf 阅读 (111) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12728603" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2020/04/16.html">2020年4月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/12710118.html">
+    Apache Hudi 设计与架构最强解读
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：感谢 Apache Hudi contributor：王祥虎&#160;翻译&amp;供稿。 欢迎关注微信公众号：ApacheHudi 本文将介绍Apache Hudi的基本概念、设计以及总体基础架构。 1.简介 Apache Hudi(简称：Hudi)使得您能在hadoop兼容的存储之上存储大量数据，同时它还提供两            <a href="https://www.cnblogs.com/leesf456/p/12710118.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-16 05:34 leesf 阅读 (224) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12710118" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2020/01/24.html">2020年1月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/12232568.html">
+    【Flink】Flink作业调度流程分析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 概述 当向Flink集群提交用户作业时，从用户角度看，只需要作业处理逻辑正确，输出正确的结果即可；而不用关心作业何时被调度的，作业申请的资源又是如何被分配的以及作业何时会结束；但是了解作业在运行时的具体行为对于我们深入了解Flink原理有非常大的帮助，并且对我们如何编写更合理的作业逻辑有指导意            <a href="https://www.cnblogs.com/leesf456/p/12232568.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-24 21:21 leesf 阅读 (231) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12232568" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2019/07/05.html">2019年7月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/11136344.html">
+    【Flink】深入理解Flink-On-Yarn模式
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 前言 Flink提供了两种在yarn上运行的模式，分别为Session Cluster和Per Job Cluster模式，本文分析两种模式及启动流程。 下图展示了Flink On Yarn模式下涉及到的相关类图结构 2. Session Cluster模式 Session Cluster模式            <a href="https://www.cnblogs.com/leesf456/p/11136344.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-05 09:21 leesf 阅读 (3274) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11136344" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2019/07/02.html">2019年7月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/11120045.html">
+    【Flink】Flink 底层RPC框架分析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 前言 对于Flink中各个组件（JobMaster、TaskManager、Dispatcher等），其底层RPC框架基于Akka实现，本文着重分析Flink中的Rpc框架实现机制及梳理其通信流程。 2. Akka介绍 由于Flink底层Rpc是基于Akka实现，我们先了解下Akka的基本使用            <a href="https://www.cnblogs.com/leesf456/p/11120045.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-02 13:13 leesf 阅读 (648) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11120045" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2018/03/16.html">2018年3月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/8585401.html">
+    【MyBatis】MyBatis自动生成代码之查询爬坑记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 项目使用SSM框架搭建Web后台服务，前台后使用 ，后台使用MyBatisGenerator自动生成代码，在前台使用关键字进行查询时，遇到了一些很宝贵的坑，现记录如下。为展示所遇问题，将项目进行了精简。 项目框架 后台框架 后台框架选型为 ，其中使用 创建代码， 为内嵌的Web服务器。 项目代            <a href="https://www.cnblogs.com/leesf456/p/8585401.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-03-16 21:13 leesf 阅读 (1071) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8585401" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2018/01/28.html">2018年1月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/8370520.html">
+    Guava-Objects使用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 中的 提供了很多方法供所有的类使用，特别是 、`hashCode equals getClass Guava Objects`类，其提供了很多更为强大的方法。 Objects 是`Object equal toStringHelper`等方法，下面根据一个示例来分析源码。 示例 运行结果： t            <a href="https://www.cnblogs.com/leesf456/p/8370520.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-01-28 08:48 leesf 阅读 (358) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8370520" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/12/30.html">2017年12月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/8151251.html">
+    【杂文】2017年度总结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：导读 在2017年的尾巴，回顾过去一整年，有些成长收获，有些失落惆怅；好的坏的，经历过的，都需要重温，算是对2017年的正式告别。 回顾 过去看现在 在 &quot;2016年度总结&quot; 中，有对2017年的展望。 技术书籍的学习，完成度90%，其中对于 源码学习部分并未开展，只是学习部分原理讲解内容，其他技术            <a href="https://www.cnblogs.com/leesf456/p/8151251.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-30 21:26 leesf 阅读 (1005) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8151251" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/12/12.html">2017年12月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/8027772.html">
+    【Flink】流-表概念
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：流概念 Data Streams上的关系查询 与`stream processing`对比如下。 | SQL | Stream Processing | | : | : | | 有限元组 | 无限元组 | | 完整数据集上的查询 | 无法基于所有数据查询 | | 查询会结束 | 查询不会结束 | M            <a href="https://www.cnblogs.com/leesf456/p/8027772.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-12-12 14:52 leesf 阅读 (4423) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8027772" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/11/18.html">2017年11月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7857621.html">
+    【Spring】Spring MVC高级技术
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 前面学习了简单的 知识，接着学习更高阶的 技术。 高级技术 Spring MVC配置的替换方案 自定义DispatcherServlet配置 在第五章我们曾编写过如下代码。 可以看到 实现了 抽象类，并重写了三个必须的方法，实际上还可对更多方法进行重写，以便实现额外的配置，如对 方法进行重写，            <a href="https://www.cnblogs.com/leesf456/p/7857621.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-11-18 18:47 leesf 阅读 (1737) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7857621" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/11/05.html">2017年11月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7788093.html">
+    【Spring】渲染Web视图
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 前面学习了编写 请求的控制器，创建简单的视图，本篇博文讲解控制器完成请求到结果渲染到用户的浏览器的过程。 渲染Web视图 理解视图解析 前面所编写的控制器方法都没有直接产生浏览器中渲染所需要的 ，只是将数据填充到模型中，然后将模型传递给视图，方法返回值是 类型的值，其是视图的逻辑名称，不会直接            <a href="https://www.cnblogs.com/leesf456/p/7788093.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-11-05 18:09 leesf 阅读 (1399) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7788093" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/10/31.html">2017年10月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7759903.html">
+    【问题排查】fastjson线上排坑记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 版本上线时发现 的`toString toString toString md5 md5 md5`值不相等而重启，导致数据存在丢失情况。 源码 从项目中抽取出该模块代码，并进行了适当修改，但未改变整个处理逻辑，源码如下。 原因猜想 首先怀疑是由于 版本不一致的问题导致 方法返回的字符串不相同，            <a href="https://www.cnblogs.com/leesf456/p/7759903.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-31 09:10 leesf 阅读 (2591) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7759903" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/10/27.html">2017年10月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7744934.html">
+    【工具】Spring项目转化Spring Web项目插件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 源于前一篇博文中提到，将 项目转化为 项目，发现添加项目文件和修改 文件等都是手动完成的，心想着开发一个 插件来自动化完成上面的过程，实现一键转化。 思路 记录手动完成转化时需要的步骤。 修改 文件，如添加 和`spring web`的依赖。 在指定文件夹下添加 文件，并写入数据。 使用程序自            <a href="https://www.cnblogs.com/leesf456/p/7744934.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-27 19:42 leesf 阅读 (399) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7744934" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/10/25.html">2017年10月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7732327.html">
+    【Spring】构建Spring Web应用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 学习了 的注解、 后，接着学习 ，对于 应用开发， 提供了 框架。 Web应用 Spring MVC初探 为( )，当用户在浏览器中点击链接或提交表单时，请求经历的流程大致如下。 所有的请求都会通过一个前端控制器(front controller servlet)，也即是 ，`Dispatch            <a href="https://www.cnblogs.com/leesf456/p/7732327.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-25 20:56 leesf 阅读 (3715) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7732327" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/10/14.html">2017年10月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7668146.html">
+    【记录】Spring项目转化为Spring Web项目
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 在将 项目转化为 项目时出现了点问题，总是无法成功部署，查阅资料也并没有找到一个完美的解决方案，最后是参考在 中创建 项目后的目录才成功运行，并将过程记录下来。 转化过程 修改pom.xml文件 添加 对应的 依赖，我添加的依赖如下。 主要需要添加 和`spring webmvc`两个依赖。             <a href="https://www.cnblogs.com/leesf456/p/7668146.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-14 18:34 leesf 阅读 (971) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7668146" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/10/09.html">2017年10月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7629176.html">
+    【生活工具】你能带我回家么，可能明天要下雨了。
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 你是否也这样？每天加班完后只想回家躺着，经常忘记带伞回家。如果第二天早上有雨，往往就会成为 ，特别是笔者所在的深圳，更是喜欢下雨，稍不注意，就成 。其实想想，这种情况也是可以有效避免的，只需要晚上带伞回家，然后第二天早上带出来，最后美滋滋的吃早餐。但前提是晚上带伞回家，你知道的，做 的都在忙着            <a href="https://www.cnblogs.com/leesf456/p/7629176.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-09 08:59 leesf 阅读 (2111) 评论 (24)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7629176" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/10/06.html">2017年10月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7631620.html">
+    【Spring】面向切面之AOP
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 前面已经讲解了 的装配技术，接着学习 中另外一个核心概念： 。 面向切面 面向切面编程 切面能够帮助模块化 ，`横切关注点`可以被描述为影响应用的功能，如为业务添加安全和事务管理等。 AOP(Aspect Orient Programming) 通知，通知定义切面何时被使用， 切面可以应用 种            <a href="https://www.cnblogs.com/leesf456/p/7631620.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-06 15:38 leesf 阅读 (915) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7631620" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/10/05.html">2017年10月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7629225.html">
+    【Spring】高级装配
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 前面讲解了 的核心装配技术，其可应付很多中装配情况，但 提供了高级装配技术，以此实现更为高级的 装配功能。 高级装配 配置profile bean 将所有不同 定义放置在一个或多个 中，在将应用部署到每个环境时，要确保对应的 处于 状态。如配置了如下数据源，并使用 注解定义。 JavaConf            <a href="https://www.cnblogs.com/leesf456/p/7629225.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-10-05 15:08 leesf 阅读 (683) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7629225" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/09/20.html">2017年9月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7563312.html">
+    【Linux】Linux学习笔记（完结）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 在工作中发现 系统的重要性，于是计划重温下 ，顺便记录笔记方便之后查阅。 磁盘分区 在 系统中，每个设备都被当成一个文件来对待；如 接口的硬盘文件名为 。 磁盘的第一个扇区记录了 和`分区表 主引导分区 446bytes MBR 分区表 64bytes`。 磁盘分区是对 进行设置，默认分区表仅            <a href="https://www.cnblogs.com/leesf456/p/7563312.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-09-20 19:45 leesf 阅读 (574) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7563312" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7563305.html">
+    【Spring】Spring的bean装配
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 是`Spring Spring bean Spring bean`。 装配bean 在装配 时非常灵活，其提供了三种方式装配 。 在 中进行显式配置。 在 中进行显式配置。 隐式的 发现机制和自动装配。 自动化装配bean 自动化装配技术最为便利， 从两个角度实现自动化装配。 组件扫描： 会自            <a href="https://www.cnblogs.com/leesf456/p/7563305.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-09-20 19:44 leesf 阅读 (601) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7563305" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/08/25.html">2017年8月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7429134.html">
+    【Netty】源码分析目录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 为方便系统的学习 ，特整理文章目录如下。 &quot;【Netty】第一个Netty应用&quot; &quot;【Netty】Netty核心组件介绍&quot; &quot;【Netty】Netty传输&quot; &quot;【Netty】Netty之ByteBuf&quot; &quot;【Netty】ChannelHandler和ChannelPipeline&quot; &quot;【Net            <a href="https://www.cnblogs.com/leesf456/p/7429134.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-25 17:45 leesf 阅读 (1147) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7429134" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/08/22.html">2017年8月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7413781.html">
+    【项目实战】多线程环境下正确创建单例
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 对项目代码进行扫描时，出现静态扫描严重问题，发现是由于多线程环境下没有正确创建单例所导致。 问题分析 本项目使用的 。 项目代码如下（修改了类名，但核心没变） 按照项目生成单例代码，使用如下测试类进行测试 java static class Singleton { private static            <a href="https://www.cnblogs.com/leesf456/p/7413781.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-22 21:31 leesf 阅读 (1148) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7413781" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/08/20.html">2017年8月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7399728.html">
+    【环境搭建】使用Jekyll搭建Github博客
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 昨天花了差不多一天的时间，使用 搭建起了一套 博客，感觉不错，也特将搭建过程记录下来，方便有需要的朋友自行搭建。 搭建步骤 本环境是在Linux环境下搭建完成的 安装前建议使用命令 更新源 安装Ruby 使用命令 安装ruby。 使用命令 查看 是否安装成功(成功会出现类似如下字符串： )。             <a href="https://www.cnblogs.com/leesf456/p/7399728.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-20 13:26 leesf 阅读 (338) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7399728" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/leesf456/archive/2017/07/14.html">2017年7月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/leesf456/p/7161995.html">
+    【Storm】Storm实战之频繁二项集挖掘（附源码）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 针对大叔据实时处理的入门，除了使用WordCount示例之外，还需要相对更深入点的示例来理解Storm，因此，本篇博文利用Storm实现了频繁项集挖掘的案例，以方便更好的入门Storm。 二、基础知识 2.1 频繁二项集挖掘 如顾客去超市购物时，牙膏和牙刷基本上都是摆放在一起，因为购买牙膏            <a href="https://www.cnblogs.com/leesf456/p/7161995.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-07-14 10:03 leesf 阅读 (479) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7161995" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/leesf456/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 leesf
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

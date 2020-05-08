@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>gaorong404 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=Fx4xdLkGuHnlaG7xntG_wAnZrnorJWp5u_TWKqbvMF0" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/gaorong/custom.css?v=5coXTkQ6t&#x2B;R4FBmkAHc3SbObFqQ=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=cYvlxMu_nd6MVfg-vi7YqOC6FaZ7VHFsDM166vO_ekA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/gaorong/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/gaorong/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/gaorong/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 334473;
+        var currentBlogApp = 'gaorong';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlackLowKey';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/gaorong/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/gaorong/">代码小工</a>
+</h1>
+<h2>
+<a href="https://github.com/gaorong" data-size="large">Follow @gaorong</a>
+<div ><img src="https://s2.ax1x.com/2020/02/15/3SForD.jpg" style="width: 500px;"></div>
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li>
+</li>
+<li>
+
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/gaorong404">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/gaorong/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+41&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+23</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2020/03/08.html">2020年3月8日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/12443539.html">
+    容器内init进程方案
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：背景 进程标识符 (PID) 是Linux 内核为每个进程提供的唯一标识符。熟悉docker的同学都知道， 所有的进程 PID都属于某一个PID namespaces, 也就是说容器具有一组自己的 PID，这些 PID 映射到主机系统上的 PID。启动Linux内核时启动的第一个进程具有 PID 1            <a href="https://www.cnblogs.com/gaorong/p/12443539.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-08 17:55 gaorong404 阅读 (176) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12443539" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2020/02/23.html">2020年2月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/12284888.html">
+    记一次kubernetes驱逐踩坑
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近在公司的线上服务器上发现了一个现象： 将某个node的kubelet短暂的停掉之后，其上的pod马上会被驱逐，这让笔者大吃一惊，印象之中，停掉kubelet后，该node会变为 状态，随后controller manger会经过一段时间才开始驱逐其上的pod。还有个参数专门来控制这个时间： po            <a href="https://www.cnblogs.com/gaorong/p/12284888.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-23 15:30 gaorong404 阅读 (261) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12284888" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2020/02/15.html">2020年2月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/12312590.html">
+    kubernetes中node心跳处理逻辑分析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近在查看一个kubernetes集群中node not ready的奇怪现象，顺便阅读了一下kubernetes kube controller manager中管理node健康状态的组件 。我们知道kubernetes是典型的master slave架构，master node负责整个集群元数据            <a href="https://www.cnblogs.com/gaorong/p/12312590.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-15 19:32 gaorong404 阅读 (186) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12312590" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2019/12/08.html">2019年12月8日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/11873114.html">
+    kubectl exec 在kubelet中的处理流程
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：基于kuebrnetes v1.17 简单来说，一个完整的streaming请求如下： 客户端 kubectl exec i t ... kube apiserver 向 Kubelet 发送流式请求 /exec/ Kubelet 通过 CRI 接口向 CRI Shim 请求 Exec 的 URL             <a href="https://www.cnblogs.com/gaorong/p/11873114.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-08 12:07 gaorong404 阅读 (399) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11873114" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2019/10/27.html">2019年10月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/11716907.html">
+    kubernetes kubelet组件中cgroup的层层&quot;戒备&quot;
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：cgroup是linux内核中用于实现资源使用限制和统计的模块，docker的风靡一时少不了cgroup等特性的支持。kubernetes作为容器编排引擎，除了借助docker进行容器进程的资源管理外，还提供了一些更加高级的资源管理功能，以提高资源利用率和更加稳定的程序运行环境，其中必然少不了cgr            <a href="https://www.cnblogs.com/gaorong/p/11716907.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-27 12:01 gaorong404 阅读 (782) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11716907" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2019/10/21.html">2019年10月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/11318328.html">
+    生产环境中的kubernetes 优先级与抢占
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：kubernetes 中的抢占功能是调度器比较重要的feature，但是真正使用起来还是比较危险，否则很容易把低优先级的pod给无辜kill。为了提高GPU集群的资源利用率，决定勇于尝试一番该featrue。当然使用之前还是得阅读一下相关的代码做到心里有数，出了问题也方便定位修复。 基本原理 优先级            <a href="https://www.cnblogs.com/gaorong/p/11318328.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-21 22:48 gaorong404 阅读 (373) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11318328" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2019/10/20.html">2019年10月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/11710246.html">
+    阿里terway源码分析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：背景 随着公司业务的发展，底层容器环境也需要在各个区域部署，实现多云架构， 使用各个云厂商提供的CNI插件是k8s多云环境下网络架构的一种高效的解法。我们在阿里云的方案中，便用到了阿里云提供的CNI插件terway。terway所提供的VPC互通的网络方案，方便对接已有的基础设施，同时没有overl            <a href="https://www.cnblogs.com/gaorong/p/11710246.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-20 21:59 gaorong404 阅读 (2029) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11710246" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2019/08/13.html">2019年8月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/11336834.html">
+    golang timeoutHandler解析及kubernetes中的变种
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Golang里的http request timeout比较简单，但是稍不留心就容易出现错误，最近在kubernetes生产环境中出现了的一个问题让我有机会好好捋一捋golang中关于timeout中的所有相关的东西。 Basic golang中timeout有关的设置， 资料已经比较多， 其中必须            <a href="https://www.cnblogs.com/gaorong/p/11336834.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-13 11:46 gaorong404 阅读 (694) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11336834" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2019/08/07.html">2019年8月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/11266629.html">
+    kubernetes集群升级的正确姿势
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：kubernetes社区非常活跃，每季度都会发布一个release。但是线上集群业务可用性要求较高，场景复杂，任何微小的变更都需要非常小心，此时跟随社区版本进行升级略显吃力。但是为了能够使用到最新的一些feature我们必须不定期进行一些升级操作，在经历了一次线上集群的升级操作，踩完一些坑之后，分享            <a href="https://www.cnblogs.com/gaorong/p/11266629.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-07 17:26 gaorong404 阅读 (1816) 评论 (9)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11266629" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/gaorong/archive/2019/05/28.html">2019年5月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/gaorong/p/10925480.html">
+    记一次kubernetes集群异常:  kubelet连接apiserver超时
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Background kubernetes是master slave结构，master node是集群的大脑， 当master node发生故障时整个集群都&quot;out of control&quot;。master node中最重要的当属apiserver组件， 它负责处理所有请求， 并持久化状态到etcd。             <a href="https://www.cnblogs.com/gaorong/p/10925480.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-05-28 16:00 gaorong404 阅读 (2710) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10925480" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/gaorong/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 gaorong404
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

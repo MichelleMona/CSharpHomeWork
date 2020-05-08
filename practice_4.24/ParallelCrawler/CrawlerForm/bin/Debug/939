@@ -1,0 +1,501 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>LonZyuan - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/kzyuan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/kzyuan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/kzyuan/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 581974;
+        var currentBlogApp = 'kzyuan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/kzyuan/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/kzyuan/">LonZyuan</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/kzyuan/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/LonZyuan">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/kzyuan/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+12&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+1</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12775304.html">
+    SpringBoot整合Shiro 二：Shiro配置类
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：环境搭建见上篇：SpringBoot整合Shiro 一：搭建环境 Shiro配置类配置 shiro的配置主要集中在 ShiroFilterFactoryBean 中 关于权限： anon：无需认证就可以访问 ​ authc：必须认证了才能访问 ​ user：必须用有了 记住我 功能才能用 ​ per            <a href="https://www.cnblogs.com/kzyuan/p/12775304.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 21:15 LonZyuan 阅读 (3) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775304" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12762738.html">
+    SpringBoot整合Shiro 一：搭建环境
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Java项目的安全框架一般使用 shiro 与 spring security 具体怎么选择可以参考文章：安全框架 Shiro 和 Spring Security 如何选择 我这里选择使用Shiro 环境搭建 创建SpringBoot项目 导入Maven依赖 &lt;dependency&gt; &lt;groupI            <a href="https://www.cnblogs.com/kzyuan/p/12762738.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 18:34 LonZyuan 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12762738" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12706600.html">
+    MybatisPlus使用Wrapper实现查询功能
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Wrapper 条件查询器 ：使用它可以实现很多复杂的查询 几个案例 环境： 参照博客：MybatisPlus入门程序 1.条件查询 1.1&#160;查询name不为空的用户，并且邮箱不为空的用户，年龄大于等于12的用户 //查询name不为空的用户，并且邮箱不为空的用户，年龄大于等于12 @Test vo            <a href="https://www.cnblogs.com/kzyuan/p/12706600.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 17:15 LonZyuan 阅读 (112) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12706600" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/04/06.html">2020年4月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12642488.html">
+    MybatisPlus的CRUD及拓展
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：创建一个简单的MybatisPlus项目在上一篇博客：MybatisPlus入门程序 一、CRUD 1. select 1.1 查找全部用户 //查 @Test public void select(){ ​ //查询全部用户 List&lt;User&gt; users = userMapper.select            <a href="https://www.cnblogs.com/kzyuan/p/12642488.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-06 16:00 LonZyuan 阅读 (38) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12642488" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/04/05.html">2020年4月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12639064.html">
+    MybatisPlus入门程序
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：参考资料：MybatisPlus官网 环境搭建 创建数据库 CREATE DATABASE `mybatisplus` ​ USE `mybatisplus` ​ CREATE TABLE `user`( id BIGINT(20) NOT NULL COMMENT &#39;主键ID&#39;, NAME VAR            <a href="https://www.cnblogs.com/kzyuan/p/12639064.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-05 21:07 LonZyuan 阅读 (25) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12639064" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/04/02.html">2020年4月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12622033.html">
+    动态SQL
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、环境准备 表blog 实体类 （使用了Lombok） package com.zy.pojo; ​ import lombok.Data; ​ import java.util.Date; ​ @Data public class Blog { ​ private String id; priv            <a href="https://www.cnblogs.com/kzyuan/p/12622033.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-02 18:29 LonZyuan 阅读 (17) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12622033" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/03/31.html">2020年3月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12608128.html">
+    一对多+多对一关系的查询
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：比如： 一对多： 一个老师对应多个学生 多对一： 多个学生对应一个老师 一、建表+实体类 创建一个学生表和一个老师表 通过学生的tid与老师的id形成联系 SQLyog的建表代码 CREATE TABLE `teacher`( `id` INT(10) NOT NULL, `name` VARCHA            <a href="https://www.cnblogs.com/kzyuan/p/12608128.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-31 20:44 LonZyuan 阅读 (78) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12608128" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/03/28.html">2020年3月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12589437.html">
+    使用Mybatis出现的问题+配置优化+ResultMap
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、可能出现的问题 1、Error querying database. Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure 原因：jdbc.properties 文件            <a href="https://www.cnblogs.com/kzyuan/p/12589437.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-28 21:17 LonZyuan 阅读 (24) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12589437" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/03/27.html">2020年3月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12584451.html">
+    简单的Mybatis程序
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1.新建一个普通Maven项目，导入 mybatis、mysql、junit（用于测试）3个依赖 Mybatis &lt;dependency&gt; &lt;groupId&gt;org.mybatis&lt;/groupId&gt; &lt;artifactId&gt;mybatis&lt;/artifactId&gt; &lt;version&gt;${mybat            <a href="https://www.cnblogs.com/kzyuan/p/12584451.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-27 21:43 LonZyuan 阅读 (12) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12584451" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kzyuan/archive/2020/03/14.html">2020年3月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/kzyuan/p/12493993.html">
+    使用SpringBoot实现文件的下载
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：上一篇博客：使用SpringBoot实现文件的上传 已经实现了文件的上传，所以紧接着就是下载 首先还是html页面的简单设计 &lt;form class=&quot;form-signin&quot; th:action=&quot;@{/employee/File/download}&quot; method=&quot;post&quot;&gt; &lt;p&gt;&lt;h1&gt;            <a href="https://www.cnblogs.com/kzyuan/p/12493993.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-14 20:33 LonZyuan 阅读 (713) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12493993" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/kzyuan/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 LonZyuan
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,1523 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>张子浩 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ZaraNet/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ZaraNet/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ZaraNet/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 449967;
+        var currentBlogApp = 'ZaraNet';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/ZaraNet/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/ZaraNet/">张子浩</a>
+</h1>
+<h2>
+在路上，我们永远年轻，永远热泪盈眶。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/ZaraNet/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%BC%A0%E5%AD%90%E6%B5%A9">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/ZaraNet/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+328&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+900</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12766143.html">
+    WPF在Gmap.net中将Marker动起来
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前一段时间说过一篇绘制极坐标的，这段时间对它进行了改造已经今非昔比了，功能实现了很多，我目的是让Marker动起来，然后还会绘制Route，上篇也就是简单的绘制了Route,没有关于Marker的相关知识。 那个Circle有一定的改造，原来的纯色改成了渐变，这个你可以提前想好，不过在代码中你要做好            <a href="https://www.cnblogs.com/ZaraNet/p/12766143.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 12:20 张子浩 阅读 (179) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766143" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/04/09.html">2020年4月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12661384.html">
+    WPF使用 Gmap.NET 绘制极坐标运动轨迹
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：大家好，已经很久没有更新了，今天写一篇关于WPF 使用 Gmap.NET 相关的，网上很多Winform的很**，所以我给Wpf进行一些补充。虽然它已经很久没有更新了，但是也只能用这个了。没别的好选择的，毕竟它也没啥可更新的，也可以理解。 使用它之前请Nuget安装一下GMap.NET.Core、G            <a href="https://www.cnblogs.com/ZaraNet/p/12661384.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-09 12:10 张子浩 阅读 (510) 评论 (7)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12661384" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/03/18.html">2020年3月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12518607.html">
+    使用MySql对IdentityServer4进行持久化
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：哈喽大家好，看见网上很少有使用MySql进行持久化的，毕竟又很多坑，说句实话，就连&#160;MySql.Data.EntityFrameworkCore&#160;都有问题，不知道是.net core更新太快还是其它的问题，但毕竟mssql驱动是没问题的，感觉还是私心太大了。不得以之下选择了一个第三方的驱动&#160;Pome            <a href="https://www.cnblogs.com/ZaraNet/p/12518607.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-18 18:09 张子浩 阅读 (349) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12518607" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/03/05.html">2020年3月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12420011.html">
+    在ASP.NET Core Mvc 集成MarkDown
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这几天在做文章编辑，首先就想到了markdown，它比其它的都要新，而且很好用，相对于其它的html编辑器，好久不更新，要好得多，哦~对了我现在已经用上新版的Edge了，经过很多朋友测试，性能比谷歌浏览器都要好很多，并且资源消耗也相对来说小。 一.前提 好吧，言归正传，你首先需要下载MarkDown            <a href="https://www.cnblogs.com/ZaraNet/p/12420011.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-05 14:33 张子浩 阅读 (510) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12420011" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/02/22.html">2020年2月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12346595.html">
+    在ASP.NET Core MVC 中实现中英文切换
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：哈喽..大家好 很久没有更新了，今天就来一篇最近开发用到的功能，那就是中英文切换，这个实际上也不是高大上，先说一下原理，在.NET Core框架中给我们提供了全球化的类，叫做Localization，其官方的文档地址传送门。 在我的项目中，我是这样操作的，你想用别的方式，也可以看文档自己去搞。这个已            <a href="https://www.cnblogs.com/ZaraNet/p/12346595.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-22 18:53 张子浩 阅读 (770) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12346595" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/02/18.html">2020年2月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12326678.html">
+    Microsoft.EntityFrameworkCore.Tools 相关命令
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 Entity Framework（后面简称EF）作为微软家的ORM，自然而然从.NET Framework延续到了.NET Core。 二、程序包管理器控制台 为了能够在控制台中使用命令行来操作EF，需要先安装Microsoft.EntityFrameworkCore.Tools。 安装             <a href="https://www.cnblogs.com/ZaraNet/p/12326678.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-18 16:15 张子浩 阅读 (226) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12326678" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/01/09.html">2020年1月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12170578.html">
+    我&quot;2019&quot; 年跳槽3次的悲惨故事
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：2019年是值得深思的一年，在找工作上没有那么用心，导致碌碌无为，在这里我建议大家找工作的时候不要太着急...要不然会被逼疯的，一定不能被“工作”挑，一定要做到挑&quot;工作&quot;.；那我就先从我的例子中说起。 2018年初，我和我的毕业同学（三人）一起在某三线城市打工(某国企当作派遣工)，在一年的忙碌下，终            <a href="https://www.cnblogs.com/ZaraNet/p/12170578.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-09 12:11 张子浩 阅读 (6811) 评论 (92)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12170578" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/01/08.html">2020年1月8日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12167517.html">
+    在.NET Core中批量注入Grpc服务
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：GRPC 是谷歌发布的一个开源、高性能、通用RPC服务，尽管大部分 RPC 框架都使用 TCP 协议，但其实 UDP 也可以，而 gRPC 干脆就用了 HTTP2。还有就是它具有跨平台、跨语言 等特性，这里就不再说明RPC是啥。 在写项目当中，grp服务过多会非常头疼，那么我们分析一下如果解决这个问            <a href="https://www.cnblogs.com/ZaraNet/p/12167517.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-08 17:58 张子浩 阅读 (787) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12167517" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/01/05.html">2020年1月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12152875.html">
+    使用EF操作Docker中的Mysql实例
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：为啥我会选择mysql呢？因为我的服务器配置较低，而SqlServer在docker中的实例，服务器的运行内存应当保持在2G+,我没有这个条件,它会爆出这样的错误&#160;sqlservr: This program requires a machine with at least 2000 megabyt            <a href="https://www.cnblogs.com/ZaraNet/p/12152875.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-05 18:31 张子浩 阅读 (397) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12152875" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2020/01/04.html">2020年1月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12147302.html">
+    [笔记]使用Docker部署.NET Core应用程序
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：大概快有一年的时间没有碰过docker了，理由很简单，基本上都是在IIS上部署，看到很多大佬都开始Devops持续化集成了，还有就是用Linux守护进程很恶心，哈哈，但相对来说成本会更高，但对于大型团队来说还是不错的，这不?不想被大伙甩下，哈哈，赶紧捞回来点丢下的知识，这篇文章就算是对我自己的笔记吧            <a href="https://www.cnblogs.com/ZaraNet/p/12147302.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-04 16:02 张子浩 阅读 (493) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12147302" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/12/27.html">2019年12月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12105688.html">
+    三分钟学会.NET Core Jwt 策略授权认证
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一.前言 大家好我又回来了，前几天讲过一个关于Jwt的身份验证最简单的案例，但是功能还是不够强大，不适用于真正的项目，是的，在真正面对复杂而又苛刻的客户中，我们会不知所措，就现在需要将认证授权这一块也变的复杂而又实用起来，那在专业术语中就叫做自定义策略的API认证，本次案例运行在.NET Core             <a href="https://www.cnblogs.com/ZaraNet/p/12105688.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-27 09:43 张子浩 阅读 (1484) 评论 (6)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12105688" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/12/25.html">2019年12月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12099286.html">
+    三分钟学会在ASP.NET Core MVC 中使用Cookie
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一.Cookie是什么？ 我的朋友问我cookie是什么，用来干什么的，可是我居然无法清楚明白简短地向其阐述cookie，这不禁让我陷入了沉思：为什么我无法解释清楚，我对学习的方法产生了怀疑！所以我们在学习一个东西的时候，一定要做到知其然知其所以然。 HTTP协议本身是无状态的。什么是无状态呢，即服            <a href="https://www.cnblogs.com/ZaraNet/p/12099286.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-25 23:13 张子浩 阅读 (613) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12099286" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/12/20.html">2019年12月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12064008.html">
+    So Easy - 在Linux服务器上部署 .NET Core App
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：.NET Core&#160;是微软提供的免费、跨平台和开源的开发框架，可以构建桌面应用程序、移动端应用程序、网络应用程序、物联网应用程序和游戏应用程序等。如果你是 Windows 平台下的 dotnet 开发人员的话，使用 .NET core 可以很轻松就设置好任何 Linux 和类 Unix 操作系统下的            <a href="https://www.cnblogs.com/ZaraNet/p/12064008.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-20 22:13 张子浩 阅读 (630) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12064008" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/12/13.html">2019年12月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12037634.html">
+    如何在ASP.NET Core 中快速构建PDF文档
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：比如我们需要ASP.NET Core 中需要通过PDF来进行某些简单的报表开发，随着这并不难，但还是会手忙脚乱的去搜索一些资料，那么恭喜您，这篇帖子会帮助到您，我们就不会再去浪费一些宝贵的时间。 在本文中我们将要使用DinkToPDF来处理我们在.NET Core Web 程序中进行构建PDF文档！            <a href="https://www.cnblogs.com/ZaraNet/p/12037634.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-13 22:44 张子浩 阅读 (888) 评论 (10)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12037634" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/12/07.html">2019年12月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12001261.html">
+    在Windows系统中构建还原ASP.NET Core 源码
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：大家好，这几天试着从Github上拉取AspNetCore的源码，尝试着通过Visual Studio 打开，但是并不尽人意。我们需要去构建我们拉去的源代码，这样才可以通过VisualStudio可还原的项目。毕竟AspNetCore是一个巨型的项目集。 先决条件 在Windows中构建AspNet            <a href="https://www.cnblogs.com/ZaraNet/p/12001261.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-07 12:33 张子浩 阅读 (1198) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12001261" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/12/03.html">2019年12月3日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11976611.html">
+    在.NET Core中使用Jwt对API进行认证
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在.NET Core中想给API进行安全认证，最简单的无非就是Jwt，悠然记得一年前写的Jwt Demo，现在拿回来改成.NET Core的，但是在编码上的改变并不大，因为Jwt已经足够强大了。在项目中分为&#160;DotNetCore_Jwt_Server&#160;以及&#160;DotNetCore_Jwt_Client            <a href="https://www.cnblogs.com/ZaraNet/p/11976611.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-03 17:35 张子浩 阅读 (1189) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11976611" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/11/24.html">2019年11月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11924541.html">
+    .NET开发者的机遇与Web Blazor基础(有彩蛋)
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一.唠唠WebAssembly的发展历程 目前有很多支持WebAssembly的项目，但发展最快的是Blazor，这是一个构建单页面的.NET技术，目前已经从Preview版本升级到了beta版本，微软计划在2020年5月发布Blazor的第一个版本。 Blazor是什么？它是一项将C＃和.NET都            <a href="https://www.cnblogs.com/ZaraNet/p/11924541.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-24 21:43 张子浩 阅读 (5891) 评论 (77)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11924541" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/11/11.html">2019年11月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11837518.html">
+    三分钟学会Redis在.NET Core中做缓存中间件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：大家好，今天给大家说明如何在.NET Core中使用Redis,我们在想要辩论程序的好与坏，都想需要一个可视化工具，我经常使用的是一位国内大牛开发的免费工具，其Github地址为：&#160;https://github.com/qishibo/AnotherRedisDesktopManager/relea            <a href="https://www.cnblogs.com/ZaraNet/p/11837518.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-11 20:15 张子浩 阅读 (913) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11837518" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/11/07.html">2019年11月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11812701.html">
+    .NET Core 又一杀器! Web Blazor框架横空出世!
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：多年来，Javascript（及其子框架）已在浏览器中运行DOM（文档对象模型），并且掌握了脚本知识才能真正操作客户端UI。大约2年前，所有这些都随着Web Assembly的引入而发生了变化-Web Assembly允许在客户端解释已编译的语言(相对Web Assembly更多了解请阅读了解was            <a href="https://www.cnblogs.com/ZaraNet/p/11812701.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-07 17:27 张子浩 阅读 (12787) 评论 (156)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11812701" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/11/05.html">2019年11月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11799534.html">
+    在ASP.NET Core中编写合格的中间件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这篇文章探讨了让不同的请求去使用不同的中间件，那么我们应该如何配置ASP.NET Core中间件？其实中间件只是在ASP.NET Core中处理Web请求的管道。所有ASP.NET Core应用程序至少需要一个中间件来响应请求，并且您的应用程序实际上只是中间件的集合。当然MVC管道本身就是中间件，早            <a href="https://www.cnblogs.com/ZaraNet/p/11799534.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-05 18:18 张子浩 阅读 (767) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11799534" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/11/04.html">2019年11月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11790645.html">
+    在.NET Core 3.0中发布单个Exe文件(PublishSingleFile)
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：假设我有一个简单的“ Hello World”控制台应用程序，我想发送给朋友来运行。朋友没有安装.NET Core，所以我知道我需要为他构建一个独立的应用程序。很简单，我只需在项目目录中运行以下命令： dotnet publish -r win-x64 -c Release --self-conta            <a href="https://www.cnblogs.com/ZaraNet/p/11790645.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-04 11:53 张子浩 阅读 (2675) 评论 (29)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11790645" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/10/21.html">2019年10月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11712341.html">
+    WPF(C#)中Bitmap与BitmapImage相互转换
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、WPF的Image控件中设置ImageSource 还可以使用： 还可以使用： 二、Bitmap转BitmapImage&#160;先将Bitmap储存成memorystream，然后指定给BitmapImage 三、Bitmap转BitmapSource 四、BitmapSource转Bitmap            <a href="https://www.cnblogs.com/ZaraNet/p/11712341.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-21 11:17 张子浩 阅读 (605) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11712341" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/09/29.html">2019年9月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11591915.html">
+    NET Core 3.0 AutoFac替换内置DI的新姿势
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：.NET Core 3.0 和 以往版本不同，替换AutoFac服务的方式有了一定的变化，在尝试着升级项目的时候出现了一些问题。 原来在NET Core 2.1时候，AutoFac返回一个&#160;IServiceProvider&#160;参数注入到ConfigureServices .NET Core 服务中，基            <a href="https://www.cnblogs.com/ZaraNet/p/11591915.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-29 16:47 张子浩 阅读 (2500) 评论 (22)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11591915" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/08/27.html">2019年8月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11400456.html">
+    在WPF中开启摄像头扫描二维码(Media+Zxing)
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：近两天项目中需要添加一个功能，是根据摄像头来读取二维码信息，然后根据读出来的信息来和数据库中进行对比显示数据。 选择技术Zxing、WPFMediaKit。基本的原理就是让WPFmediaKit来对摄像头进行操作，然后Zxing这个库对图片进行分析大致就是这样。 在后台中定义了定时器，用于解析当前摄            <a href="https://www.cnblogs.com/ZaraNet/p/11400456.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-27 17:11 张子浩 阅读 (305) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11400456" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/08/14.html">2019年8月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11350071.html">
+    使用CefSharp在.NET中嵌入Google kernel
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：使用CefSharp可以在.NET轻松的嵌入Html，不用担心WPF与Winform 控件与它的兼容性问题，CefSharp大部分的代码是C#，它可以在VB或者其他.NET平台语言中来进行使用。 近几天来，公司项目中需要使用WebBrowser,其中考虑了几个控件，如1.Winform中的WebBr            <a href="https://www.cnblogs.com/ZaraNet/p/11350071.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-14 10:13 张子浩 阅读 (2216) 评论 (18)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11350071" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/07/31.html">2019年7月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11275828.html">
+    在WPF中嵌入WebBrowser可视化页面
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：无论是哪种C/S技术，涉及数据可视化就非常的累赘了，当然大神也一定有，只不过面向大多数人，还是通过网页来实现，有的时候不想把这两个功能分开，一般会是客户的原因，所以我们打算在WPF中嵌入WebBrowser，然后使用ECharts 完成复杂的图表展示，其功能不亚于一个名为Devexpress的图标库            <a href="https://www.cnblogs.com/ZaraNet/p/11275828.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-31 14:34 张子浩 阅读 (2288) 评论 (9)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11275828" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/07/30.html">2019年7月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11269416.html">
+    C#获取字符串的拼音和首字母
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在C#中我们想要获取字符串的拼音并不是那么困难的，在网上看到很多都是特别笨的方式来实现，其实各有各的好处吧，如果使用了下方法方式，它不知道多音字，这就是一个问题。            <a href="https://www.cnblogs.com/ZaraNet/p/11269416.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-30 13:13 张子浩 阅读 (953) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11269416" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/07/07.html">2019年7月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11146224.html">
+    .NET Core IdentityServer4实战 第六章-Consent授权页
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在identityServer4中登陆页面只要是成功了，就会注册一个Cookie在服务器资源上，像现在大部分的网站第三方授权，都是经过一个页面，然后选需要的功能，IdentityServer4也给我们提供了，只要你登陆成功,就会跳转到Consent/Index(Get)中，所以我们只要在其中做手脚就            <a href="https://www.cnblogs.com/ZaraNet/p/11146224.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-07 15:28 张子浩 阅读 (820) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11146224" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/07/05.html">2019年7月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11136468.html">
+    .NET Core IdentityServer4实战 第Ⅴ章-单点登录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：OiDc可以说是OAuth的改造版，在最初的OAuth中，我们需要先请求一下认证服务器获取下Access_token，然后根据Access_token去Get资源服务器, 况且OAuth1 和 2 完全不兼容，易用性差，而OIDC可以在登陆的时候就把信息返回给你，不需要你在请求一下资源服务器。下面我            <a href="https://www.cnblogs.com/ZaraNet/p/11136468.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-05 10:15 张子浩 阅读 (1465) 评论 (12)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11136468" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/07/02.html">2019年7月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/11119292.html">
+    .NET Core IdentityServer4实战 第Ⅳ章-集成密码登陆模式
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：回顾下ClientCredentials模式，在ReSourceApi中定义了我们公开服务，第三方网站想要去访问ReSourceApi则需要在身份验证服务中获取toekn，根据token的内容，硬编码去访问公开服务（ResApi）,这个还是非常简单的，但！仔细思考下，我们在客户端当中设置了对应的身份            <a href="https://www.cnblogs.com/ZaraNet/p/11119292.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-02 11:03 张子浩 阅读 (1117) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11119292" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/04/28.html">2019年4月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10786251.html">
+    一个C#程序员学习微信小程序路由的笔记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：路由大家应该都知道，在微信小程序也是有的，毕竟它是单页面应用程序。在WeChat中有五种跳转方式，分别是wx.switchTab、wx.reLaunch、wx.redirectTo、wx.navigateTo、wx.navigateBack。今天我们就说一说 如何使用这几个API来跳转页面，并且我们            <a href="https://www.cnblogs.com/ZaraNet/p/10786251.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-04-28 20:10 张子浩 阅读 (703) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10786251" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/03/12.html">2019年3月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10510014.html">
+    C#串口通讯概念以及简单实现
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近在研究串口通讯，其中有几个比较重要的概念，RS-232这种适配于上位机和PC端进行连接，RS-232只限于PC串口和设备间点对点的通信。它很简单的就可以进行连接，由于串口通讯是异步的，也就是说你可以同时向两端或者更多进行数据发送，它们之间的传输数据类型是byte，串口通信最重要的参数是波特率、数            <a href="https://www.cnblogs.com/ZaraNet/p/10510014.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-12 13:27 张子浩 阅读 (6827) 评论 (6)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10510014" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/03/04.html">2019年3月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10470648.html">
+    一个C#程序员学习微信小程序的笔记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：客户端打开小程序的时候，就将代码包下载到本地进行解析，首先找到了根目录的&#160;app.json&#160;，知道了小程序的所有页面。 在这个Index页面就是我们的首页，客户端在启动的时候，将首页的代码装载进来，通过微信的机制，就渲染出来了页面。 小程序在启动的时候，首先通过&#160;App()&#160;定义的&#160;App()&#160;实例            <a href="https://www.cnblogs.com/ZaraNet/p/10470648.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-04 16:35 张子浩 阅读 (2055) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10470648" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/02/28.html">2019年2月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10448247.html">
+    使用Http-Repl工具测试ASP.NET Core 2.2中的Web Api项目
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：今天，Visual Studio中没有内置工具来测试WEB API。使用浏览器，只能测试http&#160;GET请求。您需要使用Postman，SoapUI，Fiddler或Swagger等第三方工具来执行WEB API的完整测试。在ASP.NET Core 2.2中，引入了一个名为“http-repl”的            <a href="https://www.cnblogs.com/ZaraNet/p/10448247.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-28 11:32 张子浩 阅读 (600) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10448247" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/02/23.html">2019年2月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10421782.html">
+    在ASP.NET Core中使用EPPlus导入出Excel文件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这篇文章说明了如何使用EPPlus在ASP.NET Core中导入和导出.xls/.xlsx文件（Excel）。在考虑使用.NET处理excel时，我们总是寻找第三方库或组件。使用Open Office Xml格式（xlsx）读取和写入Excel 2007/2010文件的最流行的.net库之一是EP            <a href="https://www.cnblogs.com/ZaraNet/p/10421782.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-23 11:12 张子浩 阅读 (1926) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10421782" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/02/22.html">2019年2月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10417056.html">
+    使用Rotativa在ASP.NET Core MVC中创建PDF
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在本文中，我们将学习如何使用Rotativa.AspNetCore工具从ASP.NET Core中的视图创建PDF。如果您使用ASP.NET MVC，那么Rot​​ativa工具已经可用，我们可以使用它来生成pdf。 创建一个MVC项目，无论您是core或不core，都可以nuget下包.命令如下：            <a href="https://www.cnblogs.com/ZaraNet/p/10417056.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-22 15:24 张子浩 阅读 (1635) 评论 (21)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10417056" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/02/20.html">2019年2月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10401124.html">
+    在ASP.NET Core中给上传图片功能添加水印
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在传统的.NET框架中，我们给图片添加水印有的是通过HttpModules或者是HttpHandler，然后可以通过以下代码添加水印: 但是在.NET Core中不允许你这么干了，因为没有WebImage这个类型了。在现在的.NET Core中我们都是通过IFormFile来上传文件，这包含了很多格            <a href="https://www.cnblogs.com/ZaraNet/p/10401124.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-20 09:30 张子浩 阅读 (2599) 评论 (13)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10401124" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/02/14.html">2019年2月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10375843.html">
+    WinForm加载外部类库项目的集成开发模式
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在项目开发中有一定的团队用到了Nuget、Coding；但是这用起来还是不太方方便，在Winform中呢，我们可以把一个人的项目当作一个类库项目，因为它生成的是一个dll文件，也就是单一文件，拥有了它，也就是拥有了项目。 类库项目简介 类库项目编译为.dll 程序集，在其他项目中添加对类库项目的引用            <a href="https://www.cnblogs.com/ZaraNet/p/10375843.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-14 18:03 张子浩 阅读 (870) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10375843" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/02/12.html">2019年2月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10361158.html">
+    C#之Socket的简单使用-新手入门系列
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Socket是一种通信TCP/IP的通讯接口，也就是HTTP的抽象层，就是Socket在Http之上，Socket也就是发动机。实际上，传输层的TCP是基于网络层的IP协议的，而应用层的HTTP协议又是基于传输层的TCP协议的，而Socket本身不算是协议，就像上面所说，它只是提供了一个针对TCP或            <a href="https://www.cnblogs.com/ZaraNet/p/10361158.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-12 11:14 张子浩 阅读 (9296) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10361158" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/ZaraNet/archive/2019/02/07.html">2019年2月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/10355396.html">
+    你那么喜欢看”干货“，是因为你根本不想下功夫。
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：有位博友问我，能不能分享一些关于XXX技术或者经验。我特别害怕被问到这样的问题，因为我并不是一个喜欢总结方法论的人。我只能这么给你说，要不断的写，写博客特别勤苦野特别需要勤奋！很多常人看不见的努力你必须下的到。但这样的说法不会让人满意，总觉得我在保留自己的技巧。害怕让别人超过自己而回答的模棱两可。             <a href="https://www.cnblogs.com/ZaraNet/p/10355396.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-07 19:54 张子浩 阅读 (1431) 评论 (15)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10355396" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/ZaraNet/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 张子浩
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <p>本文版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。</p>
+    </div>
+</body>
+</html>

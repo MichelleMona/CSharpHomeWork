@@ -1,0 +1,511 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="一、docker环境配置 首先需要一个安装了docker的服务器(本地或者云服务器)，如果没有请看上文，传送门 https://www.cnblogs.com/wdfordream/p/1273738" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>从零开始学习docker之在docker中运行springboot项目 - Leon_W - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/coffee/bundle-coffee.min.css?v=pdMIVgsH8kXt-vOWnlL0N20TlHt3UyP9HzGgocfsP4s" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee-mobile.min.css?v=na9bpAY4yh7uEWCcrXj3vfJM3VBse8YtU6-5fUUQPz0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wdfordream/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wdfordream/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wdfordream/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 340593;
+        var currentBlogApp = 'wdfordream';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'coffee';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/wdfordream/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/wdfordream/">Leon_W</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/wdfordream/">
+首页</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Leon_W">
+联系</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/wdfordream/rss/">
+订阅</a>
+	
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/wdfordream/rss/">
+    <img src="/skins/coffee/images/xml.gif" alt="订阅" />
+</a></li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+随笔- 
+16&nbsp;
+文章- 
+1&nbsp;
+评论- 
+9&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class = "postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/12739823.html">从零开始学习docker之在docker中运行springboot项目</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h1>一、docker环境配置</h1>
+<p>首先需要一个安装了docker的服务器(本地或者云服务器)，如果没有请看上文，传送门---<a href="https://www.cnblogs.com/wdfordream/p/12737389.html">https://www.cnblogs.com/wdfordream/p/12737389.html</a></p>
+<p>我这里是直接在云服务器上搭建了docker&nbsp;</p>
+<p>云环境：CentOS 7.6 64位&nbsp;</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200422172034778-794191454.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>二、构建镜像</h1>
+<h2>1、 用DockerFile构建镜像</h2>
+<p>通过DockerFile以及springboot.jar包构建镜像。jar包可以通过本地打jar包上传到服务器也可以在服务器上拉取代码通过maven打包。</p>
+<p>这里我是直接在云服务器上拉取github上的代码，利用maven打包成jar包的。代码传送门---https://github.com/DreamsChaser/spring-boot-basic</p>
+<p>具体步骤：</p>
+<h3>&nbsp;(1) 从github上拉取spring-boot项目</h3>
+<div class="cnblogs_code">
+<pre>git clone git@github.com:DreamsChaser/spring-boot-basic.git</pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200423100451952-980667509.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;这个项目里写了一个简单的rest用于测试</p>
+<h3>&nbsp;(2) maven 打包</h3>
+<div class="cnblogs_code">
+<pre>#进入项目根目录<br />cd spring-boot-basic<br />#maven 打包<br />mvn clean package</pre>
+</div>
+<p>BUILD SUCCESS显示打包成功</p>
+<h3>(3)运行jar</h3>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#进入jar包所在目录
+cd spring</span>-boot-basic-web/target/<br />#运行jar包(&amp; 表示将启动进程后台运行 如果不用&amp; 可以运行后ctrl + z 暂停返回命令行后 通过bg 后台运行)<br />java -jar spring-boot-basic.jar &amp;</pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200423112015809-578648417.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;打印日志 启动成功 端口8080</p>
+<h3>(4)测试jar</h3>
+<p>通过curl命令或者直接在浏览器访问调用rest接口</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#curl调用
+curl http:</span><span style="color: #008000;">//</span><span style="color: #008000;">localhost:8080/spring-boot-basic/demo/test</span></pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200423112228950-707564812.png" alt=""></p>
+<p>&nbsp;</p>
+<p>直接在浏览器输入 ip:port+访问url 下面的ip是我云服务器的ip 端口就是启动的端口</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200423112434897-309464500.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;到这里说明jar是没问题的 接下来通过docker创建镜像启动容器来运行jar</p>
+<h3>&nbsp;(5)创建Dockerfile文件</h3>
+<p>在项目根目录新建Dockerfile&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#定制的镜像都是基于 FROM 的镜像(可以从docker hub上找)
+FROM openjdk
+
+#VOLUME ，VOLUME 指向了一个</span>/tmp的目录，由于Spring Boot使用内置的Tomcat容器，Tomcat 默认使用/<span style="color: #000000;">tmp作为工作目录
+VOLUME </span>/<span style="color: #000000;">tmp
+
+#拷贝并且重命名(jar必须在dockerFile所在文件夹或者子文件夹 否则会报错Forbidden path outside the build context)
+ADD </span>/spring-boot-basic-web/target/spring-boot-basic.jar spring-boot-<span style="color: #000000;">basic.jar
+
+#容器启动命令 也可以用CMD 但CMD会被docker run的指令覆盖
+ENTRYPOINT [</span>"java","-jar","/spring-boot-basic.jar"]</pre>
+</div>
+<h3>(6)创建镜像</h3>
+<div class="cnblogs_code">
+<pre>#创建镜像 <span style="color: #000000;"><br />#-t:镜像的名字及标签   -t name:tag或者 -t name   <br />#<strong>-f :</strong>指定要使用的Dockerfile路径 在Dockerfile所在目录不需要指定<br />#最后有个 .
+docker build </span>-t spring-boot-basic:1.0 .</pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200423161430953-33930899.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;出现Step 1/4等表示正在构建 需要从docker hub拉取openjdk镜像</p>
+<h3>(7)查看镜像</h3>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#查看所有镜像
+docker image ls</span></pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200423163355180-67827796.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;可以看到刚刚创建的 spring-boot-basic:1.0 镜像 以及openjdk镜像</p>
+<p>&nbsp;</p>
+<h2>2、利用maven插件构建镜像</h2>
+<p>maven插件构建镜像有两种 一种是写好dockerFile后再maven中配置dockerFile路径，另一种是把dockerFile中相关配置按照一定属性配置在maven。</p>
+<h3>(1)写Dockerfile然后在pom中配置&lt;dockerDirectory&gt;</h3>
+<p>用这种方式的时候遇到了一个问题Error:&nbsp;Exception caught: xx/target does not exist 一开始我以为是路径配置问题 因为我用的是pom自带的一些属性比如${basdir} 后来全部替换之后发现依然找不到</p>
+<p>但是 只要我先执行mvn package 生成target之后在执行mvn clean package docker:build之后就能生成镜像 但是会生成两个镜像 查看了一下输出日志后 我发现问题所在</p>
+<p>我的spirng-boot项目配置了一个子module这个子module里是我的rest服务并且打包类型是jar ，parent pom打包类型是pom 每次都会打一个pom和一个jar 我的maven docker配置是在父pom中 所以在打外层pom时也会build镜像，而真正的jar包还没生成索引失败了，把配置移动到子module的pom中问题就解决了。</p>
+<p>接下来讲一下 配置方式&nbsp;</p>
+<p>在子module根目录写一份Dockerfile&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">FROM openjdk
+VOLUME .</span>/<span style="color: #000000;">tmp<br />#和上面的ADD不同 是因为我Dockerfile是在子module下的
+ADD .</span>/target/spring-boot-basic.jar spring-boot-<span style="color: #000000;">basic.jar
+ENTRYPOINT [</span>"java","-jar","/spring-boot-basic.jar"]</pre>
+</div>
+<p>在子module spring-boot-basic-web 的pom.xml中配置</p>
+<div class="cnblogs_code">
+<pre>&lt;build&gt;
+        &lt;finalName&gt;spring-boot-basic&lt;/finalName&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+            &lt;!-- docker plugin --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;com.spotify&lt;/groupId&gt;
+                &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;1.0.0&lt;/version&gt;
+                &lt;!-- docker config --&gt;
+                &lt;configuration&gt;
+                    &lt;!-- image name --&gt;
+                    &lt;imageName&gt;${project.build.finalName}&lt;/imageName&gt;
+                    &lt;dockerDirectory&gt;${project.basedir}&lt;/dockerDirectory&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;</pre>
+</div>
+<p>在项目根目录中执行 mvn clean package docker:build&nbsp;</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200425154146553-292038518.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;可以看到构建完成 可以通过docker image ls查看镜像</p>
+<h3>(2)不用Dockerfile</h3>
+<p>省略Dockerfile把Dockerfile中的相关配置 按照pom里的一些标签进行配置</p>
+<p>在子module spring-boot-basic-web的pom中配置</p>
+<div class="cnblogs_code">
+<pre>&lt;build&gt;
+        &lt;finalName&gt;spring-boot-basic&lt;/finalName&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+                &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+            &lt;/plugin&gt;
+            &lt;!-- docker plugin --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;com.spotify&lt;/groupId&gt;
+                &lt;artifactId&gt;docker-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;1.0.0&lt;/version&gt;
+                &lt;!-- docker config --&gt;
+                &lt;configuration&gt;
+                    &lt;!-- image name --&gt;
+                    &lt;imageName&gt;${project.build.finalName}&lt;/imageName&gt;
+
+                    &lt;!--<span style="color: #000000;"> Dockerfile配置路径
+                    </span>&lt;dockerDirectory&gt;${project.basedir}&lt;/dockerDirectory&gt;
+                    --&gt;
+
+                    &lt;!-- 非Dockerfile配置--&gt;
+                    &lt;workdir&gt;/tmp&lt;/workdir&gt;
+                    &lt;baseImage&gt;openjdk&lt;/baseImage&gt;
+                    &lt;entryPoint&gt;["java", "-jar", "/spring-boot-basic.jar"]&lt;/entryPoint&gt;
+                    &lt;resources&gt;
+                        &lt;resource&gt;
+                            &lt;targetPath&gt;/&lt;/targetPath&gt;
+                            &lt;directory&gt;${project.build.directory}&lt;/directory&gt;
+                            &lt;include&gt;${project.build.finalName}.jar&lt;/include&gt;
+                        &lt;/resource&gt;
+                    &lt;/resources&gt;
+
+
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;</pre>
+</div>
+<p>注意这里resource复制的时候复制到了/ 所以在entryPoint 写java启动命令时对应的jar要在/下</p>
+<p>&nbsp;</p>
+<h1>三、启动容器</h1>
+<h2>&nbsp;1、启动容器</h2>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#启动容器<br />#参数1 --name 指定容器名<br />#参数2 -d  以后台方式执行 <br />#最后是 镜像name:tag/name<br />docker run </span>--name test -d spring-boot-basic:1.0</pre>
+</div>
+<h2>2、查看容器</h2>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#查看所有容器(包括关闭的)
+docker ps </span>-a</pre>
+</div>
+<p>&nbsp;<img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424101222362-383219145.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>显示刚刚运行中 Up</p>
+<h2>3、进入容器</h2>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#进入容器（以容器id或者name都可以进入）<br />#/bin/bash 进入后打开bash命令行
+docker exec </span>-it 2de6fd561c9a /bin/bash</pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424102231958-1333936057.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>进入之后可以命令行输入&nbsp;</p>
+<h2>4、测试jar是否正常</h2>
+<h3>(1)通过容器ip和端口访问&nbsp;</h3>
+<p>进入容器命令行后 查看容器ip</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424102354285-603867984.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>找到ip是 172.18.0.2</p>
+<p>离开容器 容器bash命令行输入 exit</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424102610474-771719419.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>通过容器ip和端口访问rest接口</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#curl
+curl http:</span><span style="color: #008000;">//</span><span style="color: #008000;">172.18.0.2:8080/spring-boot-basic/demo/test</span></pre>
+<img id="uploading_image_81356" style="background-color: rgba(255, 255, 255, 1); font-family: &quot;PingFang SC&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px" src="https://common.cnblogs.com/images/loading.gif" alt=""></div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424102825196-358103712.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>请求成功，返回hello world。</p>
+<p>这种方式只能在部署docker的服务器上才能请求成功，在其他机器无法访问，这时候需要做端口映射。</p>
+<h3>(2)通过端口映射访问</h3>
+<p>关闭并删除之前启动的容器</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#关闭容器(id name都可以)
+docker stop 2de6fd561c9a<br />#删除容器(id name都可以)<br />docker rm 2de6fd561c9a<br /></span></pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424103639760-372219887.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>docker ps -a后发现容器已经删除</p>
+<p>以端口映射方式启动容器</p>
+<div class="cnblogs_code">
+<pre>#-<span style="color: #000000;">p设置端口 本地端口:容器端口
+docker run </span>--name test -d -p 7001:8080 spring-boot-basic:1.0</pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424104220071-314318139.png" alt=""></p>
+<p>&nbsp;</p>
+<p>启动完成之后 通过docker ps -a查看启动的容器 端口做了映射处理 可以通过本机(云服务器)端口访问到 容器内部端口</p>
+<p>通过curl测试&nbsp;</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424104426477-886611881.png" alt=""></p>
+<p>&nbsp;</p>
+<p>&nbsp;通过本机7001端口请求成功 返回hello world</p>
+<p>同时在其他服务器通过访问docker所在服务器的ip 和映射端口可以访问容器内部的服务</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200424104609011-1931371321.png" alt=""></p>
+<p>&nbsp;</p>
+<p>122.51.103.239是我云服务器的公网ip，请求成功，返回hello world</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>四、异常汇总</h1>
+<div class="cnblogs_code">
+<pre>[ERROR] No plugin found <span style="color: #0000ff;">for</span> prefix 'docker'<span style="color: #000000;"> in the current project 
+and in the plugin groups [org.sonatype.plugins, org.apache.maven.plugins, org.codehaus.mojo] available from the repositories</span></pre>
+</div>
+<p>解决：在maven配置文件 setting.xml中配置</p>
+<p>&lt;pluginGroups&gt;</p>
+<p>　　&lt;pluginGroup&gt;com.spotify&lt;/pluginGroup&gt;</p>
+<p>&lt;/pluginGroups&gt;</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre>[ERROR] Failed to execute goal com.spotify:docker-maven-plugin:1.0.0:build (<span style="color: #0000ff;">default</span>-cli) on project spring-boot-basic: Exception caught: <br />java.util.concurrent.ExecutionException: com.spotify.docker.client.shaded.javax.ws.rs.ProcessingException: <br />org.apache.http.conn.HttpHostConnectException: Connect to localhost:2375 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] <br />failed: Connection refused: connect -&gt; [Help 1]</pre>
+</div>
+<p>这个异常是我在window10构建镜像的时候出现的 需要修改docker配置</p>
+<p><img src="https://img2020.cnblogs.com/blog/1125791/202004/1125791-20200425162703705-474102080.png" alt=""></p>
+<p>&nbsp;</p>
+<p>这个地方选中 然后重启就可以了&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>五、常用命令汇总</h1>
+<h2>1、镜像相关</h2>
+<div class="cnblogs_code">
+<pre>#查看所有镜像<br />docker image ls<br />#删除镜像 id或者name删除<br />docker image rm 'id'/'name'<br />#构建镜像 tag可以不填 默认latest<br />docker build -t 'name':'tag' .</pre>
+</div>
+<h2>2、容器相关</h2>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">#查看所有容器<br />docker ps -a<br />#关闭容器<br />docker stop 'id'/'name'<br />#重启容器<br />docker restart 'id'/'name'<br />#进入容器 并打开bash命令行<br />docker exec -it 'id' /bin/bash
+#启动容器 -d后台运行 -p端口映射<br />docker run --name 'name' -d -p 'port1':'port2' 'imageName':'imageTag'<br /></span></pre>
+</div>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 16:38</span>&nbsp;
+<a href="https://www.cnblogs.com/wdfordream/">Leon_W</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12739823" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12739823);return false;">收藏</a></div>
+	</div>
+	
+	
+</div><!--end: topics 文章、评论容器-->
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 340593, cb_blogApp = 'wdfordream', cb_blogUserGuid = 'be417732-9508-e711-845c-ac853d9f53ac';
+    var cb_entryId = 12739823, cb_entryCreatedDate = '2020-04-25 16:38', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 Leon_W
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

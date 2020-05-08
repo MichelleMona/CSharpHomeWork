@@ -1,0 +1,794 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>hiyang - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/hiyang/custom.css?v=didha70o7jEto0R/JTggG70Y4iA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hiyang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hiyang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hiyang/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 311128;
+        var currentBlogApp = 'hiyang';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script src="https://files.cnblogs.com/files/hiyang/bingsearch.js" type="text/javascript" charset="utf8" defer></script>
+<div>
+<a href="http://github.com/PoplarYang" target="_blank" style="position: absolute;right: 0;  top: 0; z-index: 100;">
+    <img src="https://files.cnblogs.com/files/hiyang/git-right-link.gif" alt="Fork me on github">
+</a>
+</div>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hiyang/">一千万年的雨</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hiyang/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/hiyang">
+联系</a></li>
+    <li id="nav_rss">
+</li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+65&nbsp;</span>
+<span id="stats_article_count">文章 - 
+4&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+0</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12775210.html">
+    ansible playbook loop 翻译
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：ansible 官方文档翻译 playbook loop部分            <a href="https://www.cnblogs.com/hiyang/p/12775210.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-25 20:55 hiyang 阅读 (2) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775210" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12764293.html">
+    硬盘性能测试工具之bonnie++
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：bonnie++ &quot;官方站点&quot; 先写内存的两倍，内存较大时比较耗时。 适合简单的测试场景 。 Sequential Output 部分表示写文件的相关信息 Sequential Input 部分表示读文件的相关信息 Per Chr 表示以字符为单位读写文件 Block 表示以block为单位读写文件            <a href="https://www.cnblogs.com/hiyang/p/12764293.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-23 22:29 hiyang 阅读 (4) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12764293" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12764088.html">
+    磁盘性能测试工具之fio
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：fio 是测试磁盘性能的一个非常好的工具，用来对硬件进行压力测试和验证。 注意事项 等较老版本的操作系统用 fdisk 创建分区时，默认为非4KB对齐选择初始磁柱编号，对性能有较大的影响，建议针对该类操作系统，在创建分区时4KB对齐选取初始磁柱编号。 请不要在系统盘上进行fio测试，避免损坏系统重要            <a href="https://www.cnblogs.com/hiyang/p/12764088.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-23 22:25 hiyang 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12764088" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12749991.html">
+    dd 命令
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：常用命令            <a href="https://www.cnblogs.com/hiyang/p/12749991.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-22 09:47 hiyang 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12749991" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12730824.html">
+    磁盘IOPS计算与测量
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：衡量指标 IOPS (Input/Output Per Second)即每秒的输入输出量(读写次数)，是衡量磁盘性能的主要指标之一。IOPS是指单位时间内系统能处理的I/O请求数量，一般以每秒处理的I/O请求数量为单位，I/O请求通常为读或写数据操作请求。随机读写频繁的应用，如OLTP(Online            <a href="https://www.cnblogs.com/hiyang/p/12730824.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-19 11:46 hiyang 阅读 (19) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12730824" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12720437.html">
+    df卡住的解决办法
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在使用网络存储时，如果网络存储出问题。比如使用NFS，网络中断， 会卡住 1. 情形一 是能取消中断的，这种情况算是比较幸运。使用mount查看有哪些挂载点，将其卸载即可。 2. 情形二 取法取消中断，暂时没找到特别有效的办法，实在不行只能用重启大法了。所以操作时，至少开两个终端，防止 卡住时，重启            <a href="https://www.cnblogs.com/hiyang/p/12720437.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-17 15:47 hiyang 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720437" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/14.html">2020年4月14日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12695155.html">
+    golang依赖管理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：golang学习            <a href="https://www.cnblogs.com/hiyang/p/12695155.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-14 00:01 hiyang 阅读 (19) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12695155" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/11.html">2020年4月11日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12682234.html">
+    ntp和chrony
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：[toc] chrony 简介 chrony 是 RedHat 开发的，它是网络时间协议（NTP）的另一种实现； RHEL/CentOS 7.x 的默认时间同步工具，在 CentOS 6.8之后也添加上了这个工具； chrony 可以同时做为 ntp 服务的客户端和服务端；安装完后有两个程序 chr            <a href="https://www.cnblogs.com/hiyang/p/12682234.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-11 21:06 hiyang 阅读 (36) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12682234" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/10.html">2020年4月10日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12676326.html">
+    LABEL和UUID
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：基本用法 blkid 1. 查看LABEL 2. 查看UUID 3. 改变LABEL名称 e2label 设备 新label，例如把 /dev/hda1 命名为 /boot: 4. 在mount 命令中使用 LABEL/UUID 5. 在 /etc/fstab 中使用 LABEL/UUID            <a href="https://www.cnblogs.com/hiyang/p/12676326.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-10 21:38 hiyang 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12676326" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12674205.html">
+    Mac下打开 kvm
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：mac 下打开 kvm ，需要装这个 https://www.xquartz.org/            <a href="https://www.cnblogs.com/hiyang/p/12674205.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-10 16:14 hiyang 阅读 (21) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12674205" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hiyang/archive/2020/04/04.html">2020年4月4日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634755.html">
+    字符集和字符编码
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：汉字 GB2312和UTF 8 一个汉字在GB2312字符集中占2个字节，在UTF 6字符集中占2个字节 什么是字符集 在介绍字符集之前，我们先了解下为什么要有字符集。我们在计算机屏幕上看到的是实体化的文字，而在计算机存储介质中存放的实际是二进制的比特流。那么在这两者之间的转换规则就需要一个统一的标            <a href="https://www.cnblogs.com/hiyang/p/12634755.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:29 hiyang 阅读 (31) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634755" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634744.html">
+    python 规范篇 如何合理使用 assert
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：assert 的合理使用，可以增加代码的健壮度，同时也方便了程序出错时开发人员的定位排查。 什么是 assert？ Python 的 assert 语句，可以说是一个 debug 的好工具，主要用于测试一个条件是否满足。如果测试的条件满足，则什么也不做，相当于执行了 pass 语句；如果测试条件不满            <a href="https://www.cnblogs.com/hiyang/p/12634744.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:27 hiyang 阅读 (17) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634744" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634734.html">
+    python 进阶篇 函数装饰器和类装饰器
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：函数装饰器 1. 简单装饰器 上述代码在 Python 中有更简单、更优雅的表示： 2. 带参数的装饰器 3. 自定义参数的装饰器 4. 原函数还是原函数吗？ 试着打印出 greet() 函数的一些元信息： 函数被装饰以后，它的元信息变了。元信息告诉我们“它不再是以前的那个 函数，而是被 函数取代了            <a href="https://www.cnblogs.com/hiyang/p/12634734.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:26 hiyang 阅读 (50) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634734" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634721.html">
+    python 进阶篇 迭代器和生成器深入理解
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：列表/元组/字典/集合都是容器。对于容器，可以很直观地想象成多个元素在一起的单元；而不同容器的区别，正是在于内部数据结构的实现方法。 所有的容器都是可迭代的（iterable）。另外字符串也可以被迭代。 迭代器类比 迭代可以想象成是你去买苹果，卖家并不告诉你他有多少库存。这样，每次你都需要告诉卖家，            <a href="https://www.cnblogs.com/hiyang/p/12634721.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:23 hiyang 阅读 (13) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634721" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634714.html">
+    python 基础篇 模块化
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在做项目的时候，虽然你不可能把全世界的代码都放到一个文件夹下，但是类似模块化的思想还是要有的——那就是以项目的根目录作为最基本的目录，所有的模块调用，都要通过根目录一层层向下索引的方式来 import。 目录结构 方法1 将 当前模块的 根目录 加入到环境变量 ，在终端中 执行 使其在终端中临时生效            <a href="https://www.cnblogs.com/hiyang/p/12634714.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:22 hiyang 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634714" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634703.html">
+    python 基础篇 类基础与继承
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：先来简单解释几个概念 类：一群有着相同属性和函数的对象的集合，这里对应 Python 的 class。 对象：集合中的一个事物，这里对应由 class 生成的某一个 object，比如代码中的 harry_potter_book。 属性：对象的某个静态特征，比如上述代码中的 title、author            <a href="https://www.cnblogs.com/hiyang/p/12634703.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:21 hiyang 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634703" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634678.html">
+    python 进阶篇 python 的值传递
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：值传递和引用传递 值传递，通常就是拷贝参数的值，然后传递给函数里的新变量，这样，原变量和新变量之间互相独立，互不影响。 引用传递，通常是指把参数的引用传给新的变量，这样，原变量和新变量就会指向同一块内存地址。如果改变了其中任何一个变量的值，那么另外一个变量也会相应地随之改变。 Python 函数的参            <a href="https://www.cnblogs.com/hiyang/p/12634678.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:18 hiyang 阅读 (7) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634678" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634664.html">
+    python 进阶篇 浅拷贝与深拷贝
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：阐述引用、浅拷贝和深拷贝前，首先需要要了解 Python 的世界里，一切皆对象，每个对象各包含一个 idendity、type 和 value。 引用(Reference) c = a 表示 c 和 a 指向相同的地址空间，并没有创建新的对象。 浅拷贝(Shallow copy) 常见的浅拷贝的方法            <a href="https://www.cnblogs.com/hiyang/p/12634664.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:16 hiyang 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634664" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634653.html">
+    python 基础篇 匿名函数
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：匿名函数基础 首先，什么是匿名函数呢？以下是匿名函数的格式： 我们可以看到，匿名函数的关键字是 lambda，之后是一系列的参数，然后用冒号隔开，最后则是由这些参数组成的表达式。我们通过几个例子看一下它的用法： 这里的匿名函数只输入一个参数 x，输出则是输入 x 的平方。因此当输入是 3 时，输出便            <a href="https://www.cnblogs.com/hiyang/p/12634653.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:15 hiyang 阅读 (19) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634653" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12634643.html">
+    python 基础篇 自定义函数
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：多态 我们可以看到，Python 不用考虑输入的数据类型，而是将其交给具体的代码去判断执行，同样的一个函数（比如这边的相加函数 ），可以同时应用在整型、列表、字符串等等的操作中。 在编程语言中，我们把这种行为称为 。这也是 Python 和其他语言，比如 Java、C 等很大的一个不同点。当然，Py            <a href="https://www.cnblogs.com/hiyang/p/12634643.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-04 22:13 hiyang 阅读 (21) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12634643" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/hiyang/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 hiyang
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    <div id="page_end_html">
+        <script src="https://files.cnblogs.com/files/hiyang/clipboard.min.js"></script>
+<script src="https://files.cnblogs.com/files/hiyang/cp.js"></script>
+
+<!-- 更新导航栏的菜单-->
+<script>
+    $(function(){        
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/tag/python/" target="_blank" title="python学习记录">python</a></li>');
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/tag/golang/" target="_blank" title="golang学习记录">golang</a></li>');
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/articles/12629363.html" target="_blank" title="配置">配置</a></li>');
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/articles/12629411.html" target="_blank" title="下载">下载</a></li>');
+        $("#navList").append('<li id="nav_follow"><a id="hiyang" rel="nofollow" href="http://home.cnblogs.com/followees/" target="_blank" title="进入我的关注">我的关注</a></li>');  
+            //加载图片
+            var ponum1 = $(".postTitle").length;
+            var ponum2 = $(".entrylistPosttitle").length;
+            if(ponum1!=0)
+                articleimg(ponum1);
+            if(ponum2!=0)
+                entrylistarticleimg(ponum2);
+        });
+</script>
+    </div>
+</body>
+</html>

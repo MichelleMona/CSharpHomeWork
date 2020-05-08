@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>不送花的程序猿 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/Howinfun/custom.css?v=wMr7Ohm4TeiVIL82eVOceRQTw3c=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/Howinfun/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/Howinfun/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/Howinfun/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 531793;
+        var currentBlogApp = 'Howinfun';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <a href="https://github.com/Howinfun?tab=repositories"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/Howinfun/">Howinfun</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/Howinfun/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E4%B8%8D%E9%80%81%E8%8A%B1%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%8C%BF">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/Howinfun/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+40&nbsp;</span>
+<span id="stats_article_count">文章 - 
+16&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+4</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12774398.html">
+    【高频 Redis 面试题】Redis 事务是否具备原子性？
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、Redis 事务的实现原理 一个事务从开始到结束通常会经历以下三个阶段： 1、事务开始 客户端发送 MULTI 命令，服务器执行 MULTI 命令逻辑。 服务器会在客户端状态（redisClient）的 属性打开 REDIS_MULTI 标识，将客户端从非事务状态切换到事务状态。 2、命令入队             <a href="https://www.cnblogs.com/Howinfun/p/12774398.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-25 18:31 不送花的程序猿 阅读 (111) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774398" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/04/07.html">2020年4月7日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12651576.html">
+    【开源项目系列】如何基于 Spring Cache 实现多级缓存（同时整合本地缓存 Ehcache 和分布式缓存 Redis）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：&quot;github地址：h2cache spring boot starter&quot; 一、缓存 当系统的并发量上来了，如果我们频繁地去访问数据库，那么会使数据库的压力不断增大，在高峰时甚至可以出现数据库崩溃的现象。所以一般我们会使用缓存来解决这个数据库并发访问问题，用户访问进来，会先从缓存里查询，如果存在则            <a href="https://www.cnblogs.com/Howinfun/p/12651576.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-07 09:47 不送花的程序猿 阅读 (260) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12651576" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/04/06.html">2020年4月6日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12641371.html">
+    【开源项目系列】将自己的开源项目发布到 Maven 中央仓库的步骤详细讲解
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：前言：开源项目 我相信，拥有自己的开源项目是每个程序员心中最想达成的事，不管是小项目还是大项目。当然了，大项目不是每个程序员都要能力完成的；但是小项目，例如自己编写的 Spring Boot Starter，或者自己编写的工具类，这些还是挺有意思，挺有意义的。 那么当我们编写完项目了，接下来当然是要            <a href="https://www.cnblogs.com/Howinfun/p/12641371.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-06 11:48 不送花的程序猿 阅读 (24) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12641371" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/03/09.html">2020年3月9日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12449975.html">
+    【MySQL 原理分析】之 Explain &amp; Trace 深入分析全模糊查询(%%)走索引的原理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、背景 今天，交流群有一位同学提出了一个问题。看下图： 之后，这位同学确实也发了一个全模糊查询走索引的例子： 到这我们可以发现，这两个sql最大的区别是：一个是查询全字段（select ），而一个只查询主键（select id）。 此时，又有其他同学讲了其他方案： 全文索引这个不用说，那是能让全模            <a href="https://www.cnblogs.com/Howinfun/p/12449975.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-03-09 17:40 不送花的程序猿 阅读 (197) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12449975" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/02/27.html">2020年2月27日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12370415.html">
+    【大白话系列】MySQL 学习总结 之 COMPACT 行格式的设计原理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：如果大家对我的 &quot;【大白话系列】MySQL 学习总结系列&quot; 感兴趣的话，可以点击关注一波。 一、回顾 MySQL 学习总结系列至此已经第七节了。 从大方向：我们已经学习了 MySQL 的架构设计、InnoDB 的架构设计。 从较为深入的：我们已经学习了 rodo log 和 binlog 配合的两阶            <a href="https://www.cnblogs.com/Howinfun/p/12370415.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-27 09:16 不送花的程序猿 阅读 (171) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12370415" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/02/23.html">2020年2月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12348590.html">
+    【大白话系列】MySQL 学习总结 之 缓冲池(Buffer Pool) 如何支撑高并发和动态调整
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：如果大家对我的 &quot;【大白话系列】MySQL 学习总结系列&quot; 感兴趣的话，可以点击关注一波。 一、上节回顾 在上节 &quot;《 缓冲池(Buffer Pool) 的设计原理和管理机制》&quot; 中，介绍了缓冲池整体的设计原理。包括几个比较重要的概念：free 链表、flush 链表和 lru 链表。正式因为这一套            <a href="https://www.cnblogs.com/Howinfun/p/12348590.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-23 09:57 不送花的程序猿 阅读 (107) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12348590" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/02/21.html">2020年2月21日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12341593.html">
+    【MySQL 线上 BUG 分析】之 多表同字段异常：Column ‘xxx’ in field list is ambiguous
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、生产出错！ 今天早上11点左右，我在工作休息之余，撸了一下猫。突然，工作群响了，老大在里面说：APP出错了！ 妈啊，这太吓人了，因为只是说了出错，但是没说错误的信息。所以我赶紧到APP上看看。 这果然是出错了，而且还是简单而粗暴的500，太吓人了。 二、本地赶紧调试起来！ 既然线上出错了，我们又            <a href="https://www.cnblogs.com/Howinfun/p/12341593.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-21 15:36 不送花的程序猿 阅读 (167) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12341593" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/02/18.html">2020年2月18日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12327490.html">
+    【大白话系统】MySQL 学习总结 之 缓冲池(Buffer Pool) 的设计原理和管理机制
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、缓冲池（Buffer Pool）的地位 在《 &quot;MySQL 学习总结 之 InnoDB 存储引擎的架构设计&quot; 》中，我们就讲到，缓冲池是 InnoDB 存储引擎中最重要的组件。因为为了提高 MySQL 的并发性能，使用到的数据都会缓存在缓冲池中，然后所有的增删改查操作都将在缓冲池中执行。 通过这            <a href="https://www.cnblogs.com/Howinfun/p/12327490.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-18 18:56 不送花的程序猿 阅读 (197) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12327490" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/02/15.html">2020年2月15日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12311065.html">
+    【MySQL 原理分析】之 Trace 分析 order by 的索引原理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、背景 昨天早上，交流群有一位同学提出了一个问题。看下图： 我不是大佬，而且当时我自己的想法也只是猜测，所以并没有回复那位同学，只是接下来自己做了一个测试验证一下。 他只简单了说了一句话，就是同样的sql，一个没加 order by 就全表扫描，一个加了 order by 就走索引了。 我们可以仔            <a href="https://www.cnblogs.com/Howinfun/p/12311065.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-15 11:42 不送花的程序猿 阅读 (97) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12311065" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/Howinfun/archive/2020/02/13.html">2020年2月13日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12304030.html">
+    【大白话系列】MySQL 学习总结 之 MySQL Server 的 binlog 组件
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一、上节回顾 上节我们讲到，建议将 的刷盘策略设置为1：即提交事务时，强制将 里的 刷入到磁盘后才算事务提交成功。 但是我们都知道， 是 InnoDB 存储引擎的组件，而 MySQL 支持很多种存储引擎，那么 MySQL 在撇除存储引擎后，自己就没有记录一下关于数据更新的日志吗？ 二、binlog             <a href="https://www.cnblogs.com/Howinfun/p/12304030.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-13 16:25 不送花的程序猿 阅读 (33) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12304030" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/Howinfun/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 不送花的程序猿
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

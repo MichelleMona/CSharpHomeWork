@@ -1,0 +1,467 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="应用错误跟踪系统：对软件系统运行过程中产生的错误日志进行收集从而实现监控告警。 虽然软件错误❌是不可避免的，但是可以降低错误数。 提高对错误的治理能力能让错误带来的损失降到最低 ​&amp;#128077;&amp;" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sentry实时应用错误跟踪系统在Kubernetes中私有化部署 - 流水理鱼 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/bluesky/bundle-bluesky.min.css?v=nIYPSqBALS6DuGAjaXk5hWfDv_C8bPXulypjfPAZ-d4" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/bluesky/bundle-bluesky-mobile.min.css?v=s2piIyFV3NYqZWTmizb6uafQjmZFRhUBr8YMAdV85mA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wwek/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wwek/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wwek/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 568509;
+        var currentBlogApp = 'wwek';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlueSky';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/wwek/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/wwek/">流水理鱼</a>
+</h1>
+<h2>
+关注云原生，中小互联网团队成长
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/wwek/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%B5%81%E6%B0%B4%E7%90%86%E9%B1%BC">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/wwek/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+8&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+1</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/wwek/p/12734930.html">Sentry实时应用错误跟踪系统在Kubernetes中私有化部署</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>应用错误跟踪系统：对软件系统运行过程中产生的错误日志进行收集从而实现监控告警。</p>
+<p>虽然软件错误❌是不可避免的，但是可以降低错误数。</p>
+<p>提高对错误的治理能力能让错误带来的损失降到最低 ​👍🏻 。</p>
+<p>错误日志监控在最顶层的业务层监控,有他将会帮助你打造更好的软件！</p>
+<p>我们需要业务场景下自己发现Bug的速度快于用户报告Bug的速度，毕竟让用户报告已经晚了。</p>
+<p>典型的这套系统的架构：错误日志(前端、后端)  =&gt; 传输(HTTP)=&gt;错误跟踪平台(收集、展示、分析、告警)。</p>
+<p>本文不讨论哪款软件来解决这个问题，只讲Sentry这个轮子,SASS版本和私有部署版体验几乎一致</p>
+<p><img src="https://img2020.cnblogs.com/other/1900199/202004/1900199-20200419230636801-945563781.jpg" alt="img"></p>
+<p>本文主要讲了</p>
+<p>应用错误需要监控的场景案例</p>
+<p>Sentry有哪些功能</p>
+<p>Sentry如何在k8s中私有化部署</p>
+<p>本文由 www.iamle.com 流水理鱼 原创，wx公众号搜索 流水理鱼 或 liushuiliyu</p>
+<p>SEO 关键字</p>
+<p>Sentry私有化部署</p>
+<p>Sentry helm部署</p>
+<p>Sentry kubernets部署 k8s部署</p>
+<h2 id="1-需要应用错误监控的场景案例">1. 需要应用错误监控的场景案例</h2>
+<ul>
+<li>多年的老web项目需要https适配，因为老项目大量写死了http://所以文件修改数巨大，即便测试很仔细也不能保证完全没问题</li>
+<li>运营发现落地页转化异常了，有访问没表单提交，找到技术，技术发现是某个JS报错，导致表单无法提交，造成推广费用的损失</li>
+<li>上线了一个功能，由于环境差异，只在生产环境才触发，用户报告了才去查问题</li>
+<li>应用错误日志虽然通过ELK采集了，但是缺乏及时分析和告警</li>
+<li>特定的环境才产生错误，要解决问题的先去构建环境并复现错误，因为不清楚发生错误时的具体参数</li>
+</ul>
+<h2 id="2-sentry有哪些功能">2. Sentry有哪些功能</h2>
+<p>Sentry is cross-platform application monitoring, with a focus on error reporting.</p>
+<p>Sentry跨平台应用监控，专注错误报告。</p>
+<p>Sentry英文直译中文叫“哨兵”。</p>
+<p>Sentry提供了一个应用程序监视平台，可以帮助您实时识别问题。</p>
+<ul>
+<li>
+<p>提供WEB UI</p>
+</li>
+<li>
+<p>提供SASS版和私有部署2种方式</p>
+</li>
+<li>
+<p>开源，授权协议为BSL，只要你不拿他来做SASS服务卖钱，自用可以免费商用</p>
+</li>
+<li>
+<p>提供几乎所有主流开发语言和框架的SDK</p>
+</li>
+<li>
+<p>提供完整的错误详情</p>
+</li>
+<li>
+<p>支持自动上报错误和手动上报错误</p>
+</li>
+<li>
+<p>支持WEB前端、后端、APP</p>
+</li>
+<li>
+<p>支持多项目管理</p>
+</li>
+<li>
+<p>支持账号权限管理</p>
+</li>
+<li>
+<p>提供统一错误的聚合分析</p>
+</li>
+<li>
+<p>今日头条等很多大公司都在用</p>
+</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/other/1900199/202004/1900199-20200419230637042-1106190304.png" alt="img"></p>
+<h2 id="3-在kubernets中部署sentry">3. 在Kubernets中部署Sentry</h2>
+<p>目前网上大部分都是讲DockerCompose的部署方式</p>
+<p>其实Helm Hub上可以找到Sentry的helm charts包(⑤)，那么直接用Helm部署Sentry是最快速方便的</p>
+<h3 id="31-sentry部署资源要求">3.1 Sentry部署资源要求</h3>
+<p>下面给出一个部署资源情况参考，这基本也就是最低资源消耗情况了</p>
+<ul>
+<li>
+<p>Kubernets存储已经支持了动态PVC</p>
+</li>
+<li>
+<p>Kubernets已经支持Ingress</p>
+</li>
+<li>
+<p>准备一个子域名 (例如, sentry.iamle.com)</p>
+</li>
+<li>
+<p>Helm部署Sentry会部署sentry-corn、sentry-web()、sentry-worker、Redis、PostgreSQL</p>
+</li>
+<li>
+<p>空负载资源详细sentry-corn(220MB/0.01Core）、sentry-web(850MB/0.012Core)、sentry-worker(2048MB/0.04Core)、Redis(132+179MB/0.04+0.054Core)、PostgreSQL(506MB/0.03Core)</p>
+</li>
+<li>
+<p>空负载整体资源占用情况，内存：3935MB、CPU核数：0.2 Cores、存储PVC：34G</p>
+</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/other/1900199/202004/1900199-20200419230637277-1630830498.png" alt="image-20200419182509260"></p>
+<h3 id="32-helm-部署-sentry">3.2 Helm 部署 Sentry</h3>
+<p>helm为helm3</p>
+<p>使用国内加速的charts(微软azure)</p>
+<pre><code class="language-shell">helm repo add stable http://mirror.azure.cn/kubernetes/charts
+helm repo add incubator http://mirror.azure.cn/kubernetes/charts-incubator
+helm repo update
+helm search repo sentry
+#NAME                             	CHART VERSION	APP VERSION	DESCRIPTION
+#stable/sentry                    	4.2.0        	9.1.2      	Sentry is a cross-platform crash reporting and ...
+#已经可以在stable repo 找到 sentry
+</code></pre>
+<pre><code class="language-shell">## helm安装sentry
+kubectl create namespace sentry
+helm install sentry stable/sentry \
+-n sentry \
+--set persistence.enabled=true,user.email=i@iamle.com,user.password=i@iamle.com \
+--set ingress.enabled=true,ingress.hostname=sentry.iamle.com,service.type=ClusterIP \
+--set email.host=smtp.yourhost.com,email.port=25 \
+--set email.user=user,email.password=password,email.use_tls=false \
+--wait
+#参数一看就懂,更多安装参数看文末的参考⑤
+#第一次安装需要耗时10分钟以上，等等等，db-init-job初始化数据库的时候花费了太多时间
+#在安装完成之前，访问sentry.iamle.com会出现服务器内部错误
+
+#出现下面的内容就表示部署好了
+#NAME: sentry
+#LAST DEPLOYED: Sun Apr 19 21:01:26 2020
+#NAMESPACE: sentry
+#STATUS: deployed
+#REVISION: 1
+#TEST SUITE: None
+#NOTES:
+#1. Get the application URL by running these commands:
+#  export POD_NAME=$(kubectl get pods --namespace sentry -l &quot;app=sentry,role=web&quot; -o jsonpath=&quot;{.items[0].metadata.name}&quot;)
+#  echo &quot;Visit http://127.0.0.1:8080 to use your application&quot;
+#  kubectl port-forward --namespace sentry $POD_NAME 8080:9000
+#
+#2. Log in with
+#
+#  USER: i@iamle.com
+#  Get login password with
+#    kubectl get secret --namespace sentry sentry -o jsonpath=&quot;{.data.user-password}&quot; | base64 --decode
+
+#查看登陆密码，也就是user.password设置的值
+#kubectl get secret --namespace default sentry -o jsonpath=&quot;{.data.user-password}&quot; | base64 --decode
+
+#删除sentry
+#helm uninstall sentry -n sentry
+
+</code></pre>
+<p>ingress根据自己实际环境做一些微调，笔者的环境下ssl证书使用 cert-manager 自动管理，备注annotations就自动配置ssl</p>
+<pre><code class="language-shell"># sentry ingress示例
+kubectl apply -f - &lt;&lt;EOF
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sentry
+  namespace: sentry
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    kubernetes.io/tls-acme: &quot;true&quot;
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  rules:
+  - host: sentry.iamle.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: sentry
+          servicePort: 9000
+  tls:
+  - hosts:
+    - sentry.iamle.com
+    secretName: sentry-cert
+EOF
+
+</code></pre>
+<p>浏览器访问</p>
+<p><a href="https://sentry.iamle.com">https://sentry.iamle.com</a> 使用安装时设置的账号密码登陆即可</p>
+<h3 id="33-sentry新增一个项目">3.3 Sentry新增一个项目</h3>
+<p>理论上是需要给每个项目都在Sentry中创建一个对应的项目</p>
+<p>但是实际上这么干会比较麻烦，笔者建议对访问量不大，比如后台类的相同类型的新建一个项目即可</p>
+<p>发现混在一起已经不好区分了，再去拆开也不迟</p>
+<p>对于本身访问量巨大的“前端”项目，建议在Sentry管理后台的一对一配置</p>
+<p>Projects 》 Add new Project 选择一个JavaScript类型</p>
+<p><img src="https://img2020.cnblogs.com/other/1900199/202004/1900199-20200419230637504-1129663273.png" alt="image-20200419211855759"></p>
+<p><img src="https://img2020.cnblogs.com/other/1900199/202004/1900199-20200419230637745-311678010.png" alt="image-20200419212037861"></p>
+<p>⚠️ 官方提供的SDK是国外的CDN，实际使用的时候需要把https://browser.sentry-cdn.com/5.5.0/bundle.min.js下载后放在自己的OSS+CDN上</p>
+<p>SDK和初始化代码一般放入全站头部当中，当页面有js错误的时候已经会自动上报了</p>
+<p>我们用chrome的console手动上报一个消息测试下sentry是否工作正常</p>
+<pre><code class="language-javascript">Sentry.captureMessage(&quot;流水理鱼 www.iamle.com&quot;)
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/other/1900199/202004/1900199-20200419230637940-845781671.png" alt="image-20200419212444197"></p>
+<p><img src="https://img2020.cnblogs.com/other/1900199/202004/1900199-20200419230638185-2140594258.png" alt="image-20200419212641447"></p>
+<h3 id="34-helm安装sentry常见问题及解决">3.4 Helm安装sentry常见问题及解决</h3>
+<ul>
+<li>
+<p>解决数据库不能初始化的问题</p>
+<p>如果安装过程数据库不能初始化，可以手动初始化</p>
+</li>
+</ul>
+<pre><code class="language-shell">kubectl exec -it -n sentry $(kubectl get pods  -n sentry  |grep sentry-web |awk '{print $1}') bash
+sentry upgrade
+
+</code></pre>
+<ul>
+<li>手动创建一个新的管理员账号</li>
+</ul>
+<pre><code class="language-shell">kubectl exec -it -n sentry $(kubectl get pods  -n sentry  |grep sentry-web |awk '{print $1}') bash
+sentry createuser
+
+</code></pre>
+<h2 id="4-总结">4. 总结</h2>
+<p>本文看起来洋洋洒洒一大篇，实际上15分钟就能部署好sentry🎉</p>
+<p>Sentry不仅仅支持WEB前端，也支持桌面、APP、后端，全平台💯</p>
+<p>注意如果要升级sentry，先备份数据先，之前的数据会被清空 ⚠️</p>
+<p><strong>如果遇到Sentry的部署、使用等问题可以在博客 www.iamle.com 中找到我的wx，加群讨论</strong>📣</p>
+<h2 id="5--参考">5.  参考</h2>
+<ul>
+<li>
+<p>① <a href="https://sentry.io">Sentry官网 https://sentry.io</a></p>
+</li>
+<li>
+<p>② <a href="https://docs.sentry.io/">Sentry文档 https://docs.sentry.io/</a></p>
+</li>
+<li>
+<p>③ <a href="https://github.com/getsentry/sentry">Sentry git仓库 https://github.com/getsentry/sentry</a></p>
+</li>
+<li>
+<p>④ <a href="https://forum.sentry.io/">Sentry官方社区 https://forum.sentry.io/</a></p>
+</li>
+<li>
+<p>⑤ <a href="https://hub.helm.sh/charts/stable/sentry">Sentry Helm chart https://hub.helm.sh/charts/stable/sentry</a></p>
+</li>
+</ul>
+<p>本文首发于<a href="https://www.iamle.com/archives/2847.html">Sentry实时应用错误跟踪系统在Kubernetes中私有化部署 https://www.iamle.com/archives/2847.html</a>，如要转载请注明出处。<br>
+本文首发于<a href="https://www.iamle.com/?utm_source=cnblogs">流水理鱼博客</a>，如要转载请注明出处。<br>
+欢迎关注我的公众号：流水理鱼（liushuiliyu），全栈、云原生、团队管理交流。<br>
+如果您对相关文章感兴趣，也可以关注我的博客：<a href="https://www.iamle.com/?utm_source=cnblogs">www.iamle.com</a> 上面有更多内容</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-19 23:07</span>&nbsp;
+<a href="https://www.cnblogs.com/wwek/">流水理鱼</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12734930" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12734930);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 568509, cb_blogApp = 'wwek', cb_blogUserGuid = '44da8bd9-2128-4ad4-dae6-08d7804a3aa0';
+    var cb_entryId = 12734930, cb_entryCreatedDate = '2020-04-19 23:07', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 流水理鱼
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>蚂蚁style - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/coffee/bundle-coffee.min.css?v=pdMIVgsH8kXt-vOWnlL0N20TlHt3UyP9HzGgocfsP4s" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee-mobile.min.css?v=na9bpAY4yh7uEWCcrXj3vfJM3VBse8YtU6-5fUUQPz0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zhaoletian/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zhaoletian/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zhaoletian/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 503265;
+        var currentBlogApp = 'zhaoletian';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'coffee';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/zhaoletian/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zhaoletian/">蚂蚁style</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zhaoletian/">
+首页</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%9A%82%E8%9A%81style">
+联系</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zhaoletian/rss/">
+订阅</a>
+	
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/zhaoletian/rss/">
+    <img src="/skins/coffee/images/xml.gif" alt="订阅" />
+</a></li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+随笔- 
+20&nbsp;
+文章- 
+3&nbsp;
+评论- 
+0&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/12747628.html">
+    基于spring的安全管理框架-Spring Security
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：什么是spring security? spring security是基于spring的安全框架.它提供全面的安全性解决方案,同时在Web请求级别和调用级别确认和授权.在Spring Framework基础上,spring security充分利用了依赖注入(DI)和面向切面编程(AOP)功能,为            <a href="https://www.cnblogs.com/zhaoletian/p/12747628.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 18:07 蚂蚁style 阅读 (47) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12747628" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2020/04/21.html">2020年4月21日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/12739381.html">
+    设计模式之工厂模式(简单工厂模式,工厂方法模式,抽象工厂模式)
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：简单工厂模式: 角色: 抽象产品类 具体产品类 产品工厂类 定义:将被使用方的创建过程封装到一个类中,这样就在使用方和被使用方之间做了一个缓冲,也就是使用方和被使用方做了一个解耦,提高了软件的可扩展性和可维护性和可复用性. 现在有一个手机抽象类 public abstract class Phone            <a href="https://www.cnblogs.com/zhaoletian/p/12739381.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-21 15:21 蚂蚁style 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12739381" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/12726365.html">
+    设计模式之单例设计模式
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前面我们已经讲解了设计模式的七大设计原则，今天我们就来聊一聊设计模式中的单例设计模式，看看如何从小小单例模式衍生出来一个大世界。 适用场景: 用于需要频繁创建和销毁且消耗时间过长,耗费资源过多但是又频繁使用的对象(重量级对象), 栗子:工具类对象,Web开发中必须用到的对象(Servlet对象,假单            <a href="https://www.cnblogs.com/zhaoletian/p/12726365.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 16:08 蚂蚁style 阅读 (32) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12726365" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/12725759.html">
+    设计模式开篇之设计原则
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：设计模式是什么？ 设计模式可以这样说：是开发者的先驱者在无数的开发实践血泪教训中总结出来的一套用于解决特定场景问题的最佳解决方案。 设计模式所要达到的目的是什么？ 这其实就是我们开发者编写代码所要追求的 1.代码复用性（相同功能的代码只用编写一遍，不用重复编写） 2.可读性（编写的代码便于开发人员理            <a href="https://www.cnblogs.com/zhaoletian/p/12725759.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 14:20 蚂蚁style 阅读 (7) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12725759" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2020/04/08.html">2020年4月8日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/12658605.html">
+    springboot项目接收json转对象,首字母大小写,个别参数获取不到解决方案
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：只说一下本人在项目中遇到的情况,springboot项目接收参数,有时候一些特殊字符却无法解析封装到实体,获取的为null 比如实体首字母小写的属性 aMagicBook,类似这种的参数通过@RequestBody 实体就无法接收到,后来参考网上资料,加上了 jackson依赖 &lt;dependenc            <a href="https://www.cnblogs.com/zhaoletian/p/12658605.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-08 11:05 蚂蚁style 阅读 (92) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12658605" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2020/04/02.html">2020年4月2日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/12620950.html">
+    Linux  CentOS7系统 mysql 8.0.19:安装
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前面安装教程建议参考:https://www.runoob.com/mysql/mysql-install.html安装前准备: 删除 mysql数据库 和mariadb 自带的数据库(若有)只说下安装后容易遇到的坑: 密码重置: /etc/my.cnf 配置: skip-grant-tables             <a href="https://www.cnblogs.com/zhaoletian/p/12620950.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-02 17:26 蚂蚁style 阅读 (272) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12620950" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2019/11/29.html">2019年11月29日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/11956038.html">
+    一个SQL注释引发的线上问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近开始服务拆分,时间将近半个月.测试阶段也非常顺利,没有什么问题. 但上线之后的第二天,产品就风风火火的来找我们了,一看就是线上有什么问题.我们也不敢说,我们也不敢问,线上的后台商品忽然无法上架了,导致运营的同学删除商品后无法上架新的商品,导致APP的部分商品暂时不可见. 线上有问题,那么大家就开            <a href="https://www.cnblogs.com/zhaoletian/p/11956038.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-29 10:15 蚂蚁style 阅读 (68) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11956038" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2019/11/22.html">2019年11月22日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/11913373.html">
+    springboot基于方法级别注解事务的多数据源切换问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：springBoot多数据源配置 配置读数据源 @Component @ConfigurationProperties(prefix = &quot;jdbc.read&quot;) @PropertySource(&quot;classpath:application.properties&quot;) public class Rea            <a href="https://www.cnblogs.com/zhaoletian/p/11913373.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-22 18:41 蚂蚁style 阅读 (181) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11913373" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2019/11/19.html">2019年11月19日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/11889135.html">
+    Jetty启动报错排查org.eclipse.jetty.util.MultiException: Multiple exceptions
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近自己搭建了一个spring的项目，使用Maven做项目构建，使用JDK8，为了方便启动就使用jetty作为启动容器，但是却无意间步入了一个坑 [WARNING] Failed startup of context o.e.j.m.p.JettyWebAppContext@fa5769{/,fil            <a href="https://www.cnblogs.com/zhaoletian/p/11889135.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-19 14:21 蚂蚁style 阅读 (521) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11889135" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaoletian/archive/2019/11/13.html">2019年11月13日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaoletian/p/11840403.html">
+    Maven从入门到精通(四)
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这一篇我会着重讲解Maven的核心命令及作用,Maven在项目构建各个阶段的作用. 1、maven生命周期模型： 1.1、清洁(clean) 1.2、默认(default) 1.3、站点(site) 2、maven常用命令： clean、compile、test、package、install、si            <a href="https://www.cnblogs.com/zhaoletian/p/11840403.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-13 22:33 蚂蚁style 阅读 (31) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11840403" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/zhaoletian/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 蚂蚁style
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

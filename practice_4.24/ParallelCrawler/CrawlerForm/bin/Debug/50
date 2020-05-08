@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>淡墨痕 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/sea/bundle-sea.min.css?v=Jpv_XRZqv7HnW0FXxHohZmb1TG6nYuWdNSwqJML5lHA" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/sea/bundle-sea-mobile.min.css?v=GEzW0neGdNE-VMws0ftJENKA__n-moeEPmS2Y9XCJis" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zzq6032010/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zzq6032010/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zzq6032010/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 480915;
+        var currentBlogApp = 'zzq6032010';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'sea';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zzq6032010/">张曾经</a>
+<br>
+		
+
+
+	</div>
+</div>
+
+
+</div>
+
+<div id="mytopmenu">
+	
+		<div id="mylinks">
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+ &nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zzq6032010/">
+首页</a>
+ &nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+ &nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%B7%A1%E5%A2%A8%E7%97%95">
+联系</a> &nbsp;
+
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zzq6032010/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/zzq6032010/rss/">
+    <img src="/skins/sea/images/xml.gif" alt="订阅" />
+</a>&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+		<DIV id="mystats">随笔-
+57&nbsp;
+评论-
+30&nbsp;
+文章-
+0&nbsp;
+<!--trackbacks-<partial name="./Shared/_PingTrackCount.cshtml" model="BlogServer.Web.Models.HomeBlogPage" />-->
+
+</DIV>
+	
+</div>
+<div id="centercontent">
+	
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/04/19.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年4月19日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12727141.html">
+    通过String的不变性案例分析Java变量的可变性
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：阅读本文之前，请先看以下几个问题： 1、String变量是什么不变？final修饰变量时的不变性指的又是什么不变，是引用？还是内存地址？还是值？ 2、java对象进行重赋值或者改变属性时在内存中是如何实现的？ 3、以下是AQS中的一个方法代码，请问第一次进入这个方法时，执行到return的时候，t=            <a href="https://www.cnblogs.com/zzq6032010/p/12727141.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-04-19 23:05 淡墨痕 阅读 (71) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12727141" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12076690.html">
+    AQS系列（七）- 终篇：AQS总结
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：前言 本文是对之前AQS系列文章的一个小结，首先看看以下几个问题： 1、ReentrantLock和ReentrantReadWriteLock的可重入特性是如何实现的？ 2、哪个变量控制着锁是否被占用？ 3、多个线程竞争一个排它锁时，未抢到锁的线程是如何阻塞的？ 4、读读真的可以一直共享不阻塞吗？            <a href="https://www.cnblogs.com/zzq6032010/p/12076690.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-04-19 16:49 淡墨痕 阅读 (54) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12076690" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/04/18.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年4月18日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12727105.html">
+    【2020-04-18】 加班
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：公司实行敏捷开发，两周一个版本，犹如轰隆隆的火车一般往前推进，而我们这些瑟瑟发抖的开发进入了被火车拖着往前走的状态，不快走就会被拖垮。敏捷一直被倡导，可能确实有其可取之处，但对我来说一下子真是不习惯，后面还是要调整下状态以及个人行为，看看能否找到一个好的个人节奏跟得上敏捷进度。 这两周主要学习的是J            <a href="https://www.cnblogs.com/zzq6032010/p/12727105.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-04-18 17:50 淡墨痕 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12727105" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/04/06.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年4月6日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12644220.html">
+    【2020-04-06】汇郡海下的沉思
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：本周工作状态和心境产生了一些扰动，原因有很多，最主要的还是生活上，沉甸甸的压在胸口，每思及此便一片烦闷。 现在技术晋升之路进入瓶颈期，大部分理论和技术都有了解，却未深入的足够深，而要逐个深入了解，需耗费的时间太多，没法做到之前的高效快速。学习动力不足，清明三天未有太多斩获。 总结了一点分布式的问题及            <a href="https://www.cnblogs.com/zzq6032010/p/12644220.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-04-06 20:45 淡墨痕 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12644220" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/03/29.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年3月29日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12588538.html">
+    【2020-03-28】Dubbo源码杂谈
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：前言 本周空闲时间利用了百分之六七十的样子。主要将Dubbo官网文档和本地代码debug结合起来学习，基本看完了服务导出、服务引入以及服务调用的过程，暂未涉及路由、字典等功能。下面对这一周的收获进行一下总结梳理。 一、基于事件驱动的服务导出 提起服务导出，不要被它的名字误导了，通俗点说就是服务的暴露            <a href="https://www.cnblogs.com/zzq6032010/p/12588538.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-03-29 00:02 淡墨痕 阅读 (103) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12588538" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/03/21.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年3月21日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12543445.html">
+    【2020-03-21】Dubbo本地环境搭建-实现服务注册和消费
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：前言 本周主题：加班工作。本周内忙于CRUD不能自拔，基本每天都是九点半下班，下周上线，明天还要加班推进进度。今天是休息日，于是重拾起了dubbo，打算近期深入了解一下其使用和原理。之所以说是重拾，是因为去年自学过一次，但那次主要是针对源码的流程，在实战上欠缺，且对其理解未深入到架构层次，只能说是基            <a href="https://www.cnblogs.com/zzq6032010/p/12543445.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-03-21 23:42 淡墨痕 阅读 (31) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12543445" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/03/13.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年3月13日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12489415.html">
+    【2020-03-13】繁忙中的期待
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：本周重点-工作。 于不断变化的需求中变更实现，于纷扰的沟通中迎风前行，任何工作都需要好的沟通、思路，而这些底层能力很大程度上决定了一个人未来的发展上限。 忙完一天的工作，归来十点半，看会峰哥直播洗漱睡觉，于懈怠与颓废中日复一日，在学习的空缺之间悠然自得。 耽于学业，养精蓄锐。            <a href="https://www.cnblogs.com/zzq6032010/p/12489415.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-03-13 22:07 淡墨痕 阅读 (13) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12489415" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/03/02.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年3月2日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12398966.html">
+    【2020-03-02】喜迎万老师归来
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：今天收到要提供银行流水的邮件，遂中午乘兴而去，却发现没有实体卡竟然没法打印，只能作罢，明天再议。不过最后一只鞋子还未落下，且观后变。 晚上下班归来，发现万老师的专栏又开张了，立马订购，回来畅快的听了四集，还是熟悉的味道，其中有两集讲的是他对华为的认识。从去年12月到今年3月，他回中国做了很多事情，其            <a href="https://www.cnblogs.com/zzq6032010/p/12398966.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-03-02 23:29 淡墨痕 阅读 (14) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12398966" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/03/01.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年3月1日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12392579.html">
+    【2020-03-01】本周学习日志
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：本周公司项目做迁移赶进度，工作日除了因工作需要了解了一下shiro的原理之外，基本没有其他方面的涉猎。受疫情影响，比较好的一点是早上可以九点半到公司，早上醒来可以多磨蹭半个小时,,, 这一周地铁上的时间没利用好，下周这一块要改善。 周末两天，周六上午面试，下午又看了一下Eureka源码，自己实操了一            <a href="https://www.cnblogs.com/zzq6032010/p/12392579.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-03-01 22:19 淡墨痕 阅读 (20) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12392579" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+        <a href="https://www.cnblogs.com/zzq6032010/archive/2020/02/23.html">
+            <img src="/skins/sea/images/title_post.gif" border=0 align="absmiddle" />
+        </a>
+		&nbsp;
+		2020年2月23日		  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/zzq6032010/p/12355130.html">
+    【2020-02-23】对Eureka的一些理解
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：前言 从这周的周一开始，完成居家隔离的人员便可以回公司上班，于是新一年度开会、开发、扯淡的职业生涯又展开在了我的面前。没有一点点防备，也没有一丝顾虑，你就这样出现。对于工作、学习的心态调整好了，这一周轻松了很多，虽然还是有点忙，还是一堆事。 这周学习上，对于SpringCloud组件恶补了一番，主要            <a href="https://www.cnblogs.com/zzq6032010/p/12355130.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-02-23 23:35 淡墨痕 阅读 (21) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12355130" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/zzq6032010/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script><br>
+			<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	
+</div>
+<!--done-->
+<div class="footer">
+	Powered by: <a href="http://www.cnblogs.com">博客园</a>
+	Copyright &copy; 2020 淡墨痕
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+
+
+
+
+    
+</body>
+</html>

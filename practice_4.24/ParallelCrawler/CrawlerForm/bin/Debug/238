@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="前一段时间说过一篇绘制极坐标的，这段时间对它进行了改造已经今非昔比了，功能实现了很多，我目的是让Marker动起来，然后还会绘制Route，上篇也就是简单的绘制了Route,没有关于Marker的相关" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>WPF在Gmap.net中将Marker动起来 - 张子浩 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ZaraNet/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ZaraNet/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ZaraNet/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 449967;
+        var currentBlogApp = 'ZaraNet';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/ZaraNet/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/ZaraNet/">张子浩</a>
+</h1>
+<h2>
+在路上，我们永远年轻，永远热泪盈眶。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/ZaraNet/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%BC%A0%E5%AD%90%E6%B5%A9">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/ZaraNet/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+328&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+900</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/ZaraNet/p/12766143.html">WPF在Gmap.net中将Marker动起来</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p><img src="https://img2020.cnblogs.com/blog/1366751/202004/1366751-20200424121840291-1762664139.gif" alt=""></p>
+<p>&nbsp;　　前一段时间说过一篇绘制极坐标的，这段时间对它进行了改造已经今非昔比了，功能实现了很多，我目的是让Marker动起来，然后还会绘制Route，上篇也就是简单的绘制了Route,没有关于Marker的相关知识。</p>
+<p>　　那个Circle有一定的改造，原来的纯色改成了渐变，这个你可以提前想好，不过在代码中你要做好适配，将&nbsp;<span class="cnblogs_code">System.draw.color </span>&nbsp;转换成了&nbsp;<span class="cnblogs_code">Media.Color</span>&nbsp;，取其中的ARGB值。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> Circle(<span style="color: #0000ff;">string</span> name, <span style="color: #0000ff;">int</span> radius,<span style="color: #0000ff;">string</span><span style="color: #000000;">[] vs)
+        {
+            Radius </span>=<span style="color: #000000;"> radius;
+            m_viewModelCircle </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> ViewModelCircle();
+            m_viewModelCircle.CircleDis </span>=<span style="color: #000000;"> name;
+            </span><span style="color: #0000ff;">this</span>.DataContext =<span style="color: #000000;"> m_viewModelCircle;
+            InitializeComponent();
+
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">控制circle</span>
+<span style="color: #000000;">
+            RadialGradientBrush radialGradient </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> RadialGradientBrush();
+            </span><span style="color: #0000ff;">var</span> obj = ColorTranslator.FromHtml(vs[<span style="color: #800080;">0</span><span style="color: #000000;">]);
+            </span><span style="color: #0000ff;">var</span> ob2 = ColorTranslator.FromHtml(vs[<span style="color: #800080;">1</span><span style="color: #000000;">]);
+            </span><span style="color: #0000ff;">var</span> ob3 = ColorTranslator.FromHtml(vs[<span style="color: #800080;">2</span><span style="color: #000000;">]);
+            </span><span style="color: #0000ff;">this</span>.circle.Stroke= <span style="color: #0000ff;">new</span><span style="color: #000000;"> SolidColorBrush(System.Windows.Media.Color.FromArgb(ob3.A, ob3.R, ob3.G, ob3.B)); 
+            radialGradient.GradientStops.Add(</span><span style="color: #0000ff;">new</span> GradientStop(System.Windows.Media.Color.FromArgb(obj.A, obj.R, obj.G, obj.B), <span style="color: #800080;">0.75</span><span style="color: #000000;">));
+            radialGradient.GradientStops.Add(</span><span style="color: #0000ff;">new</span> GradientStop(System.Windows.Media.Color.FromArgb(ob2.A, ob2.R, ob2.G, ob2.B), <span style="color: #800080;">1</span><span style="color: #000000;">));
+            </span><span style="color: #0000ff;">this</span>.circle.Fill =<span style="color: #000000;"> radialGradient;
+        }</span></pre>
+</div>
+<p>　　我们都知道在Wpf的Gmap.net中没有了GMapOverlay 概念，所有的东西都在Marker中操作，这样其实有一个优点，就是把Overlay和Marker混合在一起更好管理，你可以通过Tag来寻找你对象，非常轻便，但设计者不是这么认为的，可能是某些原理没法走通。</p>
+<p>　　最基本的右击在map中添加标点可以这么操作。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> RadarMap_MouseRightButtonUp(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, MouseButtonEventArgs e)
+        {
+            Point clickPoint </span>=<span style="color: #000000;"> e.GetPosition(radarMap);
+            PointLatLng point </span>= radarMap.FromLocalToLatLng((<span style="color: #0000ff;">int</span>)clickPoint.X, (<span style="color: #0000ff;">int</span><span style="color: #000000;">)clickPoint.Y);
+            id </span>+= <span style="color: #800080;">1</span><span style="color: #000000;">;
+            GMapMarker currentMarker </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> GMapMarker(point);
+            {
+                currentMarker.Shape </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> CustomMarker(id, currentMarker);
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">(currentMarker.Shape as CustomMarker).SetContent(point, "1"); 这种方法可以触发SetContent</span>
+                currentMarker.ZIndex = -<span style="color: #800080;">1</span><span style="color: #000000;">;
+                currentMarker.Position </span>=<span style="color: #000000;"> point;
+                radarMap.Markers.Add(currentMarker);
+                </span><span style="color: #0000ff;">this</span><span style="color: #000000;">.Focus();
+            }
+        }</span></pre>
+</div>
+<p>　　代码中可以发现我们可以轻松将gmap的marker shape属性 ，随后转换成原来的marker类型，轻松调用属于它的方法，所以它的生命周期是等待它所在gmap中的marker被销毁才会被dispose，至于我的标点数据是从那里接受的，我只是启用两个Demo而已，发了个udp通讯，一般来说都是使用结构体来接受，传入的Byte值，我们进行逆转。</p>
+<div class="cnblogs_code">
+<pre> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">object</span> BytesToStruct(<span style="color: #0000ff;">byte</span>[] buf, <span style="color: #0000ff;">int</span><span style="color: #000000;"> len, Type type)
+        {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;"> int len = Marshal.SizeOf(buf);</span>
+            <span style="color: #0000ff;">object</span><span style="color: #000000;"> rtn;
+            IntPtr buffer </span>=<span style="color: #000000;"> Marshal.AllocHGlobal(len);
+            Marshal.Copy(buf, </span><span style="color: #800080;">0</span><span style="color: #000000;">, buffer, len);
+            rtn </span>=<span style="color: #000000;"> Marshal.PtrToStructure(buffer, type);
+            Marshal.FreeHGlobal(buffer);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> rtn;
+        }</span></pre>
+</div>
+<p>　　下面的代码是关于绘制，以及判断marker是否存在，如果存在则修改Postion，而且还要重新绘制Route，每个Route是对应着它的Marker，所以需要一个字典，每次重新绘制的时候，先将Route全部删除，随后重新所有的点，然后进行绘制Route，这个代码可能性能上有缺陷，但也是没有办法。</p>
+<div class="cnblogs_code">
+<pre>List&lt;RadarTargetInfo&gt; dislist = <span style="color: #0000ff;">new</span> List&lt;RadarTargetInfo&gt;<span style="color: #000000;">();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">已经添加的集合</span>
+        <span style="color: #0000ff;">public</span> List&lt;RadarTargetInfo&gt; addlist = <span style="color: #0000ff;">new</span> List&lt;RadarTargetInfo&gt;<span style="color: #000000;">();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">用于画线</span>
+        Dictionary&lt;<span style="color: #0000ff;">string</span>,List&lt;PointLatLng&gt;&gt; pointLatLngsDic = <span style="color: #0000ff;">new</span> Dictionary&lt;<span style="color: #0000ff;">string</span>,List&lt;PointLatLng&gt;&gt;<span style="color: #000000;">();
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">标点和数据id的关系</span>
+        List&lt;MarkerDataRole&gt; roleList = <span style="color: #0000ff;">new</span> List&lt;MarkerDataRole&gt;<span style="color: #000000;">();
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+        <span style="color: #808080;">///</span><span style="color: #008000;"> 检查数据
+        </span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;param name="sender"&gt;&lt;/param&gt;</span>
+        <span style="color: #808080;">///</span> <span style="color: #808080;">&lt;param name="e"&gt;&lt;/param&gt;</span>
+        <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span> CheckData(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, EventArgs e)
+        {
+            </span><span style="color: #0000ff;">if</span> (CurrentMarkerContext.list.Count == <span style="color: #800080;">0</span><span style="color: #000000;">)
+            {
+                </span><span style="color: #0000ff;">return</span><span style="color: #000000;">;
+            }
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">应该添加的数据</span>
+            <span style="color: #0000ff;">var</span> list =<span style="color: #000000;"> CurrentMarkerContext.list.Except(addlist).ToList();
+            addlist.AddRange(list);
+            dislist.Clear();
+            </span><span style="color: #0000ff;">foreach</span> (<span style="color: #0000ff;">var</span> group <span style="color: #0000ff;">in</span> list.GroupBy(u =&gt;<span style="color: #000000;"> u.Id))
+            {
+                </span><span style="color: #0000ff;">int</span> flyId =<span style="color: #000000;"> group.Key;
+                RadarTargetInfo radarTarget </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> RadarTargetInfo();
+                PointLatLng currentPoint </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> PointLatLng();
+                </span><span style="color: #0000ff;">foreach</span> (<span style="color: #0000ff;">var</span> item <span style="color: #0000ff;">in</span><span style="color: #000000;"> group)
+                {
+                    PointLatLng point </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> PointLatLng(item.Latitude, item.Longitude);
+                    currentPoint </span>=<span style="color: #000000;"> point;
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;">代表没有</span>
+                    <span style="color: #0000ff;">if</span> (roleList.FirstOrDefault(u =&gt; u.dataId == flyId) == <span style="color: #0000ff;">null</span><span style="color: #000000;">)
+                    {
+                        GMapMarker currentMarker </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> GMapMarker(point);
+                        {
+                            currentMarker.Shape </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> CustomMarker(flyId, currentMarker);
+                            currentMarker.ZIndex </span>= -<span style="color: #800080;">1</span><span style="color: #000000;">;
+                            currentMarker.Tag </span>=<span style="color: #000000;"> flyId;
+                            currentMarker.Position </span>=<span style="color: #000000;"> point;
+                            radarMap.Markers.Add(currentMarker);</span><span style="color: #000000;">
+                        }
+                        roleList.Add(</span><span style="color: #0000ff;">new</span> MarkerDataRole(){dataId = flyId,markerId =<span style="color: #000000;"> flyId});
+                    }
+                    </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+                    {
+                        radarMap.Markers.Where(u </span>=&gt; u.Tag != <span style="color: #0000ff;">null</span>).Where(u =&gt; Convert.ToInt32(u.Tag) == flyId).FirstOrDefault().Position =<span style="color: #000000;"> point;
+                    }
+                    </span><span style="color: #0000ff;">var</span> str =<span style="color: #000000;"> flyId.ToString();
+                    </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (pointLatLngsDic.ContainsKey(str))
+                    {
+                        pointLatLngsDic[str].Add(point);
+                    }
+                    </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+                    {
+                        </span><span style="color: #0000ff;">var</span> value = <span style="color: #0000ff;">new</span> List&lt;PointLatLng&gt;<span style="color: #000000;">();
+                        value.Add(point);
+                        pointLatLngsDic.Add(str, value);
+                    }
+                    radarTarget </span>=<span style="color: #000000;"> item;
+                }
+                dislist.Add(radarTarget);
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">这里找到flyId</span>
+                (radarMap.Markers.Where(u =&gt; Convert.ToInt32(u.Tag) == flyId).FirstOrDefault().Shape <span style="color: #0000ff;">as</span><span style="color: #000000;"> CustomMarker).SetContent(currentPoint, flyId);
+            }
+            </span><span style="color: #0000ff;">this</span>.雷达目标数据.ItemsSource =<span style="color: #000000;"> dislist;
+            </span><span style="color: #0000ff;">foreach</span> (<span style="color: #0000ff;">var</span> item <span style="color: #0000ff;">in</span> radarMap.Markers.Where(u =&gt; u.Tag != <span style="color: #0000ff;">null</span>).Where(u =&gt; u.Tag.ToString() == <span style="color: #800000;">"</span><span style="color: #800000;">line</span><span style="color: #800000;">"</span><span style="color: #000000;">).ToList())
+            {
+                radarMap.Markers.Remove(item);
+            }
+            </span><span style="color: #0000ff;">foreach</span> (<span style="color: #0000ff;">var</span> item <span style="color: #0000ff;">in</span><span style="color: #000000;"> pointLatLngsDic)
+            {
+                GMapRoute gmRoute </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> GMapRoute(pointLatLngsDic[item.Key])
+                {
+                    Shape </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> Line()
+                    {
+                        StrokeThickness </span>= <span style="color: #800080;">4</span><span style="color: #000000;">
+                    },Tag </span>= <span style="color: #800000;">"</span><span style="color: #800000;">line</span><span style="color: #800000;">"</span><span style="color: #000000;">
+                };
+                radarMap.Markers.Add(gmRoute);
+            }
+        }</span></pre>
+</div>
+<p>　　还有一个需要强调的是，上面说过可以通过Shape找到本身调用其方法，那个Marker上面的文本就是这么改的。</p>
+<div class="cnblogs_code">
+<pre> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> SetContent(PointLatLng point, <span style="color: #0000ff;">int</span><span style="color: #000000;"> pihao)
+        {
+            </span><span style="color: #0000ff;">this</span>.批号.Content =<span style="color: #000000;"> pihao.ToString();
+            </span><span style="color: #0000ff;">this</span>.纬度.Content = <span style="color: #800000;">"</span><span style="color: #800000;">纬度:</span><span style="color: #800000;">"</span> + ((<span style="color: #0000ff;">int</span>)(point.Lat * <span style="color: #800080;">1000</span>) / <span style="color: #800080;">1000.0</span><span style="color: #000000;">).ToString();
+            </span><span style="color: #0000ff;">this</span>.经度.Content = <span style="color: #800000;">"</span><span style="color: #800000;">纬度:</span><span style="color: #800000;">"</span> + ((<span style="color: #0000ff;">int</span>)(point.Lng * <span style="color: #800080;">1000</span>) / <span style="color: #800080;">1000.0</span><span style="color: #000000;">).ToString();
+        }</span></pre>
+<p>　　(radarMap.Markers.Where(u =&gt; Convert.ToInt32(u.Tag) == flyId).FirstOrDefault().Shape as CustomMarker).SetContent(currentPoint, flyId);</p>
+</div>
+<p>&nbsp;　　还有就是至于我的Wpf程序自适应问题，我都是用Viewbox做的，因为前端UI他老是玩Margin，so...你懂的！人家都是Blend for visual Studio 给搞的。也只能见谅了.</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 12:20</span>&nbsp;
+<a href="https://www.cnblogs.com/ZaraNet/">张子浩</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766143" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12766143);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 449967, cb_blogApp = 'ZaraNet', cb_blogUserGuid = 'd1de8b4e-8d97-4b99-b97d-08d5866282ce';
+    var cb_entryId = 12766143, cb_entryCreatedDate = '2020-04-24 12:20', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 张子浩
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <p>本文版权归作者所有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利。</p>
+    </div>
+</body>
+</html>

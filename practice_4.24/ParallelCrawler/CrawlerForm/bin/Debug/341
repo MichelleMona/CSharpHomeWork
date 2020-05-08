@@ -1,0 +1,1070 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>peida - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/peida/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/peida/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/peida/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 38044;
+        var currentBlogApp = 'peida';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/peida/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/peida/">竹子-博客-架构未来</a>
+</h1>
+<h2>
+思索、感悟、践行！
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/peida/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/peida">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/peida/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+224&nbsp; </span>
+<span id="stats_article_count">文章 - 
+2&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+851</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/18.html">2019年12月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12052402.html">
+[置顶]    软件设计的哲学【翻译】--目录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：软件设计的哲学，解决软件复杂性的原则，中文翻译抢先体验版，持续更新中。            <a href="https://www.cnblogs.com/peida/p/12052402.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-18 18:47 peida 阅读 (570) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12052402" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2013/08/01.html">2013年8月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/Guava.html">
+[置顶]    Guava学习笔记目录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Guava学习笔记目录和参考资料！            <a href="https://www.cnblogs.com/peida/p/Guava.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2013-08-01 08:58 peida 阅读 (26299) 评论 (6)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=3229259" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2012/12/05.html">2012年12月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/archive/2012/12/05/2803591.html">
+[置顶]    每天一个linux命令目录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：linux基础命令学习笔记，每天一个linux命令目录！            <a href="https://www.cnblogs.com/peida/archive/2012/12/05/2803591.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2012-12-05 17:34 peida 阅读 (337622) 评论 (60)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=2803591" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12768630.html">
+    从团队管理视角看重复建设问题：轮子小造怡情，大造伤身，全局出发成就更好的你
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：从管理的角度看，在一个组织内一些公用的系统能力重复建设，就是对组织资源的严重浪费。如果是组织必须的能力体系，最好的解决方案就是从全局出发，重点投资，投入足够的资源来建设到位。重复建设不可取，低水平的重复建设更不可取。            <a href="https://www.cnblogs.com/peida/p/12768630.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 17:00 peida 阅读 (129) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12768630" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2020/01/10.html">2020年1月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12175098.html">
+    不要给领导惊喜或惊吓
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：保障团队内部信息的及时有效的一致性十分重要，不要试图给你领导惊喜，有的时候惊喜往往会变成惊吓，就需要做到4个及时。            <a href="https://www.cnblogs.com/peida/p/12175098.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-10 11:00 peida 阅读 (591) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12175098" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2020/01/09.html">2020年1月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12171805.html">
+    坦诚，不要对领导说谎
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：任何你不知道的时候，要明确表示你不知道，同时要给出一个获取信息的计划，并设定反馈的最后期限。不管怎样，这是问问题的人真正想要的：你来提供答案。            <a href="https://www.cnblogs.com/peida/p/12171805.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-09 15:38 peida 阅读 (350) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12171805" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2020/01/04.html">2020年1月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12148088.html">
+    软件设计的哲学：增加复杂度的12中危险信号
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：软件系统的设计和开发过程中，增加系统复杂性的12中危险信号。            <a href="https://www.cnblogs.com/peida/p/12148088.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-04 10:08 peida 阅读 (238) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12148088" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2020/01/02.html">2020年1月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12131589.html">
+    软件设计的哲学：第二十一章 结论
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：良好的设计是软件工程的一个重要目标，这本书中的思想应该会使编程变得更加有趣。            <a href="https://www.cnblogs.com/peida/p/12131589.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-02 09:41 peida 阅读 (120) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12131589" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/31.html">2019年12月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12124349.html">
+    软件设计的哲学：第二十章 性能设计
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：大道至简：干净的设计和高性能是兼容的，复杂的代码往往很慢，因为它做的是无关的或冗余的工作。            <a href="https://www.cnblogs.com/peida/p/12124349.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-31 14:40 peida 阅读 (419) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12124349" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/30.html">2019年12月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12118967.html">
+    软件设计的哲学：第十八章 代码的可见性
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：软件设计为易于阅读，而不是易于编写。设计和代码的可阅读性是好的设计和编码一个指标，面向阅读和维护编程。            <a href="https://www.cnblogs.com/peida/p/12118967.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-30 11:47 peida 阅读 (318) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12118967" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/28.html">2019年12月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12110689.html">
+    软件设计的哲学：第十七章 一致性
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：确保一致性需要一些工作：决定约定的工作、创建自动检查器的工作、寻找类似的情况以在新代码中模拟的工作，以及在代码评审中培训团队的工作。 这种投资的回报是您的代码将更加明显。            <a href="https://www.cnblogs.com/peida/p/12110689.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-28 07:17 peida 阅读 (192) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12110689" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/27.html">2019年12月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12106836.html">
+    软件设计的哲学：第十六章 修改现有代码
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：破窗效应：如果每次都增加一点复杂性，时间一长就会发现各种临时妥协的处理越来越多，直到系统不可维护为止。避免破窗效应出现，每个开发组织都应该计划将其全部工作的一小部分用于清理和重构，这项工作从长远来看是值得的。            <a href="https://www.cnblogs.com/peida/p/12106836.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-27 13:40 peida 阅读 (287) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12106836" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/26.html">2019年12月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12100547.html">
+    软件设计的哲学： 第十五章 先写注释
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：编写注释的最佳时间是在过程的开始，即编写代码的时候。原因如下： 首先，编写注释使文档成为设计过程的一部分，其次，这不仅产生了更好的文档，而且还产生了更好的设计，第三，这会使的编写文档的过程更加愉快。            <a href="https://www.cnblogs.com/peida/p/12100547.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-26 10:04 peida 阅读 (272) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12100547" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/25.html">2019年12月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12095125.html">
+    软件设计的哲学：第十四章 选个好名字
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：为变量、方法和其他实体选择名称是软件设计中最被低估的方面之一。好的名称是文档的一种形式：它们使代码更容易理解。它们减少了对其他文档的需要，并使错误检测变得更容易。相反，糟糕的名称选择会增加代码的复杂性，产生可能导致bug的歧义和误解。            <a href="https://www.cnblogs.com/peida/p/12095125.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-25 10:01 peida 阅读 (304) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12095125" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/24.html">2019年12月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12089832.html">
+    软件设计的哲学：第十三章 注释应该描述代码中隐藏的内容
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：注释的目标是确保系统的结构和行为对读者来说是显而易见的，这样他们就可以快速地找到他们需要的信息，并有信心地对系统进行修改。 ​ 有些信息可以在代码中以一种读者已经很容易理解的方式表示，但是有大量的信息不容易从代码中推断出来。            <a href="https://www.cnblogs.com/peida/p/12089832.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-24 09:50 peida 阅读 (294) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12089832" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/23.html">2019年12月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12083304.html">
+    软件设计的哲学：第二十章 为什么要写注释
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：好的注释可以使软件的整体质量有很大的不同；写出好的注释并不难；而且(这可能很难相信)写注释其实很有趣。            <a href="https://www.cnblogs.com/peida/p/12083304.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-23 13:40 peida 阅读 (345) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12083304" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/22.html">2019年12月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12078980.html">
+    软件设计的哲学：第十一章 两次设计
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：两次设计的方法不仅提高了你的设计，也提高了你的设计能力。设计和比较多种方法的过程将教会您使设计更好或更差的因素。随着时间的推移，这将使你更容易排除糟糕的设计，并专注于真正伟大的设计。            <a href="https://www.cnblogs.com/peida/p/12078980.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-22 07:25 peida 阅读 (239) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12078980" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/21.html">2019年12月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12075767.html">
+    软件设计的哲学： 第十章 定义不存在错误
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：异常处理是软件系统中最糟糕的复杂性来源之一。任何形式的特殊情况都会使代码更难理解，并增加bug的可能性。最好的方法是重新定义语义来消除错误条件。对于无法定义的异常，您应该寻找机会在较低的层次上屏蔽它们，这样它们的影响就有限了。            <a href="https://www.cnblogs.com/peida/p/12075767.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-21 07:13 peida 阅读 (222) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12075767" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/20.html">2019年12月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12071197.html">
+    软件设计的哲学： 第九章 合并还是分解
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：拆分或联接模块的决策应该基于复杂性。选择能够隐藏最佳信息、最少依赖和最深接口的结构。            <a href="https://www.cnblogs.com/peida/p/12071197.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-20 08:00 peida 阅读 (304) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12071197" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/19.html">2019年12月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12065701.html">
+    软件设计的哲学：第八章 降低复杂性
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在开发模块时，寻找机会让自己承担一些额外的痛苦，以减少用户的痛苦。把复杂留给自己，简单留给用户。            <a href="https://www.cnblogs.com/peida/p/12065701.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-19 07:51 peida 阅读 (476) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12065701" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/18.html">2019年12月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12052402.html">
+    软件设计的哲学【翻译】--目录
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：软件设计的哲学，解决软件复杂性的原则，中文翻译抢先体验版，持续更新中。            <a href="https://www.cnblogs.com/peida/p/12052402.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-18 18:47 peida 阅读 (570) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12052402" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12060204.html">
+    软件设计的哲学：第七章 不同层不同抽象
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：软件系统是分层组成的，其中较高层使用较低层提供的功能。在一个设计良好的系统中，每一层都提供了不同于其上下层的抽象；如果您通过调用方法跟随单个操作在层中上下移动，那么抽象会随着每个方法调用而变化。            <a href="https://www.cnblogs.com/peida/p/12060204.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-18 15:48 peida 阅读 (130) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12060204" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12060164.html">
+    软件设计的哲学： 第六章 更深的通用模块
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：与专用接口相比，通用接口有许多优点。它们往往更简单，包含更少的方法。它们还提供了类之间更清晰的分离，而特殊用途的接口往往会泄漏类之间的信息。使您的模块具有一定的通用功能是降低整个系统复杂性的最佳方法之一。            <a href="https://www.cnblogs.com/peida/p/12060164.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-18 15:42 peida 阅读 (362) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12060164" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/17.html">2019年12月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12056388.html">
+    软件设计的哲学 第五章 隐藏信息
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：信息隐藏与深度模块密切相关。如果一个模块隐藏了很多信息，就会增加模块提供的功能，同时也减少了它的接口。这使得模块更深入。相反，如果一个模块没有隐藏很多信息，那么要么它没有太多的功能，要么它有一个复杂的接口；不管怎样，这个模块都是浅层的。            <a href="https://www.cnblogs.com/peida/p/12056388.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-17 19:39 peida 阅读 (194) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12056388" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12056374.html">
+    软件设计的哲学：第四章 深度封装模块
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：通过将模块的接口与其实现分离，我们可以向系统的其他部分隐藏实现的复杂性。模块的用户只需要理解其接口提供的抽象。在设计类和其他模块时，最重要的问题是使它们更深入，这样它们就有了公共用例的简单接口，同时还提供了重要的功能。这最大化了隐藏的复杂性。            <a href="https://www.cnblogs.com/peida/p/12056374.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-17 19:36 peida 阅读 (207) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12056374" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/peida/archive/2019/12/16.html">2019年12月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12049222.html">
+    软件设计的哲学：第三章 编程的战术和战略
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：好的设计不是免费的。它必须是你不断投资的东西，这样小问题就不会积累成大问题。 幸运的是，好的设计最终会收回成本，而且比你想象的要快。            <a href="https://www.cnblogs.com/peida/p/12049222.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-16 15:09 peida 阅读 (287) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12049222" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12049197.html">
+    软件设计的哲学：第二章 复杂性的本质
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：如果一个软件系统难以理解和修改，那么它就是复杂的；如果它容易理解和修改，那么它就是简单的。复杂性来自于依赖和模糊的积累。随着复杂性的增加，它会导致变化的扩大、高的认知负荷和未知的未知。            <a href="https://www.cnblogs.com/peida/p/12049197.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-16 15:05 peida 阅读 (332) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12049197" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/peida/p/12049073.html">
+    第一章：关于复杂性的介绍
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：更简单的设计允许我们在复杂性变得不可抗拒之前构建更大、更强大的系统。有两种对付复杂性的一般方法：第一种方法是通过使代码更简单、更明显来消除复杂性。处理复杂性的第二种方法是封装它，这样程序员就可以在一个系统上工作，而不必一次暴露系统的所有复杂性。这种方法称为模块化设计。            <a href="https://www.cnblogs.com/peida/p/12049073.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-16 14:47 peida 阅读 (298) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12049073" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/peida/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 peida
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script language="javascript" type="text/javascript" src="http://js.users.noscript.cnitblog.com/1910329.js"></script>
+<noscript><a href="http://www.noscript.cnitblog.com/?1910329" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.noscript.cnitblog.com/1910329.asp" style="border:none" />统计代码</a></noscript>
+
+<script src="https://s137.cnzz.com/stat.php?id=1121896&web_id=1121896" language="JavaScript" charset="gb2312"></script>
+
+<script src="https://s14.cnzz.com/stat.php?id=943648&web_id=943648&online=1&show=line" language="JavaScript"></script>
+    </div>
+</body>
+</html>

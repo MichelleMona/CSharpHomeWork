@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>zipython - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zipython/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zipython/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zipython/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 537473;
+        var currentBlogApp = 'zipython';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zipython/">zipython</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zipython/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/zipython">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zipython/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+63&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+0</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/02/18.html">2020年2月18日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12325195.html">
+[置顶]    《自拍教程1》教程宗旨
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：《自拍教程》是自动化测试Python教程的简称。 我周围有许多测试同事，我也面试过很多测试求职人员， 他们普遍对python都有很浓厚的兴趣, 大部分都自学过Python的，了解基本语法. 也能看懂简单Python代码块, 但是Python代码写不出来！ 我分析下来主要有以下几点原因: 主要原因 原            <a href="https://www.cnblogs.com/zipython/p/12325195.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-02-18 10:50 zipython 阅读 (57) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12325195" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12775217.html">
+    《自拍教程62》Python adb反复断网联网测试
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：案例故事: Android App或者系统测试过程中，涉及需要断网异常测试（无网络情况下，App或系统是否提示正常，运行正常）, 联网测试（网络恢复的情况下，App或系统是否提示正常，运行正常）， 目前基本上设备都具备wifi，4G两种网络， 需要考虑两种网络全部断开， 或者两种网络全部连上，并需要            <a href="https://www.cnblogs.com/zipython/p/12775217.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-25 20:56 zipython 阅读 (3) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775217" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12770002.html">
+    《自拍教程61》Python adb反复启动退出高德地图App
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：案例故事： Android车载测试过程中，客户反馈低概率偶现高德地图App启动过程中， 出现了报错：“高德地图无法继续运行”，客户说只碰到过一次，后续再没复现过， 测试经理安排我们负责压测，反复进行高德地图打开关闭， 并在打开过程中，截一张图，打开加载完毕后再截取一张图， 测试经理希望自动化实现截取            <a href="https://www.cnblogs.com/zipython/p/12770002.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-24 20:53 zipython 阅读 (14) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12770002" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12763850.html">
+    Python 控制220V ？？？ 老板，你没看错！
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：这是武散人著《自拍教程》（自动化测试Python教程）系列第60篇文章。 重要提醒： 本案例涉及220v危险电压上电下电测试，存在安全风险，请切勿随意尝试！！！ 案例故事 很多移动终端都不带电池，都是直接电源插头供电， 比如Android电视机（220v），小米小爱同学智能音箱（220v转5v的电源            <a href="https://www.cnblogs.com/zipython/p/12763850.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-23 21:54 zipython 阅读 (40) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12763850" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12733670.html">
+    《自拍教程59》Python 批量在浏览器里打开Jira Bug（附练手素材）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：案例故事：有一天测试经理发给我一个Bug列表， 这些Bug都是被开发打回来的无效(WithDrawn)Bug， 就是开发不认为是bug， 测试经理觉得很有必要去分析下， 为什么这么多无效bug，到底是什么原因? 测试经理想知道，是测试提Bug太随意，还是无此需求，还是开发bug流转流程不对，还是其他            <a href="https://www.cnblogs.com/zipython/p/12733670.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-19 21:13 zipython 阅读 (20) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12733670" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12722447.html">
+    《自拍教程58》Python 批量生成Jira Bug查询语句
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：案例故事 ：有时候一个测试报告发过来，发现这个测试报告的Bug，很多信息未提及， 比如Bug严重级别(Proirity)，指派给谁了(assginee)，目前Bug状态(Status)等信息。 其实我们可以借助Jira的Jql(Jira Query Language)查询语句，实现批量查询这些Bug            <a href="https://www.cnblogs.com/zipython/p/12722447.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-17 21:00 zipython 阅读 (20) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12722447" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/10.html">2020年4月10日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12673615.html">
+    《自拍教程57》Python fastboot一键刷机
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：大部分的Android手机/车机/电视等移动终端设备， 都可以通过fastboot来刷新Android系统版本，其实就是多个img文件(镜像文件）的刷写。 准备阶段 1. 先通过组合按键(每个Android终端组合按钮不一样，比如有的是持续按住Home键+音量下键再开机，持续3s以上）， 进入fas            <a href="https://www.cnblogs.com/zipython/p/12673615.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-10 15:05 zipython 阅读 (22) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12673615" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/09.html">2020年4月9日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12669672.html">
+    《自拍教程56》Python 批量安装卸载1000个apk
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：接上2篇案例： &quot;Python_批量下载1000个apk&quot; , &quot;Python_批量验证1000个apk&quot; ， 都下载完了， 也验证了下载文件的版本号和MD5后，就要开始批量安装了， 然后开始尝试运行打开这个app， 做最基本的功能检点，最后就要考虑卸载App了。 本篇内容主要介绍如何用Python            <a href="https://www.cnblogs.com/zipython/p/12669672.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-09 21:24 zipython 阅读 (29) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12669672" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/07.html">2020年4月7日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12655033.html">
+    《自拍教程55》Python_批量验证1000个apk（附练手素材）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：接上一篇案例： &quot;Python_批量下载1000个apk&quot; ，我们只讲了如何下载， 其实市场部提供的表格，不仅仅包含了apk的下载地址，还有apk的版本号，还有MD5信息等， 如何确保你下载的这1000个apk，是下载过程中未出错，版本号对的上，MD5信息也对上？ 附:市场部提供的包含apk版本号，            <a href="https://www.cnblogs.com/zipython/p/12655033.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-07 18:18 zipython 阅读 (36) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12655033" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/06.html">2020年4月6日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12642542.html">
+    《自拍教程54》Python_批量下载1000个apk（附练手素材）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：之前我们做Android手机测试的时候， 市场部希望我们测试部进行Top 1000 app（排名前1000的app）的兼容性测试， 以确保我们的手机是可以安装并正常运行这么多好用的app， 且市场部提供了某应用市场上的top 1000 的apk下载地址。 如何实现快速批量地下载apk文件呢？ 准备阶            <a href="https://www.cnblogs.com/zipython/p/12642542.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-06 16:07 zipython 阅读 (36) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12642542" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zipython/archive/2020/04/05.html">2020年4月5日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zipython/p/12636608.html">
+    《自拍教程53》Python adb运行tcpdump工具
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：本篇文章与上一篇： &quot;Python_adb运行shell脚本类似&quot; ， 上一篇主要的技术点是讲shell等 文本文件 ，&quot;隐藏&quot;在Python代码里; 本篇文章主要是讲，如何将tcpdump这类 二进制可执行文件 ， “隐藏”到Python代码里去。 ::: story Android手机具备在线功            <a href="https://www.cnblogs.com/zipython/p/12636608.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-05 12:09 zipython 阅读 (27) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12636608" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/zipython/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 zipython
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

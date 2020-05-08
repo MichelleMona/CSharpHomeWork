@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="因为IIS不支持跨平台的原因，我们在升级到ASP.NET Core后，会接触到一个新的Web服务器Kestrel。相信大家刚接触这个Kestrel时，会有各种各样的疑问。 今天我们全面认识一下ASP." />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ASP.NET Core技术研究-全面认识Web服务器Kestrel - Eric zhou - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=MH15aYd6DmX-6TABpA2xkiKENy3GAhiM2dh5rOPH89I" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=X7swQJ1TyCJAf6FMVjDPbYhUAiMdNFddEy1-m0_TbFQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/tianqing/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/tianqing/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/tianqing/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 27084;
+        var currentBlogApp = 'tianqing';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleBlue';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/tianqing/">I love .net</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/tianqing/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Eric%20zhou">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/tianqing/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+101&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+397</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/tianqing/p/12764404.html">ASP.NET Core技术研究-全面认识Web服务器Kestrel</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>因为IIS不支持跨平台的原因，我们在升级到ASP.NET Core后，会接触到一个新的Web服务器<strong>Kestrel</strong>。相信大家刚接触这个Kestrel时，会有各种各样的疑问。</p>
+<p>今天我们全面认识一下ASP.NET&nbsp;Core的默认Web服务器Kestrel。</p>
+<p><span style="font-size: 18px;"><strong>一、初识Kestrel</strong></span></p>
+<p>首先，Kestrel是一个跨平台的Web服务器，支持运行在Windows、macOS、Linux等操作系统中。Kestrel支持一下使用场景：</p>
+<ul>
+<li><span style="font-size: 14px;">HTTPS</span></li>
+<li><span style="font-size: 14px;">Opaque upgrade used to enable WebSockets（启用WebSocket情况下的不透明升级）</span></li>
+<li><span style="font-size: 14px;">Unix sockets for high performance behind Nginx（Nginx高性能模式下的Unix套接字）</span></li>
+<li><span style="font-size: 14px;">HTTP2（不支持macOS）</span></li>
+</ul>
+<div>Kestrel支持运行在所有.NET&nbsp;支持的平台和版本之上。</div>
+<div>&nbsp;</div>
+<div><strong><span style="font-size: 18px;">二、Kestrel主要应用场景</span></strong></div>
+<div>&nbsp; &nbsp;Kestrel主要有两种使用模式：</div>
+<div>&nbsp; &nbsp;1. Kestrel直接作为Web服务器，直接接收并处理各类Http请求：</div>
+<div>&nbsp; &nbsp;<img src="https://img2020.cnblogs.com/blog/23525/202004/23525-20200423224731094-1236302970.png" alt=""></div>
+<div>&nbsp; &nbsp;2.&nbsp;与各类反向代理服务器（例如Nginx、Apache、IIS）配合使用，反向代理服务器接收Http请求，将这些请求转发到Kestrel Web服务器</div>
+<div>&nbsp; &nbsp; &nbsp; &nbsp;<img src="https://img2020.cnblogs.com/blog/23525/202004/23525-20200423224747732-1493438395.png" alt=""></div>
+<div>&nbsp; &nbsp;使用反向代理服务器的好处有哪些呢？</div>
+<div>
+<ul>
+<li>&nbsp; &nbsp;对外暴露有限的HTTP服务</li>
+<li>&nbsp; &nbsp;更加安全，反向代理服务器做了一层过滤、防护和转发</li>
+<li>&nbsp; &nbsp;通过反向代理服务器实现负载均衡和动态请求分发路由</li>
+<li>&nbsp; &nbsp;减少域名使用，降低WAF防火墙防护成本</li>
+<li>&nbsp; &nbsp;安全通信 (HTTPS) 配置，HTTPS转HTTP，仅反向代理服务器需要 X.509 证书，并且该服务器可使用普通 HTTP&nbsp;协议与内部网络的应用服务器通信。</li>
+</ul>
+<p><span style="font-size: 18px;"><strong>&nbsp;三、Kestrel支持特性之-HTTP/2</strong></span></p>
+<p>&nbsp; &nbsp;Kestrel在以下操作系统和.NET Core版本下支持HTTP/2</p>
+<p>&nbsp;<strong> &nbsp;操作系统：</strong></p>
+<ul>
+<li>Windows Server 2016/Windows 10 或更高版本</li>
+<li>具有 OpenSSL 1.0.2 或更高版本的 Linux（例如，Ubuntu 16.04 或更高版本）</li>
+<li>macOS 的未来版本将支持 HTTP/2</li>
+</ul>
+<p>&nbsp; &nbsp;&nbsp;macOS 的未来版本将支持 &dagger;HTTP/2。 &Dagger;Kestrel 在 Windows Server 2012 R2 和 Windows 8.1 上对 HTTP/2 的支持有限。</p>
+<p>&nbsp; &nbsp;&nbsp;<strong>目标框架：</strong>.NET Core 2.2 或更高版本</p>
+<p>&nbsp; &nbsp; 关于HTTP/2 可以参考一下超链接：<a href="https://http2.github.io/">https://http2.github.io/</a>&nbsp;</p>
+<p>&nbsp; &nbsp; 关于HTTP/2和HTTP/1.1的全方位对比，可以参考这个超链接：<a href="https://cheapsslsecurity.com/p/http2-vs-http1/">https://cheapsslsecurity.com/p/http2-vs-http1/</a></p>
+<p><span style="font-size: 18px;"><strong>&nbsp;四、在ASP.NET&nbsp;Core中使用Kestrel</strong></span></p>
+<p>&nbsp;&nbsp;在ASP.NET&nbsp;Core的框架<strong>Microsoft.AspNetCore.App</strong>内置了package：<strong>Microsoft.AspNetCore.Server.Kestrel</strong> ，即原生对Kestrel的支持：</p>
+<p>&nbsp;&nbsp;大家可以找到ASP.NET Core 3.1的本地目录：C:\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\3.1.0\ref\netcoreapp3.1 中找到Kestrel相关的dll：</p>
+<p>&nbsp;&nbsp;<img src="https://img2020.cnblogs.com/blog/23525/202004/23525-20200423225250325-1754602058.jpg" alt=""></p>
+<p>&nbsp; &nbsp; &nbsp;当我们新建一个ASP.NET Core&nbsp;Project，在Program.cs类中有以下代码，</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">public class Program
+{
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =&gt;
+            Host.CreateDefaultBuilder(args)
+                .ConfigureWebHostDefaults(webBuilder =&gt;
+                {
+                    webBuilder.UseStartup&lt;Startup&gt;();
+                });
+}　　</pre>
+</div>
+<p>&nbsp; &nbsp; &nbsp;我们通过查看ConfigureWebDefaults的实现源码可以发现，在其内部调用了<strong>UseKestrel</strong>()方法，<strong>即ASP.NET Core默认使用Kestrel Web服务器！</strong></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">internal static void ConfigureWebDefaults(IWebHostBuilder builder)
+       {
+           builder.ConfigureAppConfiguration((ctx, cb) =&gt;
+           {
+               if (ctx.HostingEnvironment.IsDevelopment())
+               {
+                   StaticWebAssetsLoader.UseStaticWebAssets(ctx.HostingEnvironment, ctx.Configuration);
+               }
+           });
+           builder.UseKestrel((builderContext, options) =&gt;
+           {
+               options.Configure(builderContext.Configuration.GetSection("Kestrel"));
+           })
+           .ConfigureServices((hostingContext, services) =&gt;
+           {
+               // Fallback
+               services.PostConfigure&lt;HostFilteringOptions&gt;(options =&gt;
+               {
+                   if (options.AllowedHosts == null || options.AllowedHosts.Count == 0)
+                   {
+                       // "AllowedHosts": "localhost;127.0.0.1;[::1]"
+                       var hosts = hostingContext.Configuration["AllowedHosts"]?.Split(new[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+                       // Fall back to "*" to disable.
+                       options.AllowedHosts = (hosts?.Length &gt; 0 ? hosts : new[] { "*" });
+                   }
+               });
+               // Change notification
+               services.AddSingleton&lt;IOptionsChangeTokenSource&lt;HostFilteringOptions&gt;&gt;(
+                           new ConfigurationChangeTokenSource&lt;HostFilteringOptions&gt;(hostingContext.Configuration));
+  
+               services.AddTransient&lt;IStartupFilter, HostFilteringStartupFilter&gt;();
+  
+               if (string.Equals("true", hostingContext.Configuration["ForwardedHeaders_Enabled"], StringComparison.OrdinalIgnoreCase))
+               {
+                   services.Configure&lt;ForwardedHeadersOptions&gt;(options =&gt;
+                   {
+                       options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+                       // Only loopback proxies are allowed by default. Clear that restriction because forwarders are
+                       // being enabled by explicit configuration.
+                       options.KnownNetworks.Clear();
+                       options.KnownProxies.Clear();
+                   });
+  
+                   services.AddTransient&lt;IStartupFilter, ForwardedHeadersStartupFilter&gt;();
+               }
+  
+               services.AddRouting();
+           })
+           .UseIIS()
+           .UseIISIntegration();
+       }
+</pre>
+</div>
+<p>　　以上详细的代码可以参考，上一篇博文：<a class="postTitle2" href="https://www.cnblogs.com/tianqing/p/12726181.html">.NET Core技术研究-主机Host</a></p>
+<p><span style="font-size: 18px;"><strong>五、Kestrel的配置选项</strong></span></p>
+<p>&nbsp; 我们可以使用&nbsp;webBuilder.ConfigureKestrel设置Kestrel的一些选项：</p>
+<p>&nbsp;&nbsp;<img src="https://img2020.cnblogs.com/blog/23525/202004/23525-20200423230409427-2045468944.jpg" alt=""></p>
+<p>&nbsp; &nbsp;接下来，我们看一下Kestrel Web服务器提供了哪些选项设置：</p>
+<p><strong>&nbsp; 1. KeepAliveTimeout：保持活动会话超时时间</strong></p>
+<p>&nbsp; &nbsp;默认2分钟，可以用以下代码进行设置：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(2);
+</pre>
+</div>
+<p><strong>&nbsp; 2.&nbsp;<span style="color: #171717; font-family: SFMono-Regular;">客户端最大连接数：</span> MaxConcurrentConnections、 MaxConcurrentUpgradedConnections</strong></p>
+<p>&nbsp;&nbsp;默认情况下，最大连接数不受限制；</p>
+<p>&nbsp;&nbsp;<span>可以通过</span> MaxConcurrentConnections<span style="color: #171717; font-family: SFMono-Regular;">，设置</span>整个应用设置并发打开的最大 TCP 连接数。</p>
+<p>&nbsp;&nbsp;对于已从 HTTP 或 HTTPS 升级到另一个协议（例如，Websocket 请求）的连接，有一个单独的限制MaxConcurrentUpgradedConnections。 连接升级后，不会计入 MaxConcurrentConnections 限制。</p>
+<p>&nbsp; 可以用以下代码进行设置：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.MaxConcurrentConnections = 100;
+serverOptions.Limits.MaxConcurrentUpgradedConnections = 100;
+</pre>
+</div>
+<p>&nbsp; <strong>3.&nbsp;请求正文最大大小： MaxRequestBodySize</strong></p>
+<p>&nbsp;&nbsp;默认的请求正文最大大小为 30,000,000 字节，大约 28.6 MB</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.MaxRequestBodySize = 10 * 1024;
+</pre>
+</div>
+<p>&nbsp;&nbsp;在 ASP.NET Core MVC 应用中替代限制的推荐方法是在操作方法上使用 <strong>RequestSizeLimitAttribute</strong> 属性：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">[RequestSizeLimit(100000000)]
+public IActionResult MyActionMethod()　　</pre>
+</div>
+<p><strong>&nbsp; &nbsp;4.&nbsp;请求正文最小数据速率&nbsp;MinRequestBodyDataRate MinResponseDataRate</strong></p>
+<p>&nbsp; &nbsp;Kestrel 每秒检查一次数据是否以指定的速率（字节/秒）传入。 如果速率低于最小值，则连接超时。</p>
+<p>&nbsp; &nbsp;宽限期是 Kestrel 提供给客户端用于将其发送速率提升到最小值的时间量；在此期间不会检查速率。 宽限期可以尽可能地避免最初由于 TCP 慢启动而以较慢速率发送数据的连接中断。</p>
+<p>&nbsp; &nbsp;默认的最小速率为 240 字节/秒，包含 5 秒的宽限期。</p>
+<p>&nbsp; &nbsp;最小速率也适用于HttpResponse响应。 除了属性和接口名称中具有 RequestBody 或 Response 以外，用于设置请求限制和响应限制的代码相同。&nbsp; &nbsp;</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.MinRequestBodyDataRate = new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+serverOptions.Limits.MinResponseDataRate = new MinDataRate(bytesPerSecond: 100, gracePeriod: TimeSpan.FromSeconds(10));
+</pre>
+</div>
+<p><strong>&nbsp; 5.&nbsp;请求Header超时 RequestHeadersTimeout</strong></p>
+<p>&nbsp;&nbsp;获取或设置服务器接收请求标头所花费的最大时间量。 默认值为 30 秒。&nbsp;&nbsp;</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.RequestHeadersTimeout = TimeSpan.FromMinutes(1);
+</pre>
+</div>
+<p><strong>&nbsp; &nbsp;6.&nbsp;每个连接的最大的请求流的数量 MaxStreamsPerConnection</strong></p>
+<p>&nbsp;&nbsp;&nbsp;Http2.MaxStreamsPerConnection 限制每个 HTTP/2 连接的并发请求流的数量。 拒绝过多的流。&nbsp; &nbsp;</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.Http2.MaxStreamsPerConnection = 100;
+</pre>
+</div>
+<p><strong>　7. 标题表大小</strong></p>
+<p>&nbsp; &nbsp;HPACK 解码器解压缩 HTTP/2 连接的 HTTP 标头。 Http2.HeaderTableSize 限制 HPACK 解码器使用的标头压缩表的大小。 该值以八位字节提供，且必须大于零 (0)。　&nbsp; &nbsp;</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.Http2.HeaderTableSize = 4096;
+</pre>
+</div>
+<p><strong>　8. 最大帧大小 Http2.MaxFrameSize</strong></p>
+<p>&nbsp; &nbsp;&nbsp;<span data-ttu-id="51119-214"><code>Http2.MaxFrameSize</code>&nbsp;表示服务器接收或发送的 HTTP/2 连接帧有效负载的最大允许大小。&nbsp;<span data-ttu-id="51119-215">该值以八位字节提供，必须介于 2^14 (16,384) 和 2^24-1 (16,777,215) 之间。</span></span><span data-ttu-id="51119-214"><span data-ttu-id="51119-215">&nbsp;&nbsp;</span></span></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.Http2.MaxFrameSize = 16384;
+</pre>
+</div>
+<p>　<strong>9. 最大请求头大小 Http2.MaxRequestHeaderFieldSize</strong></p>
+<p><span data-ttu-id="51119-218"><code>&nbsp; Http2.MaxRequestHeaderFieldSize</code>&nbsp;表示请求标头值的允许的最大大小（用八进制表示）。&nbsp;<span data-ttu-id="51119-219">此限制适用于名称和值的压缩和未压缩表示形式。&nbsp;<span data-ttu-id="51119-220">该值必须大于零 (0)。&nbsp;</span></span></span><span data-ttu-id="51119-218"><span data-ttu-id="51119-219"><span data-ttu-id="51119-220">&nbsp; &nbsp;&nbsp;</span></span></span></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.Http2.MaxRequestHeaderFieldSize = 8192;
+</pre>
+</div>
+<p>　<strong>10. 初始连接窗口大小&nbsp;&nbsp;<code>Http2.InitialConnectionWindowSize</code>&nbsp;</strong></p>
+<p>&nbsp; &nbsp;&nbsp;<span data-ttu-id="51119-223"><code>Http2.InitialConnectionWindowSize</code>&nbsp;表示服务器一次性缓存的最大请求主体数据大小（每次连接时在所有请求（流）中汇总，以字节为单位）。&nbsp;<span data-ttu-id="51119-224">请求也受&nbsp;<code>Http2.InitialStreamWindowSize</code>&nbsp;限制。&nbsp;<span data-ttu-id="51119-225">该值必须大于或等于 65,535，并小于 2^31 (2,147,483,648)。</span></span></span><span data-ttu-id="51119-223"><span data-ttu-id="51119-224"><span data-ttu-id="51119-225">&nbsp; &nbsp;</span></span></span></p>
+<p><span data-ttu-id="51119-223"><span data-ttu-id="51119-224"><span data-ttu-id="51119-225">&nbsp; &nbsp;&nbsp;默认值为 128 KB (131,072)</span></span></span></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.Http2.InitialConnectionWindowSize = 131072;
+</pre>
+</div>
+<p><strong>　11. 初始流窗口大小 Http2.InitialStreamWindowSize</strong></p>
+<p>&nbsp; &nbsp;&nbsp;<span data-ttu-id="51119-228"><code>Http2.InitialStreamWindowSize</code>&nbsp;表示服务器针对每个请求（流）的一次性缓存的最大请求主体数据大小（以字节为单位）。&nbsp;<span data-ttu-id="51119-229">请求也受&nbsp;<code>Http2.InitialConnectionWindowSize</code>&nbsp;限制。&nbsp;<span data-ttu-id="51119-230">该值必须大于或等于 65,535，并小于 2^31 (2,147,483,648)。</span></span></span></p>
+<p><span data-ttu-id="51119-228"><span data-ttu-id="51119-229"><span data-ttu-id="51119-230">&nbsp; &nbsp;&nbsp;默认值为 96 KB (98,304)</span></span></span><span data-ttu-id="51119-228"><span data-ttu-id="51119-229"><span data-ttu-id="51119-230">&nbsp; &nbsp;&nbsp;</span></span></span></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.Limits.Http2.InitialStreamWindowSize = 98304;
+</pre>
+</div>
+<p><strong>　12. 同步IO&nbsp;&nbsp;AllowSynchronousIO&nbsp;</strong></p>
+<p>&nbsp; &nbsp; &nbsp;AllowSynchronousIO 控制是否允许对请求和响应使用同步 IO。 默认值为 false。这个设置需要注意一下：</p>
+<p>&nbsp; &nbsp; &nbsp;大量的阻止同步 IO 操作可能会导致线程池资源不足，进而导致应用无响应。 仅在使用不支持异步 IO 的库时，才启用 AllowSynchronousIO。&nbsp; &nbsp; &nbsp;</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:csharp;gutter:true;">serverOptions.AllowSynchronousIO = true;
+</pre>
+</div>
+<p>　　</p>
+<p>以上是ASP.NET Core&nbsp;Web服务器Kestrel的一些研究和梳理，分享给大家。</p>
+<p>&nbsp;</p>
+<p>周国庆</p>
+<p>2020/4/24</p>
+</div>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 05:08</span>&nbsp;
+<a href="https://www.cnblogs.com/tianqing/">Eric zhou</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12764404" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12764404);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 27084, cb_blogApp = 'tianqing', cb_blogUserGuid = 'ea753d0b-63cf-dd11-9e4d-001cf0cd104b';
+    var cb_entryId = 12764404, cb_entryCreatedDate = '2020-04-24 05:08', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 Eric zhou
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

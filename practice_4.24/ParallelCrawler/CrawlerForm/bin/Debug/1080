@@ -1,0 +1,526 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>lingjiango - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=Fx4xdLkGuHnlaG7xntG_wAnZrnorJWp5u_TWKqbvMF0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=cYvlxMu_nd6MVfg-vi7YqOC6FaZ7VHFsDM166vO_ekA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/iou123lg/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/iou123lg/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/iou123lg/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 114183;
+        var currentBlogApp = 'iou123lg';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlackLowKey';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+
+
+<title>打赏</title>
+</head>
+<script>
+        window.tctipConfig = {
+            staticPrefix: "http://static.tctip.com",
+            buttonImageId: 5,
+            buttonTip:  "zanzhu",
+            list:{
+                alipay: { qrimg: "https://files.cnblogs.com/files/iou123lg/zfb.bmp"}, 
+                weixin: { qrimg: "https://files.cnblogs.com/files/iou123lg/wx.bmp"}, 
+            }
+        };
+</script>
+<script src="http://static.tctip.com/js/tctip.min.js" defer></script>
+<body>
+</body>
+</html>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/iou123lg/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/iou123lg/">ling</a>
+</h1>
+<h2>
+知识需要流转才能创造价值 所以在这里记录下来
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/iou123lg/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/lingjiango">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/iou123lg/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+37&nbsp; </span>
+<span id="stats_article_count">文章 - 
+13&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+41</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/12774878.html">
+    分布式算法基础理论V1版
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="cnblogs-post-body" id="postlist_postbody_12774878">
+        正文内容加载中...
+    </div>
+    <script type="text/javascript">getBlogPostBody(12774878);</script>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 19:42 lingjiango 阅读 (6) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774878" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/12723518.html">
+    Netty：ChannelFuture
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：上一篇我们完成了对Channel的学习，这一篇让我们来学习一下ChannelFuture。 ChannelFuture的简介 ChannelFuture是Channel异步IO操作的结果。 Netty中的所有IO操作都是异步的。这意味着任何IO调用都将立即返回，而不能保证所请求的IO操作在调用结束时            <a href="https://www.cnblogs.com/iou123lg/p/12723518.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 00:05 lingjiango 阅读 (134) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12723518" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2020/04/10.html">2020年4月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/12676413.html">
+    Netty：Channel
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：上一篇我们通过一个简单的Netty代码了解到了Netty中的核心组件，这一篇我们将围绕核心组件中的Channel来展开学习。 Channel的简介 Channel代表着与网络套接字或者能够进行IO操作（read、write、connect或者bind）的组件的联系，一个Channel向用户提供了如下            <a href="https://www.cnblogs.com/iou123lg/p/12676413.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-10 21:59 lingjiango 阅读 (157) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12676413" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2020/04/01.html">2020年4月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/12615937.html">
+    Netty：初识Netty
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前文总结了NIO的内容，有了NIO的一些基础之后，我们就可以来看下Netty。Netty是Java领域的高性能网络传输框架，RPC的技术核心就是网络传输和序列化，所以Netty给予了RPC在网络传输领域巨大的支持。 一个简单的Netty代码实现 网络传输基于的是TCP协议，所以会有服务端和客户端之分            <a href="https://www.cnblogs.com/iou123lg/p/12615937.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-01 21:18 lingjiango 阅读 (215) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12615937" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2020/03/22.html">2020年3月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/12546107.html">
+    NIO中的ZeroCopy
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前文提到网络IO可以使用多路复用技术，而文件IO无法使用多路复用，但是文件IO可以通过减少底层数据拷贝的次数来提升性能，而这个减少底层数据拷贝次数的技术，就叫做ZeroCopy。 操作系统层面的ZeroCopy 这一节，从《Zero Copy I: User-Mode Perspective》而来，            <a href="https://www.cnblogs.com/iou123lg/p/12546107.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-22 15:14 lingjiango 阅读 (78) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12546107" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2020/03/15.html">2020年3月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/12497586.html">
+    Java中的IO与NIO
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前文开了高并发学习的头，文末说了将会选择NIO、RPC相关资料做进一步学习，所以本文开始学习NIO知识。 IO知识回顾 在学习NIO前，有必要先回顾一下IO的一些知识。 IO中的流 Java程序通过流（Stream）来完成输入输出。流是生产或者消费信息的抽象，流通过Java的输入输出与物理设备连接，            <a href="https://www.cnblogs.com/iou123lg/p/12497586.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-15 15:02 lingjiango 阅读 (168) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12497586" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2020/03/01.html">2020年3月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/12387534.html">
+    高并发的概念及应对方法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：高并发 高性能            <a href="https://www.cnblogs.com/iou123lg/p/12387534.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-01 15:21 lingjiango 阅读 (295) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12387534" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2018/12/01.html">2018年12月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/10050139.html">
+    JVM-String.intern()
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：故事起源于书籍《深入理解Java虚拟机》，案例如下： 这段代码在JDK1.6中执行会得到两个false，在JDK1.7中会得到一个true和一个false。笔者未在JDK1.7执行，选择的是在JDK1.8中执行，结果是和1.7是一样的。书中是这样解释产生差异的原因：在JDK1.6中，intern()            <a href="https://www.cnblogs.com/iou123lg/p/10050139.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-12-01 17:04 lingjiango 阅读 (331) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10050139" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2018/10/03.html">2018年10月3日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/9739697.html">
+    Java并发编程-CountDownLatch
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：基于AQS的前世今生，来学习并发工具类CountDownLatch。本文将从CountDownLatch的应用场景、源码原理解析来学习这个并发工具类。 1、 应用场景 CountDownLatch是并发包中用来控制一个或者多个线程等待其他线程完成操作的并发工具类。现以工作中的一个场景来描述下Coun            <a href="https://www.cnblogs.com/iou123lg/p/9739697.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-10-03 13:54 lingjiango 阅读 (422) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9739697" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/iou123lg/archive/2018/09/24.html">2018年9月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/iou123lg/p/9696039.html">
+    JVM-Ubuntu18.04.1下编译OpenJDK8
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：近期开始学习JVM，看的是周老师的《深入理解Java虚拟机》,打算先自己编译个JDK来提升对JVM的兴趣。本文分三部分来描述编译OpenJDK的过程，分别是编译前准备工作、构建编译环境、进行编译，在这三部分内容中顺带把趟的坑一起说明下。 一、编译前准备工作 1.1 安装Linux环境 编译OpenJ            <a href="https://www.cnblogs.com/iou123lg/p/9696039.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-09-24 17:49 lingjiango 阅读 (3247) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9696039" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/iou123lg/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 lingjiango
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

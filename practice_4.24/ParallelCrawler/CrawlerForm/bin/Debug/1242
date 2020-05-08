@@ -1,0 +1,501 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HarveyCC - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/bluefresh/bundle-bluefresh.min.css?v=Jq_6QgWhhDfWNeDs7G0f_1vTjy8Ao6iPfy1EVyQejGw" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/bluefresh/bundle-bluefresh-mobile.min.css?v=1kLJchllcVEJlcH4HOtIUkiVRLCKB-C8RWJFxdVwH_8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/yaozuopan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/yaozuopan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/yaozuopan/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 571417;
+        var currentBlogApp = 'yaozuopan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlueFresh';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/yaozuopan/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/yaozuopan/">HarveyCC</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/yaozuopan/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/HarveyCC">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/yaozuopan/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+45&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12774524.html">
+    中国可用的 BT Tracker 服务器列表，每24小时自动更新，去重，自动检测可用性
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Tracker服务器是对于BT下载必须的，网上随便搜索一下就有很多Tracker服务器列表，一个服务器文件少则几十个，多则上百个，但&quot;杂乱无章&quot;，要不就是用不了，要不就是在中不可用，要不就是重复，真正能用的就比较少了。 提供的服务器在中国都ping得通，每24小时自动更新，自动检测，从几个百服务器筛            <a href="https://www.cnblogs.com/yaozuopan/p/12774524.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 18:58 HarveyCC 阅读 (4) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774524" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2020/03/25.html">2020年3月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12567116.html">
+    分享CCNTFS小工具，在 macOS 中完全读写、修改、访问Windows NTFS硬盘的文件，无须额外的驱动(原生驱动)更稳定，简单设置即可高速传输外接NTFS硬盘文件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：CCNTFS 【 &quot;下载&quot; 】 在 macOS 中完全读写、修改、访问Windows NTFS硬盘的文件，无须额外的驱动(原生驱动)更稳定，安装后进行简单设置即可高速传输外接NTFS硬盘文件， ，保障您数据的安全性 macOS本就支持NTFS，由于微软的限制，苹果将其关闭，但并没有删除；开发人员通过            <a href="https://www.cnblogs.com/yaozuopan/p/12567116.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-25 16:42 HarveyCC 阅读 (35) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12567116" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2020/03/06.html">2020年3月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12431822.html">
+    iOS/macOS推荐个高效苹果开发工具， JSON 转模型代码工具，不再为复杂JSON数据写模型而烦恼，支持Swift/Objective-C，极速转换
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：CCJSON 是一款运行在macOS上 JSON 转模型代码工具，不再为复杂JSON数据写模型而烦恼，可识别嵌套模型，字典/数组，支持Swift/Objective C，操作方便，极速转换。 &quot;下载&quot; 效果展示 &quot;前往下载&quot;            <a href="https://www.cnblogs.com/yaozuopan/p/12431822.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-06 23:55 HarveyCC 阅读 (25) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12431822" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2020/03/04.html">2020年3月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12411938.html">
+    分享macOS平台好用的视频分割、合并视频、提取音频、分离音频、音频转码的工具CCVideo
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：CCVideo 是一款运行在macOS上可分割视频(可多段分割)、合并视频、提取音频、分离音频、音频转码的工具，操作方便，只需简单几步，便可轻松完成。 &quot;下载地址&quot;            <a href="https://www.cnblogs.com/yaozuopan/p/12411938.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-04 20:26 HarveyCC 阅读 (28) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12411938" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2020/01/02.html">2020年1月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12142841.html">
+    ElegantSnap 一个优雅的，易用的iOS/tvOS/macOS自动布局框架, 超级详细的使用教程，多视图水平等宽/垂直等高排列
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：&quot;ElegantSnap&quot; ElegantSnap(Base on SnapKit) to make Auto Layout easy and elegant on both iOS and OS X. 基于SnapKit, 用法简洁优雅,可运行在iOS、tvOS、macOS上自动布局库 &quot; &quot; &quot;            <a href="https://www.cnblogs.com/yaozuopan/p/12142841.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-02 23:43 HarveyCC 阅读 (48) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12142841" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2019/09/18.html">2019年9月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12134409.html">
+    CodeMixerPro工具,完美替代ChaosTool，iOS添加垃圾代码工具，代码混淆工具，代码生成器，史上最好用的垃圾代码添加工具，自己开发的小工具
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：新工具 ProjectTool 已上线 这是一款快速写白包工具，秒级别写H5游戏壳包，可视化操作，极易使用，支持Swift、Objecive-C双语言 扣扣交流群：811715780 进入 ProjectTool官网 前往 [ 官网下载] CodeMixer介绍 CodeMixerPro是CodeM            <a href="https://www.cnblogs.com/yaozuopan/p/12134409.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-18 10:11 HarveyCC 阅读 (55) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12134409" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2019/09/12.html">2019年9月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12134400.html">
+    M-Renamer方法名修改器，iOS项目方法名重构，Objective-C/Swift，代码模型预判，减少误改的机率，替换速度更快，可视化操作，傻瓜式操作，一键操作，引用处自动修改，马甲包的福音
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：M-Renamer M-Renamer(Method-Name-Renamer)类方法名修改器，采用链式解析头文件，代码模型预判，减少误改的机率，替换速度更快；可以解析整个项目大多数类的方法，可视化操作，傻瓜式操作，一键批量修改，引用处自动修改，效率高，省时省力，修改后的方法名规范，提高过审机率，支            <a href="https://www.cnblogs.com/yaozuopan/p/12134400.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-12 14:00 HarveyCC 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12134400" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2019/09/11.html">2019年9月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12134403.html">
+    ProjectTool写白包工具，秒级别写H5游戏壳包，可视化操作，极易使用，支持Swift、Objecive-C双语言
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这是自动写白包工具，秒级别写H5游戏壳包，可视化操作，极易使用，支持Swift、Objecive-C双语言 扣扣交流群：811715780 [ 官网下载 ] 这是一个白包目录示例 ProjectTool安装环境 macOS 10.13+ (不支持Windows) Ruby环境 xcodeproj (            <a href="https://www.cnblogs.com/yaozuopan/p/12134403.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-11 18:10 HarveyCC 阅读 (23) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12134403" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2019/08/30.html">2019年8月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12134394.html">
+    iOS包重签名工具，ipa文件重签名，快速签名，SignTool签名工具，好用的签名工具，App重签名
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：新工具 ProjectTool 已上线 这是一款快速写白包工具，秒级别写H5游戏壳包，可视化操作，极易使用，支持Swift、Objecive-C双语言 QQ交流群：811715780 进入 ProjectTool官网 重要！重要！重要！！！ 由于之前使用免费的服务器，大概8月20号左右，服务器已无法            <a href="https://www.cnblogs.com/yaozuopan/p/12134394.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-30 11:38 HarveyCC 阅读 (120) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12134394" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/yaozuopan/archive/2019/06/03.html">2019年6月3日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/yaozuopan/p/12134402.html">
+    ChaosTool,iOS添加垃圾代码工具，代码混淆工具，代码生成器，史上最好用的垃圾代码添加工具，自己开发的小工具
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近在H5游戏项目中需要添加垃圾代码作混淆，提高过审机率。手动添加太费时费力，在网上并没有找到合适的比较好的工具，就自己动手写了一个垃圾代码添加工具，命名为ChaosTool。 扣扣交流群：811715780 【 官网下载 】 ChaosTool特点 自动定义变量/函数/属性 自动实现函数体 自动识            <a href="https://www.cnblogs.com/yaozuopan/p/12134402.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-06-03 21:58 HarveyCC 阅读 (48) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12134402" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/yaozuopan/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 HarveyCC
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

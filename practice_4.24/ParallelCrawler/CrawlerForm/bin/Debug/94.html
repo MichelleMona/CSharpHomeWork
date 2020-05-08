@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="本文在个人技术博客不同步发布，详情可 &amp;quot; 用力戳 &amp;quot; 亦可扫描屏幕右侧二维码关注个人公众号，公众号内有个人联系方式，等你来撩... &amp;amp;emsp;&amp;amp;emsp; 前两天" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>一次给女朋友转账引发我对分布式事务的思考 - 苏苏喂 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/sujing/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/sujing/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/sujing/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 108483;
+        var currentBlogApp = 'sujing';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/sujing/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/sujing/">17coding技术博客</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/sujing/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%8B%8F%E8%8B%8F%E5%96%82">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/sujing/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+12&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+359</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/sujing/p/11006424.html">一次给女朋友转账引发我对分布式事务的思考</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <blockquote>
+<p>本文在个人技术博客不同步发布，详情可<a href="http://www.17coding.info/article/20"><strong>用力戳</strong></a><br>
+亦可扫描屏幕右侧二维码关注个人公众号，公众号内有个人联系方式，等你来撩...</p>
+</blockquote>
+<p>   前两天发了工资，第一反应是想着要给远方的女朋友一点惊喜！于是打开了平安银行的APP给女朋友转点钱！填写上对方招商银行卡的卡号、开户名，一键转账！搞定！在我点击的那瞬间，就收到了app的账户变动的提醒，并且出现了图一所示的提示界面：“处理中，正在等待对方银行返回结果…”。嗯！毕竟是跨行转账嘛，等个几秒也正常！脑海开始浮现出女朋友收到转账后惊喜与感动的画面！</p>
+<p>   <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190416211531.png" width="35%" /></p>
+<p>   然而，一切并没有那么顺利，刚过一会儿，app却如图二所示的提示我“由于收款人户名不符”导致转账失败！！！</p>
+<p>   <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190416211546.png" width="35%" /></p>
+<p>   刚刚都已经从我卡里扣过钱了，现在却提示我转账失败，银行会不会把我的钱给吞了？转账失败的钱还能退换给我吗？正在我紧张、焦虑、坐立不安之时又收到一条app冲正的消息，刚刚转账失败的钱已经退还给我了，看来我多虑了……这也证明咱平安银行的app还是比较安全靠谱的！</p>
+<p>   为啥从我卡里扣钱那么迅速，而对方却要几秒才能到账？并且转账失败后，扣除的钱还能及时的返还到我的卡里？万一钱返还失败怎么办？又或者我转一次钱，对方却收到了两次转账的申请又该如何？带着这些问题，我脑海中浮现出“事务”二字！</p>
+<p>   在我们还在“牙牙学语”的时候，老师经常会通过转账的栗子来跟我们讲解事务，但跟这里场景不一样的是，老师讲的是本地事务，而这里面对的是分布式事务！我们先来简单回顾一下本地事务！</p>
+<h2 id="本地事务">本地事务</h2>
+<p>   谈到本地事务，大家可能都很熟悉，因为这个数据库引擎层面能支持的！所以也称数据库事务，数据库事务四大特征：原子性（A），一致性（C），隔离性（I）和持久性（D），而在这四大特性中，我认为<strong>一致性</strong>是最基本的特性，其它的三个特性都为了保证一致性而存在的！</p>
+<p>   回到学生时代老师给我们举的经典栗子，A账户给B账户转账100元（A、B处于同一个库中），如果A的账户发生扣款，B的账户却没有到账，这就出现了<strong>数据的不一致</strong>！为了保证数据的一致性，数据库的事务机制会让A账户扣款和B在账户到账的两个操作要么同时成功，如果有一个操作失败，则多个操作同时回滚，这就是事务的<strong>原子性</strong>，为了保证事务操作的原子性，就必须实现基于日志的REDO/UNDO机制！但是，仅有原子性还不够，因为我们的系统是运行在多线程环境下，如果多个事务并行，即使保证了每一个事务的原子性，仍然会出现数据不一致的情况。例如A账户原来有200元的余额， A账户给B账户转账100元，先读取A账户的余额，然后在这个值上减去100元，但是在这两个操作之间，A账户又给C账户转账100元，那么最后的结果应该是A减去了200元。但事实上，A账户给B账户最终完成转账后，A账户只减掉了100元，因为A账户向C账户转账减掉的100元被覆盖了！所以为了保证并发情况下的一致性，又引入的<strong>隔离性</strong>，即多个事务并发执行后的状态，和它们串行执行后的状态是等价的！隔离性又有多种隔离级别，为了实现隔离性（最终都是为了保证一致性）数据库又引入了悲观锁、乐观锁等等……本文的主题是分布式事务，所以本地事务就只是简单回顾一下，需要记住的一点是，事务是为了保证数据的<strong>一致性</strong>！</p>
+<h2 id="分布式理论">分布式理论</h2>
+<p>  还记得刚毕业那年，带着满腔的热血就去到了一家互联网公司，领导给我的第一个任务就是在列表上增加一个修改数据的功能。这能难倒我？我分分钟给你搞出来！不就是在列表上增加了一个“修改”按钮，点击按钮弹出框修改后保存就好了么。然而一切不像我想象的那么顺利，点击保存并刷新列表后，页面上的数据还是显示的修改之前的内容，像没有修改成功一样！过一会儿再刷新列表，数据就能正常显示了！测试多次之后都是这样！没见过什么大场面的我开始有点慌了，是我哪里写得不对么？最终，我不得不求助组内经验比较丰富的前辈！他深吸了一口气告诉我说：“毕竟是刚毕业的小伙子啊！我来跟你讲讲原因吧！我们的数据库是做了读写分离的，部分读库与写库在不同的网络分区。你的数据更新到了写库，而读数据的时候是从读库读取的。更新到写库的数据同步到读库是有一定的延迟的，也就是说读库与写库会有短暂的数据不一致”！ “这样不会体验不好么？为什么不能做到写入的数据立马能读出来？那我这个功能该怎么实现呢？” 面对我的一堆问题，同事有些不耐烦的说：“听说过CAP理论吗？你先自己去了解一下吧”！是我开始查阅各种资料去了解这个陌生的词背后的秘密！</p>
+<p>  CAP理论是由加州大学Eric Brewer教授提出来的，这个理论告诉我们，一个分布式系统不可能同时满足一致性(Consistency)、可用性(Availability)、分区容错性(Partition tolerance)这三个基本需求，最多只能同时满足其中两项。<br>
+  <strong>一致性</strong>：这里的一致性是指数据的强一致，也称为线性一致性。是指在分布式环境中，数据在多个副本之间是否能够保持一致的特性。也就是说对某个数据进行写操作后立马执行读操作，必须能读取到刚刚写入的值。（any read operation that begins after a write operation completes must return that value, or the result of a later write operation）<br>
+  <strong>可用性</strong>：任意被无故障节点接收到的请求，必须能够在有限的时间内响应结果。（every request received by a non-failing node in the system must result in a response）<br>
+  <strong>分区容错性</strong>：如果集群中的机器被分成了两部分，这两部分不能互相通信，系统是否能继续正常工作。（the network will be allowed to lose arbitrarily many messages sent from one node to another）</p>
+<p>  在分布式系统中，分区容错性是基本要保证的。也就是说只能在一致性和可用性之间进行取舍。一致性和可用性，为什么不可能同时成立？回到之前修改列表的例子，由于数据会分布在不同的网络分区，必然会存在数据同步的问题，而同步会存在网络延迟、异常等问题，所以会出现数据的不一致！如果要保证数据的一致性，那么就必须在对写库进行操作时，锁定其他读库的操作。只有写入成功且完成数据同步后，才能重新放开读写，而这样在锁定期间，系统丧失了可用性。更详细关于CAP理论可以参考<a href="https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/" target="_blank">这篇文章</a>，该文章讲得比较通俗易懂！</p>
+<h2 id="分布式事务">分布式事务</h2>
+<p>   分布式事务就是在分布式的场景下，需要满足事务的需求！上篇文章我们聊过了消息中间件，那这篇文章我们要聊的是分布式事务，把两者一结合，便有了基于消息中间件的分布式事务解决方案！不管是本地事务，还是分布式事务，都是为了解决数据的一致性问题！<strong>一致性</strong>这个词咱们前面多次提及！与本地事务不同的是，分布式事务需要保证的是分布式环境下，不同数据库表中的数据的一致性问题。分布式事务的解决方案有多种，如XA协议、TCC三阶段提交、基于消息队列等等，本文只会涉及基于消息队列的解决方案！</p>
+<p>   本地事务讲到了一致性，分布式事务不可避免的面临着一致性的问题！回到最开始跨行转账的例子，如果A银行用户向B银行用户转账，正常流程应该是：</p>
+<blockquote>
+<p>1、A银行对转出账户执行检查校验，进行金额扣减。<br>
+2、A银行同步调用B银行转账接口。<br>
+3、B银行对转入账户进行检查校验，进行金额增加。<br>
+4、B银行返回处理结果给A银行。</p>
+</blockquote>
+<p>   <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190611201950.png" alt=""></p>
+<p>   在正常情况对一致性要求不高的场景，这样的设计是可以满足需求的。但是像银行这样的系统，如果这样实现大概早就破产了吧。我们先看看这样的设计最主要的问题：</p>
+<blockquote>
+<p>1、同步调用远程接口，如果接口比较耗时，会导致主线程阻塞时间较长。<br>
+2、流量不能很好控制，A银行系统的流量高峰可能压垮B银行系统（当然B银行肯定会有自己的限流机制）。<br>
+3、如果“第1步”刚执行完，系统由于某种原因宕机了，那会导致A银行账户扣款了，但是B银行没有收到接口的调用，这就出现了两个系统数据的不一致。<br>
+4、如果在执行“第3步”后，B银行由于某种原因宕机了而无法正确回应请求（实际上转账操作在B银行系统已经执行且入库），这时候A银行等待接口响应会异常，误以为转账失败而回滚“第1步”操作，这也会出现了两个系统数据的不一致。</p>
+</blockquote>
+<p>   对于问题的1、2都很好解决，如果对消息队列熟悉的朋友应该很快能想到可以引入消息中间件进行异步和削峰处理，于是又重新设计了一个方案，流程如下：</p>
+<blockquote>
+<p>1、A银行对账户进行检查校验，进行金额扣减。<br>
+2、将对B银行的请求异步写入队列，主线程返回。<br>
+3、启动后台程序从队列获取待处理数据。<br>
+4、后台程序对B银行接口进行远程调用。<br>
+5、B银行对转入账户进行检查校验，进行金额增加。<br>
+6、B银行处理完成回调A银行接口通知处理结果。</p>
+</blockquote>
+<p>   <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190417210335.png" alt=""></p>
+<p>   通过上面的图我们能看到，引入消息队列后，系统的复杂性瞬间提升了，虽然弥补了我们第一种方案的几个不足点，但也带来了更多的问题，比如消息队列系统本身的可用性、消息队列的延迟等等！并且，这样的设计依然没有解决我们面临的核心问题-<strong>数据的一致性</strong>！</p>
+<blockquote>
+<p>1、如果“第1步”刚执行完，系统由于某种原因宕机了，那会导致A银行账户扣款了，但是写入消息队列失败，无法进行B银行接口调用，从而导致数据不一致。<br>
+2、如果B银行在执行“第5步”时由于校验失败而未能成功转账，在回调A银行接口通知回滚时网络异常或者宕机，会导致A银行转账无法完成回滚，从而导致数据不一致。</p>
+</blockquote>
+<p>   面对上述问题，我们不得不对系统再次进行升级改造。为了解决“A银行账户扣款了，但是写入消息队列失败”的问题，我们需要借助一个转账日志表，或者叫转账流水表，该表简单的设计如下：</p>
+<table>
+<thead>
+<tr>
+<th>字段名称</th>
+<th>字段描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tId</td>
+<td>交易流水id</td>
+</tr>
+<tr>
+<td>accountNo</td>
+<td>转出账户卡号</td>
+</tr>
+<tr>
+<td>targetBankNo</td>
+<td>目标银行编码</td>
+</tr>
+<tr>
+<td>targetAccountNo</td>
+<td>目标银行卡号</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>交易金额</td>
+</tr>
+<tr>
+<td>status</td>
+<td>交易状态（待处理、处理成功、处理失败）</td>
+</tr>
+<tr>
+<td>lastUpdateTime</td>
+<td>最后更新时间</td>
+</tr>
+</tbody>
+</table>
+<p>   这个流水表需要怎么用呢？我们在“第1步”进行扣款时，同时往流水表写入一条操作流水，状态为“待处理”，并且这两个操作必须是原子的，也就是说必须通<strong>过本地事务保证</strong>这两个操作要么同时成功，要么同时失败！这就保证了只要转账扣款成功，必定会记录一条状态为“待处理”的转账流水。如果在这一步失败了，那自然就是转账失败，没有后续操作了。如果这步操作后系统宕机了导致没有将消息成功写入消息队列（也就是“第2步”）也没关系，因为我们的流水数据已经持久化了！这时候我们只需要加入一个后台线程进行补偿，定期的从转账流水表中读取状态为“待处理”且最后更新的时间距当前时间大于某个阈值的数据，重新放入消息队列进行补偿。这样，就保证了消息即使丢失，也会有补偿机制！B银行在处理完转账请求后会回调A银行的接口通知转账的状态，从而更新A银行流水表中的状态字段！这样就完美解决了上一个方案中的两个不足点。系统设计图如下：<br>
+   <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190417210356.png" alt=""></p>
+<p>   到目前为止，我们很好的解决了消息丢失的问题，保证了只要A银行转账操作成功，转账的请求就一定能发送到B银行！但是该方案又引入了一个问题，通过后台线程轮询将消息放入消息队列处理，同一次转账请求可能会出现多次放入消息队列而多次消费的情况，这样B银行会对同一转账多次处理导致数据出现不一致！那怎么保证B银行转账接口的幂等性呢？</p>
+<p>   同样的，我们可以在B银行系统中需要增加一个转账日志表，或者叫转账流水表，B银行每次接收到转账请求，在对账户进行操作的时候同时往转账日志表中插入一条转账日志记录，同样这两个操作也必须是原子的！在接收到转账请求后，首先根据唯一转账流水Id在日志表中查找判断该转账是否已经处理过，如果未处理过则进行处理，否则直接回调返回！ 最终的架构图如下：<br>
+   <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190416205100.png" alt=""></p>
+<p>   所以，我们这里最核心的就是A银行通过<strong>本地事务</strong>保证日志记录+<strong>后台线程轮询</strong>保证消息不丢失。B银行通过<strong>本地事务</strong>保证日志记录从而保证消息不重复消费！B银行在回调A银行的接口时会通知处理结果，如果转账失败，A银行会根据处理结果进行回滚。</p>
+<p>   当然，分布式事务最好的解决方案是尽量避免出现分布式事务！</p>
+<p>  最后，推荐极客时间上的一门不错的架构师课程，走向架构师必备！<br>
+    <img style="width:324px;height:476px" src="http://cdn.17coding.info/20190818013154.jpg"  alt="" align=center /></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2019-06-24 09:48</span>&nbsp;
+<a href="https://www.cnblogs.com/sujing/">苏苏喂</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11006424" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(11006424);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 108483, cb_blogApp = 'sujing', cb_blogUserGuid = '840c90e6-8f06-e111-b7b9-842b2b196315';
+    var cb_entryId = 11006424, cb_entryCreatedDate = '2019-06-24 09:48', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 苏苏喂
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

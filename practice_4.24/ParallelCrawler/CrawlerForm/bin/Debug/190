@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="0. 前言 照例一份前言，在介绍任务和多线程之前，先介绍一下异步和同步的概念。我们之间介绍的知识点都是在同步执行，所谓的同步就是一行代码一行代码的执行，就像是我们日常乘坐地铁通过安检通道一样，想象我们" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>C# 基础知识系列- 12 任务和多线程 - 月影西下 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/coffee/bundle-coffee.min.css?v=pdMIVgsH8kXt-vOWnlL0N20TlHt3UyP9HzGgocfsP4s" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee-mobile.min.css?v=na9bpAY4yh7uEWCcrXj3vfJM3VBse8YtU6-5fUUQPz0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/c7jie/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/c7jie/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/c7jie/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 572560;
+        var currentBlogApp = 'c7jie';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'coffee';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/c7jie/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/c7jie/">月影西下</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/c7jie/">
+首页</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%9C%88%E5%BD%B1%E8%A5%BF%E4%B8%8B">
+联系</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/c7jie/rss/">
+订阅</a>
+	
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/c7jie/rss/">
+    <img src="/skins/coffee/images/xml.gif" alt="订阅" />
+</a></li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+随笔- 
+14&nbsp;
+文章- 
+0&nbsp;
+评论- 
+2&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class = "postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/c7jie/p/12766896.html">C# 基础知识系列- 12 任务和多线程</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="0-前言">0. 前言</h1>
+<p>照例一份前言，在介绍任务和多线程之前，先介绍一下异步和同步的概念。我们之间介绍的知识点都是在同步执行，所谓的同步就是一行代码一行代码的执行，就像是我们日常乘坐地铁通过安检通道一样，想象我们每个人都是一行代码，我们依次通过安检仪器的时候就是同步。</p>
+<p>那么，什么是异步呢？有一个时间利用率的故事，讲的是在烧水的同时，顺便准备茶叶，清洗茶杯等工序可以节省时间。这个故事就是异步的一个典型范例。异步通俗的将就是不暂停也不等待当前耗时的流程执行完成，继续执行后续的流程。</p>
+<p>那么这和任务与多线程有什么关系呢？在C#中，基于任务可以很简单的创建一个异步程序或者异步方法；同时任务也是一个简单的多线程模式。不过值得注意的是，C#的异步可以由多线程实现，但多线程更多的是用来实现并行。所谓并行，顾名思义，就是多任务同时执行，这里的任务指的是程序需要完成的事，而不是C#中的任务机制。</p>
+<p>这一篇是《C#基础知识系列》的一篇，简单介绍一下如何创建、使用任务和多线程，这部分的内容很多，包括有很多注意事项，将会另开一个系列专门讲解C#的异步和并行编程，名字暂定为《C#异步编程系列》。</p>
+<h1 id="1-线程">1. 线程</h1>
+<p>了解过计算机的人可能知道程序最小执行单元是线程，最小资源分配单位是进程。进程里必然至少有一个线程，而一个程序也必然至少有一个进程。这里不过多的介绍进程和线程的区别于关系，只需要记着线程是程序最小执行单元，我们在开发中最常用的也是线程。</p>
+<p>在很多不太严谨的编程教程中，都会把多线程和并行化作等号。但是这里有一个很微妙的区别，对于单核CPU来说，多进程和多线程一样，都不会产生并行的效果；对于多核CPU而言，多进程必然是并行的，但是多线程则不一定并行。所以C#中，线程更多的用作异步处理上，而不是并行计算上。</p>
+<p>在C#程序中，需要引用<code>System.Threading</code>。C#的入门级线程操作只需要知道Thread类、一个带参数的无返回值方法和一个不带参数的无返回值方法，这三个要点就可以了。</p>
+<h2 id="11-创建一个线程">1.1 创建一个线程</h2>
+<pre><code class="language-c#">var thread = new Thread(() =&gt;
+{
+});
+</code></pre>
+<p>以上示例代码演示了如果创建一个线程。但创建了线程，并不代表线程就会运行。</p>
+<p>说到这里就必须说一下线程的状态，一般情况线程分为五个阶段，也就是五种状态：分别是准备、就绪、运行、阻塞、死亡。当然在不同的地方，状态可能会细分为更多的级别，这里只做初步的介绍。状态之间的切换如下：</p>
+<p><img src="https://img2020.cnblogs.com/other/1266612/202004/1266612-20200424133125667-14662715.png" alt="image-20200423102030652"></p>
+<p>线程的状态之间切换顺序有着严格的限制，而且只能从就绪态由CPU切换到运行态，运行态无法从其他状态切换过去，而且这一步的切换开发者不能控制。</p>
+<p>现在，我们回到线程的创建方法，先来看看<code>Thread</code>构造方法的声明：</p>
+<pre><code class="language-c#">public Thread (System.Threading.ParameterizedThreadStart start);
+public Thread (System.Threading.ThreadStart start);
+</code></pre>
+<p>碰到了两个没见过的类型，我们继续看看？</p>
+<pre><code class="language-c#">public delegate void ParameterizedThreadStart(object obj);
+public delegate void ThreadStart();
+</code></pre>
+<p>到这里，线程的创建为我们揭开了它的谜底。根据之前《C# 基础知识系列- 11 委托和事件》那篇的介绍，我们可以很明确的得到 <code>ThreadStart</code>是一个 无返回值也没有参数的委托，而<code>ParameterizedThreadStart</code>表示有一个object的参数。所以，创建线程的时候，可以直接传一个方法进去。</p>
+<p>有的同学可能要问了，为什么创建线程的委托参数那么少？这里涉及到一个并发概念，因为线程访问过多的主线程可能会导致锁，所以最佳的线程实践就是让线程的运行保持一个相对封闭的环境。</p>
+<blockquote>
+<p>当然，C#的线程其实放宽了这部分的限制，这部分将在《C#异步编程系列》中继续探讨。</p>
+</blockquote>
+<p>现在我们回过头来，再看看如何创建一个标准的线程：</p>
+<pre><code class="language-c#">class Program
+{
+    static void Main(string[] args)
+    {
+        var thread1 = new Thread(ThreadTest1);
+        var thread2 = new Thread(ThreadTest2);
+    }
+
+    /// &lt;summary&gt;
+    /// 不带参数的线程
+    /// &lt;/summary&gt;
+    public static void ThreadTest1()
+    {
+        // 业务代码
+    }
+    /// &lt;summary&gt;
+    /// 带参数的线程
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;obj&quot;&gt;&lt;/param&gt;
+    public static void ThreadTest2(object obj)
+    {
+        //业务代码
+    }
+}
+</code></pre>
+<p>其中thread1就是一个没有参数的线程，thread2是一个带参数的线程。</p>
+<blockquote>
+<p>注：Main方法是C#程序入口的固定写法，之前所有的示例代码都是在这个方法里执行的，后续这部分会在《C#基础篇之开发工具和项目的基本结构》这一篇中详细介绍，这里先记住这是一个固定写法。</p>
+</blockquote>
+<h2 id="12-启动并使用线程">1.2 启动并使用线程</h2>
+<p>在启动线程之前，我们先介绍一个概念：主线程。主线程指伴随着当前程序启动而启动的线程，以代码来看就是<code>Main</code>方法所在线程。</p>
+<p>线程通过调用<code>Thread.Start</code>方法，来将线程标记为就绪态。</p>
+<blockquote>
+<p>注意：线程不能直接进入运行态，该状态只能由CPU决定。</p>
+</blockquote>
+<p>所以上一小节的创建的两个线程可以通过以下方式通知已经准备就续：</p>
+<pre><code class="language-c#">thread1.Start();
+</code></pre>
+<p>咦？是不是少了一个？注意力集中的小伙伴会发现，我没有演示thread2的调用方法。thread2与threa1有个不同的地方，thread2的委托参数有一个参数。那么必然<code>Start</code>也有一个对应的带参版本的重载，所以thread2就会有以下两种调用方式：</p>
+<pre><code class="language-c#">thread2.Start();
+</code></pre>
+<p>或</p>
+<pre><code class="language-c#">object obj;// 省略来源
+thread2.Start(obj);
+</code></pre>
+<p>两种方法有什么区别吗？</p>
+<p>有，但是区别不大。第一种调用方式对于方法<code>ThreadTest2</code>而言就是参数为<code>null</code>,第二种就是参数为obj的值。所以第一种调用约等于<code>thread2.Start(null)</code>。</p>
+<h2 id="13-暂停或销毁线程">1.3 暂停或销毁线程</h2>
+<p>这一小节的标题是，暂停或销毁线程。当线程运行起来后，如果没有突发情况或者外力干涉会直接运行到结束。这时候，后续程序觉得这个线程执行时间过长，需要暂停或者取消线程的执行，那么就需要了解一下如何暂停或者销毁线程了。</p>
+<pre><code class="language-c#">thread1.Suspend();//挂起
+thread1.Resume();//继续
+</code></pre>
+<p>中断线程，也就是终止线程：</p>
+<pre><code class="language-c#">thread1.Abort();// 已挂起的线程无法中断
+</code></pre>
+<p>强制终止销毁：</p>
+<pre><code class="language-c#">thread1.Interrupt();//在执行中的线程无法终止
+</code></pre>
+<p>以上是线程操作的基本概念，这部分并不是为了能让大家精通多线程，这是为了让大家有个初步概念。在C# 中，创建一个线程需要传递一个委托进去，因为委托的性质，并没有限制是否是静态方法，所以这里也可以传一个对象的方法。当然了，我们十分不提倡这样做，因为会导致一些多线程领域里的一些问题。</p>
+<h1 id="2-任务">2. 任务</h1>
+<p>C#中的任务与线程的区别不是很大，因为C#的任务就是基于线程实现的，而任务比线程更友好，使用也更方便，当然使用也更加复杂。不过对于开发者而言，任务取消了线程的状态切换，只保留了有限的一部分。而且，在C# 更推荐使用任务，任务也是对线程的进一步抽象和改进。</p>
+<h2 id="21--创建一个任务">2.1  创建一个任务</h2>
+<p>如线程相同的一点是，任务的创建也是通过传递一个方法（严格上讲是一个委托）。不同的是，线程的委托没有返回值而且也不接受从线程返回的值，而任务则不同，调用方可以期待任务是有返回值的而且也可以正常使用。</p>
+<p>我们先来看看任务是什么，任务的命名空间<code>System.Threading.Tasks</code>，任务的类有以下两种声明：</p>
+<pre><code class="language-c#">public class Task : IAsyncResult, IDisposable;
+public class Task&lt;TResult&gt; : System.Threading.Tasks.Task;
+</code></pre>
+<p>第一个，没有泛型的Task类表示一个没有返回值的任务；</p>
+<p>第二个，泛型Task类表示该任务有一个返回值，返回值的类型为传递进来的泛型参数。</p>
+<p>两个任务类的初始化类似于Thread类，不过与之不同的是 泛型Task的参数是Func，都有一个带Object参数的委托。</p>
+<p>与线程不同，任务的创建就有很多种方法：</p>
+<p>1  通过构造函数创建</p>
+<pre><code class="language-c#">var task1 = new Task(() =&gt; { });
+var task2 = new Task&lt;int&gt;(()=&gt; 
+{
+    int i = 0;
+    return i;
+});
+</code></pre>
+<p>2 使用任务工厂：</p>
+<pre><code class="language-c#">var task1 = Task.Factory.StartNew(() =&gt; { });
+var task2 = Task.Factory.StartNew(() =&gt;
+{
+    int i = 0;
+    return i;
+});
+</code></pre>
+<p>3 通过Task.Run创建：</p>
+<pre><code class="language-c#">var task1 = Task.Run(() =&gt; { });
+var task2 = Task.Run(() =&gt;
+{
+    int i = 0;
+    return i;
+});
+</code></pre>
+<p>以上三种方式创建的任务是等效的。当然实际上任务的创建并非只有这么几种，但这几种是任务创建的基础，使用频率相当高。</p>
+<h2 id="22-执行任务">2.2 执行任务</h2>
+<p>与线程不同的是，任务创建完成之后就会自动执行，不需要调用方法。</p>
+<blockquote>
+<p>关于任务的运行有以下需要注意的地方：</p>
+<ol>
+<li>
+<p>任务的运行不会阻塞主线程；</p>
+</li>
+<li>
+<p>主线程结束后，任务一定也会结束；</p>
+</li>
+</ol>
+</blockquote>
+<p>任务可以<code>IsCompleted</code>属性确定任务是否执行完成，所以可以通过访问任务对象的<code>IsCompleted</code>确认该任务是否执行完成，但有一个问题，这个属性只会表示当前任务是否完成。所以如果需要等待任务完成，则可以通过访问<code>Wait()</code>方法，强制主线程等待任务结束。</p>
+<p>如果使用的任务是泛型Task也就是待返回值的任务，可以通过访问<code>Result</code>属性获取任务执行结果。有意思的地方就是，这个属性能获取到结果的时候，也是任务执行完成的时候，所以不需要调用<code>Wait()</code>或<code>IsCompleted</code>来判断任务是否完成。</p>
+<blockquote>
+<p>注：通过构造方法创建的任务需要调用 Start方法才能启动，而通过Task.Run和Task.Factory.StartNew创建的则不需要。</p>
+</blockquote>
+<h1 id="3-总结">3. 总结</h1>
+<p>C#中任务基于线程，对其做了更多的抽象和封装，将线程的粒度进一步细分。所以线程在C#中就没有那么重要了，任务逐渐替代了线程在C#程序中的地位。</p>
+<p>任务与线程，有共通的地方，也有完全不一样的地方。线程的运行环境相对封闭，所以线程出现错误导致线程中断，不会影响主线程的运行。但任务则不一样了，任务与主线程的关联性更大，一旦任务出现异常导致任务中断，如果没有正确处理，则会影响主线程的运行。</p>
+<p>以上是本篇的全部内容，也请大家期待一下《C#异步编程系列》吧。</p>
+<blockquote>
+<p>更多内容烦请关注<a href="https://blogs.attachie.club">我的博客</a></p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/other/1266612/202004/1266612-20200424133125937-16946581.png" alt="file"></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 13:31</span>&nbsp;
+<a href="https://www.cnblogs.com/c7jie/">月影西下</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766896" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12766896);return false;">收藏</a></div>
+	</div>
+	
+	
+</div><!--end: topics 文章、评论容器-->
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 572560, cb_blogApp = 'c7jie', cb_blogUserGuid = 'f7f130fe-8c19-4f36-4637-08d4ef52ecb6';
+    var cb_entryId = 12766896, cb_entryCreatedDate = '2020-04-24 13:31', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 月影西下
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

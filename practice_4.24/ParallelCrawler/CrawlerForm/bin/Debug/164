@@ -1,0 +1,572 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="现代程序员写代码没有人敢说自己没用过泛型，这个泛型模板T可以被任何你想要的类型替代，确实很魔法很神奇，很多人也习以为常了，但就是这么有趣的泛型T底层到底是怎么帮你实现的，不知道有多少人清楚底层玩法，这" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>用了这么多年的泛型，你对它到底有多了解？ - 一线码农 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd.min.css?v=gS0FloTY-RBJQcN3GCAKG6fAr6HHKtDMTw60VxjN79c" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/huangxincheng/custom.css?v=z0WD6a4nBgoSBHjlq93cyLFnQd8=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd-mobile.min.css?v=VacchHeVg6bp3gCO8NqMH8D8fhA8iyRbb0JgoDUvn4o" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/huangxincheng/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/huangxincheng/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/huangxincheng/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 85195;
+        var currentBlogApp = 'huangxincheng';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'iMetro_HD';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/huangxincheng/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/huangxincheng/"></a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/huangxincheng/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E4%B8%80%E7%BA%BF%E7%A0%81%E5%86%9C">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/huangxincheng/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+289&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+4788</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/huangxincheng/p/12764925.html">用了这么多年的泛型，你对它到底有多了解？</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>现代程序员写代码没有人敢说自己没用过泛型，这个泛型模板T可以被任何你想要的类型替代，确实很魔法很神奇，很多人也习以为常了，但就是这么有趣的泛型T底层到底是怎么帮你实现的，不知道有多少人清楚底层玩法，这篇我就试着来分享一下，不一定全对哈。。。</p>
+<h1 id="一：没有泛型前">一：没有泛型前</h1>
+<p>现在的netcore 3.1和最新的.netframework8早已经没有当初那个被人诟病的ArrayList了，但很巧这玩意不得不说，因为它决定了C#团队痛改前非，抛弃过往重新上路，上一段ArrayList案例代码。</p>
+<pre><code class="language-C#">    public class ArrayList
+    {
+        private object[] items;
+
+        private int index = 0;
+
+        public ArrayList()
+        {
+            items = new object[10];
+        }
+
+        public void Add(object item)
+        {
+            items[index++] = item;
+        }
+    }
+</code></pre>
+<p>上面这段代码，为了保证在Add中可以塞入各种类型 eg: int,double,class， 就想到了一个绝招用祖宗类object接收，这就引入了两大问题，装箱拆箱和类型安全。</p>
+<h2 id="1-装箱拆箱">1. 装箱拆箱</h2>
+<p>这个很好理解，因为你使用了祖宗类，所以当你 <code>Add</code> 的时候塞入的是值类型的话，自然就有装箱操作,比如下面代码：</p>
+<pre><code class="language-C#">            ArrayList arrayList = new ArrayList();
+            arrayList.Add(3);
+</code></pre>
+<h3 id="1-占用更大的空间">&lt;1&gt; 占用更大的空间</h3>
+<p>这个问题我准备用windbg看一下，相信大家知道一个int类型占用4个字节，那装箱到堆上是几个字节呢，好奇吧😄。</p>
+<p>原始代码和IL代码如下：</p>
+<pre><code class="language-C#">        public static void Main(string[] args)
+        {
+            var num = 10;
+            var obj = (object)num;
+            Console.Read();
+        }
+
+    IL_0000: nop
+	IL_0001: ldc.i4.s 10
+	IL_0003: stloc.0
+	IL_0004: ldloc.0
+	IL_0005: box [mscorlib]System.Int32
+	IL_000a: stloc.1
+	IL_000b: call int32 [mscorlib]System.Console::Read()
+	IL_0010: pop
+	IL_0011: ret
+
+</code></pre>
+<p>可以清楚的看到IL_0005 中有一个box指令，装箱没有问题，然后抓一下dump文件。</p>
+<blockquote>
+<p>~0s -&gt; !clrstack -l -&gt;  !do 0x0000018300002d48</p>
+</blockquote>
+<pre><code class="language-C#">
+0:000&gt; ~0s
+ntdll!ZwReadFile+0x14:
+00007ff9`fc7baa64 c3              ret
+0:000&gt; !clrstack -l
+OS Thread Id: 0xfc (0)
+        Child SP               IP Call Site
+0000002c397fedf0 00007ff985c808f3 ConsoleApp2.Program.Main(System.String[]) [C:\dream\Csharp\ConsoleApp1\ConsoleApp2\Program.cs @ 28]
+    LOCALS:
+        0x0000002c397fee2c = 0x000000000000000a
+        0x0000002c397fee20 = 0x0000018300002d48
+
+0000002c397ff038 00007ff9e51b6c93 [GCFrame: 0000002c397ff038] 
+0:000&gt; !do 0x0000018300002d48
+Name:        System.Int32
+MethodTable: 00007ff9e33285a0
+EEClass:     00007ff9e34958a8
+Size:        24(0x18) bytes
+File:        C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll
+Fields:
+              MT    Field   Offset                 Type VT     Attr            Value Name
+00007ff9e33285a0  40005a0        8         System.Int32  1 instance               10 m_value
+
+</code></pre>
+<p>倒数第5行 <code>Size: 24(0x18) bytes</code>, 可以清楚的看到是24字节。 为什么是24个字节，<code>8(同步块指针) + 8(方法表指针) + 4(对象大小)=20</code>,但因为是x64位，内存是按8对齐，也就是要按8的倍数计算，所以占用是 <code>8+8+8 =24</code> 字节，原来只有4字节的大小因为装箱已被爆到24字节，如果是10000个值类型的装箱那空间占用是不是挺可怕的？</p>
+<h3 id="2-栈到堆的装箱搬运到运输到售后到无害化处理都需要付出重大的人力和机器成本">&lt;2&gt; 栈到堆的装箱搬运到运输到售后到无害化处理都需要付出重大的人力和机器成本</h3>
+<h2 id="2-类型不安全">2. 类型不安全</h2>
+<p>很简单，因为是祖宗类型object，所以无法避免程序员使用乱七八糟的类型,当然这可能是无意的，但是编译器确无法规避，代码如下：</p>
+<pre><code class="language-C#">
+            ArrayList arrayList = new ArrayList();
+            arrayList.Add(3);
+            arrayList.Add(new Action&lt;int&gt;((num) =&gt; { }));
+            arrayList.Add(new object());
+
+</code></pre>
+<p>面对这两大尴尬的问题，C#团队决定重新设计一个类型，实现一定终身，这就有了泛型。</p>
+<h1 id="二：泛型的出现">二：泛型的出现</h1>
+<h2 id="1-救世主">1. 救世主</h2>
+<p>首先可以明确的说，泛型就是为了解决这两个问题而生的，你可以在底层提供的<code>List&lt;T&gt;</code>中使用<code>List&lt;int&gt;</code>,<code>List&lt;double&gt;</code>。。。等等你看得上的类型，而这种技术的底层实现原理才是本篇关注的重点。</p>
+<pre><code class="language-C#">
+        public static void Main(string[] args)
+        {
+            List&lt;double&gt; list1 = new List&lt;double&gt;();
+            List&lt;string&gt; list3 = new List&lt;string&gt;();
+            ...
+        }
+
+</code></pre>
+<h1 id="三：泛型原理探究">三：泛型原理探究</h1>
+<p>这个问题的探索其实就是 <code>List&lt;T&gt; -&gt; List&lt;int&gt;</code>在何处实现了 T -&gt; int 的替换，反观java，它的泛型实现其实在底层还是用object来替换的，C#肯定不是这么做的，不然也没这篇文章啦，要知道在哪个阶段被替换了，你起码要知道C#代码编译的几个阶段，为了理解方便，我画一张图吧。</p>
+<p><img src="https://img2020.cnblogs.com/blog/214741/202004/214741-20200424011121290-648898157.png" alt=""></p>
+<p>流程大家也看到了，要么在MSIL中被替换，要么在JIT编译中被替换。。。</p>
+<pre><code class="language-C#">
+        public static void Main(string[] args)
+        {
+            List&lt;double&gt; list1 = new List&lt;double&gt;();
+            List&lt;int&gt; list2 = new List&lt;int&gt;();
+            List&lt;string&gt; list3 = new List&lt;string&gt;();
+            List&lt;int[]&gt; list4 = new List&lt;int[]&gt;();
+
+            Console.ReadLine();
+        }
+
+</code></pre>
+<h2 id="1-在第一阶段探究">1. 在第一阶段探究</h2>
+<p>因为第一阶段是MSIL代码，所以用ILSpy看一下中间代码即可。</p>
+<pre><code class="language-C#">		IL_0000: nop
+		IL_0001: newobj instance void class [mscorlib]System.Collections.Generic.List`1&lt;float64&gt;::.ctor()
+		IL_0006: stloc.0
+		IL_0007: newobj instance void class [mscorlib]System.Collections.Generic.List`1&lt;int32&gt;::.ctor()
+		IL_000c: stloc.1
+		IL_000d: newobj instance void class [mscorlib]System.Collections.Generic.List`1&lt;string&gt;::.ctor()
+		IL_0012: stloc.2
+		IL_0013: newobj instance void class [mscorlib]System.Collections.Generic.List`1&lt;int32[]&gt;::.ctor()
+		IL_0018: stloc.3
+		IL_0019: call string [mscorlib]System.Console::ReadLine()
+		IL_001e: pop
+		IL_001f: ret
+
+.class public auto ansi serializable beforefieldinit System.Collections.Generic.List`1&lt;T&gt;
+	extends System.Object
+	implements class System.Collections.Generic.IList`1&lt;!T&gt;,
+	           class System.Collections.Generic.ICollection`1&lt;!T&gt;,
+	           class System.Collections.Generic.IEnumerable`1&lt;!T&gt;,
+	           System.Collections.IEnumerable,
+	           System.Collections.IList,
+	           System.Collections.ICollection,
+	           class System.Collections.Generic.IReadOnlyList`1&lt;!T&gt;,
+	           class System.Collections.Generic.IReadOnlyCollection`1&lt;!T&gt;
+
+</code></pre>
+<p>从上面的IL代码中可以看到，最终的类定义还是  <code>System.Collections.Generic.List1\&lt;T&gt;</code>，说明在中间代码阶段还是没有实现 T -&gt; int 的替换。</p>
+<h2 id="2-在第二阶段探究">2. 在第二阶段探究</h2>
+<p>想看到JIT编译后的代码，这个说难也不难，其实每个对象头上都有一个方法表指针，而这个指针指向的就是方法表，方法表中有该类型的所有最终生成方法，如果不好理解，我就画个图。</p>
+<p><img src="https://img2020.cnblogs.com/blog/214741/202004/214741-20200424011135790-1283166398.png" alt=""></p>
+<blockquote>
+<p>!dumpheap -stat    寻找托管堆上的四个List对象。</p>
+</blockquote>
+<pre><code class="language-C#">
+0:000&gt; !dumpheap -stat
+Statistics:
+              MT    Count    TotalSize Class Name
+00007ff9e3314320        1           32 Microsoft.Win32.SafeHandles.SafeViewOfFileHandle
+00007ff9e339b4b8        1           40 System.Collections.Generic.List`1[[System.Double, mscorlib]]
+00007ff9e333a068        1           40 System.Collections.Generic.List`1[[System.Int32, mscorlib]]
+00007ff9e3330d58        1           40 System.Collections.Generic.List`1[[System.String, mscorlib]]
+00007ff9e3314a58        1           40 System.IO.Stream+NullStream
+00007ff9e3314510        1           40 Microsoft.Win32.Win32Native+InputRecord
+00007ff9e3314218        1           40 System.Text.InternalEncoderBestFitFallback
+00007ff985b442c0        1           40 System.Collections.Generic.List`1[[System.Int32[], mscorlib]]
+00007ff9e338fd28        1           48 System.Text.DBCSCodePageEncoding+DBCSDecoder
+00007ff9e3325ef0        1           48 System.SharedStatics
+
+</code></pre>
+<p>可以看到从托管堆中找到了4个list对象，现在我就挑一个最简单的 <code>System.Collections.Generic.List1[[System.Int32, mscorlib]]</code> ，前面的 00007ff9e333a068 就是方法表地址。</p>
+<blockquote>
+<p>!dumpmt -md 00007ff9e333a068</p>
+</blockquote>
+<pre><code class="language-C#">
+0:000&gt; !dumpmt -md 00007ff9e333a068
+EEClass:         00007ff9e349b008
+Module:          00007ff9e3301000
+Name:            System.Collections.Generic.List`1[[System.Int32, mscorlib]]
+mdToken:         00000000020004af
+File:            C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll
+BaseSize:        0x28
+ComponentSize:   0x0
+Slots in VTable: 77
+Number of IFaces in IFaceMap: 8
+--------------------------------------
+MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ff9e3882450 00007ff9e3308de8 PreJIT System.Object.ToString()
+00007ff9e389cc60 00007ff9e34cb9b0 PreJIT System.Object.Equals(System.Object)
+00007ff9e3882090 00007ff9e34cb9d8 PreJIT System.Object.GetHashCode()
+00007ff9e387f420 00007ff9e34cb9e0 PreJIT System.Object.Finalize()
+00007ff9e38a3650 00007ff9e34dc6e8 PreJIT System.Collections.Generic.List`1[[System.Int32, mscorlib]].Add(Int32)
+00007ff9e4202dc0 00007ff9e34dc7f8 PreJIT System.Collections.Generic.List`1[[System.Int32, mscorlib]].Insert(Int32, Int32)
+
+</code></pre>
+<p>上面方法表中的方法过多，我做了一下删减，可以清楚的看到，此时Add方法已经接受(Int32)类型的数据了，说明在JIT编译之后，终于实现了 T -&gt; int 的替换，然后再把 <code>List&lt;double&gt;</code> 打出来看一下。</p>
+<pre><code class="language-C#">
+0:000&gt; !dumpmt -md 00007ff9e339b4b8
+MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ff9e3882450 00007ff9e3308de8 PreJIT System.Object.ToString()
+00007ff9e389cc60 00007ff9e34cb9b0 PreJIT System.Object.Equals(System.Object)
+00007ff9e3882090 00007ff9e34cb9d8 PreJIT System.Object.GetHashCode()
+00007ff9e387f420 00007ff9e34cb9e0 PreJIT System.Object.Finalize()
+00007ff9e4428730 00007ff9e34e4170 PreJIT System.Collections.Generic.List`1[[System.Double, mscorlib]].Add(Double)
+00007ff9e3867a00 00007ff9e34e4280 PreJIT System.Collections.Generic.List`1[[System.Double, mscorlib]].Insert(Int32, Double)
+
+</code></pre>
+<p>上面看的都是值类型，接下来再看一下如果 T 是引用类型会是怎么样呢？</p>
+<pre><code class="language-C#">
+0:000&gt; !dumpmt -md 00007ff9e3330d58
+MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ff9e3890060 00007ff9e34eb058 PreJIT System.Collections.Generic.List`1[[System.__Canon, mscorlib]].Add(System.__Canon)
+
+0:000&gt; !dumpmt -md 00007ff985b442c0
+MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ff9e3890060 00007ff9e34eb058 PreJIT System.Collections.Generic.List`1[[System.__Canon, mscorlib]].Add(System.__Canon)
+
+</code></pre>
+<p>可以看到当是<code>List&lt;int[]&gt;</code> 和 <code>List&lt;string&gt;</code> 的时候，JIT使用了 <code>System.__Canon</code> 这么一个类型作为替代，有可能人家是摄影爱好者吧，为什么用<code>__Canon</code>替代引用类型，这是因为它想让能共享代码区域的方法都共享来节省空间和内存吧，不信的话可以看看它们的Entry列都是同一个内存地址：00007ff9e3890060, 打印出来就是这么一段汇编。</p>
+<pre><code class="language-C#">
+0:000&gt; !u 00007ff9e3890060
+preJIT generated code
+System.Collections.Generic.List`1[[System.__Canon, mscorlib]].Add(System.__Canon)
+Begin 00007ff9e3890060, size 4a
+&gt;&gt;&gt; 00007ff9`e3890060 57              push    rdi
+00007ff9`e3890061 56              push    rsi
+00007ff9`e3890062 4883ec28        sub     rsp,28h
+00007ff9`e3890066 488bf1          mov     rsi,rcx
+00007ff9`e3890069 488bfa          mov     rdi,rdx
+00007ff9`e389006c 8b4e18          mov     ecx,dword ptr [rsi+18h]
+00007ff9`e389006f 488b5608        mov     rdx,qword ptr [rsi+8]
+00007ff9`e3890073 3b4a08          cmp     ecx,dword ptr [rdx+8]
+00007ff9`e3890076 7422            je      mscorlib_ni+0x59009a (00007ff9`e389009a)
+00007ff9`e3890078 488b4e08        mov     rcx,qword ptr [rsi+8]
+00007ff9`e389007c 8b5618          mov     edx,dword ptr [rsi+18h]
+00007ff9`e389007f 448d4201        lea     r8d,[rdx+1]
+00007ff9`e3890083 44894618        mov     dword ptr [rsi+18h],r8d
+00007ff9`e3890087 4c8bc7          mov     r8,rdi
+00007ff9`e389008a ff152088faff    call    qword ptr [mscorlib_ni+0x5388b0 (00007ff9`e38388b0)] (JitHelp: CORINFO_HELP_ARRADDR_ST)
+00007ff9`e3890090 ff461c          inc     dword ptr [rsi+1Ch]
+00007ff9`e3890093 4883c428        add     rsp,28h
+00007ff9`e3890097 5e              pop     rsi
+00007ff9`e3890098 5f              pop     rdi
+00007ff9`e3890099 c3              ret
+00007ff9`e389009a 8b5618          mov     edx,dword ptr [rsi+18h]
+00007ff9`e389009d ffc2            inc     edx
+00007ff9`e389009f 488bce          mov     rcx,rsi
+00007ff9`e38900a2 90              nop
+00007ff9`e38900a3 e8c877feff      call    mscorlib_ni+0x577870 (00007ff9`e3877870) (System.Collections.Generic.List`1[[System.__Canon, mscorlib]].EnsureCapacity(Int32), mdToken: 00000000060039e5)
+00007ff9`e38900a8 ebce            jmp     mscorlib_ni+0x590078 (00007ff9`e3890078)
+
+</code></pre>
+<p>然后再回过头看<code>List&lt;int&gt;</code> 和 <code>List&lt;double&gt;</code> ,从Entry列中看确实不是一个地址，说明<code>List&lt;int&gt;</code> 和 <code>List&lt;double&gt;</code> 是两个完全不一样的Add方法，看得懂汇编的可以自己看一下哈。。。</p>
+<pre><code class="language-C#">MethodDesc Table
+           Entry       MethodDesc    JIT Name
+00007ff9e38a3650 00007ff9e34dc6e8 PreJIT System.Collections.Generic.List`1[[System.Int32, mscorlib]].Add(Int32)
+00007ff9e4428730 00007ff9e34e4170 PreJIT System.Collections.Generic.List`1[[System.Double, mscorlib]].Add(Double)
+
+0:000&gt; !u 00007ff9e38a3650
+preJIT generated code
+System.Collections.Generic.List`1[[System.Int32, mscorlib]].Add(Int32)
+Begin 00007ff9e38a3650, size 50
+&gt;&gt;&gt; 00007ff9`e38a3650 57              push    rdi
+00007ff9`e38a3651 56              push    rsi
+00007ff9`e38a3652 4883ec28        sub     rsp,28h
+00007ff9`e38a3656 488bf1          mov     rsi,rcx
+00007ff9`e38a3659 8bfa            mov     edi,edx
+00007ff9`e38a365b 8b5618          mov     edx,dword ptr [rsi+18h]
+00007ff9`e38a365e 488b4e08        mov     rcx,qword ptr [rsi+8]
+00007ff9`e38a3662 3b5108          cmp     edx,dword ptr [rcx+8]
+00007ff9`e38a3665 7423            je      mscorlib_ni+0x5a368a (00007ff9`e38a368a)
+00007ff9`e38a3667 488b5608        mov     rdx,qword ptr [rsi+8]
+00007ff9`e38a366b 8b4e18          mov     ecx,dword ptr [rsi+18h]
+00007ff9`e38a366e 8d4101          lea     eax,[rcx+1]
+00007ff9`e38a3671 894618          mov     dword ptr [rsi+18h],eax
+00007ff9`e38a3674 3b4a08          cmp     ecx,dword ptr [rdx+8]
+00007ff9`e38a3677 7321            jae     mscorlib_ni+0x5a369a (00007ff9`e38a369a)
+00007ff9`e38a3679 4863c9          movsxd  rcx,ecx
+00007ff9`e38a367c 897c8a10        mov     dword ptr [rdx+rcx*4+10h],edi
+00007ff9`e38a3680 ff461c          inc     dword ptr [rsi+1Ch]
+00007ff9`e38a3683 4883c428        add     rsp,28h
+00007ff9`e38a3687 5e              pop     rsi
+00007ff9`e38a3688 5f              pop     rdi
+00007ff9`e38a3689 c3              ret
+00007ff9`e38a368a 8b5618          mov     edx,dword ptr [rsi+18h]
+00007ff9`e38a368d ffc2            inc     edx
+00007ff9`e38a368f 488bce          mov     rcx,rsi
+00007ff9`e38a3692 90              nop
+00007ff9`e38a3693 e8a8e60700      call    mscorlib_ni+0x621d40 (00007ff9`e3921d40) (System.Collections.Generic.List`1[[System.Int32, mscorlib]].EnsureCapacity(Int32), mdToken: 00000000060039e5)
+00007ff9`e38a3698 ebcd            jmp     mscorlib_ni+0x5a3667 (00007ff9`e38a3667)
+00007ff9`e38a369a e8bf60f9ff      call    mscorlib_ni+0x53975e (00007ff9`e383975e) (mscorlib_ni)
+00007ff9`e38a369f cc              int     3
+
+
+0:000&gt; !u 00007ff9e4428730
+preJIT generated code
+System.Collections.Generic.List`1[[System.Double, mscorlib]].Add(Double)
+Begin 00007ff9e4428730, size 5a
+&gt;&gt;&gt; 00007ff9`e4428730 56              push    rsi
+00007ff9`e4428731 4883ec20        sub     rsp,20h
+00007ff9`e4428735 488bf1          mov     rsi,rcx
+00007ff9`e4428738 8b5618          mov     edx,dword ptr [rsi+18h]
+00007ff9`e442873b 488b4e08        mov     rcx,qword ptr [rsi+8]
+00007ff9`e442873f 3b5108          cmp     edx,dword ptr [rcx+8]
+00007ff9`e4428742 7424            je      mscorlib_ni+0x1128768 (00007ff9`e4428768)
+00007ff9`e4428744 488b5608        mov     rdx,qword ptr [rsi+8]
+00007ff9`e4428748 8b4e18          mov     ecx,dword ptr [rsi+18h]
+00007ff9`e442874b 8d4101          lea     eax,[rcx+1]
+00007ff9`e442874e 894618          mov     dword ptr [rsi+18h],eax
+00007ff9`e4428751 3b4a08          cmp     ecx,dword ptr [rdx+8]
+00007ff9`e4428754 732e            jae     mscorlib_ni+0x1128784 (00007ff9`e4428784)
+00007ff9`e4428756 4863c9          movsxd  rcx,ecx
+00007ff9`e4428759 f20f114cca10    movsd   mmword ptr [rdx+rcx*8+10h],xmm1
+00007ff9`e442875f ff461c          inc     dword ptr [rsi+1Ch]
+00007ff9`e4428762 4883c420        add     rsp,20h
+00007ff9`e4428766 5e              pop     rsi
+00007ff9`e4428767 c3              ret
+00007ff9`e4428768 f20f114c2438    movsd   mmword ptr [rsp+38h],xmm1
+00007ff9`e442876e 8b5618          mov     edx,dword ptr [rsi+18h]
+00007ff9`e4428771 ffc2            inc     edx
+00007ff9`e4428773 488bce          mov     rcx,rsi
+00007ff9`e4428776 90              nop
+00007ff9`e4428777 e854fbffff      call    mscorlib_ni+0x11282d0 (00007ff9`e44282d0) (System.Collections.Generic.List`1[[System.Double, mscorlib]].EnsureCapacity(Int32), mdToken: 00000000060039e5)
+00007ff9`e442877c f20f104c2438    movsd   xmm1,mmword ptr [rsp+38h]
+00007ff9`e4428782 ebc0            jmp     mscorlib_ni+0x1128744 (00007ff9`e4428744)
+00007ff9`e4428784 e8d50f41ff      call    mscorlib_ni+0x53975e (00007ff9`e383975e) (mscorlib_ni)
+00007ff9`e4428789 cc              int     3
+
+</code></pre>
+<p>可能你有点蒙，我画一张图吧。</p>
+<p><img src="https://img2020.cnblogs.com/blog/214741/202004/214741-20200424011152259-965637432.png" alt=""></p>
+<h1 id="四：-总结">四： 总结</h1>
+<p>泛型T真正的被代替是在 JIT编译时才实现的，四个<code>List&lt;T&gt;</code> 会生成四个具有相应具体类型的类对象，所以就不存在拆箱和装箱的问题，而类型的限定visualstudio编译器工具提前就帮我们约束好啦。</p>
+<p>夜深了，先休息啦！ 希望本篇对你有帮助。</p>
+<hr>
+<h3 id="如您有更多问题与我互动，扫描下方进来吧">如您有更多问题与我互动，扫描下方进来吧~</h3>
+<hr>
+<p><img src="https://images.cnblogs.com/cnblogs_com/huangxincheng/345039/o_200414062434170x170.jpg" alt=""><img src="https://images.cnblogs.com/cnblogs_com/huangxincheng/345039/o_200414065053baijiahao.jpg" alt=""></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 01:11</span>&nbsp;
+<a href="https://www.cnblogs.com/huangxincheng/">一线码农</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12764925" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12764925);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 85195, cb_blogApp = 'huangxincheng', cb_blogUserGuid = '40a06552-abf8-df11-ac81-842b2b196315';
+    var cb_entryId = 12764925, cb_entryCreatedDate = '2020-04-24 01:11', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 一线码农
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

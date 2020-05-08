@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>年华似水丶我如风 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/valentine/bundle-valentine.min.css?v=UWXTcKRiQMgRrRfcjD4M9Qw7K4qL0xgIYGU6Nt7EDcw" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/valentine/bundle-valentine-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ustcwx/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ustcwx/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ustcwx/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 286889;
+        var currentBlogApp = 'ustcwx';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'Valentine';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<TABLE cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+<TR>
+	<TD width=184 background="/skins/valentine/images/banner1.gif"></TD>
+	<TD background="/skins/valentine/images/banner.gif">
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/ustcwx/">Terrorblade</a>
+<br>
+		<span style="font-size:12px;color:#4371A6;padding-left:20;">
+
+</span>
+	</div>
+</div>
+
+</TD>
+	<TD width=295 background="/skins/valentine/images/banner2.gif"></TD>
+</TR>
+</TABLE>
+<div id="mylinks">
+
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/ustcwx/">
+首页</a>
+&nbsp;&nbsp;&nbsp;
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+&nbsp;&nbsp;&nbsp;
+
+<a id="MyLinks1_NewArticleLink" class="menu" href="https://i.cnblogs.com/EditArticles.aspx?opt=1">新文章</a>
+&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%B9%B4%E5%8D%8E%E4%BC%BC%E6%B0%B4%E4%B8%B6%E6%88%91%E5%A6%82%E9%A3%8E">
+联系</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/ustcwx/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/ustcwx/rss/">
+    <img src="/skins/valentine/images/xml.gif" alt="订阅" />
+</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+<div id="mytopmenu">
+	
+		<DIV id="mystats">
+			<!--done-->
+<div class="blogStats">
+posts - 
+20,comments - 
+6,trackbacks - 
+0
+
+</div>
+
+</DIV>
+	
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script><br>
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	
+</div>
+<div id="centercontent">
+	
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/ustcwx/archive/2020/04/24.html">2020年4月24日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/12768463.html">
+    Tensorflow 模型线上部署
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：Tensorflow Serving 使用流程教学，采用的方案为 Saver (python) + Serving (tensorflow serving) + Client (Java)，以上三方面有详细介绍，此外对 Tensorflow Serving 做了性能测试。            <a href="https://www.cnblogs.com/ustcwx/p/12768463.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2020-04-24 16:44 年华似水丶我如风 阅读 (47) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12768463" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/ustcwx/archive/2018/01/18.html">2018年1月18日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8311124.html">
+    Dijkstra算法
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：引言 Dijkstra算法主要应用在寻找带正边权的图中顶点之间的最短路径。这种例子在生活中非常多，比如导航软件自动规划路径，路径最短或用时最少的路径总是作为最优路径返回给你；又比如我大天朝最常见的找人办事，有的时候我们没法直接找到可以帮忙的人，就需要再找别人帮忙，又或者关系不够铁，找人花的代价很大，            <a href="https://www.cnblogs.com/ustcwx/p/8311124.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2018-01-18 21:12 年华似水丶我如风 阅读 (636) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8311124" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8311444.html">
+    拓扑排序
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：定义 之前介绍了图的基本概念，BFS和DFS，在理解之前内容的基础上再学这个就比较简单了。 啥？ 图还能排序？ 什么是拓扑排序？ 拓扑排序只是针对特殊的有向图才能进行的排序方法，先放个课程先修图的例子，盗个图&#128054;。 图中的每个顶点都代表一门学科，像这种某些顶点只能依赖于其他顶点已经完成之后才能开始的            <a href="https://www.cnblogs.com/ustcwx/p/8311444.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2018-01-18 19:25 年华似水丶我如风 阅读 (140) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8311444" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8309573.html">
+    BFS和DFS
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：引言 在上节，介绍了图的基本概念，还是举之前的例子，房间布局图： 你想找到一条从Kitchen到Bed2的路径，这时候你必须要沿着某条边的序列走到Bed2，而且不经过任意房间超过一次。对于任意的图，在最坏情况下，编写这样的程序需要走遍整个图。这样的过程就是图的遍历。遍历的过程就是访问图中顶点的过程，            <a href="https://www.cnblogs.com/ustcwx/p/8309573.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2018-01-18 14:53 年华似水丶我如风 阅读 (172) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8309573" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/ustcwx/archive/2018/01/15.html">2018年1月15日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8260729.html">
+    图的基本概念
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：图的组成 之前学习了很多树，而树只是特化了的图，仅模拟层次结构。不知道有多少人细看过《图论》，光是图书馆也很难找到特别多的专业书籍，读起来也是艰深晦涩。好在今天只是介绍一些基本概念，也请读者放松心态。 怎么模拟一张图？先放一张大家熟悉的地铁图： 我们模拟的目的是将图抽象出来，建立一个数学模型。就像函            <a href="https://www.cnblogs.com/ustcwx/p/8260729.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2018-01-15 16:18 年华似水丶我如风 阅读 (159) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8260729" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/ustcwx/archive/2017/12/27.html">2017年12月27日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8119762.html">
+    排序5 - 基数排序
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：粗糙地介绍一下线性排序            <a href="https://www.cnblogs.com/ustcwx/p/8119762.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2017-12-27 17:49 年华似水丶我如风 阅读 (53) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8119762" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/ustcwx/archive/2017/12/23.html">2017年12月23日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8067151.html">
+    排序4 - 堆排序
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：先说堆吧，把堆搞清楚了，堆排序自然不在话下。 堆 堆的定义： 堆是有如下性质的完全二叉树：任意节点x处的项的关键字大于或等于以x为根的子树中的所有节点处的项的关键字。 堆有两个性质： 要声明的是，堆这种数据结构，从根节点向下的路径是有序的，但是同一个根节点的左右孩子之间谁大谁小无所谓，也即不同路径的            <a href="https://www.cnblogs.com/ustcwx/p/8067151.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2017-12-23 15:46 年华似水丶我如风 阅读 (79) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8067151" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a href="https://www.cnblogs.com/ustcwx/archive/2017/12/19.html">2017年12月19日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8066067.html">
+    排序3 - 快速排序和归并排序
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：介绍快速排序和归并排序的原理，并讨论复杂度和稳定性            <a href="https://www.cnblogs.com/ustcwx/p/8066067.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2017-12-19 17:34 年华似水丶我如风 阅读 (1297) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8066067" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8065590.html">
+    排序2 - 希尔排序
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：希尔排序（shell&#160;sort）是改进后的插入排序，不同的是其设置一个步长，将输入按步长分组，对每组元素进行插入排序。然后减少步长，再次分组插入排序。直到步长变为1，也即对所有元素进行插入排序。 说明 一般来说，习惯于将初始步长设置为&#160;n/2,&#160;然后每次减半，直至为1。一个步长对应一趟分组排序。 找            <a href="https://www.cnblogs.com/ustcwx/p/8065590.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2017-12-19 14:44 年华似水丶我如风 阅读 (84) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8065590" rel="nofollow">
+    编辑
+</a>
+</div>
+			<div class="postSeparator"></div>
+			<div class="postTitle">
+				
+
+<a class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/8064755.html">
+    排序1 - 选择排序 &amp; 插入排序
+</a>
+
+			</div>
+			
+
+    <div class="c_b_p_desc">
+摘要：介绍选择排序和插入排序            <a href="https://www.cnblogs.com/ustcwx/p/8064755.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			<div class="postDesc">
+
+posted @ 2017-12-19 11:45 年华似水丶我如风 阅读 (52) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8064755" rel="nofollow">
+    编辑
+</a>
+</div>
+
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/ustcwx/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+</div>
+<!--done-->
+<div class="footer">
+	Copyright &copy; 2020 年华似水丶我如风
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+ Powered By<a href="/">博客园</a>
+</div>
+
+
+
+
+    
+</body>
+</html>

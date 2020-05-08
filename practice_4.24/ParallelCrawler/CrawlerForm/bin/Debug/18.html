@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="前言: 这是 项目实践系列 , 算是中高级系列博文, 用于为项目开发过程中不好解决的问题提出解决方案的. 不属于入门级系列. 解释起来也比较跳跃, 只讲重点. 因为有网友的项目需求, 所以提前把这些解" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>[Asp.Net Core] Blazor Server Side 项目实践 - 切换页面时保留状态 - 轩轩之家 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/cleargertrude/bundle-cleargertrude.min.css?v=qOcerEQTAHF_YZGWYnXIdOZ3zf__fQbjAsaHzX-kpoo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/cleargertrude/bundle-cleargertrude-mobile.min.css?v=3HpAq_t-Lu45yjUl-6Fzi0TYj4q-B2F0BQkiWtjIP9Y" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zhgangxuan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zhgangxuan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zhgangxuan/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 265669;
+        var currentBlogApp = 'zhgangxuan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'ClearGertrude';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="header">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zhgangxuan/">轩轩之家 QQ群 : 934608703</a>
+</h1>
+<p id="tagline">
+欢迎讨论Blazor的技术问题 QQ群 : 934608703
+</p>
+
+</div>
+<div id="main">
+	<div id="post_detail">
+	<div class="post">
+		<h2>
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/zhgangxuan/p/d001_keeppagestate.html">[Asp.Net Core] Blazor Server Side 项目实践 - 切换页面时保留状态</a>
+
+		</h2>
+		<div class="postText">
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h2>前言:</h2>
+<p>这是 项目实践系列 , 算是中高级系列博文, 用于为项目开发过程中不好解决的问题提出解决方案的. 不属于入门级系列. 解释起来也比较跳跃, 只讲重点.</p>
+<p>因为有网友的项目需求, 所以提前把这些解决方案做出来并分享.</p>
+<p>&nbsp;</p>
+<h2>问题:</h2>
+<p>Blazor自己是携带一个简单的路由功能的, 当切换Url的时候, 整个通过把RouteData传递给 App.razor 加载 MainLayout , 实现页面刷新的目的.</p>
+<p>如果跳转到另外一个页面, 然后再跳回来的时候, 希望原来页面不刷新, 保留之前的状态 , 例如搜索条件, 那么怎么办?</p>
+<p>&nbsp;</p>
+<h2>解决过程:</h2>
+<p>结合视频, 图文观看效果最好 :&nbsp;<a href="https://www.bilibili.com/video/BV1g54y1R7uX/" target="_blank">https://www.bilibili.com/video/BV1g54y1R7uX/</a>&nbsp;</p>
+<p>1. 现在简单说说, 这种情况的源头在哪里. <br />2.	App.razor 文件使用了 RouteView 来实现路由<br />3.	routeData是包含页面类型, 以及页面参数的.<br />4.	然而默认的实现里, RouteView 是不带状态的<br />5.	MainLayout虽然得到了内容的 RenderFragment ,<br />6.	然而这个 RenderFragment是由RouteView直接绑定到routeData上面去. <br />7.	所以MainLayout无法得到不同的RenderFragment来显示不同的内容. <br />8.	要解决这个问题, 首先第一步就是改造 RouteView</p>
+<h2>改造 RouteView</h2>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">using</span><span style="color: #000000;"> System;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> System.Collections.Generic;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> Microsoft.AspNetCore.Components.Rendering;
+</span><span style="color: #0000ff;">using</span><span style="color: #000000;"> System.Reflection;
+
+</span><span style="color: #0000ff;">namespace</span> Microsoft.AspNetCore.Components   <span style="color: #008000;">//</span><span style="color: #008000;">use this namepace so copy/paste this code easier</span>
+<span style="color: #000000;">{
+
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> KeepPageStateRouteView : RouteView
+    {
+        </span><span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">override</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> Render(RenderTreeBuilder builder)
+        {
+            </span><span style="color: #0000ff;">var</span> layoutType = RouteData.PageType.GetCustomAttribute&lt;LayoutAttribute&gt;()?.LayoutType ??<span style="color: #000000;"> DefaultLayout;
+            builder.OpenComponent</span>&lt;LayoutView&gt;(<span style="color: #800080;">0</span><span style="color: #000000;">);
+            builder.AddAttribute(</span><span style="color: #800080;">1</span>, <span style="color: #800000;">"</span><span style="color: #800000;">Layout</span><span style="color: #800000;">"</span><span style="color: #000000;">, layoutType);
+            builder.AddAttribute(</span><span style="color: #800080;">2</span>, <span style="color: #800000;">"</span><span style="color: #800000;">ChildContent</span><span style="color: #800000;">"</span><span style="color: #000000;">, (RenderFragment)CreateBody());
+            builder.CloseComponent();
+        }
+
+        RenderFragment CreateBody()
+        {
+            </span><span style="color: #0000ff;">var</span> pagetype =<span style="color: #000000;"> RouteData.PageType;
+            </span><span style="color: #0000ff;">var</span> routeValues =<span style="color: #000000;"> RouteData.RouteValues;
+
+            </span><span style="color: #0000ff;">void</span><span style="color: #000000;"> RenderForLastValue(RenderTreeBuilder builder)
+            {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;">dont reference RouteData again</span>
+<span style="color: #000000;">
+                builder.OpenComponent(</span><span style="color: #800080;">0</span><span style="color: #000000;">, pagetype);
+                </span><span style="color: #0000ff;">foreach</span> (KeyValuePair&lt;<span style="color: #0000ff;">string</span>, <span style="color: #0000ff;">object</span>&gt; routeValue <span style="color: #0000ff;">in</span><span style="color: #000000;"> routeValues)
+                {
+                    builder.AddAttribute(</span><span style="color: #800080;">1</span><span style="color: #000000;">, routeValue.Key, routeValue.Value);
+                }
+                builder.CloseComponent();
+            }
+
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> RenderForLastValue;
+        }
+
+    }
+
+}</span></pre>
+</div>
+<p>&nbsp;</p>
+<p>Blazor自带的RouteView是一个控件. 它每次呈现, 都使用 RouteData 属性, 所以它每次生成的 RenderFragment 都是跟着最后的 RouteData 走, 保存来没用. </p>
+<p>改造后的 KeepPageStateRouteView , 使用 CreateBody() 方法, 创建出绑定 pagetype 和 routevalue 的 RenderFragement , 为 MainLayout 打下基础</p>
+<p>&nbsp;</p>
+<h2>改造 MainLayout&nbsp;</h2>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">@inherits LayoutComponentBase
+
+@inject NavigationManager navmgr
+
+@code{
+
+    TimeSpan GetUrlMaxLifeSpan(string url)
+    {
+        if (url.Contains("/fetchdata")) // Let /fetachdata always refresh
+            return TimeSpan.Zero;
+
+        if (url.Contains("/counter"))   // Let /counter expires in 10 seconds
+            return TimeSpan.FromSeconds(10);
+
+        return TimeSpan.FromSeconds(-1);    //other pages never expires
+    }
+
+    class PageItem
+    {
+        public string Url;
+        public RenderFragment PageBody;
+        public DateTime StartTime = DateTime.Now;
+        public DateTime ActiveTime = DateTime.Now;
+        public TimeSpan MaxLifeSpan;
+    }
+
+    Dictionary</span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">string</span><span style="color: #ff0000;">, PageItem</span><span style="color: #0000ff;">&gt;</span> bodymap = new Dictionary<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">string</span><span style="color: #ff0000;">, PageItem</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">();
+
+    int mainRenderCount = 0;
+}
+
+</span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="sidebar"</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">NavMenu </span><span style="color: #0000ff;">/&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span>
+
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="main"</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+
+
+    @{
+
+        bool currurlrendered = false;
+
+        string currenturl = navmgr.Uri;
+
+        PageItem curritem;
+        if (bodymap.TryGetValue(currenturl, out curritem))
+        {
+            curritem.ActiveTime = DateTime.Now;
+        }
+        else
+        {
+            curritem = new PageItem { Url = currenturl, PageBody = Body };
+            curritem.MaxLifeSpan = GetUrlMaxLifeSpan(currenturl);
+            if (curritem.MaxLifeSpan != TimeSpan.Zero)
+            {
+                bodymap[navmgr.Uri] = curritem;
+            }
+        }
+
+        mainRenderCount++;
+
+    }
+
+    </span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="top-row px-4"</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+
+
+        #@mainRenderCount
+
+        , CurrentUrl : @currenturl
+
+        . PageCount : @bodymap.Count
+        ,
+        </span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">button </span><span style="color: #ff0000;">@onclick</span><span style="color: #0000ff;">="StateHasChanged"</span><span style="color: #0000ff;">&gt;</span>StateHasChanged<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">button</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+
+
+    @foreach (PageItem eachitem in bodymap.Values.ToArray())
+    {
+
+        string pageurl = eachitem.Url;
+        RenderFragment pagebody = eachitem.PageBody;
+
+        string divstyle = "display:none";
+        if (pageurl == currenturl)
+        {
+            divstyle = "";
+            currurlrendered = true;
+        }
+        else if (eachitem.MaxLifeSpan.TotalSeconds &gt; 0 &amp;&amp; DateTime.Now - eachitem.ActiveTime &gt; eachitem.MaxLifeSpan)
+        {
+            bodymap.Remove(eachitem.Url);
+            continue;
+        }
+
+        </span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">@key</span><span style="color: #0000ff;">="pageurl"</span><span style="color: #ff0000;"> class</span><span style="color: #0000ff;">="content px-4"</span><span style="color: #ff0000;"> style</span><span style="color: #0000ff;">="@divstyle"</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+            @pagebody
+        </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    }
+
+    @if (!currurlrendered)
+    {
+        </span><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">div </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="content px-4"</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+            @Body
+        </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span><span style="color: #000000;">
+    }
+
+</span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">div</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>&nbsp;</p>
+<p><br />MainLayout 里, 最关键的是 Dictionary&lt;string, PageItem&gt; bodymap = new Dictionary&lt;string, PageItem&gt;(); </p>
+<p>这个字典, Key 是 Url , 而 PageItem 则储存了这个 Url 的多个信息. </p>
+<p>范例使用了 TimeSpan GetUrlMaxLifeSpan(string url) 函数来制定页面的生存时间规则. </p>
+<p>如果页面的生存时间是 0 , 表示不加进 bodymap , 每次都要全部刷新. </p>
+<p>生存时间不为0 , 就储存到 bodymap 里面去. 然后在 </p>
+<p>@foreach (PageItem eachitem in bodymap.Values.ToArray())</p>
+<p>循环过程中, 把每一个页面 Render 出来. </p>
+<p>当前页面, 就显示,  不是当前页面, 则 display:none</p>
+<p><br />没错. 在 Blazor 的 Render 体系里 , 只有输出了, 才有生命.  不输出, 就会被系统释放. </p>
+<p>所以, 所有要让它活着的 Page , 都得输出. 哪怕用display:none隐藏它.</p>
+<p><br />看看视频效果吧. </p>
+<p><a href="https://www.bilibili.com/video/BV1g54y1R7uX/" target="_blank"> https://www.bilibili.com/video/BV1g54y1R7uX/</a></p>
+<p>&nbsp;</p>
+<h2>最后:</h2>
+<p>视频杂音的确多, 求推荐一个...</p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div></div>
+		<p class="postfoot">
+			posted on 
+<span id="post-date">2020-04-25 21:51</span>&nbsp;
+<a href="https://www.cnblogs.com/zhgangxuan/">轩轩之家</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775513" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12775513);return false;">收藏</a>
+		</p>
+	</div>
+	
+	
+	
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 265669, cb_blogApp = 'zhgangxuan', cb_blogUserGuid = '366fda63-d45d-e511-b908-9dcfd8948a71';
+    var cb_entryId = 12775513, cb_entryCreatedDate = '2020-04-25 21:51', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+<div id="rightmenu">
+	
+		
+<h3>导航</h3>
+<ul>
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zhgangxuan/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%BD%A9%E8%BD%A9%E4%B9%8B%E5%AE%B6">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zhgangxuan/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/zhgangxuan/rss/">
+    <img src="/skins/cleargertrude/images/xml.gif" alt="订阅" />
+</a></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+					
+		<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+		<h3>统计</h3>
+<ul>
+	<li>随笔 - 
+6</li>
+	<li>文章 - 
+0</li>
+	<li>评论 - 
+5</li>
+	<li>引用 - 
+0</li>
+ </ul>
+
+
+		<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+		<div id="footer">
+	Powered by: 
+	<br />
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 轩轩之家
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+	
+</div>			
+			
+	
+
+
+    
+</body>
+</html>

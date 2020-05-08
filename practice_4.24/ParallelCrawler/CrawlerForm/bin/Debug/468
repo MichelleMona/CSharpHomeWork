@@ -1,0 +1,512 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>champyin - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/champyin/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/champyin/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/champyin/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 547227;
+        var currentBlogApp = 'champyin';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/champyin/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/champyin/">champyin</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/champyin/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/champyin">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/champyin/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+11&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+3</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/12767852.html">
+    彻底弄懂GMT、UTC、时区和夏令时
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://champyin.com/images/time-timezone.png" class="desc_img">格林威治时间、世界时、祖鲁时间、GMT、UTC、跨时区、夏令时，这些眼花缭乱的时间术语，我们可能都不陌生，但是真正遇到问题，可能又不那么确定，不得不再去查一查，处理完可能过段时间又忘记。今天，我们彻底来梳理一下它们。            <a href="https://www.cnblogs.com/champyin/p/12767852.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 15:40 champyin 阅读 (143) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12767852" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2020/04/16.html">2020年4月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/12713293.html">
+    开发一个时间小程序
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://pic1.zhimg.com/v2-caf1086a494c19e5d35830348b135835_r.jpg" class="desc_img">跟异国他乡的朋友们微信聊天的时候，经常面临时差的问题。每次想要确定对方现在是几点，总是要口算一下，有时忘记具体时差，或者涉及跨天，还得打开浏览器查一下，很不方便。有什么方法可以把朋友们所在城市的时间集中起来随时供自己查看呢？于是想到了微信小程序。找了找市面上的时间小程序，不是功能太杂就是小广告太多，不满意。索性自己动手量身打造一个！            <a href="https://www.cnblogs.com/champyin/p/12713293.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-16 15:40 champyin 阅读 (598) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12713293" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2020/03/09.html">2020年3月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/12449310.html">
+    如何开发和发布一个Vue插件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Vue 项目开发过程中，经常用到插件，比如原生插件 `vue-router`、`vuex`，还有 `element-ui` 提供的 `notify`、`message` 等等。这些插件让我们的开发变得更简单更高效。那么 Vue 插件是怎么开发的呢？如何自己开发一个 Vue 插件然后打包发布到npm？            <a href="https://www.cnblogs.com/champyin/p/12449310.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-09 16:12 champyin 阅读 (300) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12449310" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2020/01/28.html">2020年1月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/12238528.html">
+    揭秘webpack loader
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://champyin.com/images/webpack-loader-cover.png" class="desc_img">Loader(加载器) 是 webpack 的核心之一。它用于将不同类型的文件转换为 webpack 可识别的模块。本文将深入探索 webpack 中的 loader，揭秘它的工作原理，以及如何开发一个 loader。            <a href="https://www.cnblogs.com/champyin/p/12238528.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-28 18:05 champyin 阅读 (178) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12238528" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2020/01/15.html">2020年1月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/12198515.html">
+    揭秘webpack plugin
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://champyin.com/images/webpack-plugin-cover.png" class="desc_img">Plugin(插件) 是 webpack 生态的的一个关键部分。它为社区提供了一种强大的方法来扩展 webpack 和开发 webpack 的编译过程。本文将尝试探索 webpack plugin，揭秘它的工作原理，以及如何开发一个 plugin。            <a href="https://www.cnblogs.com/champyin/p/12198515.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-15 19:58 champyin 阅读 (214) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12198515" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2019/12/29.html">2019年12月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/12115617.html">
+    封装axios
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://champyin.com/images/wrap-axios-cover.png" class="desc_img">axios 是一个轻量的 HTTP客户端，它基于 XMLHttpRequest 服务来执行 HTTP 请求，支持丰富的配置，支持 Promise，支持浏览器端和 Node.js 端。在真实项目中为了提高我们的代码质量，我们通常会对 axios 二次封装一下再使用。这篇文章就带你从零开始封装 axios。            <a href="https://www.cnblogs.com/champyin/p/12115617.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-12-29 17:28 champyin 阅读 (336) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12115617" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2019/11/21.html">2019年11月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/11904831.html">
+    webpack优化之玩转代码分割和公共代码提取
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://champyin.com/images/webpack-optimize-cover2.png" class="desc_img">当项目业务越来越复杂，打包出来的代码会非常冗余，文件体积会非常庞大。大体积文件会增加编译时间，影响开发效率；如果直接上线，还会拉长请求和加载时长，影响网站体验。作为一个追求极致体验的攻城狮，是不能忍的。所以在多页应用中优化打包尤为必要。那么如何优化webpack打包呢？            <a href="https://www.cnblogs.com/champyin/p/11904831.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-21 12:20 champyin 阅读 (572) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11904831" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2019/10/13.html">2019年10月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/11666892.html">
+    node.js操作数据库之MongoDB+mongoose篇
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://champyin.com/images/nodejs+mongodb+mongoose-cover2.png" class="desc_img">node.js + mongoose + MongoDB超详细教程，前端也能玩转数据库开发！            <a href="https://www.cnblogs.com/champyin/p/11666892.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-13 17:16 champyin 阅读 (392) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11666892" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2019/10/06.html">2019年10月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/11627385.html">
+    GitHub项目徽标
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://champyin.com/images/badge-rule.png" class="desc_img">GitHub徽标，GitHub Badge，你也可以叫它徽章。就是在项目README中经常看到的那些表明构建状态或者版本等信息的小图标。这些好看的小图标不仅简洁美观，而且包含了清晰易读的信息，在README中使用小徽标能够为自己的项目说明增色不少！如何给自己的项目加上小徽标呢？            <a href="https://www.cnblogs.com/champyin/p/11627385.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-06 16:51 champyin 阅读 (129) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11627385" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/champyin/archive/2019/10/04.html">2019年10月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/champyin/p/11621898.html">
+    利用Travis CI+GitHub实现持续集成和自动部署
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="https://img2018.cnblogs.com/blog/559460/201910/559460-20191004151840308-1539104363.png" class="desc_img">如果你很熟悉持续集成，一定会同意这样的观点：“使用它已经成为一种标配”。Travis CI是用Ruby语言开发的一个开源的分布式持续集成服务，用于自动构建和测试在GitHub托管的项目。如何在GitHub上使用Travis CI自动部署项目，超详细攻略来了！            <a href="https://www.cnblogs.com/champyin/p/11621898.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-04 15:12 champyin 阅读 (687) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11621898" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/champyin/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 champyin
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

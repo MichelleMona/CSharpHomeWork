@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="在测试过程中，注意力往往都在功能上，如果功能正常，是基本不会查看日志的，反之会查看日志定位问题。但是表面上的功能正常不能确保日志没有报错，不能确保其他功能点没有问题，这时我们就需要日志的监控，一旦有报" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>监控日志中的报错并进行邮件报警 - linkenzhou - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/clearscreen01/bundle-clearscreen01.min.css?v=Lre07MVLM1ssP_zeeaFmIiSPNiLEPexTlMB5QLtwxVM" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/clearscreen01/bundle-clearscreen01-mobile.min.css?v=9os0cr0RRtH-K22KR_N_kaZTOBLDtkEEaUcVEKeFc_0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zy0209/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zy0209/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zy0209/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 402758;
+        var currentBlogApp = 'zy0209';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'ClearScreen01';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zy0209/">linkenzhou</a>
+<br>
+		
+
+
+	</div>
+</div>
+
+
+</div>
+<div id="mylinks">
+
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zy0209/">
+首页</a>
+&nbsp;&nbsp;::&nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/linkenzhou">
+联系</a>&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zy0209/rss/">
+订阅</a>&nbsp;
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/zy0209/rss/">
+    <img src="/skins/clearscreen01/images/xml.gif" alt="订阅" />
+</a>&nbsp;&nbsp;::&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+<div id="mytopmenu">
+	
+		<DIV id="mystats">
+			<!--done-->
+<div class="blogStats">
+posts - 
+22,&nbsp;
+comments - 
+7,&nbsp;
+trackbacks - 
+0
+
+</div>
+
+</DIV>
+	
+</div>
+<div id="main">
+    <div id="leftcontent">
+	    
+		    <DIV id="leftcontentcontainer">
+			    
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			    <div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	    
+    </div>
+    <div id="centercontent">
+	    <div id="post_detail">
+<!--done-->
+<div class="post">
+	<div class="postTitle">
+		
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/zy0209/p/12769466.html">监控日志中的报错并进行邮件报警</a>
+
+	</div>
+	
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>在测试过程中，注意力往往都在功能上，如果功能正常，是基本不会查看日志的，反之会查看日志定位问题。但是表面上的功能正常不能确保日志没有报错，不能确保其他功能点没有问题，这时我们就需要日志的监控，一旦有报错就触发报警机制（报警机制可以有邮件报警、钉钉微信发消息报警等），我选择的是发邮件报警。</p>
+<p>这里先说一下实现思路：</p>
+<p>1、在测试过程中，日志时时在刷，时时监控难度太大</p>
+<p>2、转换思路，每分钟对日志进行扫描一次，发现报错即报警</p>
+<p>　　a.获取当前时间前一分钟的日志，并将日志全部写入一个文件中，每次写入前会将该文件清空</p>
+<p>　　b.获取前一分钟文件时，方法是获取前一分钟日志的第一行的行号和最后一行的行号，然后将这两个行号间的所有内容输出到一个文件中（这样做相比于直接根据时间过滤的好处就是会包含报错内容，因为java日志中报错信息前面是没有时间的，根据时间过滤就会漏掉报错信息）</p>
+<p>　　c.在前一分钟日志中进行java关键词报错过滤，并将查询到的报错信息的前后20行（具体多少行根据实际情况而定）内容都输出到另一个文件中</p>
+<p>　　d.发邮件之前判断上一步生成的文件大小，如果大于0（说明有报错）就触发邮件，如果等于0就不触发邮件报警</p>
+<p>3.脚本写好后，放入crond定时任务中，每分钟执行一次，即可进行监控</p>
+<p>贴上代码，仅供参考</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;">!/bin/sh</span>
+
+<span style="color: #008000;">#</span><span style="color: #008000;">日志路径</span>
+mall_c_log_path='/data/admin/log/mall-c/1.0.0/qa/base/1/mall-<span style="color: #000000;">c.log'
+mall_mg_log_path</span>='/data/admin/log/mall-mg/1.0.0/qa/base/1/mall-<span style="color: #000000;">mg.log'
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;">当前时间前一分钟，精确到分</span>
+curdate=`date -d <span style="color: #800000;">"</span><span style="color: #800000;">1 minute ago</span><span style="color: #800000;">"</span> +<span style="color: #800000;">"</span><span style="color: #800000;">%Y-%m-%d %H:%M</span><span style="color: #800000;">"</span><span style="color: #000000;">`
+echo </span><span style="color: #800080;">${curdate}</span>
+
+<span style="color: #008000;">#</span><span style="color: #008000;">获取mall_c要截取日期日志的开始和结束行号</span>
+c_start_line=`cat -n <span style="color: #800080;">$mall_c_log_path</span> | grep <span style="color: #800000;">"</span><span style="color: #800000;">${curdate}</span><span style="color: #800000;">"</span> | head -1 | cut -<span style="color: #000000;">f1`
+c_end_line</span>=`cat -n <span style="color: #800080;">$mall_c_log_path</span> | grep <span style="color: #800000;">"</span><span style="color: #800000;">${curdate}</span><span style="color: #800000;">"</span> | tail -1 | cut -<span style="color: #000000;">f1`
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;">获取mall_mg要截取日期日志的开始和结束行号</span>
+mg_start_line=`cat -n <span style="color: #800080;">$mall_mg_log_path</span> | grep <span style="color: #800000;">"</span><span style="color: #800000;">${curdate}</span><span style="color: #800000;">"</span> | head -1 | cut -<span style="color: #000000;">f1`
+mg_end_line</span>=`cat -n <span style="color: #800080;">$mall_mg_log_path</span> | grep <span style="color: #800000;">"</span><span style="color: #800000;">${curdate}</span><span style="color: #800000;">"</span> | tail -1 | cut -<span style="color: #000000;">f1`
+
+sed </span>-n <span style="color: #800000;">"</span><span style="color: #800000;">$c_start_line,${c_end_line}p</span><span style="color: #800000;">"</span> <span style="color: #800080;">$mall_c_log_path</span> &gt; /data/admin/log_err/<span style="color: #000000;">mall_c_now.log
+sed </span>-n <span style="color: #800000;">"</span><span style="color: #800000;">$mg_start_line,${mg_end_line}p</span><span style="color: #800000;">"</span> <span style="color: #800080;">$mall_mg_log_path</span> &gt; /data/admin/log_err/<span style="color: #000000;">mall_mg_now.log
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;">清空错误日志文件</span>
+&gt; /data/admin/log_err/mall-<span style="color: #000000;">c_err.txt
+</span>&gt; /data/admin/log_err/mall-<span style="color: #000000;">mg_err.txt
+
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;">将报错信息写入文件</span>
+err_list=<span style="color: #000000;">(ArithmeticExecption NullPointerException ClassCastException NegativeArrayException ArrayIndexOutOfBoundsException SecturityException EOFException FileNotFoundException NumberFormatException SQLException IOException NoSuchMethodException SocketTimeoutException)
+</span><span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> ${err_list[*]}; <span style="color: #0000ff;">do</span><span style="color: #000000;">
+cat </span>/data/admin/log_err/mall_c_now.log | grep -C 20 <span style="color: #800000;">"</span><span style="color: #800000;">${i}</span><span style="color: #800000;">"</span> &gt;&gt; /data/admin/log_err/mall-<span style="color: #000000;">c_err.txt
+cat </span>/data/admin/log_err/mall_mg_now.log | grep -C 20 <span style="color: #800000;">"</span><span style="color: #800000;">${i}</span><span style="color: #800000;">"</span> &gt;&gt; /data/admin/log_err/mall-<span style="color: #000000;">mg_err.txt
+done</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;"> -*- coding: UTF-8 -*-</span>
+<span style="color: #0000ff;">import</span><span style="color: #000000;"> smtplib,os
+</span><span style="color: #0000ff;">from</span> email.mime.text <span style="color: #0000ff;">import</span><span style="color: #000000;"> MIMEText
+</span><span style="color: #0000ff;">from</span> email.mime.multipart <span style="color: #0000ff;">import</span><span style="color: #000000;"> MIMEMultipart
+</span><span style="color: #0000ff;">from</span> email.header <span style="color: #0000ff;">import</span><span style="color: #000000;"> Header
+
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> send_mail_attch():
+    </span><span style="color: #008000;">#</span><span style="color: #008000;">发送邮箱</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> sender='18706710668@163.com'</span>
+    sender=<span style="color: #800000;">'</span><span style="color: #800000;">815618406@qq.com</span><span style="color: #800000;">'</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;">接收邮箱</span>
+    receiver=<span style="color: #800000;">'</span><span style="color: #800000;">815618406@qq.com</span><span style="color: #800000;">'</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;">发送邮箱服务器</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> smtpserver='smtp.163.com'</span>
+    smtpserver=<span style="color: #800000;">'</span><span style="color: #800000;">smtp.qq.com</span><span style="color: #800000;">'</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;">用户名  口令</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> username='18706710668@163.com'</span>
+    username=<span style="color: #800000;">'</span><span style="color: #800000;">815618406@qq.com</span><span style="color: #800000;">'</span><span style="color: #000000;">
+    password</span>=<span style="color: #800000;">'</span><span style="color: #800000;">vwrfpqwbwgsybdah</span><span style="color: #800000;">'</span>
+
+    <span style="color: #008000;">#</span><span style="color: #008000;">中文需参数&lsquo;utf8&rsquo;，单字节字符不需要</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> 发送邮件主题</span>
+    subject = <span style="color: #800000;">'</span><span style="color: #800000;">互动赢家QA环境日志监控报警</span><span style="color: #800000;">'</span><span style="color: #000000;">
+    msg </span>= MIMEMultipart(<span style="color: #800000;">'</span><span style="color: #800000;">mixed</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    msg[</span><span style="color: #800000;">'</span><span style="color: #800000;">Subject</span><span style="color: #800000;">'</span>] = Header(subject, <span style="color: #800000;">'</span><span style="color: #800000;">utf-8</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;">邮件正文</span>
+    text = <span style="color: #800000;">"</span><span style="color: #800000;">Dear all!\n 附件是后端日志报错内容，请查收~</span><span style="color: #800000;">"</span><span style="color: #000000;">
+    zw </span>= MIMEText(text,<span style="color: #800000;">'</span><span style="color: #800000;">plain</span><span style="color: #800000;">'</span>,<span style="color: #800000;">'</span><span style="color: #800000;">utf-8</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    msg.attach(zw)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;">邮件附件1</span>
+    size_mall_c = os.path.getsize(<span style="color: #800000;">'</span><span style="color: #800000;">/data/admin/log_err/mall-c_err.txt</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    </span><span style="color: #0000ff;">if</span> size_mall_c !=<span style="color: #000000;"> 0:
+        mall_c_log </span>= open(<span style="color: #800000;">'</span><span style="color: #800000;">/data/admin/log_err/mall-c_err.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">"</span><span style="color: #800000;">rb</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+        send_mall_c_log </span>=<span style="color: #000000;"> mall_c_log.read()
+        mall_c_log.close()
+        att_1 </span>= MIMEText(send_mall_c_log, <span style="color: #800000;">'</span><span style="color: #800000;">base64</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">utf-8</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+        att_1[</span><span style="color: #800000;">"</span><span style="color: #800000;">Content-Type</span><span style="color: #800000;">"</span>] = <span style="color: #800000;">"</span><span style="color: #800000;">application/octet-stream</span><span style="color: #800000;">"</span><span style="color: #000000;">
+        att_1[</span><span style="color: #800000;">"</span><span style="color: #800000;">Content-Disposition</span><span style="color: #800000;">"</span>] = <span style="color: #800000;">"</span><span style="color: #800000;">attachment;filename = 'mall_c_err.txt'</span><span style="color: #800000;">"</span><span style="color: #000000;">
+        msg.attach(att_1)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;">邮件附件2</span>
+    size_mall_mg = os.path.getsize(<span style="color: #800000;">'</span><span style="color: #800000;">/data/admin/log_err/mall-mg_err.txt</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    </span><span style="color: #0000ff;">if</span> size_mall_mg !=<span style="color: #000000;"> 0:
+        mall_mg_log </span>= open(<span style="color: #800000;">'</span><span style="color: #800000;">/data/admin/log_err/mall-mg_err.txt</span><span style="color: #800000;">'</span>,<span style="color: #800000;">"</span><span style="color: #800000;">rb</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+        send_mall_mg_log </span>=<span style="color: #000000;"> mall_mg_log.read()
+        mall_mg_log.close()
+        att_2 </span>= MIMEText(send_mall_mg_log, <span style="color: #800000;">'</span><span style="color: #800000;">base64</span><span style="color: #800000;">'</span>, <span style="color: #800000;">'</span><span style="color: #800000;">utf-8</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+        att_2[</span><span style="color: #800000;">"</span><span style="color: #800000;">Content-Type</span><span style="color: #800000;">"</span>] = <span style="color: #800000;">"</span><span style="color: #800000;">application/octet-stream</span><span style="color: #800000;">"</span><span style="color: #000000;">
+        att_2[</span><span style="color: #800000;">"</span><span style="color: #800000;">Content-Disposition</span><span style="color: #800000;">"</span>] = <span style="color: #800000;">"</span><span style="color: #800000;">attachment;filename = 'mall_mg_err.txt'</span><span style="color: #800000;">"</span><span style="color: #000000;">
+        msg.attach(att_2)
+
+
+    msg[</span><span style="color: #800000;">'</span><span style="color: #800000;">to</span><span style="color: #800000;">'</span>]=<span style="color: #800000;">'</span><span style="color: #800000;">815618406@qq.com</span><span style="color: #800000;">'</span><span style="color: #000000;">
+    msg[</span><span style="color: #800000;">'</span><span style="color: #800000;">from</span><span style="color: #800000;">'</span>]=<span style="color: #800000;">'</span><span style="color: #800000;">815618406@qq.com</span><span style="color: #800000;">'</span><span style="color: #000000;">
+
+    smtp</span>=smtplib.SMTP_SSL(<span style="color: #800000;">'</span><span style="color: #800000;">smtp.qq.com</span><span style="color: #800000;">'</span>,port=465<span style="color: #000000;">)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;">smtp=smtplib.SMTP()</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;">smtp.connect('smtp.qq.com')</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;">smtp.set_debuglevel(1)</span>
+<span style="color: #000000;">    smtp.login(username,password)
+    smtp.sendmail(sender,receiver,msg.as_string())
+    smtp.quit()
+
+</span><span style="color: #0000ff;">if</span> <span style="color: #800080;">__name__</span> == <span style="color: #800000;">'</span><span style="color: #800000;">__main__</span><span style="color: #800000;">'</span><span style="color: #000000;">:
+    size_mall_c </span>= os.path.getsize(<span style="color: #800000;">'</span><span style="color: #800000;">/data/admin/log_err/mall-c_err.txt</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    size_mall_mg </span>= os.path.getsize(<span style="color: #800000;">'</span><span style="color: #800000;">/data/admin/log_err/mall-mg_err.txt</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    </span><span style="color: #0000ff;">if</span> (size_mall_c != 0) <span style="color: #0000ff;">or</span> (size_mall_mg !=<span style="color: #000000;"> 0):
+        send_mail_attch()</span></pre>
+</div>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">#</span><span style="color: #008000;">!/bin/sh</span><span style="color: #008000;">
+#</span><span style="color: #008000;">执行收集报错的脚本</span>
+sh /data/admin/log_err/<span style="color: #000000;">monitor_log_err.sh
+
+sleep </span>10
+
+<span style="color: #008000;">#</span><span style="color: #008000;">执行发送邮件脚本</span>
+/usr/bin/python /data/admin/log_err/send_email.py</pre>
+</div>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+	<div class="postDesc">posted on 
+<span id="post-date">2020-04-24 19:02</span>&nbsp;
+<a href="https://www.cnblogs.com/zy0209/">linkenzhou</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12769466" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12769466);return false;">收藏</a></div>
+</div>
+
+
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 402758, cb_blogApp = 'zy0209', cb_blogUserGuid = 'd549630d-93d7-e511-9fc1-ac853d9f53cc';
+    var cb_entryId = 12769466, cb_entryCreatedDate = '2020-04-24 19:02', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+    </div>
+</div>
+<!--done-->
+<div class="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 linkenzhou
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+
+
+
+    
+</body>
+</html>

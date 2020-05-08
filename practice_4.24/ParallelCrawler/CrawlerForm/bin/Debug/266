@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>woailibian - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/woailibian/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/woailibian/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/woailibian/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 341924;
+        var currentBlogApp = 'woailibian';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/woailibian/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/woailibian/">woailibian</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/woailibian/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/woailibian">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/woailibian/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+12&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+19</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12773998.html">
+    EF多租户实例：演变为读写分离
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 我又来写关于多租户的内容了，这个系列真够漫长的。 如无意外这篇随笔是最后一篇了。内容是讲关于如何利用我们的多租户库简单实现读写分离。 分析 对于读写分离，其实有很多种实现方式，但是总体可以分以下两类： 1. 通过不同的连接字符串分离读库和写库 2. 通过有多个连接实例，分别连接到读或写库 他们            <a href="https://www.cnblogs.com/woailibian/p/12773998.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 17:11 woailibian 阅读 (139) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773998" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2020/04/04.html">2020年4月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12632019.html">
+     EF多租户实例：快速实现分库分表
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 来到这篇随笔，我们继续演示如何实现EF多租户。 今天主要是演示多租户下的变形，为下图所示 实施 项目结构 这次我们的示例项目进行了精简，仅有一个API项目，直接包含所有代码。 其中Controller，StoreContext，Entity都完全和以往的示例一模一样，这里就不再过多介绍了。 具            <a href="https://www.cnblogs.com/woailibian/p/12632019.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-04 15:25 woailibian 阅读 (558) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12632019" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2020/03/11.html">2020年3月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12464858.html">
+    EF多租户实例：如何快速实现和同时支持多个DbContext
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 上一篇随笔我们谈到了多租户模式，通过多租户模式的演化的例子。大致归纳和总结了几种模式的表现形式。 并且顺带提到了读写分离。 通过好几次的代码调整，使得这个库更加通用。今天我们聊聊怎么通过该类库快速接入多租户。 类库地址： https://github.com/woailibain/kiwiho            <a href="https://www.cnblogs.com/woailibian/p/12464858.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-11 19:30 woailibian 阅读 (442) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12464858" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2020/03/01.html">2020年3月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12391163.html">
+    利用多租户模式演化成分库分表和读写分离
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 最近两周我都发了随笔写关于利用EF core实现多租户，并且给出了一些关于EF 自动迁移的内容。 这个系列的随笔是想要把这部分的代码优化和做成类库的。 我已经整理和抽象好了，本来想介绍一下整理的思路的。但后来发现这里的代码量太少了，好像没什么可以说的。 所以这篇随笔会讲解利用这个类库可以实现的            <a href="https://www.cnblogs.com/woailibian/p/12391163.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-01 22:42 woailibian 阅读 (551) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12391163" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2020/02/22.html">2020年2月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12333803.html">
+    Asp.net core下利用EF core实现从数据实现多租户（3）: 按Schema分离  附加：EF Migration 操作
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 前段时间写了EF core实现多租户的文章，实现了根据数据库，数据表进行多租户数据隔离。 今天开始写按照Schema分离的文章。 其实还有一种，是通过在数据表内添加一个字段做多租户的，但是这种模式我不打算讲了。 如果大家看了文章感觉完全衔接不上，可以先看看前面的系列文章： Asp.net co            <a href="https://www.cnblogs.com/woailibian/p/12333803.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-22 16:56 woailibian 阅读 (359) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12333803" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12345459.html">
+    EF core (code first) 通过自动迁移实现多租户数据分离 ：按Schema分离数据
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 本文是多租户系列文章的附加操作文章，如果想查看系列中的其他文章请查看下列文章 主线文章 Asp.net core下利用EF core实现从数据实现多租户（1） Asp.net core下利用EF core实现从数据实现多租户（2） : 按表分离 Asp.net core下利用EF core实现            <a href="https://www.cnblogs.com/woailibian/p/12345459.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-22 16:55 woailibian 阅读 (239) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12345459" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2020/02/16.html">2020年2月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12319369.html">
+    EF core (code first) 通过自定义 Migration History 实现多租户使用同一数据库时更新数据库结构
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 写这篇文章的原因，其实由于我写EF core 实现多租户的时候，遇到的问题。 具体文章的链接： Asp.net core下利用EF core实现从数据实现多租户（1） Asp.net core下利用EF core实现从数据实现多租户（2） : 按表分离 （主要关联文章） 这里我遇到的最主要问题            <a href="https://www.cnblogs.com/woailibian/p/12319369.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-16 23:12 woailibian 阅读 (215) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12319369" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12317944.html">
+    Asp.net core下利用EF core实现从数据实现多租户（2） : 按表分离
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 在上一篇文章中，我们介绍了如何根据不同的租户进行数据分离，分离的办法是一个租户一个数据库。 也提到了这种模式还是相对比较重，所以本文会介绍一种更加普遍使用的办法： 按表分离租户。 这样做的好处是什么： 在目前的to B的系统中，其实往往会有一个Master数据库，里面使用的是系统中主要的数据，            <a href="https://www.cnblogs.com/woailibian/p/12317944.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-16 18:16 woailibian 阅读 (649) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12317944" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2020/02/15.html">2020年2月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12313023.html">
+    Asp.net core下利用EF core实现从数据实现多租户（1）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 随着互联网的的高速发展，大多数的公司由于一开始使用的传统的硬件/软件架构，导致在业务不断发展的同时，系统也逐渐地逼近传统结构的极限。 于是，系统也急需进行结构上的升级换代。 在服务端，系统的I/O是很大的瓶颈。其中数据库的I/O最容易成为限制系统效率的一环。在优化数据库I/O这一环中，可以从优            <a href="https://www.cnblogs.com/woailibian/p/12313023.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-15 18:17 woailibian 阅读 (1403) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12313023" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/woailibian/archive/2017/07/30.html">2017年7月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/woailibian/p/7258763.html">
+    VS code docker 调试 asp.net core
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 .net core的诞生就是为了解决跨平台的事情的，所以.net core app运行在linux、macOS、docker上也不是什么新鲜事了。 相信已经有不少.net core的项目已经部署在docker或者linux的环境下。但是一般的开发人员的开发环境不会是Ubuntu、redhat什            <a href="https://www.cnblogs.com/woailibian/p/7258763.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-07-30 21:48 woailibian 阅读 (2504) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7258763" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/woailibian/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 woailibian
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

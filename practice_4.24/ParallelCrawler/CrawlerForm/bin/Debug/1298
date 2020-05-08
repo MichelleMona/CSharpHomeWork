@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>初开 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001.min.css?v=vmUk-3Bh8LDsKXwjNHs2GDiFna-ZMTUgOJzjUaXTlPA" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/wchukai/custom.css?v=OaBqPhFSkVNXjhGXIaL30SvzXso=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001-mobile.min.css?v=cJiDsI1JAuHHd-OAUWJeyE5JMXXsG4mmuUi2rVmEK1c" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wchukai/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wchukai/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wchukai/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 215653;
+        var currentBlogApp = 'wchukai';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'AnotherEon001';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/wchukai/">初开之道</a>
+</h1>
+<div id="subtitle">
+超越范式，渐入谦卑的空。我的作品库：https://chukai.link
+</div>
+</div>
+<div id="sub"><div class="BlogStats">随笔 - 
+60, 文章 - 
+0, 评论 - 
+75, 引用 - 
+0</div>
+
+</div>
+
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	
+
+
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2019/07/12.html">2019年7月12日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/11174189.html">
+    某618大促项目的复盘总结
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：一、前言 618期间上线一个活动项目。但上线不顺利，当天就出现了性能问题，接口超时，用户无法打开网页，最后不得的临时下线。花了三天两夜，重构了后台核心代码，才让活动进行下去。 回头看了一下自己的时间记录，从5月31号那天晚上8点25分开始准备上线，发现异常，分析原因，重构代码，离开公司时已经是6月2            <a href="https://www.cnblogs.com/wchukai/p/11174189.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2019-07-12 09:36 初开 阅读 (13044) 评论 (17)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11174189" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2019/01/16.html">2019年1月16日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/10275163.html">
+    初开：一次开发方案决策的系统思考
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：本文案例已经过艺术加工，请忽略案例本身的真实性。 不久前，完成了一个项目，在制定开发方案时，出现两个方案的决策问题，我来分享了这里面的一些思考。 一、背景 现谈谈背景，我们负责了两条业务线的日常开发和维护工作，就好比淘宝和天猫这种模式，他们背后属于不同的业务部门，但都有一样的商品的购买流程。 就是这            <a href="https://www.cnblogs.com/wchukai/p/10275163.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2019-01-16 08:54 初开 阅读 (738) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10275163" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2019/01/13.html">2019年1月13日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/10263963.html">
+    初开：什么是系统思考
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：O、引言 当我说倒一杯水，你脑海中浮现的是否是这样的一副画面。 但是，在系统思考者眼中它是这样的。 倒水不再是打开水龙头接满就行，系统思考者能洞察到它背后的关系结构。 从简单的事物中看到复杂，然后从复杂的事物中洞察简单，这就是系统思考的美妙所在。 本文将谈到以下内容： 一、什么是系统 认识系统思考之            <a href="https://www.cnblogs.com/wchukai/p/10263963.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2019-01-13 20:58 初开 阅读 (3600) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10263963" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2018/12/15.html">2018年12月15日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/10123507.html">
+    20天，22小时20分，我是如何干掉这本1000页的代码大全的
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：从11月24日到12月15日，20天内，投入22个小时又20分钟，从头到尾通读完了这本代码大全，每一章都按同样的标准做了笔记，共1.7w字。 从本书本身的学到的倒是其次，最关键的是，我点亮了一个新技能，如何在一个漫长而枯燥的任务坚持下来，并保持同样的投入标准直至结束。 从此以后，我的字典里不再有坚持            <a href="https://www.cnblogs.com/wchukai/p/10123507.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2018-12-15 15:30 初开 阅读 (2020) 评论 (9)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10123507" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2018/12/13.html">2018年12月13日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/10112281.html">
+    两个原则解释高内聚和低耦合
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：高内聚、低耦合是软件设计中非常关键的概念，但解释起来并不那么容易。 我的解释，可以概括为两个基本原则：层次一致的抽象，以及相互独立的封装。 层次一致的抽象 在Web工程中，我们非常熟悉的是三层架构：展示层、业务层和持久层。 层次一致和不一致的抽象就像这样： 如果业务层包含了持久层的代码，或者持久的的            <a href="https://www.cnblogs.com/wchukai/p/10112281.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2018-12-13 09:48 初开 阅读 (1724) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10112281" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2018/12/04.html">2018年12月4日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/10062007.html">
+    如何从编程的本质理解JVM内存模型
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：如何从编程的本质理解JVM内存模型 一般聊JVM内存模型都是把图截出来，然后对着图，解释上面堆、栈之类的概念。这篇将分享下，如何从编程的本质上理解，JVM内存模型是什么样子，为什么是这个样子，不再死记硬背。 编程的本质 编程的本质是什么，有这么一句话， 程序=算法+数据结构。 这里的&quot;算法&quot;其实相当            <a href="https://www.cnblogs.com/wchukai/p/10062007.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2018-12-04 07:04 初开 阅读 (617) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10062007" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2017/12/24.html">2017年12月24日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/8097603.html">
+    跃迁|17年回顾、未来愿景、18年目标与价值思考
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：人生就是如此奇妙，两月前还以为今年过得也就还不错，但没想到年底遇到了一群优秀得令人窒息的小伙伴，坐上了起飞的火箭，竟然变成了一个有理想，有目标，有规划的“三有青年”。 回首过去工作的两年多，今年的成长超过了过去两年，而最近两月的成长超过了过去的一整年。而明年已然可以预料，这将是跃迁的开始。 一、时间            <a href="https://www.cnblogs.com/wchukai/p/8097603.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2017-12-24 11:22 初开 阅读 (3216) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8097603" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2017/12/23.html">2017年12月23日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/8093205.html">
+    编码综述-《大型网站技术原理：基本原理》
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：一、概览在本章节，我们将从编码的概念开始，谈谈常见的一些编码类型,再接着谈谈信息论中两个最重要的编码过程-压缩和加密，分析它们在网站中的应用，最后深入理解在分布式系统中的编码过程-序列化。对信息论有足够理解的朋友可以快速略过前4节，阅读后面的序列化及思考部分。二、什么是编码让我们回到数百年前的古代，在那个时候可没有电话，如果有人想给远方的朋友传个信，那就只能修书一封，飞鸽传书了。我们分析下这个过程...            <a href="https://www.cnblogs.com/wchukai/p/8093205.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2017-12-23 13:15 初开 阅读 (589) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8093205" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/wchukai/archive/2017/12/16.html">2017年12月16日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/8048033.html">
+    部门分享会演讲复盘-1
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：周五在部门做了一个演讲，录下了大半场的视频，这篇文章对整个演讲过程做个复盘。1. 前期准备前期准备主要包括内容和PPT。整个演讲主要的内容结构还是比较清晰的，但收尾的互动部分处理比较尴尬，由于存在逻辑上的漏洞，听众的想法跟我臆想中的完全不一样，几乎是强行解释过去的。需要提前找人审阅内容，平衡思维上的差异。PPT直接使用极简风格，大大降低了制作成本，在字体，排版，过渡方面没太大问题，但部分页面需要补...            <a href="https://www.cnblogs.com/wchukai/p/8048033.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2017-12-16 23:12 初开 阅读 (227) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8048033" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/wchukai/p/8048022.html">
+    聊聊这两年我用到的面试套路和收获
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1这篇文章，分享下在过去两年多的工作中,在面试方面的经历，当然，并不是被别人面试，而是面试别人。最早应该在两年前，那时我刚工作不久，当时部门刚组建，在上海的团队加上我也不过三人，因此，一直在不断的招人。我当时的mentor就成为主力面试官，所以，我就有不少机会跟在他屁股后面去蹭面试。之前找工作时一直被面试，从未面试过别人，所以刚开始特别紧张，坐在面试者对面，我反而是最紧张的那个，只能拿着笔和本子，...            <a href="https://www.cnblogs.com/wchukai/p/8048022.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2017-12-16 23:09 初开 阅读 (287) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8048022" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/wchukai/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+    <li>
+        <a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/wchukai/">
+首页</a>
+
+    </li>
+    <li>
+        
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%88%9D%E5%BC%80">
+联系</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/wchukai/rss/">
+订阅</a>
+        
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/wchukai/rss/">
+    <img src="/skins/anothereon001/images/xml.gif" alt="订阅" />
+</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+    </li>
+</ul>
+
+
+<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 初开
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+</div>
+</div>
+
+
+    
+</body>
+</html>

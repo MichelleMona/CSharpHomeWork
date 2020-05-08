@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="【摘要】 本文介绍使用野火开发板通过Agent Tiny SDK的端云互通组件，使用MQTT协议快速接入华为云平台。通过平台侧、设备侧的开发以及调测过程来了解直接接入物联网平台模式的具体流程，希望对你" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>漫谈LiteOS-端云互通组件-MQTT开发指南（上） - 华为IoT小助手 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hwiot/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hwiot/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hwiot/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 558012;
+        var currentBlogApp = 'hwiot';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hwiot/">风趣幽默小助手</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hwiot/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%8E%E4%B8%BAIoT%E5%B0%8F%E5%8A%A9%E6%89%8B">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/hwiot/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+21&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+2</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12765418.html">漫谈LiteOS-端云互通组件-MQTT开发指南（上）</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        【摘要】 本文介绍使用野火开发板通过Agent Tiny SDK的端云互通组件，使用MQTT协议快速接入华为云平台。通过平台侧、设备侧的开发以及调测过程来了解直接接入物联网平台模式的具体流程，希望对你有所帮助
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>1.介绍</p>
+<h3>SDK简介</h3>
+<p>Agent Tiny是部署在具备广域网能力、对功耗/存储/计算资源有苛刻限制的终端设备上的轻量级互联互通中间件，您只需调用API接口，便可实现设备快速接入到物联网平台以及数据上报和命令接收等功能。</p>
+<p>Agent Tiny SDK是Huawei Agent Tiny软件开发工具包（Software Development Kit），通过Agent Tiny SDK端云互通组件，简单快速地实现与华为物联网平台安全可靠连接，可以大大减少开发周期，快速构建IoT产品。端云互通组件可以采用MQTT、CoAP和LWM2W协议接入物联网平台。Agent Tiny SDK全景图如图1所示。</p>
+<p><img class="localImage new-carousel" title="1579509229648645.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509229648645.png" alt="iot-architecture.png" width="553" height="429" data-index="0"></p>
+<h2>2. 开发环境</h2>
+<h3>2.1硬件需求</h3>
+<p>开发计算机、运行win7及以上操作系统</p>
+<p>野火开发板STM32F429IG、数据线</p>
+<p>Jlink下载器、网线、USB转串口</p>
+<h3>2.2软件需求</h3>
+<p><a href="https://github.com/LiteOS/LiteOS_Lab/blob/iot_link/doc/Huawei_IoT_Link_SDK_IDE_Eclipse_Guide.md">IDE</a>(包括GCC编译器、JDK运行环境、make工具、Jlink驱动、Eclipse)</p>
+<p>串口工具（QCOM-V1.6）</p>
+<p><a href="https://www.huaweicloud.com/">实名认证的华为云账号</a></p>
+<p><a href="https://github.com/LiteOS/LiteOS/tree/iot_link">SDK源码</a></p>
+<h2>3.接入物联网平台流程</h2>
+<p>根据设备中的接入地址，可以将接入物联网平台分为两种模式：</p>
+<ul class="list-paddingleft-2">
+<li>
+<p>直接接入物联网平台模式</p>
+</li>
+<li>
+<p>通过设备发放服务接入物联网平台模式</p>
+</li>
+</ul>
+<p>两种接入方式的对比：</p>
+<ul class="list-paddingleft-2">
+<li>
+<p>直接接入物联网平台示意图</p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p><img class="localImage new-carousel" title="1579509484854577.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509484854577.png" alt="direct_connect_mode.png" width="554" height="173" data-index="1"></p>
+<p>&nbsp;</p>
+<ul class="list-paddingleft-2">
+<li>
+<p>通过设备发放服务接入物联网凭条示意图</p>
+</li>
+</ul>
+<p><img class="localImage new-carousel" title="1579509507524377.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509507524377.png" alt="BS_connect_mode.png" width="554" height="173" data-index="2"></p>
+<h2>4.直接接入实例</h2>
+<p>下面以野火STM32F429IG开发板通过以太网直接接入物联网平台为例，详细讲述接入流程。总体操作流程参考下图。</p>
+<p><img class="localImage new-carousel" title="1579509672376318.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509672376318.png" alt="zh-cn_image_dmp_process.png" width="554" height="232" data-index="3"></p>
+<p><strong>说明：</strong>野火STM32F429IG开发板的详细资料可以从<a href="http://www.firebbs.cn/forum.php">http://www.firebbs.cn/forum.php</a>下载。</p>
+<p>产品模型参考</p>
+<p><img class="localImage new-carousel" title="1579509698509087.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509698509087.png" alt="zh-cn_dmp_operate_001.png" width="554" height="562" data-index="4"></p>
+<p>设备信息参考</p>
+<p><img class="localImage new-carousel" title="1579509714865138.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509714865138.png" alt="zh-cn_dmp_operate_002.png" width="552" height="90" data-index="5"></p>
+<h3>4.1平台侧开发</h3>
+<p>进入<a href="https://iot-dev.huaweicloud.com/">开发中心</a>，根据上图，依次在开发中心中新建项目-&gt;新建产品-&gt;定义产品模型-&gt;注册设备。</p>
+<p><strong>新建项目</strong></p>
+<p>选择开发者中心并进入。</p>
+<p>&nbsp;</p>
+<p><img class="localImage new-carousel" title="1579509755649125.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509755649125.png" alt="zh-cn_bmp_cloud_004.png" width="554" height="166" data-index="6"></p>
+<p>点击&ldquo;我的项目&rdquo;中&ldquo;+&rdquo;，创建自己的项目。</p>
+<p><img class="localImage new-carousel" title="1579509777658917.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509777658917.png" alt="zh-cn_bmp_cloud_005.png" width="553" height="242" data-index="7"></p>
+<p>&nbsp;</p>
+<p>输入项目信息后点击&ldquo;确定&rdquo;。</p>
+<p><img class="localImage new-carousel" title="1579509795394841.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509795394841.png" alt="zh-cn_bmp_cloud_006.png" width="553" height="245" data-index="8"></p>
+<p>点击&ldquo;进入项目&rdquo;。</p>
+<p><img class="localImage new-carousel" title="1579509829487759.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579509829487759.png" alt="zh-cn_bmp_cloud_007.png" width="553" height="260" data-index="9"></p>
+<p><strong>新建产品</strong></p>
+<p>选择产品开发新建产品，即可跳转到产品模型定义界面。</p>
+<p><img class="localImage new-carousel" title="1579510110323053.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510110323053.png" alt="zh-cn_bmp_cloud_008.png" width="553" height="215" data-index="10"></p>
+<p>选择自定义产品方式创建产品。</p>
+<p><img class="localImage new-carousel" title="1579510163101519.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510163101519.png" alt="zh-cn_bmp_cloud_009.png" width="554" height="187" data-index="11"></p>
+<p>补全产品的各类信息，点击&ldquo;创建&rdquo;，提示创建成功后点击&ldquo;确定&rdquo;，前往产品开发。</p>
+<p><img class="localImage new-carousel" title="1579510204846148.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510204846148.png" alt="zh-cn_bmp_cloud_010.png" width="554" height="262" data-index="12"></p>
+<p><strong>定义产品模型</strong></p>
+<p>选择新建服务，开始添加产品的相关特性</p>
+<p><img class="localImage new-carousel" title="1579510246354561.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510246354561.png" alt="zh-cn_bmp_cloud_011.png" width="553" height="260" data-index="13"></p>
+<p>给产品定义一个属性：batteryLevel，用于设备向平台上报，定义为int型，最大值设置为100，访问模式RWE全部勾选，完成后点击确定；</p>
+<p><img class="localImage new-carousel" title="1579510262442517.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510262442517.png" alt="zh-cn_bmp_cloud_012.png" width="554" height="257" data-index="14"></p>
+<p>给产品增加一个命令：cmd，设置下发命令属性名称：ioswitch，用于平台向设备发送命令，定义为int型，最大值99。通过上报和下发，构成了我们演示的上行和下行通道。</p>
+<p><img class="localImage new-carousel" title="1579510276473124.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510276473124.png" alt="zh-cn_bmp_cloud_013.png" width="554" height="258" data-index="15"></p>
+<p><img class="localImage new-carousel" title="1579510312437898.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510312437898.png" alt="zh-cn_bmp_cloud_014.png" width="554" height="250" data-index="16"></p>
+<p>添加完后保存：</p>
+<p><img class="localImage new-carousel" title="1579510416903552.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510416903552.png" alt="zh-cn_bmp_cloud_016.png" width="554" height="178" data-index="17"></p>
+<p><strong>创建设备</strong></p>
+<p>创建了产品模型之后，我们需要根据模型创建具体的设备。点击设备管理-&gt;添加真实设备，即可进入添加设备界面。</p>
+<p><img class="localImage new-carousel" title="1579510445575188.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510445575188.png" alt="zh-cn_bmp_cloud_017.png" width="554" height="234" data-index="18"></p>
+<p>进入界面之后，选择我们刚才建立的产品模型&ldquo;sdk_test_001&rdquo;，进行设备创建。<br />设备标识(nodeid)是识别该设备的唯一标识符，要求唯一，此处为示范，用户使用时以实际命名为准。</p>
+<p><img class="localImage new-carousel" title="1579510460821246.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510460821246.png" alt="zh-cn_bmp_cloud_018.png" width="554" height="328" data-index="19"></p>
+<p>此处注意，确认之后自动生成产品设备ID（deviceid）及密钥（password），请记录下设备标识(nodeid)、设备ID（deviceid）及密钥（password），这三个信息主要用于对接华为云时的设备鉴权。</p>
+<p><img class="localImage new-carousel" title="1579510482981029.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510482981029.png" alt="zh-cn_bmp_cloud_019.png" width="554" height="305" data-index="20"></p>
+<p>创建完毕之后，即可在设备管理中看到刚刚创建的设备，此时设备状态为离线。</p>
+<p><img class="localImage new-carousel" title="1579510523963938.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510523963938.png" alt="1579510523963938.png" data-index="21"></p>
+<p>到此为止，平台侧开发完毕。</p>
+<h3>4.2设备侧开发</h3>
+<p>设备侧开发前准备</p>
+<ul class="list-paddingleft-2">
+<li>
+<p>&nbsp;&nbsp;<a href="https://github.com/LiteOS/LiteOS/tree/iot_link">下载SDK源码</a></p>
+
+
+</li>
+<li>
+<p>&nbsp;&nbsp;获取接入信息(进入<a href="https://iot-dev.huaweicloud.com/">开发中心</a>的&ldquo;sdk_test_098&rdquo;项目中，在&ldquo;应用 &gt; 对接信息&rdquo;页面查看&ldquo;设备接入信息&rdquo;中的&ldquo;MQTT接入方式&rdquo;)</p>
+
+
+</li>
+
+
+</ul>
+<p>&nbsp;<strong>说明：</strong>SDK采用的是GCC+MakeFile模式，用户可以根据自己的IDE开发环境灵活适配。</p>
+<p><strong>修改</strong><strong>mk</strong><strong>文件</strong></p>
+<p>集成开发环境搭建好后，修改targets\STM32F429IGTx_FIRE\config.mk</p>
+<pre class="brush:cpp;toolbar:false">CONFIG_OS_TYPE&nbsp;:=&nbsp;"liteos"
+CONFIG_ARCH_CPU_TYPE&nbsp;:=&nbsp;"armv7-m"
+CONFIG_SHELL_ENABLE&nbsp;:=&nbsp;y
+CONFIG_STIMER_ENABLE&nbsp;:=&nbsp;y
+CONFIG_DRIVER_ENABLE&nbsp;:=&nbsp;y
+CONFIG_AT_ENABLE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;y
+CONFIG_CJSON_ENABLE&nbsp;:=&nbsp;y
+CONFIG_TCPIP_ENABLE&nbsp;:=&nbsp;y
+CONFIG_TCPIP_TYPE&nbsp;:=&nbsp;"lwip_socket"
+CONFIG_DTLS_ENABLE&nbsp;&nbsp;&nbsp;:=&nbsp;y
+CONFIG_DTLS_TYPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;"mbedtls_cert"
+CONFIG_MQTT_ENABLE&nbsp;&nbsp;&nbsp;:=&nbsp;y
+CONFIG_MQTT_TYPE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:=&nbsp;"paho_mqtt"
+CONFIG_OC_MQTT_ENABLE&nbsp;:=&nbsp;y
+CONFIG_OC_MQTT_TYPE&nbsp;&nbsp;&nbsp;:=&nbsp;"soft"
+CONFIG_DEMO_ENABLE&nbsp;:=&nbsp;y
+CONFIG_DEMO_TYPE&nbsp;&nbsp;&nbsp;:=&nbsp;"oc_tls_mqtt_demo"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;###&nbsp;产品逻辑&nbsp;###</pre>
+<p><strong>修改接入信息</strong></p>
+<p>参考如下内容，修改demos/oc_tls_mqtt_demo.c</p>
+<pre class="brush:cpp;toolbar:false">#define&nbsp;DEFAULT_LIFETIME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10
+#define&nbsp;DEFAULT_SERVER_IPV4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"49.4.93.24"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//物联网平台MQTT接入地址
+#define&nbsp;DEFAULT_SERVER_PORT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"8883"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//物联网平台MQTT接入端口
+#define&nbsp;CN_MQTT_EP_NOTEID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"device_001"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//平台侧新建的设备标识码
+#define&nbsp;CN_MQTT_EP_DEVICEID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"c4ef0d27-8ea5-41aa-837f-361cff947601"&nbsp;&nbsp;//平台侧设备创建成功后提供的设备ID
+#define&nbsp;CN_MQTT_EP_PASSWD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"314483483108d92db143"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//平台侧设备创建成功后提供的密钥</pre>
+<p><strong>编译运行</strong></p>
+<p>修改完成，编译然后debug。</p>
+<p><img class="localImage new-carousel" title="1579510691192611.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510691192611.png" alt="zh-cn_dmp_test_001.png" width="553" height="457" data-index="22"></p>
+<p><img class="localImage new-carousel" title="1579510717149965.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510717149965.png" alt="zh-cn_dmp_test_007.png" width="554" height="374" data-index="23"></p>
+<h3>4.3调测</h3>
+<p>通过串口工具，可以看到设备已经和物联网平台建立连接。</p>
+<p><img class="localImage new-carousel" title="1579510744982214.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510744982214.png" alt="zh-cn_dmp_test_002.png" width="554" height="734" data-index="24"></p>
+<p>登录开发平台-&gt;&ldquo;sdk_test_098&rdquo;项目 -&gt;设备管理，可以看到我们的设备已经上线，点击调试产品，可以进入我们平台的设备调试界面。</p>
+<p><img class="localImage new-carousel" title="1579510764725858.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510764725858.png" alt="zh-cn_dmp_test_003.png" width="554" height="224" data-index="25"></p>
+<p>可以看到所创建的设备已经上报的数据</p>
+<p><img class="localImage new-carousel" title="1579510790343150.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510790343150.png" alt="zh-cn_dmp_test_004.png" width="554" height="251" data-index="26"></p>
+<p>输入ioswitch值88，点击&ldquo;发送&rdquo;。</p>
+<p><img class="localImage new-carousel" title="1579510805536037.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510805536037.png" alt="zh-cn_dmp_test_005.png" width="553" height="260" data-index="27"></p>
+<p>在串口工具可以看到接收到的命令</p>
+<p><img class="localImage new-carousel" title="1579510828635155.png" src="https://bbs-img.huaweicloud.com/blogs/img/1579510828635155.png" alt="zh-cn_dmp_test_006.png" width="554" height="756" data-index="28"></p>
+<p>到此调测完成。</p>
+<p><span style="background-color: #ff6600; font-size: 16px;"><strong>添加华为IoT小助手（微信号：huawei-iot，回复&ldquo;博客园&rdquo;）获取更多LiteOS课程。</strong></span></p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 09:43</span>&nbsp;
+<a href="https://www.cnblogs.com/hwiot/">华为IoT小助手</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765418" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12765418);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 558012, cb_blogApp = 'hwiot', cb_blogUserGuid = '934c261c-ff5d-44a8-92ff-08d753a9a8fd';
+    var cb_entryId = 12765418, cb_entryCreatedDate = '2020-04-24 09:43', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 华为IoT小助手
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

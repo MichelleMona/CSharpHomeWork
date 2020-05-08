@@ -1,0 +1,516 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="[TOC] SVM家族简史 故事要从20世纪50年代说起，1957年，一个叫做感知器的模型被提出， 1963年， &amp;quot;Vapnik &amp;quot; and &amp;quot;Chervonenkis&amp;" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SVM家族（一） - 周若梣 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/gongyanzh/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/gongyanzh/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/gongyanzh/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 567347;
+        var currentBlogApp = 'gongyanzh';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/gongyanzh/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/gongyanzh/"></a>
+</h1>
+<h2>
+苟日新 日日新 又日新
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/gongyanzh/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%91%A8%E8%8B%A5%E6%A2%A3">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/gongyanzh/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+53&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+2</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/gongyanzh/p/12775231.html">SVM家族（一）</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p><div class="toc"><div class="toc-container-header">目录</div><ul><li><a href="#svm家族简史">SVM家族简史</a></li><li><a href="#svm是什么？">SVM是什么？</a></li><li><a href="#感知机模型">感知机模型</a></li><li><a href="#最大间隔">最大间隔</a></li><li><a href="#最大间隔的数学解">最大间隔的数学解</a></li><li><a href="#回到svm最优化问题">回到SVM最优化问题</a></li></ul></div></p>
+<h4 id="svm家族简史">SVM家族简史</h4>
+<p>故事要从20世纪50年代说起，1957年，一个叫做感知器的模型被提出，</p>
+<p>1963年， <a href="https://en.wikipedia.org/wiki/Vladimir_Vapnik">Vapnik </a>and <a href="https://en.wikipedia.org/wiki/Alexey_Chervonenkis">Chervonenkis</a>, 提出了最大间隔分类器，SVM诞生了。</p>
+<p>1992年，Vapnik 将核方法用于SVM，使SVM可以处理线性不可分数据</p>
+<p>1995年，Corts和Vapnik引入了软间隔，允许SVM犯一些错</p>
+<p>最强版SVM出现了，它将各式武学集于一身，软间隔、核方法、……，</p>
+<p>1996年，SVR（support vector regression）诞生，svm家族又添一员，回归任务也不在话下。至此，SVM家族成为机器学习界顶级家族之一。关于SVM家族其他成员，可以参阅<a href="http://www.svms.org/history.html">这里</a>。</p>
+<h4 id="svm是什么？">SVM是什么？</h4>
+<ul>
+<li>是一种监督学习分类算法，可以用于分类/回归任务</li>
+<li>SVM目标：寻找<strong>最优分割超平面</strong>以最大化训练数据的<strong>间隔</strong></li>
+</ul>
+<p><strong>什么是超平面？</strong></p>
+<ul>
+<li>在一维空间，超平面是一个点</li>
+<li>二维空间，超平面是一条线</li>
+<li>三维空间，超平面是一个平面</li>
+<li>更多维空间，称为超平面</li>
+</ul>
+<p><strong>什么是最优分割超平面？</strong></p>
+<ul>
+<li>尽可能远离每一个类别的样本点的超平面
+<ul>
+<li>首先，可以正确的将训练数据分类</li>
+<li>其次，拥有更好的泛化能力</li>
+</ul>
+</li>
+</ul>
+<p>那么如何找到这个最优超平面呢？根据间隔</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425204823985-1608474288.png" alt=""></p>
+<p><strong>什么是间隔？</strong></p>
+<p>给定一个超平面，超平面到最近的样本点之间的<strong>距离的2倍</strong>称为间隔。</p>
+<p>在最初的SVM中，间隔是一个强定义，即硬间隔，间隔之间不允许存在任何样本。（当数据中存在噪音时，会产生一些问题，所以后来软间隔被引入）</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205731859-1745299500.png" alt=""></p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425204939256-777279965.png" alt=""></p>
+<p>显然，间隔B小于间隔A。可知：</p>
+<ul>
+<li>如果超平面越接近样本点，对应的间隔越小</li>
+<li>超平面离样本点越远，间隔越大</li>
+</ul>
+<p>所以<strong>最优超平面对应最大间隔</strong>，SVM就是围绕着这个间隔展开，如何计算这个间隔？👇👇👇</p>
+<h4 id="感知机模型">感知机模型</h4>
+<p><strong>感知机是什么？</strong></p>
+<ul>
+<li>是一种二元线性分类器</li>
+<li>利用梯度下降法对损失函数进行极小化，求出可将训练数据进行线性划分的分离超平面</li>
+</ul>
+<p><strong>感知机如何找到分离超平面？</strong></p>
+<ul>
+<li>
+<p>定义目标函数，优化求解</p>
+<p>对分类超平面 $ f(x_i)=w^\top x+b$</p>
+<ul>
+<li>初始化 <span class="math inline">\(w\)</span></li>
+<li>循环对每个样本执行
+<ul>
+<li><span class="math inline">\(\mathbf{w} \leftarrow \mathbf{w}+\alpha \operatorname{sign}\left(f\left(\mathbf{x}_{i}\right)\right) \mathbf{x}_{i}\)</span> 如果<span class="math inline">\(x_i\)</span> 被误分类</li>
+</ul>
+</li>
+<li>直到所有数据被正确分类</li>
+</ul>
+</li>
+</ul>
+<h4 id="最大间隔">最大间隔</h4>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425204823985-1608474288.png" alt=""></p>
+<p>对感知机来说，后三个超平面都是对应的解。显然最后一个是更优的解，但是感知机并不知道，SVM登场了。SVM说，既然间隔更大的超平面对应更优解，那我就计算间隔。</p>
+<p><strong>怎么计算间隔？</strong></p>
+<p>可以用点到直线距离，对超平面</p>
+<p><strong>如何找到最优超平面？</strong></p>
+<p>超平面和间隔是直接相关的。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205012791-2139910097.png" alt=""></p>
+<ul>
+<li>如果有一个超平面，可以根据样本计算间隔</li>
+<li>如果有两个超平面界定了一个间隔，我们可以找到第三个超平面</li>
+</ul>
+<p>所以 <strong>寻找最大间隔 = 寻找最优超平面</strong></p>
+<p><strong>如何找到最大间隔？</strong></p>
+<p>​	step1: 需要有label的数据集</p>
+<p>​	step2: 选择两个超平面划分数据，并且超平面之间没有数据</p>
+<p>​	step3: 最大化两个超平面之间的距离（即为间隔）</p>
+<p>说起来很简单，下面我们从数学角度看如何求解这一问题。</p>
+<ul>
+<li>
+<p>step1：数据集</p>
+<p>样本 <span class="math inline">\(x_i\)</span>，对应的label <span class="math inline">\(y_i\in \{-1,1\}\)</span>，含有 <span class="math inline">\(n\)</span> 个样本的数据集表示为 <span class="math inline">\(D\)</span></p>
+<p>$ D={(x_i,y_i)∣x_i∈R^p,y_i∈{−1,1}}$</p>
+</li>
+<li>
+<p>step2：选择两个超平面</p>
+<p>假设数据 <span class="math inline">\(D\)</span>是<strong>线性可分的</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205030342-1796575158.png" alt=""></p>
+<p>对于分类超平面 <span class="math inline">\(\bold w \cdot \bold x+b=0\)</span> , 记为<span class="math inline">\(H_0\)</span>，选择另外两个超平面<span class="math inline">\(H_1，H_2\)</span> ，满足<span class="math inline">\(H_0\)</span>到<span class="math inline">\(H_1\)</span> 和 <span class="math inline">\(H_2\)</span>等距，分别定义如下：</p>
+<p><div class="math display">\[\bold w \cdot \bold x+b = \delta\\
+\bold w \cdot \bold x+b = -\delta
+\]</div></p><p>但是 <span class="math inline">\(\delta\)</span> 是多少？不确定。为了简化问题，我们假设 <span class="math inline">\(\delta=1\)</span> ，为了确保两个超平面之间没有数据，必须满足以下约束：</p>
+<p><div class="math display">\[\bold w \cdot \bold x_i+b≥1,\qquad if \ y_i =1\\
+\bold w \cdot \bold x_i+b≤−1,\quad if \ y_i=-1
+\tag{1}
+\]</div></p><p>将式(1) 两边同时乘以 <span class="math inline">\(y_i\)</span>:</p>
+<p><div class="math display">\[\bold y_i(\bold w \cdot \bold x_i+b)\geq 1,\qquad for \ 1 \leq i \leq n\tag{2}
+\]</div></p></li>
+<li>
+<p>step3: 最大化两个超平面之间的距离</p>
+<p>最大化两个超平面之间距离，怎么计算距离？怎么最大化距离？</p>
+<p><strong>如何计算两个超平面之间距离？</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205112669-820004639.png" alt=""></p>
+<p>记 <span class="math inline">\(H_0,H_1\)</span> 分别为 <span class="math inline">\(\bold w \cdot \bold x+b=1,\bold w \cdot \bold x+b=−1\)</span></p>
+<p>假如 <span class="math inline">\(x_0\)</span> 为线上的点，<span class="math inline">\(m\)</span> 记为两线间距离。我们的目标：<strong>求 $ m$</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205128777-358122363.png" alt=""></p>
+<p>如果存在一个向量 <span class="math inline">\(\bold k\)</span> ,  满足 <span class="math inline">\(||\bold k||=m\)</span> ，同时垂直于 <span class="math inline">\(H_1\)</span>，我们就能在 <span class="math inline">\(H_1\)</span> 找到对应的点 <span class="math inline">\(z_0\)</span>。现在我们看看怎么找这个点？</p>
+<p>首先定义 <span class="math inline">\(\bold u = \frac{\bold w}{\bold{||w||}}\)</span> 为 <span class="math inline">\(\bold w\)</span> 的单位向量，单位向量模长等于1，即<span class="math inline">\(\bold{||u||}=1\)</span>。对一个标量乘以一个向量得到的结果是向量，所以我们将 <span class="math inline">\(m\)</span> 和单位向量 <span class="math inline">\(\bold{||u||}\)</span> 的乘积记为<span class="math inline">\(\bold k\)</span>。</p>
+<p><div class="math display">\[\bold k = m\bold u=m \frac{\bold w}{\bold{||w||}}
+\]</div></p><p>根据向量加法 <span class="math inline">\(\bold z_0 = \bold x_0 + \bold k\)</span>，如上图。我们找到了<span class="math inline">\(\bold x_0\)</span> 对应的 <span class="math inline">\(\bold {z_0}\)</span>。现在</p>
+<p><div class="math display">\[\bold w \cdot \bold{z_0}+b=1 \\
+\bold w \cdot (\bold{x_0+k})+b=1 \\
+\bold w \cdot (\bold{x_0}+m \frac{\bold w}{\bold{||w||}})+b=1 \\
+\bold w \cdot \bold{x_0}+m \frac{\bold {w \cdot w}} {\bold{||w||}}+b=1 \\
+\bold w \cdot \bold{x_0}+m \frac{\bold {||w||^2 }} {\bold{||w||}}+b=1 \\
+\bold w \cdot \bold{x_0}+m  {\bold{||w||}}+b=1 \\
+\bold w \cdot \bold{x_0}+b=1-m  {\bold{||w||}} \\
+\]</div></p><p>因为 <span class="math inline">\(\bold w \cdot \bold x_0+b=−1\)</span>,所以</p>
+<p><div class="math display">\[-1 = 1-m  {\bold{||w||}} \\
+m  {\bold{||w||}} = 2 \\
+m = \frac{2}{\bold{||w||}}
+\tag{3}
+\]</div></p><p>我们计算出了 <span class="math inline">\(m\)</span> ！！！两个超平面之间的距离。</p>
+<p><strong>最大化间隔</strong></p>
+<p>上面我们只做了一件事，计算间隔。现在我们看看怎么最大化它</p>
+<p>显然上述问题等价于：</p>
+<p><div class="math display">\[minmize \  \bold{||w||} \\s.t.\quad y_i(\bold{w \cdot x_i}+b） \geq 1 \quad for \ i=1,2,\cdots,n\tag{4}
+\]</div></p><p>求解上述问题，得到最优解，我们就找到了最优超平面。</p>
+</li>
+</ul>
+<h4 id="最大间隔的数学解">最大间隔的数学解</h4>
+<p>再探问题(4)，这是一个带不等式约束的最优化问题，而且是 <span class="math inline">\(n\)</span> 个约束（<span class="math inline">\(n\)</span> 个点都需要满足）。这个问题很头疼，好吧。我们先偷个懒，如果是无约束问题怎么求。</p>
+<ul>
+<li>
+<p>无约束问题最小化</p>
+<p>对无约束问题，表示为 <span class="math inline">\(f(\bold w)=\bold{||w||}\)</span>，我们如何求函数 <span class="math inline">\(f\)</span> 的局部极小值？求导。</p>
+<p>如果<span class="math inline">\(f\)</span> 二阶可导，在点 <span class="math inline">\(\bold x^*\)</span> 满足 <span class="math inline">\(\partial f(\bold x∗)=0, \partial^2f(\bold x^*)&gt;0\)</span>，则在 <span class="math inline">\(\bold {x}^*\)</span> 处函数取极小值。注意：<span class="math inline">\(\bold x\)</span> 是一个向量，导数为0，对应每个维度皆为0。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205150647-741395459.png" alt=""></p>
+<p>对于无约束最小值为0，等式约束下最小值为4。</p>
+</li>
+<li>
+<p>等式约束</p>
+<ul>
+<li>
+<p>单个约束</p>
+<p>假如有等式约束问题如下</p>
+<p><div class="math display">\[\begin{array}{ll}
+\underset{x}{\operatorname{minimize}} &amp; f(x) \\
+\text { subject to } &amp; g(x)=0
+\end{array}
+\]</div></p><p>上面的问题相当于定义了一个可行域，使得解只能在可行域内。上图中表示可行域只有一个点，因此问题很简单。</p>
+</li>
+<li>
+<p>多个约束</p>
+<p>对于带有多个等式约束的问题，所有的约束必须都满足</p>
+<p><div class="math display">\[\begin{array}{cl}\underset{\mathbf{x}}{\operatorname{minimize}} &amp; f(\mathbf{x}) \\\text { subject to } &amp; g(\bold x)=0 \\&amp; h(\mathbf{x})=0\end{array}
+\]</div></p><p>上述等式约束问题怎么解？猜猜这是谁🙃</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205204840-472092999.png" alt=""></p>
+</li>
+</ul>
+<p><strong>拉格朗日乘法</strong></p>
+<blockquote>
+<p><em>In mathematical optimization, the method of Lagrange multipliers is a strategy for finding the local maxima and minima of a function subject to equality constraints. (</em><a href="https://en.wikipedia.org/wiki/Lagrange_multiplier">Wikipedia</a><em>)</em></p>
+</blockquote>
+<p>三步法：</p>
+<ol>
+<li>对每个约束乘以拉格朗日乘子，构建拉格朗日函数 <span class="math inline">\(L\)</span></li>
+<li>求拉格朗日函数梯度</li>
+<li>令梯度 <span class="math inline">\(\nabla L(\mathbf{x}, \alpha)=0\)</span></li>
+</ol>
+<p>为什么拉格朗日乘法可以解等式约束问题？我们来看看</p>
+<p><div class="math display">\[\begin{array}{ll}\underset{x, y}{\operatorname{minimize}} &amp; f(x, y)=x^{2}+y^{2} \\\text { subject to } &amp; g_{i}(x, y)=x+y-1=0\end{array}
+\]</div></p><p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205231371-1956571266.png" alt=""></p>
+<p>根据目标函数和约束函数，我们可以画出等高线</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205243121-87231050.png" alt=""></p>
+<p>将两张图合并到一起会发生什么（黑色箭头表示目标函数梯度方向，白色箭头表示约束函数梯度方向）</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205303601-612290662.png" alt=""></p>
+<p>回到约束函数 <span class="math inline">\(g(x,y)=x+y-1=0\)</span>，我们找一找它在哪，当<span class="math inline">\(x=0\)</span> 时 <span class="math inline">\(y=1\)</span>,当 <span class="math inline">\(y=0\)</span> 时<span class="math inline">\(x=1\)</span>，找到了，在这里</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205314971-97589908.png" alt=""></p>
+<p>发现什么了？目标函数在约束函数处的梯度方向相同！它们相切了，而且只有一个点处的梯度方向完全相同，这个点就是<strong>目标函数在约束下的的极小值</strong>。</p>
+<p>why？假如你处在上图最上面的箭头位置（值为 <span class="math inline">\(v\)</span>），在约束条件下，只能在蓝线上移动，你只能尝试向左或者向右找到更小的值。ok，先尝试向左走，发现值变大了（梯度方向也是左，梯度指向函数上升最快的方向），所以应该向右走，直到走到切点处。此时，发现无论向那个方向走，值都会变大，因此，你找到了极小值。</p>
+<ul>
+<li>
+<p>数学表示</p>
+<p>如何表达在极小值处，目标函数和约束函数梯度方向相同</p>
+<p><div class="math display">\[\nabla f(x, y)=\lambda \nabla g(x, y)
+\]</div></p><p>乘 <span class="math inline">\(\lambda\)</span> 干啥？因为他们只是梯度方向相同，大小不一定相等。 <span class="math inline">\(\lambda\)</span> 称为拉格朗日乘子。</p>
+<p>（注意 <span class="math inline">\(\lambda\)</span> 如果是负数，两个梯度方向变为平行，可以同时求极大极小值，<a href="https://en.wikipedia.org/wiki/Lagrange_multiplier">见例1</a>.)</p>
+</li>
+</ul>
+<p>现在我们知道拉格朗日乘法为什么可以求等式约束问题，那怎么求？</p>
+<ul>
+<li>
+<p>找到满足<span class="math inline">\(\nabla f(x, y)=\lambda \nabla g(x, y)\)</span> 的 <span class="math inline">\((x,y)\)</span></p>
+<p>显然，<span class="math inline">\(\nabla f(x, y) - \lambda \nabla g(x, y)=0\)</span>，定义函数 <span class="math inline">\(L\)</span> 有：</p>
+<p><div class="math display">\[L(x,y,\lambda ) = f(x,y)-\lambda g(x,y)
+\]</div></p><p>求导：</p>
+<p><div class="math display">\[\nabla L(x, y, \lambda)=\nabla f(x, y)-\lambda \nabla g(x, y)
+\]</div></p><p>当导数为0时就找到了对应 <span class="math inline">\(f\)</span> 和 <span class="math inline">\(g\)</span> 梯度方向平行的点。</p>
+</li>
+</ul>
+<p>回到定义，拉格朗日乘法<strong>只能解决等式约束问题</strong>，那对下面的不等式约束问题怎么办？</p>
+</li>
+<li>
+<p>不等式约束</p>
+<p><div class="math display">\[\begin{array}{cl}\underset{\mathbf{x}}{\operatorname{minimize}} &amp; f(\mathbf{x}) \\\text { subject to } &amp; g(\bold x) \geq0\end{array}
+\]</div></p><p>Don't worry! 总有办法🙃</p>
+<p>对不等式约束问题，同样可以使用拉格朗日乘数，满足如下条件：</p>
+<p><div class="math display">\[\begin{aligned}&amp;g(x) \geq 0 \Rightarrow \lambda \geq 0\\&amp;g(x) \leq 0 \Rightarrow \lambda \leq 0\\&amp;g(x)=0 \Rightarrow \lambda \text { is unconstrained }\end{aligned}
+\]</div></p><p>为什么呢？因为可行域。看图就知道了，在等式约束部分<span class="math inline">\(x+y-1=0\)</span> 时，可行域在直线上；当<span class="math inline">\(x+y-1 \geq 0\)</span> 时，可行域在右上角，<span class="math inline">\(\lambda\)</span> 大于0表示梯度方向指向可行域；同理可知小于等于的情况。然后和等式约束求解过程一样就可以了。关于拉格朗日对约束问题例子，推荐阅读[3].</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205343211-1755706528.png" alt=""></p>
+<p>我们在来看看<strong>对偶问题</strong>。</p>
+<ul>
+<li>
+<p>对偶问题</p>
+<blockquote>
+<p><em>In mathematical optimization theory,</em> <strong>duality</strong> <em>means that optimization problems may be viewed from either of two perspectives, the primal problem or the dual problem (</em><strong>the duality principle</strong>). The solution to the dual problem provides a lower bound to the solution of the primal (minimization) problem.  (<em><a href="https://en.wikipedia.org/wiki/Duality_(optimization)">Wikipedia</a></em>)</p>
+</blockquote>
+<p>“对偶问题是原问题的下界”，<strong>下界是啥？</strong>😖</p>
+<blockquote>
+<p>给定一个部分有序集合 <span class="math inline">\(R\)</span> ，如果存在一个元素小于或等于 <span class="math inline">\(R\)</span> 的子集的每个元素，该元素就可以称为下界。<a href="https://baike.baidu.com/item/%E4%B8%8B%E7%95%8C/17503606">百度百科</a></p>
+</blockquote>
+<p>举个栗子：</p>
+<p>给定 <span class="math inline">\(R\)</span> 的一个子集：<span class="math inline">\(S = \{2,4,8,12\}\)</span></p>
+<pre><code>1.  1 小于 $S$ 中每个元素， 1 可以是一个下界
+2.  2 小于等于$S$ 中每个元素， 2 也可以是一个下界
+</code></pre>
+<p>由于 2 大于其他的下界，被称为 <strong>下确界</strong> （最大下界）。下界有无穷个，但最大下界是唯一的。</p>
+<p><strong>回到对偶问题</strong></p>
+<p>如果原问题是一个极小问题，对偶问题可以将其转化为求极大问题。<strong>极大问题的解就对应原极小问题的下界</strong>。有点不解其意，继续看👇</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205357662-830719188.png" alt=""></p>
+<p>上图原问题是一个极小问题， <span class="math inline">\(P\)</span>  是极小点。对偶问题是一个极大问题， <span class="math inline">\(D\)</span> 是极大点。很明显， <span class="math inline">\(D\)</span> 是一个下界。 <span class="math inline">\(P-D\)</span> 被称为对偶间隔，如果 <span class="math inline">\(P-D&gt;0\)</span> 对应弱对偶性。如果 <span class="math inline">\(P-D=0\)</span> 对应强对偶性。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1043283/202004/1043283-20200425205407816-1623016169.png" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="回到svm最优化问题">回到SVM最优化问题</h4>
+<p>为了求解方便，将等式(4)改写为凸二次型优化问题(convex quadratic optimization problem)，</p>
+<p><div class="math display">\[\begin{aligned}&amp;\underset{\mathbf{w}, b}{\operatorname{minimize}} \frac{1}{2}\|\mathbf{w}\|^{2}\\&amp;\text { subject to } y_{i}\left(\mathbf{w} \cdot \mathbf{x}_{i}\right)+b-1 \geq 0, \quad i=1, \ldots, m\end{aligned}\tag{5}
+\]</div></p><p>根据拉格朗日乘数法：</p>
+<p><div class="math display">\[\mathcal{L}(\mathbf{w}, b, \alpha)= \frac{1}{2}\|\mathbf{w}\|^{2}-\sum_{i=1}^{m} \alpha_{i}\left[y_{i}\left(\mathbf{w} \cdot \mathbf{x}_{i}+b\right)-1\right]\\= \frac{1}{2}\mathbf{w}\mathbf{w}-\sum_{i=1}^{m} \alpha_{i}\left[y_{i}\left(\mathbf{w} \cdot \mathbf{x}_{i}+b\right)-1\right]\tag{6}
+\]</div></p><p>可以转化为：</p>
+<p><div class="math display">\[\begin{aligned}&amp;\min _{\mathbf{w}, b} \max _{\alpha} \mathcal{L}(\mathbf{w}, b, \alpha)\\&amp;\text { subject to } \quad \alpha_{i} \geq 0, \quad i=1, \ldots, m\end{aligned}
+\]</div></p><p>为什么原问题变成极大极小问题了？这里有多个解释，直观来看，我们要$ min \ \mathcal{L}(\mathbf{w}, b, \alpha)$ ，由于后一项 <span class="math inline">\(\alpha &gt;0,y_{i}\left(\mathbf{w} \cdot \mathbf{x}_{i}+b\right)-1 \geq0\)</span>，正数减正数，后一项越大对应整体值越小。</p>
+<p>求解上述极大极小问题，求导：</p>
+<p><div class="math display">\[\nabla \bold w L = \bold w- \sum_{i=1}^{m} \alpha_{i}y_{i}\mathbf{x}_{i}=0\\\frac{\partial L} {\partial b} = - \sum_{i=1}^{m} \alpha_{i}y_{i}=0\tag{7}
+\]</div></p><p>将（7）带回到（6）</p>
+<p><div class="math display">\[\begin{aligned}&amp;\frac{1}{2}\sum_{i=1}^{m} \alpha_{i}y_{i}\mathbf{x}_{i}\sum_{j=1}^{m} \alpha_{i}y_{i}\mathbf{x}_{i}-\sum_{i=1}^{m} \alpha_{i}\left[y_{i}\left((\sum_{j=1}^{m} \alpha_{i}y_{i}\mathbf{x}_{i}) \cdot \mathbf{x}_{i}+b\right)-1\right]\\&amp;=\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_jy_{i}y_j\mathbf{x}_{i}\mathbf{x}_{j}-\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_jy_{i}y_j\mathbf{x}_{i}\mathbf{x}_{j}-b\sum_{i=1}^{m}\alpha_{i}y_{i}+\sum_{i=1}^{m}\alpha_{i}\\&amp;=\sum_{i=1}^{m}\alpha_{i}-\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_jy_{i}y_j\mathbf{x}_{i}\mathbf{x}_{j}-b\sum_{i=1}^{m}\alpha_{i}y_{i}\\&amp;=\sum_{i=1}^{m}\alpha_{i}-\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_jy_{i}y_j\mathbf{x}_{i}\mathbf{x}_{j}\end{aligned}
+\]</div></p><p>只剩下 <span class="math inline">\(\alpha\)</span> 了， 根据<strong>Wolfe dual problem</strong>:</p>
+<p><div class="math display">\[\underset{\alpha}{maxmize}=\sum_{i=1}^{m}\alpha_{i}-\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_jy_{i}y_j\mathbf{x}_{i}\mathbf{x}_{j}\\s.t.\ \alpha_i \geq0\\\sum_{i=1}^{m} \alpha_{i}y_{i}=0\tag{8}
+\]</div></p><ul>
+<li>KKT 条件</li>
+</ul>
+<blockquote>
+<p>The KKT conditions are first-order <strong>necessary</strong> conditions for a solution of an optimization problem to be optimal</p>
+</blockquote>
+<p><div class="math display">\[\nabla \bold w L = \bold w- \sum_{i=1}^{m} \alpha_{i}y_{i}\mathbf{x}_{i}=0\\\frac{\partial L} {\partial b} = - \sum_{i=1}^{m} \alpha_{i}y_{i}=0\\y_{i}\left(\mathbf{w} \cdot \mathbf{x}_{i}\right)+b-1 \geq 0, \quad i=1, \ldots, m\\\alpha_i \geq0\\\alpha_i [y_{i}\left(\mathbf{w} \cdot \mathbf{x}_{i}\right)+b-1]=0
+\]</div></p><p><strong>回到式（8）</strong>，同乘 -1 转化为极小问题</p>
+<p><div class="math display">\[\underset{\alpha}{minmize}=\frac{1}{2}\sum_{i=1}^{m}\sum_{j=1}^{m}\alpha_{i}\alpha_jy_{i}y_j\mathbf{x}_{i}\mathbf{x}_{j} - \sum_{i=1}^{m}\alpha_{i}\\s.t.\ \alpha_i \leq0\\\sum_{i=1}^{m} \alpha_{i}y_{i}=0\tag{9}
+\]</div></p><p>到此为止，我们只是给出了SVM最大间隔的目标函数，如何优化求解，引入软间隔，核方法，敬请期待。</p>
+<p>欢迎留言🙃</p>
+<p>references：</p>
+<p>[1] <a href="http://www.robots.ox.ac.uk/~az/lectures/ml/lect2.pdf">http://www.robots.ox.ac.uk/~az/lectures/ml/lect2.pdf</a></p>
+<p>[2] <a href="https://www.svm-tutorial.com/">https://www.svm-tutorial.com/</a></p>
+<p>[3] <a href="http://www.engr.mun.ca/~baxter/Publications/LagrangeForSVMs.pdf">http://www.engr.mun.ca/~baxter/Publications/LagrangeForSVMs.pdf</a></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 21:00</span>&nbsp;
+<a href="https://www.cnblogs.com/gongyanzh/">周若梣</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775231" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12775231);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 567347, cb_blogApp = 'gongyanzh', cb_blogUserGuid = 'a0b3da17-b692-e611-845c-ac853d9f53ac';
+    var cb_entryId = 12775231, cb_entryCreatedDate = '2020-04-25 21:00', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 周若梣
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

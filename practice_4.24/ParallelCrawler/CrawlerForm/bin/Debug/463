@@ -1,0 +1,1451 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>jstarseven - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jstarseven/custom.css?v=&#x2B;ZbMu/Wm9kZoWFdM1tWMgt3&#x2B;Z6Q=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jstarseven/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jstarseven/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jstarseven/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 199051;
+        var currentBlogApp = 'jstarseven';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jstarseven/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jstarseven/">jstarseven </a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jstarseven/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/jstarseven">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jstarseven/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+151&nbsp; </span>
+<span id="stats_article_count">文章 - 
+22&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+84</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12765251.html">
+    《闲扯Redis五》List数据类型底层之quicklist
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 Redis 提供了5种数据类型：String（字符串）、Hash（哈希）、List（列表）、Set（集合）、Zset（有序集合），理解每种数据类型的特点对于redis的开发和运维非常重要。 原文解析 ![Redis五种数据类型][1] Redis 中的 list 是我们经常使用到的一种数据            <a href="https://www.cnblogs.com/jstarseven/p/12765251.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 09:11 jstarseven 阅读 (140) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765251" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12720551.html">
+    【SQL调优】同事追着我骂，只因一句祖传SQL代码
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 每个程序员的身上，都背负着几行祖传代码，这些代码，没有注释，令人久久寻味 这不就在前几天，上家公司的同事突然找到我，晒出了我的一句祖传 sql..... 原文解析 ![sql][1] 二、情节对话 图1：![sql][2] 图2：![sql][3] 说实话，当时看到这句sql的时候，我的心            <a href="https://www.cnblogs.com/jstarseven/p/12720551.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 16:02 jstarseven 阅读 (35) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720551" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12720159.html">
+    《七哥说道》第二十一章：此地一为别，孤蓬万里征
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：【备注】：《七哥说道》系列文章由博主的北漂经历改编而成，内容真实，文中观点仅代表个人拙见。![七哥说道][1] 原文解析 青山横北郭，白水绕东城。 此地一为别，孤蓬万里征。 浮云游子意，落日故人情。 挥手自兹去，萧萧班马鸣。 平西王府，从15年刚来北京到现在，我在这里足足住了一年半的时间，我也从刚开            <a href="https://www.cnblogs.com/jstarseven/p/12720159.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 15:13 jstarseven 阅读 (8) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720159" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12720040.html">
+    《七哥说道》第二十章：爬虫一时爽，泪水洒在互联网
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：【备注】：《七哥说道》系列文章由博主的北漂经历改编而成，内容真实，文中观点仅代表个人拙见。![七哥说道][1] 原文解析 格子衫，双肩电脑包，是很多人对程序员的印象，其实程序员也分很多种的，按照分工的不同有前端开发工程师，服务端开发工程师，爬虫工程师，数据分析工程师，AI工程师等等。另外根据语言不同            <a href="https://www.cnblogs.com/jstarseven/p/12720040.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 14:57 jstarseven 阅读 (16) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720040" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12719841.html">
+    《七哥说道》第十九章：起航，成长，知遇恩
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：【备注】：《七哥说道》系列文章由博主的北漂经历改编而成，内容真实，文中观点仅代表个人拙见。![七哥说道][1] 原文解析 入职了这家网络安全的公司，可以说是我作为程序员工作的一个新的起点，新的技术，新的挑战，新的朋友，一切都是值得说道的事情。 面试我的老哥，就是我的领导，是事业部的研发经理，我们平时            <a href="https://www.cnblogs.com/jstarseven/p/12719841.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 14:35 jstarseven 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12719841" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12719681.html">
+    《七哥说道》第十八章：何处不风雨，套路说江湖
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：【备注】：《七哥说道》系列文章由博主的北漂经历改编而成，内容真实，文中观点仅代表个人拙见。![七哥说道][1] 原文解析 晃晃悠悠，我开始了自己再一次的找工作之旅，这一次真的不是一穷二白了，也不是什么也不会了，我是个自己眼里的码场老油条了，哈哈哈！来吧，看看自己可以飞多高，我这个应届生！ 这一次，我            <a href="https://www.cnblogs.com/jstarseven/p/12719681.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 14:15 jstarseven 阅读 (6) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12719681" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12718449.html">
+    《七哥说道》第十七章：北漂青年，人海茫茫
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：【备注】：《七哥说道》系列文章由博主的北漂经历改编而成，内容真实，文中观点仅代表个人拙见。![七哥说道][1] 原文解析 生活，就是这样，你会遇到很多的人，你也会不断的成长，也会不断的遇到各种困难与挑战，但是结果怎么样，还是要看你自己，毕竟命运掌握在你自己的手中。 茫茫人海，北漂的人越来越多，熟悉的            <a href="https://www.cnblogs.com/jstarseven/p/12718449.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 10:58 jstarseven 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12718449" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12703628.html">
+    《闲扯Redis四》List数据类型底层编码转换
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 Redis 提供了5种数据类型：String（字符串）、Hash（哈希）、List（列表）、Set（集合）、Zset（有序集合），理解每种数据类型的特点对于redis的开发和运维非常重要。 原文解析 ![Redis五种数据类型][1] Redis 中的 list 是我们经常使用到的一种数据            <a href="https://www.cnblogs.com/jstarseven/p/12703628.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 10:32 jstarseven 阅读 (42) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12703628" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2020/04/02.html">2020年4月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12620929.html">
+    《闲扯Redis三》Redis五种数据类型之List型
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 Redis 提供了5种数据类型：String（字符串）、Hash（哈希）、List（列表）、Set（集合）、Zset（有序集合），理解每种数据类型的特点对于redis的开发和运维非常重要。 原文解析 ![Redis五种数据类型][2] Redis 中的 list 是我们经常使用到的一种数据            <a href="https://www.cnblogs.com/jstarseven/p/12620929.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-02 16:55 jstarseven 阅读 (205) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12620929" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2020/03/28.html">2020年3月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12586680.html">
+    《闲扯Redis二》String数据类型之底层解析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处 ： &quot;http://www.yund.tech/zdetail.html?type=1&amp;id=585ee331353551a44b29a9e9a09a1570&quot; 作者 : jstarseven 一、前言 Redis 提供了5种数据类型：String（字符串）、Hash（哈希）、List（列            <a href="https://www.cnblogs.com/jstarseven/p/12586680.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-28 13:19 jstarseven 阅读 (39) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12586680" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12586147.html">
+    《闲扯Redis一》五种数据类型之String型
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、前言 Redis 提供了5种数据类型：String（字符串）、Hash（哈希）、List（列表）、Set（集合）、Zset（有序集合），理解每种数据类型的特点对于redis的开发和运维非常重要。 原文解析 ![Redis五种数据类型][1] String 是Redis的最基本的数据类型，可以理解            <a href="https://www.cnblogs.com/jstarseven/p/12586147.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-28 13:17 jstarseven 阅读 (64) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12586147" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2020/03/24.html">2020年3月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12556791.html">
+    Js解析Json数据获取元素JsonPath与深度
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：JsonPath 是一种信息抽取类库，是从JSON文档中抽取指定信息的工具，提供多种语言实现版本，包括：Javascript, Python， PHP 和 Java，JsonPath 对于 JSON 来说，相当于 XPATH 对于 XML。 （一）JsonPath与Xpath用法对比 （二）Java            <a href="https://www.cnblogs.com/jstarseven/p/12556791.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-24 09:29 jstarseven 阅读 (58) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12556791" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2020/03/17.html">2020年3月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/12509910.html">
+    《七哥说道》第十六章：程序员，江湖见
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=08b7d6ebc49bfe37c3458cc8b1fe7879 作者：jstarseven 2016年6月29日，还是熟悉的早晨，熟悉的站点，我和大志远再一次抵达了这个让无数人充满了梦想的地方，北京！            <a href="https://www.cnblogs.com/jstarseven/p/12509910.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-17 12:47 jstarseven 阅读 (19) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12509910" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/11/04.html">2019年11月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11778377.html">
+    Swagger2.9.2进入API界面报NumberFormatException异常
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=dc9ac5bfa5b4d6348cb7e15e4edc3600 作者：jstarseven 问题发现 Swagger2.9.2版本,在访问swagger首页的时候，控制台报错。 1 WARN 1969            <a href="https://www.cnblogs.com/jstarseven/p/11778377.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-04 09:08 jstarseven 阅读 (428) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11778377" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/09/20.html">2019年9月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11556949.html">
+    绝顶高手必经之路【资源共享】
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=2&amp;id=b70fae0b30c711174c2237222208819c 作者：jstarseven Mysql、Mycat、Redis、Mongodb、Shrio、ElasticSearch、Webservi            <a href="https://www.cnblogs.com/jstarseven/p/11556949.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-20 14:28 jstarseven 阅读 (83) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11556949" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/09/12.html">2019年9月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11509884.html">
+    Springboot集成swagger2生成接口文档
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=89322e28b75270c682abc576595967d4 作者：jstarseven Swagger介绍 Swagger是一个规范和完整的框架，用于生成、描述、调用和可视化RESTful风格的w            <a href="https://www.cnblogs.com/jstarseven/p/11509884.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-12 08:26 jstarseven 阅读 (690) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11509884" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/09/04.html">2019年9月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11458919.html">
+    Springboot Swagger2注解使用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=049e22cf81459f81e69da527f3d4e06b 作者：jstarseven swagger2 注解整体说明 1 @Api：用在请求的类上，表示对类的说明 2 tags=&quot;说明该类的作用            <a href="https://www.cnblogs.com/jstarseven/p/11458919.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-09-04 14:27 jstarseven 阅读 (976) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11458919" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/08/28.html">2019年8月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11425071.html">
+    Hbase（一）了解Hbase与Phoenix
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 HBase是一个分布式的、面向列的开源数据库，该技术来源于 Fay Chang 所撰写的Google论文“Bigtable：一个结构化数据的分布式存储系统”。就像Bigtable利用了Google文件系统（File System）所提供的分布式数据存储一样，HBase在Hadoop之上提供了类            <a href="https://www.cnblogs.com/jstarseven/p/11425071.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-28 16:57 jstarseven 阅读 (437) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11425071" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/08/23.html">2019年8月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11399251.html">
+    写个shell脚本搭载jenkins让你的程序部署飞起来
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=52dfecbd218d2c2406ea31efa65f65ad 作者：jstarseven 说明：java程序部署是简单的，尤其是springboot普遍化使用以后，很多应用均采用jar方式部署 启动            <a href="https://www.cnblogs.com/jstarseven/p/11399251.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-23 15:34 jstarseven 阅读 (829) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11399251" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/08/16.html">2019年8月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11364852.html">
+    centos7单机安装kafka，进行生产者消费者测试
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=3028469704c7976aef5b824811dd3bf5 作者：jstarseven 一、kafka介绍 Kafka是最初由Linkedin公司开发，是一个分布式、分区的、多副本的、多订阅者，基            <a href="https://www.cnblogs.com/jstarseven/p/11364852.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-16 16:42 jstarseven 阅读 (1126) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11364852" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/08/14.html">2019年8月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11351446.html">
+    Notepad++使用NppFTP插件编辑linux上的文件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=e1c16a10b7bd14fa92ccb533a3294c08 作者：jstarseven 一、Notepad++安装NppFTP插件 点击上图的”Show Plugin Manager”之后，会弹出            <a href="https://www.cnblogs.com/jstarseven/p/11351446.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-14 13:44 jstarseven 阅读 (195) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11351446" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/07/31.html">2019年7月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11276073.html">
+    Maven私服配置Setting和Pom文件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=3688b5fa1f7d7df8b183ad8c9503546d 作者：jstarseven 上一遍博客已经在linux服务器上，搭建好nexus私服了 现在就需要配置setting.xml和pom.x            <a href="https://www.cnblogs.com/jstarseven/p/11276073.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-31 14:29 jstarseven 阅读 (309) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11276073" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11276051.html">
+    Linux搭建Nexus3.X构建maven私服
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=4845e7e60a03d871e6960a99a7abbc84 作者：jstarseven 备注:linux版本: ubuntu 同时已经部署好JDK8环境 一、linux安装nexus 1、创建文件            <a href="https://www.cnblogs.com/jstarseven/p/11276051.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-31 14:25 jstarseven 阅读 (894) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11276051" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/06/25.html">2019年6月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11087157.html">
+    Springboot 启动原理详细解析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=1&amp;id=2b2a032bd98dfeb5e4113ef6624722d2 作者：jstarseven 我们开发任何一个Spring Boot项目，都会用到如下的启动类 1 @SpringBootApplicat            <a href="https://www.cnblogs.com/jstarseven/p/11087157.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-06-25 22:39 jstarseven 阅读 (6376) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11087157" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/06/22.html">2019年6月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11070755.html">
+    《七哥说道》第十五章：时光不易，远行
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=17282adb36c34c0c91586e9c389bc85e 作者：jstarseven 流光容易把人抛，红了樱桃，绿了芭蕉。 四年的时光，转瞬即逝，仿佛就像是在昨天，青春没有后悔，只有念想。离开大            <a href="https://www.cnblogs.com/jstarseven/p/11070755.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-06-22 22:45 jstarseven 阅读 (74) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11070755" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/06/17.html">2019年6月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11041729.html">
+    《七哥说道》第十四章：趁着夏天还在，回校园
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=2ed0e701027478fdf32d11a182320a92 作者：jstarseven 【题外话】： 本章将继续时间线往下写，水平有限，怕大家看晕了，理一下，哈哈哈，时间点是实习结束准备回校。 曾            <a href="https://www.cnblogs.com/jstarseven/p/11041729.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-06-17 19:39 jstarseven 阅读 (94) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11041729" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/06/15.html">2019年6月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/11028110.html">
+    《七哥说道》第十三章：我的室友白羽鸡
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=a7f1cdf8da6cb4dec3c59f9bf4869c27 作者：jstarseven 【备注】：本章节内容为描述我的室友白羽鸡，未遵循时间线，下一章节会继续接着时间线写，本章内容穿插北漂开始至今            <a href="https://www.cnblogs.com/jstarseven/p/11028110.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-06-15 17:00 jstarseven 阅读 (75) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11028110" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/04/23.html">2019年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10755066.html">
+    《七哥说道》第十二章：稍息，窗外的都是兄弟
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=e1fa5c9752bfafd05360c114bed45013 作者：jstarseven 老板入狱小鸡晖流离失所，房东乱搞王阿侃呆若木鸡。 ——文豪白羽鸡 2016年，4月30日，伴着辞职时候的坚决            <a href="https://www.cnblogs.com/jstarseven/p/10755066.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-04-23 10:49 jstarseven 阅读 (143) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10755066" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/04/11.html">2019年4月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10687838.html">
+    《七哥说道》第十一章：自由在我，谢绝安排
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=4d72b464000f0df9b16607df0ae652ad 作者：jstarseven 原谅我一生放荡不羁爱自由，也会怕有一天会跌倒... 经历了寒冬之后，顶着无休止的加班，加班，虽然我没有变秃，            <a href="https://www.cnblogs.com/jstarseven/p/10687838.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-04-11 09:58 jstarseven 阅读 (433) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10687838" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/04/04.html">2019年4月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10654464.html">
+    《七哥说道》第十章：今天我，寒夜里看雪飘过
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=afd61d2bae63feb0902dc139e0d7eee1 作者：jstarseven “孤独的北方里，是你的坚强，流浪，期待一束温暖的阳光。” 转眼间入职这家小公司快两个月了，我一直在应对着反复            <a href="https://www.cnblogs.com/jstarseven/p/10654464.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-04-04 13:55 jstarseven 阅读 (585) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10654464" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/29.html">2019年3月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10619522.html">
+    重症不加班，程序员是时候为自己代言了
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：https://www.cnblogs.com/jstarseven/p/10619522.html 作者：jstarseven 短短几天的时间，全世界最大的程序员聚集地（同性交友网站）github上，996.ICU项目就star了6W+，战况还在愈演愈烈。 有人注册了996.icu这个域            <a href="https://www.cnblogs.com/jstarseven/p/10619522.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-29 10:17 jstarseven 阅读 (429) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10619522" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/28.html">2019年3月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10613493.html">
+    《七哥说道》第九章：骚年，请接好你的锅
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=c3ee4bca1baed58ced42b948a9a8f084 作者：jstarseven 早上出门的时候，还是艳阳高照，突然到了快要下班的时候，就下起了雨来，伴着大风，一阵一阵，似乎在告诉我今天有点            <a href="https://www.cnblogs.com/jstarseven/p/10613493.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-28 10:50 jstarseven 阅读 (402) 评论 (7)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10613493" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/27.html">2019年3月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10606320.html">
+    《七哥说道》第八章：约在410，北漂可还行？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=c700f131885d2a7e234a2aecde3cb64d 作者：jstarseven 推开窗，需要多大的勇气，熟悉的指引，陌生的门铃，那里便是410！ 穿过层层的小巷子，灯红酒绿的招牌，渐渐让人            <a href="https://www.cnblogs.com/jstarseven/p/10606320.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-27 11:28 jstarseven 阅读 (373) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10606320" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/21.html">2019年3月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10570047.html">
+    《七哥说道》第七章：流水的需求，铁打的程序员
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=82b5fab977446a2fb193155453edfc90 作者：jstarseven 杀死一个程序员不需要用枪，改三次需求就可以了。 “来来来，你把这个检索逻辑调整一下，把那个数据排序的规则改一            <a href="https://www.cnblogs.com/jstarseven/p/10570047.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-21 10:41 jstarseven 阅读 (191) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10570047" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/18.html">2019年3月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10553625.html">
+    《七哥说道》第六章：不见雪的冬天，耐人寻味
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=7a050e32b74e913c9a22da0ebb32dc43 作者：jstarseven ”&#160;看不见雪的冬天不夜的城市，我听见有人欢呼有人在哭泣。“ 转眼间，到北京都已经半年多了，我的第二份工作也在            <a href="https://www.cnblogs.com/jstarseven/p/10553625.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-18 17:37 jstarseven 阅读 (176) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10553625" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/14.html">2019年3月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10528922.html">
+    《七哥说道》第五章：入职惨做苦力，画饼一望无际
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=9a4a419e513cca9f502060a18d0bc034 作者：jstarseven “你是住在回龙观东大街附近吗，那先不急下班，一会我开车顺带你回去吧！&#160;” 第二家公司的老板，扭头看了一眼我的            <a href="https://www.cnblogs.com/jstarseven/p/10528922.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-14 11:06 jstarseven 阅读 (401) 评论 (6)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10528922" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/13.html">2019年3月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10521426.html">
+    《七哥说道》第四章：理想在远方，现实在流浪
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=90e7589c41c62172fad423bc888475aa 作者：jstarseven 本是追梦的年龄，又怎可过于安静，枉自蹉跎流光。 不知不觉，已经12月了，冬天了，天也冷了，还未下雪，不知北京            <a href="https://www.cnblogs.com/jstarseven/p/10521426.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-13 10:30 jstarseven 阅读 (232) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10521426" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/12.html">2019年3月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10517109.html">
+    《七哥说道》第三章：志远淋雨怒辞职，误入保险黄老萍
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=99a53a61a1d75d734b0bba965b3b395d 作者：jstarseven 【声明】本章内容由大志远和老萍编写素材，七哥整理而成，绝对真实。 第一章的时候说到，大志远在我还在找工作的时            <a href="https://www.cnblogs.com/jstarseven/p/10517109.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-12 15:41 jstarseven 阅读 (225) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10517109" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/09.html">2019年3月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10499659.html">
+    《七哥说道》第二章：初出茅庐之拜师学艺
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=8dd2a1cc14665fe8a0bd29165f12a1d7 作者：jstarseven 怀着对第一份工作的遐想，15年6月1号（儿童节啊），我开始了我的入职之旅。北京XX网络技术有限责任公司，一家            <a href="https://www.cnblogs.com/jstarseven/p/10499659.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-09 10:16 jstarseven 阅读 (335) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10499659" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jstarseven/archive/2019/03/08.html">2019年3月8日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jstarseven/p/10495406.html">
+    《七哥说道》第一章：风雨知秋之进城三人
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：&lt;&#160;编码之余，记录一下生活，写成小说分享，哈哈哈&gt; 原文出处：http://www.yund.tech/zdetail.html?type=3&amp;id=e80c1774435fa5a446f75501960cbcba 作者：jstarseven 15年的夏天过去的很快，大三的课程过的更快，即将要面临找            <a href="https://www.cnblogs.com/jstarseven/p/10495406.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-03-08 13:54 jstarseven 阅读 (1044) 评论 (23)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10495406" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/jstarseven/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 jstarseven
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

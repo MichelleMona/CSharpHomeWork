@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="always" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>其他分类 - 网站分类 - 博客园</title>
+    <link rel="shortcut icon" href="//common.cnblogs.com/favicon.ico" type="image/x-icon" />
+    <link rel="Stylesheet" type="text/css" href="/css/aggsite.min.css?v=FRR6qbd_vc7TQxxV0n1kBxwFAKoajo20N8gkufL2xuk" />
+        <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://feed.cnblogs.com/blog/sitecateogry/4/rss" />
+    <script src="//common.cnblogs.com/script/jquery.js" type="text/javascript"></script>
+    <script src="/js/aggsite.min.js?v=pF9WYZrlQXxT2TvAo3ctCaa3IJ8YXeHpSWGGmRU2OV8"></script>
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot('/1090369/A1', [468, 60], 'div-gpt-ad-1547816814884-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B1', [300, 250], 'div-gpt-ad-1546331539224-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B2', [300, 250], 'div-gpt-ad-1539007469525-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B3', [300, 250], 'div-gpt-ad-1546331252242-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/B4', [300, 250], 'div-gpt-ad-1546331385104-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+
+        /**/</script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="hd_info">
+            <div id="cnts">
+                <div id="site_nav_top">代码改变世界</div>
+                <div id="login_area"><span id="span_userinfo"></span></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div id="header">
+            <p class="h_r_3"></p><p class="h_r_2"></p><p class="h_r_1"></p>
+            <div id="header_block">
+                <div id="logo">
+                    <h1>
+                        <a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo_small.gif" alt="博客园Logo" width="142" height="55" /></a>
+                    </h1>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            <p class="h_r_1"></p><p class="h_r_2"></p><p class="h_r_3"></p>
+        </div>
+        <div id="nav_menu"><a href="https://home.cnblogs.com/">园子</a><a href="https://news.cnblogs.com">新闻</a><a href="https://q.cnblogs.com/">博问</a><a href="https://ing.cnblogs.com/">闪存</a><a href="https://group.cnblogs.com/">小组</a><a href="https://wz.cnblogs.com/">收藏</a><a href="https://job.cnblogs.com/">招聘</a><a href="https://edu.cnblogs.com/">班级</a><a href="http://zzk.cnblogs.com/">找找看</a></div>
+        <div id="main">
+            <div class="post_nav_block_wrapper">
+                <ul class="post_nav_block">
+                        <li><a href="/" class="" title="">首页</a></li>
+                        <li><a href="/cate/4/" class="current_nav" title="">其他分类</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div class="rss_link" id="rss_block">
+<span id="posts_refresh_tips"></span><a id="posts_refresh" href="#" class="refresh" title="刷新博文列表" onclick="aggSite.loadCategoryPostList();return false">刷新</a><a href="http://feed.cnblogs.com/blog/sitecateogry/4/rss"><img src="//common.cnblogs.com/images/icon_rss.gif" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章" /></a>            </div>
+                <div id="headline_block" class="headline"><ul><li class="editor_pick"><a href="https://www.cnblogs.com/zkweb/p/12761743.html" id="editor_pick_lnk" target="_blank">【编辑推荐】写给程序员的机器学习入门 - 线性模型，激活函数与多层线性模型<span id="editor_pick_count"></span></a> <a href="/aggsite/headline" title="查看更多编辑推荐" class="right_more">»</a></li><li><a href="https://www.cnblogs.com/tianqing/p/12764404.html" target="_blank" title="阅读1609, 评论9, 推荐31">[最多推荐]ASP.NET Core技术研究-全面认识Web服务器Kestrel(9/1609)</a> <a href="/aggsite/topdigged24h" title="查看24小时推荐排行" class="right_more">»</a></li><li><a href="https://www.cnblogs.com/huangxincheng/p/12764925.html" target="_blank" title="阅读1306, 评论29, 推荐22">[最多评论]用了这么多年的泛型，你对它到底有多了解？(29/1306)</a> <a href="/aggsite/topcommented24h" title="查看24小时评论排行" class="right_more">»</a></li><li><a href="https://news.cnblogs.com/n/660491/" target="_blank" title="阅读1283, 评论12, 推荐3">[新闻头条]人造肉的意义我们都懂，但它可能走错了路(12/1283)</a> <a href="https://news.cnblogs.com/" title="查看更多新闻" class="right_more">»</a></li><li><a href="https://news.cnblogs.com/n/660501/" target="_blank" title="阅读328, 评论0, 推荐7">[推荐新闻]新AI算法能监测全球海洋塑料垃圾，平均准确率达86%(0/328)</a> <a href="https://news.cnblogs.com/n/recommend" title="查看更多推荐新闻" class="right_more">»</a></li></ul></div>
+
+            <div id="pager_top" style="display:none"></div>
+            <div id="post_list_tips" class="hide"></div>
+            
+            <div id="post_list">
+                <div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('SSummerZzz',12769499,526432,1)"> 
+	<span class="diggnum" id="digg_count_12769499">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12769499" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/SSummerZzz/archive/2020/04/24/12769499.html" target="_blank">CF1312E（区间dp）</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/SSummerZzz/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1714202/20200121145147.png" alt=""/></a>    Array Shrinking 思路：可以看出是区间dp的问题，n = 500，刚好可以是O（n^3）。难点在于相邻数字合并的维护，这里我们可以定义一个二维的数组a[l][r]，表示L到R区间合并后的数字是a[l][r]，比如 3 3 3 a[1][2] = 4, a[2][3] = 4，然后dp[ ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/SSummerZzz/" class="lightblue">SummerMingQAQ</a> 
+    发布于 2020-04-24 19:10 
+    <span class="article_comment"><a href="https://www.cnblogs.com/SSummerZzz/archive/2020/04/24/12769499.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/SSummerZzz/archive/2020/04/24/12769499.html" class="gray">阅读(3)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('mysticbinary',12769187,479490,1)"> 
+	<span class="diggnum" id="digg_count_12769187">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12769187" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12769187.html" target="_blank">nmap 查看内网存活主机</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/mysticbinary/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1552062/20181202144547.png" alt=""/></a>    简单的方式 TCP方式扫描一个C段下的存活主机 速度快的方式 参考 https://www.jianshu.com/p/7a6b3a61678c?appinstall=0 https://www.cnblogs.com/ mo /p/11908260.html ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/mysticbinary/" class="lightblue">Mysticbinary</a> 
+    发布于 2020-04-24 18:09 
+    <span class="article_comment"><a href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12769187.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12769187.html" class="gray">阅读(7)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('xqy1874',12769065,596079,1)"> 
+	<span class="diggnum" id="digg_count_12769065">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12769065" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/xqy1874/archive/2020/04/24/12769065.html" target="_blank">数据结构（C语言版）---图</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/xqy1874/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/2007371/20200414153411.png" alt=""/></a>    1、图相关的专业术语 1）&lt;v,w&gt;：从v到w的一条弧，v表示弧尾，w表示弧头，有向弧。 2）(v,w)：无向弧。 3）有向图：有向边的有限集合。 4）无向图：无向边的有限集合。 5）简单图：不存在重复边，不存在顶点到自身的边。 6）多重图：图中某两个结点之间的边数多余一条，又允许顶点通过同一条边和 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/xqy1874/" class="lightblue">xqy1874</a> 
+    发布于 2020-04-24 17:47 
+    <span class="article_comment"><a href="https://www.cnblogs.com/xqy1874/archive/2020/04/24/12769065.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/xqy1874/archive/2020/04/24/12769065.html" class="gray">阅读(4)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('tiancaiwrk',12768608,479156,1)"> 
+	<span class="diggnum" id="digg_count_12768608">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12768608" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/tiancaiwrk/archive/2020/04/24/12768608.html" target="_blank">二维空间内的三角剖分2 -- (给出边缘顶点的例子)</a></h3>               	
+    <p class="post_item_summary">
+    之前的三角剖分, 居然弄的如此复杂, 再也不相信百度了...... 换一种思路, 首先给出的顶点是连续的顶点, 那么可以以一种农村包围城市的方法来划分, 我们只需要沿着顺序不断获取Pa, Pb, Pc三点, 然后检测他们是否构成三角形(不在一条直线上)并且没有其它顶点在三角形内, 然后通过剔除顶点的 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/tiancaiwrk/" class="lightblue">tiancaiKG</a> 
+    发布于 2020-04-24 16:58 
+    <span class="article_comment"><a href="https://www.cnblogs.com/tiancaiwrk/archive/2020/04/24/12768608.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/tiancaiwrk/archive/2020/04/24/12768608.html" class="gray">阅读(3)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('sup3rman',12767936,577908,1)"> 
+	<span class="diggnum" id="digg_count_12767936">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767936" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/sup3rman/archive/2020/04/24/12767936.html" target="_blank">文件上传方法总结</a></h3>               	
+    <p class="post_item_summary">
+    以upload-labs讲解 项目地址https://github.com/c0ny1/upload-labs/releases每道题都要通过上面这张图判断文件校验的方式，才能有大体绕过思路PASS 01 前端js校验尝试上传符合条件的文件，将一句话木马后缀改为jpg，抓包修改成php文件。PASS... ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/sup3rman/" class="lightblue">我要变超人</a> 
+    发布于 2020-04-24 15:50 
+    <span class="article_comment"><a href="https://www.cnblogs.com/sup3rman/archive/2020/04/24/12767936.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/sup3rman/archive/2020/04/24/12767936.html" class="gray">阅读(6)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('dongshenjun',12767676,534389,1)"> 
+	<span class="diggnum" id="digg_count_12767676">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767676" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/dongshenjun/archive/2020/04/24/12767676.html" target="_blank">C#设计模式学习笔记：简单工厂模式(工厂方法模式前奏篇)</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/dongshenjun/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1770563/20200109102455.png" alt=""/></a>    本笔记摘抄自：https://www.cnblogs.com/PatrickLiu/p/7551373.html，记录一下学习过程以备后续查用。 一、引言 简单工厂模式并不属于GoF23里面的设计模式，其实它属于一个过渡的模式，这个模式是为了引出下一篇要讲的模式：工厂模式。 二、简单工厂模式的介绍  ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/dongshenjun/" class="lightblue">东骧神骏</a> 
+    发布于 2020-04-24 15:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/dongshenjun/archive/2020/04/24/12767676.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/dongshenjun/archive/2020/04/24/12767676.html" class="gray">阅读(6)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('alannever',12767677,534362,1)"> 
+	<span class="diggnum" id="digg_count_12767677">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767677" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/alannever/archive/2020/04/24/12767677.html" target="_blank">基于WPF&amp;amp;Prism&amp;amp;AvalonEdit的XAML轻量编辑器</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/alannever/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1770536/20200109102438.png" alt=""/></a>    1. 写在前面 一直从事WPF的相关开发工作，有时为了尝试或演示某些仅仅基于XAML的效果时，但又不想大动干戈打开VS去创建项目，所以一个轻便简单，集编辑与预览于一身的XAML编辑器就显得格外重要。 Kaxaml，集编辑与预览，过去一直在使用，但苦于不知何原因，最近频频崩溃，虽然开源有代码可循，但也 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/alannever/" class="lightblue">AlanNever</a> 
+    发布于 2020-04-24 15:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/alannever/archive/2020/04/24/12767677.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/alannever/archive/2020/04/24/12767677.html" class="gray">阅读(4)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('mtxcat',12767678,534373,1)"> 
+	<span class="diggnum" id="digg_count_12767678">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767678" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/mtxcat/archive/2020/04/24/12767678.html" target="_blank">Linux下自动化部署ASP.NET CORE 3.1（Docker+Jenkins+Nginx）</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/mtxcat/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1770544/20200109101957.png" alt=""/></a>    1、先配置好Docker阿里云加速，可以使用阿里云容器服务 （可自己在阿里云申请，要不然安装东西直接很慢）注意：https://XXXX.mirror.aliyuncs.com为阿里云加速服务分配地址 sudo mkdir -p /etc/docker sudo tee /etc/docker/da ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/mtxcat/" class="lightblue">mtxcat</a> 
+    发布于 2020-04-24 15:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/mtxcat/archive/2020/04/24/12767678.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/mtxcat/archive/2020/04/24/12767678.html" class="gray">阅读(6)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('moon3',12767680,274944,1)"> 
+	<span class="diggnum" id="digg_count_12767680">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767680" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/moon3/archive/2020/04/24/12767680.html" target="_blank">C#实现DataTable转为Excel文件</a></h3>               	
+    <p class="post_item_summary">
+    实现DataTable转为Excel文件，和上次分享的Excel文件转为DataTable互为反操作。DataTable转化为Excel文件是通过传入一个DataTable类型的参数，然后将传入的DataTable转化为Excel文件。实现关键代码如下： public void ToExcel(Da ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/moon3/" class="lightblue">moon3</a> 
+    发布于 2020-04-24 15:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/moon3/archive/2020/04/24/12767680.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/moon3/archive/2020/04/24/12767680.html" class="gray">阅读(5)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('dearroy',12767681,534423,1)"> 
+	<span class="diggnum" id="digg_count_12767681">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767681" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/dearroy/archive/2020/04/24/12767681.html" target="_blank">[笔记]使用Docker部署.NET Core应用程序</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/dearroy/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1770658/20200109102610.png" alt=""/></a>    大概快有一年的时间没有碰过docker了，理由很简单，基本上都是在IIS上部署，看到很多大佬都开始Devops持续化集成了，还有就是用Linux守护进程很恶心，哈哈，但相对来说成本会更高，但对于大型团队来说还是不错的，这不?不想被大伙甩下，哈哈，赶紧捞回来点丢下的知识，这篇文章就算是对我自己的笔记吧 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/dearroy/" class="lightblue">dearroy</a> 
+    发布于 2020-04-24 15:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/dearroy/archive/2020/04/24/12767681.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/dearroy/archive/2020/04/24/12767681.html" class="gray">阅读(6)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('treeskyer',12767682,534374,1)"> 
+	<span class="diggnum" id="digg_count_12767682">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767682" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/treeskyer/archive/2020/04/24/12767682.html" target="_blank">C#设计模式学习笔记：(1)单例模式</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/treeskyer/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1770558/20200109102525.png" alt=""/></a>    本笔记摘抄自：https://www.cnblogs.com/PatrickLiu/p/8250985.html，记录一下学习过程以备后续查用。 一、引言 设计模式的分类： 1）依目的： 创建型（Creational）模式：负责对象创建 结构型（Structural）模式：处理类与对象间的组合 行为 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/treeskyer/" class="lightblue">treesky</a> 
+    发布于 2020-04-24 15:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/treeskyer/archive/2020/04/24/12767682.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/treeskyer/archive/2020/04/24/12767682.html" class="gray">阅读(4)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('etoumao',12767683,534419,1)"> 
+	<span class="diggnum" id="digg_count_12767683">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767683" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/etoumao/archive/2020/04/24/12767683.html" target="_blank">C#实现的对文件的重命名</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/etoumao/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1770596/20200109101306.png" alt=""/></a>    如下C#实现对文件的重命名的方法需要传入三个string类型的参数，分别是源文件的文件目录、目的文件目录和重命名的文件名称，实现代码如下： public ExecutionResult FileRename(string sourceFile, string destinationPath, str ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/etoumao/" class="lightblue">额头有王的喵</a> 
+    发布于 2020-04-24 15:21 
+    <span class="article_comment"><a href="https://www.cnblogs.com/etoumao/archive/2020/04/24/12767683.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/etoumao/archive/2020/04/24/12767683.html" class="gray">阅读(7)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('buyicoding',12767356,517367,1)"> 
+	<span class="diggnum" id="digg_count_12767356">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767356" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/buyicoding/archive/2020/04/24/12767356.html" target="_blank">图解Knative核心组件Serving基础设计</a></h3>               	
+    <p class="post_item_summary">
+    最近闲下来，打算把Knative的核心组件Serving给学习下，会继续采用k8s源码学习的方式，管中窥豹以小击大，学习serving的主要目标: 可观测性基础设施、自动伸缩、流量管理等核心组件的设计与实现，今天先简单臆测下，感兴趣的同学， 一起来学习吧 1. 基于云原生的单体应用构建 大多数公司的 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/buyicoding/" class="lightblue">8小时</a> 
+    发布于 2020-04-24 14:40 
+    <span class="article_comment"><a href="https://www.cnblogs.com/buyicoding/archive/2020/04/24/12767356.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/buyicoding/archive/2020/04/24/12767356.html" class="gray">阅读(26)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('mysticbinary',12767251,479490,1)"> 
+	<span class="diggnum" id="digg_count_12767251">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767251" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12767251.html" target="_blank">msf ms17_010 port:445</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/mysticbinary/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1552062/20181202144547.png" alt=""/></a>    命令： 打印结果： 利用永恒之蓝成功！但返回的只是一个cmdshell ; 因为msf默认用的paylaod是： 我们可以设置成其他payload: 只要设置 和`rport`就OK了; 运行，这个时候就反弹的就是一个meterpreter会话 （更强的payload）。 使用正向的payload也 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/mysticbinary/" class="lightblue">Mysticbinary</a> 
+    发布于 2020-04-24 14:28 
+    <span class="article_comment"><a href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12767251.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12767251.html" class="gray">阅读(9)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('mysticbinary',12767121,479490,1)"> 
+	<span class="diggnum" id="digg_count_12767121">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12767121" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12767121.html" target="_blank">nmap 检测ms17-010 port:445</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/mysticbinary/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1552062/20181202144547.png" alt=""/></a>    命令： 打印结果： x.x.x.x/24 = x.x.x.1~255 从结果可以看出，内网中192.168.119.139这台主机存在ms 17 010漏洞； 参考 https://cloud.tencent.com/developer/article/1541123 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/mysticbinary/" class="lightblue">Mysticbinary</a> 
+    发布于 2020-04-24 14:10 
+    <span class="article_comment"><a href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12767121.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/mysticbinary/archive/2020/04/24/12767121.html" class="gray">阅读(6)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('lori',12766900,67785,1)"> 
+	<span class="diggnum" id="digg_count_12766900">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12766900" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/lori/archive/2020/04/24/12766900.html" target="_blank">jenkins~多分支构建</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/lori/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/118538/20180819124909.png" alt=""/></a>    在使用jenkins进行自动化构建项目过程中，我们的快速迭代会使用不同的分支，而测试环境可能 就那么一个，这时我们如何去按着分支去构建一个项目呢？答案就是jenkins的参数化构建。 一 添加git parameters插件 二 配置项目的参数化构建 三 在构建的分支选择上，填写上面的名称，注意要加 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/lori/" class="lightblue">张占岭</a> 
+    发布于 2020-04-24 13:32 
+    <span class="article_comment"><a href="https://www.cnblogs.com/lori/archive/2020/04/24/12766900.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/lori/archive/2020/04/24/12766900.html" class="gray">阅读(14)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('edwinaze',12766563,592021,1)"> 
+	<span class="diggnum" id="digg_count_12766563">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12766563" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/edwinaze/archive/2020/04/24/12766563.html" target="_blank">day13 IP包头分析 | 路由器原理 1</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/edwinaze/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1992664/20200331221651.png" alt=""/></a>    [TOC] IP包头分析 图片及相关介绍 ：版本字段，IP v4 ：IP 包头部长度，因为长度可变，所以需要定义 ：TOS，一般用于运营商提供特权服务 ：IP 数据总长度 ：用来区分两个不相关的 IP 包 ：共三位二进制 第一位默认为 0，暂留位不启用。 第二位为 1 时表示 未分包，为 0 时表示 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/edwinaze/" class="lightblue">Edwin_Aze</a> 
+    发布于 2020-04-24 12:11 
+    <span class="article_comment"><a href="https://www.cnblogs.com/edwinaze/archive/2020/04/24/12766563.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/edwinaze/archive/2020/04/24/12766563.html" class="gray">阅读(8)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('Fannfiy',12660608,592905,1)"> 
+	<span class="diggnum" id="digg_count_12660608">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12660608" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/Fannfiy/archive/2020/04/24/12660608.html" target="_blank">安全性测试（机密性、完整性、可用性）</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/Fannfiy/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1995383/20200403133054.png" alt=""/></a>    1：SQL注入 把SQL命令插入Web表单提交或者输入域名或者页面请求的查询字符串 2：XSS跨网站攻击 注：程序或数据库没有对一些特殊字符进行过滤或处理，导致用户 所输入的一些破坏性的脚本语句能够直接写进数据库中，浏览器会直接执行这些脚本语句，破坏网站的正常显示，或网站用户的信息被盗,构造脚本语句 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/Fannfiy/" class="lightblue">指尖上的那本书</a> 
+    发布于 2020-04-24 10:01 
+    <span class="article_comment"><a href="https://www.cnblogs.com/Fannfiy/archive/2020/04/24/12660608.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/Fannfiy/archive/2020/04/24/12660608.html" class="gray">阅读(27)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('qing-gee',12765247,336754,1)"> 
+	<span class="diggnum" id="digg_count_12765247">12</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12765247" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/qing-gee/archive/2020/04/24/12765247.html" target="_blank">自学编程的 6 个致命误区</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/qing-gee/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1117051/20181113114236.png" alt=""/></a>    嗨，小伙伴们大家好，我是沉默王二。本篇文章来和大家聊聊自学编程中的一些误区——这是我在 B 站上看了羊哥的一期视频后有感而发的文章。因为确实有很多读者也曾私信问过我这些方面的问题，很有代表性，所以我就结合自己的亲身体会来谈一谈，希望对小伙伴们有所启发。 01、追求时髦 所谓基础不牢，地动山摇啊。可很 ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/qing-gee/" class="lightblue">沉默王二</a> 
+    发布于 2020-04-24 09:10 
+    <span class="article_comment"><a href="https://www.cnblogs.com/qing-gee/archive/2020/04/24/12765247.html#commentform" title="2020-04-24 11:05" class="gray">
+        评论(6)</a></span><span class="article_view"><a href="https://www.cnblogs.com/qing-gee/archive/2020/04/24/12765247.html" class="gray">阅读(705)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+<div class="post_item">
+<div class="digg">
+    <div class="diggit" onclick="DiggPost('createwell',12765105,534390,1)"> 
+	<span class="diggnum" id="digg_count_12765105">0</span>
+	</div>
+	<div class="clear"></div>
+    <div id="digg_tip_12765105" class="digg_tip">
+        
+    </div>
+</div>      
+<div class="post_item_body">
+	<h3><a class="titlelnk" href="https://www.cnblogs.com/createwell/archive/2020/04/24/12765105.html" target="_blank">Api跨域设置</a></h3>               	
+    <p class="post_item_summary">
+<a href="https://www.cnblogs.com/createwell/" target="_blank"><img width="48" height="48" class="pfs" src="https://pic.cnblogs.com/face/1770568/20200109101507.png" alt=""/></a>    跨域设置：（服务端） webconfig文件中，system.webServer节点下添加 &lt;!--跨域请求：三个配置信息--&gt; &lt;httpProtocol&gt; &lt;customHeaders&gt; &lt;!--响应类型 (值为逗号分隔的一个字符串，表明服务器支持的所有跨域请求的方法)--&gt; &lt;add name ...
+    </p>              
+    <div class="post_item_foot">                    
+    <a href="https://www.cnblogs.com/createwell/" class="lightblue">createwell</a> 
+    发布于 2020-04-24 08:20 
+    <span class="article_comment"><a href="https://www.cnblogs.com/createwell/archive/2020/04/24/12765105.html#commentform" title="0001-01-01 08:05" class="gray">
+        评论(0)</a></span><span class="article_view"><a href="https://www.cnblogs.com/createwell/archive/2020/04/24/12765105.html" class="gray">阅读(9)</a></span></div>
+</div>
+<div class="clear"></div>
+</div>
+   
+
+            </div>
+            <script>editorPickStat(); aggSite.user.getUserInfo();</script>
+            <script type="text/javascript">
+                var aggSiteModel = {"CategoryType":"TopSiteCategory","ParentCategoryId":0,"CategoryId":4,"PageIndex":1,"TotalPostCount":4000,"ItemListActionName":"AggSitePostList"};
+            </script>
+            <div id="pager_bottom"><div id="paging_block"><div class="pager"><a href="/cate/4/" class="p_1 current" onclick="aggSite.loadCategoryPostList(1,20);buildPaging(1);return false;">1</a><a href="/cate/4/2" class="p_2 middle" onclick="aggSite.loadCategoryPostList(2,20);buildPaging(2);return false;">2</a><a href="/cate/4/3" class="p_3 middle" onclick="aggSite.loadCategoryPostList(3,20);buildPaging(3);return false;">3</a><a href="/cate/4/4" class="p_4 middle" onclick="aggSite.loadCategoryPostList(4,20);buildPaging(4);return false;">4</a><a href="/cate/4/5" class="p_5 middle" onclick="aggSite.loadCategoryPostList(5,20);buildPaging(5);return false;">5</a><a href="/cate/4/6" class="p_6 middle" onclick="aggSite.loadCategoryPostList(6,20);buildPaging(6);return false;">6</a><a href="/cate/4/7" class="p_7 middle" onclick="aggSite.loadCategoryPostList(7,20);buildPaging(7);return false;">7</a><a href="/cate/4/8" class="p_8 middle" onclick="aggSite.loadCategoryPostList(8,20);buildPaging(8);return false;">8</a><a href="/cate/4/9" class="p_9 middle" onclick="aggSite.loadCategoryPostList(9,20);buildPaging(9);return false;">9</a><a href="/cate/4/10" class="p_10 middle" onclick="aggSite.loadCategoryPostList(10,20);buildPaging(10);return false;">10</a><a href="/cate/4/11" class="p_11 middle" onclick="aggSite.loadCategoryPostList(11,20);buildPaging(11);return false;">11</a><span class="ellipsis">···</span><a href="/cate/4/200" class="p_200 last" onclick="aggSite.loadCategoryPostList(200,20);buildPaging(200);return false;">200</a><a href="/cate/4/2" onclick="aggSite.loadCategoryPostList(2,20);buildPaging(2);return false;">Next &gt;</a></div></div><script type="text/javascript">var pagingBuider={"OnlyLinkText":false,"TotalCount":4000,"PageIndex":1,"PageSize":20,"ShowPageCount":5,"SkipCount":0,"UrlFormat":"/cate/4/{0}","OnClickJsFunc":"aggSite.loadCategoryPostList()","FirstPageLink":"/cate/4/","AjaxUrl":"/AggSite/Pager","AjaxCallbak":null,"TopPagerId":"pager_top","IsRenderScript":true};function buildPaging(pageIndex){pagingBuider.PageIndex=pageIndex;$.ajax({url:pagingBuider.AjaxUrl,data:JSON.stringify(pagingBuider),type:'post',dataType:'text',contentType:'application/json; charset=utf-8',success:function (data) { $('#paging_block').html(data); var pagerTop=$('#pager_top');if(pageIndex>1){$(pagerTop).html(data).show();}else{$(pagerTop).hide();}}});}</script>
+</div>
+            <div id="side_nav">
+                
+    <div id="cate_title_block">
+<div id="cate_title_title"><div class="cate_title">网站分类</div></div>
+<ul id="cate_item">
+<li id="cate_item_108698" onmouseover="cateShow(108698)" onmouseout="cateHidden(108698)">
+<a href="/cate/108698/">.NET技术(12)</a>
+</li>
+<li id="cate_item_2" onmouseover="cateShow(2)" onmouseout="cateHidden(2)">
+<a href="/cate/2/">编程语言(56)</a>
+</li>
+<li id="cate_item_108701" onmouseover="cateShow(108701)" onmouseout="cateHidden(108701)">
+<a href="/cate/108701/">软件设计(0)</a>
+</li>
+<li id="cate_item_108703" onmouseover="cateShow(108703)" onmouseout="cateHidden(108703)">
+<a href="/cate/108703/">Web前端(9)</a>
+</li>
+<li id="cate_item_108704" onmouseover="cateShow(108704)" onmouseout="cateHidden(108704)">
+<a href="/cate/108704/">企业信息化(0)</a>
+</li>
+<li id="cate_item_108705" onmouseover="cateShow(108705)" onmouseout="cateHidden(108705)">
+<a href="/cate/108705/">手机开发(5)</a>
+</li>
+<li id="cate_item_108709" onmouseover="cateShow(108709)" onmouseout="cateHidden(108709)">
+<a href="/cate/108709/">软件工程(3)</a>
+</li>
+<li id="cate_item_108712" onmouseover="cateShow(108712)" onmouseout="cateHidden(108712)">
+<a href="/cate/108712/">数据库技术(5)</a>
+</li>
+<li id="cate_item_108724" onmouseover="cateShow(108724)" onmouseout="cateHidden(108724)">
+<a href="/cate/108724/">操作系统(5)</a>
+</li>
+<li id="cate_item_4" onmouseover="cateShow(4)" onmouseout="cateHidden(4)">
+<a href="/cate/4/">其他分类(26)</a>
+</li>
+<li id="cate_item_0" onmouseover="cateShow(0)" onmouseout="cateHidden(0)">
+<a href="/cate/all/">所有随笔(3171)</a>
+</li>
+<li id="cate_item_-1" onmouseover="cateShow(-1)" onmouseout="cateHidden(-1)">
+<a href="/comment/">所有评论(695)</a>
+</li>
+</ul>
+<div class="cate_bottom"></div>
+<div id="cate_sub_block"></div>
+<script type="text/javascript">var cateIdList = '108698,2,108701,108703,108704,108705,108709,108712,108724,4';aggSite.loadSubCategories();</script>
+</div>
+        <div class="l_s"></div>
+<p class="r_l_3" /><p class="r_l_2" /><p class="r_l_1" />
+<div class="w_l">
+<h4>相关分类</h4>
+<ul>
+<li><a href="/cate/108698/">.NET技术</a></li>
+<li><a href="/cate/2/">编程语言</a></li>
+<li><a href="/cate/108701/">软件设计</a></li>
+<li><a href="/cate/108703/">Web前端</a></li>
+<li><a href="/cate/108704/">企业信息化</a></li>
+<li><a href="/cate/108705/">手机开发</a></li>
+<li><a href="/cate/108709/">软件工程</a></li>
+<li><a href="/cate/108712/">数据库技术</a></li>
+<li><a href="/cate/108724/">操作系统</a></li>
+</ul>
+</div>
+<p class="r_l_1" /><p class="r_l_2" /><p class="r_l_3" />
+<div class="l_s"></div>
+<p class="r_l_3"></p><p class="r_l_2"></p><p class="r_l_1"></p>
+<div class="w_l">
+<h4>链接</h4>        
+<ul>
+    <li><a href="https://group.cnblogs.com/forum/public/" target="_blank">反馈或建议</a></li> 
+    <li><a href="//www.cnblogs.com/cmt/" target="_blank">官方博客</a></li>
+    <li><a href="/skins.aspx" target="_blank">博客模板</a></li>
+    <li><a href="http://www.blogjava.net/">Java博客</a></li>
+    <li><a href="http://www.cppblog.com/">C++博客</a></li>
+    <li><a href="//www.cnblogs.com/cmt/archive/2009/09/26/1574616.html">手机版</a></li>
+</ul>
+</div>
+<p class="r_l_1"></p><p class="r_l_2"></p><p class="r_l_3"></p>
+<div class="l_s"></div>
+<div id="user_stats"></div>
+<div class="l_s"></div>        
+<p class="r_l_3"></p><p class="r_l_2"></p><p class="r_l_1"></p>
+<div class="w_l">                
+<h4>统计信息</h4>
+<div id="site_stats"></div>      
+</div>
+<p class="r_l_1"></p><p class="r_l_2"></p><p class="r_l_3"></p>
+            </div>
+            <div id="side_right">
+                    <div id="search_block">
+                        <div class="side_search">
+                            <input type="text" id="zzk_q" class="search_input" onkeydown="return zzk_go_enter(event);" tabindex="3" /><input onclick="zzk_go()" type="button" class="search_btn" value="找找看" />
+                        </div>
+                        <div id="google_search" class="side_search">
+                            <input type="text" id="google_search_q" class="search_input" onkeydown="return google_search_enter(event);" /><input type="button" value="Google" class="search_btn" onclick="return google_search();" />
+                        </div>
+                    </div>
+                <div id="cnblogs_a1">
+                    <div id='div-gpt-ad-1547816814884-0' style='height:60px; width:468px;'>
+                        <script>
+                            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1547816814884-0'); });
+                        </script>
+                    </div>
+                </div>
+                <div id="cnblogs_b1" class="sidebar-image">
+                    <div id='div-gpt-ad-1546331539224-0' style='height:250px; width:300px;'>
+                        <script>
+                            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1546331539224-0'); });
+                        </script>
+                    </div>
+                </div>
+                <div id="ad_right_text" class="ad_right_text"></div>
+                <div id="side_right_block"></div>
+            </div>
+        </div>
+        <div id="footer_bottom">
+            <div>Powered by .NET Core on Kubernetes</div>
+            <div><a href="https://about.cnblogs.com/">关于博客园</a><a href="https://about.cnblogs.com/contact">联系我们</a><a href="https://about.cnblogs.com/ad">广告服务</a><a href="https://about.cnblogs.com/job">人才服务</a>&copy;2004-2020<a href="https://www.cnblogs.com/">博客园</a>保留所有权利<a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备09004260号</a></div>
+            <div><a href="https://ss.knet.cn/verifyseal.dll?sn=e131108110100433392itm000000&amp;ct=df&amp;a=1&amp;pa=0.25787803245785335" rel="nofollow" target="_blank"><img id="cnnic_img" src="//common.cnblogs.com/images/cnnic.png" alt="" width="64" height="23" /></a><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011502001144" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="//common.cnblogs.com/images/ghs.png" alt="" /><span style="float:left;height:20px;line-height:20px;margin: 0 5px 0 5px; color:#939393;">沪公网安备 31011502001144号</span></a></div>
+        </div>
+    </div>
+</body>
+</html>

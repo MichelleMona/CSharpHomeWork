@@ -1,0 +1,529 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>古霜卡比 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/skabyy/custom.css?v=snDEkZAA1lG9SBKne6&#x2B;k1m5sjiI=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/skabyy/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/skabyy/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/skabyy/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 166858;
+        var currentBlogApp = 'skabyy';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/skabyy/">万有引力的向下力</a>
+</div>
+<div class="subtitle">
+因为地心吸力的关系，一切东西都喜欢向下掉，包括牛顿所看见的苹果。所以下等人这样多，上等人那么希罕，并且上等人也常有向下层压迫的趋势。青年人那么容易堕落；世道人心那么每况愈下——这全是一个道理。
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/skabyy/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8F%A4%E9%9C%9C%E5%8D%A1%E6%AF%94">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/skabyy/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+29&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+234</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2019/08/23.html">2019年8月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/11396571.html">
+    一文详解微服务架构
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：本文将介绍微服务架构和相关的组件，介绍他们是什么以及为什么要使用微服务架构和这些组件。本文侧重于简明地表达微服务架构的全局图景，因此不会涉及具体如何使用组件等细节。 为了防止不提供原网址的转载，特在这里加上原文链接： &quot;https://www.cnblogs.com/skabyy/p/1139657            <a href="https://www.cnblogs.com/skabyy/p/11396571.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-08-23 08:45 古霜卡比 阅读 (29344) 评论 (118)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11396571" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2019/04/08.html">2019年4月8日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/10668079.html">
+    Istio入门实战与架构原理——使用Docker Compose搭建Service Mesh
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：本文将介绍如何使用Docker Compose搭建Istio。Istio号称支持多种平台（不仅仅Kubernetes）。然而，官网上非基于Kubernetes的教程仿佛不是亲儿子，写得非常随便，不仅缺了一些内容，而且还有坑。本文希望能补实这些内容。我认为在学习Istio的过程中，相比于Kuberne            <a href="https://www.cnblogs.com/skabyy/p/10668079.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-04-08 09:04 古霜卡比 阅读 (3414) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10668079" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2019/01/28.html">2019年1月28日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/10316720.html">
+    Apollo的Oracle适配改动
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：这几天工作需要使用Apollo配置中心。Apollo唯一的依赖是MySQL数据库，然而公司只有Oracle数据库资源。 &quot;这里&quot; 有一个Oracle适配改动的分支，但是它是基于0.8.0版本的Apollo。看着Apollo官方文档上各种特性都只有1.0.0以上版本才有，我决定基于当前最新版本（1.2            <a href="https://www.cnblogs.com/skabyy/p/10316720.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-01-28 10:00 古霜卡比 阅读 (1025) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10316720" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2019/01/11.html">2019年1月11日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/10202006.html">
+    尝试Java，从入门到Kotlin（下）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：上篇已提（tu）到（cao）Java中的各种坑。习惯了C 的各种特性和语法糖后，再转到Java感觉比较别扭。最后本着反正Java也不是很熟悉，干脆再折腾折腾其他语言的破罐子破摔的心态，逛了一圈JVM语言，最终决定转Kotlin。 为何选择Kotlin 项目遭遇人员变动，包括我在内就剩两个人开发，转型            <a href="https://www.cnblogs.com/skabyy/p/10202006.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-01-11 08:59 古霜卡比 阅读 (775) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10202006" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2018/12/03.html">2018年12月3日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/10049106.html">
+    尝试Java，从入门到Kotlin（上）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：之前一直使用C 开发，最近由于眼馋Java生态环境，并借着工作服务化改造的契机，直接将新项目的开发都转到Java上去。积攒些Java开发经验，应该对.NET开发也会有所启发和益处。 从理论上说，Java和C 语言差别不大，毕竟难听地说，C 就是抄Java出来的。程序语言简史如是介绍这两种语言： 然而            <a href="https://www.cnblogs.com/skabyy/p/10049106.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-12-03 10:47 古霜卡比 阅读 (861) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10049106" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2018/11/29.html">2018年11月29日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/10035158.html">
+    RabbitMQ权限控制原理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：我们在使用MQ搭建系统的时候，经常要开放队列给外接系统访问。外接系统的稳定性是不可控的。为了防止外接系统不稳定导致误操作破坏了MQ的配置或数据，需要对MQ做比较精细的权限控制。 我的需求是这样的： 我有一个数据查询服务，并且通过MQ推送数据变动消息。对接MQ的每个系统都会有自己一个独立的队列来读取消            <a href="https://www.cnblogs.com/skabyy/p/10035158.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-11-29 09:11 古霜卡比 阅读 (1060) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10035158" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2018/11/25.html">2018年11月25日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/10013322.html">
+    Redis集群
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：简要记录了Redis集群的核心原理            <a href="https://www.cnblogs.com/skabyy/p/10013322.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-11-25 09:20 古霜卡比 阅读 (831) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10013322" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2018/02/11.html">2018年2月11日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/8440439.html">
+    手工搭建基于ABP的框架 - 工作单元以及事务管理
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一个业务功能往往不只由一次数据库请求（或者服务调用）实现。为了功能的完整性，我们希望如果该功能执行一半时出错，则撤销前面已执行的改动。在数据库层面上，事务管理实现了这种完整性需求。在ABP中，一个完整的业务功能称为一个工作单元（Unit of Work，简称UoW）。工作单元代表一种完整的、原子性的            <a href="https://www.cnblogs.com/skabyy/p/8440439.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2018-02-11 09:50 古霜卡比 阅读 (1952) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=8440439" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2017/11/20.html">2017年11月20日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/7695258.html">
+    手工搭建基于ABP的框架(3) - 登录，权限控制与日志
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：为了防止不提供原网址的转载，特在这里加上原文链接： &quot;http://www.cnblogs.com/skabyy/p/7695258.html&quot; 本篇将实现登录、权限控制、日志配置与审计日志的功能。首先我们先实现登录功能，在登录的基础上，通过控权使得只有ID为1988的用户才能创建tweet。最后配            <a href="https://www.cnblogs.com/skabyy/p/7695258.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2017-11-20 09:48 古霜卡比 阅读 (2798) 评论 (7)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7695258" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/skabyy/archive/2017/11/13.html">2017年11月13日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/skabyy/p/7517397.html">
+    手工搭建基于ABP的框架(2) - 访问数据库
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在ABP框架下使用NHibernate和Dapper实现数据库访问。            <a href="https://www.cnblogs.com/skabyy/p/7517397.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2017-11-13 09:50 古霜卡比 阅读 (3481) 评论 (7)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7517397" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/skabyy/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 古霜卡比
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    <div id="page_end_html">
+        <script src="https://static.tctip.com/tctip-1.0.1.min.js"></script>
+<script>
+/*
+new tctip({
+    top: '20%',
+    button: {
+      id: 9,
+      type: 'dashang',
+    },
+    list: [
+      {
+        type: 'alipay',
+        qrImg: 'http://images.cnblogs.com/cnblogs_com/skabyy/1040959/o_alipayqr.png'
+      }, {
+        type: 'wechat',
+        qrImg: 'http://images.cnblogs.com/cnblogs_com/skabyy/1040959/o_weixinqr.png'
+      }
+    ]
+  }).init();
+*/
+</script>
+    </div>
+</body>
+</html>

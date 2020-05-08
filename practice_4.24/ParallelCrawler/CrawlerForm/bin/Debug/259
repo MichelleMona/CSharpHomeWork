@@ -1,0 +1,480 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>迷茫中守候 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/teach/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/teach/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/teach/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 293786;
+        var currentBlogApp = 'teach';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/teach/">迷茫中守候</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/teach/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%BF%B7%E8%8C%AB%E4%B8%AD%E5%AE%88%E5%80%99">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/teach/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+61&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+49</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12766760.html">
+    mybatis源码配置文件解析之三：解析typeAliases标签
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在前边的博客在分析了mybatis解析settings标签，《mybatis源码配置文件解析之二：解析settings标签》。下面来看解析typeAliases标签的过程。 一、概述 在mybatis核心配置文件（mybatis-config.xml）中有关typeAliases的配置如下， &lt;ty            <a href="https://www.cnblogs.com/teach/p/12766760.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-24 17:39 迷茫中守候 阅读 (43) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766760" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12755586.html">
+    mybatis源码分析：Mapper接口是什么
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在《mybatis源码分析：启动过程》中分析了mybatis的启动过程，mybatis的启动过程主要集中在解析其核心配置文件（mybatis-config.xml）上，把配置文件中的配置全部解析到Configuration类中，每个配置在Configuration中均能找到其设置。本文分析mybat            <a href="https://www.cnblogs.com/teach/p/12755586.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-22 20:13 迷茫中守候 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12755586" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12753756.html">
+    mybatis源码配置文件解析之二：解析settings标签
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在前边的博客中分析了mybatis解析properties标签，《mybatis源码配置文件解析之一：解析properties标签》。下面来看解析settings标签的过程。 一、概述 在mybatis的核心配置文件（mybatis-config.xml）文件中，有关于settings标签的配置，如            <a href="https://www.cnblogs.com/teach/p/12753756.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-22 17:51 迷茫中守候 阅读 (104) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12753756" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12724707.html">
+    spring中BeanPostProcessor之三：InitDestroyAnnotationBeanPostProcessor（01）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在《spring中BeanPostProcessor之二：CommonAnnotationBeanPostProcessor（01）》一文中，分析到在调用CommonAnnotationBeanPostProcessor类的postProcessMeredBeanDefinition方法时会先调用其            <a href="https://www.cnblogs.com/teach/p/12724707.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-18 23:07 迷茫中守候 阅读 (41) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12724707" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/14.html">2020年4月14日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12697660.html">
+    mybatis源码分析：启动过程
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：mybatis在开发中作为一个ORM框架使用的比较多，所谓ORM指的是Object Relation Mapping，直译过来就是对象关系映射，这个映射指的是java中的对象和数据库中的记录的映射，也就是一个java对象映射数据库中的一条记录。了解了mybatis的背景及作用下面看mybatis的使            <a href="https://www.cnblogs.com/teach/p/12697660.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-14 19:05 迷茫中守候 阅读 (215) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12697660" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/13.html">2020年4月13日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12693588.html">
+    mybatis源码配置文件解析之一：解析properties标签
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：mybatis作为日常开发的常用ORM框架，在开发中起着很重要的作用，了解其源码对日常的开发有很大的帮助。源码版本为：3-3.4.x，可执行到github进行下载。 从这篇文章开始逐一分析mybatis的核心配置文件（mybatis-config.xml），今天先来看properties标签的解析过            <a href="https://www.cnblogs.com/teach/p/12693588.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-13 20:03 迷茫中守候 阅读 (166) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12693588" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12688608.html">
+    spring中BeanPostProcessor之二：CommonAnnotationBeanPostProcessor（01）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在上篇博客中分享了InstantiationAwareBeanPostProcessor接口中的四个方法，分别对其进行了详细的介绍，在文末留下了一个问题，那就是postProcessProperties方法，说到此方法是用来进行属性填充的，并且引出了CommonAnnotationBeanPostP            <a href="https://www.cnblogs.com/teach/p/12688608.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-13 10:03 迷茫中守候 阅读 (60) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12688608" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/12.html">2020年4月12日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12686580.html">
+    spring中BeanPostProcessor之一：InstantiationAwareBeanPostProcessor（03）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：前面介绍了InstantiationAwareBeanPostProcessor后置处理器的postProcessBeforeInstantiation和postProcessAfterInstantiation两个方法的用法和使用场景等。在InstantiationAwareBeanPostPro            <a href="https://www.cnblogs.com/teach/p/12686580.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-12 17:54 迷茫中守候 阅读 (37) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12686580" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/08.html">2020年4月8日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12660541.html">
+    排查tomcat服务器CPU使用率过高
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：tomcat要运行依赖于JDK，tomcat服务器的CPU使用率过高，大多都是因为部署的web程序的问题。 一、现象描述 在一次线上环境，前台访问页面的速度越来越慢，从浏览器F12中看到发出的请求都是pengding的状态。 二、排查过程 我这里tomcat部署在linux环境中。下面的排查过程均在            <a href="https://www.cnblogs.com/teach/p/12660541.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-08 16:03 迷茫中守候 阅读 (374) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12660541" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/teach/archive/2020/04/06.html">2020年4月6日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/teach/p/12642349.html">
+    spring中BeanPostProcessor之一：InstantiationAwareBeanPostProcessor（02） 
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：在上篇博客中写道了bean后置处理器InstantiationAwareBeanPostProcessor，只介绍了其中一个方法的作用及用法，现在来看postProcessBeforeInstantiation方法。 一、概述 postProcessBeforeInstantiation方法定义在I            <a href="https://www.cnblogs.com/teach/p/12642349.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-06 15:35 迷茫中守候 阅读 (108) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12642349" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/teach/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 迷茫中守候
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

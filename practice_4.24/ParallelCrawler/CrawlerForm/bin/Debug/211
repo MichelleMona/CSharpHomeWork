@@ -1,0 +1,457 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="前言 最新想学习一下Spring源码，开篇博客记录下学习过程，欢迎一块交流学习。 作为预备篇，主要演示搭建一个最简单的Spring项目样例，对Spring进行最基本梳理。 构建一个最简单的spring" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>【Spring源码分析】预备篇 - W_SecondLife - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/W_SecondLife/custom.css?v=6&#x2B;FALJgbyyeDblGKNWdsYlcmHds=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/W_SecondLife/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/W_SecondLife/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/W_SecondLife/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 574070;
+        var currentBlogApp = 'W_SecondLife';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/W_SecondLife/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/W_SecondLife/">W Second Life</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/W_SecondLife/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/W_SecondLife/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+2&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/W_SecondLife/p/12755189.html">【Spring源码分析】预备篇</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h3>前言</h3>
+<p><span style="font-size: 15px;">最新想学习一下Spring源码，开篇博客记录下学习过程，欢迎一块交流学习。</span></p>
+<p>作为预备篇，主要演示搭建一个最简单的Spring项目样例，对Spring进行最基本梳理。</p>
+<h3><span style="font-size: 16px;">&nbsp;构建一个最简单的spring项目</span></h3>
+<p>Spring中最核心的Jar包有四个：spring-beans、spring-context、spring-core、spring-expression。</p>
+<p><span style="font-size: 15px;">以前做spring项目有个误区，什么包都一个个导入进来，其实一个最最简单的Spring项目，理论上就需要引入一个jar包spring-context就够了，靠它的依赖关系，其他核心包都会自动导入进来（只是核心包，实际真实项目需要其他功能再额外导入）。</span></p>
+<h4><span style="font-size: 16px;">1、在一个空项目里&nbsp;添加Spring项目模块&nbsp; &nbsp; &nbsp; &nbsp;Maven-&gt;jdk1.8&gt;webapp 模板</span></h4>
+<p><img alt=""><img src="data:image/png;base64,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" alt=""></p>
+<h4><span style="font-size: 16px;">2、这里在pom中只额外添加&nbsp;spring-context依赖<img alt="">（它依赖其他几个核心jar包 会自动导入依赖）</span></h4>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">properties</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">project.build.sourceEncoding</span><span style="color: #0000ff;">&gt;</span>UTF-8<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">project.build.sourceEncoding</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">maven.compiler.source</span><span style="color: #0000ff;">&gt;</span>1.7<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">maven.compiler.source</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">maven.compiler.target</span><span style="color: #0000ff;">&gt;</span>1.7<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">maven.compiler.target</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">spring.version</span><span style="color: #0000ff;">&gt;</span>5.1.3.RELEASE<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">spring.version</span><span style="color: #0000ff;">&gt;</span>
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">properties</span><span style="color: #0000ff;">&gt;</span>
+
+  <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>junit<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>4.11<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+
+<strong>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f9fdaf;">spring-context</span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>${spring.version}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span></strong>
+
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>ch.qos.logback<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>logback-classic<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>LATEST<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+
+  <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependencies</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>&nbsp;实际引入的包及依赖关系：</p>
+<div><img alt=""><img src="data:image/png;base64,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" alt="">&nbsp;</div>
+<div>这样，一个最简单的spring项目就搭建好了，我们测试一下：</div>
+<div>定义一个实体类：</div>
+<div>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">package</span><span style="color: #000000;"> cn.eport.jason.bean;
+</span><span style="color: #008080;"> 2</span> 
+<span style="color: #008080;"> 3</span> @Component
+<span style="color: #008080;"> 4</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Student {
+</span><span style="color: #008080;"> 5</span> 
+<span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">private</span> String username = "WPC"<span style="color: #000000;">;
+</span><span style="color: #008080;"> 7</span> 
+<span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">private</span><span style="color: #000000;"> String password;
+</span><span style="color: #008080;"> 9</span> 
+<span style="color: #008080;">10</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> String getUsername() {
+</span><span style="color: #008080;">11</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> username;
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">13</span> 
+<span style="color: #008080;">14</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> setUsername(String username) {
+</span><span style="color: #008080;">15</span>         <span style="color: #0000ff;">this</span>.username =<span style="color: #000000;"> username;
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">17</span> 
+<span style="color: #008080;">18</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> String getPassword() {
+</span><span style="color: #008080;">19</span>         <span style="color: #0000ff;">return</span><span style="color: #000000;"> password;
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">21</span> 
+<span style="color: #008080;">22</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> setPassword(String password) {
+</span><span style="color: #008080;">23</span>         <span style="color: #0000ff;">this</span>.password =<span style="color: #000000;"> password;
+</span><span style="color: #008080;">24</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">25</span> }</pre>
+</div>
+<p>&nbsp;写一个测试方法，(因为本例中是在源代码下编写的单元测试，所以需要先在pom中去掉Junit 作用域为test的限制,不然在业务代码区使用@Test注解时会提示找不到)</p>
+<div class="cnblogs_code">
+<pre>    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;4.11&lt;/version&gt;
+      <strong>&lt;!--&lt;scope&gt;test&lt;/scope&gt;--&gt;</strong>
+    &lt;/dependency&gt;</pre>
+</div>
+<p>&nbsp;<span style="font-family: 'Courier New'; font-size: 12px;">MyTest.java 测试类</span></p>
+</div>
+<div>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> cn.eport.jason.test;
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> cn.eport.jason.bean.Student;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.junit.Test;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.context.ApplicationContext;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> MyTest {
+
+    @Test
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> Test1(){
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">基于注解的方式加载Spring容器</span>
+        ApplicationContext applicationContext = <span style="color: #0000ff;">new</span> AnnotationConfigApplicationContext("cn.eport"<span style="color: #000000;">);
+
+        Student student </span>=(Student) applicationContext.getBean("student"<span style="color: #000000;">);
+        System.out.println(student.getUsername());
+    }
+}</span></pre>
+</div>
+<p>&nbsp;运行单元测试方法Test1 控制台输出结果：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">D:\DevTool\Java\jdk1.8.0_101\bin\java.exe ... cn.eport.jason.test.MyTest,Test1
+<span style="background-color: #c0c0c0;">WPC</span>
+
+Process finished with exit code </span>0</pre>
+</div>
+<p>&nbsp;<span style="font-size: 16px;">说明Spring ioc容器功能已生效，已属于spring项目。</span></p>
+<h3><span style="font-size: 16px;">spring容器启动的4种方式</span></h3>
+</div>
+<div><span style="font-size: 16px;">上例中使用的是使用注解的方式加载的Spring容器，其实spring还有其他几种加载容器的方式：</span></div>
+<div>
+<ul>
+<li>
+<p><span style="font-size: 15px;">1、类路径获取配置文件加载容器</span></p>
+</li>
+</ul>
+<p><span style="font-size: 15px;">　　ApplicationContext applicationContext= new <span style="color: #ff0000;">ClassPathXmlApplicationContext</span>("spring.xml"); </span></p>
+<ul>
+<li>
+<p><span style="font-size: 15px;">2、文件系统路径获取配置文件【绝对路径】不常用</span></p>
+</li>
+</ul>
+<p><span style="font-size: 14px;">　　ApplicationContext applicationContext = new FileSystemXmlApplicationContext("E:\\idea\\public\\springdemo\\src\\main\\resources\\spring.xml"); </span></p>
+<ul>
+<li>
+<p><span style="font-size: 15px;">3、无配置文件加载容器（注解方式） 单元测试中常用</span></p>
+</li>
+</ul>
+<p><span style="font-size: 15px;">　　ApplicationContext applicationContext = new <span style="color: #ff0000;">AnnotationConfigApplicationContext</span>("cn.eport"); </span></p>
+<ul>
+<li>
+<p><span style="font-size: 15px;">4、springboot加载容器 </span></p>
+</li>
+</ul>
+<p><span style="font-size: 15px;">　　ApplicationContext applicationContext = new EmbeddedWebApplicationContext();</span></p>
+</div>
+<div>&nbsp;spring容器启动可以作为spring的源码分析的入口,上述四种方式中，除了基于注解的方式外，之前比较常用的就是读取类路径下配置文件加载容器了（SpringBoot出现之后，这种方式慢慢过时），我们来使用这种方式做下测试：</div>
+<div><span style="font-size: 15px;">&nbsp;1、新建配置文件：idea下 在resources目录下右击new-&gt;XML Configuration File-&gt;springconfig 创建Spring.xml 配置文件,并添加注册bean配置（两种方式 包扫描或者bean定义注册）：</span></div>
+<div>
+<div class="cnblogs_code">
+<pre><span style="font-size: 15px;"><span style="color: #0000ff;">&lt;?</span><span style="color: #ff00ff;">xml version="1.0" encoding="UTF-8"</span><span style="color: #0000ff;">?&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">beans </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://www.springframework.org/schema/beans"</span><span style="color: #ff0000;">
+       xmlns:xsi</span><span style="color: #0000ff;">="http://www.w3.org/2001/XMLSchema-instance"</span><span style="background-color: #ffffda;"><span style="color: #ff0000;">
+       xmlns:context</span><span style="color: #0000ff;">="http://www.springframework.org/schema/context"</span></span><span style="color: #ff0000;">
+       xsi:schemaLocation</span><span style="color: #0000ff;">="http://www.springframework.org/schema/beans <br />　　　　　　　　　　http://www.springframework.org/schema/beans/spring-beans.xsd <br />　　　　　　　　　　http://www.springframework.org/schema/context <br />　　　　　　　　　　<span style="background-color: #ffffda;">http://www.springframework.org/schema/context/spring-context.xsd"</span></span><span style="color: #0000ff; background-color: #ffffda;">&gt;</span>
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 方式1、批量注册  包扫描+注解  </span><span style="color: #008000;">--&gt;</span>
+    <strong><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">context:component-scan </span></strong><span style="color: #ff0000;">base-package</span><span style="color: #0000ff;">="cn.eport"</span><span style="color: #0000ff;">/&gt;</span></span></pre>
+<pre>    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;"> 方式2、手动注册bean 。 <span style="color: #ff0000;">id不写 默认为类全限定名</span></span><span style="color: #008000;">--&gt;</span> <br /><span style="color: #0000ff;">    &lt;</span><span style="color: #800000;">bean </span><span style="color: #ff0000;">class</span><span style="color: #0000ff;">="cn.eport.jason.bean.Student"</span><span style="color: #0000ff;">&gt;</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">bean</span><span style="color: #0000ff;">&gt;</span> <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">beans</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p><span style="font-size: 15px;">这里通过两种方式注册了Student实例：</span></p>
+<ul>
+<li><span style="font-size: 15px;">一个ComonentScan扫描+注解的方式（BeanName默认类名小写）</span></li>
+<li><span style="font-size: 15px;">一个配置注册bean的方式（默认BeanName为类全限定名）</span></li>
+</ul>
+<p><span style="font-size: 15px;">ps:&lt;context:component-scan&gt;这种带有前缀的标签 为自定义标签,spring原始组件只有 spring-core和spring-bean ，常用的context、aop、tx组件其实都是扩展组件，Spring靠的就是自定义标签在核心组件上扩展使得spring更加强大，在配置文件中使用扩展标签需要引入相应的xsd；</span><span style="font-size: 15px;">在标签对应的jar包下面找到对应的spring.schemas，在这个文件中就会有对应的XSD路径和命名空间xmlns（xml namespaceUri） （类似于java中的Import）</span></p>
+<p><span style="font-size: 15px;">2、编写对应的测试方法 使用&nbsp;ClassPathXmlApplicationContext 读取配置文件加载容器获取bean对象 进行测试：</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">    @Test
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> Test2(){
+        </span><span style="color: #008000;">//</span><span style="color: #008000;">读取类路径下xml配置文件的方式加载spring容器</span>
+        ApplicationContext applicationContext = <span style="color: #0000ff;">new</span> ClassPathXmlApplicationContext("Spring.xml"<span style="color: #000000;">);
+
+        Student student1 </span>=(Student) applicationContext.getBean("student");<span style="color: #008000;">//取得为</span><span style="color: #008000;">包扫描+注解 方式注册的 beanId是类名小写</span>
+        Student student2 =(Student) applicationContext.getBean("cn.eport.jason.bean.Student");<span style="color: #008000;">//取得为</span><span style="color: #008000;">配置文件中缺省id 的那个bean</span>
+        System.out.println(student1.getUsername());<span style="color: #008000;">//</span><span style="color: #008000;">WPC</span>
+        System.out.println(student2.getUsername());<span style="color: #008000;">//</span><span style="color: #008000;">WPC</span>
+<span style="color: #000000;">
+        System.out.println(student1</span>==student2);<span style="color: #008000;">//</span><span style="color: #008000;">false   不同的注册方式注册的两个不同的实例对象</span>
+    }</pre>
+</div>
+<p>&nbsp;结果：</p>
+</div>
+<div>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">WPC
+WPC
+</span><span style="color: #0000ff;">false</span><span style="color: #000000;">
+
+Process finished with exit code </span>0</pre>
+</div>
+<p><span style="font-size: 15px;">Spring容器一样也加载成功了，由此可以看出项目中只添加Spring-context 的依赖，一个最基础的Spring的项目即可搭建好（这里说的不是SpringMVC工程）</span></p>
+<p>&nbsp;根据测试打印结果可以发现个问题，程序并没有打印出Spring的日志，原因为pom中未添加spring日志依赖logback：</p>
+</div>
+<div>
+<div class="cnblogs_code">
+<pre>    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">一个空的spring工程是不能打印日志的，要导入spring依赖的日志jar</span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>ch.qos.logback<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>logback-classic<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>LATEST<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>&nbsp;再次执行下测试方法，控制台打印出Spring的日志：<img src="https://img2018.cnblogs.com/i-beta/1017217/202001/1017217-20200121155938639-904127081.png" alt=""></p>
+<p>&nbsp;<strong>由此，构建一个带日志的最基础Spring项目，只需要在pom中添加context、logback两个依赖即可</strong></p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.springframework<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>spring-context<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>${spring.version}<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+
+    <span style="color: #008000;">&lt;!--</span><span style="color: #008000;">一个空的spring工程是不能打印日志的，要导入spring依赖的日志jar</span><span style="color: #008000;">--&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>ch.qos.logback<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>logback-classic<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+      <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>LATEST<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>但是实际上由于jar包相互依赖，项目中maven会自动导入其他依赖，实际导入的包远远不止这两个：</p>
+<p>实际导入的包及依赖关系如下：</p>
+</div>
+<div><img src="https://img2018.cnblogs.com/i-beta/1017217/202001/1017217-20200121160530185-1031709708.png" alt=""></div>
+<h3><span style="font-size: 16px;">结语</span></h3>
+<p><span style="font-size: 16px;">作为开篇内容相对简单些，经过演示我们看到了pom中只添加context、logback两个依赖就可以搭建一个带日志最基本的spring项目</span><span style="font-size: 16px;">，以及我们知道了spring源码的入口类，后续我们进行源码分析~</span></p>
+<div>&nbsp;</div>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 13:15</span>&nbsp;
+<a href="https://www.cnblogs.com/W_SecondLife/">W_SecondLife</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12755189" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12755189);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 574070, cb_blogApp = 'W_SecondLife', cb_blogUserGuid = '43393a30-eb6d-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 12755189, cb_entryCreatedDate = '2020-04-24 13:15', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 W_SecondLife
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        
+
+    </div>
+</body>
+</html>

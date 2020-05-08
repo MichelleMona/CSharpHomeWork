@@ -1,0 +1,498 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="RPC远程过程调用可以说是分布式系统的基础，本文将通过Java演示一次普通的rpc调用到底发生了什么。 我曾经在网上看到有人提问，为什么RPC要叫作远程过程调用，而不叫作RMC远程方法调用。个人认为R" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Java讲解RPC的基本实现 - 抑菌 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/tanshaoshenghao/custom.css?v=ETVPzQp9R3E93k6xfN48Z6r//zY=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/bluesky/bundle-bluesky-mobile.min.css?v=s2piIyFV3NYqZWTmizb6uafQjmZFRhUBr8YMAdV85mA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/tanshaoshenghao/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/tanshaoshenghao/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/tanshaoshenghao/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 500766;
+        var currentBlogApp = 'tanshaoshenghao';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlueSky';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <!--评论-->
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/hafiz/feedback.css">
+
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/miangao/maodian.css">
+
+<!--右上角的github标签-->
+<a href="https://github.com/liuyj24" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #333;color:#fff;position: absolute;top: 0;border: 0;right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<!-- 鼠标点击效果 -->
+<script src="https://blog-static.cnblogs.com/files/e-cat/cursor-effects.js" defer></script>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/tanshaoshenghao/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/tanshaoshenghao/">炭烧生蚝</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/tanshaoshenghao/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%8A%91%E8%8F%8C">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/tanshaoshenghao/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+44&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+82</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/tanshaoshenghao/p/12767414.html">Java讲解RPC的基本实现</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>RPC远程过程调用可以说是分布式系统的基础，本文将通过Java演示一次普通的rpc调用到底发生了什么。</p>
+<p>我曾经在网上看到有人提问，为什么RPC要叫作远程过程调用，而不叫作RMC远程方法调用。个人认为RPC的叫法才是合理的，远程调用的是某个过程，不一定是一个具体的方法，你只要看过第一个版本的代码就能懂了。</p>
+<p>这整个过程可以用一句话概括：机器A通过网络与机器B建立连接，A发送一些参数给B，B执行某个过程，并把结果返回给A。</p>
+<p>先说一个前置背景，我们有一个商品类</p>
+<pre><code class="language-java">public class Product implements Serializable {
+
+    private Integer id;
+    private String name;
+
+    public Product(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    //toString()
+    
+    //get set 方法
+}
+</code></pre>
+<p>有一个商品服务接口</p>
+<pre><code class="language-java">public interface IProductService {
+
+    Product getProductById(Integer id);
+}
+</code></pre>
+<p>服务端有商品服务接口的实现类</p>
+<pre><code class="language-java">public class ProductServiceImpl implements IProductService {
+    @Override
+    public Product getProductById(Integer id) {
+        //实际上这里应该去查询数据库获得数据，下面简化了
+        return new Product(id, &quot;手机&quot;);
+    }
+}
+</code></pre>
+<p>下面我们通过客户端发送一个商品id到服务端，服务端获得id后通过通过商品服务类获取商品信息，返回给客户端</p>
+<pre><code class="language-java">public class Client {
+
+    public static void main(String[] args) throws Exception {
+        //建立Socket
+        Socket socket = new Socket(&quot;127.0.0.1&quot;, 8888);
+        //获取输出流
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        DataOutputStream dos = new DataOutputStream(baos);
+        //把商品Id通过网络传到服务端
+        dos.writeInt(123);
+
+        socket.getOutputStream().write(baos.toByteArray());
+        socket.getOutputStream().flush();
+
+        //读取服务端返回的商品信息
+        DataInputStream dis = new DataInputStream(socket.getInputStream());
+        Integer id = dis.readInt();     //商品id
+        String name = dis.readUTF();    //商品名称
+        Product product = new Product(id, name);//通过服务端返回的商品信息生成商品
+
+        System.out.println(product);
+        
+        //关闭流资源为了方便阅读，没有做try-catch处理
+        dos.close();
+        baos.close();
+        socket.close();
+    }
+}
+
+public class Server {
+    private static boolean running = true;
+
+    public static void main(String[] args) throws Exception {
+        //建立服务端Socket
+        ServerSocket ss = new ServerSocket(8888);
+        //不断监听，处理客户端请求
+        while (running) {
+            Socket socket = ss.accept();
+            process(socket);
+            socket.close();
+        }
+        ss.close();
+    }
+
+    private static void process(Socket socket) throws Exception {
+        InputStream is = socket.getInputStream();
+        OutputStream os = socket.getOutputStream();
+        DataInputStream dis = new DataInputStream(is);
+        DataOutputStream dos = new DataOutputStream(os);
+
+        //读取客户端发过来的id
+        Integer id = dis.readInt();
+        //调用服务类生成商品
+        IProductService service = new ProductServiceImpl();
+        Product product = service.getProductById(id);
+        //把商品的信息写回给客户端
+        dos.writeInt(id);
+        dos.writeUTF(product.getName());
+        dos.flush();
+
+        dos.close();
+        dis.close();
+        os.close();
+        is.close();
+    }
+}
+</code></pre>
+<p>上面的是RPC远程调用1.0版本，可以看到联网的代码写死在了客户端中，网络的代码和<code>getProductById()</code>耦合在了一起，实际的rpc框架是绝对不可能这么做的。</p>
+<p>在实际的使用中，我们会编写各种各样的远程调用，打个比方，<code>IProductService</code>接口以后可能会扩展成这样：</p>
+<pre><code class="language-java">public interface IProductService {
+
+    Product getProductById(Integer id);
+    
+    Product getProductByName(String name);
+    
+    Product getMostExpensiveProduct();
+}
+</code></pre>
+<p>我们总不可能为每个方法都编写一段网络连接的代码吧，我们得想到一种办法为所有的方法都嵌入一段共用的网络连接代码。</p>
+<p>那具体应该怎样嵌入呢？这里我们可以用到代理模式。</p>
+<blockquote>
+<p>在Java中许多优秀的框架都用到了代理模式做代码嵌入，比如说Mybatis。它把JDBC连接部分的代码通过代理模式嵌入到sql语句的周围，让我们专注于写sql。</p>
+</blockquote>
+<p>首先，服务端的代码要进行修改：</p>
+<pre><code>public class Server {
+
+    private static boolean running = true;
+
+    public static void main(String[] args) throws Exception {
+        //......
+    }
+
+    private static void process(Socket socket) throws Exception {
+        //获取输入流，输出流
+        InputStream is = socket.getInputStream();
+        OutputStream os = socket.getOutputStream();
+        ObjectInputStream ois = new ObjectInputStream(is);
+        ObjectOutputStream oos = new ObjectOutputStream(os);
+        //获取本次远程调用的方法名
+        String methodName = ois.readUTF();
+        //获取本次远程调用方法的参数类型
+        Class[] parameterTypes = (Class[]) ois.readObject();
+        //获取具体的参数对象
+        Object[] args = (Object[]) ois.readObject();
+        
+        //创建商品服务类实例
+        IProductService service = new ProductServiceImpl();
+        //根据远程获取的方法名和参数，调用相应的方法
+        Method method = service.getClass().getMethod(methodName, parameterTypes);
+        Product product = (Product) method.invoke(service, args);
+        //把结果写回给客户端
+        oos.writeObject(product);
+
+        oos.close();
+        ois.close();
+        socket.close();
+    }
+}
+</code></pre>
+<p>然后在客户端，我们创建一个新的代理类，对外提供一个getStub获取代理类的方法。使用JDK的动态代理需要三个参数，一个是类加载器，一个是接口的class类，最后一个是<code>InvocationHandler</code>实例。</p>
+<p>JDK动态代理背后的逻辑是这样的：JVM会根据接口的class类动态创建一个代理类对象，这个代理对象实现了传入的接口，也就是说它拥有了接口中所有方法的实现。方法具体的实现可以由用户指定，也就是调用<code>InvocationHandler</code>的<code>invoke</code>方法。</p>
+<blockquote>
+<p>在<code>invoke</code>方法中有三个参数，分别是<code>proxy</code>代理类，<code>method</code>调用的方法，<code>args</code>调用方法的参数。我们可以在<code>invoke</code>方法中对具体的实现方法进行增强，在本案例中就是进行网络调用。</p>
+</blockquote>
+<pre><code class="language-java">public class Stub {
+
+    public static IProductService getStub() {
+
+        InvocationHandler h = new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                //和服务端建立Socket连接
+                Socket socket = new Socket(&quot;127.0.0.1&quot;, 8888);
+                ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
+                //拿到远程调用的方法名
+                String methodName = method.getName();
+                //拿到远程调用方法的参数类型
+                Class[] parametersTypes = method.getParameterTypes();
+                //把方法名传递给服务端
+                oos.writeUTF(methodName);
+                //把方法参数类型传递给服务端
+                oos.writeObject(parametersTypes);
+                //把方法参数传递给服务端
+                oos.writeObject(args);
+                oos.flush();
+                //获取远程调用的返回结果
+                ObjectInputStream ois = new ObjectInputStream(socket.getInputStream());
+                Product product = (Product) ois.readObject();
+
+                ois.close();
+                oos.close();
+                socket.close();
+                return product;
+            }
+        };
+        Object o = Proxy.newProxyInstance(IProductService.class.getClassLoader(), new Class[]{IProductService.class}, h);
+        return (IProductService) o;
+    }
+}
+</code></pre>
+<p>这个新版本比第一个版本又美好了一些，但是其实还可以继续优化。现在我们的代理只能够返回<code>IProductService</code>的实现类，得想办法让它返回任意类型的服务实现类。</p>
+<p>思路和远程调用方法相似，在远程调用方法时，我们把方法的名称，参数类型，参数传递给服务端；现在要动态创建服务类，我们可以把服务接口的名字传给服务端。服务端拿到远程接口的名字后，就可以从服务注册表中找到对应服务实现类。</p>
+<p>至于服务实现类如何注册到服务注册表，这里提供一个思路：可以考虑使用Spring的注解注入。这和我们平时写spring代码是相似的，在创建完服务实现类后我们会加上注解@Service，这样我们就可以在收到远程调用后，遍历使用了@Service的Bean，找到对应的实现类。</p>
+<hr>
+<p>参考：马士兵rpc的演化过程公开课<br>
+<a href="https://www.bilibili.com/video/BV1Ug4y1875i?p=2">https://www.bilibili.com/video/BV1Ug4y1875i?p=2</a></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 14:49</span>&nbsp;
+<a href="https://www.cnblogs.com/tanshaoshenghao/">抑菌</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12767414" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12767414);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 500766, cb_blogApp = 'tanshaoshenghao', cb_blogUserGuid = 'b06e60fc-4ddf-4901-ed73-08d6a695d280';
+    var cb_entryId = 12767414, cb_entryCreatedDate = '2020-04-24 14:49', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 抑菌
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    $('.buryit').remove();
+    initCommentData();
+});
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+$(document).ajaxComplete(function(event, xhr, settings) {
+  // 监听获取评论ajax事件
+  if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+  }
+});
+</script>
+
+<script src="https://files.cnblogs.com/files/hafiz/jquery-migrate-1.2.1.js"></script>
+<div id="scrollTop" style="display:none;">
+      <div class="level-2"></div>
+      <div class="level-3"></div>
+</div>
+<script src="https://files.cnblogs.com/files/hafiz/scroll2top.js"></script>
+<script type="text/javascript">
+    UI.global_search();
+    var uvOptions = {};
+    // !important
+    (function() {
+        initScrollTop();
+    })();
+</script>
+
+<script src="https://files.cnblogs.com/files/miangao/bootstrap.min.js"></script>
+
+<!--图片放大功能-->
+<script type="text/javascript" src="https://blog-static.cnblogs.com/files/jajian/img.enlarge.js"></script>
+<div id="outerdiv" style="text-align: center;position: fixed;z-index: 1000;top: 0;left: 0;
+    width: 100%;height: 100%;background-color: rgba(255,255,255,.9);">
+    <img id="bigimg" style="height: auto;width: 65%;border: 5px solid #7e8c8d; 
+        margin: auto;position: absolute;top: 0;bottom: 0;left: 0;right: 0;" src="" />
+</div>
+    </div>
+</body>
+</html>

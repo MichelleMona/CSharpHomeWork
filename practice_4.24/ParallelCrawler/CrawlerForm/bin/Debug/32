@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>2J - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd.min.css?v=gS0FloTY-RBJQcN3GCAKG6fAr6HHKtDMTw60VxjN79c" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jijunjian/custom.css?v=WI3eRo7midbwNzmh7EMewRylXm0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/imetro_hd/bundle-imetro_hd-mobile.min.css?v=VacchHeVg6bp3gCO8NqMH8D8fhA8iyRbb0JgoDUvn4o" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jijunjian/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jijunjian/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jijunjian/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 139716;
+        var currentBlogApp = 'jijunjian';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'iMetro_HD';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jijunjian/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jijunjian/">成为一名优秀的程序员</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jijunjian/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/2J">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jijunjian/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+25&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+424</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/12724640.html">
+    啃不透--线程池
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="cnblogs-post-body" id="postlist_postbody_12724640">
+        正文内容加载中...
+    </div>
+    <script type="text/javascript">getBlogPostBody(12724640);</script>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-20 08:37 2J 阅读 (56) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12724640" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2020/04/05.html">2020年4月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/12637246.html">
+    火焰图--记一次cpu降温过程
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：正值周末，娃儿6:30又如闹铃般准时来叫醒了我们。年前离开美菜，又回到了杭州。原本是想有更多时间陪伴娃儿，然而新的工作节奏与工作地点，让我们每天都是早上见面；这不，为了周末可以多玩一会儿，早早就过来唤醒我们。因为前几天我们就约好了周末一起放风筝。有些事儿，我以为只是随口一说，小孩子确真真的记着。吃过早饭，拉着媳妇儿，领着娃，带上风筝就出们了。其实我是忐忑的，因为我也从来没有把风筝放起来过。来到草坪上，娃就拉着风筝如脱缰之马跑了起来。小孩子的幸福就这么简单，无关乎风筝能飞多高。            <a href="https://www.cnblogs.com/jijunjian/p/12637246.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-05 21:19 2J 阅读 (273) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12637246" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2020/02/02.html">2020年2月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/12253801.html">
+    认识Class -- 终于不在怂
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本是新年，怎奈新冠肆掠，路上行人，男女老少几乎是全副口罩，形色匆匆；偶尔有一两个裸露口鼻的，估计都是没囤到口罩的，这几天药店几乎都是贴上大字：口罩没货。看着网络上病毒消息满天飞，我也响应在家做贡献的号召。上班时，都是早出晚归，几乎只有早上能看到娃，出门时，娃每次都说：see you tomorrow 。赶上疫情，天天在家带娃，终于可以多多陪伴了；别说，带娃还真比上班费神。想着小时候，特别想有一个玩具小船，动手给娃做了一个，附图一张。把娃带好了，也得思考下学习的事儿。学习java有段时间了，想起之前学习java时，看着Class 这样的符号就怵，不明白其表示的含义，又重读《java编程思想》第14章， 趁着这样的时间好好整理了一下，直面当时的怵。            <a href="https://www.cnblogs.com/jijunjian/p/12253801.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-02 21:25 2J 阅读 (205) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12253801" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2019/07/05.html">2019年7月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/11136041.html">
+    我在“美菜”读的书
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：今天，翻完《分布式系统原理介绍.ppt》了最后一页，感觉有点失落：又一本好书看完了（不知，大伙儿是否也是这样的）。惆怅中，才发现，自去年10月，进入美菜后，7个月的时间，已经看完了6-7本书了，这个战绩绝对是之前无法想像的，但是它就是发生了。
+　　 说起，看书这事儿吧，也前吧，也不爱，觉得程序员，就应该看代码，撸代码，还是受到前任领导（我们都叫他：惠丰）与 前任同事（我们都叫他：大师）的影响。
+　　与前任领导，一起工作了8-9年，见证了他，因为读书而优秀，因为优秀而读书。
+　　大师，有钱而优秀的大师，经常看书，看到11，12点，因为他说，如果不做这行，只能回家管生意。原来，工作可以不仅仅是为了生活。　
+       当然，还有一个重要原因：媳妇儿，也开始天天看书，我自然也不能落后了。
+       以下，给大伙儿，分享下，我们的读书清单，也希望大伙儿，给推荐一些书籍。            <a href="https://www.cnblogs.com/jijunjian/p/11136041.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-05 08:25 2J 阅读 (2125) 评论 (17)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11136041" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2018/06/13.html">2018年6月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/9152927.html">
+    flag -- 诡异的memcache标记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：打去年一路北漂，进入无人货架行业，业务需求飘漫天，最近总算把工作都规划齐整。回头过去的一年多，诸多东西值得整理，memcache就是其中一个。            <a href="https://www.cnblogs.com/jijunjian/p/9152927.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-06-13 08:53 2J 阅读 (2113) 评论 (8)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9152927" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2017/05/22.html">2017年5月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/6884404.html">
+    饿了么订单--快到碗里来
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：坚持了20天，终于还是做了一个艰难的决定--把媳妇和娃送到了丈母娘家。
+前些时间，老妈有事儿回了四川，给了我和媳妇独自抚养娃的机会，我知道这将是一个巨大的挑战。
+因为一些知道的和不知道的原因，娃的湿疹比较严重，晚上老睡不踏实，得整晚拍着，哄着，实在没辙了，就得抱着睡，不然就不停的挠头呀，肚子的。
+白天除非抱着，根本睡不了一会儿，醒了没人看着，也是有事儿没事儿挠自己。根本离不开人...看着娃身上的湿疹，以及来不及好的挠痕，心里真是奔溃的。
+还得到处寻医问诊，泡中药，涂药膏，抹茶油...官方的，民间的... 都是3个字：然并卵。            <a href="https://www.cnblogs.com/jijunjian/p/6884404.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-05-22 08:42 2J 阅读 (2313) 评论 (18)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6884404" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2017/05/19.html">2017年5月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/6875909.html">
+    订餐系统之同步美团商家订单
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：早上和往常一样去工商大学打球，除了今天三分比较准外，一切都还是那样的循规蹈矩。
+也许股子里还有那么一些不甘平庸，总想着能改变一下如此无趣的按部就班。
+转过行政楼，一波一波的学生在谈笑风生。哦，是了，又到拍毕业照片的时间了。
+又是一年过去了（也不知从何时起，开始以毕业来计年了），弹指一挥间，已经在这里工作7年半了。
+一份工作越是做得久，反到越觉得羞。也许是羞于现状，也是羞于未来的我吧。说不清，道不明，有点乱...
+脚步也随着不安的思绪加快了频率，迅速的穿过了人群...未来还需多努力，希望明年此时，能多一份从容。            <a href="https://www.cnblogs.com/jijunjian/p/6875909.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-05-19 08:34 2J 阅读 (3537) 评论 (11)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6875909" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2016/10/27.html">2016年10月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/6000887.html">
+    CPU使用率终于正常了——记一次订餐系统事故处理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：经过漫长的等待，儿子终于出生了。欣喜之余，就是各种手足无措，顾此失彼。因为不懂，心里总是慌慌的，有点小毛病，恨不得一步就到医院。婆媳育儿观念的差异，让心乱如麻的我，又成了风箱里的老鼠，两个不服软的女人都在考验我的智慧，虽是极力从中斡旋，还是免不了爆发了一场婆媳冲突。还是智慧少了，估计四大名著还得再读一遍（估计还是可以唬一下人的:-D）。不过话说回来了，虽然苦点累点，但抱着娃，看他那惹人爱的脸，时不是还会 喔喔冲你回应，偶尔还会咧嘴微笑，啥苦，累，烦劳通通都没有了。至今两月有余，总算是平稳了，各个操作都熟练了，婆媳有了她们的相处模式，虽也要不时开解，矛盾常有，冲突不在。也蛮好了。啰嗦了两句，咱言归正传一次订单系统CPU使用率过高处理。            <a href="https://www.cnblogs.com/jijunjian/p/6000887.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2016-10-27 08:53 2J 阅读 (7217) 评论 (71)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=6000887" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2016/07/18.html">2016年7月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/5678003.html">
+    JS/CSS缓存杀手——VS插件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前些天去考科目二，感觉经历了一场不是高考却胜似高考的考试（10年前的5分之差， 还是难以释怀）！
+一行八人，就我学的时间最少（4天，8人一辆车），教练都觉得我肯定还得再来一次！
+靠着运气和信念，惊险的通过了侧方停车和倒车入库，终于还是抚慰了一下10年前那颗年轻的心！
+感慨完毕，回归主题            <a href="https://www.cnblogs.com/jijunjian/p/5678003.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2016-07-18 08:50 2J 阅读 (3967) 评论 (27)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5678003" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jijunjian/archive/2016/06/06.html">2016年6月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/jijunjian/p/5537057.html">
+    终于等到你---订餐系统之负载均衡（nginx+memcached+ftp上传图片+iis）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：对面工商大学的毕业生叕在拍毕业照了，一个个脸上都挂满的笑容，也许是满意自己四年的修行，也许是期待步入繁华的社会...
+    恰逢其时的连绵细雨，与满天柳絮估计也是在映衬他们心中那些离别的忧伤，与对未来的憧憬和彷徨。
+    想起当年毕业时，来去匆匆，只留下一张全班合影照，和寝室好友的一句：再见，珍重。有点小遗憾。
+    又见毕业，又是一年，感慨两句，珍惜时间，好好加油，费话完结，回到主题            <a href="https://www.cnblogs.com/jijunjian/p/5537057.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2016-06-06 08:57 2J 阅读 (7985) 评论 (39)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5537057" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/jijunjian/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 2J
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

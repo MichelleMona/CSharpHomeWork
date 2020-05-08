@@ -1,0 +1,1078 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="Tensorflow Serving 使用流程教学，采用的方案为 Saver (python) &#x2B; Serving (tensorflow serving) &#x2B; Client (Java)，以上三方面" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tensorflow 模型线上部署 - 年华似水丶我如风 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/valentine/bundle-valentine.min.css?v=UWXTcKRiQMgRrRfcjD4M9Qw7K4qL0xgIYGU6Nt7EDcw" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/valentine/bundle-valentine-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ustcwx/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ustcwx/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ustcwx/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 286889;
+        var currentBlogApp = 'ustcwx';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'Valentine';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<TABLE cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+<TR>
+	<TD width=184 background="/skins/valentine/images/banner1.gif"></TD>
+	<TD background="/skins/valentine/images/banner.gif">
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/ustcwx/">Terrorblade</a>
+<br>
+		<span style="font-size:12px;color:#4371A6;padding-left:20;">
+
+</span>
+	</div>
+</div>
+
+</TD>
+	<TD width=295 background="/skins/valentine/images/banner2.gif"></TD>
+</TR>
+</TABLE>
+<div id="mylinks">
+
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/ustcwx/">
+首页</a>
+&nbsp;&nbsp;&nbsp;
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+&nbsp;&nbsp;&nbsp;
+
+<a id="MyLinks1_NewArticleLink" class="menu" href="https://i.cnblogs.com/EditArticles.aspx?opt=1">新文章</a>
+&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%B9%B4%E5%8D%8E%E4%BC%BC%E6%B0%B4%E4%B8%B6%E6%88%91%E5%A6%82%E9%A3%8E">
+联系</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/ustcwx/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/ustcwx/rss/">
+    <img src="/skins/valentine/images/xml.gif" alt="订阅" />
+</a>&nbsp;&nbsp;&nbsp;
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+<div id="mytopmenu">
+	
+		<DIV id="mystats">
+			<!--done-->
+<div class="blogStats">
+posts - 
+20,comments - 
+6,trackbacks - 
+0
+
+</div>
+
+</DIV>
+	
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script><br>
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	
+</div>
+<div id="centercontent">
+	<div id="post_detail">
+<!--done-->
+<div class="post">
+	<div class="postTitle">
+		
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/ustcwx/p/12768463.html">Tensorflow 模型线上部署</a>
+
+	</div>
+	
+    <div id="cnblogs_post_description" style="display: none">
+        Tensorflow Serving 使用流程教学，采用的方案为 Saver (python) + Serving (tensorflow serving) + Client (Java)，以上三方面有详细介绍，此外对 Tensorflow Serving 做了性能测试。
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>获取源码，请移步笔者的github:  <a href="https://github.com/BeyonderXX/tensorflow-serving-tutorial">tensorflow-serving-tutorial</a></p>
+<p>由于python的灵活性和完备的生态库，使得其成为实现、验证ML算法的不二之选。但是工业界要将模型部署到生产环境上，需要考略性能问题，就不建议再使用python端的服务。这个从训练到部署的整个流程如下图所示：</p>
+<p><img src="https://img2020.cnblogs.com/blog/963156/202004/963156-20200424165332708-1843237557.png" alt="procedure"></p>
+<p>基本可以把工作分为三块：</p>
+<blockquote>
+<ol>
+<li>Saver端 模型的离线训练与导出</li>
+<li>Serving端 模型加载与在线预测</li>
+<li>Client端 构建请求</li>
+</ol>
+</blockquote>
+<p>本文采用  <strong>Saver (python) + Serving (tensorflow serving) + Client (Java)</strong>  作为解决方案，从零开始记录线上模型部署流程。</p>
+<h2 id="1、saver"><em><strong>1、Saver</strong></em></h2>
+<p>部署模型第一步是将训练好的整个模型导出为一系列标准格式的文件，然后即可在不同的平台上部署模型文件。TensorFlow 使用 SavedModel（pb文件） 这一格式用于模型部署。与Checkpoint 不同，SavedModel 包含了一个 TensorFlow 程序的完整信息： 不仅包含参数的权值，还包含计算图。</p>
+<p>SavedModel最终保存结果包含两部分saved_model.pb和variables文件夹。</p>
+<p><img src="https://img2020.cnblogs.com/blog/963156/202004/963156-20200424165445965-1418944532.png" alt="savedModel"></p>
+<p>此处分别介绍，Tensorflow 1.0 和 2.0两个版本的导出方法。</p>
+<h3 id="11-tensorflow-10-export"><em><strong>1.1 Tensorflow 1.0 export</strong></em></h3>
+<p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/python/saved_model/README.md">参考链接</a></p>
+<p>个人认为官方文档对具体使用写得不是特别明白，不想看官方文档的同学，可以对着示例照葫芦画瓢。其实也很简单，就两件事：</p>
+<blockquote>
+<p>Step 1、创建 <strong><a href="https://github.com/tensorflow/serving/blob/master/tensorflow_serving/g3doc/signature_defs.md">SignatureDefs</a></strong></p>
+<p>Step 2、保存计算图和权重</p>
+</blockquote>
+<pre><code class="language-python">builder = tf.saved_model.builder.SavedModelBuilder(&quot;out_dir&quot;)
+
+# define signature which specify input and out nodes
+predict_sig_def = (saved_model.signature_def_utils.build_signature_def(
+inputs={&quot;input_x&quot;:saved_model.build_tensor_info(fast_model.input_x)},
+outputs={&quot;out_y&quot;: saved_model.build_tensor_info(fast_model.y_pred_cls),
+         &quot;score&quot;: saved_model.build_tensor_info(fast_model.logits)},
+         method_name=saved_model.signature_constants.PREDICT_METHOD_NAME))
+
+# add graph and variables
+builder.add_meta_graph_and_variables(sess, [&quot;serve&quot;],
+                                     signature_def_map={&quot;fastText_sig_def&quot;: predict_sig_def},
+                                     main_op=tf.compat.v1.tables_initializer(),
+                                     strip_default_attrs=True)
+builder.save()
+</code></pre>
+<p>需要注意的是，此处保存时的signature、input、out的相关属性诸如：</p>
+<blockquote>
+<ol>
+<li>name(自定义，不用和图内节点名称相同)</li>
+<li>shape</li>
+<li>data type</li>
+</ol>
+</blockquote>
+<p>应与Client端传参对应。</p>
+<h3 id="12-tensorflow-20-export"><em><strong>1.2 Tensorflow 2.0 export</strong></em></h3>
+<p><a href="https://tf.wiki/zh/deployment/export.html">参考链接</a></p>
+<p>Keras 模型均可方便地导出为 SavedModel 格式。不过需要注意的是，因为 SavedModel 基于计算图，所以对于使用继承 <code>tf.keras.Model</code> 类建立的 Keras 模型，其需要导出到 SavedModel 格式的方法（比如 <code>call</code> ）都需要使用 <code>@tf.function</code> 修饰。</p>
+<pre><code class="language-python">class MLP(tf.keras.Model):
+    def __init__(self):
+        super().__init__()
+        self.flatten = tf.keras.layers.Flatten()
+        self.dense1 = tf.keras.layers.Dense(units=100, activation=tf.nn.relu)
+        self.dense2 = tf.keras.layers.Dense(units=10)
+
+    @tf.function
+    def call(self, inputs):         # [batch_size, 28, 28, 1]
+        x = self.flatten(inputs)    # [batch_size, 784]
+        x = self.dense1(x)          # [batch_size, 100]
+        x = self.dense2(x)          # [batch_size, 10]
+        output = tf.nn.softmax(x)
+        return output
+
+model = MLP()
+</code></pre>
+<p>然后使用下面的代码即可将模型导出为 SavedModel</p>
+<pre><code class="language-python">tf.saved_model.save(model, &quot;保存的目标文件夹名称&quot;)
+</code></pre>
+<h3 id="13-check-savedmodel"><em><strong>1.3 check SavedModel</strong></em></h3>
+<p>如果想要检查保存的模型的SignatureDef、Inputs、Outputs等信息，可在cmd下使用命令：</p>
+<pre><code class="language-shell">saved_model_cli show --dir model_dir_path --all
+</code></pre>
+<p><img src="https://img2020.cnblogs.com/blog/963156/202004/963156-20200424170122025-1632884222.png" alt="checkSavedModel"></p>
+<h2 id="2、serving"><em><strong>2、Serving</strong></em></h2>
+<p>模型保存好，就到Serving端的加载与预测步骤了。在介绍Tensorflow Serving之前，先介绍下基于 Tensorflow Java lib 的解决方案。</p>
+<h3 id="21-tensorflow-java-lib"><em><strong>2.1 Tensorflow Java lib</strong></em></h3>
+<p><a href="https://zhuanlan.zhihu.com/p/55600911">参考链接</a></p>
+<p>Tensorflow提供了一个Java API（本质上是Java封装了C++的动态库）, 允许在Java可以很方便的加载SavedModel, 并调用模型推理。</p>
+<h4 id="211-添加依赖"><em><strong>2.1.1 添加依赖</strong></em></h4>
+<p>首先，在maven的pom.xml中添加依赖，此处tensorflow的版本最好与python训练版本一致。</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.tensorflow&lt;/groupId&gt;
+  &lt;artifactId&gt;tensorflow&lt;/artifactId&gt;
+  &lt;version&gt;1.11.0&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<h4 id="212-load--predict"><em><strong>2.1.2 Load &amp; Predict</strong></em></h4>
+<p>然后，加载模型，调用模型在线预测。以fast text模型为例，代码如下：</p>
+<pre><code class="language-java">package model;
+
+import org.tensorflow.SavedModelBundle;
+import org.tensorflow.Session;
+import org.tensorflow.Graph;
+import org.tensorflow.Tensor;
+
+public class FastTextModel {
+  SavedModelBundle tensorflowModelBundle;
+  Session tensorflowSession;
+
+  void load(String modelPath){
+    this.tensorflowModelBundle = SavedModelBundle.load(modelPath, &quot;serve&quot;);
+    this.tensorflowSession = tensorflowModelBundle.session();
+  }
+
+  public Tensor predict(Tensor tensorInput){
+    // feed()传参类似python端的feed_dict
+    // fetch()指定输出节点的名称
+    Tensor output = this.tensorflowSession.runner().feed(&quot;input_x&quot;, tensorInput).fetch(&quot;out_y&quot;).run().get(0);
+
+    return output;
+  }
+
+  public static void main(String[] args){
+	 // 创建输入tensor, 注意type、shape应和训练时一致
+    int[][] testvec = new int[1][100];
+    for(int i=0; i&lt;100; i++){
+      testvec[0][i] = i;
+    }
+    Tensor input = Tensor.create(testvec);
+
+	 // load 模型
+    FastTextModel myModel = new FastTextModel();
+    String modelPath = &quot;Your model path&quot;;
+    myModel.load(modelPath);
+
+	 // 模型推理，注意resultValues的type、shape
+    Tensor out = myModel.predict(input);
+    float[][] resultValues = (float[][]) out.copyTo(new float[1][10]);
+    // 防止内存泄漏，释放tensor内存
+    input.close();
+    out.close();
+	 // 结果输出
+    for(int i=0; i&lt; 10; i++) {
+      System.out.println(resultValues[0][i]);
+    }
+  }
+}
+</code></pre>
+<h4 id="213-pros--cons"><em><strong>2.1.3 Pros &amp; Cons</strong></em></h4>
+<p>初步验证，Java 端和 Python 端调用模型推理，结果一致，可以满足基本使用。笔者并未进行严谨的测试，所以也谈不上踩坑，记录下想法。</p>
+<p><em><strong>适用场景</strong></em></p>
+<blockquote>
+<ol>
+<li>
+<p>需求简单，人力成本有限（一锤子买卖）</p>
+</li>
+<li>
+<p>网络限制，不易搭建Tensorflow Serving</p>
+</li>
+</ol>
+</blockquote>
+<p><em><strong>可能存在的问题</strong></em></p>
+<blockquote>
+<ol>
+<li>优化少，效率未必高</li>
+<li>Java 封装 C++ 动态库，有些变量需要手动释放，若使用不当，可能出现<em><strong>内存泄漏</strong></em></li>
+<li>无开箱即用的版本管理、并发处理等功能</li>
+<li>API 不在 Tensorflow稳定性保障范围内</li>
+<li>资料匮乏，google投入的维护少</li>
+</ol>
+</blockquote>
+<h3 id="22-tensorflow-serving"><em><strong>2.2 Tensorflow Serving</strong></em></h3>
+<p><a href="https://tensorflow.google.cn/tfx/guide/serving">参考链接</a></p>
+<p>Tensorflow Serving 是google为机器学习模型生产环境部署设计的高性能的服务系统。具有以下特性：</p>
+<blockquote>
+<ol>
+<li>支持模型版本控制和回滚</li>
+<li>支持并发与GPU加速，实现高吞吐量</li>
+<li>开箱即用，并且可定制化</li>
+<li>支持多模型服务</li>
+<li>支持 gRPC/ REST API 调用</li>
+<li>支持批处理</li>
+<li>支持热更新</li>
+<li>支持分布式模型</li>
+<li>支持多平台模型，如 TensorFlow/MXNet/PyTorch/Caffe2/CNTK等</li>
+</ol>
+</blockquote>
+<p>Tensorflow Serving 丰富的、开箱即用的功能，使得其成为业内认可的部署方案。</p>
+<p>Tensorflow Serving 内部的工作流如下图所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/963156/202004/963156-20200424170403186-1498029363.png" alt="tfs_procedure"></p>
+<p>简单的说：</p>
+<blockquote>
+<ol>
+<li>Sources 创建 Servable(可理解为计算图)的 Loader</li>
+<li>Loader 传递版本号给 Manager 由其决定是否加载，同时 Manger 负责管理 Servable 并响应 Client的请求</li>
+</ol>
+</blockquote>
+<p>详情见：<a href="https://tensorflow.google.cn/tfx/serving/architecture">参考链接</a></p>
+<p>相比方案一，Tensorflow Serving要做的事情要多一点，但长远来看收益也更高。从零开始的话，大概要经过如下步骤：</p>
+<blockquote>
+<ol>
+<li>Tensorflow serving环境搭建</li>
+<li>部署模型</li>
+<li>解决Client依赖</li>
+<li>Client代码编写</li>
+</ol>
+</blockquote>
+<h4 id="221-环境搭建"><em><strong>2.2.1 环境搭建</strong></em></h4>
+<p><a href="https://tensorflow.google.cn/tfx/serving/docker">参考链接</a></p>
+<p>推荐基于Docker的方式搭建Tensorflow Serving, 未安装Docker的小伙伴请移步<a href="https://www.docker.com/">Docker官网</a>，关于Docker的安装、使用网上资料一大堆，不在此赘述。</p>
+<p>Docker安装完毕后，拉取tensorflow/serving的镜像。</p>
+<pre><code class="language-shell">docker pull tensorflow/serving
+</code></pre>
+<p>利用镜像,  新建服务实例，说明见2.2.2节。</p>
+<pre><code class="language-shell">docker run -p 8500:8500 -p 8501:8501 --mount \  type=bind,source=/path/to/my_model/,target=/models/my_model \  -e MODEL_NAME=my_model -t tensorflow/serving 
+</code></pre>
+<p>这里直接给出官网示例，运行正常则说明环境搭建完成。</p>
+<pre><code class="language-shell"># Download the TensorFlow Serving Docker image and repo
+docker pull tensorflow/serving
+
+git clone https://github.com/tensorflow/serving
+# Location of demo models
+TESTDATA=&quot;$(pwd)/serving/tensorflow_serving/servables/tensorflow/testdata&quot;
+
+# Start TensorFlow Serving container and open the REST API port
+docker run -t --rm -p 8501:8501 -v \ &quot;$TESTDATA/saved_model_half_plus_two_cpu:/models/half_plus_two&quot; -e MODEL_NAME=half_plus_two tensorflow/serving &amp;
+
+# Query the model using the predict API
+curl -d '{&quot;instances&quot;: [1.0, 2.0, 5.0]}' \
+    -X POST http://localhost:8501/v1/models/half_plus_two:predict
+
+# Returns =&gt; { &quot;predictions&quot;: [2.5, 3.0, 4.5] }
+</code></pre>
+<p>GPU版Tensorflow Serving 的环境搭建见<a href="https://tensorflow.google.cn/tfx/serving/docker">参考链接</a>。</p>
+<h4 id="222-部署模型"><em><strong>2.2.2 部署模型</strong></em></h4>
+<p>可以使用2.2.1节的指令部署单个模型，也可以通过 config 部署多模型，部署指令示例：</p>
+<pre><code class="language-shell">docker run -p 8500:8500 -p 8501:8501 --mount type=bind,source=/tmp/multi_models/,target=/models/multi_models -t tensorflow/serving \ 
+--model_config_file=/models/multi_models/model.config
+</code></pre>
+<p>说明一下：</p>
+<blockquote>
+<ol>
+<li>Serving 镜像支持 gRPC（端口8500）、RESTful API （端口8501）两种方式调用，使用时需要将host的端口与之绑定</li>
+<li>Serving 无法直接加载 host 下的模型文件，所以需要将其映射到容器内路径，<code>MODEL_BASE_PATH</code> 默认为 <code>/models</code></li>
+<li>多模型加载和模型版本管理在 model_config_file 中配置</li>
+</ol>
+</blockquote>
+<p>这里给出我的 model.config 内容示例：</p>
+<pre><code>model_config_list:{
+  config:{
+    name:&quot;textCnn&quot;,
+    base_path:&quot;/models/multi_models/textCnn/pb&quot;,
+    model_platform:&quot;tensorflow&quot;,
+    model_version_policy {
+      specific {
+        versions: 0
+      }
+    }
+  },
+
+  config:{
+    name:&quot;rcnn&quot;,
+    base_path:&quot;/models/multi_models/rcnn/pb&quot;,
+    model_platform:&quot;tensorflow&quot;,
+    model_version_policy {
+      specific {
+        versions: 0
+      }
+    }
+  },
+
+  config:{
+    name:&quot;bert&quot;,
+    base_path:&quot;/models/multi_models/bert/pb&quot;,
+    model_platform:&quot;tensorflow&quot;,
+  }
+}
+</code></pre>
+<p>这里 load 了三个模型（textCnn、rcnn、bert）, 每个模型维护自己的config，当一个模型存在多个版本时，tensorflow serving 默认加载版本号最高的版本，若想要指定版本加载，配置 model_version_policy 内容即可。</p>
+<p>注意， base_path 是映射到 Docker容器内的路径，而不是本地路径。</p>
+<h4 id="223-更多功能"><em><strong>2.2.3 更多功能</strong></em></h4>
+<p>以上是Tensorflow Serving 基本功能的介绍，其他功能诸如：自定义API、与Kubernetes的结合等操作，请见 <a href="https://www.tensorflow.org/tfx/serving/serving_kubernetes">参考链接</a>。</p>
+<h2 id="3、client"><em><strong>3、Client</strong></em></h2>
+<p>在上一节中说到 Tensorflow Serving 支持 RESTful 和 gRPC 两种API。若使用 RESTful API 调用，相关协议请见<a href="https://www.tensorflow.org/tfx/serving/api_rest">参考链接</a>。</p>
+<p>本文着重介绍 <em><strong>gRPC</strong></em>的调用方法， Tensorflow Serving 的 <em><strong>gRPC API</strong></em> 在 protobuf 文件中定义，一般需要将其编译成相应的 Client 源码，再集成至应用。</p>
+<h3 id="31-解决依赖"><em><strong>3.1 解决依赖</strong></em></h3>
+<p>若使用 Python 作为 Client ,  安装对应包即可：</p>
+<pre><code class="language-shell">pip install tensorflow-serving-api
+</code></pre>
+<p>若使用 Java 作为 Client，则需要编译 proto 文件，好处是用户可以编译自定义的API。编译流程参考了<a href="https://github.com/junwan01/tensorflow-serve-client">前人文档</a>，此外还有一些要注意的点，见下文。</p>
+<h4 id="311-获取-protobuf-文件"><em><strong>3.1.1 获取 protobuf 文件</strong></em></h4>
+<p>第一个注意点就是版本问题，因为由 .proto 文件编译出来的 java class 依赖 tensorflow的 jar 包，可能存在不兼容问题。</p>
+<p>ok! 下载tensorflow的工程文件：</p>
+<pre><code class="language-shell">$ export SRC=~/Documents/source_code/
+$ mkdir -p $SRC
+
+$ cd $SRC
+$ git clone git@github.com:tensorflow/serving.git
+$ cd serving
+$ git checkout tags/2.1.0
+
+# another repo
+$ cd $SRC
+$ git clone git@github.com:tensorflow/tensorflow.git
+$ cd tensorflow
+$ git checkout tags/v2.1.0
+</code></pre>
+<p>将需要的proto文件复制到 Java 工程下：</p>
+<pre><code class="language-shell">$ export PROJECT_ROOT=$SRC/tensorflow-serve-client
+$ mkdir -p $PROJECT_ROOT/src/main/proto/
+$ rsync -arv  --prune-empty-dirs --include=&quot;*/&quot; --include='*.proto' --exclude='*' $SRC/serving/tensorflow_serving  $PROJECT_ROOT/src/main/proto/
+$ rsync -arv  --prune-empty-dirs --include=&quot;*/&quot; --include=&quot;tensorflow/core/lib/core/*.proto&quot; --include='tensorflow/core/framework/*.proto' --include=&quot;tensorflow/core/example/*.proto&quot; --include=&quot;tensorflow/core/protobuf/*.proto&quot; --exclude='*' $SRC/tensorflow/tensorflow  $PROJECT_ROOT/src/main/proto/
+</code></pre>
+<h4 id="312-生成-java-源码"><em><strong>3.1.2 生成 Java 源码</strong></em></h4>
+<p>首先向maven项目中添加依赖：</p>
+<pre><code class="language-xml">&lt;properties&gt;
+    &lt;grpc.version&gt;1.20.0&lt;/grpc.version&gt;
+&lt;/properties&gt;
+
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.google.protobuf&lt;/groupId&gt;
+        &lt;artifactId&gt;protobuf-java&lt;/artifactId&gt;
+        &lt;version&gt;3.11.4&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;!-- gRPC protobuf client --&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.grpc&lt;/groupId&gt;
+        &lt;artifactId&gt;grpc-protobuf&lt;/artifactId&gt;
+        &lt;version&gt;1.28.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.grpc&lt;/groupId&gt;
+        &lt;artifactId&gt;grpc-stub&lt;/artifactId&gt;
+        &lt;version&gt;1.28.0&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;io.grpc&lt;/groupId&gt;
+        &lt;artifactId&gt;grpc-netty-shaded&lt;/artifactId&gt;
+        &lt;version&gt;1.28.0&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+<p>安装 protoc 工具，以笔者的mbp为例：</p>
+<pre><code class="language-shell">$ brew install protobuf
+</code></pre>
+<p>开始编译protobuf文件，有两种方法可选择，通过插件编译或者手动编译。</p>
+<h5 id="3121-maven编译"><em><strong>3.1.2.1 maven编译</strong></em></h5>
+<p>向maven中添加编译插件（注意版本）：</p>
+<pre><code class="language-xml">    &lt;build&gt;
+        &lt;plugins&gt;
+            &lt;!--protocol buffers plugin --&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.8.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.6&lt;/source&gt;
+                    &lt;target&gt;1.6&lt;/target&gt;
+                    &lt;!--&lt;useArgumentFile&gt;true&lt;/useArgumentFile&gt;--&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.xolstice.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;protobuf-maven-plugin&lt;/artifactId&gt;
+                &lt;version&gt;0.6.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;protocExecutable&gt;/usr/local/bin/protoc&lt;/protocExecutable&gt;
+                &lt;/configuration&gt;
+                &lt;executions&gt;
+                    &lt;execution&gt;
+                        &lt;goals&gt;
+                            &lt;goal&gt;compile&lt;/goal&gt;
+                            &lt;goal&gt;compile-custom&lt;/goal&gt;
+                        &lt;/goals&gt;
+                    &lt;/execution&gt;
+                &lt;/executions&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+    &lt;/build&gt;
+
+</code></pre>
+<p>插件下载完毕后，运行指令，将项目下的 <code>*.proto</code>编译为 Java 代码：</p>
+<pre><code class="language-shell">$ mvn protobuf:compile
+</code></pre>
+<p>编译完成之后，在 $PROJECT_ROOT/src/main/resources 下会增加一个名为new_old的文件夹，将里面的 ./org/tensorflow 和 ./tensorflow/serving 两个文件夹移动至PROJECT_ROOT/src/main/java下即可。</p>
+<h5 id="3122-手动编译"><em><strong>3.1.2.2 手动编译</strong></em></h5>
+<p>手动编译相较前者麻烦些，但是可以编译出静态的代码集成至工程中，而不是每次运行都动态生成。</p>
+<p>获取 <a href="https://github.com/grpc/grpc-java">grpc-java repo</a> 代码，建立插件：</p>
+<pre><code class="language-shell">$ cd $SRC
+$ git clone https://github.com/grpc/grpc-java.git
+Cloning into 'grpc-java'...
+remote: Enumerating objects: 166, done.
+remote: Counting objects: 100% (166/166), done.
+remote: Compressing objects: 100% (121/121), done.
+remote: Total 84096 (delta 66), reused 92 (delta 25), pack-reused 83930
+Receiving objects: 100% (84096/84096), 31.18 MiB | 23.14 MiB/s, done.
+Resolving deltas: 100% (38843/38843), done.
+
+$ cd grpc-java/compiler/
+$ ../gradlew java_pluginExecutable
+$ ls -l build/exe/java_plugin/protoc-gen-grpc-java
+</code></pre>
+<p>运行shell脚本，编译protobuf文件，脚本与前人略有不同，将路径稍作修改，运行即可：</p>
+<pre><code class="language-shell">export SRC=~/code/TFS_source/
+export PROJECT_ROOT=~/java/JavaClient/
+cd $PROJECT_ROOT/src/main/proto/
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow/core/example/*.proto
+# append by wangxiao
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow_serving/core/logging.proto
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow/stream_executor/dnn.proto
+
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow_serving/apis/*.proto
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow_serving/config/*.proto
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow_serving/util/*.proto
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow_serving/sources/storage_path/*.proto
+
+# the following 3 cmds will generate extra *Grpc.java stub source files in addition to the regular protobuf Java source files.
+# The output grpc-java files are put in the same directory as the regular java source files.
+# note the --plugin option uses the grpc-java plugin file we created in step 1.
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow/core/protobuf/*.proto
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow/core/lib/core/*.proto
+protoc --java_out $PROJECT_ROOT/src/main/java --proto_path ./ ./tensorflow/core/framework/*.proto
+
+protoc --grpc-java_out $PROJECT_ROOT/src/main/java --java_out $PROJECT_ROOT/src/main/java --proto_path ./ tensorflow_serving/apis/prediction_service.proto --plugin=protoc-gen-grpc-java=$SRC/grpc-java/compiler/build/exe/java_plugin/protoc-gen-grpc-java
+protoc --grpc-java_out $PROJECT_ROOT/src/main/java --java_out $PROJECT_ROOT/src/main/java --proto_path ./ tensorflow_serving/apis/model_service.proto --plugin=protoc-gen-grpc-java=$SRC/grpc-java/compiler/build/exe/java_plugin/protoc-gen-grpc-java
+protoc --grpc-java_out $PROJECT_ROOT/src/main/java --java_out $PROJECT_ROOT/src/main/java --proto_path ./ tensorflow_serving/apis/session_service.proto --plugin=protoc-gen-grpc-java=$SRC/grpc-java/compiler/build/exe/java_plugin/protoc-gen-grpc-java
+</code></pre>
+<p>运行正常的情况下，$PROJECT_ROOT/src/main/java/ 文件家里应该多了 /org/tensorflow 和 /tensorflow/serving 两个文件夹，至此，编译结束！</p>
+<h3 id="32-client编写"><em><strong>3.2 Client编写</strong></em></h3>
+<p>分别给出 Python 和 Java Client 的简单示例。</p>
+<h4 id="321-python-client"><em><strong>3.2.1 Python client</strong></em></h4>
+<pre><code class="language-python">from __future__ import print_function
+import argparse
+import numpy as np
+import time
+tt = time.time()
+
+import cv2
+import tensorflow as tf
+
+from grpc.beta import implementations
+from tensorflow_serving.apis import predict_pb2
+from tensorflow_serving.apis import prediction_service_pb2
+
+parser = argparse.ArgumentParser(description='incetion grpc client flags.')
+parser.add_argument('--host', default='0.0.0.0', help='inception serving host')
+parser.add_argument('--port', default='9000', help='inception serving port')
+parser.add_argument('--image', default='', help='path to JPEG image file')
+FLAGS = parser.parse_args()
+
+def main():  
+  # create prediction service client stub
+  channel = implementations.insecure_channel(FLAGS.host, int(FLAGS.port))
+  stub = prediction_service_pb2.beta_create_PredictionService_stub(channel)
+
+  # create request
+  request = predict_pb2.PredictRequest()
+  request.model_spec.name = 'resnet'
+  request.model_spec.signature_name = 'serving_default'
+
+  # read image into numpy array
+  img = cv2.imread(FLAGS.image).astype(np.float32)
+
+  # convert to tensor proto and make request
+  # shape is in NHWC (num_samples x height x width x channels) format
+  tensor = tf.contrib.util.make_tensor_proto(img, shape=[1]+list(img.shape))
+  request.inputs['input'].CopyFrom(tensor)
+  resp = stub.Predict(request, 30.0)
+
+  print('total time: {}s'.format(time.time() - tt))
+
+</code></pre>
+<h4 id="322-java-client"><em><strong>3.2.2 Java Client</strong></em></h4>
+<pre><code class="language-java">package client;
+
+import io.grpc.ManagedChannel;
+import io.grpc.ManagedChannelBuilder;
+import tensorflow.serving.Model;
+import org.tensorflow.framework.DataType;
+import org.tensorflow.framework.TensorProto;
+import org.tensorflow.framework.TensorShapeProto;
+
+import tensorflow.serving.Predict;
+import tensorflow.serving.PredictionServiceGrpc;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class FastTextTFSClient {
+
+    /**
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        String host = &quot;127.0.0.1&quot;;
+        int port = 8500;
+        // the model's name.
+        String modelName = &quot;fastText&quot;;
+        int seqLen = 50;
+
+        // assume this model takes input of free text, and make some sentiment prediction.
+        List&lt;Integer&gt; intData = new ArrayList&lt;Integer&gt;();
+        for(int i=0; i &lt; seqLen; i++){
+            intData.add(i);
+        }
+
+        // create a channel for gRPC
+        ManagedChannel channel = ManagedChannelBuilder.forAddress(host, port).usePlaintext().build();
+        PredictionServiceGrpc.PredictionServiceBlockingStub stub = PredictionServiceGrpc.newBlockingStub(channel);
+
+        // create a modelspec
+        Model.ModelSpec.Builder modelSpecBuilder = Model.ModelSpec.newBuilder();
+        modelSpecBuilder.setName(modelName);
+        modelSpecBuilder.setSignatureName(&quot;fastText_sig_def&quot;);
+
+        Predict.PredictRequest.Builder builder = Predict.PredictRequest.newBuilder();
+        builder.setModelSpec(modelSpecBuilder);
+
+        // create the input TensorProto and request
+        TensorProto.Builder tensorProtoBuilder = TensorProto.newBuilder();
+        tensorProtoBuilder.setDtype(DataType.DT_INT32);
+        for (Integer intDatum : intData) {
+            tensorProtoBuilder.addIntVal(intDatum);
+        }
+        // build input TensorProto shape
+        TensorShapeProto.Builder tensorShapeBuilder = TensorShapeProto.newBuilder();
+        tensorShapeBuilder.addDim(TensorShapeProto.Dim.newBuilder().setSize(1));
+        tensorShapeBuilder.addDim(TensorShapeProto.Dim.newBuilder().setSize(seqLen));
+        tensorProtoBuilder.setTensorShape(tensorShapeBuilder.build());
+      
+        TensorProto tp = tensorProtoBuilder.build();
+        builder.putInputs(&quot;input_x&quot;, tp);
+        Predict.PredictRequest request = builder.build();
+        
+        // get response
+        Predict.PredictResponse response = stub.predict(request);
+    }
+}
+</code></pre>
+<h2 id="4、test"><em><strong>4、Test</strong></em></h2>
+<h3 id="41-一致性测试"><em><strong>4.1 一致性测试</strong></em></h3>
+<p>笔者先后验证了 Text Cnn 和 base BERT 模型，分别用 Python 和 Tensorflow Serving 加载相同模型，输入10组不同数据，输出结果比对一致！</p>
+<h3 id="42-性能测试"><em><strong>4.2 性能测试</strong></em></h3>
+<p>以文本分类任务为例，这边一共训练了四个模型，基本覆盖了主流网络结构（Cnn/Rnn/Transformer）：</p>
+<blockquote>
+<ol>
+<li>Fast text</li>
+<li>Text Cnn</li>
+<li>Rcnn (1 layer Bilstm + pooling)</li>
+<li>BERT (12 layer)</li>
+</ol>
+</blockquote>
+<p>此外，还针对单线程和多线程请求作了对比测试。</p>
+<h4 id="421-测试环境"><em><strong>4.2.1 测试环境</strong></em></h4>
+<p>测试机器使用的是mbp-2019，Docker 资源配置：</p>
+<table>
+<thead>
+<tr>
+<th><strong>Cpu</strong></th>
+<th><strong>Intel Core i5 - 2.4 GHz - 4 core</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Memory</strong></td>
+<td><strong>2 GB 2133MHz LPDDR3</strong></td>
+</tr>
+<tr>
+<td><strong>Swap</strong></td>
+<td><strong>1 GB</strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="422测试结果"><em><strong>4.2.2测试结果</strong></em></h4>
+<p>在输入文本长度固定为 50 时，分别验证单线程和多线程性能，结果如下表。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">model</th>
+<th style="text-align:center">thread</th>
+<th style="text-align:center">Queries</th>
+<th style="text-align:center">total costs (s)</th>
+<th style="text-align:center">single costs (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">1.804726</td>
+<td style="text-align:center">1.804726</td>
+</tr>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">9.322348</td>
+<td style="text-align:center">1.8644696</td>
+</tr>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">0.863049</td>
+<td style="text-align:center">0.863049</td>
+</tr>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">3.302042</td>
+<td style="text-align:center">0.6604084</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">3.149949</td>
+<td style="text-align:center">3.149949</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">11.433131</td>
+<td style="text-align:center">2.2866262</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">1.054073</td>
+<td style="text-align:center">1.054073</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">5.116928</td>
+<td style="text-align:center">1.0233856</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">8.709985</td>
+<td style="text-align:center">8.709985</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">41.316675</td>
+<td style="text-align:center">8.263335</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">4.097872</td>
+<td style="text-align:center">4.097872</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">21.650854</td>
+<td style="text-align:center">4.3301708</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">48.831417</td>
+<td style="text-align:center">97.662834</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">99.502192</td>
+<td style="text-align:center">99.502192</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">30.662522</td>
+<td style="text-align:center">61.325044</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">62.584200</td>
+<td style="text-align:center">62.5842</td>
+</tr>
+</tbody>
+</table>
+<p>在输入文本长度固定为 100 时，分别验证单线程和多线程性能，结果如下表。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">model</th>
+<th style="text-align:center">thread</th>
+<th style="text-align:center">QUERIEs</th>
+<th style="text-align:center">total costs (s)</th>
+<th style="text-align:center">single costs (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">2.294074</td>
+<td style="text-align:center">2.294074</td>
+</tr>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">9.183258</td>
+<td style="text-align:center">1.8366516</td>
+</tr>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">0.711471</td>
+<td style="text-align:center">0.711471</td>
+</tr>
+<tr>
+<td style="text-align:center">Fast text</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">4.440220</td>
+<td style="text-align:center">0.888044</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">2.905316</td>
+<td style="text-align:center">2.905316</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">12.867391</td>
+<td style="text-align:center">2.5734782</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">1.055177</td>
+<td style="text-align:center">1.055177</td>
+</tr>
+<tr>
+<td style="text-align:center">Text Cnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">5.400848</td>
+<td style="text-align:center">1.0801696</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">17.621534</td>
+<td style="text-align:center">17.621534</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">83.072520</td>
+<td style="text-align:center">16.614504</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">6.960749</td>
+<td style="text-align:center">6.960749</td>
+</tr>
+<tr>
+<td style="text-align:center">Rcnn</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">5000</td>
+<td style="text-align:center">36.704266</td>
+<td style="text-align:center">7.3408532</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">74.752247</td>
+<td style="text-align:center">149.504494</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">154.435726</td>
+<td style="text-align:center">154.435726</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">500</td>
+<td style="text-align:center">49.598261</td>
+<td style="text-align:center">99.196522</td>
+</tr>
+<tr>
+<td style="text-align:center">BERT</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">101.888118</td>
+<td style="text-align:center">101.888118</td>
+</tr>
+</tbody>
+</table>
+<p>输入长度为50时，可以看到 Cnn 类模型效率极高，即使是单层的BiLstm 也能在10ms以内完成预测。</p>
+<p>而12层BERT单次预测竟然用了 100 ms!  NLP的小伙伴们也不用着急，个人认为仍有很多优化点：</p>
+<blockquote>
+<ol>
+<li>自己训练个小点的 BERT，如6层</li>
+<li>部署 GPU 版 Tensorflow Serving</li>
+<li>用BERT的加速版变体替代</li>
+<li>输入截断</li>
+</ol>
+</blockquote>
+<p>此外，多线程Tensorflow Serving 内部对并发作了优化（batch操作），多线程请求明显快于单线程。</p>
+<h3 id="43-测试结论"><em><strong>4.3 测试结论</strong></em></h3>
+<blockquote>
+<ol>
+<li>Tensorflow Serving 的输出可靠；</li>
+<li>Tensorflow Serving 运行效率极高，达到生产上线要求。</li>
+</ol>
+</blockquote>
+<p><strong>开源时代，欢迎转载，注明出处即可</strong><br>
+原文链接：<a href="https://www.cnblogs.com/ustcwx/p/12768463.html">https://www.cnblogs.com/ustcwx/p/12768463.html</a></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+	<div class="postDesc">posted on 
+<span id="post-date">2020-04-24 16:44</span>&nbsp;
+<a href="https://www.cnblogs.com/ustcwx/">年华似水丶我如风</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12768463" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12768463);return false;">收藏</a></div>
+</div>
+
+
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 286889, cb_blogApp = 'ustcwx', cb_blogUserGuid = '7ef8179d-6621-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 12768463, cb_entryCreatedDate = '2020-04-24 16:44', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+<!--done-->
+<div class="footer">
+	Copyright &copy; 2020 年华似水丶我如风
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+ Powered By<a href="/">博客园</a>
+</div>
+
+
+
+
+    
+</body>
+</html>

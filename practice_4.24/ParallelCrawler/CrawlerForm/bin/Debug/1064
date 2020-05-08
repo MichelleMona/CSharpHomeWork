@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>罗毅豪 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=Fx4xdLkGuHnlaG7xntG_wAnZrnorJWp5u_TWKqbvMF0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=cYvlxMu_nd6MVfg-vi7YqOC6FaZ7VHFsDM166vO_ekA" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/luoyihao/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/luoyihao/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/luoyihao/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 527024;
+        var currentBlogApp = 'luoyihao';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'BlackLowKey';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/luoyihao/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/luoyihao/">罗毅豪</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/luoyihao/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%BD%97%E6%AF%85%E8%B1%AA">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/luoyihao/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+124&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/luoyihao/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12775028.html">
+    bootCDN的使用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我们在使用第三方插件时，可以使用cdn引入，而无需下载到本地。 我们可以使用bootCDN&#160;https://www.bootcdn.cn/&#160;这一免费的cdn提供网站。 搜索所需要的插件如jquery，选择版本，复制地址即可使用。 使用cdn的优点是加快页面的加载速度，无需下载第三方插件，节约项目打包            <a href="https://www.cnblogs.com/luoyihao/p/12775028.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 20:13 罗毅豪 阅读 (7) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775028" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/luoyihao/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12767330.html">
+    工具123的介绍
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：推荐一个网站——工具123&#160;http://www.gjw123.com/，里面还是有不少实用的小工具的。 例如： 1.微信对话生成器 可以轻松生成微信对话，生成聊天记录截图。 2.汉字转拼音 可以实现汉字转拼音，还可以朗读。 3.身份证查询 可以获得身份证号上的一些信息。            <a href="https://www.cnblogs.com/luoyihao/p/12767330.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 14:37 罗毅豪 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12767330" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/luoyihao/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12763600.html">
+    typora的使用和Markdown基本语法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：typora是好用的基于Markdown的文档编辑器，其下载链接为：https://www.typora.io/。 我们可以使用Markdown语法进行编辑，最后导出pdf、docx等格式，提高文档编写的效率。 我们来介绍一下Markdown及其语法。 Markdown是一种可以使用普通文本编辑器编            <a href="https://www.cnblogs.com/luoyihao/p/12763600.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 22:41 罗毅豪 阅读 (6) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12763600" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12759399.html">
+    使用zeit部署页面
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：由于Serverless（无服务架构）的发展，如今前端项目可以通过zeit（[zaɪt]）免费部署到网络上。 我们可以进入zeit&#160;https://vercel.com/&#160;进行注册（需要绑定github账号），然后进行登录。 通过 npm i -g now 命令全局安装zeit。 进入需要部署的页面            <a href="https://www.cnblogs.com/luoyihao/p/12759399.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 11:12 罗毅豪 阅读 (26) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12759399" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12758902.html">
+    给网站增加音乐播放器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：如何给网站增加音乐播放器呢？我们进入网易云音乐的官网：https://music.163.com/。 登录后，进入我的主页选择歌曲或者在歌单中选择歌曲。 在歌曲详情页点击生成外链播放器。但是，有一些歌曲由于版权保护，无法生成外链。 我们需要选择没有版权保护的歌曲，生成外链。然后复制生成的HTML代码            <a href="https://www.cnblogs.com/luoyihao/p/12758902.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 10:12 罗毅豪 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12758902" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/luoyihao/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12755919.html">
+    使用typeIt实现打字效果
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我们可以通过typeIt插件实现打字效果。 typeIt网址：https://typeitjs.com/ 一、加载脚本 可以使用cdn &lt;script src=&quot;https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js&quot;&gt;&lt;/scrip            <a href="https://www.cnblogs.com/luoyihao/p/12755919.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 20:52 罗毅豪 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12755919" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12753024.html">
+    CSS3的filter属性解析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在今年清明的那天，很多网站都变灰色了，其实现原理为在html元素加上了css3属性filter（滤镜）。 html { filter: grayscale(1); } 即可设置灰度为100%。 效果如下： 还可以通过修改 html { filter: brightness(0.9); } 调节页面亮            <a href="https://www.cnblogs.com/luoyihao/p/12753024.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 16:35 罗毅豪 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12753024" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12752776.html">
+    打造自己的用户反馈平台
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：如果开发了一个产品，需要获取用户的反馈。 可以使用腾讯兔小巢https://txc.qq.com/免费打造自己的用户反馈平台。 登录后，创建产品。 即可生成反馈链接 用户即可点击生成的链接（比如可以在产品中进行点击跳转）进行反馈。 我们则可以在管理端查看到反馈内容。            <a href="https://www.cnblogs.com/luoyihao/p/12752776.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 16:09 罗毅豪 阅读 (6) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12752776" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12752586.html">
+    解决图片过大超过项目体积的问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：小程序对程序体积具有要求，若图片过大，则会无法上传代码。 解决方式：使用路过图床（https://imgchr.com/）帮忙免费存储照片。 上传图片，即可获得图片的链接或是在html中显示的代码。            <a href="https://www.cnblogs.com/luoyihao/p/12752586.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 15:49 罗毅豪 阅读 (12) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12752586" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/luoyihao/p/12750613.html">
+    使用js读取和保存文件
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我们有时需要用js生成和下载文件，方法为：引入FileSaver.js，再进行调用。 调用代码如下： &lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;title&gt;&lt;/title&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;/head&gt; &lt;body&gt; &lt;/body&gt; &lt;script            <a href="https://www.cnblogs.com/luoyihao/p/12750613.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 11:00 罗毅豪 阅读 (19) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12750613" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/luoyihao/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 罗毅豪
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Leon_W - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/coffee/bundle-coffee.min.css?v=pdMIVgsH8kXt-vOWnlL0N20TlHt3UyP9HzGgocfsP4s" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee-mobile.min.css?v=na9bpAY4yh7uEWCcrXj3vfJM3VBse8YtU6-5fUUQPz0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wdfordream/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wdfordream/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wdfordream/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 340593;
+        var currentBlogApp = 'wdfordream';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'coffee';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/wdfordream/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/wdfordream/">Leon_W</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/wdfordream/">
+首页</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Leon_W">
+联系</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/wdfordream/rss/">
+订阅</a>
+	
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/wdfordream/rss/">
+    <img src="/skins/coffee/images/xml.gif" alt="订阅" />
+</a></li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+随笔- 
+16&nbsp;
+文章- 
+1&nbsp;
+评论- 
+9&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/12739823.html">
+    从零开始学习docker之在docker中运行springboot项目
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、docker环境配置 首先需要一个安装了docker的服务器(本地或者云服务器)，如果没有请看上文，传送门 https://www.cnblogs.com/wdfordream/p/12737389.html 我这里是直接在云服务器上搭建了docker 云环境：CentOS 7.6 64位 二、            <a href="https://www.cnblogs.com/wdfordream/p/12739823.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 16:38 Leon_W 阅读 (72) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12739823" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/12737389.html">
+    从零开始学习docker之docker的安装
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、Docker 使用 Google 公司推出的 Go 语言 进行开发实现，基于 Linux 内核的 cgroup，namespace，以及 OverlayFS 类的 Union FS 等技术，对进程进行封装隔离，属于 操作系统层面的虚拟化技术。由于隔离的进程独立于宿主和其它的隔离的进程，因此也称其            <a href="https://www.cnblogs.com/wdfordream/p/12737389.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-20 14:36 Leon_W 阅读 (14) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12737389" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2019/08/19.html">2019年8月19日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/11377161.html">
+    springboot整合solr
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：上一篇博客中简要写了solr在windows的安装与配置，这一篇接上文写一下springboot整合solr，代码已经上传到github，传送门。 1、新建core并配置schema 上篇博客中已经有了相关内容，就不在展开叙述了，具体仿照3.2和3.3的配置schema，原文地址https://ww            <a href="https://www.cnblogs.com/wdfordream/p/11377161.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-19 15:03 Leon_W 阅读 (1864) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11377161" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2019/08/14.html">2019年8月14日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/11352053.html">
+    solr在windows下的安装及配置
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近接触搜索相关的内容，所以熟悉下solr的使用以及如何在java中使用solr实现搜索功能。 1、solr简介 Solr是一个独立的企业级搜索应用服务器，它对外提供类似于Web-service的API接口。用户可以通过http请求，向搜索引擎服务器提交一定格式的XML文件，生成索引；也可以通过Ht            <a href="https://www.cnblogs.com/wdfordream/p/11352053.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-14 15:09 Leon_W 阅读 (2367) 评论 (7)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11352053" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2019/02/28.html">2019年2月28日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/10445380.html">
+    String关键字
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：关于String和new String()见我写的前一篇博客 String和new String()的区别 1、String的&quot;+&quot;运算 a、String str = &quot;a&quot; + &quot;b&quot; 字符串常量的直接相加。在编译阶段会生成一个新的字符串&quot;ab&quot;，运行时会在字符串常量池中新建&quot;ab&quot;并把字符串st            <a href="https://www.cnblogs.com/wdfordream/p/10445380.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-28 10:31 Leon_W 阅读 (191) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10445380" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2019/02/27.html">2019年2月27日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/10443974.html">
+    final关键字
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：基本用法： 1、final修饰类表示类不能被继承 2、final修饰的方法不能被覆盖 3、final修饰的变量不能修改，是指引用的地址值不能修改，并且final修饰的变量必须初始化（1、直接赋值 2、在构造方法中赋值） final也可以用于提高运行效率 4、直接赋值的final常量在编译阶段就会赋值            <a href="https://www.cnblogs.com/wdfordream/p/10443974.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-02-27 15:24 Leon_W 阅读 (30) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10443974" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2019/01/08.html">2019年1月8日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/10237516.html">
+    关于int的范围以及溢出问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近在练一些算法题目的时候恰巧碰到了几道关于int范围与溢出相关的问题，于是就整理一下。 1、原码、补码 在计算机中数值都是用补码表示和存储的（正数补码与原码一致，负数补码是原码符号位不变，其余位取反，然后+1即反码+1）。 可以通过将这个数每一位和1做&amp;运算得到具体的二进制表示，代码如下。代码部分            <a href="https://www.cnblogs.com/wdfordream/p/10237516.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-01-08 10:33 Leon_W 阅读 (2812) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10237516" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2018/08/09.html">2018年8月9日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/9449710.html">
+    String与new String()的区别
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：JVM为了提升性能和减少内存开销，避免字符串的重复创建，维护了一块特殊的内存空间——字符串实例池。 String赋值的两种方式。 1、String str = &quot;test&quot;; 以这种方式赋值时，JVM会先从字符串实例池中查询是否存在&quot;test&quot;这个对象， 如果存在，直接把实例池中&quot;test&quot;的地址返            <a href="https://www.cnblogs.com/wdfordream/p/9449710.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-08-09 16:19 Leon_W 阅读 (1828) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9449710" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2017/08/11.html">2017年8月11日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/7325315.html">
+    kafka在windows下的安装和配置
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：博主最近在学习有关kafka的配置安装以及在spring的集成使用。但网上关于kafka的配置参考资料基本都是于linux下的配置，于是博主在整理了相关windows下kafka的配置记录在博客里。由于是简单配置所以在这里只建了一个topic以及一个producer和两个consumer。 关于ka            <a href="https://www.cnblogs.com/wdfordream/p/7325315.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-11 11:19 Leon_W 阅读 (1332) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7325315" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wdfordream/archive/2017/08/09.html">2017年8月9日</a>
+    </div>
+
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/wdfordream/p/7324975.html">
+    kafka入门：简介、使用场景、设计原理、主要配置及集群搭建（转）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：问题导读： 1.zookeeper在kafka的作用是什么？ 2.kafka中几乎不允许对消息进行“随机读写”的原因是什么？ 3.kafka集群consumer和producer状态信息是如何保存的？ 4.partitions设计的目的的根本原因是什么？ 一、入门 1、简介 Kafka is a d            <a href="https://www.cnblogs.com/wdfordream/p/7324975.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2017-08-09 14:05 Leon_W 阅读 (227) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7324975" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/wdfordream/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 Leon_W
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

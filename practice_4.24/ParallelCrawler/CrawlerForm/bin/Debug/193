@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Biningo - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/biningooginind/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/biningooginind/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/biningooginind/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 559704;
+        var currentBlogApp = 'biningooginind';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/biningooginind/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/biningooginind/">Biningo</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/biningooginind/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Biningo">
+联系</a></li>
+<li>
+
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+23&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+10</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/03/01.html">2020年3月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12388467.html">
+[置顶]    一款属于自己的笔记本【vue+gin+elementUI前后端分离开发部署开源项目】
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 我为什么要写一个个人的云笔记？ (⊙o⊙)…额额额&#128516;。。。这件事儿还得从一只蝙蝠说起...... 好了_(:з」∠)_不想扯了...... ~~有以下几个原因：~~ 1. 突然发现有道云笔记不是自己的 我的隐私都在别人的库里&#128561;。并且一直想有一个自己的云笔记。 2. 打开全球最大同性交友平台            <a href="https://www.cnblogs.com/biningooginind/p/12388467.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-01 10:04 Biningo 阅读 (833) 评论 (10)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12388467" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12769505.html">
+    [go]反射
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、reflect.Typeof() 如果传入的是一个接口，如果是动态绑定了一个实现结构体的，则显示具体结构体的Type，否则是接口的名字。这个方法返回的是一个Type接口，其实就是返回了 绑定类型的rtype，这个指针在Value这个结构体有 Typeof返回的是一个Type接口下面看看Type接            <a href="https://www.cnblogs.com/biningooginind/p/12769505.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 19:12 Biningo 阅读 (13) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12769505" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12763155.html">
+    循环队列-双端和单端
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：单循环队列 q ：用数组来记录数据 cap：代表数组的长度 len：代表元素的个数，取尾部元素可以根据头元素指针和这个值来进行计算 (queue head+queue len)%queue cap ， 取余是为了在规定范围内循环使用有限空间 head：头元素的指针 出队：出头元素只需要将head往前            <a href="https://www.cnblogs.com/biningooginind/p/12763155.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 20:01 Biningo 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12763155" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12703006.html">
+    [go]map基本使用和底层原理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1、map基本使用 map声明 创建 判断值是否存在 只接受一个的话默认返回的是value，两个的话有exists map遍历 删除 2、map和set go没有内置set类型，但是可以用map很轻松模仿， 因为map的key是唯一的 3、map底层结构 借鉴了如下博客。写的很好 &quot; 深入Go的Ma            <a href="https://www.cnblogs.com/biningooginind/p/12703006.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 08:55 Biningo 阅读 (61) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12703006" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/04/12.html">2020年4月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12685406.html">
+    [go]指针
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、三种指针类型 1. 普通指针 2. 非类型安全指针 unsafe.Pointer（类似c的 void ） 3. 内置类型指针 uintpter（其实就是一个整数，代表地址，支持运算） 普通指针和unsafe.Pointer类型的指针都能代表引用一个地址，被GC发现。但是uintptr是不代表引用            <a href="https://www.cnblogs.com/biningooginind/p/12685406.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-12 15:23 Biningo 阅读 (47) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12685406" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/04/03.html">2020年4月3日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12625321.html">
+    nginx使用手册+基本原理+优缺点
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、nginx优点 1.反向代理 1、正向代理 ： 客户端和原始服务器(origin server)之间的服务器，为了从原始服务器取得内容，客户端向代理发送一个请求并指定目标(原始服务器)，然后代理向原始服务器转交请求并将获得的内容返回给客户端。 server不知道client是谁 2、反向代理：             <a href="https://www.cnblogs.com/biningooginind/p/12625321.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-03 11:16 Biningo 阅读 (588) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12625321" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/03/31.html">2020年3月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12609262.html">
+    缓存问题[雪崩、击穿]
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：缓存穿透 查询缓存步骤： 1. 查询K V数据库缓存。存在返回 2. 如果数据不存在，则查询后端sql数据库 缓存穿透 ： 恶意请求会故意查询在redis等缓存数据库里面不存在的Key，来引发后端数据库的查询。 如果数据量很大，则会增加后端的压力。这就是 ~~缓存穿透~~ 如何避免？ 1. 请求过滤            <a href="https://www.cnblogs.com/biningooginind/p/12609262.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-31 22:43 Biningo 阅读 (62) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12609262" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/03/23.html">2020年3月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12555729.html">
+    字典
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：字典在很多高级语言里都有，比如 1. js的对象结构可以当字典来用 2. python的字典 3. go的map 4. ...................... 但是你们知道字典是怎么实现的吗？本文来实现一个简单的字典。 python的字典 先来看python的字典是怎样的 c语言实现 参考了             <a href="https://www.cnblogs.com/biningooginind/p/12555729.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-23 22:26 Biningo 阅读 (17) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12555729" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12553163.html">
+    双链表【参照redis链表结构】
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：参照了 Redis 里面的双链表结构，可以说是完全复制粘贴，redis的双链表还是写的很通俗易懂的，没有什么花里胡哨的东西，但是redis还有个 iter 迭代器的结构来遍历链表。我这里就没有实现了，只是实现了双链表的基本操作 redis双链表结构有如下特点 1. 多态：可以储存多种数据类型 2.             <a href="https://www.cnblogs.com/biningooginind/p/12553163.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-23 16:48 Biningo 阅读 (16) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12553163" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/biningooginind/archive/2020/03/22.html">2020年3月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12545897.html">
+    channel的关闭的经典场景
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：关闭原则 一个常用的使用Go通道的原则是不要在数据接收方或者在有多个发送者的情况下关闭通 道。 通用的原则是不要关闭已关闭的通道 错误关闭 go func Write(dataCh chan int){ for{ if value:=rand.Intn(1000);value!=0{ time.Sl            <a href="https://www.cnblogs.com/biningooginind/p/12545897.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-22 14:31 Biningo 阅读 (36) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12545897" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/biningooginind/p/12545885.html">
+    channel通道常见使用场景
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1、读写 2、管道实现定时通知 3、管道实现互斥锁            <a href="https://www.cnblogs.com/biningooginind/p/12545885.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-22 14:29 Biningo 阅读 (44) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12545885" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/biningooginind/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 Biningo
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

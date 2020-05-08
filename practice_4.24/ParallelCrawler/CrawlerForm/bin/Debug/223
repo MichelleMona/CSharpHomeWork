@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="我们说的不同的引用类型其实都是逻辑上的，而对于虚拟机来说，主要体现的是对象的不同的 状态和对 的影响。 初识引用 对于刚接触 Java 的 C&#x2B;&#x2B; 程序员而言，理解栈和堆的关系可能很不习惯。在 C&#x2B;&#x2B;" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>关于强引用、软引用、弱引用、幻象引用，你该如何回答？ - 程序员cxuan - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/cxuanBlog/custom.css?v=z87jHRAmtK9vVV49P3mxO0DHs1A=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/cxuanBlog/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/cxuanBlog/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/cxuanBlog/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 517352;
+        var currentBlogApp = 'cxuanBlog';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/cxuanBlog/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/cxuanBlog/">cxuan</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/cxuanBlog/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%A8%8B%E5%BA%8F%E5%91%98cxuan">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/cxuanBlog/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+96&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+215</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/cxuanBlog/p/12774370.html">关于强引用、软引用、弱引用、幻象引用，你该如何回答？</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>我们说的不同的引用类型其实都是逻辑上的，而对于虚拟机来说，主要体现的是对象的不同的<code>可达性(reachable)</code> 状态和对<code>垃圾收集(garbage collector)</code>的影响。</p>
+<h2 id="初识引用">初识引用</h2>
+<p>对于刚接触 Java 的 C++ 程序员而言，理解栈和堆的关系可能很不习惯。在 C++ 中，可以使用 new 操作符在堆上创建对象，或者使用自动分配在栈上创建对象。下面的 C++ 语句是合法的，但是 Java 编译器却拒绝这么写代码，会出现 <code>syntax error</code> 编译错误。</p>
+<pre><code class="language-java">Integer foo = Integer(1);
+</code></pre>
+<p>Java 和 C 不一样，Java 中会把对象都放在堆上，需要 new 操作符来创建对象。本地变量存储在<code>栈</code>中，它们持有一个指向堆中对象的<code>引用(指针)</code>。下面是一个 Java 方法，该方法具有一个 Integer 变量，该变量从 String 解析值</p>
+<pre><code class="language-java">public static void foo(String bar){
+    Integer baz = new Integer(bar);
+}
+</code></pre>
+<p>这段代码我们使用堆栈分配图可以看一下它们的关系</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425181959328-304051317.png" alt=""></p>
+<p>首先先来看一下 <code>foo()</code> 方法，这一行代码分配了一个新的 Integer 对象，JVM 尝试在堆空间中开辟一块内存空间。如果允许分配的话，就会调用 Integer 的构造方法把 String 字符串转换为 Integer 对象。JVM 将指向该对象的指针存储在变量 baz 中。</p>
+<p>上面这种情况是我们乐意看到的情况，毕竟我们不想在编写代码的时候遇到阻碍，但是这种情况是不可能出现的，当堆空间无法为 bar 和 baz 开辟内存空间时，就会出现 <code>OutOfMemoryError</code>，然后就会调用<code>垃圾收集器(garbage collector)</code> 来尝试腾出内存空间。这中间涉及到一个问题，垃圾收集器会回收哪些对象？</p>
+<h2 id="垃圾收集器">垃圾收集器</h2>
+<p>Java 给你提供了一个 new 操作符来为堆中的对象开辟内存空间，但它没有提供 <code>delete</code> 操作符来释放对象空间。当 foo() 方法返回时，如果变量 baz 超过最大内存，但它所指向的对象仍然还在堆中。如果没有垃圾回收器的话，那么程序就会抛出 <code>OutOfMemoryError</code> 错误。然而 Java 不会，它会提供垃圾收集器来释放不再引用的对象。</p>
+<p>当程序尝试创建新对象并且堆中没有足够的空间时，垃圾收集器就开始工作。当收集器访问堆时，请求线程被挂起，试图查找程序不再主动使用的对象，并回收它们的空间。如果垃圾收集器无法释放足够的内存空间，并且JVM 无法扩展堆，则会出现 <code>OutOfMemoryError</code>，你的应用程序通常在这之后崩溃。还有一种情况是 <code>StackOverflowError</code> ，它出现的原因是因为线程请求的栈深度要大于虚拟机所允许的深度时出现的错误。</p>
+<h3 id="标记---清除算法">标记 - 清除算法</h3>
+<p>Java 能永久不衰的一个原因就是因为垃圾收集器。许多人认为 JVM 会为每个对象保留一个引用计数，当每次引用对象的时候，引用计数器的值就 + 1，当引用失效的时候，引用计数器的值就 - 1。而垃圾收集器只会回收引用计数器的值为 0 的情况。这其实是 <code>引用计数法(Reference Counting)</code> 的收集方式。但是这种方式无法解决对象之间相会引用的问题，如下</p>
+<pre><code class="language-java">class A{
+  public B b;
+   
+}
+class B{
+  public A a;
+}
+public class Main{
+    public static void main(String[] args){
+    A a = new A();
+    B b = new B();
+    a.b=b;
+    b.a=a;
+    }
+}
+</code></pre>
+<p>然而实际上，JVM 使用一种叫做 <code>标记-清除(Mark-Sweep)</code>的算法，标记清除垃圾回收背后的想法很简单：程序无法到达的每个对象都是垃圾，可以进行回收。</p>
+<p>标记-清除收集具有如下几个阶段</p>
+<ul>
+<li>阶段一：标记</li>
+</ul>
+<p>垃圾收集器会从 <code>根(root)</code> 引用开始，标记它到达的所有对象。如果用老师给学生判断卷子来比喻，这就相当于是给试卷上的全部答案判断正确还是错误的过程。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182008904-1654343562.png" alt=""></p>
+<ul>
+<li>阶段二：清理</li>
+</ul>
+<p>在第一阶段中所有可回收的的内容都能够被垃圾收集器进行回收。如果一个对象被判定为是可以回收的对象，那么这个对象就被放在一个 <code>finalization queue(回收队列)</code>中，并在稍后会由一个虚拟机自动建立的、低优先级的 <code>finalizer</code> 线程去执行它。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182015131-1670094241.png" alt=""></p>
+<ul>
+<li>阶段三：整理（可选）</li>
+</ul>
+<p>一些收集器有第三个步骤，整理。在这个步骤中，GC 将对象移动到垃圾收集器回收完对象后所留下的自由空间中。这么做可以防止堆碎片化，防止大对象在堆中由于堆空间的不连续性而无法分配的情况。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182022415-1609544787.png" alt=""></p>
+<p>所以上面的过程中就涉及到一个<code>根节点(GC Roots)</code> 来判断是否存在需要回收的对象。这个算法的基本思想就是通过一系列的 <code>GC Roots</code> 作为起始点，从这些节点向下搜索，搜索所走过的路径称为 <code>引用链(Reference Chain)</code>，当一个对象到 GC Roots 之间没有任何引用链相连的话，则证明此对象不可用。引用链上的任何一个能够被访问的对象都是<code>强引用</code> 对象，垃圾收集器不会回收强引用对象。</p>
+<p>因此，返回到 foo() 方法中，仅在执行方法时，参数 bar 和局部变量 baz 才是强引用。一旦方法执行完成，它们都超过了作用域的时候，它们引用的对象都会进行垃圾回收。</p>
+<p>下面来考虑一个例子</p>
+<pre><code class="language-java">LinkedList foo = new LinkedList();
+foo.add(new Integer(111));
+</code></pre>
+<p>变量 foo 是一个强引用，它指向一个 LinkedList 对象。LinkedList（JDK.18） 是一个链表的数据结构，每一个元素都会指向前驱元素，每个元素都有其后继元素。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182029906-467699465.png" alt=""></p>
+<p>当我们调用<code>add()</code> 方法时，我们会增加一个新的链表元素，并且该链表元素指向值为 111 的 Integer 实例。这是一连串的强引用，也就是说，这个 Integer 的实例不符合垃圾收集条件。一旦 foo 对象超出了程序运行的作用域，LinkedList 和其中的引用内容都可以进行收集，收集的前提是没有强引用关系。</p>
+<h3 id="finalizers">Finalizers</h3>
+<p>C++ 允许对象定义析构函数方法：当对象超出作用范围或被明确删除时，会调用析构函数来清理使用的资源。对于大多数对象来说，析构函数能够释放使用 new 或者 malloc 函数分配的内存。 在Java中，垃圾收集器会为你自动清除对象，分配内存，因此不需要显式析构函数即可执行此操作。这也是 Java 和 C++ 的一大区别。</p>
+<p>然而，内存并不是唯一需要被释放的资源。考虑 <code>FileOutputStream</code>：当你创建此对象的实例时，它从操作系统分配文件句柄。如果你让流的引用在关闭前超过了其作用范围，该文件句柄会怎么样？实际上，每个流都会有一个 <code>finalizer</code> 方法，这个方法是垃圾回收器在回收之前由 JVM 调用的方法。对于 FileOutputStream 来说，<strong>finalizer 方法会关闭流，释放文件句柄给操作系统，然后清除缓冲区，确保数据能够写入磁盘</strong>。</p>
+<p>任何对象都具有 finalizer 方法，你要做的就是声明 <code>finalize()</code> 方法。如下</p>
+<pre><code class="language-java">protected void finalize() throws Throwable
+{
+    // 清除对象
+}
+</code></pre>
+<p>虽然 finalizers 的 finalize() 方法是一种好的清除方式，但是这种方法产生的负面影响非常大，你不应该依靠这个方法来做任何垃圾回收工作。因为 <code>finalize</code> 方法的运行开销比较大，不确定性强，无法保证各个对象的调用顺序。finalize 能做的任何事情，可以使用 <code>try-finally</code> 或者其他方式来做，甚至做的更好。</p>
+<h2 id="对象的生命周期">对象的生命周期</h2>
+<p>综上所述，可以通过下面的流程来对对象的生命周期做一个总结</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182038141-1201935650.png" alt=""></p>
+<p>对象被创建并初始化，对象在运行时被使用，然后离开对象的作用域，对象会变成不可达并会被垃圾收集器回收。图中用红色标明的区域表示对象处于强可达阶段。</p>
+<p>JDK1.2 介绍了 <code>java.lang.ref</code> 包，对象的生命周期有四个阶段：<code>􏲧强可达􏰛(Strongly Reachable􏰜)</code>、<code>软可达(Soft Reachable􏰜)</code>、<code>弱可达(Weak Reachable􏰜)</code>、 <code>幻象可达(Phantom Reachable􏰜)</code>。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182045440-54057762.png" alt=""></p>
+<p>如果只讨论符合垃圾回收条件的对象，那么只有三种：软可达、弱可达和幻象可达。</p>
+<ul>
+<li>
+<p>软可达：软可达就是􏱬我们只能通过软引用􏳂才能访问的状态，软可达的对象是由 <code>SoftReference</code> 引用的对象，并且没有强引用的对象。软引用是用来描述一些还<strong>有用但是非必须</strong>的对象。垃圾收集器会尽可能长时间的保留软引用的对象，但是会在发生 <code>OutOfMemoryError</code> 之前，回收软引用的对象。如果回收完软引用的对象，内存还是不够分配的话，就会直接抛出 OutOfMemoryError。</p>
+</li>
+<li>
+<p>弱可达：弱可达的对象是 <code>WeakReference</code> 引用的对象。垃圾收集器可以随时收集弱引用的对象，不会尝试保留软引用的对象。</p>
+</li>
+<li>
+<p>幻象可达：幻象可达是由 <code>PhantomReference </code> 引用的对象，幻象可达就是没有强、软、弱引用进行关联，并且已经被 finalize 过了，只有幻象引用指向这个对象的时候。</p>
+</li>
+</ul>
+<p>除此之外，还有强可达和不可达的两种可达性判断条件</p>
+<ul>
+<li>强可达：就是一个对象刚被创建、初始化、使用中的对象都是处于强可达的状态</li>
+<li><code>不可达(unreachable)</code>：处于不可达的对象就意味着对象可以被清除了。</li>
+</ul>
+<p>下面是一个不同可达性状态的转换图</p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182054362-20092599.png" alt=""></p>
+<p>判断可达性条件，也是 JVM 垃圾收集器决定如何处理对象的一部分考虑因素。</p>
+<p>所有的对象可达性引用都是 <code>java.lang.ref.Reference</code> 的子类，它里面有一个<code>get()</code> 方法，返回引用对象。 如果已通过程序或垃圾收集器清除了此引用对象，则此方法返回 null 。也就是说，除了幻象引用外，软引用和弱引用都是可以得到对象的。而且这些对象可以人为<code>拯救</code>，变为强引用，例如把 this 关键字赋值给对象，只要重新和引用链上的任意一个对象建立关联即可。</p>
+<h3 id="referencequeue">ReferenceQueue</h3>
+<p><code>引用队列</code>又称为 <code>ReferenceQueue</code>，它位于 java.lang.ref 包下。我们在􏰓建各种引用（软引用，弱引用，幻象引用）并关联到响应对象􏰐时，可以选择是否需要关联引用队列。JVM 会在特定的时机将引用入队到队列中，程序可以通过判断引用队列中是否已经加入引用，来了解被引用的对象是否被GC回收。</p>
+<h3 id="reference">Reference</h3>
+<p>java.lang.ref.Reference 为软（soft）引用、弱（weak）引用、虚（phantom）引用的父类。因为 Reference 对象和垃圾回收密切配合实现，该类可能不能被直接子类化。</p>
+<p>文章参考：</p>
+<p><a href="https://www.jianshu.com/p/f86d3a43eec5">https://www.jianshu.com/p/f86d3a43eec5</a></p>
+<p>《深入理解Java虚拟机》第二版</p>
+<p><a href="http://www.kdgregory.com/index.php?page=java.refobj">http://www.kdgregory.com/index.php?page=java.refobj</a></p>
+<p><img src="https://img2020.cnblogs.com/blog/1515111/202004/1515111-20200425182113271-1042895100.png" alt=""></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 18:21</span>&nbsp;
+<a href="https://www.cnblogs.com/cxuanBlog/">程序员cxuan</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774370" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12774370);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 517352, cb_blogApp = 'cxuanBlog', cb_blogUserGuid = '26a2e426-d936-451b-1437-08d635086245';
+    var cb_entryId = 12774370, cb_entryCreatedDate = '2020-04-25 18:21', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 程序员cxuan
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <!-- 生成博客目录的JS代码，两级目录 -->
+<script type="text/javascript">
+/*  
+    这段代码按H2、H3格式生成两级菜单
+    写博客按H2、H3格式写，不然生成不了
+    Markdown写作按##、###两级目录写
+    当然你也可以改写代码成三级菜单
+    参考：孤傲苍狼    zhang_derek
+    洪卫    2018-5-18 
+*/
+var BlogDirectory = {
+    /* 获取元素位置，距浏览器左边界的距离（left）和距浏览器上边界的距离（top）*/
+    getElementPosition:function (ele) {
+        var topPosition = 0;
+        var leftPosition = 0;
+        while (ele){
+            topPosition += ele.offsetTop;
+            leftPosition += ele.offsetLeft;
+            ele = ele.offsetParent;
+        }
+        return {top:topPosition, left:leftPosition};
+    },
+    /*获取滚动条当前位置 */
+    getScrollBarPosition:function () {
+        var scrollBarPosition = document.body.scrollTop || document.documentElement.scrollTop;
+        return  scrollBarPosition;
+    },
+    /* 移动滚动条，finalPos 为目的位置，internal 为移动速度 */
+    moveScrollBar:function(finalpos, interval) {
+        //若不支持此方法，则退出
+        if(!window.scrollTo) {
+            return false;
+        }
+        
+        //窗体滚动时，禁用鼠标滚轮
+        window.onmousewheel = function(){
+            return false;
+        };
+        
+        //清除计时
+        if (document.body.movement) {
+            clearTimeout(document.body.movement);
+        }
+        
+        //获取滚动条当前位置
+        var currentpos =BlogDirectory.getScrollBarPosition();
+
+        var dist = 0;
+        //到达预定位置，则解禁鼠标滚轮，并退出
+        if (currentpos == finalpos) {
+            window.onmousewheel = function(){
+                return true;
+            }
+            return true;
+        }
+        //未到达，则计算下一步所要移动的距离
+        if (currentpos < finalpos) {
+            dist = Math.ceil((finalpos - currentpos)/10);
+            currentpos += dist;
+        }
+        if (currentpos > finalpos) {
+            dist = Math.ceil((currentpos - finalpos)/10);
+            currentpos -= dist;
+        }
+
+        var scrTop = BlogDirectory.getScrollBarPosition();//获取滚动条当前位置
+        window.scrollTo(0, currentpos);//移动窗口
+        if(BlogDirectory.getScrollBarPosition() == scrTop)//若已到底部，则解禁鼠标滚轮，并退出
+        {
+            window.onmousewheel = function(){
+                return true;
+            }
+            return true;
+        }
+
+        //进行下一步移动
+        var repeat = "BlogDirectory.moveScrollBar(" + finalpos + "," + interval + ")";
+        document.body.movement = setTimeout(repeat, interval);
+    },
+
+    htmlDecode:function (text){
+        var temp = document.createElement("div");
+        temp.innerHTML = text;
+        var output = temp.innerText || temp.textContent;
+        temp = null;
+        return output;
+    },
+    
+    /*
+    创建博客目录，id表示包含博文正文的 div 容器的 id，
+    mt 和 st 分别表示主标题和次级标题的标签名称（如 H2、H3，大写或小写都可以！），
+    interval 表示移动的速度
+    */
+    createBlogDirectory:function (id, mt, st, interval){
+        //获取博文正文div容器
+        var elem = document.getElementById(id);
+        if(!elem) return false;
+        //获取div中所有元素结点
+        var nodes = elem.getElementsByTagName("*");
+        //创建博客目录的div容器
+        var divSideBar = document.createElement('DIV');
+        divSideBar.className = 'uprightsideBar';
+        divSideBar.setAttribute('id', 'uprightsideBar');
+        var divSideBarTab = document.createElement('DIV');
+        divSideBarTab.setAttribute('id', 'sideBarTab');
+        divSideBar.appendChild(divSideBarTab);
+        var h2 = document.createElement('H2');
+        divSideBarTab.appendChild(h2);
+        var txt = document.createTextNode('目录导航');
+        h2.appendChild(txt);
+        var divSideBarContents = document.createElement('DIV');
+        divSideBarContents.style.display = 'none';
+        divSideBarContents.setAttribute('id', 'sideBarContents');
+        divSideBar.appendChild(divSideBarContents);
+        //创建自定义列表
+        var dlist = document.createElement("dl");
+        divSideBarContents.appendChild(dlist);
+        var num = 0;//统计找到的mt和st
+        mt = mt.toUpperCase();//转化成大写
+        st = st.toUpperCase();//转化成大写
+        //遍历所有元素结点
+        for(var i=0; i<nodes.length; i++)
+        {
+            if(nodes[i].nodeName == mt|| nodes[i].nodeName == st)
+            {
+                //获取标题文本
+                var nodetext = nodes[i].innerHTML.replace(/<\/?[^>]+>/g,"");//innerHTML里面的内容可能有HTML标签，所以用正则表达式去除HTML的标签
+                nodetext = nodetext.replace(/ /ig, "");//替换掉所有的
+                nodetext = BlogDirectory.htmlDecode(nodetext);
+                //插入锚
+                nodes[i].setAttribute("id", "blogTitle" + num);
+                var item;
+                switch(nodes[i].nodeName)
+                {
+                    case mt:    //若为主标题
+                        item = document.createElement("dt");
+                        break;
+                    case st:    //若为子标题
+                        item = document.createElement("dd");
+                        break;
+                }
+
+                //创建锚链接
+                var itemtext = document.createTextNode(nodetext);
+                item.appendChild(itemtext);
+                item.setAttribute("name", num);
+                //添加鼠标点击触发函数
+                item.onclick = function(){        
+                var pos = BlogDirectory.getElementPosition(document.getElementById("blogTitle" + this.getAttribute("name")));
+                    if(!BlogDirectory.moveScrollBar(pos.top, interval)) return false;
+                };
+                //将自定义表项加入自定义列表中
+                dlist.appendChild(item);
+                num++;
+            }
+        }
+
+        if(num == 0) return false;
+        /* 鼠标进入时的事件处理 */
+        divSideBarTab.onmouseenter = function(){
+            divSideBarContents.style.display = 'block';
+        }
+        /* 鼠标离开时的事件处理 */
+        divSideBar.onmouseleave = function() {
+            divSideBarContents.style.display = 'none';
+        }
+
+        document.body.appendChild(divSideBar);
+    }
+
+};
+
+window.onload=function(){
+    /* 页面加载完成之后生成博客目录 */
+    BlogDirectory.createBlogDirectory("cnblogs_post_body","h2","h3",20);
+    
+    //为右下角推荐推荐区域添加关注按钮
+    $('#div_digg').prepend('<div style="padding-bottom: 5px"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="cnblogs.UserManager.FollowBlogger(\'9a35f2c7-18ab-e111-aa3f-842b2b196315\');" href="javascript:void(0);" style="font-weight: bold; padding-left:5px;">关注一下楼主吧</a> </div>');
+}
+</script>
+    </div>
+</body>
+</html>

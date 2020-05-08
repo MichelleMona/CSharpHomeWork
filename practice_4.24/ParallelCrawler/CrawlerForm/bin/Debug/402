@@ -1,0 +1,653 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>有态度的小码甲 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/JulianHuang/custom.css?v=FVeKC9gP1U2VRvzXNKF0htBwJ7U=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/JulianHuang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/JulianHuang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/JulianHuang/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 232636;
+        var currentBlogApp = 'JulianHuang';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/JulianHuang/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/JulianHuang/">Dotnet Plus</a>
+</h1>
+<h2>
+知其然更知其所以然，不做眼高手低的【高手】
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/JulianHuang/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%9C%89%E6%80%81%E5%BA%A6%E7%9A%84%E5%B0%8F%E7%A0%81%E7%94%B2">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/JulianHuang/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+61&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+252</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2019/11/19.html">2019年11月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/11881367.html">
+[置顶]    结合ASP.NET Core聊一聊取消机制缓解web后台性能压力
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：利用取消机制缓解web后台查询瓶颈，这不仅针对异步编程，对同步编程依旧有效；  
+ 这也不仅是后台工程师的事，前端工程师也要关注.            <a href="https://www.cnblogs.com/JulianHuang/p/11881367.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-19 08:58 有态度的小码甲 阅读 (2328) 评论 (17)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11881367" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2019/11/07.html">2019年11月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/11811239.html">
+[置顶]    深度解读CAS单点登录原理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：单点登陆作为 面试必考题，向站点发请求-->带service=XXOO,跳转回SSO 认证服务器---->登录，再次跳转回站点（带Ticket）---> 再次认证---->认证通过，跳转回业务首页, 这其中有多少的知识你真的知道吗？
+本文斗胆手撕公司的SSO登陆原理，该做法更接近标准的CAS.            <a href="https://www.cnblogs.com/JulianHuang/p/11811239.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-07 16:32 有态度的小码甲 阅读 (2513) 评论 (17)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11811239" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2019/10/11.html">2019年10月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/11641040.html">
+[置顶]    解读docker swarm能力，实战演练Docker Swarm集群编排
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Docker Swarm 作为Docker内置的集群编排技术，虽然不被世人所接受，了解其原理和能力，特别是 网络结构还是很有必要。            <a href="https://www.cnblogs.com/JulianHuang/p/11641040.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-11 16:24 有态度的小码甲 阅读 (606) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11641040" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2019/01/29.html">2019年1月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/10334506.html">
+[置顶]    ASP.NET Core跨平台 技术内幕
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：ASP.NET Core 核心特性：开源、跨平台、高性能是其决战JAVA的必胜法宝，最引人关注的跨平台特性 到底是怎么实现？  
+ 本文分Unix、Windows剖析跨平台内幕，读完让你大呼过瘾。            <a href="https://www.cnblogs.com/JulianHuang/p/10334506.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-01-29 16:01 有态度的小码甲 阅读 (849) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10334506" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12773161.html">
+    [半翻]  设计面向DDD的微服务
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这篇文章行文结构对照微软博客， 结合本人意译和多年实践的回顾思考形成此次读书笔记。 Domian driven Design 领域 驱动 设计（DDD）提倡 。 1. DDD的视角 DDD将 ; DDD将 (一个有界上下文对应一个微服务)，并强调通用语言讨论这些问题 2. DDD提出的概念 许多技术            <a href="https://www.cnblogs.com/JulianHuang/p/12773161.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 15:51 有态度的小码甲 阅读 (105) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773161" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12720436.html">
+    3分钟掌握Quartz.net分布式定时任务的姿势
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：引言 长话短说，今天聊一聊分布式定时任务，我的流水账笔记： ASP.NET Core+Quartz.Net实现web定时任务 AspNetCore结合Redis实践消息队列 细心朋友稍一分析，就知道还有问题： 水平扩展后的WebApp的Quartz.net定时任务会多次触发， 因为webapp实例使            <a href="https://www.cnblogs.com/JulianHuang/p/12720436.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 08:49 有态度的小码甲 阅读 (321) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12720436" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12687090.html">
+    C#两大知名Redis客户端连接哨兵集群的姿势
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 前面利用《Docker Compose搭建Redis高可用哨兵集群》， 我们的思路是将Redis、Sentinel、Redis Client App链接到同一个网桥网络，这个网桥内的Redis Client App就可以使用ContainerIP访问网桥内任意redis节点。 规避了Docke            <a href="https://www.cnblogs.com/JulianHuang/p/12687090.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 10:51 有态度的小码甲 阅读 (1434) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12687090" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/04/10.html">2020年4月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12674183.html">
+    没用过.gitignore还敢自称高级开发？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Git是跟踪项目中所有文件的好工具， 但是，您会希望在项目的整个生命周期中 。 系统文件（i.e. Mac系统的.Ds_Store） 应用程序配置文件（i.e. app.config, .env） 构建组件（i.e. .pyc） 安装的依赖（i.e. node_modules） 个人文件（i.e.             <a href="https://www.cnblogs.com/JulianHuang/p/12674183.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-10 17:23 有态度的小码甲 阅读 (380) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12674183" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/04/07.html">2020年4月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12650721.html">
+    docker-compose搭建redis哨兵集群
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：头脑风暴 出于学习目的，您可以很轻松地在docker环境下运行redis的单个实例，但是如果您需要在生产环境中运行它，那么必须将Redis部署为HA(High Avaliable)模式。 Redis Sentinel为Redis提供高可用性，这意味着使用Sentinel可以创建Redis HA部署，            <a href="https://www.cnblogs.com/JulianHuang/p/12650721.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-07 09:07 有态度的小码甲 阅读 (256) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12650721" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/03/30.html">2020年3月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12596115.html">
+    [ASP.NET Core 3.1]浏览器嗅探解决部分浏览器丢失Cookie问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：今天的干货长驱直入，直奔主题 看了前文的同学们应该都知道，搜狗、360等浏览器在单点登录中反复重定向，最终失败报错。 原因在于，非Chrome80+浏览器不识别Cookie上的 属性值,导致认证Cookie在后续请求中被抛弃。 截至2020/3/30号,非Chrome浏览器测试包含两种结果： cas            <a href="https://www.cnblogs.com/JulianHuang/p/12596115.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-30 10:14 有态度的小码甲 阅读 (312) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12596115" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/03/27.html">2020年3月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12568814.html">
+    谁说docker-compose不能水平扩展容器、服务多实例？
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：❝ 虽说我已经从docker-compose走上了docker swarm的邪门歪道，目前被迫走在k8s这条康庄大道， 但是我还是喜欢docker-compose简洁有效的部署方式。 ❞ 曾其何时 docker-compose非常适合开发、测试、快速验证原型，这个小工具让单机部署容器变得简洁、高效。            <a href="https://www.cnblogs.com/JulianHuang/p/12568814.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-27 08:20 有态度的小码甲 阅读 (105) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12568814" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/03/24.html">2020年3月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12553747.html">
+    你不一定知道的UrlPrefix路由规则
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：引言 接上文，容器内web程序一般会绑定到http://0.0.0.0:{某监听端口}或http://+:{某监听端口}，以确保使用容器IP可以访问到web应用。 正如我们在ASP.NET Core官方镜像显示的，ASP.NET Core程序在容器内80端口监听请求 This image sets             <a href="https://www.cnblogs.com/JulianHuang/p/12553747.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-24 17:05 有态度的小码甲 阅读 (174) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12553747" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/03/18.html">2020年3月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12517074.html">
+    使用GUI工具Portainer.io管控Docker容器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：背景 5年前容器技术扑面而来，如今已经成为面向云原生开发的基础架构，基于微服务的设计需要部署大量容器，同时强调了友好快速的管理容器。 是时候推荐一个轮子Portainer.io：提供GUI界面的容器管理工具，给开发者的工具箱又增加了一个炫酷又实用的瑞士军刀。 Portainer.io的优势 轻量级             <a href="https://www.cnblogs.com/JulianHuang/p/12517074.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-18 14:16 有态度的小码甲 阅读 (452) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12517074" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JulianHuang/archive/2020/03/16.html">2020年3月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12504801.html">
+    通过一次思维碰撞看清docker 网桥模型
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：背景 这几天在研究Kubernetes， 遇到一个有意思的nodejs镜像：luksa/kubia # 不带端口映射启动容器docker run -it -d luksa/kubia# 连接到默认的Bridge网桥，容器IP是 172.17.0.2 之后，在宿主机使用容器IP和8080 端口可访问该            <a href="https://www.cnblogs.com/JulianHuang/p/12504801.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-16 17:01 有态度的小码甲 阅读 (202) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12504801" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/JulianHuang/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 有态度的小码甲
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

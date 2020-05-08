@@ -1,0 +1,400 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="Redis存在五种基础类型：字符串(String)、队列(List)、哈希(Hash)、集合(Set)、有序集合(Sorted Set)。String的出镜率算是最高的。本次列举出String的常用操" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>初探Redis-基础类型String - 微笑刺客D - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/CKExp/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/CKExp/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/CKExp/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 343689;
+        var currentBlogApp = 'CKExp';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/CKExp/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/CKExp/">微笑刺客D</a>
+</h1>
+<h2>
+除了自渡，他人爱莫能助。
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/CKExp/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%BE%AE%E7%AC%91%E5%88%BA%E5%AE%A2D">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/CKExp/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+73&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+131</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/CKExp/p/12772824.html">初探Redis-基础类型String</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>　　<strong>Redis存在五种基础类型：字符串(String)、队列(List)、哈希(Hash)、集合(Set)、有序集合(Sorted Set)。String的出镜率算是最高的。本次列举出String的常用操作。</strong></p>
+<p>　　Redis官网：<a href="https://redis.io/">https://redis.io/</a>&nbsp;</p>
+<p>&nbsp;</p>
+<h3><strong><span style="color: #ff0000;">一、字符串(String)介绍</span></strong></h3>
+<p>　　字符串(String)是Redis 中最基本的类型，一个&nbsp;key&nbsp;对应着一个&nbsp;value<strong>，</strong>可以理解为字典类型，key-value形式。该类型二进制安全的，对应值可以存储任何数据，如图片或者序列化后的对象，对应值最大可以存储&nbsp;<code>512MB</code>&nbsp;的数据。但不是建议去最大化存储，存储数据尽量小为最佳使用。从操作出发，常用操作为这两类：</p>
+<ul>
+<li>存储和操作字符串；</li>
+<li>存储和计算int和float类型的数据。</li>
+</ul>
+<p>　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425155342511-971420329.png" alt="" width="319" height="282"></p>
+<p>&nbsp;</p>
+<h3><strong><span style="color: #ff0000;">二、字符串(String)常用Api&nbsp;</span></strong></h3>
+<ul>
+<li><strong>设置值</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425103041523-698204431.png" alt=""></p>
+<p>　　eg:设置30秒生存时间，且必须firstkey不存在。</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425093624262-722493160.png" alt=""></p>
+<ul>
+<li><strong>获取值</strong>&nbsp;</li>
+</ul>
+<p>&nbsp;　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425103053414-1386943468.png" alt=""></p>
+<p>&nbsp;　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425094045010-868735618.png" alt=""></p>
+<ul>
+<li><strong>批量设置值与批量获取值</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425103103449-1832021164.png" alt=""></p>
+<p>&nbsp;　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425100107598-1032529097.png" alt=""></p>
+<ul>
+<li>&nbsp;<strong>递增或递减值(△1)</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425103116041-513066510.png" alt="">　</p>
+<p>　　eg:　</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425102622885-1607446136.png" alt=""></p>
+<ul>
+<li><strong>递增或递减值(△n)&nbsp;</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425103711181-213086748.png" alt=""></p>
+<p>　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425103812309-1827501624.png" alt=""></p>
+<ul>
+<li><strong>递增浮点数值(△n)&nbsp;</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425113113470-75239229.png" alt=""></p>
+<p>&nbsp;　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425113209113-1043880963.png" alt=""></p>
+<ul>
+<li>&nbsp;<strong>获取旧值并设置新值</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425105719060-89678201.png" alt=""></p>
+<p>&nbsp;　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425105838620-959093415.png" alt=""></p>
+<p>&nbsp;</p>
+<h3><strong><span style="color: #ff0000;">三、字符串(Strng)不常用Api</span></strong></h3>
+<ul>
+<li><strong>追加值</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425144022550-315740881.png" alt=""></p>
+<p>　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425144207501-211893291.png" alt=""></p>
+<ul>
+<li><strong>查询key</strong></li>
+</ul>
+<p>&nbsp;　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425144912264-561001071.png" alt=""></p>
+<p>　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425144902505-1501722188.png" alt=""></p>
+<ul>
+<li><strong>删除key</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425145452048-523085511.png" alt=""></p>
+<p>　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425145311079-324593565.png" alt=""></p>
+<ul>
+<li><strong>设置剩余生存时间</strong></li>
+</ul>
+<p>&nbsp;　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425151634144-1118206185.png" alt=""></p>
+<p>　　eg:设置firstkey生存时间30秒，并通过ttl查看剩余生存时间。</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425151720646-657394642.png" alt=""></p>
+<ul>
+<li><strong>获取剩余生存时间&nbsp;</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425152146267-1082552094.png" alt=""></p>
+<p>　　eg：</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425152210797-531989696.png" alt=""></p>
+<ul>
+<li><strong>设置永久生存</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425152459502-1236279002.png" alt="">&nbsp;</p>
+<p>&nbsp;　　eg：</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425152610032-1152763726.png" alt=""></p>
+<ul>
+<li><strong>获取字符串长度</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425153516711-1422816909.png" alt=""></p>
+<p>　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425153233713-1192420596.png" alt=""></p>
+<ul>
+<li><strong>覆盖指定位置开始处的字符 </strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425154411238-1875092371.png" alt=""></p>
+<p>　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425154437439-1324715938.png" alt=""></p>
+<ul>
+<li><strong>获取指定位置范围字符串</strong></li>
+</ul>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425162912131-1867882072.png" alt=""></p>
+<p>　　eg:</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425155043210-1992214342.png" alt=""></p>
+<p>&nbsp;</p>
+<h3><span style="color: #ff0000;">四、字符串(String)简单应用场景</span></h3>
+<p>　　模拟限量商品秒杀场景，来运用一下redis。采用多线程随机请求限量商品，并且用redis控制商品数量的减少。</p>
+<p>1、采用StackExchange.Redis的Nuget包来连接和管理Redis。并封装一套Redis的操作类。</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425161228138-1116750992.png" alt="" width="416" height="280"></p>
+<p>2、采用单例模式管理Redis的实例。</p>
+<p>　　<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425161307323-2093907020.png" alt="" width="973" height="440"></p>
+<p>3、模拟多用户限量秒杀模型。通过Redis的incr和decr操作控制商品数量。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;summary&gt;</span>
+<span style="color: #808080;">///</span><span style="color: #008000;"> 超卖模型
+</span><span style="color: #808080;">///</span> <span style="color: #808080;">&lt;/summary&gt;</span>
+<span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> OverSell
+{
+    </span><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">bool</span> IsGoOn = <span style="color: #0000ff;">true</span>;<span style="color: #008000;">//</span><span style="color: #008000;">秒杀活动是否结束</span>
+
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> Run()
+    {
+        RedisBase.StringService.StringSet(</span><span style="color: #800000;">"</span><span style="color: #800000;">Stock</span><span style="color: #800000;">"</span>, <span style="color: #800080;">10</span><span style="color: #000000;">);
+
+        </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = <span style="color: #800080;">0</span>; i &lt; <span style="color: #800080;">5000</span>; i++<span style="color: #000000;">)
+        {
+            </span><span style="color: #0000ff;">int</span> k =<span style="color: #000000;"> i;
+            Task.Run(() </span>=&gt;<span style="color: #008000;">//</span><span style="color: #008000;">每个线程就是一个模拟用户请求</span>
+<span style="color: #000000;">            {
+                </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (IsGoOn)
+                {
+                    </span><span style="color: #0000ff;">var</span> index = RedisBase.StringService.StringDecrement(<span style="color: #800000;">"</span><span style="color: #800000;">Stock</span><span style="color: #800000;">"</span>);<span style="color: #008000;">//</span><span style="color: #008000;">-1并且返回  </span>
+                    <span style="color: #0000ff;">if</span> (index &gt;= <span style="color: #800080;">0</span><span style="color: #000000;">)
+                    {
+                        Console.WriteLine($</span><span style="color: #800000;">"</span><span style="color: #800000;">{k.ToString(</span><span style="color: #800000;">"</span><span style="color: #800080;">000</span><span style="color: #800000;">"</span><span style="color: #800000;">)} Success，Product Index:{index}</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+                        </span><span style="color: #008000;">//</span><span style="color: #008000;">...</span>
+<span style="color: #000000;">                    }
+                    </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+                    {
+                        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (IsGoOn)
+                        {
+                            IsGoOn </span>= <span style="color: #0000ff;">false</span><span style="color: #000000;">;
+                        }
+                        Console.WriteLine($</span><span style="color: #800000;">"</span><span style="color: #800000;">{k.ToString(</span><span style="color: #800000;">"</span><span style="color: #800080;">000</span><span style="color: #800000;">"</span><span style="color: #800000;">)} Failed，Product Index:{index}</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+                    }
+                }
+                </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+                {
+                    Console.WriteLine($</span><span style="color: #800000;">"</span><span style="color: #800000;">{k.ToString(</span><span style="color: #800000;">"</span><span style="color: #800080;">000</span><span style="color: #800000;">"</span><span style="color: #800000;">)} Finish......</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+                }
+            });
+        }
+    }
+}</span></pre>
+</div>
+<p>&nbsp;4、运行效果，部分线程抢购到商品，部分线程同步抢购时，商品没有了返回负数，部分线程抢购时，活动已结束。</p>
+<p>　　&nbsp;<img src="https://img2020.cnblogs.com/blog/1133736/202004/1133736-20200425162022050-1871986802.png" alt="" width="493" height="566"></p>
+<p>&nbsp;</p>
+<p>　仓库地址：<a href="https://gitee.com/530521314/Partner.TreasureChest.git" target="_blank">https://gitee.com/530521314/Partner.TreasureChest.git</a>(RedisOperate文件夹)</p>
+<pre class="lang-java prettyprint prettyprinted"><code class="hljs"><span class="typ"><span class="pln"><span class="str"><span class="pln"><span class="pun"><span class="pln"><span class="typ"><span class="pln"><span class="typ"><span class="pln"><span class="pun"><span class="pln"><span class="typ"><span class="pln"><span class="pun"><span class="pln"><span class="lit"><strong><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number">2020-04<span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number">-<span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number"><span class="hljs-number">25,望技术有成后能回来看见自己的脚步</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 16:29</span>&nbsp;
+<a href="https://www.cnblogs.com/CKExp/">微笑刺客D</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12772824" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12772824);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 343689, cb_blogApp = 'CKExp', cb_blogUserGuid = '36ae05ed-f710-e711-845c-ac853d9f53ac';
+    var cb_entryId = 12772824, cb_entryCreatedDate = '2020-04-25 16:29', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 微笑刺客D
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

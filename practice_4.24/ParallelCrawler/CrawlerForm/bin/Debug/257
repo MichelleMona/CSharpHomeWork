@@ -1,0 +1,571 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="在前边的博客在分析了mybatis解析settings标签，《mybatis源码配置文件解析之二：解析settings标签》。下面来看解析typeAliases标签的过程。 一、概述 在mybatis" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>mybatis源码配置文件解析之三：解析typeAliases标签 - 迷茫中守候 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/teach/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/teach/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/teach/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 293786;
+        var currentBlogApp = 'teach';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/teach/">迷茫中守候</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/teach/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%BF%B7%E8%8C%AB%E4%B8%AD%E5%AE%88%E5%80%99">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/teach/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+61&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+49</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/teach/p/12766760.html">mybatis源码配置文件解析之三：解析typeAliases标签</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>在前边的博客在分析了mybatis解析settings标签，《<a class="entry" href="https://www.cnblogs.com/teach/p/12753756.html" target="_blank">mybatis源码配置文件解析之二：解析settings标签</a>》。下面来看解析typeAliases标签的过程。</p>
+<h1>一、概述</h1>
+<p>在mybatis核心配置文件（mybatis-config.xml）中有关typeAliases的配置如下，</p>
+<div class="cnblogs_code">
+<pre>&lt;typeAliases&gt;
+       &lt;<span style="color: #0000ff;">package</span> name="cn.com.mybatis.bean"&gt;&lt;/<span style="color: #0000ff;">package</span>&gt;
+       &lt;typeAlias name="user" type="cn.com.mybatis.bean.User"&gt;&lt;/typeAlias&gt;
+&lt;/typeAliases&gt;</pre>
+</div>
+<p>上面给出了两种配置typeAlias的放式，一种是配置package标签，一种是typeAlias表。</p>
+<p>我上面的配置是有问题的，在测试的时候一直报下面的错误，</p>
+<p><img src="https://img2020.cnblogs.com/blog/985599/202004/985599-20200424163914080-1604095195.png" alt=""></p>
+<p>上面的问题困扰了笔者好久，没找到原因，因为解析typeAliases标签的源码中找不到任何的原因，最后排查日志，原来是在加载核心配置文件的时候要把配置和mybatis的dtd文件进行验证，这里是验证出错了，<span style="color: #000000;">具体的错误是</span><span style="color: #ff0000;">typeAlias标签必须在package标签的前边</span>，也就是标签是有顺序的。把配置改为下面的顺序，程序正常，</p>
+<div class="cnblogs_code">
+<pre>&lt;typeAliases&gt;
+       &lt;typeAlias alias="user" type="cn.com.mybatis.bean.User"&gt;&lt;/typeAlias&gt;
+       &lt;<span style="color: #0000ff;">package</span> name="cn.com.mybatis.bean"/&gt;
+    &lt;/typeAliases&gt;</pre>
+</div>
+<p>&nbsp;</p>
+<h2>1、配置&lt;package&gt;标签</h2>
+<p>&lt;package&gt;标签配置的是一个包名，mybatis会扫描该包下的所有类，并注册一个别名，这里在标签中无法为某个类指定一个自定义的别名，mybatis提供了另外一种方式可以使用自定义的别名，即@Alias注解，在类上标记该注解，如下，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> cn.com.mybatis.bean;
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.apache.ibatis.type.Alias;
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">配置别名为myMenu</span>
+@Alias(value="myMenu"<span style="color: #000000;">)
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Menu {
+
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String menuId;
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String menuName;
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String url;
+}</span></pre>
+</div>
+<p>上面为Menu类配置了别名，在扫描该包的时候会使用自定义的别名，不会使用mybatis默认的别名规则（Class.getSimpleName()）</p>
+<h2>2、配置&lt;typeAlias&gt;标签</h2>
+<p>这种配置是单独为某个类配置别名，其中alias属性可以不配置，不配置则使用mybatis默认的别名规则，如下</p>
+<div class="cnblogs_code">
+<pre>&lt;typeAlias alias="MyUser" type="cn.com.mybatis.bean.User"&gt;&lt;/typeAlias&gt;</pre>
+</div>
+<p>&nbsp;</p>
+<p>上面看了typeAlias的两种配置方式，那么何为typeAlias，意思就是给一个类配置一个别名，如这里有一个cn.com.mybatis.bean.User类，可以为其配置别名为MyUser，</p>
+<p>那么在配置文件中便可以使用别名代替类的全限类名，目的是简便。这里需要注意的是配置的别名的使用范围仅限于mybatis的配置文件中（包含核心配置文件和Mpper映射文件）</p>
+<h1>二、详述</h1>
+<p>上面，了解了typeAlias的配置及作用，下面看mybatis是如何解析的。</p>
+<p>在XMLConfigBuilder类中的parseConfiguration方法，</p>
+<div class="cnblogs_code">
+<pre>  <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> parseConfiguration(XNode root) {
+    </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">issue #117 read properties first
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析properties标签    </span>
+      propertiesElement(root.evalNode("properties"<span style="color: #000000;">));
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析settings标签，1、把&lt;setting&gt;标签解析为Properties对象</span>
+      Properties settings = settingsAsProperties(root.evalNode("settings"<span style="color: #000000;">));
+      </span><span style="color: #008000;">/*</span><span style="color: #008000;">2、对&lt;settings&gt;标签中的&lt;setting&gt;标签中的内容进行解析，这里解析的是&lt;setting name="vfsImpl" value=","&gt;
+      * VFS是mybatis中用来表示虚拟文件系统的一个抽象类，用来查找指定路径下的资源。上面的key为vfsImpl的value可以是VFS的具体实现，必须
+      * 是权限类名，多个使用逗号隔开，如果存在则设置到configuration中的vfsImpl属性中，如果存在多个，则设置到configuration中的仅是最后一个
+      * </span><span style="color: #008000;">*/</span><span style="color: #000000;">
+      loadCustomVfs(settings);
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析别名标签，例&lt;typeAlias alias="user" type="cn.com.bean.User"/&gt;</span>
+      typeAliasesElement(root.evalNode("typeAliases"<span style="color: #000000;">));
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析插件标签</span>
+      pluginElement(root.evalNode("plugins"<span style="color: #000000;">));
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析objectFactory标签，此标签的作用是mybatis每次创建结果对象的新实例时都会使用ObjectFactory，如果不设置
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">则默认使用DefaultObjectFactory来创建，设置之后使用设置的</span>
+      objectFactoryElement(root.evalNode("objectFactory"<span style="color: #000000;">));
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析objectWrapperFactory标签</span>
+      objectWrapperFactoryElement(root.evalNode("objectWrapperFactory"<span style="color: #000000;">));
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析reflectorFactory标签</span>
+      reflectorFactoryElement(root.evalNode("reflectorFactory"<span style="color: #000000;">));
+      settingsElement(settings);
+      </span><span style="color: #008000;">//</span><span style="color: #008000;"> read it after objectFactory and objectWrapperFactory issue #631
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析environments标签</span>
+      environmentsElement(root.evalNode("environments"<span style="color: #000000;">));
+      databaseIdProviderElement(root.evalNode(</span>"databaseIdProvider"<span style="color: #000000;">));
+      typeHandlerElement(root.evalNode(</span>"typeHandlers"<span style="color: #000000;">));
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">解析&lt;mappers&gt;标签</span>
+      mapperElement(root.evalNode("mappers"<span style="color: #000000;">));
+    } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (Exception e) {
+      </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> BuilderException("Error parsing SQL Mapper Configuration. Cause: " +<span style="color: #000000;"> e, e);
+    }
+  }</span></pre>
+</div>
+<p>从上面可以看出typeAliasesElement方法，此方法用来解析typeAliases标签及其子标签，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">private</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> typeAliasesElement(XNode parent) {
+    </span><span style="color: #0000ff;">if</span> (parent != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+      </span><span style="color: #0000ff;">for</span><span style="color: #000000;"> (XNode child : parent.getChildren()) {
+          </span><span style="color: #008000;">//</span><span style="color: #008000;">1、解析package标签</span>
+        <span style="color: #0000ff;">if</span> ("package"<span style="color: #000000;">.equals(child.getName())) {
+          String typeAliasPackage </span>= child.getStringAttribute("name"<span style="color: #000000;">);
+          configuration.getTypeAliasRegistry().registerAliases(typeAliasPackage);
+        } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+            </span><span style="color: #008000;">//</span><span style="color: #008000;">2、解析typeAlias标签</span>
+          String alias = child.getStringAttribute("alias"<span style="color: #000000;">);
+          String type </span>= child.getStringAttribute("type"<span style="color: #000000;">);
+          </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            Class</span>&lt;?&gt; clazz =<span style="color: #000000;"> Resources.classForName(type);
+            </span><span style="color: #0000ff;">if</span> (alias == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+              typeAliasRegistry.registerAlias(clazz);
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+              typeAliasRegistry.registerAlias(alias, clazz);
+            }
+          } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (ClassNotFoundException e) {
+            </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> BuilderException("Error registering typeAlias for '" + alias + "'. Cause: " +<span style="color: #000000;"> e, e);
+          }
+        }
+      }
+    }
+  }</span></pre>
+</div>
+<p>typeAliasesElement方法会分别解析typeAliases标签的package和typeAlias子标签。通过上面的分析知道在配置的时候&lt;typeAlias&gt;标签要在&lt;package&gt;标签前边，但这里按照源码的顺序先分析&lt;package&gt;标签的解析。</p>
+<h2>1、解析&lt;package&gt;标签</h2>
+<p>下面看typeAliasesElement方法中对package标签的解析，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">if</span> ("package"<span style="color: #000000;">.equals(child.getName())) {
+          String typeAliasPackage </span>= child.getStringAttribute("name"<span style="color: #000000;">);
+          configuration.getTypeAliasRegistry().registerAliases(typeAliasPackage);
+        }</span></pre>
+</div>
+<p>从上面可以看到获取&lt;package&gt;标签的name属性，也就配置的包名，然后调用下面的方法，</p>
+<div class="cnblogs_code">
+<pre>configuration.getTypeAliasRegistry().registerAliases(typeAliasPackage);</pre>
+</div>
+<p>可以看到从Configuration中获得TypeAliasRegistry，然后调用其registerAliases方法，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> registerAliases(String packageName){
+    registerAliases(packageName, Object.</span><span style="color: #0000ff;">class</span><span style="color: #000000;">);
+  }</span></pre>
+</div>
+<p>又调用另外一个方法，如下，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">/**</span><span style="color: #008000;">
+   * 
+   * 为包下的所有java bean注册别名
+   * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> packageName
+   * </span><span style="color: #808080;">@param</span><span style="color: #008000;"> superType
+   </span><span style="color: #008000;">*/</span>
+  <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> registerAliases(String packageName, Class&lt;?&gt;<span style="color: #000000;"> superType){
+    ResolverUtil</span>&lt;Class&lt;?&gt;&gt; resolverUtil = <span style="color: #0000ff;">new</span> ResolverUtil&lt;Class&lt;?&gt;&gt;<span style="color: #000000;">();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">把该包下的所有类进行加载，把其Class对象放到resolverUtil的matches中</span>
+    resolverUtil.find(<span style="color: #0000ff;">new</span><span style="color: #000000;"> ResolverUtil.IsA(superType), packageName);
+    Set</span>&lt;Class&lt;? <span style="color: #0000ff;">extends</span> Class&lt;?&gt;&gt;&gt; typeSet =<span style="color: #000000;"> resolverUtil.getClasses();
+    </span><span style="color: #0000ff;">for</span>(Class&lt;?&gt;<span style="color: #000000;"> type : typeSet){
+      </span><span style="color: #008000;">//</span><span style="color: #008000;"> Ignore inner classes and interfaces (including package-info.java)
+      </span><span style="color: #008000;">//</span><span style="color: #008000;"> Skip also inner classes. See issue #6</span>
+      <span style="color: #0000ff;">if</span> (!type.isAnonymousClass() &amp;&amp; !type.isInterface() &amp;&amp; !<span style="color: #000000;">type.isMemberClass()) {
+        registerAlias(type);
+      }
+    }
+  }</span></pre>
+</div>
+<p>上面方法的作用是遍历给的的包名，把该包下的所有的类进行加载，并放到resolverUtil中的matches中，这里具体的遍历方法暂且不看。遍历完成后取出resolverUtil中的所有Class对象，只要不是匿名类、接口则执行registerAlias方法，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> registerAlias(Class&lt;?&gt;<span style="color: #000000;"> type) {
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">获得类的简单类名，如cn.com.mybatis.bean.User 则其简单名称为User</span>
+    String alias =<span style="color: #000000;"> type.getSimpleName();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">判断类上是否存在@Alias注解</span>
+    Alias aliasAnnotation = type.getAnnotation(Alias.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">如果存在@Alias注解，则使用注解上配置的value属性作为别名</span>
+    <span style="color: #0000ff;">if</span> (aliasAnnotation != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+      alias </span>=<span style="color: #000000;"> aliasAnnotation.value();
+    } 
+    registerAlias(alias, type);
+  }</span></pre>
+</div>
+<p>看上面的方法，上面的方法先获得Class的简单类名，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">获得类的简单类名，如cn.com.mybatis.bean.User 则其简单名称为User</span>
+    String alias = type.getSimpleName();</pre>
+</div>
+<p>然后会判断类上是否有@Alias注解，如果有则取其value值作为类的别名，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">判断类上是否存在@Alias注解</span>
+    Alias aliasAnnotation = type.getAnnotation(Alias.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">如果存在@Alias注解，则使用注解上配置的value属性作为别名</span>
+    <span style="color: #0000ff;">if</span> (aliasAnnotation != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+      alias </span>=<span style="color: #000000;"> aliasAnnotation.value();
+    } </span></pre>
+</div>
+<p>进行上面的判断，存在@Alias注解，使用其value值作为别名，否则使用类的简单类名（Class.getSimpleName()），然后执行registerAlias方法，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> registerAlias(String alias, Class&lt;?&gt;<span style="color: #000000;"> value) {
+    </span><span style="color: #0000ff;">if</span> (alias == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+      </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> TypeException("The parameter alias cannot be null"<span style="color: #000000;">);
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> issue #748</span>
+    String key =<span style="color: #000000;"> alias.toLowerCase(Locale.ENGLISH);
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">如果已经注册了改别名则会抛异常</span>
+    <span style="color: #0000ff;">if</span> (TYPE_ALIASES.containsKey(key) &amp;&amp; TYPE_ALIASES.get(key) != <span style="color: #0000ff;">null</span> &amp;&amp; !<span style="color: #000000;">TYPE_ALIASES.get(key).equals(value)) {
+      </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> TypeException("The alias '" + alias + "' is already mapped to the value '" + TYPE_ALIASES.get(key).getName() + "'."<span style="color: #000000;">);
+    }
+    TYPE_ALIASES.put(key, value);
+  }</span></pre>
+</div>
+<p>上面的代码会把别名转化为英文的小写作为存入的key，使用对应的Class存入TYPE_ALIASES中。如果已经注册过该key则会抛出异常，也就是不允许重复注册或者相同的key是无法覆盖的。这里还有一个问题，如果我们配置的是别名中含有大写，那么注册的时候是小写的，在使用的时候是用配置的还是用注册的，例，上面的例子，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">package</span><span style="color: #000000;"> cn.com.mybatis.bean;
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.apache.ibatis.type.Alias;
+
+</span><span style="color: #008000;">//</span><span style="color: #008000;">配置别名为myMenu</span>
+@Alias(value="myMenu"<span style="color: #000000;">)
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Menu {
+
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String menuId;
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String menuName;
+    </span><span style="color: #0000ff;">private</span><span style="color: #000000;"> String url;
+}</span></pre>
+</div>
+<p>这里配置的是myMenu，注册的确实下面的</p>
+<p><img src="https://img2020.cnblogs.com/blog/985599/202004/985599-20200424165857300-950227468.png" alt=""></p>
+<p>可以看到注册之后的是mymenu。其实在<span style="color: #ff0000;">使用的时候是大小写不敏感</span>的，在匹配的时候会统一转化为小写，这样就可以对应TYPE_ALIASES中已注册的别名。</p>
+<h2>2、解析&lt;typeAlias&gt;标签</h2>
+<p>&nbsp;上面分析了&lt;package&gt;标签的解析过程，下面看有关&lt;typeAlias&gt;标签的解析，</p>
+<p><img src="https://img2020.cnblogs.com/blog/985599/202004/985599-20200424171354532-322364613.png" alt=""></p>
+<p>解析&lt;typeAlias&gt;标签即是获取alias和type两个属性，可以看到对alias进行了判断，也就说可以不配置alias属性，那么会使用下面的方法处理</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> registerAlias(Class&lt;?&gt;<span style="color: #000000;"> type) {
+      </span><span style="color: #008000;">//</span><span style="color: #008000;">获得类的简单类名，如cn.com.mybatis.bean.User 则其简单名称为User</span>
+    String alias =<span style="color: #000000;"> type.getSimpleName();
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">判断类上是否存在@Alias注解</span>
+    Alias aliasAnnotation = type.getAnnotation(Alias.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">如果存在@Alias注解，则使用注解上配置的value属性作为别名</span>
+    <span style="color: #0000ff;">if</span> (aliasAnnotation != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+      alias </span>=<span style="color: #000000;"> aliasAnnotation.value();
+    } 
+    registerAlias(alias, type);
+  }</span></pre>
+</div>
+<p>该方法前面已分析，会判断配置的类是否含有@Alias注解，如果有则使用注解上的value值。这里存在一个问题，如果在&lt;typeAlias&gt;标签中配置了alias，在类上也有@Alias注解，且不一样，以哪个为准，通过上面的分析，得出下面的结论，</p>
+<p>在使用&lt;typeAlias alias="myAlias"&gt;标签的时候，配置了alias属性，在类上也有@Alias(value="myAlias2")，已配置的为准（最终别名为myAlias）</p>
+<p>下面看registerAlias(alias,type)方法，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> registerAlias(String alias, Class&lt;?&gt;<span style="color: #000000;"> value) {
+    </span><span style="color: #0000ff;">if</span> (alias == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+      </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> TypeException("The parameter alias cannot be null"<span style="color: #000000;">);
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> issue #748</span>
+    String key =<span style="color: #000000;"> alias.toLowerCase(Locale.ENGLISH);
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">如果已经注册了改别名则会抛异常</span>
+    <span style="color: #0000ff;">if</span> (TYPE_ALIASES.containsKey(key) &amp;&amp; TYPE_ALIASES.get(key) != <span style="color: #0000ff;">null</span> &amp;&amp; !<span style="color: #000000;">TYPE_ALIASES.get(key).equals(value)) {
+      </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> TypeException("The alias '" + alias + "' is already mapped to the value '" + TYPE_ALIASES.get(key).getName() + "'."<span style="color: #000000;">);
+    }
+    TYPE_ALIASES.put(key, value);
+  }</span></pre>
+</div>
+<p>此方法上面分析过，如果存在相同的key会抛异常，最终存入TYPE_ALIASES中。</p>
+<h1>三、总结</h1>
+<p>本文分析了mybatis核心配置文件（mybatis-config.xml）的&lt;typeAlias&gt;标签的配置及源码解析。</p>
+<p>另在写Mapper映射文件和核心配置文件的时候会使用一些自定义的别名，这些别名是怎么注册的那，在Configuration、TypeAliasRegistry类中进行了注册，如下Configuration,</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span><span style="color: #000000;"> Configuration() {
+    typeAliasRegistry.registerAlias(</span>"JDBC", JdbcTransactionFactory.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"MANAGED", ManagedTransactionFactory.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    typeAliasRegistry.registerAlias(</span>"JNDI", JndiDataSourceFactory.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"POOLED", PooledDataSourceFactory.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"UNPOOLED", UnpooledDataSourceFactory.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    typeAliasRegistry.registerAlias(</span>"PERPETUAL", PerpetualCache.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"FIFO", FifoCache.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"LRU", LruCache.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"SOFT", SoftCache.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"WEAK", WeakCache.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    typeAliasRegistry.registerAlias(</span>"DB_VENDOR", VendorDatabaseIdProvider.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    typeAliasRegistry.registerAlias(</span>"XML", XMLLanguageDriver.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"RAW", RawLanguageDriver.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    typeAliasRegistry.registerAlias(</span>"SLF4J", Slf4jImpl.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"COMMONS_LOGGING", JakartaCommonsLoggingImpl.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"LOG4J", Log4jImpl.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"LOG4J2", Log4j2Impl.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"JDK_LOGGING", Jdk14LoggingImpl.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"STDOUT_LOGGING", StdOutImpl.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"NO_LOGGING", NoLoggingImpl.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    typeAliasRegistry.registerAlias(</span>"CGLIB", CglibProxyFactory.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    typeAliasRegistry.registerAlias(</span>"JAVASSIST", JavassistProxyFactory.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    languageRegistry.setDefaultDriverClass(XMLLanguageDriver.</span><span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    languageRegistry.register(RawLanguageDriver.</span><span style="color: #0000ff;">class</span><span style="color: #000000;">);
+  }</span></pre>
+</div>
+<p>在TypeAliasRegistry中注册了下面的别名，</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;">默认的构造方法，初始化系统内置的别名</span>
+  <span style="color: #0000ff;">public</span><span style="color: #000000;"> TypeAliasRegistry() {
+    registerAlias(</span>"string", String.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"byte", Byte.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"long", Long.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"short", Short.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"int", Integer.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"integer", Integer.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"double", Double.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"float", Float.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"boolean", Boolean.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"byte[]", Byte[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"long[]", Long[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"short[]", Short[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"int[]", Integer[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"integer[]", Integer[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"double[]", Double[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"float[]", Float[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"boolean[]", Boolean[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"_byte", <span style="color: #0000ff;">byte</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_long", <span style="color: #0000ff;">long</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_short", <span style="color: #0000ff;">short</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_int", <span style="color: #0000ff;">int</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_integer", <span style="color: #0000ff;">int</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_double", <span style="color: #0000ff;">double</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_float", <span style="color: #0000ff;">float</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_boolean", <span style="color: #0000ff;">boolean</span>.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"_byte[]", <span style="color: #0000ff;">byte</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_long[]", <span style="color: #0000ff;">long</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_short[]", <span style="color: #0000ff;">short</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_int[]", <span style="color: #0000ff;">int</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_integer[]", <span style="color: #0000ff;">int</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_double[]", <span style="color: #0000ff;">double</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_float[]", <span style="color: #0000ff;">float</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"_boolean[]", <span style="color: #0000ff;">boolean</span>[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"date", Date.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"decimal", BigDecimal.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"bigdecimal", BigDecimal.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"biginteger", BigInteger.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"object", Object.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"date[]", Date[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"decimal[]", BigDecimal[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"bigdecimal[]", BigDecimal[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"biginteger[]", BigInteger[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"object[]", Object[].<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"map", Map.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"hashmap", HashMap.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"list", List.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"arraylist", ArrayList.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"collection", Collection.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+    registerAlias(</span>"iterator", Iterator.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+
+    registerAlias(</span>"ResultSet", ResultSet.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+  }</span></pre>
+</div>
+<p>上面两个类注册了系统内置的别名，在核心配置文件和Mapper映射文件中可使用，mybatis会自动映射其注册类型，且大小写不区分。</p>
+<p>&nbsp;</p>
+<p>原创不易，有不正之处欢迎指正。</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 17:39</span>&nbsp;
+<a href="https://www.cnblogs.com/teach/">迷茫中守候</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766760" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12766760);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 293786, cb_blogApp = 'teach', cb_blogUserGuid = 'c7cf8dfe-a93e-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 12766760, cb_entryCreatedDate = '2020-04-24 17:39', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 迷茫中守候
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

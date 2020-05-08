@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TechFlow2019 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/techflow/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/techflow/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/techflow/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 569749;
+        var currentBlogApp = 'techflow';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/techflow/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/techflow/">TechFlow2019</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/techflow/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/TechFlow2019">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/techflow/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+118&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+46</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12763551.html">
+    用二分法优化动态规划——实现快速决策
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是算法与数据结构专题的17篇文章，也是动态规划专题的第6篇。 今天我们一起来看一道非常经典的动态规划的问题，有多经典呢？我想了一下，大概是我这辈子做的最早的一道动态规划问题，以至于我现在都记得它的题面。 题面 这道题就是导弹拦截系统            <a href="https://www.cnblogs.com/techflow/p/12763551.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 21:07 TechFlow2019 阅读 (14) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12763551" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12756050.html">
+    召回、精确、准确，这些让人头大的概念一文全讲清楚
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是机器学习真题的第17篇文章，我们来讲讲机器学习模型的评估。 在之前的文章当中我们已经介绍了好几个模型了，有朴素贝叶斯、KNN、KMeans、EM还有线性回归和逻辑回归。今天我们来和大家聊聊该怎么评估这些模型。 均方差 这个概念很简            <a href="https://www.cnblogs.com/techflow/p/12756050.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 21:18 TechFlow2019 阅读 (135) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12756050" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/21.html">2020年4月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12747480.html">
+    Python——详解__slots__，property和私有方法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是Python专题的第11篇文章，我们来聊聊面向对象的一些进阶使用。 __slots__ 如果你看过github当中一些大牛的代码，你会发现很多大牛经常在类的顶部加上__slots__关键字。如果你足够好奇，你可能会试着把这个关键字            <a href="https://www.cnblogs.com/techflow/p/12747480.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-21 20:09 TechFlow2019 阅读 (81) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12747480" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12740595.html">
+    LeetCode50——一题学会快速幂算法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是LeetCode的第31篇文章，我们来看下LeetCode的第50题，求一个数的幂。 题意 这道题的题意只有一句话，就是给定两个数x和n，要求。 从题意来看，这道题平平无奇，基本上没有什么特别的。但是我们继续看它的note就会发现            <a href="https://www.cnblogs.com/techflow/p/12740595.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-20 21:16 TechFlow2019 阅读 (14) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12740595" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12740198.html">
+    Golang——详解Go语言代码规范
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是Golang专题的第二篇，我们来看看Go的语言规范。 在我们继续今天的内容之前，先来回答一个问题。 有同学在后台问我，为什么说Golang更适合分布式系统的开发？它和Java相比有什么优势吗？ 其实回答这个问题需要涉及很多概念，比            <a href="https://www.cnblogs.com/techflow/p/12740198.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-20 20:26 TechFlow2019 阅读 (119) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12740198" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12733441.html">
+    spark——详解rdd常用的转化和行动操作
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是spark第三篇文章，我们继续来看RDD的一些操作。 我们前文说道在spark当中RDD的操作可以分为两种，一种是转化操作(transformation），另一种是行动操作(action)。在转化操作当中，spark不会为我们计算            <a href="https://www.cnblogs.com/techflow/p/12733441.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-19 20:54 TechFlow2019 阅读 (98) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12733441" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12727713.html">
+    从头搭建一个“微博”有多难
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是分布式专题的第13篇，今天的文章我们不讲空洞的理论，来聊一个实际点的问题。 众所周知，微博的程序员经常不定期加班。和别的程序员不同，别的岗位的程序员可能加班是可控的，但是微博的程序员不是。为什么呢？因为程序员们无法预知明星们什么时            <a href="https://www.cnblogs.com/techflow/p/12727713.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 19:56 TechFlow2019 阅读 (760) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12727713" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12722306.html">
+    高等数学——积分中值定理
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号：TechFlow，原创不易，求个关注 今天是高等数学专题的第12篇，我们继续来看定积分。 之前在讲微分求导内容的时候，介绍过一系列微分中值定理的推导。既然有微分中值定理，那么自然也有积分中值定理，我们下面就来看看积分中值定理的定义。 极值定理 极值定理也叫最大最小值定理，它的含            <a href="https://www.cnblogs.com/techflow/p/12722306.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 20:37 TechFlow2019 阅读 (37) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12722306" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/16.html">2020年4月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12715307.html">
+    详解状态压缩动态规划算法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是算法与数据结构专题的第16篇，也是动态规划系列的第5篇。 今天文章的内容是动态规划当中非常常见的一个分支——状态压缩动态规划，很多人对于状态压缩畏惧如虎，但其实并没有那么难，希望我今天的文章能带你们学到这个经典的应用。 二进制表示            <a href="https://www.cnblogs.com/techflow/p/12715307.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-16 20:06 TechFlow2019 阅读 (132) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12715307" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/techflow/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/techflow/p/12707459.html">
+    【硬核】使用替罪羊树实现KD-Tree的增删改查
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文始发于个人公众号： TechFlow ，原创不易，求个关注 今天是机器学习的第16篇文章，我们来继续上周KD Tree的话题。 如果有没有看过上篇文章或者是最新关注的小伙伴，可以点击一下下方的传送门： 【硬核】机器学习与数据结构的完美结合——KD Tree 旋转不可行分析 上周我们实现了KD T            <a href="https://www.cnblogs.com/techflow/p/12707459.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 19:28 TechFlow2019 阅读 (144) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12707459" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/techflow/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 TechFlow2019
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,589 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="前言： 这是一篇迟到很久的文章了，人真的是越来越懒，前一阵用jsoup实现了一个功能，个人觉得和selenium的webdriver原理类似，所以今天正好有时间，就又来更新分享了。 实现场景： 爬取博" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>如何使用Jsoup爬取网页内容 - 久曲健 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/thinkinside/bundle-thinkinside.min.css?v=g9BhPHSvbBYsBrKRm8mptAFcq19OSA8tvN0H3884GYw" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/longronglang/custom.css?v=Jy7A6zAuJcmzoU4H2Uq964G/awM=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/thinkinside/bundle-thinkinside-mobile.min.css?v=-99kdknJAJsoRA0UeBwKu6WHa3LvEP4487GKBNHpHoI" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/longronglang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/longronglang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/longronglang/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 319972;
+        var currentBlogApp = 'longronglang';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'ThinkInside';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <link href="https://files.cnblogs.com/files/longronglang/mainbody.css" rel="stylesheet" />
+<!-- 鼠标点击特效 -->
+ <style type="text/css">
+       
+
+        * {
+            cursor: url('https://www.cnblogs.com/images/cnblogs_com/longronglang/1061549/o_5997836b66d58.png'), auto;
+        }
+
+
+
+    </style>
+<script src="https://blog-static.cnblogs.com/files/longronglang/cursor-effects.js" defer></script>
+<!-- 鼠标点击特效end -->
+<!--添加立方体-->
+<a name="top"></a>
+<!--PageBeginHtml Block Begin-->
+<!-- 正方体中包含html代码 博客园无法上传文件，需要直接写代码-->
+<!--旋转正方体 start-->
+<div class="wrap">
+    <!--包裹所有元素的容器-->
+    <div class="cube">
+        <!--前面图片 -->
+        <div class="out_front">
+            <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_c5.jpg" class="pic">
+        </div>
+        <!--后面图片 -->
+        <div class="out_back">
+            <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_0.jpg" class="pic">
+        </div>
+        <!--左面图片 -->
+        <div class="out_left">
+            <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_3.jpg" class="pic">
+        </div>
+        <!--右面图片 -->
+        <div class="out_right">
+            <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_11.jpg" class="pic">
+        </div>
+        <!--上面图片 -->
+        <div class="out_top">
+            <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_4.jpg" class="pic">
+        </div>
+        <!--下面图片 -->
+        <div class="out_bottom">
+            <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1266753/t_s6.jpg" class="pic">
+        </div>
+
+        <!--小正方体 -->
+        <span class="in_front">
+                <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_01.jpg" class="in_pic">
+            </span>
+        <span class="in_back">
+                 <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_02.jpg" class="in_pic">
+            </span>
+        <span class="in_left">
+                <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_03.jpg" class="in_pic">
+            </span>
+        <span class="in_right">
+                <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_04.jpg" class="in_pic">
+            </span>
+        <span class="in_top">
+                <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_05.jpg" class="in_pic">
+            </span>
+        <span class="in_bottom">
+                <img src="https://images.cnblogs.com/cnblogs_com/lzw123-/1273451/t_06.jpg" class="in_pic">
+            </span>
+    </div>
+</div>
+
+<style>
+    /*最外层容器样式*/
+    .wrap {
+        z-index:9999;/*置于最上层*/
+        position: absolute;
+        right: 200px;
+        top: 100px;
+        width: 100px;
+        height: 100px;
+
+    }
+
+    /*包裹所有容器样式*/
+    .cube {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        transform-style: preserve-3d;
+        transform: rotateX(-30deg) rotateY(-80deg);
+        animation: rotate linear 20s infinite;
+    }
+
+    @-webkit-keyframes rotate {
+        from {
+            transform: rotateX(0deg) rotateY(0deg);
+        }
+        to {
+            transform: rotateX(360deg) rotateY(360deg);
+        }
+    }
+
+    .cube div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        opacity: 0.8;
+        transition: all .4s;
+    }
+
+    /*定义所有图片样式*/
+    .pic {
+        width: 200px;
+        height: 200px;
+    }
+
+    .cube .out_front {
+        transform: rotateY(0deg) translateZ(100px);
+    }
+
+    .cube .out_back {
+        transform: translateZ(-100px) rotateY(180deg);
+    }
+
+    .cube .out_left {
+        transform: rotateY(-90deg) translateZ(100px);
+    }
+
+    .cube .out_right {
+        transform: rotateY(90deg) translateZ(100px);
+    }
+
+    .cube .out_top {
+        transform: rotateX(90deg) translateZ(100px);
+    }
+
+    .cube .out_bottom {
+        transform: rotateX(-90deg) translateZ(100px);
+    }
+
+    /*定义小正方体样式*/
+    .cube span {
+        display: block;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+    }
+
+    .cube .in_pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .cube .in_front {
+        transform: rotateY(0deg) translateZ(50px);
+    }
+
+    .cube .in_back {
+        transform: translateZ(-50px) rotateY(180deg);
+    }
+
+    .cube .in_left {
+        transform: rotateY(-90deg) translateZ(50px);
+    }
+
+    .cube .in_right {
+        transform: rotateY(90deg) translateZ(50px);
+    }
+
+    .cube .in_top {
+        transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .cube .in_bottom {
+        transform: rotateX(-90deg) translateZ(50px);
+    }
+
+    /*鼠标移入后样式*/
+    .cube:hover .out_front {
+        transform: rotateY(0deg) translateZ(200px);
+    }
+
+    .cube:hover .out_back {
+        transform: translateZ(-200px) rotateY(180deg);
+    }
+
+    .cube:hover .out_left {
+        transform: rotateY(-90deg) translateZ(200px);
+    }
+
+    .cube:hover .out_right {
+        transform: rotateY(90deg) translateZ(200px);
+    }
+
+    .cube:hover .out_top {
+        transform: rotateX(90deg) translateZ(200px);
+    }
+
+    .cube:hover .out_bottom {
+        transform: rotateX(-90deg) translateZ(200px);
+    }
+</style>
+<script type="text/javascript" src="https://blog-static.cnblogs.com/files/longronglang/backlines.js" defer></script>
+<canvas id="c_n7" width="1920" height="318" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/longronglang/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/longronglang/">久曲健</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/longronglang/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E4%B9%85%E6%9B%B2%E5%81%A5">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/longronglang/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+406&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+187</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/longronglang/p/12773822.html">如何使用Jsoup爬取网页内容</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h3>前言：</h3>
+<p>这是一篇迟到很久的文章了，人真的是越来越懒，前一阵用jsoup实现了一个功能，个人觉得和selenium的webdriver原理类似，所以今天正好有时间，就又来更新分享了。</p>
+<h3>实现场景：</h3>
+<p>爬取博客园<a href="https://www.cnblogs.com/longronglang">https://www.cnblogs.com/longronglang</a>，文章列表中标题、链接、发布时间及阅读量</p>
+<p><img src="https://img2020.cnblogs.com/blog/718867/202004/718867-20200425160716764-1541564249.png" alt="" width="1237" height="596"></p>
+<p>&nbsp;</p>
+<h3>思路：</h3>
+<p>1、引入jar包</p>
+<p>2、通过httpclient，设置参数，代理，建立连接，获取HTML文档（响应信息）</p>
+<p>3、将获取的响应信息，转换成HTML文档为Document对象</p>
+<p>4、使用jQuery定位方式，这块就和web自动化一样了定位获取文本及相关属性</p>
+<p>相关详细使用参考官网：<a href="https://jsoup.org/">https://jsoup.org/</a></p>
+<h3>实现：</h3>
+<p>&nbsp;</p>
+<p>&nbsp;1、引入依赖</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>org.jsoup<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>jsoup<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>1.10.3<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+        <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>commons-httpclient<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">groupId</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>commons-httpclient<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">artifactId</span><span style="color: #0000ff;">&gt;</span>
+            <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>3.1<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">version</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">dependency</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<p>2、通过httpclient，设置参数，代理，建立连接，获取HTML文档（响应信息）</p>
+<div class="cnblogs_code">
+<pre>        String requestUrl = "https://www.cnblogs.com/longronglang/"<span style="color: #000000;">;
+        HttpClient client </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> HttpClient();
+        HttpClientParams clientParams </span>=<span style="color: #000000;"> client.getParams();
+        clientParams.setContentCharset(</span>"UTF-8"<span style="color: #000000;">);
+        GetMethod method </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> GetMethod(requestUrl);
+        String response </span>=method.getResponseBodyAsString();</pre>
+</div>
+<p>3、将获取的响应信息，转换成HTML文档为Document对象</p>
+<div class="cnblogs_code">
+<pre>  Document document = Jsoup.parse(response);</pre>
+</div>
+<p>4、使用jQuery定位方式，这块就和web自动化一样了定位获取文本及相关属性</p>
+<p>这里可以仔细看下，也可以说是核心思路了，如下图：</p>
+<p><img src="https://img2020.cnblogs.com/blog/718867/202004/718867-20200425163040724-1895508250.png" alt="" width="650" height="430"></p>
+<p>&nbsp;</p>
+<p>&nbsp;从图中可以看到，文章标题在在a标签中，也就是通过class属性为postTitle2进行绑定，那么我们的dom对象就定位到这里即可，那么我想获取文章标题这个dom对象，可以写成如下代码：</p>
+<div class="cnblogs_code">
+<pre> Elements postItems = document.getElementsByClass("postTitle2");</pre>
+</div>
+<p>同理，获取发布时间及阅读量，也可以写成如下代码：</p>
+<div class="cnblogs_code">
+<pre> Elements readcontexts = document.getElementsByClass("postDesc");</pre>
+</div>
+<p>最后我们来段整合的代码如下：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.apache.commons.httpclient.HttpClient;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.apache.commons.httpclient.HttpStatus;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.apache.commons.httpclient.methods.GetMethod;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.apache.commons.httpclient.params.HttpClientParams;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.jsoup.Jsoup;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.jsoup.nodes.Document;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.jsoup.select.Elements;
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> org.junit.Test;
+
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> java.io.IOException;
+
+</span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> JsoupTest {
+
+    @Test
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> test() {
+        String requestUrl </span>= "https://www.cnblogs.com/longronglang/"<span style="color: #000000;">;
+        HttpClient client </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> HttpClient();
+        HttpClientParams clientParams </span>=<span style="color: #000000;"> client.getParams();
+        clientParams.setContentCharset(</span>"UTF-8"<span style="color: #000000;">);
+        GetMethod method </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> GetMethod(requestUrl);
+        String response </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        </span><span style="color: #0000ff;">int</span> code = 0<span style="color: #000000;">;
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            code </span>=<span style="color: #000000;"> client.executeMethod(method);
+            response </span>=<span style="color: #000000;"> method.getResponseBodyAsString();
+            </span><span style="color: #0000ff;">if</span> (code ==<span style="color: #000000;"> HttpStatus.SC_OK) {
+                Document document </span>=<span style="color: #000000;"> Jsoup.parse(response);
+                Elements postItems </span>= document.getElementsByClass("postTitle2"<span style="color: #000000;">);
+                Elements readcontexts </span>= document.getElementsByClass("postDesc"<span style="color: #000000;">);
+                </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">int</span> i = 0; i &lt; postItems.size(); i++<span style="color: #000000;">) {
+                    System.out.println(</span>"文章标题:" +<span style="color: #000000;"> postItems.get(i).text());
+                    System.out.println(</span>"文章地址:" + postItems.get(i).attr("href"<span style="color: #000000;">));
+                    System.out.println(</span>"发布信息:" +<span style="color: #000000;"> readcontexts.get(i).text());
+                }
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                System.out.println(</span>"返回状态不是200,可能需要登录或者授权，亦或者重定向了！"<span style="color: #000000;">);
+            }
+        } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</span></pre>
+</div>
+<p>运行结果如下：</p>
+<p><img src="https://img2020.cnblogs.com/blog/718867/202004/718867-20200425163844844-42380344.png" alt=""></p>
+<p>到此，一个爬虫搞完，这里只事抛砖引用，有兴趣的同学，请自行扩展。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong><em>如果感情一开始就是不对等的，那么索性就早点结束掉它，利人利己。</em></strong></p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 16:46</span>&nbsp;
+<a href="https://www.cnblogs.com/longronglang/">久曲健</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773822" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12773822);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 319972, cb_blogApp = 'longronglang', cb_blogUserGuid = '9b08fc35-cfa6-e411-b908-9dcfd8948a71';
+    var cb_entryId = 12773822, cb_entryCreatedDate = '2020-04-25 16:46', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 久曲健
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <div class="Snow">
+    <canvas id="Snow"></canvas>
+</div>
+<!--评论区-->
+<script type="text/javascript" src="https://files.cnblogs.com/files/longronglang/Comments.js"></script>
+<!-- 雪花-->
+<script src="https://files.cnblogs.com/files/longronglang/mystyle.js"></script>
+
+<style>
+#back-top {
+     position: fixed;
+     bottom: 10px;
+     right: 5px;
+     z-index: 99;
+}
+#back-top span {
+     width: 50px;
+     height: 64px;
+     display: block;
+     background:url(http://images.cnblogs.com/cnblogs_com/seanshao/855033/o_rocket.png) no-repeat center center;
+}
+#back-top a{outline:none}
+</style>
+<script type="text/javascript">
+$(function() {
+	// hide #back-top first
+	$("#back-top").hide();
+	// fade in #back-top
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > 500) {
+			$('#back-top').fadeIn();
+		} else {
+			$('#back-top').fadeOut();
+		}
+	});
+	// scroll body to 0px on click
+	$('#back-top a').click(function() {
+		$('body,html').animate({
+			scrollTop: 0
+		}, 800);
+		return false;
+	});
+});
+</script>
+<p id="back-top" style="display:none"><a href="#top"><span></span></a></p>
+    </div>
+</body>
+</html>

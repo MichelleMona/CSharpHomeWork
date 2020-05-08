@@ -1,0 +1,587 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="前言 由于AQS的源码太过凝练，而且有很多分支比如取消排队、等待条件等，如果把所有的分支在一篇文章的写完可能会看懵，所以这篇文章主要是从正常流程先走一遍，重点不在取消排队等分支，之后会专门写一篇取消排" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>JUC并发编程基石AQS之主流程源码解析 - LuxBai - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/LuxBai/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/LuxBai/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/LuxBai/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 462943;
+        var currentBlogApp = 'LuxBai';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/LuxBai/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/LuxBai/">LuxBai</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/LuxBai/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/LuxBai">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/LuxBai/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+7&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/LuxBai/p/12775298.html">JUC并发编程基石AQS之主流程源码解析</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h2 id="前言">前言</h2>
+<p>由于AQS的源码太过凝练，而且有很多分支比如取消排队、等待条件等，如果把所有的分支在一篇文章的写完可能会看懵，所以这篇文章主要是从正常流程先走一遍，重点不在取消排队等分支，之后会专门写一篇取消排队和等待条件的分支逻辑。读源码千万别在每个代码分支中来回游走，先按一个正常的分支把流程看明白，之后再去重点关注其他分支，各个击破。我相信看完正常流程，你再去分析其他分支会更加得心应手。本篇将主要方法名都做了目录索引，查看时可通过目录快速跳到指定方法的逻辑。</p>
+<h2 id="执行流程">执行流程</h2>
+<p>AQS的执行流程大体为当线程获取锁失败时，会加入到等待队列中，在<strong>等待队列</strong>中的线程会按照从头至尾的顺序依次再去尝试获取锁执行。</p>
+<p>当线程获取锁后如果还需要等待特定的条件才能执行，那么线程就加入到<strong>条件队列</strong>排队，当等待的条件到来时<strong>再从条件队列中按照从头至尾的顺序加入到等待队列</strong>中，然后再按照等待队列的执行流程去获取锁。所以AQS最核心的数据结构其实就两个队列，等待队列和条件队列，然后再加上一个获取锁的同步状态。</p>
+<h2 id="aqs数据结构">AQS数据结构</h2>
+<p>AQS最核心的数据结构就三个</p>
+<ul>
+<li>
+<p><strong>等待队列</strong></p>
+<p>源码中head和tail为等待队列的头尾节点，在通过前后指向则构成了等待队列，为双向链表，学名为CLH队列。</p>
+</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210456579-856565466.png" alt=""></p>
+<ul>
+<li>
+<p><strong>条件队列</strong></p>
+<p>ConditionObject中的firstWaiter和lastWaiter为等待队列的头尾节点，然后通过next指向构成了条件队列，是个单向链表。</p>
+</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210520472-754565803.png" alt=""></p>
+<ul>
+<li>
+<p><strong>同步状态</strong></p>
+<p>state为同步状态，通过CAS操作来实现获取锁的操作。</p>
+</li>
+</ul>
+<pre><code class="language-java">public abstract class AbstractQueuedSynchronizer{
+  
+  /**
+     * 等待队列的头节点
+     */
+    private transient volatile Node head;
+
+    /**
+     * 等待队列的尾节点
+     */
+    private transient volatile Node tail;
+  
+    /**
+     * 同步状态
+     */
+    private volatile int state;
+  
+    public class ConditionObject implements Condition, java.io.Serializable {
+
+          /** 条件队列的头节点 */
+          private transient Node firstWaiter;
+      
+          /** 条件队列的尾节点 */
+          private transient Node lastWaiter;
+    }
+}
+</code></pre>
+<h3 id="node节点">Node节点</h3>
+<p>两个队列中的节点都是通过AQS中内部类Node来实现的。主要字段：</p>
+<ul>
+<li>
+<p>waitStatus</p>
+<p>当前节点的状态，具体看源码列出的注释。很重要，之后会在源码中讲解。</p>
+</li>
+<li>
+<p>Node prev</p>
+<p>等待队列节点指向的前置节点</p>
+</li>
+<li>
+<p>Node next</p>
+<p>待队列节点指向的后置节点</p>
+</li>
+<li>
+<p>Node nextWaiter</p>
+<p>条件队列中节点指向的后置节点</p>
+</li>
+<li>
+<p>Thread thread</p>
+<p>当前节点持有的线程</p>
+</li>
+</ul>
+<pre><code class="language-java">static final class Node {
+    /**  */
+    static final Node SHARED = new Node();
+    /**  */
+    static final Node EXCLUSIVE = null;
+
+    /** 标明当前节点线程取消排队 */
+    static final int CANCELLED =  1;
+  
+    /** 标明该节点的后置节点需要自己去唤醒 */
+    static final int SIGNAL    = -1;
+  
+    /** 标明当前节点在等待某个条件，此时节点在条件队列中 */
+    static final int CONDITION = -2;
+    /**
+     * waitStatus value to indicate the next acquireShared should
+     * unconditionally propagate
+     */
+    static final int PROPAGATE = -3;
+
+    /**
+     * 等待状态，值对于上面的四个常量
+     */
+    volatile int waitStatus;
+
+    /**
+     * 等待队列节点指向的前置节点
+     */
+    volatile Node prev;
+
+    /**
+     * 等待队列节点指向的后置节点
+     */
+    volatile Node next;
+
+    /**
+     * 当前节点持有的线程
+     */
+    volatile Thread thread;
+
+    /**
+     * 条件队列中节点指向的后置节点
+     */
+    Node nextWaiter;
+</code></pre>
+<h2 id="加锁">加锁</h2>
+<p>上面说明的数据结构我们先大致有个印象，现在通过加锁来一步步说明下具体的流程，上篇文章<strong>JUC并发编程基石AQS之结构篇</strong>，我们知道了AQS加锁代码执行的是acquire方法，那么我们从这个方法说起，从源码中看出执行流程为：tryAcquire——&gt;addWaiter——&gt;acquireQueued</p>
+<p>tryAcquire为自己实现的具体加锁逻辑，当加锁失败时返回false，则会执行addWaiter，将线程加入到等待队列中，Node.EXCLUSIVE为独占锁的模式，即同时只能有一个线程获取锁去执行。</p>
+<p><strong>例子说明</strong></p>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210553150-182392148.png" alt=""></p>
+<p>首先假设有四个线程t0-t4调用tryAcquire获取锁，t0线程为天选之子获取到了锁，则t1-t4线程接着去执行addWaiter。</p>
+<h3 id="acquire">acquire</h3>
+<pre><code class="language-java">public final void acquire(int arg) {
+    if (!tryAcquire(arg) &amp;&amp;
+        acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
+        selfInterrupt();
+}
+</code></pre>
+<h3 id="addwaiter分支1">addWaiter分支1</h3>
+<p>addWaiter方法，首先会初始化一个node节点，将当前线程设置到node节点中。然后判断head和tail节点是否为空，head和tail节点是懒加载的，当AQS初始化时为null，则第一次进来时if (pred != null) 条件不成立，执行enq方法。</p>
+<p><strong>例子说明</strong></p>
+<p>假如t1和t2线程同时执行到该方法，head节点未初始化则执行enq。</p>
+<pre><code class="language-java">private Node addWaiter(Node mode) {
+    Node node = new Node(Thread.currentThread(), mode);
+    // Try the fast path of enq; backup to full enq on failure
+    Node pred = tail;
+    if (pred != null) {
+        node.prev = pred;
+        if (compareAndSetTail(pred, node)) {
+            pred.next = node;
+            return node;
+        }
+    }
+    enq(node);
+    return node;
+}
+</code></pre>
+<h3 id="enq">enq</h3>
+<p>此时可能多个线程会同时调用enq方法，所以该方法中也使用CAS操作。for (;;)是个死循环，首先会CAS操作初始化head节点，且<strong>head节点是个空节点，没有设置线程。</strong>然后第二次循环时通过CAS操作将该节点设置我尾部节点，并将前置节点指向head，之后会跳出循环，返回生成的Node节点到addWaiter，从源码可以看到addWaiter方法后面没有逻辑，之后会调用acquireQueued。</p>
+<p><strong>例子说明</strong></p>
+<p>t1和t2线程同时执行，t1线程上天眷顾CAS成功，则流程为</p>
+<ul>
+<li>初始化head</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210609555-882274264.png" alt=""></p>
+<ul>
+<li>t1线程的node节点加入等待队列</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210651530-1199757265.png" alt=""></p>
+<ul>
+<li>t2线程执行，node节点加入等待队列</li>
+</ul>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210702551-1406037531.png" alt=""></p>
+<pre><code class="language-java">private Node enq(final Node node) {
+    for (;;) {
+        Node t = tail;
+        if (t == null) { // Must initialize
+            if (compareAndSetHead(new Node()))
+                tail = head;
+        } else {
+            node.prev = t;
+            if (compareAndSetTail(t, node)) {
+                t.next = node;
+                return t;
+            }
+        }
+    }
+}
+</code></pre>
+<h3 id="addwaiter分支2">addWaiter分支2</h3>
+<p>现在在来说t3和t4，t3和t4线程这时终于获取到了cpu的执行权，此时head节点已经初始化，则进入条件中的代码，其实也是通过CAS操作将节点加入到等待队列尾部，之后会调用acquireQueued。</p>
+<p><strong>例子说明</strong></p>
+<p>假如t3线程先CAS成功，之后t4成功，此时的数据结构为</p>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210723518-381228880.png" alt=""></p>
+<pre><code class="language-java">private Node addWaiter(Node mode) {
+    Node node = new Node(Thread.currentThread(), mode);
+    // Try the fast path of enq; backup to full enq on failure
+    Node pred = tail;
+    if (pred != null) {
+        node.prev = pred;
+        if (compareAndSetTail(pred, node)) {
+            pred.next = node;
+            return node;
+        }
+    }
+    enq(node);
+    return node;
+}
+</code></pre>
+<h3 id="acquirequeued">acquireQueued</h3>
+<p>这个方法有两个逻辑，首先如果该节点的前置节点是head会走第一个if，再次去尝试获取锁？？？</p>
+<p>获取锁成功，则将头节点设置为自己，并返回到acquire方法，此时acquire方法执行完，代表获取锁成功，线程可以执行自己的逻辑了。这里有下面几个注意点</p>
+<ul>
+<li>p.next = null; // help GC   设置旧的head节点的后置节点为null</li>
+<li>setHead方法  将t1节点设置为头节点，因为头节点是个空节点，所以设置t1线程节点线程为null，设置t1前置节点为null，此时旧的head节点已经没有任何指向和关联，可以被gc回收，所以上面那一步会写个help GC 的注释。</li>
+</ul>
+<p><strong>例子说明</strong></p>
+<p>现在t1线程的前置节点为头结点，如果t1执行tryAcquire成功则结果为</p>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210742531-1679283002.png" alt=""></p>
+<p>当获取锁失败或者前置节点不是头节点都会走第二个if逻辑，首先会判断当前线程是否需要挂起，如果需要则执行线程挂起。</p>
+<pre><code class="language-java">final boolean acquireQueued(final Node node, int arg) {
+    boolean failed = true;
+    try {
+        boolean interrupted = false;
+        for (;;) {
+            final Node p = node.predecessor();
+            if (p == head &amp;&amp; tryAcquire(arg)) {
+                setHead(node);
+                p.next = null; // help GC
+                failed = false;
+                return interrupted;
+            }
+            if (shouldParkAfterFailedAcquire(p, node) &amp;&amp;
+                parkAndCheckInterrupt())
+                interrupted = true;
+        }
+    } finally {
+        if (failed)
+            cancelAcquire(node);
+    }
+}
+
+private void setHead(Node node) {
+        head = node;
+        node.thread = null;
+        node.prev = null;
+    }
+</code></pre>
+<h3 id="shouldparkafterfailedacquire">shouldParkAfterFailedAcquire</h3>
+<p>判断线程是否需要挂起，首先需要注意的是这个方法的参数是当前节点的前置节点。当线程需要挂起的时候，它需要把身后事安排明白，挂起后让谁来把我唤醒。这个方法就主要做这个操作。我们再来看Node节点中的waitStatus状态，这个状态有一个Node.SIGNAL=-1，<strong>代表了当前节点需要将后置节点唤醒</strong>。这个理解可能有点绕。首先我们要理解一点，如果我需要被唤醒，那么我就要设置我们的前置节点的状态为Node.SIGNAL，这样当我的前置节点发现waitStatus=Node.SIGNAL时，它才知道，我执行完后需要去唤醒后置节点让后置节点去执行。所以这个方法是<strong>当前节点去设置自己的前置节点的状态为Node.SIGNAL</strong>。</p>
+<p>waitStatus初始化后是0，</p>
+<p>第一次进入该方法，发现自己的前置节点不是Node.SIGNAL，需要先设置为Node.SIGNAL状态</p>
+<p>第二次进入时发现前置节点已经是Node.SIGNAL状态，那么我就可以安心的挂起了，有人会唤醒我的。</p>
+<p>所以这个方法其实是两个逻辑，先设置前置节点状态，再判断是否可以挂起。因为前面acquireQueued方法中for (;😉 也是个循环，所以会重复进入。</p>
+<pre><code class="language-java">private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
+    int ws = pred.waitStatus;
+    if (ws == Node.SIGNAL)
+        /*
+         * This node has already set status asking a release
+         * to signal it, so it can safely park.
+         */
+        return true;
+    if (ws &gt; 0) {
+        /*
+         * Predecessor was cancelled. Skip over predecessors and
+         * indicate retry.
+         */
+        do {
+            node.prev = pred = pred.prev;
+        } while (pred.waitStatus &gt; 0);
+        pred.next = node;
+    } else {
+        /*
+         * waitStatus must be 0 or PROPAGATE.  Indicate that we
+         * need a signal, but don't park yet.  Caller will need to
+         * retry to make sure it cannot acquire before parking.
+         */
+        compareAndSetWaitStatus(pred, ws, Node.SIGNAL);
+    }
+    return false;
+}
+</code></pre>
+<h3 id="parkandcheckinterrupt">parkAndCheckInterrupt</h3>
+<p>将自己的前置节点设置为可唤醒的状态后进入该方法，线程挂起。</p>
+<p><strong>例子说明</strong></p>
+<p>此时t2-t4线程都执行到了此方法，则t2-t4线程都已经挂起不再执行，并且<strong>head-t3</strong>节点的waitStatus都为Node.SIGNAL，因为t4没有后置节点。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210756816-1954238693.png" alt=""></p>
+<pre><code class="language-java">private final boolean parkAndCheckInterrupt() {
+    LockSupport.park(this);
+    return Thread.interrupted();
+}
+</code></pre>
+<h2 id="解锁">解锁</h2>
+<h3 id="release">release</h3>
+<p>解锁方法的入口是AQS的release方法，首先会调用tryRelease方法，这个是AQS实现类自己实现的方法，去CAS改变state状态，如果解锁成功，则会进入if里的代码，获取head节点，判断waitStatus!=0，如果等于0代表没有后置节点需要去唤醒。之后调用unparkSuccessor方法。</p>
+<pre><code class="language-java">public final boolean release(int arg) {
+    if (tryRelease(arg)) {
+        Node h = head;
+        if (h != null &amp;&amp; h.waitStatus != 0)
+            unparkSuccessor(h);
+        return true;
+    }
+    return false;
+}
+</code></pre>
+<p>waitStatus&gt;0时，代表为CANCELLED =  1状态，即线程取消排队，这个以后会细讲。先将头结点的waitStatus状态设为初始值0，之后查看后置节点的状态，如果&gt;0代表后置节点取消了排队，不需要唤醒。但是当前节点需要去唤醒后续的节点让后续节点再去执行，所以会从尾结点开始寻找找到离当前线程最近的一个且waitStatus&lt;0的去唤醒。之后会调用LockSupport.unpark(s.thread);取消后续节点的挂起，让后续节点继续执行。</p>
+<h3 id="unparksuccessor">unparkSuccessor</h3>
+<pre><code class="language-java">private void unparkSuccessor(Node node) {
+
+    int ws = node.waitStatus;
+    if (ws &lt; 0)
+        compareAndSetWaitStatus(node, ws, 0);
+
+    Node s = node.next;
+    if (s == null || s.waitStatus &gt; 0) {
+        s = null;
+        for (Node t = tail; t != null &amp;&amp; t != node; t = t.prev)
+            if (t.waitStatus &lt;= 0)
+                s = t;
+    }
+    if (s != null)
+        LockSupport.unpark(s.thread);
+}
+</code></pre>
+<p><strong>例子说明</strong></p>
+<p>此时等待队列的数据，当t0线程执行完成后执行解锁操作，此时所有等待的线程都没有取消等待。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210820697-368819274.png" alt=""></p>
+<p>则t0线程会唤醒t1线程</p>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210835093-895930851.png" alt=""></p>
+<p>如果t1和t3线程取消的排队时，t0线程会唤醒t2，<strong>从后往前找离head最近的一个没有取消派对的节点</strong>。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200425210848702-114717817.png" alt=""></p>
+<p>线程执行到parkAndCheckInterrupt方法时被挂起，当被头节点唤醒后会继续执行，设置interrupted=true，表示被中断，会继续执行for循环逻辑，到现在一个正常的获取锁失败——&gt;加入等待队列——&gt;挂起——&gt;被唤醒继续执行的流程已经整体走了一遍。</p>
+<p>本篇文章都是自己根据源码写出的阅读心得，可能有的地方没有揣摩到Doug Lea大神的意图，如果有理解不对的地方欢迎一起探讨。</p>
+<p><strong>如有不实，还望指正</strong></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 21:12</span>&nbsp;
+<a href="https://www.cnblogs.com/LuxBai/">LuxBai</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775298" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12775298);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 462943, cb_blogApp = 'LuxBai', cb_blogUserGuid = '383c5a5f-da0f-42b1-ad3c-08d61f4d6673';
+    var cb_entryId = 12775298, cb_entryCreatedDate = '2020-04-25 21:12', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 LuxBai
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <div id="MySignature" style="display: block"><div>
+<img style="float: left; margin-right: 10px" src="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200419144323931-518666785.jpg" width="125">
+<div>
+     作者：
+    <a href="http://itwild.cnblogs.com/" target="_blank">LuxBai</a> 
+   </div> 
+ <div>
+     微信公众号：
+    <a href="https://img2020.cnblogs.com/blog/1496984/202004/1496984-20200419144528134-693137418.png" target="_blank">LuxBai</a> 
+   </div> 
+   <div>
+     出处：
+    <a href="https://www.cnblogs.com/LuxBai/" target="_blank">https://www.cnblogs.com/LuxBai/</a> 
+   </div> 
+   <div> 
+    <div>
+     <a name="dntbottom">本文版权归作者和博客园共有。欢迎转载，但必须保留此段声明，且在文章页面明显位置给出原文连接！</a>
+    </div> 
+   </div></div></div>
+    </div>
+</body>
+</html>

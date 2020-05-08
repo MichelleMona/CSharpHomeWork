@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="前言 我又来写关于多租户的内容了，这个系列真够漫长的。 如无意外这篇随笔是最后一篇了。内容是讲关于如何利用我们的多租户库简单实现读写分离。 分析 对于读写分离，其实有很多种实现方式，但是总体可以分以下" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>EF多租户实例：演变为读写分离 - woailibian - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/woailibian/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/woailibian/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/woailibian/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 341924;
+        var currentBlogApp = 'woailibian';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/woailibian/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/woailibian/">woailibian</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/woailibian/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/woailibian">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/woailibian/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+12&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+19</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/woailibian/p/12773998.html">EF多租户实例：演变为读写分离</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h1>前言</h1>
+<p>我又来写关于多租户的内容了，这个系列真够漫长的。</p>
+<p>如无意外这篇随笔是最后一篇了。内容是讲关于如何利用我们的多租户库简单实现读写分离。</p>
+<p>&nbsp;</p>
+<h3>分析</h3>
+<p>对于读写分离，其实有很多种实现方式，但是总体可以分以下两类：</p>
+<p>1. 通过不同的连接字符串分离读库和写库</p>
+<p>2. 通过有多个连接实例，分别连接到读或写库</p>
+<p>他们2种类型都有各自明显的优缺点。我下面会列举部分优缺点</p>
+<p><strong>第1种</strong>，如果一个请求 scope 内只有一个连接实例，那么就造成同一 scope 内就只能连接读或写库。</p>
+<p>由于一个 scope 里只有一个连接实例，造成读写都只能在一个库，好处是在需要写的情况，数据一致性很高，但也造成对于一些需要长时间运行的请求，会降低整个读写框架的效率。</p>
+<p>另一个好处是可以节省连接，一个 scope 只有一个连接，对连接的开销更加少。</p>
+<p><strong>第2种</strong>，同一个请求 scope 内有多个连接实例，可以同时对读和写库进行操作。</p>
+<p>在同时对读库和写库操作时，必须要对数据的一致性问题小心处理，由于读库写库的同步是需要很长时间的（对比一个请求的花费时间）。</p>
+<p>在这种情况下，一般我们要对绝大部分的写操作进行觅等处理，部分只增不改的数据简单处理就行（例如新增操作记录）</p>
+<p>由于同一个 scope 下同时拥有读和写库的实例，可以非常优雅的自动对 insert，update 等指向写库， select 指向读库。而不需要在写代码阶段显式标注</p>
+<p>&nbsp;</p>
+<p>上面的2种类型我都有在实际项目中使用过，我个人是更加偏向于第1种，因为在第2种类型的项目应用中，数据的一致性问题常常造成各种各样的问题，越来越多的接口后来都将2个连接实例转变成读或写实例操作。</p>
+<p>但不得不说，第2种类型确实比第一种效率上更加高。因为即使在一个需要写的接口下，可能需要读4~5次库，才会进行1次写操作，所以这不是一个影响效率的小因素。</p>
+<p>由于这篇随笔我只想讨论读写分离，数据一致性问题不想过多涉及，所以本文会使用第1种类型进行讲解。</p>
+<p>&nbsp;</p>
+<h1>实施</h1>
+<p>在具体的实施步骤前，我们先看看项目的结构。其中 Entity，DbContext，Controller 都是前文多次提及的，就不再强调他的代码实现了，有需要等朋友去github或者前面几篇文章参考。</p>
+<p><img src="https://img2020.cnblogs.com/blog/494839/202004/494839-20200425153122162-582684217.png" alt="" width="298" height="333"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h3>读写是靠什么分离的</h3>
+<p>在我们的实例中，最大的难题是： 如何区分读和写？</p>
+<p>对的，这就是我们全文的核心。从代码层面可以区分为 <strong>人为显式标明</strong> 和 <strong>代码自动识别数据库操作</strong>&nbsp;</p>
+<p>人为显式标明很简单理解，就是我们在实现一个接口的时候，实际上已经知道它是否有需要写库。本文的实施方式</p>
+<p>代码自动识别数据库，简单来说通过区分数据库的操作类型，从而自动指向不同的库。但由于我们本文的示例不具备很好的结构优势（上文提到的第1种类型），所以可操作性较低。</p>
+<p>&nbsp;</p>
+<p>既然我们选择认为显示标明，那么大家很容易想到的是使用 C# 中备受推崇的注解方式 Attribute 。那么，我们很简单按照要求就创建了下面的这个类</p>
+<p>这个 Attribute 看起来非常地简单，甚至连构造函数、属性和字段都没有。</p>
+<p>有的只有第1行的 AttributeUsage 注解。这里的作用是规定他只能在方法上使用，并且不能同时存在多个和在继承时无效。</p>
+<p>可能有朋友会提问为什么不用 ActionFilterAttribute 作为父类，其实这只是一个标识，没有任何逻辑在里面，自然也不需要用到强大的 ActionFilterAttribute 了</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;">1</span> [AttributeUsage(AttributeTargets.Method, AllowMultiple = <span style="color: #0000ff;">false</span>, Inherited = <span style="color: #0000ff;">false</span><span style="color: #000000;">)]
+</span><span style="color: #008080;">2</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> IsWriteAttribute : Attribute
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">{
+</span><span style="color: #008080;">4</span> }</pre>
+</div>
+<p>&nbsp;</p>
+<h3>连接实例初始化</h3>
+<p>较为熟悉 asp.net core 的朋友或者有留意系列文章的朋友，应该不难发现 EF core 的连接实例 DbContext 是通过控制反转自动初始化的，在 Controller 产生之前，DbContext 已经初始化完成了。</p>
+<p>那么我们是如何在 Controller 构造之前就标明这个DbContext 使用的是写库的连接还是读库的连接呢？</p>
+<p>在这种情况下，我们就需要利用 asp.net core 的路由了，因为没有 asp.net core 的 Endpoint，我们是无法知道这个请求是到达哪一个 Controller 和方法的，这样就造成我们前文提到使用 Middleware 已经不再适用了。</p>
+<p>通过苦苦地阅读了部分关于 Endpoint 的源码之后，我分析有2个较为合适的对象，分别是：IActionInvokerProvider 和&nbsp;IControllerActivator。</p>
+<p>最终我选定使用&nbsp;IActionInvokerProvider ，理由暂不叙述，如果有机会我们展开源码讨论的时候再谈。</p>
+<p>下面贴出 ReadWriteActionInvokerProvider 的代码。 OnProviderExecuted 就是执行后，OnProviderExecuting 就是执行前，这个很好理解。</p>
+<p>第14行就是读出当前即将执行的接口方法有没有上文提到的使用&nbsp;IsWriteAttribute 进行标注</p>
+<p>剩下的代码的作用，主要就是对当前请求 scope 的 tenantInfo 进行赋值，用于区分当前请求是读还是写。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> ReadWriteActionInvokerProvider : IActionInvokerProvider
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">{
+</span><span style="color: #008080;"> 3</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">int</span> Order =&gt; <span style="color: #800080;">10</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 4</span> 
+<span style="color: #008080;"> 5</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> OnProvidersExecuted(ActionInvokerProviderContext context)
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;"> 8</span> 
+<span style="color: #008080;"> 9</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> OnProvidersExecuting(ActionInvokerProviderContext context)
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">11</span>         <span style="color: #0000ff;">if</span> (context.ActionContext.ActionDescriptor <span style="color: #0000ff;">is</span><span style="color: #000000;"> ControllerActionDescriptor descriptor)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">13</span>             <span style="color: #0000ff;">var</span> serviceProvider =<span style="color: #000000;"> context.ActionContext.HttpContext.RequestServices;
+</span><span style="color: #008080;">14</span>             <span style="color: #0000ff;">var</span> isWrite = descriptor.MethodInfo.GetCustomAttributes(<span style="color: #0000ff;">typeof</span>(IsWriteAttribute), <span style="color: #0000ff;">false</span>)?.Length &gt; <span style="color: #800080;">0</span><span style="color: #000000;">;
+</span><span style="color: #008080;">15</span> 
+<span style="color: #008080;">16</span>             <span style="color: #0000ff;">var</span> tenantInfo = serviceProvider.GetService(<span style="color: #0000ff;">typeof</span>(TenantInfo)) <span style="color: #0000ff;">as</span><span style="color: #000000;"> TenantInfo;
+</span><span style="color: #008080;">17</span>             tenantInfo.Name = isWrite ? <span style="color: #800000;">"</span><span style="color: #800000;">WRITE</span><span style="color: #800000;">"</span> : <span style="color: #800000;">"</span><span style="color: #800000;">READ</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+</span><span style="color: #008080;">18</span>             (tenantInfo <span style="color: #0000ff;">as</span> <span style="color: #0000ff;">dynamic</span>).IsWrite =<span style="color: #000000;"> isWrite;
+</span><span style="color: #008080;">19</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">21</span> }</pre>
+</div>
+<p>&nbsp;</p>
+<h3>获取连接字符串</h3>
+<p>连接字符串这部分，由于我们已经跳出了多租户库规定的范畴了，所以我们需要自己实现一个可用于读写分离的 ConnectionGenerator</p>
+<p>其中 TenantKey 属性和 MatchTenantKey 方法是 IConnectionGenerator 中必须的，主要是用来这个 Generator 是否匹配当前 DbContext</p>
+<p>GetConection 中的逻辑，主要是通过 IsWrite 来判断是否是写库，从而获得唯一的写库连接字符串。其他的任何情况都通过随机数的取模，从2个读库的连接字符串中取一个。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> ReadWriteConnectionGenerator : IConnectionGenerator
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">{
+</span><span style="color: #008080;"> 3</span> 
+<span style="color: #008080;"> 4</span>     <span style="color: #0000ff;">static</span> Lazy&lt;Random&gt; random = <span style="color: #0000ff;">new</span> Lazy&lt;Random&gt;<span style="color: #000000;">();
+</span><span style="color: #008080;"> 5</span>     <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">readonly</span><span style="color: #000000;"> IConfiguration configuration;
+</span><span style="color: #008080;"> 6</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">string</span> TenantKey =&gt; <span style="color: #800000;">""</span><span style="color: #000000;">;
+</span><span style="color: #008080;"> 7</span> 
+<span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> ReadWriteConnectionGenerator(IConfiguration configuration)
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">10</span>         <span style="color: #0000ff;">this</span>.configuration =<span style="color: #000000;"> configuration;
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">12</span> 
+<span style="color: #008080;">13</span> 
+<span style="color: #008080;">14</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">string</span><span style="color: #000000;"> GetConnection(TenantOption option, TenantInfo tenantInfo)
+</span><span style="color: #008080;">15</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">16</span>         <span style="color: #0000ff;">dynamic</span> info =<span style="color: #000000;"> tenantInfo;
+</span><span style="color: #008080;">17</span>         <span style="color: #0000ff;">if</span> (info?.IsWrite == <span style="color: #0000ff;">true</span><span style="color: #000000;">)
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">19</span>             <span style="color: #0000ff;">return</span> configuration.GetConnectionString($<span style="color: #800000;">"</span><span style="color: #800000;">{option.ConnectionPrefix}write</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #008080;">20</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">21</span>         <span style="color: #0000ff;">else</span>
+<span style="color: #008080;">22</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">23</span>             <span style="color: #0000ff;">var</span> mod = random.Value.Next(<span style="color: #800080;">1000</span>) % <span style="color: #800080;">2</span><span style="color: #000000;">;
+</span><span style="color: #008080;">24</span>             <span style="color: #0000ff;">return</span> configuration.GetConnectionString($<span style="color: #800000;">"</span><span style="color: #800000;">{option.ConnectionPrefix}read{(mod + 1)}</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+</span><span style="color: #008080;">25</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">26</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">27</span> 
+<span style="color: #008080;">28</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">bool</span> MatchTenantKey(<span style="color: #0000ff;">string</span><span style="color: #000000;"> tenantKey)
+</span><span style="color: #008080;">29</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">30</span>         <span style="color: #0000ff;">return</span> <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+</span><span style="color: #008080;">31</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">32</span> }</pre>
+</div>
+<p>&nbsp;</p>
+<p>注入配置</p>
+<p>来到 asp.net core 的世界，怎么能缺少注入配置和管道配置呢。</p>
+<p>首先是配置我们自定义的 IActionInvokerProvider 和 IConnectionGernerator .</p>
+<p>然后是配置多租户。 这里利用 AddTenantedDatabase 这个基础方法，主要是为了表名它并不需要前文提到的mysql，sqlserver等的众多实现库。</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Startup
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">{
+</span><span style="color: #008080;"> 3</span>     <span style="color: #0000ff;">public</span><span style="color: #000000;"> Startup(IConfiguration configuration)
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;"> 5</span>         Configuration =<span style="color: #000000;"> configuration;
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;"> 7</span> 
+<span style="color: #008080;"> 8</span>     <span style="color: #0000ff;">public</span> IConfiguration Configuration { <span style="color: #0000ff;">get</span><span style="color: #000000;">; }
+</span><span style="color: #008080;"> 9</span> 
+<span style="color: #008080;">10</span>     <span style="color: #008000;">//</span><span style="color: #008000;"> This method gets called by the runtime. Use this method to add services to the container.</span>
+<span style="color: #008080;">11</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> ConfigureServices(IServiceCollection services)
+</span><span style="color: #008080;">12</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">13</span>         services.AddSingleton&lt;IActionInvokerProvider, ReadWriteActionInvokerProvider&gt;<span style="color: #000000;">();
+</span><span style="color: #008080;">14</span>         services.AddScoped&lt;IConnectionGenerator, ReadWriteConnectionGenerator&gt;<span style="color: #000000;">();
+</span><span style="color: #008080;">15</span>         services.AddTenantedDatabase&lt;StoreDbContext&gt;(<span style="color: #0000ff;">null</span><span style="color: #000000;">, setupDb);
+</span><span style="color: #008080;">16</span> 
+<span style="color: #008080;">17</span> <span style="color: #000000;">        services.AddControllers();
+</span><span style="color: #008080;">18</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">19</span> 
+<span style="color: #008080;">20</span>     <span style="color: #0000ff;">void</span> setupDb(TenantSettings&lt;StoreDbContext&gt;<span style="color: #000000;"> settings)
+</span><span style="color: #008080;">21</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">22</span>         settings.ConnectionPrefix = <span style="color: #800000;">"</span><span style="color: #800000;">mysql_</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+</span><span style="color: #008080;">23</span>         settings.DbContextSetup = (serviceProvider, connectionString, optionsBuilder) =&gt;
+<span style="color: #008080;">24</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">25</span>             <span style="color: #0000ff;">var</span> tenant = serviceProvider.GetService&lt;TenantInfo&gt;<span style="color: #000000;">();
+</span><span style="color: #008080;">26</span>             optionsBuilder.UseMySql(connectionString, builder =&gt;
+<span style="color: #008080;">27</span> <span style="color: #000000;">            {
+</span><span style="color: #008080;">28</span>                 <span style="color: #008000;">//</span><span style="color: #008000;"> not necessary, if you are not using the table or schema </span>
+<span style="color: #008080;">29</span> <span style="color: #000000;">                builder.TenantBuilderSetup(serviceProvider, settings, tenant);
+</span><span style="color: #008080;">30</span> <span style="color: #000000;">            });
+</span><span style="color: #008080;">31</span> <span style="color: #000000;">        };
+</span><span style="color: #008080;">32</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">33</span> 
+<span style="color: #008080;">34</span>     <span style="color: #008000;">//</span><span style="color: #008000;"> This method gets called by the runtime. Use this method to configure the HTTP request pipeline.</span>
+<span style="color: #008080;">35</span>     <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+</span><span style="color: #008080;">36</span> <span style="color: #000000;">    {
+</span><span style="color: #008080;">37</span>         <span style="color: #0000ff;">if</span><span style="color: #000000;"> (env.IsDevelopment())
+</span><span style="color: #008080;">38</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">39</span> <span style="color: #000000;">            app.UseDeveloperExceptionPage();
+</span><span style="color: #008080;">40</span> <span style="color: #000000;">        }
+</span><span style="color: #008080;">41</span> 
+<span style="color: #008080;">42</span>         <span style="color: #008000;">//</span><span style="color: #008000;"> app.UseHttpsRedirection();</span>
+<span style="color: #008080;">43</span> 
+<span style="color: #008080;">44</span> <span style="color: #000000;">        app.UseRouting();
+</span><span style="color: #008080;">45</span> 
+<span style="color: #008080;">46</span>         <span style="color: #008000;">//</span><span style="color: #008000;"> app.UseAuthorization();</span>
+<span style="color: #008080;">47</span> 
+<span style="color: #008080;">48</span>         app.UseEndpoints(endpoints =&gt;
+<span style="color: #008080;">49</span> <span style="color: #000000;">        {
+</span><span style="color: #008080;">50</span> <span style="color: #000000;">            endpoints.MapControllers();
+</span><span style="color: #008080;">51</span> <span style="color: #000000;">        });
+</span><span style="color: #008080;">52</span> <span style="color: #000000;">    }
+</span><span style="color: #008080;">53</span> }</pre>
+</div>
+<p>&nbsp;</p>
+<h3>其他</h3>
+<p>通过了上面的好几个关键步骤，我们已经将最关键的几个部分说明了。</p>
+<p>剩下的是还有 StoreDbContext, Controller, Product, appsettings 等，请参考源码或者。</p>
+<p>ProductionController 中有一个方法可以贴出来做为一个示例，标明我们怎么使用&nbsp;IsWriteAttribute</p>
+<div class="cnblogs_code">
+<pre><span style="color: #008080;"> 1</span> [HttpPost(<span style="color: #800000;">""</span><span style="color: #000000;">)]
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">[IsWriteAttribute]
+</span><span style="color: #008080;"> 3</span> <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">async</span> Task&lt;ActionResult&lt;Product&gt;&gt;<span style="color: #000000;"> Create(Product product)
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;">{
+</span><span style="color: #008080;"> 5</span>     <span style="color: #0000ff;">var</span> rct = <span style="color: #0000ff;">await</span> <span style="color: #0000ff;">this</span><span style="color: #000000;">.storeDbContext.Products.AddAsync(product);
+</span><span style="color: #008080;"> 6</span> 
+<span style="color: #008080;"> 7</span>     <span style="color: #0000ff;">await</span> <span style="color: #0000ff;">this</span><span style="color: #000000;">.storeDbContext.SaveChangesAsync();
+</span><span style="color: #008080;"> 8</span> 
+<span style="color: #008080;"> 9</span>     <span style="color: #0000ff;">return</span> rct?<span style="color: #000000;">.Entity;
+</span><span style="color: #008080;">10</span> 
+<span style="color: #008080;">11</span> }</pre>
+</div>
+<p>&nbsp;</p>
+<h3>检验结果</h3>
+<p>其实这里我提供的例子，并不能从接口的响应如何区分是自动指向了读库或写库，所以效果就不截图了。</p>
+<p>&nbsp;</p>
+<h1>最后</h1>
+<p>这个系列终于要完成了。整整持续了2个月，主要是最近太忙了，即使在家办公，工作还是多得做不完。所以文章的产出非常的慢。</p>
+<p>&nbsp;</p>
+<h3>接下来做什么</h3>
+<p>这个系列的文章虽然完成了，但是开源的代码还是在继续的，我会开始完成github的Readme，以求让大家通过阅读github的介绍就能快速上手。</p>
+<p>可能有朋友会有EF migration有需求，那请参阅我之前写的文章，其实套路都一样，没什么难度的。</p>
+<p>&nbsp;</p>
+<h3>之后会介绍什么知识点</h3>
+<p>其实我在写这个系列文章之前，就打算写<strong>缓存</strong>。可能有朋友会觉得缓存有什么可说的，不就是读一下，有就拿出来，没有就先写进去。</p>
+<p>确实这是缓存的最基础操作，但是有没有一种优雅的方式，另我们不用不停重复写if else去读写缓存呢？</p>
+<p>是有的，自从我读了Spring boot的部分源码，里面的缓存使用方式实在令我眼前一亮，后来我也在 asp.net core 项目中应用起来。</p>
+<p>那优雅的方式，确实是每个程序员都愿意使用的。</p>
+<p>那么我们可以期待我们自行实现的&nbsp;<strong>Cacheable</strong>，<strong>CachePut</strong>，<strong>CacheEvict</strong>。</p>
+<p>&nbsp;</p>
+<p>这里的难点是什么，C# 对比 Java 语法特色上最大区别是 asynchorize 的支持，所以 C# 对这种拦截器最大复杂度，就是在分别处理同步和异步。</p>
+<p>有一些已经存在的类似的缓存库，往往需要使用反射进行对异步封装或异步解释，我将用更加优异的方式实现。</p>
+<p>&nbsp;</p>
+<p>关于代码</p>
+<p>请查看github&nbsp; ：&nbsp;<a href="https://github.com/woailibain/kiwiho.EFcore.MultiTenant">https://github.com/woailibain/kiwiho.EFcore.MultiTenant</a></p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 17:11</span>&nbsp;
+<a href="https://www.cnblogs.com/woailibian/">woailibian</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773998" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12773998);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 341924, cb_blogApp = 'woailibian', cb_blogUserGuid = '5dc8a7fc-766c-e211-aa8f-842b2b196315';
+    var cb_entryId = 12773998, cb_entryCreatedDate = '2020-04-25 17:11', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 woailibian
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

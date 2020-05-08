@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="这两天总结了关于vue router优化的几点技法，做个笔记 在基于vue的移动端app中，通过vue router可以便捷的进入某一路由或回退到上一路由，但是若不对vue router做相关优化处理" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>关于对vue-router的优化(详尽版) - 致爱丽丝 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/hjk1124/custom.css?v=XhzaeTboEFR4TxC7l8Y9dhaEfGE=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hjk1124/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hjk1124/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hjk1124/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 531172;
+        var currentBlogApp = 'hjk1124';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <html>
+  <head>
+    
+    <title>Live2d Test Env</title>
+    
+    
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js" defer></script>
+   <style>
+      #back-top {
+     position: fixed;
+     bottom: 80px;
+     right: 50px;
+     z-index: 99;
+     border:1px solid #8a8a8a;
+     border-radius :2px
+}
+#back-top span {
+     width: 70px;
+     height: 140px;
+     display: block;
+     background:url(https://images.cnblogs.com/cnblogs_com/laoguantongxiegogo/1667745/o_200312023941%E8%BF%94%E5%9B%9E%E9%A1%B6%E9%83%A8.png) no-repeat center center;
+}
+#back-top a{outline:none}
+#blogTitle{
+    /*这里写未来一言的api存放的地方*/
+}
+   </style>
+  </head>
+  <body>
+    <p id="back-top" style="display:none"><a href="#top"><span></span></a></p>
+ 
+  <script type="text/javascript">
+   
+//回顶按钮
+$(function() {
+    // hide #back-top first
+    $("#back-top").hide();
+    // fade in #back-top
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 350) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+    // scroll body to 0px on click
+    $('#back-top a').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 500);
+        return false;
+    });
+});
+//回顶按钮结束
+  </script>
+  </body>
+</html>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hjk1124/">致爱丽丝</a>
+</div>
+<div class="subtitle">
+谨以此文，见证成果。
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hjk1124/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%87%B4%E7%88%B1%E4%B8%BD%E4%B8%9D">
+联系</a></li>
+    <li id="nav_rss">
+</li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+37&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+1</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/hjk1124/p/12766778.html">关于对vue-router的优化(详尽版)</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p><em>这两天总结了关于vue-router优化的几点技法，做个笔记</em></p>
+<p>在基于vue的移动端app中，通过vue-router可以便捷的进入某一路由或回退到上一路由，但是若不对vue-router做相关优化处理，则会造成以下几个问题：</p>
+<p>1.切换路由时，频繁向后台发送请求</p>
+<p>2.切换路由时，页面会卡顿，影响用户体验</p>
+<blockquote>
+<p>基于这些困扰，我们从头开始探究vue-router</p>
+</blockquote>
+<h3 id="问题1：切换路由时，频繁向后台发送请求以及解决办法">问题1：切换路由时，频繁向后台发送请求,以及解决办法</h3>
+<blockquote>
+<p>在常规的路由配置下，我们使用App.vue作为app根组件：</p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/blog/1542059/202004/1542059-20200423191148378-1312699774.png" alt=""></p>
+<blockquote>
+<p>app.vue有一个router-view标签用于显示内部组件，</p>
+<p>而在router/index.js中，path为'/'的根路由映射了home,这代表home组件作为App.vue的子组件</p>
+<p>因而，App.vue下的router-view代表了身为子组件的home.vue，而home组件作为App.vue的子组件(路由)，本身又是除app.vue以外所有后代路由的根路由。</p>
+<p>它们一起构成了整个APP路由系统。这是vue-router的常规描述。</p>
+</blockquote>
+<p><em>萌新们往往会将所有的路由一股脑的与根路由配置在同一级，但事实证明，这是不可取的。</em></p>
+<p><img src="https://img2020.cnblogs.com/blog/1542059/202004/1542059-20200423193307405-1699641492.png" alt=""></p>
+<blockquote>
+<p>假设我们F12键，打开netWork -&gt; XHR 时就会发现，</p>
+<p>在home路由下，进入某个路由，然后回退到上个路由时，我们请求了2次数据，即点击了要进入的路由时，请求了一次；回退到上个路由时，又请求了一次</p>
+<p>而这与我们的期待是不一样的：<strong>每当我们点击一个新路由时，vue才向后台发送网络请求，而我们回退到某个路由时(比如本例，我们回退到home路由上)，</strong></p>
+<p><strong>则回退到的路由在没有刷新事件前不要请求数据。</strong></p>
+</blockquote>
+<p>所以原因就在于此：</p>
+<blockquote>
+<p><strong>与根路由同级时，每次进入或回退某个路由，上一个已请求到的路由资源都被销毁了，因而每当进入一个路由地址(无论是回退上一路由还是进入某一新路由)，</strong></p>
+<p><strong>app.vue都会重新加载一次router-view,vue都会向服务器发起一次网络请求，造成服务器实则没必要的花销。</strong></p>
+<p><strong>并且随着用户不断进入或者回退某个路由，耗费的花销会越来越可观</strong></p>
+</blockquote>
+<p>那么，<strong>保持组件的状态</strong>，便是解决的方法：</p>
+<ul>
+<li>
+<p><strong>解决方法一：使用vue内置组件keep-alive保持组件状态</strong></p>
+<blockquote>
+<p>使用keep-alive标签包裹app.vue里router-view标签，这样就相当于包裹了包括home在内的所有路由组件:</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="language-js">&lt;template&gt;
+//App.vue
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;keep-alive&gt;
+      &lt;router-view/&gt;
+    &lt;/keep-alive&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<blockquote>
+<p>当我们打开f12再次尝试进入或者回退到某个标签时，发现只有在进入一个新路由地址时，才会发起请求， keep-alive可以缓存router-view的内容，</p>
+<p>这样似乎已经达到了我们的期望，</p>
+<p>但正是keep-alive的缓存特性有一个致命的缺陷———— <strong>keep-alive也会缓存动态路由的状态</strong>。</p>
+</blockquote>
+<p><em>尝试举个例子来解释这句话：</em></p>
+<blockquote>
+<p>假设用户进入了一个商品界面，但用户对这个商品并不满意，当用户回退到上一级而进入了一个中意的商品界面却发现，</p>
+<p>跟刚刚那个界面一样，且无论进入哪个商品界面都跟第一个商品界面一样时，</p>
+<p>这便会是keep-alive的弊端----keep-alive标签会缓存动态路由的状态，因而不会再进行数据请求，</p>
+<p>这对动态路由来说是致命的</p>
+</blockquote>
+<p><strong>所以，这个方法是不可取的</strong></p>
+<ul>
+<li>解决办法二：更改router的配置</li>
+</ul>
+<blockquote>
+<p>将home下所有子路由放置在home路由的children路由里，将子路由的子路由放置在子路由的children里，以此类推，即：</p>
+</blockquote>
+<pre><code class="language-js">//router/index.js
+{
+    path: '/',
+    name: 'Home',
+    component: Home,
+    // 根目录的子路由，优化路由，防止每次回退或进入都会加载
+    //home路由的子路由放置在自身的children路由下
+    children: [
+      {
+        path : '/playListView',
+        name:'PlayListView',
+        component:() =&gt; import(/* webpackChunkName: &quot;about&quot; */ '../views/playListView.vue'),
+        children:[
+            //子路由的子路由放置在自己的children下，以此类推
+          {
+            path : ':id',//传入id值，指明是哪一个playlist
+            name:'PlayListViewInfo',
+            component:() =&gt; import('../views/playListInfo.vue')
+          }
+        ]
+      } 
+    ]
+  }
+</code></pre>
+<blockquote>
+<p><em>如果某一后代路由是动态路由，直接给该后代路由加动态路由参数，不加父路由的path</em></p>
+</blockquote>
+<p><em>如果使用了该方法，则还需要给home下每一个后代路由添加router-view标签，用以标识该路由是home根路由的后代路由</em></p>
+<p>举个栗子：</p>
+<pre><code class="language-js">&lt;template&gt;
+&lt;!--  歌单视图  歌单详情页--&gt;
+  &lt;div class=&quot;page&quot;&gt;
+  &lt;div&gt;
+    &lt;m-header&gt;
+      全部歌单
+    &lt;/m-header&gt;
+    &lt;div class=&quot;play-wrapper&quot;&gt;
+      &lt;play-list :data=&quot;playListData&quot; @clickItem = 'gotoPlayListInfo '&gt;&lt;/play-list&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+      &lt;router-view/&gt; &lt;!-- 该路由组件上的router-view标签标识它的子路由--&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<blockquote>
+<p>ps:  如果点击路由后有报错:   Navigating to current location (&quot;/router&quot;) is not allowed ，请点击<strong><a href="https://www.cnblogs.com/hjk1124/p/12713876.html">这里</a></strong></p>
+</blockquote>
+<blockquote>
+<p>这样设置后，会出现点击无法进入路由的结果。</p>
+<p>但是如果打开f12会看到DOM中存在有该后代路由的dom，且点击后，地址栏上已经显示了子组件的路由，但用户界面上依然只显示了home组件，</p>
+<p>也就是说当点击了子路由以后，子路由显示了，但父路由依旧存在于当前界面，阻碍了用户的视图</p>
+<p>这与我们期待的有所不同： 点击某个子路由，然后给用户展现该路由的内容，但其实已经接近明朗————仅仅是页面上有了父路由界面与子路由界面并存的现象</p>
+</blockquote>
+<p><strong>解决办法：(提高后代组件的层级，使后代组件可以覆盖父组件) 在home的所有后代路由的根div上添加一个叫page的class</strong>:</p>
+<pre><code class="language-css">/* app的公共样式common.js */
+.page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:#f3f4f9 ; /*与html背景色保持一致*/
+    z-index: 9999; /*使用最高层级，覆盖home组件的层级*/
+    overflow: scroll;/*在移动端中使滚动可用*/
+}
+</code></pre>
+<p><em>而以上操作完成后，就可以发现，点击进入路由时，会发送一个网络请求，而回退到上一路由时，则不会发起请求，且页面正常显示；且就算进入了一个动态路由也可以正常显示</em></p>
+<p>这样，就解决了切换路由时，频繁向后台发送请求的问题。</p>
+<h3 id="问题2：-进入某一路由或回退到上一路由时，页面会有生硬的进入显示现象，影响用户体验">问题2： 进入某一路由或回退到上一路由时，页面会有生硬的进入显示现象，影响用户体验</h3>
+<blockquote>
+<p>原因： 路由间的切换没有添加过渡效果</p>
+</blockquote>
+<blockquote>
+<p>基于问题一，我们可以使用<strong>vue的transition标签包裹组件的router-view标签，使用transition的name属性来定制过渡样式</strong>：</p>
+</blockquote>
+<blockquote>
+<p>举个栗子：</p>
+</blockquote>
+<pre><code class="language-js">&lt;template&gt;
+  &lt;div class=&quot;page&quot;&gt;
+  &lt;div&gt;
+    &lt;m-header &gt;全部歌手&lt;/m-header&gt;
+    &lt;artist-list :data=&quot;artistsData&quot;
+      @clickItem=&quot;gotoArtistsInfo&quot;
+      class=&quot;artist&quot;&gt;&lt;/artist-list&gt;
+  &lt;/div&gt;
+  &lt;transition name=&quot;slide&quot;&gt;&lt;!--👈使用name属性定制组件过渡样式--&gt;
+    &lt;router-view/&gt;   &lt;!--👈使用transition包裹组件内的路由--&gt;
+  &lt;/transition&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<p>然后在app公共样式里写对应过渡样式：</p>
+<pre><code class="language-css">/*common.js*/
+/*等待过程中的动画*/
+.slide-enter-active,.slide-leave-active{
+    transition: all .3s;
+}
+.slide-enter,.slide-leave-to{
+    transform: translate3d(100%,0,0);
+}
+</code></pre>
+<p>这样，便解决了页面生硬卡顿问题。</p>
+<blockquote>
+<p>ps：笔者花了一天时间写作，但仍觉不甚满意，如果对该篇文章有不同见解或疑问的，欢迎评论或私信交流</p>
+</blockquote>
+<p>以上。</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 13:03</span>&nbsp;
+<a href="https://www.cnblogs.com/hjk1124/">致爱丽丝</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766778" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12766778);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 531172, cb_blogApp = 'hjk1124', cb_blogUserGuid = '9ca636d0-b7d9-4928-f9e7-08d64e08feec';
+    var cb_entryId = 12766778, cb_entryCreatedDate = '2020-04-24 13:03', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 致爱丽丝
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    <div id="page_end_html">
+        <script>
+  
+  
+ </script>
+    </div>
+</body>
+</html>

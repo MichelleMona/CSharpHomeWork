@@ -1,0 +1,750 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="ansible 官方文档翻译 playbook loop部分" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ansible playbook loop 翻译 - hiyang - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/hiyang/custom.css?v=43&#x2B;TlswDO8Gy2sPpbri0w6epxPI=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hiyang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hiyang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hiyang/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 311128;
+        var currentBlogApp = 'hiyang';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script src="https://files.cnblogs.com/files/hiyang/bingsearch.js" type="text/javascript" charset="utf8" defer></script>
+<div>
+<a href="http://github.com/PoplarYang" target="_blank" style="position: absolute;right: 0;  top: 0; z-index: 100;">
+    <img src="https://files.cnblogs.com/files/hiyang/git-right-link.gif" alt="Fork me on github">
+</a>
+</div>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hiyang/">一千万年的雨</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hiyang/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/hiyang">
+联系</a></li>
+    <li id="nav_rss">
+</li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+65&nbsp;</span>
+<span id="stats_article_count">文章 - 
+4&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+0</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/hiyang/p/12775210.html">ansible playbook loop 翻译</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        ansible 官方文档翻译 playbook loop部分
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html">ansible源文档地址</a><br>
+有时候你想多次重复一个任务。 在计算机编程中，这叫做循环。 常见的 Ansible 循环包括使用文件模块更改几个文件和 / 或目录的所有权，使用用户模块创建多个用户，并重复一个轮询步骤，直到达到某个结果。 为创建循环提供了两个关键字: <code>loop</code> 和 <code>with_&lt;lookup&gt;</code>。</p>
+<p>注意</p>
+<blockquote>
+<ul>
+<li>我们增加在Ansible2.5版本中中加了<code>loop</code>。它还没有完全取代<code>with_&lt;lookup&gt;</code>, 但我们推荐在大多数场景下使用它。</li>
+<li>我们并舍弃<code>with_&lt;lookup&gt;</code>用法--在可预见的未来，这种语法仍然有效。</li>
+<li>我们正在寻求改进<code>loop</code>语法，关注这个页面和<a href="https://github.com/ansible/ansible/tree/devel/changelogs">changelog </a>来获取更新。</li>
+</ul>
+</blockquote>
+<p><div class="toc"><div class="toc-container-header">目录</div><ul><li><a href="#对比-loop-and-with_">对比 loop and with_*</a></li><li><a href="#标准loop">标准loop</a><ul><li><a href="#遍历一个简单的列表">遍历一个简单的列表</a></li><li><a href="#遍历哈希列表">遍历哈希列表</a></li><li><a href="#遍历字典">遍历字典</a></li></ul></li><li><a href="#用循环注册变量">用循环注册变量</a></li><li><a href="#复杂的loops">复杂的loops</a><ul><li><a href="#遍历嵌套列表">遍历嵌套列表</a></li><li><a href="#尝试一个任务知道满足条件为止">尝试一个任务知道满足条件为止</a></li><li><a href="#主机清单的循环">主机清单的循环</a></li></ul></li><li><a href="#使用query或lookup确保列表输入">使用query或lookup确保列表输入</a></li><li><a href="#为loops添加控制">为loops添加控制</a><ul><li><a href="#用label限制loop输出">用label限制loop输出</a></li><li><a href="#loop中的暂停">loop中的暂停</a></li><li><a href="#通过index_var跟踪进度">通过index_var跟踪进度</a></li><li><a href="#通过loop_var定义内部和外部变量名">通过loop_var定义内部和外部变量名</a></li><li><a href="#扩展loop变量">扩展loop变量</a></li><li><a href="#访问loop_var">访问loop_var</a></li></ul></li><li><a href="#从-with_x-迁移到-loop">从 with_X 迁移到 loop</a><ul><li><a href="#with_list">with_list</a></li><li><a href="#with_items">with_items</a></li><li><a href="#with_indexed_items">with_indexed_items</a></li><li><a href="#with_flattened">with_flattened</a></li><li><a href="#with_together">with_together</a></li><li><a href="#with_dict">with_dict</a></li><li><a href="#with_sequence">with_sequence</a></li><li><a href="#with_subelements">with_subelements</a></li><li><a href="#with_nestedwith_cartesian">with_nested/with_cartesian</a></li><li><a href="#with_random_choice">with_random_choice</a></li></ul></li></ul></div></p>
+<h2 id="对比-loop-and-with_"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id3">对比 <code>loop</code> and <code>with_*</code></a></h2>
+<ul>
+<li><code>with_</code>关键字依赖<a href="https://docs.ansible.com/ansible/latest/plugins/lookup.html#lookup-plugins">Lookup Plugins</a>插件--尽管<code>item</code>也是一个lookup插件。</li>
+<li><code>loop</code>关键字等价于<code>with_list</code>，是使用简单遍历时的最佳选择。</li>
+<li><code>loop</code>关键字不再接收一个字符串作为输入，查看 <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#query-vs-lookup">Ensuring list input for loop: query vs. lookup</a></li>
+<li>通常来说，任何包含在 <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#migrating-to-loop">从with_X迁移到loop</a>中的 <code>with_*</code>用法都可以替换成<code>loop</code>。</li>
+<li>需要注意的是，在将<code>with_items</code> 替换成 <code>loop</code>时，由于<code>with_items</code> 执行单层隐式扁平化遍历，在使用<code>loop</code>作为输出时，你需要结合 <code>flatten(1)</code>一起使用。举例说明，下面两种方式的输出结果相同：</li>
+</ul>
+<pre><code class="language-yaml">with_items:
+  - 1
+  - [2,3]
+  - 4
+</code></pre>
+<p>你需要像这样使用：</p>
+<pre><code class="language-yaml">loop: &quot;{{ [1, [2,3] ,4] | flatten(1) }}&quot;
+</code></pre>
+<ul>
+<li>任何依赖 <code>lookup</code> 插件的<code>with_*</code>语句不应该被转换成<code>loop</code>关键字。举例说明，不建议使用下面的场景：</li>
+</ul>
+<pre><code>loop: &quot;{{ lookup('fileglob', '*.txt', wantlist=True) }}&quot;
+</code></pre>
+<p>保持这样的格式会更简洁。</p>
+<pre><code class="language-yaml">with_fileglob: '*.txt'
+</code></pre>
+<h2 id="标准loop"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id4">标准loop</a></h2>
+<h3 id="遍历一个简单的列表"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id5">遍历一个简单的列表</a></h3>
+<p>重复的任务可以通过简单的字符串列表写成标准的<code>loop</code>形式。你可以在任务里使用列表：</p>
+<pre><code class="language-yaml">- name: add several users
+  user:
+    name: &quot;{{ item }}&quot;
+    state: present
+    groups: &quot;wheel&quot;
+  loop:
+     - testuser1
+     - testuser2
+</code></pre>
+<p>你可以使用一个变量文件或者在你的剧本中使用<code>var</code>定义列表，然后在任务里通过列表名称引用即可：</p>
+<pre><code class="language-yaml">loop: &quot;{{ somelist }}&quot;
+</code></pre>
+<p>上面例子中的任何一个都相当于:</p>
+<pre><code class="language-yaml">- name: add user testuser1
+  user:
+    name: &quot;testuser1&quot;
+    state: present
+    groups: &quot;wheel&quot;
+
+- name: add user testuser2
+  user:
+    name: &quot;testuser2&quot;
+    state: present
+    groups: &quot;wheel&quot;
+</code></pre>
+<p>您可以直接将列表传递给某些插件作为参数。 大多数打包模块如<a href="(https://docs.ansible.com/ansible/latest/modules/yum_module.html#yum-module)"> yum 包管理器</a>和<a href="(https://docs.ansible.com/ansible/latest/modules/apt_module.html#apt-module)">apt包管理器</a>都具有这种功能。 如果可用，将列表传递给参数要比在任务上循环要好。 例如:</p>
+<pre><code class="language-yaml">- name: optimal yum
+  yum:
+    name: &quot;{{  list_of_packages  }}&quot;
+    state: present
+
+- name: non-optimal yum, slower and may cause issues with interdependencies
+  yum:
+    name: &quot;{{  item  }}&quot;
+    state: present
+  loop: &quot;{{  list_of_packages  }}&quot;
+</code></pre>
+<p>查看 <a href="https://docs.ansible.com/ansible/latest/modules/modules_by_category.html#modules-by-category">模块文档</a> ，看看是否可以将列表传递给任何特定模块的参数。</p>
+<h3 id="遍历哈希列表"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id6">遍历哈希列表</a></h3>
+<p>如果你有一个哈希列表，你可以在循环中引用子键。例如:</p>
+<pre><code class="language-yaml">- name: add several users
+  user:
+    name: &quot;{{ item.name }}&quot;
+    state: present
+    groups: &quot;{{ item.groups }}&quot;
+  loop:
+    - { name: 'testuser1', groups: 'wheel' }
+    - { name: 'testuser2', groups: 'root' }
+</code></pre>
+<p>当将条件句与循环结合时，<code>When</code>语句将为每个项分别处理。 有关示例，请参见 <a href="(https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html#the-when-statement)">When 语句</a>。</p>
+<h3 id="遍历字典"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id7">遍历字典</a></h3>
+<p>若要遍历字典， 请使用 <code>dict2items</code> <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_filters.html#dict-filter">字典过滤器</a>：</p>
+<pre><code class="language-yaml">- name: create a tag dictionary of non-empty tags
+  set_fact:
+    tags_dict: &quot;{{ (tags_dict|default({}))|combine({item.key: item.value}) }}&quot;
+  loop: &quot;{{ tags|dict2items }}&quot;
+  vars:
+    tags:
+      Environment: dev
+      Application: payment
+      Another: &quot;{{ doesnotexist|default() }}&quot;
+  when: item.value != &quot;&quot;
+</code></pre>
+<p>在这里，我们不想设置空标记，因此我们创建了一个只包含非空标记的字典。</p>
+<h2 id="用循环注册变量"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id8">用循环注册变量</a></h2>
+<p>你可以将<code>loop</code>的输出注册为变量，例如：</p>
+<pre><code class="language-yaml">- shell: &quot;echo {{ item }}&quot;
+  loop:
+    - &quot;one&quot;
+    - &quot;two&quot;
+  register: echo
+</code></pre>
+<p>当使用循环注册时，放置在变量中的数据结构将包含一个 results 属性，该属性是来自模块的所有响应的列表。 这与直接注册而不循环时返回的数据结构不同:</p>
+<pre><code class="language-yaml">{
+    &quot;changed&quot;: true,
+    &quot;msg&quot;: &quot;All items completed&quot;,
+    &quot;results&quot;: [
+        {
+            &quot;changed&quot;: true,
+            &quot;cmd&quot;: &quot;echo \&quot;one\&quot; &quot;,
+            &quot;delta&quot;: &quot;0:00:00.003110&quot;,
+            &quot;end&quot;: &quot;2013-12-19 12:00:05.187153&quot;,
+            &quot;invocation&quot;: {
+                &quot;module_args&quot;: &quot;echo \&quot;one\&quot;&quot;,
+                &quot;module_name&quot;: &quot;shell&quot;
+            },
+            &quot;item&quot;: &quot;one&quot;,
+            &quot;rc&quot;: 0,
+            &quot;start&quot;: &quot;2013-12-19 12:00:05.184043&quot;,
+            &quot;stderr&quot;: &quot;&quot;,
+            &quot;stdout&quot;: &quot;one&quot;
+        },
+        {
+            &quot;changed&quot;: true,
+            &quot;cmd&quot;: &quot;echo \&quot;two\&quot; &quot;,
+            &quot;delta&quot;: &quot;0:00:00.002920&quot;,
+            &quot;end&quot;: &quot;2013-12-19 12:00:05.245502&quot;,
+            &quot;invocation&quot;: {
+                &quot;module_args&quot;: &quot;echo \&quot;two\&quot;&quot;,
+                &quot;module_name&quot;: &quot;shell&quot;
+            },
+            &quot;item&quot;: &quot;two&quot;,
+            &quot;rc&quot;: 0,
+            &quot;start&quot;: &quot;2013-12-19 12:00:05.242582&quot;,
+            &quot;stderr&quot;: &quot;&quot;,
+            &quot;stdout&quot;: &quot;two&quot;
+        }
+    ]
+}
+</code></pre>
+<p>对注册变量进行后续循环以检查结果如下所示:</p>
+<pre><code class="language-yaml">- name: Fail if return code is not 0
+  fail:
+    msg: &quot;The command ({{ item.cmd }}) did not have a 0 return code&quot;
+  when: item.rc != 0
+  loop: &quot;{{ echo.results }}&quot;
+</code></pre>
+<p>在迭代过程中，当前项的结果将被放置在变量中:</p>
+<pre><code class="language-yaml">- shell: echo &quot;{{ item }}&quot;
+  loop:
+    - one
+    - two
+  register: echo
+  changed_when: echo.stdout != &quot;one&quot;
+</code></pre>
+<h2 id="复杂的loops"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id9">复杂的loops</a></h2>
+<h3 id="遍历嵌套列表"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id10">遍历嵌套列表</a></h3>
+<p>你可以使用 Jinja2表达式来遍历复杂的列表，例如，循环可以组合嵌套的列表:</p>
+<pre><code class="language-yaml">- name: give users access to multiple databases
+  mysql_user:
+    name: &quot;{{ item[0] }}&quot;
+    priv: &quot;{{ item[1] }}.*:ALL&quot;
+    append_privs: yes
+    password: &quot;foo&quot;
+  loop: &quot;{{ ['alice', 'bob'] | product(['clientdb', 'employeedb', 'providerdb'])|list }}&quot;
+</code></pre>
+<h3 id="尝试一个任务知道满足条件为止"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id11">尝试一个任务知道满足条件为止</a></h3>
+<p><em>在 1.4版本中引入</em></p>
+<p>你可以使用 until 关键字重试一个任务，直到满足某个条件为止:</p>
+<pre><code class="language-yaml">- shell: /usr/bin/foo
+  register: result
+  until: result.stdout.find(&quot;all systems go&quot;) != -1
+  retries: 5
+  delay: 10
+</code></pre>
+<p>此任务最多运行5次，每次尝试之间延迟10秒。 如果任何尝试的结果在其标准输出中具有“ all systems go” ，则任务成功。 “ retries”的默认值为3，“ delay”为5。</p>
+<p>若要查看单个重试的结果，请使用<code>-vv</code> 运行此剧本。</p>
+<p>当您使用 until 运行任务并将结果注册为变量时，注册的变量将包含一个名为“ attempts”的键，该键记录任务的重试次数。</p>
+<blockquote>
+<p>注意</p>
+<p>如果要重试任务，则必须设置 until 参数。 如果没有定义 until，则强制重试参数的值为1。</p>
+</blockquote>
+<h3 id="主机清单的循环"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id12">主机清单的循环</a></h3>
+<p>为了遍历你的主机清单，或者仅仅是主机清单的一个子集，你可以使用一个常规的循环来遍历可以播放的批处理或者分组变量:</p>
+<pre><code class="language-yaml"># show all the hosts in the inventory
+- debug:
+    msg: &quot;{{ item }}&quot;
+  loop: &quot;{{ groups['all'] }}&quot;
+
+# show all the hosts in the current play
+- debug:
+    msg: &quot;{{ item }}&quot;
+  loop: &quot;{{ ansible_play_batch }}&quot;
+</code></pre>
+<p>还有一个特定的查找插件主机清单中主机名，可以这样使用:</p>
+<pre><code class="language-yaml"># show all the hosts in the inventory
+- debug:
+    msg: &quot;{{ item }}&quot;
+  loop: &quot;{{ query('inventory_hostnames', 'all') }}&quot;
+
+# show all the hosts matching the pattern, ie all but the group www
+- debug:
+    msg: &quot;{{ item }}&quot;
+  loop: &quot;{{ query('inventory_hostnames', 'all:!www') }}&quot;
+</code></pre>
+<p>关于更多信息可以在模式中找到<a href="(https://docs.ansible.com/ansible/latest/user_guide/intro_patterns.html#intro-patterns)">目标主机和组</a>。</p>
+<h2 id="使用query或lookup确保列表输入"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id13">使用<code>query</code>或<code>lookup</code>确保列表输入</a></h2>
+<p>Loop 关键字需要一个列表作为输入，但是 lookup 关键字默认返回一个逗号分隔值字符串。 2.5引入了一个新的 Jinja2函数，命名为调用查找插件，它总是返回一个列表，当使用 loop 关键字时，它提供了一个更简单的界面和更可预测的查找插件输出。</p>
+<p>您可以使用 <code>wantlist=true</code> 强制查找返回一个要循环的列表，或者您可以改用 query。</p>
+<p>这些例子做了同样的事情：</p>
+<pre><code class="language-yaml">loop: &quot;{{ query('inventory_hostnames', 'all') }}&quot;
+
+loop: &quot;{{ lookup('inventory_hostnames', 'all', wantlist=True) }}&quot;
+</code></pre>
+<h2 id="为loops添加控制"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id14">为loops添加控制</a></h2>
+<p><em>在 2.1版本中引入</em></p>
+<p>loop_control 关键字可以让您以有用的方式管理循环。</p>
+<h3 id="用label限制loop输出"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id15">用label限制loop输出</a></h3>
+<p><em>在 2.2版本中引入</em></p>
+<p>当循环遍历复杂的数据结构时，任务的控制台输出可能是巨大的。 要限制显示的输出，使用循环控制的 label 指令:</p>
+<pre><code class="language-yaml">- name: create servers
+  digital_ocean:
+    name: &quot;{{ item.name }}&quot;
+    state: present
+  loop:
+    - name: server1
+      disks: 3gb
+      ram: 15Gb
+      network:
+        nic01: 100Gb
+        nic02: 10Gb
+        ...
+  loop_control:
+    label: &quot;{{ item.name }}&quot;
+</code></pre>
+<p>此任务的输出将仅显示每个项的 name 字段，而不是多行<code>{{ item }}</code>变量的全部内容。</p>
+<blockquote>
+<p>注意</p>
+<p>这是为了使控制台输出更具可读性，而不是保护敏感数据。 如果循环中有敏感数据，请在任务上设置 <code>no_log: yes</code> 以防止泄露。</p>
+</blockquote>
+<h3 id="loop中的暂停"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id16">loop中的暂停</a></h3>
+<p><em>在 2.2版本中引入</em></p>
+<p>若要控制任务循环中每个项目执行之间的时间(以秒为单位) ，请使用带循环控制的 pause 指令<code>loop_control</code>:</p>
+<pre><code class="language-yaml"># main.yml
+- name: create servers, pause 3s before creating next
+  digital_ocean:
+    name: &quot;{{ item }}&quot;
+    state: present
+  loop:
+    - server1
+    - server2
+  loop_control:
+    pause: 3
+</code></pre>
+<h3 id="通过index_var跟踪进度"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id17">通过<code>index_var</code>跟踪进度</a></h3>
+<p><em>在 2.5版本中引入</em></p>
+<p>若要跟踪您在循环中的位置，请使用 <code>index_var</code> 指令和 <code>loop_control</code>。 这个指令指定一个包含当前循环索引的变量名:</p>
+<pre><code class="language-yaml">- name: count our fruit
+  debug:
+    msg: &quot;{{ item }} with index {{ my_idx }}&quot;
+  loop:
+    - apple
+    - banana
+    - pear
+  loop_control:
+    index_var: my_idx
+</code></pre>
+<h3 id="通过loop_var定义内部和外部变量名"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id18">通过<code>loop_var</code>定义内部和外部变量名</a></h3>
+<p><em>在 2.1版本中引入</em></p>
+<p>可以使用 include 任务嵌套两个循环任务。 但是，默认情况下，Ansible 为每个循环设置循环变量项。 这意味着内部的嵌套循环将覆盖外部循环中 item 的值。 您可以使用 <code>loop_var</code> <code>loop_control</code> 为每个循环指定变量的名称:</p>
+<pre><code class="language-yaml"># main.yml
+- include_tasks: inner.yml
+  loop:
+    - 1
+    - 2
+    - 3
+  loop_control:
+    loop_var: outer_item
+
+# inner.yml
+- debug:
+    msg: &quot;outer item={{ outer_item }} inner item={{ item }}&quot;
+  loop:
+    - a
+    - b
+    - c
+</code></pre>
+<blockquote>
+<p>注意</p>
+<p>如果 Ansible 检测到当前循环正在使用一个已经定义的变量，它将引发一个错误以使任务失败。</p>
+</blockquote>
+<h3 id="扩展loop变量"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id19">扩展loop变量</a></h3>
+<p><em>在 2.8 版本中引入</em></p>
+<p>从 ansible 2.8开始，你可以使用扩展选项来获得扩展循环信息来进行循环控制。 此选项将公开以下信息。</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ansible_loop.allitems</code></td>
+<td>循环中所有项的列表</td>
+</tr>
+<tr>
+<td><code>ansible_loop.index</code></td>
+<td>循环的当前迭代的索引。(索引从1开始)</td>
+</tr>
+<tr>
+<td><code>ansible_loop.index0</code></td>
+<td>循环的当前迭代的索引。(索引从0开始)</td>
+</tr>
+<tr>
+<td><code>ansible_loop.revindex</code></td>
+<td>倒序循环的当前迭代的索引。(索引到1结束)</td>
+</tr>
+<tr>
+<td><code>ansible_loop.revindex0</code></td>
+<td>倒序循环的当前迭代的索引。(索引到0结束)</td>
+</tr>
+<tr>
+<td><code>ansible_loop.first</code></td>
+<td>如果第一次迭代则为True，否则是False</td>
+</tr>
+<tr>
+<td><code>ansible_loop.last</code></td>
+<td>如果最后一次迭代则为True，否则是False</td>
+</tr>
+<tr>
+<td><code>ansible_loop.length</code></td>
+<td>循环中的项数</td>
+</tr>
+<tr>
+<td><code>ansible_loop.previtem</code></td>
+<td>循环上一次迭代中的项。在第一次迭代中这个变量未定义</td>
+</tr>
+<tr>
+<td><code>ansible_loop.nextitem</code></td>
+<td>循环下一次迭代中的项。在最后一次迭代中这个变量未定义</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-yaml">loop_control:
+  extended: yes
+</code></pre>
+<h3 id="访问loop_var"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id20">访问loop_var</a></h3>
+<p><em>在 2.8 版本中引入</em></p>
+<p>从 ansible2.8你可以得到提供的值的名称循环控制。循环变量使用安塞循环变量</p>
+<p>对于角色作者，编写允许循环的角色，而不是口述所需的循环变量值，您可以通过以下方式收集该值:</p>
+<pre><code>&quot;{{ lookup('vars', ansible_loop_var) }}&quot;
+</code></pre>
+<h2 id="从-with_x-迁移到-loop"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id21">从 with_X 迁移到 loop</a></h2>
+<p>随着 Ansible 2.5的发布，推荐的循环执行方式是使用新的 loop 关键字，而不是使用 <code>with_x</code> 样式的循环。</p>
+<p>在许多情况下，循环语法更好地使用过滤器，而不是更复杂地使用<code>query</code> 或者 <code>lookup</code>。</p>
+<p>下面的示例将展示如何将许多常见的样式循环转换为循环和过滤器。</p>
+<h3 id="with_list"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id22">with_list</a></h3>
+<p><code>with_list</code> 用 <code>loop</code>替换。</p>
+<pre><code class="language-yaml">- name: with_list
+  debug:
+    msg: &quot;{{ item }}&quot;
+  with_list:
+    - one
+    - two
+
+- name: with_list -&gt; loop
+  debug:
+    msg: &quot;{{ item }}&quot;
+  loop:
+    - one
+    - two
+</code></pre>
+<h3 id="with_items"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id23">with_items</a></h3>
+<p><code>with_items</code> 用 <code>loop</code> 和 <code>flatten</code> 过滤器替换。</p>
+<pre><code class="language-yaml">- name: with_items
+  debug:
+    msg: &quot;{{ item }}&quot;
+  with_items: &quot;{{ items }}&quot;
+
+- name: with_items -&gt; loop
+  debug:
+    msg: &quot;{{ item }}&quot;
+  loop: &quot;{{ items|flatten(levels=1) }}&quot;
+</code></pre>
+<h3 id="with_indexed_items"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id24">with_indexed_items</a></h3>
+<p><code>with_indexed_items</code> 用 <code>loop</code>, <code>flatten</code>过滤器 和 <code>loop_control.index_var</code>替换。</p>
+<pre><code class="language-yaml">- name: with_indexed_items
+  debug:
+    msg: &quot;{{ item.0 }} - {{ item.1 }}&quot;
+  with_indexed_items: &quot;{{ items }}&quot;
+
+- name: with_indexed_items -&gt; loop
+  debug:
+    msg: &quot;{{ index }} - {{ item }}&quot;
+  loop: &quot;{{ items|flatten(levels=1) }}&quot;
+  loop_control:
+    index_var: index
+</code></pre>
+<h3 id="with_flattened"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id25">with_flattened</a></h3>
+<p><code>with_flattened</code> 用 <code>loop</code> 和 <code>flatten</code> 过滤器替换。</p>
+<pre><code class="language-yaml">- name: with_flattened
+  debug:
+    msg: &quot;{{ item }}&quot;
+  with_flattened: &quot;{{ items }}&quot;
+
+- name: with_flattened -&gt; loop
+  debug:
+    msg: &quot;{{ item }}&quot;
+  loop: &quot;{{ items|flatten }}&quot;
+</code></pre>
+<h3 id="with_together"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id26">with_together</a></h3>
+<p><code>with_together</code> 用 <code>loop</code> 和 <code>zip</code>过滤器替换。</p>
+<pre><code class="language-yaml">- name: with_together
+  debug:
+    msg: &quot;{{ item.0 }} - {{ item.1 }}&quot;
+  with_together:
+    - &quot;{{ list_one }}&quot;
+    - &quot;{{ list_two }}&quot;
+
+- name: with_together -&gt; loop
+  debug:
+    msg: &quot;{{ item.0 }} - {{ item.1 }}&quot;
+  loop: &quot;{{ list_one|zip(list_two)|list }}&quot;
+</code></pre>
+<h3 id="with_dict"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id27">with_dict</a></h3>
+<p><code>with_dict</code> 用 <code>loop</code> 和 <code>dictsort</code> 或者 <code>dict2items</code> 过滤器替换。</p>
+<pre><code class="language-yaml">- name: with_dict
+  debug:
+    msg: &quot;{{ item.key }} - {{ item.value }}&quot;
+  with_dict: &quot;{{ dictionary }}&quot;
+
+- name: with_dict -&gt; loop (option 1)
+  debug:
+    msg: &quot;{{ item.key }} - {{ item.value }}&quot;
+  loop: &quot;{{ dictionary|dict2items }}&quot;
+
+- name: with_dict -&gt; loop (option 2)
+  debug:
+    msg: &quot;{{ item.0 }} - {{ item.1 }}&quot;
+  loop: &quot;{{ dictionary|dictsort }}&quot;
+</code></pre>
+<h3 id="with_sequence"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id28">with_sequence</a></h3>
+<p><code>with_sequence</code> 用 <code>loop</code> 和 <code>range</code> 函数， <code>format</code> 过滤器替换。</p>
+<pre><code class="language-yaml">- name: with_sequence
+  debug:
+    msg: &quot;{{ item }}&quot;
+  with_sequence: start=0 end=4 stride=2 format=testuser%02x
+
+- name: with_sequence -&gt; loop
+  debug:
+    msg: &quot;{{ 'testuser%02x' | format(item) }}&quot;
+  # range is exclusive of the end point
+  loop: &quot;{{ range(0, 4 + 1, 2)|list }}&quot;
+</code></pre>
+<h3 id="with_subelements"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id29">with_subelements</a></h3>
+<p>用循环和子元素过滤器代替子元素过滤器。</p>
+<pre><code class="language-yaml">- name: with_subelements
+  debug:
+    msg: &quot;{{ item.0.name }} - {{ item.1 }}&quot;
+  with_subelements:
+    - &quot;{{ users }}&quot;
+    - mysql.hosts
+
+- name: with_subelements -&gt; loop
+  debug:
+    msg: &quot;{{ item.0.name }} - {{ item.1 }}&quot;
+  loop: &quot;{{ users|subelements('mysql.hosts') }}&quot;
+</code></pre>
+<h3 id="with_nestedwith_cartesian"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id30">with_nested/with_cartesian</a></h3>
+<p><code>with_nested</code> 和 <code>with_cartesian</code> 用 <code>loop</code> 和<code>product</code> 过滤器替换。</p>
+<pre><code class="language-yaml">- name: with_nested
+  debug:
+    msg: &quot;{{ item.0 }} - {{ item.1 }}&quot;
+  with_nested:
+    - &quot;{{ list_one }}&quot;
+    - &quot;{{ list_two }}&quot;
+
+- name: with_nested -&gt; loop
+  debug:
+    msg: &quot;{{ item.0 }} - {{ item.1 }}&quot;
+  loop: &quot;{{ list_one|product(list_two)|list }}&quot;
+</code></pre>
+<h3 id="with_random_choice"><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html#id31">with_random_choice</a></h3>
+<p><code>with_random_choice</code> 用 <code>random</code> 过滤器替换，不在需要<code>loop</code>。</p>
+<pre><code class="language-yaml">- name: with_random_choice
+  debug:
+    msg: &quot;{{ item }}&quot;
+  with_random_choice: &quot;{{ my_list }}&quot;
+
+- name: with_random_choice -&gt; loop (No loop is needed here)
+  debug:
+    msg: &quot;{{ my_list|random }}&quot;
+  tags: random
+</code></pre>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 20:55</span>&nbsp;
+<a href="https://www.cnblogs.com/hiyang/">hiyang</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775210" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12775210);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 311128, cb_blogApp = 'hiyang', cb_blogUserGuid = '6537b83f-b416-e611-9fc1-ac853d9f53cc';
+    var cb_entryId = 12775210, cb_entryCreatedDate = '2020-04-25 20:55', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 hiyang
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    <div id="page_end_html">
+        <script src="https://files.cnblogs.com/files/hiyang/clipboard.min.js"></script>
+<script src="https://files.cnblogs.com/files/hiyang/cp.js"></script>
+
+<!-- 更新导航栏的菜单-->
+<script>
+    $(function(){        
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/tag/python/" target="_blank" title="python学习记录">python</a></li>');
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/tag/golang/" target="_blank" title="golang学习记录">golang</a></li>');
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/articles/12629363.html" target="_blank" title="配置">配置</a></li>');
+        $("#navList").append('<li id="nav_home"><a id="hiyang" rel="nofollow" href="https://www.cnblogs.com/hiyang/articles/12629411.html" target="_blank" title="下载">下载</a></li>');
+        $("#navList").append('<li id="nav_follow"><a id="hiyang" rel="nofollow" href="http://home.cnblogs.com/followees/" target="_blank" title="进入我的关注">我的关注</a></li>');  
+            //加载图片
+            var ponum1 = $(".postTitle").length;
+            var ponum2 = $(".entrylistPosttitle").length;
+            if(ponum1!=0)
+                articleimg(ponum1);
+            if(ponum2!=0)
+                entrylistarticleimg(ponum2);
+        });
+</script>
+    </div>
+</body>
+</html>

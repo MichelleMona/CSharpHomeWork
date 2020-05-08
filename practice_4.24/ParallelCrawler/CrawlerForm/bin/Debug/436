@@ -1,0 +1,311 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="上次我们对主函数分析完成了，那么这次我们对子函数IsAlreadyRun进行分析。" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>逆向入门分析实战（二） - 合天智汇 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hetianlab/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hetianlab/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hetianlab/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 544194;
+        var currentBlogApp = 'hetianlab';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/hetianlab/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hetianlab/">合天智汇</a>
+</h1>
+<h2>
+培养未来的网络力量
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hetianlab/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+</li>
+<li>
+
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+14&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+2</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/hetianlab/p/12765405.html">逆向入门分析实战（二）</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        上次我们对主函数分析完成了，那么这次我们对子函数IsAlreadyRun进行分析。
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">本文首发于&ldquo;合天智汇&rdquo;公众号，未经允许，禁止转发！</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;">&nbsp;</p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">上次我们对主函数分析完成了，<a style="color: #548dd4; text-decoration: underline;" href="https://www.cnblogs.com/hetianlab/p/12762523.html" target="_blank"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px; color: #548dd4;">逆向入门分析实战（一）</span></a>那么这次我们对子函数IsAlreadyRun进行分析。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;">&nbsp;</p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>C语言代码</strong><br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">IsAlreadyRun函数的C语言代码如下图所示:</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 254px" title="1.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143148_qinrq2hs95.png" alt="1.png" width="400" height="254" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">下面对其汇编代码进行分析：</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 433px" title="2.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143205_5ekacu5ybw.png" alt="2.png" width="400" height="433" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">rep stosd之前，同样是入栈操作，我们无需仔细追究，重点关注call函数。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>1. CreateMutexA函数</strong></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">首先根据call ds:CreateMutexA</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">这一条指令便可得知调用了CreateMutex函数（注：CreateMutexA是在Ascii 环境下的，CreateMutexW是unicode环境下的）。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">上次我们提到过，在函数调用之前，如果有参数需要传递，需要使用push先将参数从后往前入栈。那么我们来看下call
+ 
+ds:CreateMutexA前面的三条push指令分别代表什么意思？如果查呢？这就用到非常常用的一个文档--msdn文档，这个文档是微软写的，介绍了Windows
+ 
+API函数，基本上遇到的函数都可以在这里查到，比如CreateMutex这个函数对应的地址是：https://docs.microsoft.com/zh-cn/windows/win32/api/synchapi/nf-synchapi-createmutexa</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">从官网可以看到对应的函数解释，详细介绍了这个函数的作用，参数，返回值等：<br /></span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 240px" title="3.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143254_6p6isnwqm6.png" alt="3.png" width="400" height="240" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">三个参数lpMutexAttributes,bInitialOwner,lpName中第三个参数lpName的意思是互斥对象的名称，另外两个在此处不展开介绍了，感兴趣的可以去查看msdn文档。现在我们再回过头来仔细看一下ida Pro给的反汇编代码：</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 76px" title="4.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143330_9egbbtq4fs.png" alt="4.png" width="400" height="76" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">是不是和MSDN上的三个参数反过来就对应上了？第一条push指令对应的是lpName这个参数，所以根据ida
+ 
+pro右边给出的备注，可以得知这个互斥对象的名称是TEST。上一次也提到过，函数调用完成后，VC中，会使用eax寄存器来保存函数的返回值。在这里也是一样的，call
+ ds:CreateMutexA的返回值会存入eax寄存器。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>2. 跳转分析</strong><br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">我们继续分析下面的汇编代码：</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 273px" title="5.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143413_eqfj6ygpgj.png" alt="5.png" width="400" height="273" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">根据call __chkesp可知是调用了栈平衡错误检测函数，这里我们无需理会。之后，</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 68px" title="QQ截图20200320143435.jpg" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143457_k3uxa5r8ls.jpg" alt="QQ截图20200320143435.jpg" width="400" height="68" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">mov指令将调用CreateMutexA函数的返回值eax先移动到ebp+var_4的地址上，之后又与0对比，如果两者相等，则跳转到 loc_40107D位置。即，如果CreateMutexA函数的返回值为0，则跳转 loc_40107D位置。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">下面分两种情况进行讨论，一种是CreateMutexA函数的返回值为0，一种是不为0。<br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>2.1. CreateMutexA返回值为0</strong><br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">首先分析CreateMutexA函数的返回值为0的情况：</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">跳转到这个位置之后，执行xor eax,eax这条指令，上次也提到过xor eax,eax直接会将eax的值设置为0，这是很常见的一种将eax置为0的方式。</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 277px" title="6.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143557_4x3sv5gvyf.png" alt="6.png" width="400" height="277" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">执行完这条指令后，会到loc_40107F位置，根据pop出栈指令、call __chkesp、retn等指令可知，这是子函数IsAlreadyRun调用完要返回主函数。</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 345px" title="7.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143654_r4x4rh9h6g.png" alt="7.png" width="400" height="345" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">那么，IsAlreadyRun函数的返回值是多少呢？返回值存在eax中，由前面可知，eax在CreateMutexA函数的返回值为0情况下，eax值为0（xor
+ eax，eax的作用），所以IsAlreadyRun函数的返回值也是0，即IsAlreadyRun返回值为false。<br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">对应的C语言代码:</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 158px" title="8.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143729_gs4a3f4uoj.png" alt="8.png" width="400" height="158" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">即，当hMutex = ::CreateMutex(NULL, FALSE, "TEST")执行后得到的hMutex为0时的场景，子函数IsAlreadyRun直接执行return FALSE；</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>2.2. CreateMutexA返回值不为0</strong><br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">之后，分析CreateMutexA函数的返回值不为0的情况：</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 216px" title="9.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143818_12db4ohs1y.png" alt="9.png" width="400" height="216" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">此时，由于eax不为0，所以不会跳转到loc_40107D这个位置，而是执行call
+ ds:GetLastError执行调用GetLastError函数。后面又执行call __chkesp 
+调用栈平衡错误检查函数，我们在这里无需理会。之后执行cmp 
+eax,0B7h指令，由于GetLastError函数的返回值存储在eax中，此处其实是在看GetLastError返回值是否等于16进制的B7，对应10进制的183。<br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">如果eax的值不等于183，那么跳转到loc_40107D，之后和上一种情况一样，将eax置为0，然后返回主函数。<br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">如果eax的值等于183，则执行mov eax,1指令，然后跳转到loc_40107F位置，返回主函数。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">那么这个183到底代表什么意义呢？通过查询MSDN文档，我们可以得知，它刚好对应常数ERROR_ALREADY_EXISTS。<br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">对比我们写的C语言代码：</span></p>
+<p style="text-align: center; text-indent: 2em; line-height: 1.75em;"><img style="width: 400px; height: 157px" title="0.png" src="http://www.heetian.com/uploads/1/image/public/202003/20200320143856_506wpaudwo.png" alt="0.png" width="400" height="157" border="0" vspace="0"></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">也就是GetLastError函数的返回值等于ERROR_ALREADY_EXISTS时，返回true；否则，返回false。<br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">到此为止，整个代码分析完毕。感谢各位耐心的阅读，如有不当之处，欢迎指出。<br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;"><strong>参考书籍：</strong><br /></span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">《Windows黑客编程技术详解》甘迪文著--北京：人民邮电出版社，2018年12月。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">《C++反汇编与逆向分析技术揭秘》钱松林，赵海旭著--北京：机械工业出版社，2011年9月。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">《恶意代码分析实战》
+ （美）Michael Sikorski / Andrew Honig 著，诸葛建伟，姜辉，张光凯译 -- 
+北京：电子工业出版社，2014年4月，原书名：Practical Malware Analysis: The Hands-On Guide to
+ Dissecting Malicious Software。</span></p>
+<p style="text-align: justify; text-indent: 2em; line-height: 1.75em;"><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;">《汇编语言》王爽 著--2版，北京：清华大学出版社，2008年4月。</span></p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 09:42</span>&nbsp;
+<a href="https://www.cnblogs.com/hetianlab/">合天智汇</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765405" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12765405);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 544194, cb_blogApp = 'hetianlab', cb_blogUserGuid = 'bdc31725-4682-49d5-8eba-08d72b81cf93';
+    var cb_entryId = 12765405, cb_entryCreatedDate = '2020-04-24 09:42', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 合天智汇
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

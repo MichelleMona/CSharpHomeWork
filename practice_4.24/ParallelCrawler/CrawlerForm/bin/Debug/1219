@@ -1,0 +1,1088 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>hsm_computer - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/arrow/bundle-arrow.min.css?v=L-STHnRipM9Vp-O5CxV_IvvLLLSaib7U0fJDhFfRZZ8" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/arrow/bundle-arrow-mobile.min.css?v=g8joWIb9zf0v6qSSYjzuwnPNxYNYutz3bgwMjs-jMEg" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/JavaArchitect/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/JavaArchitect/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/JavaArchitect/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 376303;
+        var currentBlogApp = 'JavaArchitect';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'arrow';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/JavaArchitect/">hsm_computer</a>
+<br>
+		
+我写的书　Java Web轻量级开发面试教程，java核心技术及面试指南，spring cloud实战
+
+	</div>
+</div>
+
+
+</div>
+<div id="mylinks">
+<!--done-->
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+&nbsp;&nbsp;&nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/JavaArchitect/">
+首页</a>
+&nbsp;&nbsp;&nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+&nbsp;&nbsp;&nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/hsm_computer">
+联系</a>&nbsp;&nbsp;&nbsp;
+
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/JavaArchitect/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/JavaArchitect/rss/">
+    <img src="/skins/arrow/images/xml.gif" alt="订阅" />
+</a>&nbsp;&nbsp;&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+<div id="mytopmenu">
+	
+		<div class="blogStats">随笔 - 
+173&nbsp;
+文章 - 
+0&nbsp;评论 - 
+1273&nbsp;trackbacks - 
+0
+</div>
+
+
+	
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script><br>
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>		
+	
+</div>
+<div id="centercontent">
+	
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/04/14.html">2020年4月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12665483.html">
+    进大厂也就这回事，工作后2到3年进大厂操作指南
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在BAT这种大厂里，只要肯吃苦，技术和工资进步的速度会超出你想象，我在上海，按当前价格算，一般在大厂里干个三四年，好歹房子的首付应该能有，而且这种房子还不是太偏远太小的。 进大厂确实需要一定的实力，但如果单单技术好，没有其它的技巧，估计确实也有些难度。不过话说来，哪怕是二本出身，哪怕技术一般，只要肯            <a href="https://www.cnblogs.com/JavaArchitect/p/12665483.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-04-14 11:45 hsm_computer 阅读 (6173) 评论 (30)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12665483" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/04/06.html">2020年4月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12638749.html">
+    最近录制视频挣钱的经过和体会
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：最近，我在某网出了Java面试视频。为了避免打广告的嫌疑，我就不说在哪里录了，也不给出视频课的链接。再看了一遍我录制视频前写过篇博文，程序员副业那些事：聊聊出书和录视频，感觉又有了不少心得，所以在这篇文章里，就结合我的实践和心得，专门在“录制教学视频”方面，向广大程序员朋友分享些以此挣外快的经验。             <a href="https://www.cnblogs.com/JavaArchitect/p/12638749.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-04-06 13:49 hsm_computer 阅读 (265) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12638749" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/03/29.html">2020年3月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12566320.html">
+    以外派的身份进大厂，或许条程序员升级的途径
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：最近看到了几篇关于外包的文章，而在我最近干的几家公司里，身边都一直有以外派或者Vendor身份入职的同事，前几年我自己都差点去做外包。可以说，公司本身的底蕴决定了对待外包员工的态度，同时，对些基础薄弱的同学，以外包身份进大公司实践，或许也是条升级的途径。在这篇博文里，就将围绕一些外包程序员的现状，结            <a href="https://www.cnblogs.com/JavaArchitect/p/12566320.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-03-29 18:12 hsm_computer 阅读 (410) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12566320" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/03/16.html">2020年3月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12466948.html">
+    面试中更多会考核相关技能的项目经验——再论程序员该如何准备面试
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在如何准备Java面试？如何把面试官的提问引导到自己准备好的范围内？这篇博文后，提到了不少引导的说辞和技巧，如果能把面试官的提问引导到事先准备好的亮点上，一方面确实可以更有效地耗费面试时间，另一方面也能最大程度地挖掘和展示自己的亮点。 上述博文是站在战术角度讲述方法论，而本文会从“技术面试官凭什么让            <a href="https://www.cnblogs.com/JavaArchitect/p/12466948.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-03-16 11:08 hsm_computer 阅读 (497) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12466948" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/02/12.html">2020年2月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12298114.html">
+    如何准备Java面试？如何把面试官的提问引导到自己准备好的范围内？
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：Java能力和面试能力，这是两个方面的技能，可以这样说，如果不准备，一些大神或许也能通过面试，但能力和工资有可能被低估。再仔细分析下原因，面试中问的问题，虽然在职位介绍里已经给出了范围，但针对每个点，面试官的问题是随机想的，甚至同一个面试官在两场相似的面试里，提的问题也未必一样。 也就是说，如果让面            <a href="https://www.cnblogs.com/JavaArchitect/p/12298114.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-02-12 14:57 hsm_computer 阅读 (1441) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12298114" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/02/09.html">2020年2月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12286314.html">
+    在面试通过通过单例模式来展示实例
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在面试初级和高级开发时，一般会问设计模式的问题。通常会让写下单例模式的实现方法，或者让结合项目，说下用过的设计模式，在本文里，就将讲述单例模式的多种写法，以此告诉大家如何在面试中展示实力。 如果在项目里，多个运行实例都会从同一个配置文件里读取发送邮件的列表，那么我们就可以用单例模式来创建这个读配置文            <a href="https://www.cnblogs.com/JavaArchitect/p/12286314.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-02-09 10:15 hsm_computer 阅读 (131) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12286314" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/02/02.html">2020年2月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12251778.html">
+    Java多线程，对锁机制的进一步分析
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：1 可重入锁 可重入锁，也叫递归锁。它有两层含义，第一，当一个线程在外层函数得到可重入锁后，能直接递归地调用该函数，第二，同一线程在外层函数获得可重入锁后，内层函数可以直接获取该锁对应其它代码的控制权。之前我们提到的synchronized和ReentrantLock都是可重入锁。 通过ReEnte            <a href="https://www.cnblogs.com/JavaArchitect/p/12251778.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-02-02 12:51 hsm_computer 阅读 (186) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12251778" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/02/01.html">2020年2月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12248145.html">
+    为了升级到架构师，程序员无需过度关注哪些技能？哪些技能不可缺？
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：如果走技术路线，架构师是个关键的结点。如果在大厂，一般有有6年时间足以升级到高级开发。因为在大厂里，能提供架构师所需的分布式组件开发调试以及上线的经验，上进点的程序员只要跟着大流，多通过排查问题观察底层，多通过压测或部署组件多实践缓存、高并发高可能之类的技术，想不升级到架构师都难。 但不少程序员止步            <a href="https://www.cnblogs.com/JavaArchitect/p/12248145.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-02-01 12:41 hsm_computer 阅读 (208) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12248145" rel="nofollow">
+    编辑
+</a>
+</div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12247542.html">
+    内部类、final与垃圾回收，面试时你一说，面试官就知道
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：内部类并不常用，而且使用起来有一定的定式，比如在下面的InnterDemoByTrhead.java里，我们通过内部类的形式创建线程。 1	public class InnerDemoByThread { 2 public static void main(String[] args) { 3 //            <a href="https://www.cnblogs.com/JavaArchitect/p/12247542.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-02-01 09:10 hsm_computer 阅读 (133) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12247542" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/01/31.html">2020年1月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12244680.html">
+    Java反射的常见用法
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：反射的常见用法有三类，第一类是“查看”，比如输入某个类的属性方法等信息，第二类是“装载“，比如装载指定的类到内存里，第三类是“调用”，比如通过传入参数，调用指定的方法。 1 查看属性的修饰符、类型和名字 通过反射机制，我们能从.class文件里看到指定类的属性，比如属性的修饰符，属性和类型和属性的变            <a href="https://www.cnblogs.com/JavaArchitect/p/12244680.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-01-31 09:56 hsm_computer 阅读 (253) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12244680" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/01/30.html">2020年1月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12243296.html">
+    Java解析XML文件的方式
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在项目里，我们往往会把一些配置信息放到xml文件里，或者各部门间会通过xml文件来交换业务数据，所以有时候我们会遇到“解析xml文件”的需求。一般来讲，有基于DOM树和SAX的两种解析xml文件的方式，在这部分里，将分别给大家演示通过这两种方式解析xml文件的一般步骤。 1 XML的文件格式 XML            <a href="https://www.cnblogs.com/JavaArchitect/p/12243296.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-01-30 18:35 hsm_computer 阅读 (176) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12243296" rel="nofollow">
+    编辑
+</a>
+</div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12242126.html">
+    泛型的深入研究——面试时说出能加分
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我们可以在定义集合时设置泛型这样的约束，也可以在定义类和方法时加上泛型，这样能提升类和方法的灵活性。此外我们还可以在定义泛型时加上继承和通配符。在平时的培训中，我曾发现初学者对一些复杂的泛型（其实也不复杂，只不过是较少用）感到困惑。这里就通过一些案例展示泛型在项目里的常见用法。 1 泛型可以作用在类            <a href="https://www.cnblogs.com/JavaArchitect/p/12242126.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-01-30 09:21 hsm_computer 阅读 (240) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12242126" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2020/01/20.html">2020年1月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12195219.html">
+    程序员怎样出版一本技术书
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在面试或联系副业的时候，如果能令人信服地证明自己的实力，那么很有可能事半功倍。如何证明自己的实力？最有信服力的是大公司职位背景背书，没有之一，比如在BAT担任资深架构，那么其它话甚至都不用讲了。 不过，不是每个人入职后马上就是大公司架构师，在上进的路上，还可以通过公众号，专栏博文，github代码量            <a href="https://www.cnblogs.com/JavaArchitect/p/12195219.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2020-01-20 14:36 hsm_computer 阅读 (660) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12195219" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/12/31.html">2019年12月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12118956.html">
+    2019我获得的些许成绩，能不能弥补这一年光阴的流逝？盘点2019我的得失
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：记得我在17年底的总结文章是n年前，我没钱但年轻，我怕n年后我老时，还是一无所成——2017我的收获和反思，去年年底的终结文是2018我跳出了舒适区，发现自己缺的不仅是技术，另外还得探索其它挣钱渠道。转眼又到了年底，离年少轻狂又远了一年的距离，在这篇文章里，不仅将盘点这一年的得失，记录下今年的各种心            <a href="https://www.cnblogs.com/JavaArchitect/p/12118956.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-12-31 11:11 hsm_computer 阅读 (1774) 评论 (16)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12118956" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/12/30.html">2019年12月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12097776.html">
+    小公司和大公司的程序员有什么差别？如何进大公司？
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我在大公司干活前，基本都在小公司之间辗转，对比两种公司的经历，切身感受到“人往高处走“绝非是空话。我在之前的博文里，多次讲到程序员该去大厂看看，在这篇博文里，将结合我和我朋友的所见所闻，从技术和发展前景等方面，综合讲述小公司和大公司里程序员的普遍差别，以此再让大家感受下大公司经历的重要性。不过本文不            <a href="https://www.cnblogs.com/JavaArchitect/p/12097776.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-12-30 09:13 hsm_computer 阅读 (5904) 评论 (44)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12097776" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/12/12.html">2019年12月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/12015084.html">
+    程序员在创业前可以尝试的试炼任务
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在互联网时代，不少干IT的人白手起家，在短短的几年里通过努力干出了一番事业，有房有车有公司，在人前也很光鲜。这就吸引了更多的程序员想要通过自主创业来实现财务自由。 殊不知，创业要比在公司干活要难得多，在公司里不管如何都可以旱涝保收，如果创业者只凭满腔激情，没有相关技能软实力和人脉，那最后或许只能再回            <a href="https://www.cnblogs.com/JavaArchitect/p/12015084.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-12-12 11:30 hsm_computer 阅读 (2398) 评论 (8)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12015084" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/12/02.html">2019年12月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11950437.html">
+    从面试官甄别项目经验的角度，说说如何在简历中写项目经验（java后端方向）
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在大多的JD（职位介绍）里，会写明该职位需要xx时间的相关经验，换句话说就是需要在简历中看到一定年限的相关商业项目经验，否则估计连面试的机会都没。 在本文里，不讨论这种门槛是否合理，而会以Java相关经验为例，说说面试官甄别真实商业项目的方式，并以此为基础讲述在简历中描述项目的要点，并进一步给出在面            <a href="https://www.cnblogs.com/JavaArchitect/p/11950437.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-12-02 12:41 hsm_computer 阅读 (1316) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11950437" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/11/21.html">2019年11月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11881141.html">
+    在校生如何面向面试地学习Java
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：最近我在博客园里，看到不少在校的同学在学java，而且，在我最近举办的一次直播活动中，也有不少在校生同学来提问，java该怎么学。 对于那些已经工作的同学，哪怕才工作不久，毕竟也能从项目实践里总结和探索java的学习途径和相关方法。但在校生同学由于没机会接触实际项目，在学习内容、进阶途径和学成标准这            <a href="https://www.cnblogs.com/JavaArchitect/p/11881141.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-11-21 17:15 hsm_computer 阅读 (1561) 评论 (12)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11881141" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/11/12.html">2019年11月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11837413.html">
+    为什么很多程序员没有升级到架构师？
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：对我们程序员来说，发展的途径要么是走管理岗，从开发升级到项目经理甚至是部门经理；要么走技术升级路线。不过在技术路线方面，无法升级到架构师的程序员不在少数。一方面，在不少公司的高级开发岗位上，无法让程序员实践甚至接触到架构师的技能，另一方面，有不少程序员甚至不清楚架构师所需要掌握的技能和升级途径。所以            <a href="https://www.cnblogs.com/JavaArchitect/p/11837413.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-11-12 13:32 hsm_computer 阅读 (6497) 评论 (31)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11837413" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/11/06.html">2019年11月6日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11793457.html">
+    技术提升了，钱自然就来了：盘点这段时间我挣钱的感受
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：2019年，我自认为本职和副业都不错，而且副业的收入能抵消掉工资里扣去的所得税以及缴纳的各种社保，不过似乎收入就有些靠近瓶颈了。经过和师傅的沟通，再结合我最近的切实感受，我感受到，虽然挣钱需要靠关系，得靠名声，但更需要靠实际掌握的技术，而且技术上去了，挣钱的渠道也会大大拓展，挣钱的效率也能大大提升。            <a href="https://www.cnblogs.com/JavaArchitect/p/11793457.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-11-06 10:29 hsm_computer 阅读 (3103) 评论 (8)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11793457" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/10/28.html">2019年10月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11732544.html">
+    借着谈转正感想的时机，再聊聊外企和互联网公司的工作体验
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我于今年4月15号进了当前的外企公司，当时还用以我的亲身经历为例，告诉大家写简历和面试的技巧（面向高级开发和架构师）这篇博文记录了面试的经历。试用期是6个月，经过领导和同事的帮助，我于最近顺利转正。一直想写篇文章来记录试用期的经历，但找不到合适的写作方向，所以就耽搁到现在。 想起我于18年2月从外企            <a href="https://www.cnblogs.com/JavaArchitect/p/11732544.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-10-28 10:18 hsm_computer 阅读 (6392) 评论 (11)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11732544" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/10/22.html">2019年10月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11717998.html">
+    通过机器学习的线性回归算法预测股票走势（用Python实现）
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：在本人的新书里，将通过股票案例讲述Python知识点，让大家在学习Python的同时还能掌握相关的股票知识，所谓一举两得。这里给出以线性回归算法预测股票的案例，以此讲述通过Python的sklearn库实现线性回归预测的技巧。 本文先讲以波士顿房价数据为例，讲述线性回归预测模型的搭建方式，随后将再这            <a href="https://www.cnblogs.com/JavaArchitect/p/11717998.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-10-22 10:11 hsm_computer 阅读 (5037) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11717998" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/10/16.html">2019年10月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11660792.html">
+    在我的新书里，尝试着用股票案例讲述Python爬虫大数据可视化等知识
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我的新书，《基于股票大数据分析的Python入门实战》，预计将于2019年底在清华出版社出版。 如果大家对大数据分析有兴趣，又想学习Python，这本书是一本不错的选择。从知识体系上来看，这本书的内容涵盖了开发Python企业级项目所需的知识点，包括但不限于Python基础语法知识、基于Pandas            <a href="https://www.cnblogs.com/JavaArchitect/p/11660792.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-10-16 14:40 hsm_computer 阅读 (648) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11660792" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/10/15.html">2019年10月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11616851.html">
+    从面试官角度观察到的程序员技能瓶颈，同时给出突破瓶颈的建议
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我在做技术面试官的时候，面试对象大多数是初级开发和高级开发，偶尔也会面试架构师。我发现，IT人的工资固然和相关技术的使用年限有关，但如果候选人的技能无法跨越到更高层次的话，他们的收入也就会停留在当前级别，哪怕工资年限再多，也无法提升工资水平。 比如，我就面试过不少工作了5,6年的程序员，他们的技能也            <a href="https://www.cnblogs.com/JavaArchitect/p/11616851.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-10-15 09:51 hsm_computer 阅读 (5368) 评论 (35)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11616851" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/10/08.html">2019年10月8日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11616906.html">
+    程序员副业那些事：聊聊出书和录视频
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：或许有人会说，如果把本职工作做到极致，那么就不需要副业了，这话也有道理，因为干活的方式是相通的，如果本职都是得过且过地敷衍，那么就别再提副业了。 不过我见识到的一些大神，在公司是顶梁柱，同时也有自己的书和自己的视频，而自己的公共号和博客里有很多粉丝。也就是说，扩大自己影响面后，可能能帮自己找到更好的            <a href="https://www.cnblogs.com/JavaArchitect/p/11616906.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-10-08 09:46 hsm_computer 阅读 (2002) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11616906" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/09/26.html">2019年9月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11589381.html">
+    跳槽时，不敢要高工资也会对候选人不利
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我在做技术面试官的时候，在问完问题后，照例会问一句：你期望的工资是多少？对此，我只会记录下候选人的回答然后上报，没有同意权，更没有批驳权。 判断候选人能否通过面试，主要看候选人能力和岗位的匹配度，如果能力行，自然没话说，如果可上可下，那就要综合衡量优点和缺点。我不敢说，不敢要高工资一定会导致面试失败            <a href="https://www.cnblogs.com/JavaArchitect/p/11589381.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-09-26 14:51 hsm_computer 阅读 (2999) 评论 (22)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11589381" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/09/19.html">2019年9月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11547799.html">
+    作为IT面试官，我如何考核计算机专业毕业生？作为培训班老师，我又如何提升他们？
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我最近几年一直在做技术面试官，除了面试有一定工作经验的社会人员外，有时还会面试在校实习生和刚毕业的大学生。同时，我也在学校里做过兼职讲师，上些政府补贴课程（这些课程有补贴，学生不用出钱），所以我会在不同的场合承担两种截然相反的职责。 幸好我的公司不会从我讲课的学校里招生，而且我讲课和面试的时间段是错            <a href="https://www.cnblogs.com/JavaArchitect/p/11547799.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-09-19 14:20 hsm_computer 阅读 (1392) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11547799" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/09/17.html">2019年9月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11527231.html">
+    从筛选简历和面试流程讲起，再给培训班出身的程序员一些建议
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：本人最近几年一直在外企和互联网公司承担Java技术面试官的职责，大多面试的是Java初级和高级开发，其中有不少是培训班出身的候选人。 在我之前的博文里，从面试官的角度聊聊培训班对程序员的帮助，同时给培训班出身的程序员一些建议，我已经说明了，我对培训班候选人没有偏见，而且我的面试官同事大多也是这样认为            <a href="https://www.cnblogs.com/JavaArchitect/p/11527231.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-09-17 10:42 hsm_computer 阅读 (2299) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11527231" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/09/11.html">2019年9月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11489054.html">
+    你多久更新一次简历，决定了你的收入多久能提升
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：提到更新简历，或许大家第一时间就想到换工作，因为只有在换工作时才会更新。一般程序员大概1年半到2年跳槽一次，也就是说最多2年会更新一次。 更新简历是在其中更新自己的技术和各种能拿得出手的亮点，所以从这意义上来讲，一个月至少得更新一次，毕竟一个月没进步有些说不过去。而且一般来讲，都是先有技术上的更新再            <a href="https://www.cnblogs.com/JavaArchitect/p/11489054.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-09-11 10:22 hsm_computer 阅读 (3607) 评论 (24)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11489054" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/JavaArchitect/archive/2019/09/09.html">2019年9月9日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/JavaArchitect/p/11466110.html">
+    在没实践机会的前提下，如何跨越级别
+</a>
+
+        </div>
+        
+
+    <div class="c_b_p_desc">
+摘要：我在之前的面试过程中，一直会遇到这样的问题：比如我要面试架构师，但我当时工作时，只有机会实践高级开发的技能，架构师方面的技能，只能看理论，最多只能在自己电脑上搭建个脚手架项目。 这样就进入了一个两难的循环等待：为了应聘成功高级岗位，必须要在面试过程里证明有相关实践经验，而相关经验在面试成功前是没机会            <a href="https://www.cnblogs.com/JavaArchitect/p/11466110.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        <div class="postDesc">
+
+posted @ 2019-09-09 09:29 hsm_computer 阅读 (636) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11466110" rel="nofollow">
+    编辑
+</a>
+</div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/JavaArchitect/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	<!--done-->
+<div class="footer">
+	Copyright &copy; 2020 hsm_computer
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+ Powered by: <a href="http://www.cnblogs.com" class="footerlink">博客园</a><br>
+</div>
+
+
+</div>
+
+
+
+
+    
+</body>
+</html>

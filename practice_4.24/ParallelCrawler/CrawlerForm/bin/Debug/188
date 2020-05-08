@@ -1,0 +1,594 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="写这篇文章，纯粹是想为博客拉点点击量。在博客园，游客访问好像是不计入阅读量的，而作为一个十八线博主，注册用户的访问应该以搜索引擎为主，博客园首页为次，个位数的粉丝就别谈了。 所以，希望各位从搜索引擎点" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ATmega328P定时器详解 - jerry_fuyi - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy.min.css?v=Nm_ujJtGKDq5SpJ2XERB3wgoRnlvEg7NAIZvC-SzytE" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jerry-fuyi/custom.css?v=QxGDGimsRKr9CZUobyVFO1mi8HA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/mttrendy/bundle-mttrendy-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jerry-fuyi/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jerry-fuyi/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jerry-fuyi/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 525569;
+        var currentBlogApp = 'jerry-fuyi';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'MTTrendy';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<div id="top">
+
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jerry-fuyi/">jerry_fuyi</a>
+</h1>
+<p id="tagline">
+
+</p>
+
+
+</div>
+
+<div id="rightmenu">
+
+	
+<h3>My Links</h3>
+<ul>
+			<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+			<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jerry-fuyi/">
+首页</a>
+</li>
+			<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/jerry_fuyi">
+联系</a></li>
+			<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+订阅</a> 
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/jerry-fuyi/rss/">
+    <img src="/skins/mttrendy/images/xml.gif" alt="订阅" />
+</a></li>
+			<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+	<h3>Blog Stats</h3>
+	<ul>
+		<li>Posts - 
+75</li>
+		<li>Stories - 
+0</li>
+		<li>Comments - 
+13</li>
+		<li>Trackbacks - 
+0
+	</li>
+</ul>
+
+
+	
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+	<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+
+<div id="main">
+	<div id="post_detail">
+	<div class="post">
+		<h2>
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/jerry-fuyi/p/atmega328p_timer.html">ATmega328P定时器详解</a>
+
+		</h2>
+		
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>写这篇文章，纯粹是想为博客拉点点击量。在博客园，游客访问好像是不计入阅读量的，而作为一个十八线博主，注册用户的访问应该以搜索引擎为主，博客园首页为次，个位数的粉丝就别谈了。</p>
+<p>所以，希望各位从搜索引擎点进来的朋友，多多评论，有问题咱们一起讨论。</p>
+<p>我写过<a href="https://www.cnblogs.com/jerry-fuyi/p/avr_tutorial.html" target="_blank">AVR单片机教程</a>，设计过自己的Arduino板，希望你相信我能给你带来收获。</p>
+<img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423134644876-1313851577.jpg" width="400">
+<p><a href="#skip">我不想听你放那么多屁，我只想知道周期为1ms的定时器中断怎么写！</a></p>
+<h3 id="什么是定时器">什么是定时器</h3>
+<p>在ATmega328P单片机中，定时/计数器（Timer/Counter）是这样的组件：它需要一个时钟源，驱动一个8或16位的计数器递增或递减，当计数器等于一个值时，会触发一些操作，如产生中断、翻转引脚电平等。由于定时器的时钟源是系统时钟或外接晶振（一种产生频率精准的波的器件）分频得到的，一旦设置好定时器的工作参数，直到下次调整参数，定时器都会按照预期工作，与CPU执行的代码无关。</p>
+<h3 id="为什么要用定时器">为什么要用定时器</h3>
+<p>之前有过这样的经历：</p>
+<blockquote>
+<p>跟一个优秀作品设计者聊了几句，他说同时控制舵机和扬声器很难控制好延时，扬声器输出的音乐节奏会乱。我第一反应当然是他没有用定时器中断，一问果然如此，并且他不知道中断也不知道定时器。</p>
+</blockquote>
+<p>还有一位同学，写TI计算器的程序。在他的一个作品中，每次循环的计算量不定，循环间隔也不定，导致游戏效果不好。他的解决方法是根据计算量计算出循环最后需要的延时，使得循环间隔基本保持不变。</p>
+<p>这种思路是相当优秀的。但是如果有定时器可用的话，编程难度会降低，循环间隔的一致性也会更好，是更加优秀的解决方案。</p>
+<h3 id="其实你一直在用定时器">其实你一直在用定时器</h3>
+<p>Arduino Uno Rev3的<code>3</code>、<code>5</code>、<code>6</code>、<code>9</code>、<code>10</code>、<code>11</code>号端口可以使用<code>analogWrite</code>和<code>tone</code>函数，它们的功能都是利用定时器实现的。用函数确实方便，但是只知使用而不知其原理就只能停留在技术的表面——Arduino的强大封装对开发者的学习有两面性。</p>
+<p>定时器其实不知道什么<code>3</code>号端口，它只知道<code>OC2B</code>。两种表示之间的对应关系如下表：</p>
+<table>
+<thead>
+<tr>
+<th>端口编号</th>
+<th>硬件符号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>PD3(PCINT19/<strong>OC2B</strong>/INT1)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>PD5(PCINT21/<strong>OC0B</strong>/T1)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>PD6(PCINT22/<strong>OC0A</strong>/AIN0)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>PB1(PCINT1/<strong>OC1A</strong>)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>PB2(PCINT2/SS/<strong>OC1B</strong>)</td>
+</tr>
+<tr>
+<td>11</td>
+<td>PB3(PCINT3/<strong>OC2A</strong>/MOSI)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="寄存器">寄存器</h3>
+<p>寄存器是开发者与硬件打交道的方式。从编程的语法上，可以把寄存器当作是变量，可以对它赋值，也可以读取它的数值。</p>
+<p>寄存器中的位有几种不同的组织结构，它们的存取方式也不尽相同：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423202405717-1875929171.png" alt=""></p>
+<p><code>TCCR1B</code>寄存器中有4组参数：<code>ICNC1</code>、<code>ICES1</code>、<code>WGM1[3:2]</code>、<code>CS1[2:0]</code>。现在你完全无需理解这些字母的含义，但是得对这些数字有个概念：<code>WGM1[3:2]</code>表示从<code>WGM13</code>到<code>WGM12</code>；<code>TCCR1B</code>中的<code>1</code>表示该寄存器属于定时器1，<code>ICNC1</code>和<code>WGM13</code>等名字中的<code>1</code>也是；<code>CS12</code>中的<code>2</code>表示该位为<code>CS1[2:0]</code>位域（bitfield）中的第<code>2</code>位（最低位为第<code>0</code>位）。</p>
+<p><code>ICNC1</code>和<code>ICES1</code>都是1位的位域，它们的值可以是<code>0</code>或<code>1</code>；<code>WGM1[3:2]</code>是2位的位域，它的值可以是<code>00</code>、<code>01</code>、<code>10</code>、<code>11</code>；<code>CS1[2:0]</code>同理。</p>
+<p>你也许一眼就能看出二进制的<code>11</code>在十进制中是<code>3</code>，但是你很可能看不出<code>23</code>对应<code>10111</code>。在Arduino编程中（语言为C++），二进制数可以直接写，无需与十进制或十六进制转换。Arduino提供的方法是<code>B10111</code>，GCC提供的是<code>0b10111</code>（<code>0b</code>前缀字面量是C++14标准才规定的）。后者是我一直以来的习惯。</p>
+<p>假如我要把这4个参数分别写为<code>1</code>、<code>0</code>、<code>0b00</code>、<code>0b101</code>，就要写：</p>
+<pre><code class="language-c">TCCR1B =     1 &lt;&lt; ICNC1
+       |     0 &lt;&lt; ICES1
+       |  0b00 &lt;&lt; WGM12
+       | 0b101 &lt;&lt; CS10
+       ;
+</code></pre>
+<p>全是<code>0</code>的可以不写，写是为了可读性。<code>ICNC1</code>是寄存器的第<code>7</code>位，所以代码中它的值就是<code>7</code>，其他位同理。</p>
+<p>如果要判断<code>ICNC1</code>位是否为<code>1</code>：</p>
+<pre><code class="language-c">if (TCCR1B &amp; 1 &lt;&lt; ICNC1)
+    // ...
+</code></pre>
+<p>如果要读取<code>WGM1[3:2]</code>位：</p>
+<pre><code class="language-c">uint8_t wgm = (TCCR1B &amp; 0b11 &lt;&lt; WGM12) &gt;&gt; WGM12;
+</code></pre>
+<p>有的位因为不存在而不能写，如<code>TCCR1B</code>的第<code>5</code>位；有的位即使存在但是只读所以也不能写；有的位域分布于多个寄存器中，如<code>WGM1[3:0]</code>，低两位在<code>TCCR1A</code>，高两位在<code>TCCR1B</code>。</p>
+<p>除了一个或多个位的位域以外，有些寄存器是整体使用的：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423202415823-1396037972.png" alt=""></p>
+<p>可以直接当变量读写：</p>
+<pre><code class="language-c">OCR0A = 233;
+uint8_t ocr0a = OCR0A;
+</code></pre>
+<p>还有16位寄存器，虽然读写不能用一句汇编搞定，但是高级语言层面上可以：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423202426099-735285453.png" alt=""></p>
+<pre><code class="language-c">TCNT1 = 10086;
+uint16_t tcnt1 = TCNT1;
+</code></pre>
+<p>不超过<code>255</code>的话可以只写低字节<code>TCNT1L</code>。</p>
+<p>定时器相关寄存器总览：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423222348667-180310282.png" alt=""></p>
+<h3 id="定时器的工作模式">定时器的工作模式</h3>
+<p>读<a href="http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061A.pdf" target="_blank">数据手册</a>无疑是深入了解单片机的最好方法，可惜很多人没这个耐心，几十页的英语也不是每个人都吃得消的。有些中文书打着介绍AVR单片机的幌子翻译数据手册，不仅没有营养还漏洞百出，我不也推荐。写这篇文章，也有避免后人重蹈覆辙的目的。</p>
+<p>当然，除了有代码示例以外，本文再“详解”也详细不过数据手册，不过至少可以让你对定时器有个大致的印象，不致于让你读的时候一头雾水。</p>
+<p>ATmega328P有3个定时器：定时器0、定时器1和定时器2（简单粗暴）。0和2都是8位的，2支持异步工作；1是16位的，精度更高，支持更多工作模式。我接触过其他型号的单片机，AVR的定时器是相对简单的。</p>
+<p>定时器有3种工作模式：普通模式、CTC模式、PWM模式，其中PWM还分快速PWM、相位矫正（波形居中）PWM、相位与频率矫正PWM（频率可以任取，仅限定时器1）。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423231446118-1592773817.png" alt=""></p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423231450392-2122147011.png" alt=""></p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200423231456584-2137196612.png" alt=""></p>
+<p>先讲各种模式中共通的部分。定时器需要一个时钟源，它可以是：</p>
+<table>
+<thead>
+<tr>
+<th>时钟源</th>
+<th>适用范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无</td>
+<td>所有</td>
+</tr>
+<tr>
+<td><span class="math inline">\(clk_{I/O} / N, N = 1, 8, 64, 256, 1024\)</span><br>（<span class="math inline">\(clk_{I/O}\)</span>为系统时钟，16MHz）</td>
+<td>定时器0/1</td>
+</tr>
+<tr>
+<td><code>T0</code>（<code>4</code>）引脚上升/下降沿</td>
+<td>定时器0</td>
+</tr>
+<tr>
+<td><code>T1</code>（<code>5</code>）引脚上升/下降沿</td>
+<td>定时器1</td>
+</tr>
+<tr>
+<td><span class="math inline">\(clk_{T2S} / N, N = 1, 8, 32, 64, 128, 256, 1024\)</span><br>（<span class="math inline">\(clk_{T2S}\)</span>为系统时钟或外置32kHz晶振）</td>
+<td>定时器2</td>
+</tr>
+</tbody>
+</table>
+<p>工作模式之间的区别在于计数器的变化方向与范围，介绍之前需要先下3个定义：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BOTTOM</code></td>
+<td><code>0</code>，计数器的最小值</td>
+</tr>
+<tr>
+<td><code>MAX</code></td>
+<td>对8位定时器为<code>0xFF</code>，对16位定时器为<code>0xFFFF</code>，计数器的最大可能值</td>
+</tr>
+<tr>
+<td><code>TOP</code></td>
+<td>计数器达到这个值时，可能会被清零，或变化方向改变</td>
+</tr>
+<tr>
+<td></td>
+<td>对定时器0和2，可以为<code>MAX</code>或<code>OCRnA</code></td>
+</tr>
+<tr>
+<td></td>
+<td>对定时器1，可以为<code>0x00FF</code>、<code>0x01FF</code>、<code>0x03FF</code>、<code>OCR1A</code>或<code>ICR1</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>普通模式中，计数器从<code>0</code>开始增长到<code>MAX</code>，然后溢出回到<code>0</code>，周而复始。频率为（<span class="math inline">\(clk\)</span>为定时器时钟频率）</p>
+<p><div class="math display">\[\frac {clk} {MAX + 1}
+\]</div></p></li>
+<li>
+<p>CTC模式和快速PWM模式中，计数器从<code>0</code>开始增长到<code>TOP</code>，然后不再继续增长而是直接回到<code>0</code>，重新开始增长。频率为</p>
+<p><div class="math display">\[\frac {clk} {TOP + 1}
+\]</div></p></li>
+<li>
+<p>两种相位矫正PWM模式中，计数器从<code>0</code>到<code>TOP</code>，再从<code>TOP</code>回到<code>0</code>，如此循环。频率为</p>
+<p><div class="math display">\[\frac {clk} {2 TOP}
+\]</div></p></li>
+</ul>
+<h3 id="计数器比较">计数器比较</h3>
+<p>当计数器的值与<code>OCRnA</code>或<code>OCRnB</code>相等时，可以对<code>OCnx</code>的电平进行一些操作。</p>
+<ul>
+<li>
+<p>所有模式下，<code>OCnx</code>都可以不连接定时器。</p>
+</li>
+<li>
+<p>非PWM模式下，可以把<code>OCnx</code>置为低电平、高电平或翻转电平，<code>tone</code>就是这样实现的；</p>
+</li>
+<li>
+<p>PWM模式下，有正相和反相两种模式，正相为<code>OCRnx</code>越大占空比越高，<code>analogWrite</code>就是这样实现的；反相反之；有些配置下<code>OCnA</code>可以被翻转，请参考数据手册。</p>
+</li>
+</ul>
+<p>由于引脚电平可以有宏观表现，我们终于可以开始写代码了。</p>
+<p>先试试<code>tone</code>。在<code>9</code>号端口上连接一个蜂鸣器，使用定时器1的CTC模式，产生440Hz方波：</p>
+<pre><code>void setup() {
+  pinMode(9, OUTPUT);
+  TCCR1A = 0b01 &lt;&lt; COM1A0 | 0b00 &lt;&lt; WGM10;
+  TCCR1B = 0b01 &lt;&lt; WGM12 | 0b001 &lt;&lt; CS10;
+  OCR1A = 18181;
+}
+
+void loop() {
+  
+}
+</code></pre>
+<p><code>OCR1A = 18181</code>是怎么来的呢？每次计数器与<code>OCR1A</code>相等电平翻转，两次为一周期，频率为<span class="math inline">\(\frac {clk} {2(OCR1A + 1)}\)</span>。先取<span class="math inline">\(clk\)</span>为不分频试试，算出OCR1A为<code>18181</code>，没有超过最大值<code>65535</code>，因此就取这个。如果超过了，就要把定时器频率下调，直到<code>OCRnx</code>合理为止。</p>
+<p>如果要让程序以频率为参数计算出合适的分频系数与<code>OCRnx</code>值，可以参考<code>tone</code>的实现。</p>
+<p>再试试<code>analogWrite</code>。在<code>3</code>号端口上连接一个LED，使用定时器2的快速PWM模式，实现呼吸灯的效果：</p>
+<pre><code>void setup() {
+  pinMode(3, OUTPUT);
+  TCCR2A = 0b10 &lt;&lt; COM2B0 | 0b11 &lt;&lt; WGM20;
+  TCCR2B = 0 &lt;&lt; WGM22 | 0b100 &lt;&lt; CS20;
+}
+
+int brightness = 0;
+int fadeAmount = 5;
+
+void loop() {
+  OCR2B = brightness;
+  brightness = brightness + fadeAmount;
+  if (brightness &lt;= 0 || brightness &gt;= 255)
+    fadeAmount = -fadeAmount;
+  delay(30);
+}
+</code></pre>
+<p>在快速PWM模式中，正相输出占空比不能为<code>0</code>，反相输出占空比不能为<code>1</code>，如果要达到这两个值，需要断开引脚与定时器的连接，用<code>digitalWrite</code>等方法输出。</p>
+<h3 id="定时器中断">定时器中断</h3>
+<p>懒得写了，我抄我自己：</p>
+<blockquote>
+<p>中断，是单片机的精华。</p>
+<p>当一个事件发生时，CPU会停止当前执行的代码，转而处理这个事件，这就是一个中断。<strong>触发</strong>中断的事件成为<strong>中断源</strong>，处理事件的函数称为<strong>中断服务程序</strong>（ISR）。</p>
+<p>中断在单片机开发中有着举足轻重的地位——没有中断，很多功能就无法实现。比如，在程序干别的事时接受UART总线上的输入，而<code>uart_scan_char</code>等函数只会接收调用该函数后的输入，先前的则会被忽略。利用中断，我们可以在每次接受到一个字节输入时把数据存放到缓冲区中，程序可以从缓冲区中读取已经接收的数据。</p>
+<p>AVR单片机支持多种中断，包括外部引脚中断、定时器中断、总线中断等。每一个中断被触发时，通过<strong>中断向量表</strong>跳转到对应ISR。如果一个中断对应的ISR不存在，链接器会把复位地址放在那里，如果这个中断被响应程序就会复位（但单片机不会复位）。</p>
+<p>那么，我们以前从未写过ISR，但经常改变引脚电平，为什么没有复位呢？因为中断默认是不开启的。要启用一个中断，需要让两个位于不同寄存器中的位为<code>1</code>，一个是中断对应的中断使能位，每个中断都有各自的位，另一个是全局中断使能位，位于寄存器<code>SREG</code>中，不能直接存取，需要通过定义在<code>&lt;avr/interrupt.h&gt;</code>头文件中的<code>sei()</code>函数开全局中断，相对地，<code>cli()</code>用于关全局中断。</p>
+</blockquote>
+<p>定时器中断同样有着举足轻重的地位——操作系统的任务调度就是在定时器中断中进行的。如果没有中断，CPU就在那自顾自地执行代码，它哪知道什么时候要调度呢？正因为定时器是独立于CPU运行的，时间控制非常精准且不受影响，因而能解决前面优秀作品和计算器游戏中的问题。</p>
+<p>什么时候需要定时器中断呢？当你发现没有中断的程序结构不能胜任你的需求时，或者……把所有代码都放进ISR。比如，每1ms产生一次中断，先检测按键是否被按下，根据其情况执行相应操作。</p>
+<p>每个定时器都有3个中断源：<code>OVF</code>、<code>COMPA</code>和<code>COMPB</code>（定时器1还有<code>CAPT</code>），分别在计数器溢出、与<code>OCRnA</code>、<code>OCRnB</code>相等时触发。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1734552/202004/1734552-20200424135526690-1304189705.png" alt=""></p>
+<p>产生精准的定时器中断，一般使用CTC模式和<code>COMPA</code>中断，分频系数与<code>TOP</code>值的计算方法与上面相同。</p>
+<pre><code>void setup() {
+  pinMode(13, OUTPUT);
+  TCCR1A = 0b00 &lt;&lt; WGM10;
+  TCCR1B = 0b01 &lt;&lt; WGM12 | 0b100 &lt;&lt; CS10;
+  OCR1A = 31249;
+  TIMSK1 = 1 &lt;&lt; OCIE1A;
+  sei();
+}
+
+ISR(TIMER1_COMPA_vect)
+{
+  static bool light = true;
+  digitalWrite(13, light = !light);
+}
+
+void loop() {
+  
+}
+</code></pre>
+<p>在这个程序中：</p>
+<ul>
+<li>
+<p><code>WGM1[3:0] = 0b0100</code>，定时器1工作于CTC模式，<code>TOP</code>为<code>OCR1A</code>；</p>
+</li>
+<li>
+<p><code>CS1[2:0] = 0b100</code>，时钟为<span class="math inline">\(clk_{I/O} / 256\)</span>，分频系数<span class="math inline">\(N = 256\)</span>；</p>
+</li>
+<li>
+<p><code>OCR1A</code>为<code>31249</code>；</p>
+</li>
+<li>
+<p><code>TIMSK1</code>中<code>OCIE1A</code>置位，<code>sei()</code>开全局中断，<code>COMPA</code>中断启用；</p>
+</li>
+<li>
+<p><code>ISR(TIMER1_COMPA_vect)</code>为定时器1<code>COMPA</code>中断的函数头，<code>TIMER1_COMPA_vect</code>这个名字可以当成函数来用；</p>
+</li>
+<li>
+<p>定时器中断频率为<span class="math inline">\(f = \frac {clk} {TOP + 1} = \frac {F\_CPU} {N \cdot (OCR1A + 1)} = \frac {16 \times 10^6} {256 \times (31249 + 1)} = 2Hz\)</span>。</p>
+</li>
+</ul>
+<p>一般而言，定时器中断的频率不要超过10kHz，1kHz已经能够应付旋转编码器了。</p>
+<p>进入中断后，全局中断会自动禁用，如果中断代码执行期间发生了定时器事件，对应的中断不会触发，而是等到当前中断返回后再处理。可以用<code>sei()</code>开中断，但是要小心代码执行时间接近或超过周期的情况，虽然定时准了，但中断嵌套导致内存耗尽，程序跑飞了，得不偿失。可以考虑另一种时间同步的方法，在<code>loop</code>的最后轮询<code>OCFnA</code>直到它置位：</p>
+<pre><code>void setup() {
+  pinMode(13, OUTPUT);
+  TCCR1A = 0b00 &lt;&lt; WGM10;
+  TCCR1B = 0b01 &lt;&lt; WGM12 | 0b100 &lt;&lt; CS10;
+  OCR1A = 31249;
+}
+
+void loop() {
+  static bool light = true;
+  digitalWrite(13, light = !light);
+  while (!(TIFR1 &amp; 1 &lt;&lt; OCF1A))
+    ;
+  TIFR1 |= 1 &lt;&lt; OCF1A;
+}
+</code></pre>
+<p>这种程序结构有定时作用，但不能中断。频率较高的时候，推荐使用后一种，顶多定时不准，程序还是能运行的。</p>
+<h3 id="照顾一下arduino">照顾一下Arduino</h3>
+<p>Arduino库非常贪心，在<code>setup</code>之前就把所有定时器都开启了（也许你不同意，但我想把这种行为称为“流氓”——想想百度网盘偷了你多少带宽和流量！）。定时器0是时间相关函数的命根，除非你想把它割掉，否则不要动定时器0。如果你不动定时器0，<code>5</code>和<code>6</code>的<code>analogWrite</code>和<code>tone</code>可以照常使用。</p>
+<p><a id="skip"></a>如果你要用定时器1，如用以下代码配置周期为1ms的定时器中断：</p>
+<pre><code>void init_timer1()
+{
+  TCCR1A = 0b00 &lt;&lt; WGM10;
+  TCCR1B = 0b01 &lt;&lt; WGM12 | 0b011 &lt;&lt; CS10;
+  OCR1AL = 249;
+  TIMSK1 = 1 &lt;&lt; OCIE1A;
+  sei();
+}
+
+void setup() {
+  init_timer1();
+  // ...
+}
+
+ISR(TIMER1_COMPA_vect)
+{
+  // ...
+}
+
+void loop() {
+  // ...
+}
+</code></pre>
+<p>需要注意：</p>
+<ol>
+<li>
+<p>由于Arduino库在<code>setup</code>之前动过<code>TCCR1A</code>，不能认为在执行我们的代码时<code>TCCR1A</code>为默认值，因此即使我们想要的是默认值也不能省略。</p>
+</li>
+<li>
+<p><code>9</code>和<code>10</code>端口不仅<code>analogWrite</code>和<code>tone</code>不能用，<code>digitalWrite</code>也不能用！请直接使用寄存器写引脚电平，参见：<a href="https://www.cnblogs.com/jerry-fuyi/p/11620890.html" target="_blank">AVR单片机教程——数字IO寄存器</a>。</p>
+</li>
+</ol>
+<p>定时器2同理，<code>3</code>和<code>11</code>不能用。</p>
+<pre><code>void init_timer2()
+{
+  TCCR2A = 0b10 &lt;&lt; WGM20;
+  TCCR2B = 0 &lt;&lt; WGM22 | 0b100 &lt;&lt; CS20;
+  OCR2A = 249;
+  TIMSK2 = 1 &lt;&lt; OCIE2A;
+  sei();
+}
+
+void setup() {
+  init_timer2();
+  // ...
+}
+
+ISR(TIMER2_COMPA_vect)
+{
+  // ...
+}
+
+void loop() {
+  // ...
+}
+</code></pre>
+<h3 id="其他功能">其他功能</h3>
+<p>有些工作模式下，向<code>OCRnx</code>写值并不会立即更新它，而是会在计数器达到<code>BOTTOM</code>或<code>TOP</code>时更新，这保证了PWM占空比的正确性，但是CTC模式中<code>OCRnx</code>是立即更新的，可能会错过匹配。</p>
+<p>定时器1有输入捕获单元，可以对信号进行计数，计数达到一定值时触发中断。外部中断同样可以捕获引脚电平变化，但是<a href="https://www.cnblogs.com/jerry-fuyi/p/12207891.html#overhead" target="_blank">中断是有成本的</a>，信号频率不能太高，而定时器的捕获功能更加强大。</p>
+<p>定时器1有额外的<code>ICR1</code>寄存器，作为<code>TOP</code>值可以实现许多特殊的功能，并且由于定时器1是16位的，即使是复用时的精度也比定时器0和2高，见思考题1。</p>
+<p>定时器2可以用外置晶振驱动，比较适合实现实时时钟，可以在系统时钟停止的省电状态下工作。</p>
+<h3 id="思考题">思考题</h3>
+<ol>
+<li>
+<p>对于同一个定时器，中断与PWM能否同时使用？方波与PWM波能否同时输出？</p>
+</li>
+<li>
+<p>尝试用定时器中断来创造新的PWM通道，频率和精度能实现呼吸灯即可。</p>
+</li>
+<li>
+<p>在STM8单片机中，定时器<code>TIM1</code>、<code>TIM5</code>、<code>TIM6</code>可以相互控制。ATmega328P能否实现类似的功能？</p>
+</li>
+</ol>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		<p class="postfoot">
+			posted on 
+<span id="post-date">2020-04-24 13:56</span>&nbsp;
+<a href="https://www.cnblogs.com/jerry-fuyi/">jerry_fuyi</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12760325" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12760325);return false;">收藏</a>
+		</p>
+	</div>
+	
+	
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 525569, cb_blogApp = 'jerry-fuyi', cb_blogUserGuid = '976af27c-3f06-453c-e544-08d7006bad27';
+    var cb_entryId = 12760325, cb_entryCreatedDate = '2020-04-24 13:56', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+</div>
+
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 jerry_fuyi
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+
+
+    
+</body>
+</html>

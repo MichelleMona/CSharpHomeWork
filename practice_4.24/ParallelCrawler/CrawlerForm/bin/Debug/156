@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="0. 前言 每篇一个前言，介绍一下这一篇的内容。之前的内容都是针对某些知识点进行的介绍，这篇内容介绍一下实际开发中常用的一些类和命名空间。这一篇是个连续剧，大概有个三四集。嗯，就是这样。 1. Sys" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>C# 基础知识系列- 13 常见类库介绍（一） - 月影西下 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/coffee/bundle-coffee.min.css?v=pdMIVgsH8kXt-vOWnlL0N20TlHt3UyP9HzGgocfsP4s" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee-mobile.min.css?v=na9bpAY4yh7uEWCcrXj3vfJM3VBse8YtU6-5fUUQPz0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/c7jie/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/c7jie/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/c7jie/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 572560;
+        var currentBlogApp = 'c7jie';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'coffee';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/c7jie/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/c7jie/">月影西下</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+	<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/c7jie/">
+首页</a>
+</li>
+	<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+	<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%9C%88%E5%BD%B1%E8%A5%BF%E4%B8%8B">
+联系</a></li>
+	<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+	<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/c7jie/rss/">
+订阅</a>
+	
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/c7jie/rss/">
+    <img src="/skins/coffee/images/xml.gif" alt="订阅" />
+</a></li>
+</ul>
+
+
+
+			<div class="blogStats">
+				
+				<!--done-->
+随笔- 
+15&nbsp;
+文章- 
+0&nbsp;
+评论- 
+8&nbsp;
+
+
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class = "postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/c7jie/p/12771247.html">C# 基础知识系列- 13 常见类库介绍（一）</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="0-前言">0. 前言</h1>
+<p>每篇一个前言，介绍一下这一篇的内容。之前的内容都是针对某些知识点进行的介绍，这篇内容介绍一下实际开发中常用的一些类和命名空间。这一篇是个连续剧，大概有个三四集。嗯，就是这样。</p>
+<h1 id="1-system-命名空间">1. System 命名空间</h1>
+<p>System空间，是C#的基础命名空间，里面定义了常用值和数据类型以及各种类型的基类，当然也包括了很多C#程序运行中用到类，具体可以访问微软的官方API说明。这里简单介绍一下 我们在开发中最常用到的几个类。</p>
+<h2 id="11-console">1.1 Console</h2>
+<p>Console 控制台类，表示一个控制台应用程序的标准输入流、输出流和错误流。这是微软官方文档给的内容。实际上，Console类在一些其他类型的项目中也可以使用。因为Console类是程序与终端的交互，所以当程序持有一个终端的时候，该类就可以正确输出内容。</p>
+<p>照例，我们先看一下它的声明：<code>public static class Console</code> 。可知这是一个静态类，需要明确一个概念：</p>
+<ul>
+<li>在C#甚至大多数编程语言（支持静态类）中，静态类不可被继承，而且静态类的方法都是工具方法；</li>
+<li>静态类没有构造方法，也不能构造对象；</li>
+<li>静态类里的方法都是静态方法</li>
+<li>访问一个类的静态方法需要通过<code>类名.方法名</code>来访问</li>
+</ul>
+<p>那么我们可以使用：<code>Console.方法名</code>来调用Console的方法。</p>
+<p>我们来看看Console在开发中常用的方法有哪些：</p>
+<ol>
+<li>
+<p>输出：</p>
+<pre><code class="language-c#">public static void Write (&lt;T&gt; value); //T 表示类型
+public static void Write (string format, params object[] arg);
+</code></pre>
+<p>Write方法一共有17个重载版本，其中有常用的有以上两钟（不是两个版本）。其中第一中写法，T 代表C#的基础数据类型中的10种，再加一个Object。</p>
+<p>作用是将参数转成字符串打印到控制台中，所以效果与先将对象转成字符串然后再打印一样，所以第二种调用方式参数类型与 <code>String.Format</code>是一致的。</p>
+<p>示例代码：</p>
+<pre><code class="language-c#">class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write(&quot;打印测试...&quot;);
+    }
+}
+</code></pre>
+<p>效果如下：</p>
+<p><img src="https://img2020.cnblogs.com/other/1266612/202004/1266612-20200425005214346-599969592.png" alt="image-20200424164707972"></p>
+<p>如上图所示，会出现一个黑色背景的图框，然后显示打印的内容。</p>
+<p>C# 关于控制台的输出还有一个方法：<code>WriteLine</code>，从名字来看是写一行的意思，实际表现也是如此，该方法每次输出都会产生新的一行内容，而<code>Write</code>只会在上一次输出的结尾继续输出。</p>
+<p>示例：</p>
+<pre><code class="language-c#">class Program
+{
+    static void Main(string[] args)
+    {
+        Console.Write(&quot;打印测试...&quot;);
+        Console.Write(&quot;Write输出测试&quot;);
+        Console.WriteLine();
+        Console.WriteLine(&quot;这行是调用WriteLine&quot;);
+        Console.WriteLine(&quot;这行也是调用WriteLine输出的&quot;);
+    }
+}
+</code></pre>
+<p>运行结果：</p>
+<p><img src="https://img2020.cnblogs.com/other/1266612/202004/1266612-20200425005214491-264258178.png" alt="image-20200424165458931"></p>
+<p>与<code>Write</code>不同的地方是，<code>WriteLine</code>允许无参调用，表示输出一个空行。</p>
+</li>
+<li>
+<p>获取用户输入：</p>
+<pre><code class="language-c#">public static int Read ();
+public static string ReadLine ();
+</code></pre>
+<p>Console在读这方面就没有写那么花里胡哨了，只有两个是我们常用的读。第一个是，从输入流中读取一个字符，如果没有输入则返回-1；第二个是读取输入的一行字符。</p>
+<p>关于输入流以及流没有内容时返回-1这个问题就不在这里做介绍了。有追更的小伙伴可以等待《IO篇》的更新。</p>
+<p>第二个，就很有意思了，获取输入的一行内容，而不是一个字符，也就是说当用户决定这行内容输入完成点击换行后程序就能读取到输入的结果。</p>
+<p>来，看一下示例：</p>
+<pre><code class="language-c#">class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine(&quot;Read 测试&quot;);
+        Console.WriteLine(&quot;请输入一个任意内容并按回车：&quot;);
+        var key = Console.Read();
+        Console.WriteLine($&quot;输入的是：{key}&quot;);
+        Console.WriteLine();
+        Console.ReadLine();
+        key = Console.Read();
+        Console.WriteLine($&quot;输入的是：{key}&quot;);
+        Console.ReadLine();
+        Console.WriteLine(&quot;ReadLine 测试&quot;);
+        Console.WriteLine(&quot;请输入任意内容，并换行：&quot;);
+        var line = Console.ReadLine();
+        Console.WriteLine($&quot;输入的是：{line}&quot;);
+        Console.WriteLine(&quot;示例结束&quot;);
+
+    }
+}
+</code></pre>
+<p>结果如下：</p>
+<p><img src="https://img2020.cnblogs.com/other/1266612/202004/1266612-20200425005214660-1746326.png" alt="image-20200424210005278"></p>
+<p>示例中，我在每次调用Read前，都调用了一个ReadLine，这是因为在控制台中一次输入字符，然后按下回车并换行，这是有两个输入，所以在第二次Read时会将上次未读取的继续读取出来，所以我利用ReadLine的特性将未读取的内容一次性读取出来，保证下次调用都必须从控制台读取用户输入。</p>
+</li>
+</ol>
+<p>当然，Console类并不是只有这些内容，只是这些是我们最常接触的方法。</p>
+<h2 id="12-math">1.2 Math</h2>
+<p>C#中的数学工具类，为三角函数、对数函数和其他通用数学函数提供常数和静态方法。这个类也是一个静态类，当然这不会影响我们对它的好奇。</p>
+<p>来，让我们一起看看里面有些什么方法吧。</p>
+<pre><code class="language-c#">public static T Abs (&lt;T&gt; value);//T 代表 decimal, int,double,flout,long,sbyte,short，返回绝对值
+public static double Acos (double d);//返回余弦值为指定数字的角度。
+public static double Acosh (double d);//返回双曲余弦值为指定数字的角度。
+public static double Asin (double d);// 返回正弦值为指定数字的角度。
+public static double Asinh (double d);// 返回双曲正弦值为指定数字的角度。
+public static double Atan (double d);// 返回正切值为指定数字的角度。
+public static double Atan2 (double y, double x);// 返回正切值为两个指定数字的商的角度。
+public static long BigMul (int a, int b);// 生成两个 32 位数字的完整乘积。
+public static double BitDecrement (double x);// 返回小于 x 的下一个最小值。
+public static double BitIncrement (double x);// 返回大于 x 的下一个最大值。
+public static double Cbrt (double d);// 返回指定数字的立方根。
+public static T Ceiling (&lt;T&gt; d); //T 代表 decimal、double，返回大于或等于指定数字的最小整数值。
+public static double Cos (double d);// 返回指定角度的余弦值。
+public static int DivRem (int a, int b, out int result);// 计算两个数字的商，并在输出参数中返回余数。result为余数
+public static double Exp (double d);//返回 e 的指定次幂，e 指自然对数的底
+public static T Floor (&lt;T&gt; d); //T 代表 decimal、double，返回小于或等于指定双精度浮点数的最大整数值。
+public static int ILogB (double x);// 返回指定数字以 2 为底的整数对数。
+public static double Log (double d);//返回指定数字的自然对数（底为 e）。
+public static double Log (double a, double newBase);// 返回指定数字在使用指定底时的对数。newBase为底
+public static double Log10 (double d);//返回指定数字以 10 为底的对数
+public static double Log2 (double x);//返回指定数字以 2 为底的对数。
+public static T Max(&lt;T&gt; t1,&lt;T&gt; t2);// T 代表 decimal, int,double,flout,long,sbyte,short，返回两者中较大的那个
+public static T Min(&lt;T&gt; t1,&lt;T&gt; t2);// T 代表 decimal, int,double,flout,long,sbyte,short，返回两者中较小的那个
+public static double Pow (double x, double y);// 返回指定数字的指定次幂。
+public static double Round (double a);// 将双精度浮点值舍入到最接近的整数值，并将中点值舍入到最接近的偶数。
+public static double ScaleB (double x, int n);//返回有效计算的 x * 2^n。
+public static int Sign (&lt;T&gt; value); // T 代表 decimal,double,flout,int,long,sbyte,short，返回指示数字符号的整数。
+public static double Sin (double a);// 返回指定角度的正弦值。
+public static double Sinh (double value);//返回指定角度的双曲正弦值。
+public static double Sqrt (double d);//返回指定数字的平方根。
+public static double Tan (double a);//返回指定角度的正切值。
+public static double Tanh (double value);//返回指定角度的双曲正切值。
+public static T Truncate (&lt;T&gt; d);//T 代表 decimal、double，计算一个数字的整数部分。
+</code></pre>
+<p>嗯，密密麻麻的一大堆，方法虽多，但值得注意的方法只有以下几个：</p>
+<pre><code class="language-c#">public static T Ceiling (&lt;T&gt; d); //T 代表 decimal、double，返回大于或等于指定数字的最小整数值。
+public static T Floor (&lt;T&gt; d); //T 代表 decimal、double，返回小于或等于指定双精度浮点数的最大整数值。
+public static T Truncate (&lt;T&gt; d);//T 代表 decimal、double，计算一个数字的整数部分。
+</code></pre>
+<p>虽然这三个方法计算的结果都是整数，但返回类型并不是整数，所以在使用的时候需要我们进行一次类型转换。Math类还有两个值得注意的字段：</p>
+<pre><code class="language-c#">public const double E = 2.7182818284590451;// 表示自然对数的底，它由常数 e 指定。
+public const double PI = 3.1415926535897931;// 表示圆的周长与其直径的比值，由常数 π 指定。
+</code></pre>
+<p>这两个也是Math里唯一的两个字段，这是数学中著名的两个无理数，这里只截取了一部分有效值。</p>
+<h2 id="13-random">1.3 Random</h2>
+<p>C# 中Random表示伪随机数生成器，这是一种能够产生满足某些随机性统计要求的数字序列的算法。这里大概讲解一下Random的使用，具体的原理等我研究一下哈。</p>
+<p>Random是一个类，所以与之前的两个类不同地方就是使用Random生成随机数需要事先构造一个Random对象。Random常用的方法有以下几组：</p>
+<pre><code class="language-c#">public virtual int Next ();// 返回一个整型的随机数
+public virtual int Next (int maxValue);//返回一个小于所指定最大值的非负随机整数
+public virtual int Next (int minValue, int maxValue);//返回在指定范围内的任意整数。
+public virtual double NextDouble ();//返回一个大于或等于 0.0 且小于 1.0 的随机浮点数。
+</code></pre>
+<p>我们先演示一下Random的基本应用：</p>
+<pre><code class="language-c#">class Program
+{
+    static void Main(string[] args)
+    {
+        Random rand = new Random();
+        for(int i = 0;i&lt; 10; i++)
+        {
+            Console.WriteLine($&quot;第{i + 1}次生成：{rand.Next()}&quot;);
+        }
+        Console.ReadLine();
+    }
+}
+</code></pre>
+<p>打印结果：</p>
+<p><img src="https://img2020.cnblogs.com/other/1266612/202004/1266612-20200425005214799-1528569650.png" alt="image-20200424225811906"></p>
+<p>可以看出直接Next返回的结果数字都比较大，所以在使用的时候，一般会使用<code>Next (int minValue, int maxValue)</code> 限定返回值。</p>
+<p>回到开头，Random是一个类，每次初始化的时候系统会自动计算一个种子给它，如果快速重复构建Random对象，可能会生成一个重复序列，即每次调用的结果一致。（当然，官方说可以，实际我在net core 3.1的环境里没测出来）</p>
+<pre><code class="language-c#">class Program
+{
+    static void Main(string[] args)
+    {
+        for(int i = 0;i&lt; 5; i++)
+        {
+            Random rand = new Random();
+            for(int j = 0; j &lt; 10; j++)
+            {
+                Console.WriteLine($&quot;第{i}个Random 第{j}次生成：{rand.Next()}&quot;);
+            }
+        }
+        Console.ReadLine();
+    }
+}
+</code></pre>
+<p>这是测试代码，有兴趣的小伙伴可以自己试试。</p>
+<blockquote>
+<p>更多内容烦请关注<a href="https://blogs.attachie.club">我的博客</a></p>
+</blockquote>
+<p><img src="https://img2020.cnblogs.com/other/1266612/202004/1266612-20200425005215049-2105285534.png" alt="file"></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 00:52</span>&nbsp;
+<a href="https://www.cnblogs.com/c7jie/">月影西下</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12771247" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12771247);return false;">收藏</a></div>
+	</div>
+	
+	
+</div><!--end: topics 文章、评论容器-->
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 572560, cb_blogApp = 'c7jie', cb_blogUserGuid = 'f7f130fe-8c19-4f36-4637-08d4ef52ecb6';
+    var cb_entryId = 12771247, cb_entryCreatedDate = '2020-04-25 00:52', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div></div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 月影西下
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

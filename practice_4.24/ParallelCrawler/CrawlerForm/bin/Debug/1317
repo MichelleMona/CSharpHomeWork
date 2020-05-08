@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="本文在个人技术博客不同步发布，详情可 &amp;quot; 用力戳 &amp;quot; 亦可扫描屏幕右侧二维码关注个人公众号，公众号内有个人联系方式，等你来撩... &amp;amp;emsp;&amp;amp;emsp;前几天下" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>不懂数据库索引的底层原理？那是因为你心里没点b树 - 苏苏喂 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/sujing/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/sujing/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/sujing/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 108483;
+        var currentBlogApp = 'sujing';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/sujing/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/sujing/">17coding技术博客</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/sujing/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%8B%8F%E8%8B%8F%E5%96%82">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/sujing/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+12&nbsp; </span>
+<span id="stats_article_count">文章 - 
+1&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+359</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/sujing/p/11110292.html">不懂数据库索引的底层原理？那是因为你心里没点b树</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <blockquote>
+<p>本文在个人技术博客不同步发布，详情可<a href="http://www.17coding.info/article/25"><strong>用力戳</strong></a><br>
+亦可扫描屏幕右侧二维码关注个人公众号，公众号内有个人联系方式，等你来撩...</p>
+</blockquote>
+<p>  前几天下班回到家后正在处理一个白天没解决的bug，厕所突然传来对象的声音：<br>
+  对象：xx，你有《时间简史》吗？<br>
+  我：我去！妹子，你这啥癖好啊，我有时间也不会去捡屎啊！<br>
+  对象：...人家说的是霍金的科普著作《时间简史》，是一本书啦！<br>
+  我：哦，那我没有...<br>
+  对象：人家想看诶，你明天帮我去图书馆借一本吧...<br>
+  我：我明天还要改...<br>
+  对象：你是不是不爱我了，分手！<br>
+  我：我一大早就去~</p>
+<p>  第二天一大早我就到了图书馆，刚进门就看到一个索引牌，标识着不同楼层的功能，这样我很快能定位到我要找的目标所在的楼层了。</p>
+<p>  <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616205404.png" alt=""></p>
+<p>  我到楼上后又看到每排的书架上又对书的分类进行了细分，这样我能更快的定位到我要找的书具体在哪个书架！</p>
+<p>  并且每个楼层都有一台查询终端，输入书名就能查到对应的唯一标识“索书号”，类似于P159-49/164这样的一个编码，书架上的书都是按照这个编码进行排序的！有了这个编码再去对应的书架上，很快就能找到对应的书在书架的具体位置了。</p>
+<p>  <img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616205832.png" alt=""></p>
+<p>  不到十分钟，我就从图书馆借好书出来了。</p>
+<p>  这么大的图书馆，我为什么能在这么短的时间内找到我要的书？如果这些书是杂乱无章的堆放，或者没有任何标识的放在书架，我还能这么快的找到吗？</p>
+<p>  这不禁让我想到了我们开发中用到的数据库，图书馆的书就类似我们数据表中的数据，楼层索引牌、书架分类标识、索书号就类似我们查找数据的索引。</p>
+<p>  那我们常用的数据库的索引底层的一个数据结构是什么样的呢？想到这里我又回到图书馆借了一本《数据库从入门到放弃》！</p>
+<p>  要了解数据库索引的底层原理，我们就得先了解一种叫树的数据结构，而树中很经典的一种数据结构就是二叉树！所以下面我们就从二叉树到平衡二叉树，再到B-树，最后到B+树来一步一步了解数据库索引底层的原理！</p>
+<h2 id="二叉树（binary-search-trees）">二叉树（Binary Search Trees）</h2>
+<p>  二叉树是每个结点最多有两个子树的树结构。通常子树被称作“左子树”（left subtree）和“右子树”（right subtree）。二叉树常被用于实现二叉查找树和二叉堆。二叉树有如下特性：</p>
+<blockquote>
+<p>1、每个结点都包含一个元素以及n个子树，这里0≤n≤2。<br>
+2、左子树和右子树是有顺序的，次序不能任意颠倒。左子树的值要小于父结点，右子树的值要大于父结点。</p>
+</blockquote>
+<p>  光看概念有点枯燥，假设我们现在有这样一组数[35 27 48 12 29 38 55]，顺序的插入到一个数的结构中，步骤如下<br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616134805.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616134818.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616134835.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616134852.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616134900.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616134916.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616134934.png" alt=""></p>
+<p>  好了，这就是一棵二叉树啦！我们能看到，经通过一系列的插入操作之后，原本无序的一组数已经变成一个有序的结构了，并且这个树满足了上面提到的两个二叉树的特性！</p>
+<p>  但是如果同样是上面那一组数，我们自己升序排列后再插入，也就是说按照[12 27 29 35 38 48 55]的顺序插入，会怎么样呢？</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616144826.png" alt=""></p>
+<p>  由于是升序插入，新插入的数据总是比已存在的结点数据都要大，所以每次都会往结点的右边插入，最终导致这棵树严重偏科！！！上图就是最坏的情况，也就是一棵树退化为一个线性链表了，这样查找效率自然就低了，完全没有发挥树的优势了呢！<br>
+为了较大发挥二叉树的查找效率，让二叉树不再偏科，保持各科平衡，所以有了平衡二叉树！</p>
+<h2 id="平衡二叉树-avl-trees">平衡二叉树 (AVL Trees)</h2>
+<p>  平衡二叉树是一种特殊的二叉树，所以他也满足前面说到的二叉树的两个特性，同时还有一个特性：</p>
+<blockquote>
+<p>它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。</p>
+</blockquote>
+<p>  大家也看到了前面[35 27 48 12 29 38 55]插入完成后的图，其实就已经是一颗平衡二叉树啦。</p>
+<p>  那如果按照[12 27 29 35 38 48 55]的顺序插入一颗平衡二叉树，会怎么样呢？我们看看插入以及平衡的过程：</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616165744.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616165806.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616165835.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616165909.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616165924.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616165936.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190616165954.png" alt=""></p>
+<p>  这棵树始终满足平衡二叉树的几个特性而保持平衡！这样我们的树也不会退化为线性链表了！我们需要查找一个数的时候就能沿着树根一直往下找，这样的查找效率和二分法查找是一样的呢！</p>
+<p>  一颗平衡二叉树能容纳多少的结点呢？这跟树的高度是有关系的，假设树的高度为h，那每一层最多容纳的结点数量为2<sup>(n-1)，整棵树最多容纳节点数为2</sup>0+2<sup>1+2</sup>2+...+2^(h-1)。这样计算，100w数据树的高度大概在20左右，那也就是说从有着100w条数据的平衡二叉树中找一个数据，最坏的情况下需要20次查找。如果是内存操作，效率也是很高的！但是我们数据库中的数据基本都是放在磁盘中的，每读取一个二叉树的结点就是一次磁盘IO，这样我们找一条数据如果要经过20次磁盘的IO？那性能就成了一个很大的问题了！那我们是不是可以把这棵树压缩一下，让每一层能够容纳更多的节点呢？虽然我矮，但是我胖啊...</p>
+<h2 id="b-tree">B-Tree</h2>
+<p>  这颗矮胖的树就是B-Tree，注意中间是杠精的杠而不是减，所以也不要读成B减Tree了~</p>
+<p>  那B-Tree有哪些特性呢？一棵m阶的B-Tree有如下特性：</p>
+<blockquote>
+<p>1、每个结点最多m个子结点。<br>
+2、除了根结点和叶子结点外，每个结点最少有m/2（向上取整）个子结点。<br>
+3、如果根结点不是叶子结点，那根结点至少包含两个子结点。<br>
+4、所有的叶子结点都位于同一层。<br>
+5、每个结点都包含k个元素（关键字），这里m/2≤k&lt;m，这里m/2向下取整。<br>
+6、每个节点中的元素（关键字）从小到大排列。<br>
+7、每个元素（关键字）字左结点的值，都小于或等于该元素（关键字）。右结点的值都大于或等于该元素（关键字）。</p>
+</blockquote>
+<p>  是不是感觉跟丈母娘张口问你要彩礼一样，列一堆的条件，而且每一条都让你很懵逼！下面我们以一个[0,1,2,3,4,5,6,7]的数组插入一颗3阶的B-Tree为例，将所有的条件都串起来，你就明白了！</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619204220.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619204227.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619204243.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619204302.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619204311.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619204327.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619204336.png" alt=""></p>
+<p>  那么，你是否对B-Tree的几点特性都清晰了呢？在二叉树中，每个结点只有一个元素。但是在B-Tree中，每个结点都可能包含多个元素，并且非叶子结点在元素的左右都有指向子结点的指针。</p>
+<p>  如果需要查找一个元素，那流程是怎么样的呢？我们看下图，如果我们要在下面的B-Tree中找到关键字24，那流程如下<br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619210818.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619210824.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619210831.png" alt=""><br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190619210838.png" alt=""></p>
+<p>  从这个流程我们能看出，B-Tree的查询效率好像也并不比平衡二叉树高。但是查询所经过的结点数量要少很多，也就意味着要少很多次的磁盘IO，这对<br>
+性能的提升是很大的。</p>
+<p>  前面对B-Tree操作的图我们能看出来，元素就是类似1、2、3这样的数值，但是数据库的数据都是一条条的数据，如果某个数据库以B-Tree的数据结构存储数据，那数据怎么存放的呢？我们看下一张图</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190620221029.png" alt=""></p>
+<p>  普通的B-Tree的结点中，元素就是一个个的数字。但是上图中，我们把元素部分拆分成了key-data的形式，key就是数据的主键，data就是具体的数据。这样我们在找一条数的时候，就沿着根结点往下找就ok了，效率是比较高的。</p>
+<h2 id="btree">B+Tree</h2>
+<p>  B+Tree是在B-Tree基础上的一种优化，使其更适合实现外存储索引结构。B+Tree与B-Tree的结构很像，但是也有几个自己的特性：</p>
+<blockquote>
+<p>1、所有的非叶子节点只存储关键字信息。<br>
+2、所有卫星数据（具体数据）都存在叶子结点中。<br>
+3、所有的叶子结点中包含了全部元素的信息。<br>
+4、所有叶子节点之间都有一个链指针。</p>
+</blockquote>
+<p>  如果上面B-Tree的图变成B+Tree，那应该如下：<br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190621220003.png" alt=""></p>
+<p>  大家仔细对比于B-Tree的图能发现什么不同？<br>
+  1、非叶子结点上已经只有key信息了，满足上面第1点特性！<br>
+  2、所有叶子结点下面都有一个data区域，满足上面第2点特性！<br>
+  3、非叶子结点的数据在叶子结点上都能找到，如根结点的元素4、8在最底层的叶子结点上也能找到，满足上面第3点特性！<br>
+  4、注意图中叶子结点之间的箭头，满足满足上面第4点特性！</p>
+<h2 id="b-tree-or-btree？">B-Tree or B+Tree？</h2>
+<p>  在讲这两种数据结构在数据库中的选择之前，我们还需要了解的一个知识点是操作系统从磁盘读取数据到内存是以磁盘块（block）为基本单位的，<strong>位于同一个磁盘块中的数据会被一次性读取出来，而不是需要什么取什么</strong>。即使只需要一个字节，磁盘也会从这个位置开始，顺序向后读取一定长度的数据放入内存。这样做的理论依据是计算机科学中著名的<strong>局部性原理</strong>： 当一个数据被用到时，其附近的数据也通常会马上被使用。<br>
+  预读的长度一般为页（page）的整倍数。页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页得大小通常为4k）。</p>
+<p>  B-Tree和B+Tree该如何选择呢？都有哪些优劣呢？<br>
+  1、B-Tree因为非叶子结点也保存具体数据，所以在查找某个关键字的时候找到即可返回。而B+Tree所有的数据都在叶子结点，每次查找都得到叶子结点。所以在同样高度的B-Tree和B+Tree中，B-Tree查找某个关键字的效率更高。<br>
+  2、由于B+Tree所有的数据都在叶子结点，并且结点之间有指针连接，在找大于某个关键字或者小于某个关键字的数据的时候，B+Tree只需要找到该关键字然后沿着链表遍历就可以了，而B-Tree还需要遍历该关键字结点的根结点去搜索。<br>
+  3、由于B-Tree的每个结点（这里的结点可以理解为一个数据页）都存储主键+实际数据，而B+Tree非叶子结点只存储关键字信息，而每个页的大小有限是有限的，所以同一页能存储的B-Tree的数据会比B+Tree存储的更少。这样同样总量的数据，B-Tree的深度会更大，增大查询时的磁盘I/O次数，进而影响查询效率。<br>
+  鉴于以上的比较，所以在常用的关系型数据库中，都是选择B+Tree的数据结构来存储数据！下面我们以mysql的innodb存储引擎为例讲解，其他类似sqlserver、oracle的原理类似！</p>
+<h3 id="innodb引擎数据存储">innodb引擎数据存储</h3>
+<p>  在InnoDB存储引擎中，也有页的概念，默认每个页的大小为16K，也就是每次读取数据时都是读取4*4k的大小！假设我们现在有一个用户表，我们往里面写数据</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190623130137.png" alt=""></p>
+<p>  这里需要注意的一点是，在某个页内插入新行时，为了不减少数据的移动，通常是插入到当前行的后面或者是已删除行留下来的空间，所以在<strong>某一个页内</strong>的数据并<strong>不是完全有序</strong>的（后面页结构部分有细讲），但是为了为了数据访问顺序性，在每个记录中都有一个指向下一条记录的指针，以此构成了一条单向有序链表，不过在这里为了方便演示我是按顺序排列的！</p>
+<p>  由于数据还比较少，一个页就能容下，所以只有一个根结点，主键和数据也都是保存在根结点（左边的数字代表主键，右边名字、性别代表具体的数据）。假设我们写入10条数据之后，Page1满了，再写入新的数据会怎么存放呢？我们继续看下图</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190623130144.png" alt=""></p>
+<p>  有个叫“秦寿生”的朋友来了，但是Page1已经放不下数据了，这时候就需要进行页分裂，产生一个新的Page。在innodb中的流程是怎么样的呢？</p>
+<blockquote>
+<p>1、产生新的Page2，然后将Page1的内容复制到Page2。<br>
+2、产生新的Page3，“秦寿生”的数据放入Page3。<br>
+3、原来的Page1依然作为根结点，但是变成了一个不存放数据只存放索引的页，并且有两个子结点Page2、Page3。</p>
+</blockquote>
+<p>  这里有两个问题需要注意的是<br>
+  1、为什么要复制Page1为Page2而不是创建一个新的页作为根结点，这样就少了一步复制的开销了？<br>
+  如果是重新创建根结点，那根结点存储的物理地址可能经常会变，不利于查找。并且在<strong>innodb中根结点是会预读到内存中</strong>的，所以结点的物理地址固定会比较好！</p>
+<p>  2、原来Page1有10条数据，在插入第11条数据的时候进行裂变，根据前面对B-Tree、B+Tree特性的了解，那这至少是一颗11阶的树，裂变之后每个结点的元素至少为11/2=5个，那是不是应该页裂变之后主键1-5的数据还是在原来的页，主键6-11的数据会放到新的页，根结点存放主键6？<br>
+  如果是这样的话新的页空间利用率只有50%，并且会导致更为频繁的页分裂。所以innodb对这一点做了优化，新的数据放入新创建的页，不移动原有页面的任何记录。</p>
+<p>  随着数据的不断写入，这棵树也逐渐枝繁叶茂，如下图<br>
+<img src="http://cdn.17coding.info/WeChat%20Screenshot_20190623131149.png" alt=""></p>
+<p>  每次新增数据，都是将一个页写满，然后新创建一个页继续写，这里其实是有个隐含条件的，那就是<strong>主键自增</strong>！主键自增写入时新插入的数据不会影响到原有页，插入效率高！且页的利用率高！但是如果主键是无序的或者随机的，那每次的插入可能会导致原有页频繁的分裂，影响插入效率！降低页的利用率！<strong>这也是为什么在innodb中建议设置主键自增的原因！</strong></p>
+<p>  这棵树的非叶子结点上存的都是主键，那如果一个表没有主键会怎么样？在innodb中，如果一个表没有主键，那默认会找建了唯一索引的列，如果也没有，则会生成一个隐形的字段作为主键！</p>
+<p>  有数据插入那就有删除，如果这个用户表频繁的插入和删除，那会导致数据页产生碎片，页的空间利用率低，还会导致树变的“虚高”，降低查询效率！这可以通过<strong>索引重建</strong>来消除碎片提高查询效率！</p>
+<h3 id="innodb引擎数据查找">innodb引擎数据查找</h3>
+<p>  数据插入了怎么查找呢？</p>
+<blockquote>
+<p>1、找到数据所在的页。这个查找过程就跟前面说到的B+Tree的搜索过程是一样的，从根结点开始查找一直到叶子结点。<br>
+2、在页内找具体的数据。读取第1步找到的叶子结点数据到内存中，然后通过<strong>分块查找</strong>的方法找到具体的数据。</p>
+</blockquote>
+<p>  这跟我们在新华字典中找某个汉字是一样的，先通过字典的索引定位到该汉字拼音所在的页，然后到指定的页找到具体的汉字。innodb中定位到页后用了哪种策略快速查找某个主键呢？这我们就需要从页结构开始了解。</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190623225950.png" alt=""></p>
+<p>  左边蓝色区域称为Page Directory，这块区域由多个slot组成，是一个稀疏索引结构，即一个槽中可能属于多个记录，最少属于4条记录，最多属于8条记录。槽内的数据是有序存放的，所以当我们寻找一条数据的时候可以先在槽中通过二分法查找到一个大致的位置。</p>
+<p>  右边区域为数据区域，每一个数据页中都包含多条行数据。注意看图中最上面和最下面的两条特殊的行记录Infimum和Supremum，这是两个虚拟的行记录。在没有其他用户数据的时候Infimum的下一条记录的指针指向Supremum，当有用户数据的时候，Infimum的下一条记录的指针指向当前页中最小的用户记录，当前页中最大的用户记录的下一条记录的指针指向Supremum，至此整个页内的所有行记录形成一个单向链表。</p>
+<p>  行记录被Page Directory逻辑的分成了多个块，块与块之间是有序的，也就是说“4”这个槽指向的数据块内最大的行记录的主键都要比“8”这个槽指向的数据块内最小的行记录的主键要小。但是块内部的行记录不一定有序。</p>
+<p>  每个行记录的都有一个n_owned的区域（图中粉红色区域），n_owned标识这个这个块有多少条数据，伪记录Infimum的n_owned值总是1，记录Supremum的n_owned的取值范围为[1,8]，其他用户记录n_owned的取值范围[4,8]，并且只有每个块中最大的那条记录的n_owned才会有值，其他的用户记录的n_owned为0。</p>
+<p>  所以当我们要找主键为6的记录时，先通过<strong>二分法</strong>在<strong>稀疏索引</strong>中找到对应的槽，也就是Page Directory中“8”这个槽，“8”这个槽指向的是该数据块中最大的记录，而数据是单向链表结构所以无法逆向查找，所以需要找到上一个槽即“4”这个槽，然后通过“4”这个槽中最大的用户记录的指针沿着链表<strong>顺序查找</strong>到目标记录。</p>
+<h3 id="聚集索引非聚集索引">聚集索引&amp;非聚集索引</h3>
+<p>  前面关于数据存储的都是演示的聚集索引的实现，如果上面的用户表需要以“用户名字”建立一个非聚集索引，是怎么实现的呢？我们看下图：</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190623152229.png" alt=""></p>
+<p>  非聚集索引的存储结构与前面是一样的，不同的是在叶子结点的数据部分存的不再是具体的数据，而数据的聚集索引的key。所以通过非聚集索引查找的过程是先找到该索引key对应的聚集索引的key，然后再拿聚集索引的key到主键索引树上查找对应的数据，这个过程称为<strong>回表</strong>！</p>
+<p>  图中的这些名字均来源于网络，希望没有误伤正在看这篇文章的你~<sup>_</sup></p>
+<h3 id="innodb与myisam两种存储引擎对比">innodb与MyISAM两种存储引擎对比</h3>
+<p>  上面包括存储和搜索都是拿的innodb引擎为例，那MyISAM与innodb在存储上有啥不同呢？憋缩话，看图：</p>
+<p><img src="http://cdn.17coding.info/WeChat%20Screenshot_20190623161414.png" alt=""></p>
+<p>  上图为MyISAM主键索引的存储结构，我们能看到的不同是</p>
+<blockquote>
+<p>1、主键索引树的叶子结点的数据区域没有存放实际的数据，存放的是数据记录的地址。<br>
+2、数据的存储不是按主键顺序存放的，按写入的顺序存放。</p>
+</blockquote>
+<p>  也就是说innodb引擎数据在物理上是按主键顺序存放，而MyISAM引擎数据在物理上按插入的顺序存放。并且MyISAM的叶子结点不存放数据，所以非聚集索引的存储结构与聚集索引类似，在使用非聚集索引查找数据的时候通过非聚集索引树就能直接找到数据的地址了，不需要<strong>回表</strong>，这比innodb的搜索效率会更高呢！</p>
+<h3 id="索引优化建议？">索引优化建议？</h3>
+<p>  大家经常会在很多的文章或书中能看到一些索引的使用建议，比如说</p>
+<blockquote>
+<p>1、like的模糊查询以%开头，会导致索引失效。<br>
+2、一个表建的索引尽量不要超过5个。<br>
+3、尽量使用覆盖索引。<br>
+4、尽量不要在重复数据多的列上建索引。<br>
+5、。。。。。。。。。。。<br>
+6、。。。。。。。。。。。</p>
+</blockquote>
+<p>  很多这里就不一一列举了！那看完这篇文章，我们能否带着疑问去分析一下为什么要有这些建议？为什么like的模糊查询以%开头，会导致索引失效？为什么一个表建的索引尽量不要超过5个？为什么？ 为什么？？为什么？？？相信看到这里的你再加上自己的一些思考应该有答案了吧？</p>
+<p>  最后，推荐极客时间上的一门不错的mysql课程，学完对了解mysql底层原理有很大的帮助！<br>
+    <img style="width:324px;height:476px" src="http://cdn.17coding.info/20190818011951.jpg"  alt="" align=center /></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2019-07-08 09:45</span>&nbsp;
+<a href="https://www.cnblogs.com/sujing/">苏苏喂</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11110292" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(11110292);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 108483, cb_blogApp = 'sujing', cb_blogUserGuid = '840c90e6-8f06-e111-b7b9-842b2b196315';
+    var cb_entryId = 11110292, cb_entryCreatedDate = '2019-07-08 09:45', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 苏苏喂
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

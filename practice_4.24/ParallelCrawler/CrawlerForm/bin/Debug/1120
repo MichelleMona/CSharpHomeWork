@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="从Windows/Linux系统时间冲突问题出发，讲述操作系统-BIOS以及时间的操作" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>BIOS时间与系统时间(windows/linux时间同步问题) - i0 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/moonlightink/bundle-moonlightink.min.css?v=E57BNKKOg-RYfGuziOOtAxNShmjAN5A815wOOAsFjEs" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/sxdc/custom.css?v=gp5OCJDxss1rloDkXneumP6m2bc=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/moonlightink/bundle-moonlightink-mobile.min.css?v=DtT6aFEL2E0nUaFINFlRXOfBp0MkOV1AK7GFtAkKKbo" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/sxdc/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/sxdc/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/sxdc/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 520883;
+        var currentBlogApp = 'sxdc';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'MoonlightInk';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <style type="text/css">.box0 { position: fixed; width: 100px; height: 100px; background-image: initial; background-size: initial; background-attachment: initial; background-origin: initial; background-clip: initial; background-color: rgba(0, 102, 255, 0); right: 2px; bottom: 2px; z-index: 101 }</style>
+<div class="box0"></div>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/sxdc/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/sxdc/">i0</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/sxdc/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/i0">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/sxdc/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+6&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/sxdc/p/12773781.html">BIOS时间与系统时间(windows/linux时间同步问题)</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        从Windows/Linux系统时间冲突问题出发，讲述操作系统-BIOS以及时间的操作
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <h3>写作动机</h3>
+<p>　　双系统是不少人喜欢的方式，但安装双系统之后一般会出现两个系统时间不一样的问题，刚开始用双系统的时候也没怎么在意，就是装上后在网上找找相关解决方法，复制粘贴代码完事儿。但是次数多了就有点烦了，每次都这样搞问题倒是解决了但是不知道原理。</p>
+<p>　　最近几次发现解决方法发生了改变，和之前的方法不一样了，于是打算一探究竟。如果你想了解原理请仔细阅读，句句都是重点。</p>
+<p>　　<span style="color: #0000ff;">注意：以下并没有解决问题的实际代码，因为本文章是讲原理的！</span></p>
+<h3>术语解释</h3>
+<p>　　设备上的时间：一是系统时间(Local time)，一是硬件时间(RTC)。系统时间指操作系统的时间，可以认为就是我们看到的时间；硬件时间指 BIOS 中的时间，这里不解释 BIOS 是啥了(你可以认为是和操作系统同时且独立运行的另一个系统)。也就是说这俩可以有自己的不同的时间。</p>
+<p>　　真实的时间：世界统一时间(UTC)，本地时间(中国=CST/UTC+8)。世界统一时间指地球上所有时间都以一个地方的时间为基准，本地时间指在不同的地区根据世界时间作调整。具体怎么个算法不懂的自己去搜。</p>
+<h3>问题产生原因</h3>
+<p>　　真实世界的时间不会出现问题，当我们知道中国处于东八区时世界时间就和本地时间绑定了，有 [本地时间=世界时间+8] 。</p>
+<p>　　系统时间和硬件时间就可能出现问题，系统时间虽然可以从网络同步，但在未联网时也需要显示时间啊，所以操作系统启动时需要读取硬件时间(BIOS中的时间一直在自同步)。</p>
+<p>　　问题就在于这两个系统对硬件时间的看法不一样 : ) 。Windows 认为硬件时间是本地时间，也就是取出来直接显示就对了；而 Linux 则认为硬件时间是世界时间，取出来再根据时区进行 "+8" 操作之后再显示才对。</p>
+<p>　　根据以上描述可以推断，双系统设备中的 Linux 系统时间将比 Windows 系统中的时间快八小时。</p>
+<p>　　另外如果你的设备上并不是这种情况，请根据以上原理自行查找原因，并可参考如下所述的解决方案自行操作。</p>
+<h3>两大主流解法</h3>
+<p>　　一为修改 Linux 系统中的标准</p>
+<p>　　　　较早版本中通过修改配置文件，新版本中通过 "timedatectl" 进行控制，最终结果其实也是形成了一个配置文件，以便在以后系统取时间时使用正确的算法。</p>
+<p>　　　　其它文档说这个版本界限在Ubuntu中是 16.04 ，请自测。</p>
+<p>　　一为修改 Windows 系统中的标准</p>
+<p>　　　　通过修改一个注册表参数来控制其系统时间，原理应该也是和 Linux 系统中一样的吧。</p>
+<p>　　这两种修改方法都可以使两个系统显示的时间是本地时间，其原理是统一这两个系统对于硬件时间的认知标准。</p>
+<p>　　我不建议修改 Windows 的配置文件，不是我认为 Windows 的标准是对的，而是觉得 Linux 更适合折腾。</p>
+<h3>偏门解法</h3>
+<p>　　在查这个问题的时候发现了一些有意思的解法，其中有一个是修改系统中的时区。</p>
+<p>　　比如 Linux 系统中使用了 [世界时间+8] 来计算显示错误，那么是因为其认为这里是 "UTC+8" 所以应该显示 [世界时间+8] 之后的时间；解决方案是设置 Linux 中时区为 "+0" 的时区，那么显示结果为 [世界时间+0]。恕我直言，这解法真是......太可爱了 0.0</p>
+<p>　　按照上述解法的思维，我也可以先在 Linux 系统同步时间至正确，然后再将 Windows 系统的时区设置为 "+16" 的时区，也可以使两个系统都显示正确，可能因为实际没有 "+16" 的时区，不然还真有这种解法呢。</p>
+<h3>一些思考</h3>
+<p>　　操作系统启动后都需要去读取硬件时间，但硬件时间到底应该是世界时间还是本地时间呢？这个要真要有个能说了算的那一定是 BIOS 的创造者了，不过估计当时可能也没考虑到这个问题，毕竟时间这个东西也不是 BIOS 的主要功能，至于现在不同操作系统能否统一标准也不是我能说了算的......</p>
+<p>　　另外其实任何系统都完全有能力解决这个问题，但不知道为啥都视而不见</p>
+<p>　　这里斗胆建议一下 Linux 系统下可用的解决方案：</p>
+<p>　　　　一可在系统安装(假设Linux后安装)时，时区选择后让用户确认真实时间是 [硬件时间] 还是 [硬件时间+时区] ，再根据选择修改配置文件</p>
+<p>　　　　二可在系统已经完成安装的情况下，当用户多次手动校准时间(手动设置或网络校准)时，计算校准前后时间差是否和时区值基本相等，以此判断硬件时间是否是本地时间</p>
+<h3>最后</h3>
+<p>　　知识还是那么些知识，其它技术文档里基本都能找到，我只是用自己的思维重新表述一下，一来做个笔记，再者希望可以帮助到别人</p>
+<p>　　原创文章，转发请注明</p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 19:30</span>&nbsp;
+<a href="https://www.cnblogs.com/sxdc/">i0</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773781" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12773781);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 520883, cb_blogApp = 'sxdc', cb_blogUserGuid = 'a5f19ca5-9ec2-41a0-5d46-08d660cf4414';
+    var cb_entryId = 12773781, cb_entryCreatedDate = '2020-04-25 19:30', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 i0
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

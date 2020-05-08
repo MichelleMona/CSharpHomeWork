@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="一、Redis 事务的实现原理 一个事务从开始到结束通常会经历以下三个阶段： 1、事务开始 客户端发送 MULTI 命令，服务器执行 MULTI 命令逻辑。 服务器会在客户端状态（redisClien" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>【高频 Redis 面试题】Redis 事务是否具备原子性？ - 不送花的程序猿 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismore/bundle-lessismore.min.css?v=zIJHCVIW8ogRcUFVWHfM_7E_wChBUrXPbKFNppkseEg" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/Howinfun/custom.css?v=wMr7Ohm4TeiVIL82eVOceRQTw3c=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismore/bundle-lessismore-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/Howinfun/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/Howinfun/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/Howinfun/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 531793;
+        var currentBlogApp = 'Howinfun';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMore';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <a href="https://github.com/Howinfun?tab=repositories"><img width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_left_white_ffffff.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/Howinfun/">Howinfun</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/Howinfun/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E4%B8%8D%E9%80%81%E8%8A%B1%E7%9A%84%E7%A8%8B%E5%BA%8F%E7%8C%BF">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/Howinfun/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+40&nbsp;</span>
+<span id="stats_article_count">文章 - 
+16&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+4</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/Howinfun/p/12774398.html">【高频 Redis 面试题】Redis 事务是否具备原子性？</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h3 id="一、redis-事务的实现原理">一、Redis 事务的实现原理</h3>
+<p>一个事务从开始到结束通常会经历以下三个阶段：</p>
+<h4 id="1、事务开始">1、事务开始</h4>
+<p>客户端发送 <strong>MULTI</strong> 命令，服务器执行 MULTI 命令逻辑。</p>
+<p>服务器会在客户端状态（redisClient）的 <strong><code>flags</code></strong> 属性打开 <strong>REDIS_MULTI</strong> 标识，将客户端从非事务状态切换到事务状态。</p>
+<pre><code class="language-c">void multiCommand(redisClient *c) {
+
+    // 不能在事务中嵌套事务
+    if (c-&gt;flags &amp; REDIS_MULTI) {
+        addReplyError(c,&quot;MULTI calls can not be nested&quot;);
+        return;
+    }
+
+    // 打开事务 FLAG
+    c-&gt;flags |= REDIS_MULTI;
+
+    addReply(c,shared.ok);
+}
+</code></pre>
+<h4 id="2、命令入队">2、命令入队</h4>
+<p>接着，用户可以在客户端输入当前事务要执行的多个命令。</p>
+<p>当客户端切换到事务状态时，服务器会根据客户端发来的命令来执行不同的操作。</p>
+<ul>
+<li>
+<p>如果客户端发送的命令为 EXEC、DISCARD、WATCH、MULTI 四个命令的其中一个，那么服务器立即执行这个命令。</p>
+</li>
+<li>
+<p>与此相反，如果客户端发送的命令是 EXEC、DISCARD、WATCH、MULTI 四个命令以外的其他命令，那么服务器并不立即执行这个命令。</p>
+<ul>
+<li>首先检查此命令的格式是否正确，如果不正确，服务器会在客户端状态（redisClient）的 <strong><code>flags</code></strong> 属性打开 <strong>REDIS_MULTI</strong> 标识，并且返回错误信息给客户端。</li>
+<li>如果正确将这个命令放入一个<strong>事务队列</strong>里面，然后向客户端返回 QUEUED 回复。</li>
+</ul>
+</li>
+</ul>
+<h5 id="我们先看看事务队列是如何实现的？">我们先看看事务队列是如何实现的？</h5>
+<p>每个 Redis 客户端都有自己的事务状态，对应的是客户端状态（redisClient）的 <strong><code>mstate</code></strong> 属性。</p>
+<pre><code class="language-c">typeof struct redisClient{
+    // 事务状态
+    multiState mstate;
+}redisClient;
+</code></pre>
+<p>事务状态（mstate）包含一个事务队列（FIFO 队列），以及一个已入队命令的计数器。</p>
+<pre><code class="language-c">/*
+ * 事务状态
+ */
+typedef struct multiState {
+
+    // 事务队列，FIFO 顺序
+    multiCmd *commands;     /* Array of MULTI commands */
+    // 已入队命令计数
+    int count;              /* Total number of MULTI commands */
+    int minreplicas;        /* MINREPLICAS for synchronous replication */
+    time_t minreplicas_timeout; /* MINREPLICAS timeout as unixtime. */
+} multiState;
+</code></pre>
+<p>事务队列是一个 <strong><code>multiCmd</code></strong> 类型数组，数组中每个 <strong><code>multiCmd</code></strong> 结构都保存了一个如入队命令的相关信息：指向命令实现函数的指针，命令的参数，以及参数的数量。</p>
+<pre><code class="language-c">/*
+ * 事务命令
+ */
+typedef struct multiCmd {
+
+    // 参数
+    robj **argv;
+    // 参数数量
+    int argc;
+    // 命令指针
+    struct redisCommand *cmd;
+} multiCmd;
+</code></pre>
+<h5 id="最后我们再看看入队列的源码：">最后我们再看看入队列的源码：</h5>
+<pre><code class="language-c">/* Add a new command into the MULTI commands queue 
+ *
+ * 将一个新命令添加到事务队列中
+ */
+void queueMultiCommand(redisClient *c) {
+    multiCmd *mc;
+    int j;
+
+    // 为新数组元素分配空间
+    c-&gt;mstate.commands = zrealloc(c-&gt;mstate.commands,
+            sizeof(multiCmd)*(c-&gt;mstate.count+1));
+
+    // 指向新元素
+    mc = c-&gt;mstate.commands+c-&gt;mstate.count;
+
+    // 设置事务的命令、命令参数数量，以及命令的参数
+    mc-&gt;cmd = c-&gt;cmd;
+    mc-&gt;argc = c-&gt;argc;
+    mc-&gt;argv = zmalloc(sizeof(robj*)*c-&gt;argc);
+    memcpy(mc-&gt;argv,c-&gt;argv,sizeof(robj*)*c-&gt;argc);
+    for (j = 0; j &lt; c-&gt;argc; j++)
+        incrRefCount(mc-&gt;argv[j]);
+
+    // 事务命令数量计数器增一
+    c-&gt;mstate.count++;
+}
+</code></pre>
+<p>当然了，还有我们上面提到的，如果命令入队出错时，会打开客户端状态的 <strong><code>REDIS_DIRTY_EXEC</code></strong> 标识。</p>
+<pre><code class="language-c">/* Flag the transacation as DIRTY_EXEC so that EXEC will fail.
+ *
+ * 将事务状态设为 DIRTY_EXEC ，让之后的 EXEC 命令失败。
+ *
+ * Should be called every time there is an error while queueing a command. 
+ *
+ * 每次在入队命令出错时调用
+ */
+void flagTransaction(redisClient *c) {
+    if (c-&gt;flags &amp; REDIS_MULTI)
+        c-&gt;flags |= REDIS_DIRTY_EXEC;
+}
+</code></pre>
+<h4 id="3、事务执行">3、事务执行</h4>
+<p>客户端发送 <strong>EXEC</strong> 命令，服务器执行 EXEC 命令逻辑。</p>
+<ul>
+<li>如果客户端状态的 flags 属性不包含 <code>REDIS_MULTI</code> 标识，或者包含 <code>REDIS_DIRTY_CAS</code> 或者 <code>REDIS_DIRTY_EXEC</code> 标识，那么就直接取消事务的执行。</li>
+<li>否则客户端处于事务状态（flags 有 <code>REDIS_MULTI</code> 标识），服务器会遍历客户端的事务队列，然后执行事务队列中的所有命令，最后将返回结果全部返回给客户端；</li>
+</ul>
+<pre><code class="language-c">void execCommand(redisClient *c) {
+    int j;
+    robj **orig_argv;
+    int orig_argc;
+    struct redisCommand *orig_cmd;
+    int must_propagate = 0; /* Need to propagate MULTI/EXEC to AOF / slaves? */
+
+    // 客户端没有执行事务
+    if (!(c-&gt;flags &amp; REDIS_MULTI)) {
+        addReplyError(c,&quot;EXEC without MULTI&quot;);
+        return;
+    }
+
+    /* Check if we need to abort the EXEC because:
+     *
+     * 检查是否需要阻止事务执行，因为：
+     *
+     * 1) Some WATCHed key was touched.
+     *    有被监视的键已经被修改了
+     *
+     * 2) There was a previous error while queueing commands.
+     *    命令在入队时发生错误
+     *    （注意这个行为是 2.6.4 以后才修改的，之前是静默处理入队出错命令）
+     *
+     * A failed EXEC in the first case returns a multi bulk nil object
+     * (technically it is not an error but a special behavior), while
+     * in the second an EXECABORT error is returned. 
+     *
+     * 第一种情况返回多个批量回复的空对象
+     * 而第二种情况则返回一个 EXECABORT 错误
+     */
+    if (c-&gt;flags &amp; (REDIS_DIRTY_CAS|REDIS_DIRTY_EXEC)) {
+
+        addReply(c, c-&gt;flags &amp; REDIS_DIRTY_EXEC ? shared.execaborterr :
+                                                  shared.nullmultibulk);
+
+        // 取消事务
+        discardTransaction(c);
+
+        goto handle_monitor;
+    }
+
+    /* Exec all the queued commands */
+    // 已经可以保证安全性了，取消客户端对所有键的监视
+    unwatchAllKeys(c); /* Unwatch ASAP otherwise we'll waste CPU cycles */
+
+    // 因为事务中的命令在执行时可能会修改命令和命令的参数
+    // 所以为了正确地传播命令，需要现备份这些命令和参数
+    orig_argv = c-&gt;argv;
+    orig_argc = c-&gt;argc;
+    orig_cmd = c-&gt;cmd;
+
+    addReplyMultiBulkLen(c,c-&gt;mstate.count);
+
+    // 执行事务中的命令
+    for (j = 0; j &lt; c-&gt;mstate.count; j++) {
+
+        // 因为 Redis 的命令必须在客户端的上下文中执行
+        // 所以要将事务队列中的命令、命令参数等设置给客户端
+        c-&gt;argc = c-&gt;mstate.commands[j].argc;
+        c-&gt;argv = c-&gt;mstate.commands[j].argv;
+        c-&gt;cmd = c-&gt;mstate.commands[j].cmd;
+
+        /* Propagate a MULTI request once we encounter the first write op.
+         *
+         * 当遇上第一个写命令时，传播 MULTI 命令。
+         *
+         * This way we'll deliver the MULTI/..../EXEC block as a whole and
+         * both the AOF and the replication link will have the same consistency
+         * and atomicity guarantees. 
+         *
+         * 这可以确保服务器和 AOF 文件以及附属节点的数据一致性。
+         */
+        if (!must_propagate &amp;&amp; !(c-&gt;cmd-&gt;flags &amp; REDIS_CMD_READONLY)) {
+
+            // 传播 MULTI 命令
+            execCommandPropagateMulti(c);
+
+            // 计数器，只发送一次
+            must_propagate = 1;
+        }
+
+        // 执行命令
+        call(c,REDIS_CALL_FULL);
+
+        /* Commands may alter argc/argv, restore mstate. */
+        // 因为执行后命令、命令参数可能会被改变
+        // 比如 SPOP 会被改写为 SREM
+        // 所以这里需要更新事务队列中的命令和参数
+        // 确保附属节点和 AOF 的数据一致性
+        c-&gt;mstate.commands[j].argc = c-&gt;argc;
+        c-&gt;mstate.commands[j].argv = c-&gt;argv;
+        c-&gt;mstate.commands[j].cmd = c-&gt;cmd;
+    }
+
+    // 还原命令、命令参数
+    c-&gt;argv = orig_argv;
+    c-&gt;argc = orig_argc;
+    c-&gt;cmd = orig_cmd;
+
+    // 清理事务状态
+    discardTransaction(c);
+
+    /* Make sure the EXEC command will be propagated as well if MULTI
+     * was already propagated. */
+    // 将服务器设为脏，确保 EXEC 命令也会被传播
+    if (must_propagate) server.dirty++;
+
+handle_monitor:
+    /* Send EXEC to clients waiting data from MONITOR. We do it here
+     * since the natural order of commands execution is actually:
+     * MUTLI, EXEC, ... commands inside transaction ...
+     * Instead EXEC is flagged as REDIS_CMD_SKIP_MONITOR in the command
+     * table, and we do it here with correct ordering. */
+    if (listLength(server.monitors) &amp;&amp; !server.loading)
+        replicationFeedMonitors(c,server.monitors,c-&gt;db-&gt;id,c-&gt;argv,c-&gt;argc);
+}
+</code></pre>
+<h3 id="二、为什么很多人说-redis-事务为何不支持原子性">二、为什么很多人说 Redis 事务为何不支持原子性?</h3>
+<h4 id="1、redis-事务不支持事务回滚机制">1、Redis 事务不支持事务回滚机制</h4>
+<p>Redis 事务执行过程中，如果一个命令执行出错，那么就返回错误，然后还是会接着继续执行下面的命令。</p>
+<p>下面我们演示一下：<br>
+<img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9naXRlZS5jb20vSG93aW5mdW4vaW1hZ2UvcmF3L21hc3Rlci9yZWRpcyVFOCVBRSVCRSVFOCVBRSVBMSVFNCVCOCU4RSVFNSVBRSU5RSVFNyU4RSVCMC9tdWx0aS5wbmc?x-oss-process=image/format,png" alt=""><br>
+正是因为 Redis 事务不支持事务回滚机制，如果事务执行中出现了命令执行错误（例如对 String 类型的数据库键执行 LPUSH 操作），只会返回当前命令执行的错误给客户端，并不会影响下面的命令的执行。所以很多人觉得和关系型数据库（MySQL） 不一样，而 MySQL 的事务是具有原子性的，所以大家都认为 Redis 事务不支持原子性。</p>
+<h4 id="2、但是其实-redis-意义上是支持原子性的。">2、但是其实 Redis 意义上是支持原子性的。</h4>
+<p>正常情况下，它也是要不所有命令执行成功，要不一个命令都不执行。</p>
+<h5 id="我们下面演示一下：">我们下面演示一下：</h5>
+<p>全部执行成功的：<br>
+<img src="https://img-blog.csdnimg.cn/20200425175827774.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hvd2luZnVu,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+一个都不执行：<br>
+<img src="https://img-blog.csdnimg.cn/20200425175859198.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0hvd2luZnVu,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>
+这就是上面提到的，在事务开始后，用户可以输入事务要执行的命令；在命令入事务队列前，会对命令进行检查，如果命令不存在或者是命令参数不对，则会返回错误可客户端，并且修改客户端状态。</p>
+<p>当后面客户端执行 EXEC 命令时，服务器就会直接拒绝执行此事务了。</p>
+<p>所以说，Redis 事务其实是支持原子性的！即使 Redis 不支持事务回滚机制，但是它会检查每一个事务中的命令是否错误。</p>
+<p>但是我们要注意一个点就是：Redis 事务不支持检查那些程序员自己逻辑错误。例如对 String 类型的数据库键执行对 HashMap 类型的操作！</p>
+<h4 id="我很赞同-redis-作者的想法：">我很赞同 Redis 作者的想法：</h4>
+<p>首先，MySQL 和 Redis 的定位不一样，一个是关系型数据库，一个是 NoSQL。</p>
+<p>MySQL 的 SQL 查询是可以相当复杂的，而且 MySQL 没有事务队列这种说法，SQL 真正开始执行才会进行分析和检查，MySQL 不可能提前知道下一条 SQL 是否正确。所以支持事务回滚是非常有必要的~</p>
+<p>但是，Redis 使用了事务队列来预先将执行命令存储起来，并且会对其进行格式检查的，提前就知道命令是否可执行了。所以如果只要有一个命令是错误的，那么这个事务是不能执行的。</p>
+<p><strong>Redis 作者认为基本只会出现在开发环境的编程错误其实在生产环境基本是不可能出现的（例如对 String 类型的数据库键执行 LPUSH 操作），所以他觉得没必要为了这事务回滚机制而改变 Redis 追求简单高效的设计主旨。</strong></p>
+<p><strong><font color="red">所以最后，其实 Redis 事务真正支持原子性的前提：开发者不要傻不拉几的写有逻辑问题的代码！</font></strong></p>
+<p>参考资料：《Redis 设计与实现》、《Redis 源码》</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 18:31</span>&nbsp;
+<a href="https://www.cnblogs.com/Howinfun/">不送花的程序猿</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774398" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12774398);return false;">收藏</a></div>
+        </div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 531793, cb_blogApp = 'Howinfun', cb_blogUserGuid = '30c8011b-b21e-4410-4fd5-08d716460a93';
+    var cb_entryId = 12774398, cb_entryCreatedDate = '2020-04-25 18:31', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 不送花的程序猿
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

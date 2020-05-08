@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="三年前做的一个ASP.NET的项目（www.SurveyStar.net），一直运行好好的， 前几天，客户打电话来说，出了问题。 反复跟踪，发现是一个正数、负数的判断与ToString()的问题。 将" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>分不清正数负数，是我错了，还是VS.NET错了 - 拓荒者 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001.min.css?v=vmUk-3Bh8LDsKXwjNHs2GDiFna-ZMTUgOJzjUaXTlPA" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001-mobile.min.css?v=cJiDsI1JAuHHd-OAUWJeyE5JMXXsG4mmuUi2rVmEK1c" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/dstang2000/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/dstang2000/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/dstang2000/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 9986;
+        var currentBlogApp = 'dstang2000';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'AnotherEon001';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/dstang2000/">拓荒者 dstang2000 <a href="http://www.dstang.com"><font size=-1 color=red>http://www.dstang.com</font></a>
+</h1>
+<div id="subtitle">
+KISS：Keeping things that work，Improve systems procedures styles，Start things of value，Stop things of no value 
+</div>
+</div>
+<div id="sub"><div class="BlogStats">随笔 - 
+4, 文章 - 
+1, 评论 - 
+17, 引用 - 
+0</div>
+
+</div>
+
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	<div id="post_detail">
+    <div class="post">
+        <h2>
+            
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/dstang2000/archive/2005/03/05/113513.html">分不清正数负数，是我错了，还是VS.NET错了</a>
+
+        </h2>
+        <div class="postbody">
+            
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>三年前做的一个ASP.NET的项目（<a href="http://www.surveystar.net/">www.SurveyStar.net</a>），一直运行好好的， 
+<br/>前几天，客户打电话来说，出了问题。 
+<br/>反复跟踪，发现是一个正数、负数的判断与ToString()的问题。 
+<br/>将问题简化后，源程序可表示为只有4句的程序，如下： 
+<br/>
+</p>
+<div style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BACKGROUND: #e6e6e6; PADDING-BOTTOM: 4px; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 98%; WORD-BREAK: break-all; PADDING-TOP: 4px; BORDER-BOTTOM: windowtext 0.5pt solid">
+   <div><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /><span style="COLOR: #0000ff">class</span><span style="COLOR: #000000">&#160;Test 
+<br/><img id="Codehighlighter1_11_257_Open_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_11_257_Open_Text.style.display=&#39;none&#39;; Codehighlighter1_11_257_Closed_Image.style.display=&#39;inline&#39;; Codehighlighter1_11_257_Closed_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ExpandedBlockStart.gif" width="11" align="top" /><img id="Codehighlighter1_11_257_Closed_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_11_257_Closed_Text.style.display=&#39;none&#39;; Codehighlighter1_11_257_Open_Image.style.display=&#39;inline&#39;; Codehighlighter1_11_257_Open_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ContractedBlock.gif" width="11" align="top" style="DISPLAY: none" /></span><span id="Codehighlighter1_11_257_Closed_Text" style="BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 1px solid; DISPLAY: none; BORDER-LEFT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid; BACKGROUND-COLOR: #ffffff"><img height="20" src="/Images/dot.gif" width="15" /></span><span id="Codehighlighter1_11_257_Open_Text"><span style="COLOR: #000000">{ 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">static</span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #0000ff">void</span><span style="COLOR: #000000">&#160;Main() 
+<br/><img id="Codehighlighter1_34_255_Open_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_34_255_Open_Text.style.display=&#39;none&#39;; Codehighlighter1_34_255_Closed_Image.style.display=&#39;inline&#39;; Codehighlighter1_34_255_Closed_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ExpandedSubBlockStart.gif" width="11" align="top" style="DISPLAY: inline" /><img id="Codehighlighter1_34_255_Closed_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_34_255_Closed_Text.style.display=&#39;none&#39;; Codehighlighter1_34_255_Open_Image.style.display=&#39;inline&#39;; Codehighlighter1_34_255_Open_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ContractedSubBlock.gif" width="11" align="top" style="DISPLAY: none" />&#160;&#160;&#160;&#160;</span><span id="Codehighlighter1_34_255_Closed_Text" style="BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 1px solid; DISPLAY: none; BORDER-LEFT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid; BACKGROUND-COLOR: #ffffff"><img height="20" src="/Images/dot.gif" width="15" /></span><span id="Codehighlighter1_34_255_Open_Text" style="DISPLAY: inline"><span style="COLOR: #000000">{ 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">int</span><span style="COLOR: #000000">&#160;a&#160;</span><span style="COLOR: #000000">=</span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #000000">0x79de61c0</span><span style="COLOR: #000000">;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">2044617152;</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" /></span><span style="COLOR: #000000">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;a&#160;</span><span style="COLOR: #000000">+=</span><span style="COLOR: #000000">&#160;&#160;&#160;&#160;</span><span style="COLOR: #000000">0x12345678</span><span style="COLOR: #000000">;&#160;&#160;&#160;&#160; 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">a&#160;应为&#160;0x8c12b838;&#160;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">-1944930248</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" /></span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">if</span><span style="COLOR: #000000">(&#160;a</span><span style="COLOR: #000000">&lt;</span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000">&#160;)&#160;a&#160;</span><span style="COLOR: #000000">=</span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #000000">-</span><span style="COLOR: #000000">a; 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" /> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">string&#160;str1&#160;=&#160;a.ToString();</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" /></span><span style="COLOR: #000000">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;System.Console.WriteLine(&#160;a&#160;); 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">string&#160;str2&#160;=&#160;a.ToString();</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/ExpandedSubBlockEnd.gif" width="11" align="top" /></span><span style="COLOR: #000000">&#160;&#160;&#160;&#160;}</span></span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/ExpandedBlockEnd.gif" width="11" align="top" />}</span></span> 
+   </div>
+</div>
+<br/>按理说，这里的<span><span class="Highlight"><span>if(a&lt;0) a=-a</span></span> 应当将之转成了正数，但是问题来了： 
+<br/>如果在前面加上了str1一句，或者后面加上了str2一句，或者前后都加上， 
+<br/><span class="Highlight">显示的a居然是负数 -1944930248。</span>这真是一个奇怪的问题。 
+<br/>是我错了，还是微软错了？ 
+<br/>
+<br/>我查看了IL代码，没有找到问题，不知有无高人能指出其中的原因。 
+<br/>附：IL代码1： 
+<table cellSpacing="0" cellPadding="3" border="1" style="WIDTH: 721px; BORDER-COLLAPSE: collapse">
+   <tbody>
+       <tr>
+           <td>
+              <div style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BACKGROUND: #e6e6e6; PADDING-BOTTOM: 4px; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 98%; WORD-BREAK: break-all; PADDING-TOP: 4px; BORDER-BOTTOM: windowtext 0.5pt solid">
+                  <div><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /><span style="COLOR: #000000">#regin&#160;不加str1及str2 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" />.method&#160;</span><span style="COLOR: #0000ff">private</span><span style="COLOR: #000000">&#160;hidebysig&#160;</span><span style="COLOR: #0000ff">static</span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #0000ff">void</span><span style="COLOR: #000000">&#160;&#160;Main()&#160;cil&#160;managed 
+<br/><img id="Codehighlighter1_77_545_Open_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_77_545_Open_Text.style.display=&#39;none&#39;; Codehighlighter1_77_545_Closed_Image.style.display=&#39;inline&#39;; Codehighlighter1_77_545_Closed_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ExpandedBlockStart.gif" width="11" align="top" style="DISPLAY: none" /><img id="Codehighlighter1_77_545_Closed_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_77_545_Closed_Text.style.display=&#39;none&#39;; Codehighlighter1_77_545_Open_Image.style.display=&#39;inline&#39;; Codehighlighter1_77_545_Open_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ContractedBlock.gif" width="11" align="top" style="DISPLAY: inline" /></span><span id="Codehighlighter1_77_545_Closed_Text" style="BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 1px solid; DISPLAY: inline; BORDER-LEFT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid; BACKGROUND-COLOR: #ffffff"><img height="20" src="/Images/dot.gif" width="15" /></span><span id="Codehighlighter1_77_545_Open_Text" style="DISPLAY: none"><span style="COLOR: #000000">{ 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;.entrypoint 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">&#160;Code&#160;size&#160;&#160;&#160;&#160;&#160;&#160;&#160;28&#160;(0x1c)</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" /></span><span style="COLOR: #000000">&#160;&#160;.maxstack&#160;&#160;</span><span style="COLOR: #000000">2</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;.locals&#160;init&#160;(int32&#160;V_0) 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0000:&#160;&#160;ldc.i4&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #000000">0x79de61c0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0005:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0006:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0007:&#160;&#160;ldc.i4&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #000000">0x12345678</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000c:&#160;&#160;add 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000d:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000e:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000f:&#160;&#160;ldc.i4.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0010:&#160;&#160;bge.s&#160;&#160;&#160;&#160;&#160;&#160;IL_0015 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0012:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0013:&#160;&#160;neg 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0014:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0015:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0016:&#160;&#160;call&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">void</span><span style="COLOR: #000000">&#160;[mscorlib]System.Console::WriteLine(int32) 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_001b:&#160;&#160;ret 
+<br/><img height="16" src="/Images/OutliningIndicators/ExpandedBlockEnd.gif" width="11" align="top" />}</span></span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">&#160;end&#160;of&#160;method&#160;Test::Main</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /></span><span style="COLOR: #0000ff">#endregion</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /></span> 
+                  </div>
+              </div>
+           </td>
+           <td>
+              <div style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BACKGROUND: #e6e6e6; PADDING-BOTTOM: 4px; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 98%; WORD-BREAK: break-all; PADDING-TOP: 4px; BORDER-BOTTOM: windowtext 0.5pt solid">
+                  <div><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /><span style="COLOR: #000000">#regin&#160;加上str1 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" />.method&#160;</span><span style="COLOR: #0000ff">private</span><span style="COLOR: #000000">&#160;hidebysig&#160;</span><span style="COLOR: #0000ff">static</span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #0000ff">void</span><span style="COLOR: #000000">&#160;&#160;Main()&#160;cil&#160;managed 
+<br/><img id="Codehighlighter1_72_684_Open_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_72_684_Open_Text.style.display=&#39;none&#39;; Codehighlighter1_72_684_Closed_Image.style.display=&#39;inline&#39;; Codehighlighter1_72_684_Closed_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ExpandedBlockStart.gif" width="11" align="top" style="DISPLAY: none" /><img id="Codehighlighter1_72_684_Closed_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_72_684_Closed_Text.style.display=&#39;none&#39;; Codehighlighter1_72_684_Open_Image.style.display=&#39;inline&#39;; Codehighlighter1_72_684_Open_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ContractedBlock.gif" width="11" align="top" style="DISPLAY: inline" /></span><span id="Codehighlighter1_72_684_Closed_Text" style="BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 1px solid; DISPLAY: inline; BORDER-LEFT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid; BACKGROUND-COLOR: #ffffff"><img height="20" src="/Images/dot.gif" width="15" /></span><span id="Codehighlighter1_72_684_Open_Text" style="DISPLAY: none"><span style="COLOR: #000000">{ 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;.entrypoint 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">&#160;Code&#160;size&#160;&#160;&#160;&#160;&#160;&#160;&#160;36&#160;(0x24)</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" /></span><span style="COLOR: #000000">&#160;&#160;.maxstack&#160;&#160;</span><span style="COLOR: #000000">2</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;.locals&#160;init&#160;(int32&#160;V_0, 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">string</span><span style="COLOR: #000000">&#160;V_1) 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0000:&#160;&#160;ldc.i4&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #000000">0x79de61c0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0005:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0006:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0007:&#160;&#160;ldc.i4&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #000000">0x12345678</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000c:&#160;&#160;add 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000d:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000e:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000f:&#160;&#160;ldc.i4.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0010:&#160;&#160;bge.s&#160;&#160;&#160;&#160;&#160;&#160;IL_0015 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0012:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0013:&#160;&#160;neg 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0014:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0015:&#160;&#160;ldloca.s&#160;&#160;&#160;V_0 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0017:&#160;&#160;call&#160;&#160;&#160;&#160;&#160;&#160;&#160;instance&#160;</span><span style="COLOR: #0000ff">string</span><span style="COLOR: #000000">&#160;[mscorlib]System.Int32::ToString() 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_001c:&#160;&#160;stloc.</span><span style="COLOR: #000000">1</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_001d:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_001e:&#160;&#160;call&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">void</span><span style="COLOR: #000000">&#160;[mscorlib]System.Console::WriteLine(int32) 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0023:&#160;&#160;ret 
+<br/><img height="16" src="/Images/OutliningIndicators/ExpandedBlockEnd.gif" width="11" align="top" />}</span></span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">&#160;end&#160;of&#160;method&#160;Test::Main</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /></span><span style="COLOR: #0000ff">#endregion</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /> 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /></span> 
+                  </div>
+              </div>
+           </td>
+           <td>
+              <div style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BACKGROUND: #e6e6e6; PADDING-BOTTOM: 4px; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 98%; WORD-BREAK: break-all; PADDING-TOP: 4px; BORDER-BOTTOM: windowtext 0.5pt solid">
+                  <div><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /><span style="COLOR: #000000">#regin&#160;加上str2 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" />.method&#160;</span><span style="COLOR: #0000ff">private</span><span style="COLOR: #000000">&#160;hidebysig&#160;</span><span style="COLOR: #0000ff">static</span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #0000ff">void</span><span style="COLOR: #000000">&#160;&#160;Main()&#160;cil&#160;managed 
+<br/><img id="Codehighlighter1_72_683_Open_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_72_683_Open_Text.style.display=&#39;none&#39;; Codehighlighter1_72_683_Closed_Image.style.display=&#39;inline&#39;; Codehighlighter1_72_683_Closed_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ExpandedBlockStart.gif" width="11" align="top" style="DISPLAY: none" /><img id="Codehighlighter1_72_683_Closed_Image" onclick="this.style.display=&#39;none&#39;; Codehighlighter1_72_683_Closed_Text.style.display=&#39;none&#39;; Codehighlighter1_72_683_Open_Image.style.display=&#39;inline&#39;; Codehighlighter1_72_683_Open_Text.style.display=&#39;inline&#39;;" height="16" src="/Images/OutliningIndicators/ContractedBlock.gif" width="11" align="top" style="DISPLAY: inline" /></span><span id="Codehighlighter1_72_683_Closed_Text" style="BORDER-RIGHT: #808080 1px solid; BORDER-TOP: #808080 1px solid; DISPLAY: inline; BORDER-LEFT: #808080 1px solid; BORDER-BOTTOM: #808080 1px solid; BACKGROUND-COLOR: #ffffff"><img height="20" src="/Images/dot.gif" width="15" /></span><span id="Codehighlighter1_72_683_Open_Text" style="DISPLAY: none"><span style="COLOR: #000000">{ 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;.entrypoint 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">&#160;Code&#160;size&#160;&#160;&#160;&#160;&#160;&#160;&#160;36&#160;(0x24)</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" /></span><span style="COLOR: #000000">&#160;&#160;.maxstack&#160;&#160;</span><span style="COLOR: #000000">2</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;.locals&#160;init&#160;(int32&#160;V_0, 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">string</span><span style="COLOR: #000000">&#160;V_1) 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0000:&#160;&#160;ldc.i4&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #000000">0x79de61c0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0005:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0006:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0007:&#160;&#160;ldc.i4&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #000000">0x12345678</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000c:&#160;&#160;add 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000d:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000e:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_000f:&#160;&#160;ldc.i4.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0010:&#160;&#160;bge.s&#160;&#160;&#160;&#160;&#160;&#160;IL_0015 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0012:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0013:&#160;&#160;neg 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0014:&#160;&#160;stloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0015:&#160;&#160;ldloc.</span><span style="COLOR: #000000">0</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0016:&#160;&#160;call&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span><span style="COLOR: #0000ff">void</span><span style="COLOR: #000000">&#160;[mscorlib]System.Console::WriteLine(int32) 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_001b:&#160;&#160;ldloca.s&#160;&#160;&#160;V_0 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_001d:&#160;&#160;call&#160;&#160;&#160;&#160;&#160;&#160;&#160;instance&#160;</span><span style="COLOR: #0000ff">string</span><span style="COLOR: #000000">&#160;[mscorlib]System.Int32::ToString() 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0022:&#160;&#160;stloc.</span><span style="COLOR: #000000">1</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/InBlock.gif" width="11" align="top" />&#160;&#160;IL_0023:&#160;&#160;ret 
+<br/><img height="16" src="/Images/OutliningIndicators/ExpandedBlockEnd.gif" width="11" align="top" />}</span></span><span style="COLOR: #000000">&#160;</span><span style="COLOR: #008000">//</span><span style="COLOR: #008000">&#160;end&#160;of&#160;method&#160;Test::Main</span><span style="COLOR: #008000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /></span><span style="COLOR: #0000ff">#endregion</span><span style="COLOR: #000000"> 
+<br/><img height="16" src="/Images/OutliningIndicators/None.gif" width="11" align="top" /></span> 
+                  </div>
+              </div>
+           </td>
+       </tr>
+   </tbody>
+</table>
+<br/>
+<br/>
+<br/></span>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+        </div>
+        <p class="postfoot">
+            posted on 
+<span id="post-date">2005-03-05 14:45</span>&nbsp;
+<a href="https://www.cnblogs.com/dstang2000/">拓荒者</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=113513" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(113513);return false;">收藏</a>
+        </p>
+    </div>
+</div>
+
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 9986, cb_blogApp = 'dstang2000', cb_blogUserGuid = 'd796310b-63cf-dd11-9e4d-001cf0cd104b';
+    var cb_entryId = 113513, cb_entryCreatedDate = '2005-03-05 14:45', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+    <li>
+        <a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/dstang2000/">
+首页</a>
+
+    </li>
+    <li>
+        
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%8B%93%E8%8D%92%E8%80%85">
+联系</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/dstang2000/rss/">
+订阅</a>
+        
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/dstang2000/rss/">
+    <img src="/skins/anothereon001/images/xml.gif" alt="订阅" />
+</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+    </li>
+</ul>
+
+
+<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 拓荒者
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+</div>
+</div>
+
+
+    
+</body>
+</html>

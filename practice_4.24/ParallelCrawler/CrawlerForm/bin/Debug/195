@@ -1,0 +1,558 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>雨打夏夜 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/minyx2_lite/bundle-minyx2_lite.min.css?v=mxJZfspzqgmSFSdBbMH8zU83VuawcFZooz2hdrdyHlI" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/minyx2_lite/bundle-minyx2_lite-mobile.min.css?v=ADiCwO2hOTdd5yYidcx7eob7ix2VJI4o_TXjEycTHjs" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/ncwuwsh/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/ncwuwsh/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/ncwuwsh/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 143643;
+        var currentBlogApp = 'ncwuwsh';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Minyx2_Lite';
+    </script>
+    
+    
+    <script src="/skins/minyx2_lite/bundle-minyx2_lite.min.js?v=z_XLIOc5JYwRKqTPu9fAWp7D8tchhGxVWGYvlAiigUQ" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<div id="container">
+    <a class="minyx" href="https://www.cnblogs.com/">代码改变世界</a>
+    <ul id="topMnu">
+        <!-- 统计数据 -->
+        <li>
+            Posts - 
+10, 
+Articles - 
+0, 
+Comments - 
+1
+<!---->
+
+
+        </li>
+        <!-- 这边可以增加一些链接 -->
+        <!-- 博客园 -->
+        <li><a href="https://www.cnblogs.com/">Cnblogs</a></li>
+        <!-- 管理 -->
+        <li id="topMnu-dashboard">
+            <a id="lnkDashboard" href="https://i.cnblogs.com/">Dashboard</a>
+        </li>
+        <li>
+            
+    <a id="lnkLogin" href="https://account.cnblogs.com/signin?ReturnUrl=https://www.cnblogs.com/ncwuwsh/">Login</a>
+
+
+        </li>
+    </ul>
+
+    <script type="text/javascript">
+        var m = window.__blog.topMenuRendered;
+        if (m) { m(__$("topMnu")); }
+    </script>
+
+    <div id="header">
+        <ul id="menu">
+            <!-- 首页，当前section加上current类 -->
+            <li id="menu-home" class="current">
+                <a id="lnkHome" href="https://www.cnblogs.com/ncwuwsh/">Home</a></li>
+            <!-- 联系 -->
+            <li id="menu-contact">
+                <a id="lnkContact" href="https://msg.cnblogs.com/send/%E9%9B%A8%E6%89%93%E5%A4%8F%E5%A4%9C">Contact</a></li>
+            <!-- 相册 -->
+            <li id="menu-gallary">
+                <a id="lnkGallery" href="https://www.cnblogs.com/ncwuwsh/gallery.html">Gallery</a></li>
+            <!-- Rss订阅 -->
+            <li id="rss">
+                <a id="lnkRss" href="https://www.cnblogs.com/ncwuwsh/rss/">RSS</a></li>
+        </ul>
+        <div id="newmsg"></div>
+        <h1>
+            <!-- 主标题 -->
+            <a id="lnkBlogTitle" href="https://www.cnblogs.com/ncwuwsh/">雨打夏夜</a>
+            <!-- 子标题 -->
+            <small>
+                
+            </small>
+        </h1>
+    </div>
+
+    <script type="text/javascript">
+        var m = window.__blog.headerRendered;
+        if (m) { m(__$("header")); }
+    </script>
+
+    <div id="wrapper">
+        <div id="content">
+            <script type="text/javascript">
+                var m = window.__blog.preRenderPosts;
+                if (m) { m(); }
+            </script>
+            
+
+
+        <div class="post post-list-item" id="post_12775222">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_1" href="https://www.cnblogs.com/ncwuwsh/p/12775222.html"> Spring Cloud Gateway+Nacos，yml+properties两种配置文件方式搭建网关服务</a>
+            </h2>
+            <small>
+                2020-04-25 20:57 by 雨打夏夜, 14 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_1" href="https://i.cnblogs.com/EditPosts.aspx?postid=12775222">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：写在前面 网关的作用不在此赘述，举个最常用的例子，我们搭建了微服务，前端调用各服务接口时，由于各服务接口不一样，如果让前端同事分别调用，前端同事会疯的。而网关就可以解决这个问题，网关屏蔽了各业务服务的端口，对前端同事来说，他们只负责调用网关服务端口下的服务就可以了。本文简单描述如何使用Spring                             <a href="https://www.cnblogs.com/ncwuwsh/p/12775222.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_1" href="https://www.cnblogs.com/ncwuwsh/p/12775222.html#comments">0 Comment</a>
+                </li>
+                
+<li class="icon_cat" id="BlogPostCategory">
+分类            <a href="https://www.cnblogs.com/ncwuwsh/category/1744819.html" target="_blank">Spring Cloud</a>
+</li>
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_12775222"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_12732516">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_2" href="https://www.cnblogs.com/ncwuwsh/p/12732516.html"> Spring Cloud+nacos+Feign，实现注册中心及配置中心</a>
+            </h2>
+            <small>
+                2020-04-19 17:45 by 雨打夏夜, 73 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_2" href="https://i.cnblogs.com/EditPosts.aspx?postid=12732516">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：写在前面 注册中心、配置中心的概念就不在这里解释了。发现服务原来一直用的是Eureka，因为这家伙闭源了，不爽。然后就发现了nacos，阿里巴巴的，好东西，一个搞定注册中心和配置中心。官网：https://nacos.io/en-us/。官网的手册比较入门可以，实用化还需要结合项目。接下来简单介绍下                            <a href="https://www.cnblogs.com/ncwuwsh/p/12732516.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_2" href="https://www.cnblogs.com/ncwuwsh/p/12732516.html#comments">0 Comment</a>
+                </li>
+                
+<li class="icon_cat" id="BlogPostCategory">
+分类            <a href="https://www.cnblogs.com/ncwuwsh/category/1744819.html" target="_blank">Spring Cloud</a>
+</li>
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_12732516"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_3582844">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_3" href="https://www.cnblogs.com/ncwuwsh/p/3582844.html"> 当td中文字过长时，显示为省略号</a>
+            </h2>
+            <small>
+                2014-03-05 17:01 by 雨打夏夜, 272 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_3" href="https://i.cnblogs.com/EditPosts.aspx?postid=3582844">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：当表格中的文字过长时，可选择已省略号显示。这里是用js实现的。首先获取td中的文字长度（innerText.length），如果长度超过了设定的长度，则截取内容，加上省略号显示。示例代码如下：$(function(){ var zbnr=$(&amp;quot;.zbnr&amp;quot;);//获取含有class=“zbnr”的td $.each(zbnr,function(ind,item){ if(item.innerText.length&amp;gt;5){//循环判断td中含有的字数 item.innerText=item.innerText.substring(0,15)&#x2B;&amp;quot;....                            <a href="https://www.cnblogs.com/ncwuwsh/p/3582844.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_3" href="https://www.cnblogs.com/ncwuwsh/p/3582844.html#comments">0 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_3582844"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_3543509">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_4" href="https://www.cnblogs.com/ncwuwsh/p/3543509.html"> 清除页面缓存</a>
+            </h2>
+            <small>
+                2014-02-10 20:59 by 雨打夏夜, 38 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_4" href="https://i.cnblogs.com/EditPosts.aspx?postid=3543509">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：页面中的缓存是为了方便用户的使用。但有时候也会给我们带来不便，为了清除页面缓存，我们可以在jsp页面中添加如下代码：response.setHeader(&amp;quot;Cache-Control&amp;quot;, &amp;quot;no-cache&amp;quot;);&#x9;response.setHeader(&amp;quot;Cache-Control&amp;quot;, &amp;quot;no-store&amp;quot;);&#x9;response.setHeader(&amp;quot;Pragma&amp;quot;, &amp;quot;no-cache&amp;quot;);&#x9;response.setDateHeader(&amp;quot;Expires&amp;quot;                            <a href="https://www.cnblogs.com/ncwuwsh/p/3543509.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_4" href="https://www.cnblogs.com/ncwuwsh/p/3543509.html#comments">0 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_3543509"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_3543214">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_5" href="https://www.cnblogs.com/ncwuwsh/p/3543214.html"> 在dwr的调用类里获取请求信息</a>
+            </h2>
+            <small>
+                2014-02-10 17:04 by 雨打夏夜, 64 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_5" href="https://i.cnblogs.com/EditPosts.aspx?postid=3543214">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：在dwr的调用类里获取请求的相关信息HttpSession session = WebContextFactory.get().getSession();HttpServletResponse response = WebContextFactory.get().getHttpServletResponse();HttpServletRequest request = WebContextFactory.get().getHttpServletRequest();                            <a href="https://www.cnblogs.com/ncwuwsh/p/3543214.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_5" href="https://www.cnblogs.com/ncwuwsh/p/3543214.html#comments">0 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_3543214"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_3498972">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_6" href="https://www.cnblogs.com/ncwuwsh/p/3498972.html"> 解决利用hibernate连接mysql时无法插入汉字的问题</a>
+            </h2>
+            <small>
+                2013-12-31 11:07 by 雨打夏夜, 118 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_6" href="https://i.cnblogs.com/EditPosts.aspx?postid=3498972">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：1、先修改mysql数据库的配置文件my.ini，此文件放在mysql安装文件的根目录下。找到default-character-set属性，并将其值更改为utf8（不是utf-8），将default-character-set属性全部属性的值修改为utf8。2、在mysql里创建新的数据库，显示设置数据库的编码格式，sql语句：create database MyDatabase charset=utf8;3、配置hibernate.cfg.xml文件里的连接字符串：jdbc:mysql://localhost:3306/MyDatabase?useUnicode=true&amp;amp;amp;                            <a href="https://www.cnblogs.com/ncwuwsh/p/3498972.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_6" href="https://www.cnblogs.com/ncwuwsh/p/3498972.html#comments">0 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_3498972"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_3480026">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_7" href="https://www.cnblogs.com/ncwuwsh/p/3480026.html"> MySql的数据库方言问题</a>
+            </h2>
+            <small>
+                2013-12-18 11:50 by 雨打夏夜, 429 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_7" href="https://i.cnblogs.com/EditPosts.aspx?postid=3480026">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：在使用hibernate将po（一般对象类）转化为数据库表时，如果mysql的版本为5.0之前的，则方言写为：org.hibernate.dialect.MySQLInnoDBDialect。如果是5.0之后的，则为org.hibernate.dialect.MySQL5InnoDBDialect。否则会报错：You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;#39;type=                            <a href="https://www.cnblogs.com/ncwuwsh/p/3480026.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_7" href="https://www.cnblogs.com/ncwuwsh/p/3480026.html#comments">0 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_3480026"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_3405800">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_8" href="https://www.cnblogs.com/ncwuwsh/p/3405800.html"> 解决IE升级后必须以管理员运行的问题</a>
+            </h2>
+            <small>
+                2013-11-04 08:14 by 雨打夏夜, 78 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_8" href="https://i.cnblogs.com/EditPosts.aspx?postid=3405800">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：很多网友可能都遇到过这样的问题，在ie升级后，无法打开，必须以管理员身份运行。今天我也遇到了这个问题。最终找到了解决办法。1、Win &#x2B; R2、输入 regedit，定位到HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main3、右键点击Main &amp;gt;&amp;gt; 权限 &amp;gt;&amp;gt; 高级 &amp;gt;&amp;gt;4、勾选如下图中的复选框：                            <a href="https://www.cnblogs.com/ncwuwsh/p/3405800.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_8" href="https://www.cnblogs.com/ncwuwsh/p/3405800.html#comments">0 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_3405800"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_3327340">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_9" href="https://www.cnblogs.com/ncwuwsh/p/3327340.html"> form表单里的button调用js函数</a>
+            </h2>
+            <small>
+                2013-09-17 22:23 by 雨打夏夜, 809 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_9" href="https://i.cnblogs.com/EditPosts.aspx?postid=3327340">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：近来发现一个特别奇怪的问题：在form表单里，button的onclick事件无法调用js函数。代码如下（这段代码放在form标签里）： dropUpdateAddress调用的js函数为： 这个时候，“放弃修改”这个button是无法调用该js函数的。知道为什么吗？本人感觉很奇怪的答案：因为这个button有id这个属性。当我把id属性去掉后，js函数就可以执行了。                            <a href="https://www.cnblogs.com/ncwuwsh/p/3327340.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_9" href="https://www.cnblogs.com/ncwuwsh/p/3327340.html#comments">1 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_3327340"));
+        }
+        </script>
+        <div class="post post-list-item" id="post_2948783">
+            <h2>
+                <a id="PostsList1_rpPosts_TitleUrl_10" href="https://www.cnblogs.com/ncwuwsh/archive/2013/03/07/2948783.html"> 用jquery获取当前点击对象</a>
+            </h2>
+            <small>
+                2013-03-07 20:50 by 雨打夏夜, 7424 阅读, <a href="#" onclick="PutInWz();return false;">收藏</a>, <a id="homepage1_ctl01_rptEntries_lnkEdit_10" href="https://i.cnblogs.com/EditPosts.aspx?postid=2948783">编辑</a>
+            </small>
+            <div class="entry">
+                    <div class="c_b_p_desc">
+摘要：本来以为用$(this)可以很容易获得当前点击的对象，可在用的时候，发现并没有想象的那么简单。$(this)获取的是[object Object]，并不能用jquery的方法去寻找当前对象的前后节点。代码如下： &amp;lt;html xmlns=&amp;quot;http://www.w3.org/1999/xhtml&amp;quot;&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta http-equiv=&amp;quot;Content-Type&amp;quot; content=&amp;quot;text/html; charset=gb2312&amp;quot; /&amp;gt;&amp;lt;title&amp;gt;无标题文档&amp;lt;/titl                            <a href="https://www.cnblogs.com/ncwuwsh/archive/2013/03/07/2948783.html" class="c_b_p_desc_readmore">阅读全文</a>
+                    </div>
+            </div>
+            <ul class="postmetadata">
+                <li class="icon_comment icon_r">
+                    <a id="homepage1_ctl01_rptEntries_lnkCommentCount_10" href="https://www.cnblogs.com/ncwuwsh/archive/2013/03/07/2948783.html#comments">0 Comment</a>
+                </li>
+                
+
+<li class="icon_bullet" id="EntryTag">
+&nbsp;</li>
+            </ul>
+            <script type="text/javascript">
+                $(".icon_cat").hide();
+            </script>
+        </div>
+        <script type="text/javascript">
+        var m = window.__blog.postRendered;
+        if (m) {
+            m(__$("post_2948783"));
+        }
+        </script>
+
+<script type="text/javascript">
+    var m = window.__blog.postRenderPosts;
+    if (m) {
+        m();
+    }
+</script>
+
+
+<div class="pager">
+    
+    
+
+    
+
+
+</div>
+
+
+
+
+
+
+
+        </div>
+
+        <script type="text/javascript">
+            var m = window.__blog.contentRendered;
+            if (m) { m(__$("content")); }
+        </script>
+
+        <div id="sidebar">
+            <div id="about">
+                <div>
+                    <h2 id="about_title">About</h2>
+                    <div id="about_body">
+                        <div id="sidebar_news"></div>
+                        <script type="text/javascript">loadBlogNews();</script>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var m = window.__blog.aboutRendered;
+                if (m) { m(__$("about")); }
+            </script>
+            <div id="mySearchWrapper">
+                <div id="mySearch">
+                    <input type="image" src="/skins/minyx2_lite/images/btnsearch.gif" id="btnZzk"  class="submit" onclick="zzk_go();return false;"/>
+                    <label class="lb_search"><input type="text" id="q" onkeydown="return zzk_go_enter(event);" class="keyword" /></label>
+                </div>
+            </div>
+            <script type="text/javascript">
+                var m = window.__blog.searchFormRendered;
+                if (m) { m(__$("searchform")); }
+            </script>
+            <div id="sideMain">
+            </div>
+            <div id="sideRight">
+            </div>
+            <div id="sideLeft">
+            </div>            
+                <div id="sideContainer">
+                </div>
+                <script type="text/javascript">
+                    $.ajax({
+                        url: '/' + currentBlogApp + '/ajax/Minyx2_Lite_SideColumn.aspx',
+                        data: '{}',
+                        type: 'post',
+                        dataType: 'text',
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            if (data) {
+                                $("#sideContainer").html(data);
+                                $.ajax({
+                                    url: getAjaxBaseUrl() + 'TopLists.aspx',
+                                    type: 'get',
+                                    dataType: 'text',
+                                    success: function (topLists) {
+                                        if (topLists) {
+                                            $("#sideContainer").append(topLists);
+                                        }
+                                        var m = window.__blog.sideContainerRendered;
+                                        if (m) { m(__$("sideContainer")); }
+                                        window.__blog.sidebar.__layout();
+                                    }
+                                });
+                            }
+                        }
+                    });
+
+                </script>
+        </div>
+
+        <script type="text/javascript">
+            var m = window.__blog.sidebarRendered;
+            if (m) { m(__$("sidebar")); }
+        </script>
+
+        <div id="footer">
+            <p id="logoFoot">
+    <a href="http://www.spiga.com.mx/" title="Agencia Interactiva Spiga">www.spiga.com.mx</a>
+</p>
+<div class="footText">
+<p>
+Copyright &copy; 2020 雨打夏夜
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+<p>
+<a href="http://www.cnblogs.com">博客园</a>
+</p>
+</div>
+
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var m = window.__blog.wrapperRendered;
+        if (m) { m(__$("wrapper")); }
+    </script>
+
+</div>
+<script type="text/javascript">
+    var m = window.__blog.containerRendered;
+    if (m) { m(__$("container")); }
+</script>
+
+
+    
+</body>
+</html>

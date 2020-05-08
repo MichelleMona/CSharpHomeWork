@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>南瓜慢说 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001.min.css?v=vmUk-3Bh8LDsKXwjNHs2GDiFna-ZMTUgOJzjUaXTlPA" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001-mobile.min.css?v=cJiDsI1JAuHHd-OAUWJeyE5JMXXsG4mmuUi2rVmEK1c" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/larrydpk/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/larrydpk/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/larrydpk/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=uk-as-QYRHtjaAbeEigAktvhwf01NRrnle-6exg65Ak"></script>
+    <script>
+        var currentBlogId = 548387;
+        var currentBlogApp = 'larrydpk';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'AnotherEon001';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/larrydpk/">南瓜慢说</a>
+</h1>
+<div id="subtitle">
+
+</div>
+</div>
+<div id="sub"><div class="BlogStats">随笔 - 
+26, 文章 - 
+0, 评论 - 
+6, 引用 - 
+0</div>
+
+</div>
+
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	
+
+
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2020/04/20.html">2020年4月20日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12735620.html">
+    实例讲解Springboot整合MongoDB进行CRUD操作的两种方式
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 是最简单的使用 的方式，而 是最流行的 数据库。两者在分布式、微服务架构中使用率极高，本文将用实例介绍如何在 中整合 的两种方法： 和`MongoTemplate`。 代码结构如下： 2 项目准备 2.1 启动MongoDB实例 为了方便，使用 来启动 ，详细指导文档请参考： &quot;用Dock            <a href="https://www.cnblogs.com/larrydpk/p/12735620.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2020-04-20 07:01 南瓜慢说 阅读 (76) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735620" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2020/04/19.html">2020年4月19日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12730604.html">
+    使用ngrok实现内网穿透以便外网访问
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 内网穿透 当我们在本地开发Web应用时，只能在本地访问或在同一个局域网（内网）访问，这带来了极大的限制。比如手机难以访问、其它人员无法访问测试、难以提供接口给外界调用等。通过内网穿透技术，我们能把服务暴露在外网上。 世面上成功的内网穿透软件比较多，如 &quot;Ngrok&quot; 、 &quot;花生壳&quot; 、 &quot;Nat            <a href="https://www.cnblogs.com/larrydpk/p/12730604.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2020-04-19 11:01 南瓜慢说 阅读 (12) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12730604" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2020/04/05.html">2020年4月5日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12638344.html">
+    【Springboot】实例讲解Springboot整合OpenTracing分布式链路追踪系统（Jaeger和Zipkin）
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 分布式追踪系统 随着大量公司把单体应用重构为微服务，对于运维人员的责任就更加重大了。架构更复杂、应用更多，要从中快速诊断出问题、找到性能瓶颈，并不是一件容易的事。因此，也随着诞生了一系列面向 的诊断与分析系统，主要是以下三个系统： 集中式日志系统（Logging） 集中式度量系统（Metrics            <a href="https://www.cnblogs.com/larrydpk/p/12638344.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2020-04-05 18:14 南瓜慢说 阅读 (162) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12638344" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2020/03/25.html">2020年3月25日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12563497.html">
+    【Springboot】用Prometheus+Grafana监控Springboot应用
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 项目越做越发觉得，任何一个系统上线，运维监控都太重要了。关于Springboot微服务的监控，之前写过 &quot;【Springboot】用Springboot Admin监控你的微服务应用&quot; ，这个方案可以实时监控并提供告警提醒功能，但不能记录历史数据，无法查看过去1小时或过去1天等运维情况。本            <a href="https://www.cnblogs.com/larrydpk/p/12563497.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2020-03-25 00:45 南瓜慢说 阅读 (246) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12563497" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2020/03/10.html">2020年3月10日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12459386.html">
+    【Java必修课】判断String是否包含子串的四种方法及性能对比
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 判断一个字符串是否包含某个特定子串是常见的场景，比如判断一篇文章是否包含敏感词汇、判断日志是否有 信息等。本文将介绍四种方法并进行性能测试。 2 四种方法 2.1 JDK原生方法String.indexOf 在 的函数中，提供了 方法，返回子串 第一次出现的位置，如果不存在则返回 1。例子            <a href="https://www.cnblogs.com/larrydpk/p/12459386.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2020-03-10 22:41 南瓜慢说 阅读 (175) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12459386" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2020/01/11.html">2020年1月11日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12180922.html">
+    【Springboot】注解@ConfigurationProperties让配置整齐而简单
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 前面我们用一篇文章《 &quot;【Spring】只想用一篇文章记录@Value的使用，不想再找其它了(附思维导图)&quot; 》 详细讲解了在Spring中如何使用 来实现我们对配置的需求，它功能强大、使用方便。但它也是有它的局限性的，比如对于邮件服务，我们配置有： 使用 ，我们需要5个注解及5个独立的变            <a href="https://www.cnblogs.com/larrydpk/p/12180922.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2020-01-11 19:53 南瓜慢说 阅读 (244) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12180922" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2019/12/29.html">2019年12月29日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12115329.html">
+    如何制定切实可行的计划并好好执行——2020年，我不想再碌碌无为
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 转眼2019年即将结束，又到了做年度总结和下一年计划的时候了。经过多年的失败经历，是时候要总结出一些经验教训了。 本文整理了在计划与执行方面的个人学习心得体会，与大家分享，希望对自己有用，对大家也有用吧。 2 执行力 重要的事情先说三遍！ 计划的本质是执行! 计划的本质是执行! 计划的本质            <a href="https://www.cnblogs.com/larrydpk/p/12115329.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2019-12-29 16:18 南瓜慢说 阅读 (385) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12115329" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2019/12/22.html">2019年12月22日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12079717.html">
+    【Spring】只想用一篇文章记录@Value的使用，不想再找其它了(附思维导图)
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 不得不说，Spring为大家提供许多开箱即用的功能， 就是一个极其常用的功能，它能将配置信息注入到bean中去。即使是一个简单的功能，Spring也提供了丰富的注入类型和形式。我经常会忘记一些特别类型注入的写法，比如说数组，现在整理一下，希望以后不用再找了。 2 三种形式 使用 注入有三种            <a href="https://www.cnblogs.com/larrydpk/p/12079717.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2019-12-22 14:19 南瓜慢说 阅读 (123) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12079717" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2019/12/21.html">2019年12月21日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12078124.html">
+    【Java必修课】图说Stream中的skip()和limit()方法及组合使用
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 本文将讲解Java 8 Stream中的两个方法： 和`limit() Stream subList`和分页等。 2 skip()方法 见名知义， 方法用于跳过前面n个元素，然后再返回新的流，如图所示： 来看看代码： 方法 的参数n的四种情况： （1）当 时，跳过所有元素，返回空流。 3             <a href="https://www.cnblogs.com/larrydpk/p/12078124.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2019-12-21 20:23 南瓜慢说 阅读 (264) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12078124" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+		
+<p class="date">
+	<span>		  
+	<a href="https://www.cnblogs.com/larrydpk/archive/2019/12/15.html">2019年12月15日</a>
+	</span>
+</p>
+
+		<div class="post">
+			<h2>
+
+<a class="postTitle2" href="https://www.cnblogs.com/larrydpk/p/12044660.html">
+    【Springboot】用Springboot Admin监控你的微服务应用
+</a>
+</h2>
+			<div class="postbody">
+			
+
+    <div class="c_b_p_desc">
+摘要：1 简介 目前，微服务大行其道，各大小公司争相学习模仿，把单体应用拆得七零八落。服务多了，运行的实例多了，给运维人员的压力就更大了。如果有十几个应用，单单做Health Check就已经够费时间的了。聪明的Springboot提供了Actuator接口，可以非常好获得应用的内部信息，然而针对数量庞大            <a href="https://www.cnblogs.com/larrydpk/p/12044660.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>
+			<p class="postfoot">		
+			
+
+posted @ 2019-12-15 16:55 南瓜慢说 阅读 (208) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12044660" rel="nofollow">
+    编辑
+</a>
+
+			</p>
+		</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/larrydpk/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+    <li>
+        <a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/larrydpk/">
+首页</a>
+
+    </li>
+    <li>
+        
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%97%E7%93%9C%E6%85%A2%E8%AF%B4">
+联系</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/larrydpk/rss/">
+订阅</a>
+        
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/larrydpk/rss/">
+    <img src="/skins/anothereon001/images/xml.gif" alt="订阅" />
+</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+    </li>
+</ul>
+
+
+<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 南瓜慢说
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+</div>
+</div>
+
+
+    
+</body>
+</html>

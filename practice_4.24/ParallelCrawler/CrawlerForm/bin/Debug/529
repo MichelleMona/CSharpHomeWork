@@ -1,0 +1,369 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="引文 hi，大家好，我是三合。不知各位有没有想过，如果能把数据库操作和http访问都统一封装成接口（interface）的形式， 然后接口对应的实现类由框架去自动生成，那么必然能大大降低工作量，因为不" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>net core天马行空系列：降低net core门槛，数据库操作和http访问仅需写接口，实现类由框架动态生成 - 三合视角 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hezp/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hezp/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hezp/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 532552;
+        var currentBlogApp = 'hezp';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/hezp/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hezp/">三合视角</a>
+</h1>
+<h2>
+大道五十,天衍四九,人遁其一，一生二，二生三，三合视角
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hezp/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E4%B8%89%E5%90%88%E8%A7%86%E8%A7%92">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/hezp/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+6&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+67</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/hezp/p/12747340.html">net core天马行空系列：降低net core门槛，数据库操作和http访问仅需写接口，实现类由框架动态生成</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="section">引文</h1>
+<p>  hi，大家好，我是三合。不知各位有没有想过，如果能把数据库操作和http访问都统一封装成接口（interface）的形式，
+然后接口对应的实现类由框架去自动生成，那么必然能大大降低工作量，因为不需要去写很多重复的代码了，还有一个好处是，都是提供接口，我们把原来数据库操作的部分，改成http访问，对于业务层来说，是无感的，因为接口和方法都没变。致力于降低上手net core的门槛，我开源了<a href="https://github.com/TripleView/SummerBoot">SummerBoot</a>项目，下面让我们来看一下效果。</p>
+<h2 id="section-1">数据库表对应实体类，这些都是常规操作，略过</h2>
+<h2 id="section-2">重头戏，如何写接口，以一个简单的购物功能为例子</h2>
+<h3 id="section-3">数据库访问</h3>
+<h4 id="section-4">订单详情仓储</h4>
+<p><img src="https://img2020.cnblogs.com/blog/1323385/202004/1323385-20200423085855004-1903902248.png" alt=""></p>
+<h4 id="section-5">订单仓储</h4>
+<p><img src="https://img2020.cnblogs.com/blog/1323385/202004/1323385-20200421194518413-322020158.png" alt=""></p>
+<h3 id="http">http访问</h3>
+<p><img src="https://img2020.cnblogs.com/blog/1323385/202004/1323385-20200421194532735-2141209992.png" alt=""></p>
+<h3 id="section-6">控制器中进行构造函数注入</h3>
+<p><img src="https://img2020.cnblogs.com/blog/1323385/202004/1323385-20200421194541751-674537261.png" alt=""></p>
+<h2 id="section-7">实际调用</h2>
+<pre><code>        /// &lt;summary&gt;
+        /// 添加订单
+        /// &lt;/summary&gt;
+        /// &lt;param name=&quot;dto&quot;&gt;&lt;/param&gt;
+        /// &lt;returns&gt;&lt;/returns&gt;
+        [HttpPost(&quot;AddOrder&quot;)]
+        public async Task&lt;IActionResult&gt; AddOrder([FromBody]AddOrderDto dto)
+        {
+            if (dto?.ProductList==null) return BadRequest(&quot;参数不能为空&quot;);
+
+            Uow.BeginTransaction();
+            try
+            {
+                var orderHeader = new OrderHeader
+                {
+                    CreateTime = DateTime.UtcNow,
+                    CustomerNo = dto.CustomerNo,
+                    State = 1,
+                    OrderNo = Guid.NewGuid().ToString(&quot;N&quot;)
+                };
+
+                await OrderHeaderRepository.InsertAsync(orderHeader);
+
+                var orderDetailList = new List&lt;OrderDetail&gt;();
+                //总消费金额
+                var totalAmount = 0m;
+                dto.ProductList.ForEach(it =&gt;
+                {
+                    var orderDetail = new OrderDetail
+                    {
+                        OrderHeaderId = orderHeader.Id,
+                        ProductNo = it.ProductNo,
+                        ProductName = it.ProductName,
+                        Quantity = it.Quantity,
+                        Price = it.Price
+                    };
+                    orderDetailList.Add(orderDetail);
+
+                    totalAmount += it.Quantity * it.Price;
+                });
+
+                await OrderDetailRepository.BatchInsertAsync(orderDetailList);
+                //更新用户消费金额
+                var success = await CustomerRepository.UpdateCustomerAmount(dto.CustomerNo, totalAmount);
+                
+                if (!success)
+                {
+                    Uow.RollBack();
+
+                    return BadRequest();
+                }
+            }
+            catch (Exception e)
+            {
+                Uow.RollBack();
+            }
+           
+            Uow.Commit();
+
+            return Ok();
+        }
+		
+		/// &lt;summary&gt;
+		/// 删库跑路
+		/// &lt;/summary&gt;
+		/// &lt;returns&gt;&lt;/returns&gt;
+		[HttpGet(&quot;DeleteDatabase&quot;)]
+		public async Task DeleteDatabase()
+		{
+			await OrderHeaderRepository.DeleteAllOrder();
+		}
+
+		/// &lt;summary&gt;
+		/// 根据会员编号取消订单
+		/// &lt;/summary&gt;
+		/// &lt;param name=&quot;customerNo&quot;&gt;&lt;/param&gt;
+		/// &lt;returns&gt;&lt;/returns&gt;
+		[HttpGet(&quot;CancelOrderByCustomerNo&quot;)]
+		public async Task&lt;bool&gt; CancelOrderByCustomerNo(string customerNo)
+		{
+			var count = await OrderHeaderRepository.CancelOrderByCustomerNoAsync(customerNo);
+			return count &gt; 0;
+		}
+
+		/// &lt;summary&gt;
+		/// 分页，根据会员编号获取消费详情
+		/// &lt;/summary&gt;
+		/// &lt;param name=&quot;customerNo&quot;&gt;&lt;/param&gt;
+		/// &lt;returns&gt;&lt;/returns&gt;
+		[HttpGet(&quot;QueryOrderDetailByCustomerNoByPage&quot;)]
+		public async Task&lt;Page&lt;OrderDetail&gt;&gt; QueryOrderDetailByCustomerNoByPage(int pageNumber,int pageSize, string customerNo)
+		{
+			var page=new Pageable(pageNumber,pageSize);
+			var result = await OrderDetailRepository.GetOrderDetailByCustomerNoByPageAsync(page,customerNo);
+			return result;
+		}
+
+		/// &lt;summary&gt;
+		/// 根据会员编号获取消费详情
+		/// &lt;/summary&gt;
+		/// &lt;param name=&quot;customerNo&quot;&gt;&lt;/param&gt;
+		/// &lt;returns&gt;&lt;/returns&gt;
+		[HttpGet(&quot;QueryOrderDetailByCustomerNo&quot;)]
+		public async Task&lt;List&lt;OrderDetail&gt;&gt; QueryOrderDetailByCustomerNo(string customerNo)
+		{
+			var result= await OrderDetailRepository.GetOrderDetailByCustomerNoAsync(customerNo);
+			return result;
+		}
+</code></pre>
+<h1 id="section-8">动态生成接口实现类的原理</h1>
+<p><img src="https://img2020.cnblogs.com/blog/1323385/202004/1323385-20200423085253339-1231868097.png" alt=""></p>
+<p>  最开始写的时候，思路是，采用AOP思想，castle动态生成接口实现类，实现类里的方法都没有具体实现，然后在切面里对方法进行拦截并且模拟方法的实现，提供返回值，java中很多骚操作就是这么实现的，但是后来发现在.net
+中这种实现方式有很大的弊端，因为.net有异步方法，而castle对于异步方法的支持是很弱的，不足以实现最开始的设想，于是，我换了一种思路，在数据库操作和http调用中，抛开动态实现类这个壳子，具体执行操作的类是恒定不变的，
+那么利用emit技术动态路由到要执行的方法就行了。</p>
+<h1 id="section-9">写在最后</h1>
+<p>  如果这篇文章对你有所启发不妨点个赞吧。</p>
+<p>  github地址：<a href="https://github.com/TripleView/SummerBoot">https://github.com/TripleView/SummerBoot</a>，欢迎star！</p>
+<p>  QQ群：799648362</p>
+<p>  nuget包：SummerBoot</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 09:02</span>&nbsp;
+<a href="https://www.cnblogs.com/hezp/">三合视角</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12747340" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12747340);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 532552, cb_blogApp = 'hezp', cb_blogUserGuid = '8b82e26c-9ecb-4d97-2f52-08d54dbac325';
+    var cb_entryId = 12747340, cb_entryCreatedDate = '2020-04-24 09:02', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 三合视角
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

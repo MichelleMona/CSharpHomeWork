@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>布禾 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/seve/custom.css?v=E12RB34x4b10l2Xm8jPcPLAb5Ns=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/seve/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/seve/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/seve/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 295761;
+        var currentBlogApp = 'seve';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/seve/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/seve/">自律给我自由</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/seve/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%B8%83%E7%A6%BE">
+联系</a></li>
+<li>
+
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+29&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12765098.html">
+    Java8新特性(1)：Lambda表达式
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Lambda表达式可以理解为一种匿名函数：没有名称，但有参数列表、函数主体、返回类型。它是行为参数化的一种实现，行为参数化是指将不同的行为作为参数传递给方法，方法的所具备的能力取决于它接收的行为参数。使用Lambda表达式使我们不必为这些行为去编写一堆固定的实现类就能应对不断变化的需求，在1.8之前            <a href="https://www.cnblogs.com/seve/p/12765098.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 08:23 布禾 阅读 (202) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765098" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/03/30.html">2020年3月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12598507.html">
+    使用MathJax在网页中显示MathML和LaTeX公式
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：MathJax是适用于所有现代浏览器的LaTeX，MathML和AsciiMath表示法的开源JavaScript显示引擎。 显示MathML MathML是数学标记语言，是一种基于XML（标准通用标记语言的子集）的标准，用来在互联网上书写数学符号和公式的置标语言。有部分浏览器支持MathML，但并            <a href="https://www.cnblogs.com/seve/p/12598507.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-30 15:11 布禾 阅读 (28) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12598507" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/02/19.html">2020年2月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12326936.html">
+    Docker学习笔记(2)：使用Dockerfile构建镜像
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Dockerfile是用来构建Docker镜像的文件，是由一系列命令和参数构成的脚本。每条指令都必须为大写字母且后面要跟随至少一个参数，每条指令都会创建一个新的镜像层，并对镜像进行提交。 Dockerfile指令 FROM 初始化一个新的构建阶段，并为后续指令设置基本镜像。 RUN 容器构建时需要运            <a href="https://www.cnblogs.com/seve/p/12326936.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-19 09:22 布禾 阅读 (46) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12326936" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/02/12.html">2020年2月12日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12298973.html">
+    Docker学习笔记(1)：CentOS7安装Docker
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Docker是一个基于Go语言实现的开源应用容器引擎，通过对应用组件的封装、分发、部署、运行等生命周期的管理，使程序及其运行环境能够做到“一次封装，到处运行”。 Docker架构 Docker是一个客户端 服务器(C/S)架构的程序，Docker客户端只需向Docker守护进程发送请求，守护进程将完            <a href="https://www.cnblogs.com/seve/p/12298973.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-12 14:50 布禾 阅读 (55) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12298973" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/02/11.html">2020年2月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12294207.html">
+    MyBatis-Plus学习笔记(3)：分页查询
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：依赖配置可参考： &quot;MyBatis Plus学习笔记(1)：环境搭建以及基本的CRUD操作&quot; 分页配置 通用Mapper查询分页 自定义Mapper查询分页 UserMapper.java： UserMapper.xml： 使用： 参考： &quot;分页插件&quot;            <a href="https://www.cnblogs.com/seve/p/12294207.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-11 11:14 布禾 阅读 (136) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12294207" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/02/10.html">2020年2月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12291538.html">
+    MyBatis-Plus学习笔记(2)：代码生成器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：AutoGenerator 是 MyBatis Plus 的代码生成器，通过 AutoGenerator 可以快速生成 Entity、Mapper、Mapper XML、Service、Controller 等各个模块的代码。 项目结构： 生成前： 生成后： pom.xml： 代码生成主类：Plus            <a href="https://www.cnblogs.com/seve/p/12291538.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-10 17:00 布禾 阅读 (95) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12291538" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/01/31.html">2020年1月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12246815.html">
+    MyBatis-Plus学习笔记(1)：环境搭建以及基本的CRUD操作
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：MyBatis Plus是一个 MyBatis的增强工具，在 MyBatis 的基础上只做增强不做改变，使用MyBatis Plus时，不会影响原来Mybatis方式的使用。 SpringBoot+MyBatis Plus环境搭建 SQL脚本： CREATE TABLE ( int(11) NOT             <a href="https://www.cnblogs.com/seve/p/12246815.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-31 21:48 布禾 阅读 (235) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12246815" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/01/29.html">2020年1月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12241197.html">
+    使用Shiro实现认证和授权(基于SpringBoot)
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Apache Shiro是一个功能强大且易于使用的Java安全框架，它为开发人员提供了一种直观，全面的身份验证，授权，加密和会话管理解决方案。下面是在SpringBoot中使用Shiro进行认证和授权的例子，代码如下： pom.xml 导入SpringBoot和Shiro依赖： 也可以直接导入Apa            <a href="https://www.cnblogs.com/seve/p/12241197.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-29 21:44 布禾 阅读 (120) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12241197" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2020/01/14.html">2020年1月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/12192245.html">
+    使用Java实现简单的Http服务器
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在Java中可以使用HttpServer类来实现Http服务器，该类位于com.sun.net包下(rt.jar)。实现代码如下： 主程序类 HttpServer ：HttpServer主要是通过带参的create方法来创建，第一个参数InetSocketAddress表示绑定的ip地址和端口号。第            <a href="https://www.cnblogs.com/seve/p/12192245.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-14 15:35 布禾 阅读 (851) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12192245" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/seve/archive/2019/11/02.html">2019年11月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/seve/p/11784193.html">
+    SpringBoot打可执行war包
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1. 主程序类： 2. pom.xml： 3. 使用maven打包(clean package)，此war包可以用于传统的部署方式（外部tomcat），也可以直接使用java jar 的方式运行。            <a href="https://www.cnblogs.com/seve/p/11784193.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-02 21:43 布禾 阅读 (717) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11784193" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/seve/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 布禾
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="从管理的角度看，在一个组织内一些公用的系统能力重复建设，就是对组织资源的严重浪费。如果是组织必须的能力体系，最好的解决方案就是从全局出发，重点投资，投入足够的资源来建设到位。重复建设不可取，低水平的重" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>从团队管理视角看重复建设问题：轮子小造怡情，大造伤身，全局出发成就更好的你 - peida - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/peida/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/peida/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/peida/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 38044;
+        var currentBlogApp = 'peida';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/peida/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/peida/">竹子-博客-架构未来</a>
+</h1>
+<h2>
+思索、感悟、践行！
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/peida/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/peida">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/peida/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+224&nbsp; </span>
+<span id="stats_article_count">文章 - 
+2&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+851</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/peida/p/12768630.html">从团队管理视角看重复建设问题：轮子小造怡情，大造伤身，全局出发成就更好的你</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+    <div id="cnblogs_post_description" style="display: none">
+        从管理的角度看，在一个组织内一些公用的系统能力重复建设，就是对组织资源的严重浪费。如果是组织必须的能力体系，最好的解决方案就是从全局出发，重点投资，投入足够的资源来建设到位。重复建设不可取，低水平的重复建设更不可取。
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <section id="nice" data-tool="mdnice编辑器" data-website="https://www.mdnice.com" style="padding: 0 10px; line-height: 1.6; word-spacing: 0px; word-break: break-word; word-wrap: break-word; text-align: left; font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: -10px; font-size: 15px; letter-spacing: 0.05em; color: #595959;"><p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">在一定规模的软件研发团队内，经常出现的情况是对同一个问题领域，会有多个人或多个者团队蒙头再重复做系统或方案来解决相同问题。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">甚至，在一些团队内，技术人员为了职位晋升，会通过重复建设相关的系统来展示其能力，并名其名曰面向晋升编程。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">对于个人来说，重复造轮子其实是人之本性，特别是对于优秀的研发工程师来说，自己的方案和代码永远都是最好的，别人的都是垃圾。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">对于研发团队最高负责人而言，就需要认真思考重复建设的对整个团队是否是问题，以及问题产生的原因是什么？</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">对于中小型团队，在研发资源有限的情况下，系统的重复建设其实一个比较严重的问题，反映出组织内部可能出现了一些不太好的征兆：</p>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; min-height: 32px; line-height: 28px; border-bottom: solid 1px #000000; color: #773098; display: inline-block; border-bottom-width: 1px; border-bottom-style: solid; border-color: #773098; padding-top: 5px; padding-right: 0.5em; padding-left: 0.5em; margin-bottom: -3px; font-size: 22px; margin: 1em auto; padding: 0.5em 0; text-align: center; width: 85%; font-weight: bold; display: flex; flex-direction: column; justify-content: center;"><span class="prefix" style="display: none;"></span><span class="content">团队信息共享机制缺失</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">例如，组织内 A 团队在 Q1 构建了一个解决配置信息管理系统，并且已经自己内部使用的很好了，解决了很多问题，提高其研发效率，6 个月后，另外一个 B 团队因为需要解决类似的问题，自己又投入资源搞了另外一套系统，还可能会出现 C 团队，D 团队等等。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">同样的问题，为什么出现两套系统，背后反映的整个研发团队内部信息共享机制的缺失。A 团队在做之前如果可以和整组织内的其他团队共享一下问题，大家共享问题，共同建设一个共享系统，或者 A 团队做完的系统使用后，在组织内部做一些宣传推广，让有同样问题的兄弟团队来直接使用呢。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">好的共享机制和文化，可以减少不必要的重复建设，将节省的研发资源投入到更加重要事情上，从而产生更大的价值。</p>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; min-height: 32px; line-height: 28px; border-bottom: solid 1px #000000; color: #773098; display: inline-block; border-bottom-width: 1px; border-bottom-style: solid; border-color: #773098; padding-top: 5px; padding-right: 0.5em; padding-left: 0.5em; margin-bottom: -3px; font-size: 22px; margin: 1em auto; padding: 0.5em 0; text-align: center; width: 85%; font-weight: bold; display: flex; flex-direction: column; justify-content: center;"><span class="prefix" style="display: none;"></span><span class="content">团队内部职责不清</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">从管理的视角看，重复建设的背后是不是因为团队内部的分工不合理导致。一些可预期的多个团队都会用到的基础能力，是不是有独立的团队去负责建设这些体系，从横向上支撑整个研发团队，这样来提高整体的效率。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">一般上一点规模的研发团队，都会建立一个共享能力建设的团队，从研发组织全局视角去承接一些可复用的研发工作，从而避免团队各自为战的情况出现。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">常见共享团队，例如中间件团队，数据团队，以及去年大火的中台团队。</p>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; min-height: 32px; line-height: 28px; border-bottom: solid 1px #000000; color: #773098; display: inline-block; border-bottom-width: 1px; border-bottom-style: solid; border-color: #773098; padding-top: 5px; padding-right: 0.5em; padding-left: 0.5em; margin-bottom: -3px; font-size: 22px; margin: 1em auto; padding: 0.5em 0; text-align: center; width: 85%; font-weight: bold; display: flex; flex-direction: column; justify-content: center;"><span class="prefix" style="display: none;"></span><span class="content">共享基础设施缺失</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">如果两个团队正在构建相同的基础设施来解决类似的问题，那么它应该是一个共享服务或能力。基础设施的统一建设，长远看会为组织降低很多成本，同时也会大幅度提升研发团队的效率。高效统一的基础设施的好处主要有：</p>
+<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; color: black; list-style-type: disc;">
+<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; margin: 10px 0;">系统层面可以高度复用</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; margin: 10px 0;">专业的团队解决专业的问题，避免低水平重复建设</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; margin: 10px 0;">可以带来人员内部的横向调动学习成本大幅降低</section></li></ul>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; min-height: 32px; line-height: 28px; border-bottom: solid 1px #000000; color: #773098; display: inline-block; border-bottom-width: 1px; border-bottom-style: solid; border-color: #773098; padding-top: 5px; padding-right: 0.5em; padding-left: 0.5em; margin-bottom: -3px; font-size: 22px; margin: 1em auto; padding: 0.5em 0; text-align: center; width: 85%; font-weight: bold; display: flex; flex-direction: column; justify-content: center;"><span class="prefix" style="display: none;"></span><span class="content">团队全局意识不够</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">因为两个团队针对同一个问题提出了相似的解决方案，这表明团队中高级别的员工的全局意识不足。如果做这样事情的人员还因为或的晋升，这样会降低团队的整体的格局。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">例如，A 团队已经做了一个方案，B 团队的经理至少应该知道这个问题已经是一个共同的问题，应该更高的维度上来考虑问题：</p>
+<ul data-tool="mdnice编辑器" style="margin-top: 8px; margin-bottom: 8px; padding-left: 25px; color: black; list-style-type: disc;">
+<li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; margin: 10px 0;">B 团队在自己做之前应该寻求组织内部的资源，如果已经有了就可以考虑直接使用</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; margin: 10px 0;">或者 AB 团队共同建设，并推广到全组织内使用</section></li><li><section style="margin-top: 5px; margin-bottom: 5px; line-height: 26px; text-align: left; color: rgb(1,1,1); font-weight: 500; margin: 10px 0;">A 团队自己使用不错时候，就可以积极推广到全组织内，为全研发团队带来效能的提升。</section></li></ul>
+<h2 data-tool="mdnice编辑器" style="margin-top: 30px; min-height: 32px; line-height: 28px; border-bottom: solid 1px #000000; color: #773098; display: inline-block; border-bottom-width: 1px; border-bottom-style: solid; border-color: #773098; padding-top: 5px; padding-right: 0.5em; padding-left: 0.5em; margin-bottom: -3px; font-size: 22px; margin: 1em auto; padding: 0.5em 0; text-align: center; width: 85%; font-weight: bold; display: flex; flex-direction: column; justify-content: center;"><span class="prefix" style="display: none;"></span><span class="content">总结</span><span class="suffix"></span></h2>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">从管理的角度看，在一个组织内一些公用的系统能力重复建设，就是对组织资源的严重浪费。如果是组织必须的能力体系，最好的解决方案就是从全局出发，重点投资，投入足够的资源来建设到位。重复建设不可取，低水平的重复建设更不可取。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">轮子小造怡情，团队内大造轮子就需要慎重考虑了，特别是中小型团队而言。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">对于优秀的工程师个人而言，造一些轮子来自我实现是必须要途径，如果能在组织内横向跨团队推动一批人来一起造一个不错的轮子，对个人和集体而言都是一个不错机会。</p>
+<p data-tool="mdnice编辑器" style="font-size: 16px; padding-top: 8px; padding-bottom: 8px; line-height: 26px; color: black; margin: 1em 4px;">本组织构建的每个资产管理管道都是浪费精力，本应该在更高的级别进行投资。</p>
+</section>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 17:00</span>&nbsp;
+<a href="https://www.cnblogs.com/peida/">peida</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12768630" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12768630);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 38044, cb_blogApp = 'peida', cb_blogUserGuid = '0f3e420b-63cf-dd11-9e4d-001cf0cd104b';
+    var cb_entryId = 12768630, cb_entryCreatedDate = '2020-04-24 17:00', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 peida
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script language="javascript" type="text/javascript" src="http://js.users.noscript.cnitblog.com/1910329.js"></script>
+<noscript><a href="http://www.noscript.cnitblog.com/?1910329" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.noscript.cnitblog.com/1910329.asp" style="border:none" />统计代码</a></noscript>
+
+<script src="https://s137.cnzz.com/stat.php?id=1121896&web_id=1121896" language="JavaScript" charset="gb2312"></script>
+
+<script src="https://s14.cnzz.com/stat.php?id=943648&web_id=943648&online=1&show=line" language="JavaScript"></script>
+    </div>
+</body>
+</html>

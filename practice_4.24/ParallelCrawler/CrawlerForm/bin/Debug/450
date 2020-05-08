@@ -1,0 +1,522 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>OneTrainee - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=MH15aYd6DmX-6TABpA2xkiKENy3GAhiM2dh5rOPH89I" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=X7swQJ1TyCJAf6FMVjDPbYhUAiMdNFddEy1-m0_TbFQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/onetrainee/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/onetrainee/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/onetrainee/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 550226;
+        var currentBlogApp = 'onetrainee';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleBlue';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/onetrainee/">OneTrainee</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/onetrainee/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/OneTrainee">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/onetrainee/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+196&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+14</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/onetrainee/archive/2019/12/06.html">2019年12月6日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/11993345.html">
+[置顶]    《Windows内核安全与驱动开发》阅读笔记 -- 索引目录
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：《Windows内核安全与驱动开发》阅读笔记 -- 索引目录 一、内核上机指导 二、内核编程环境及其特殊性 2.1 内核编程的环境 2.2 数据类型 2.3 重要的数据结构 2.4 函数调用 2.5 Windows的驱动开发模型 2.6 WDK编程中的特殊点 三、字符串与链表 3.1 字符串操作 3            <a href="https://www.cnblogs.com/onetrainee/p/11993345.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-06 09:29 OneTrainee 阅读 (157) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11993345" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/onetrainee/archive/2019/10/19.html">2019年10月19日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/11675224.html">
+[置顶]    《Windows内核分析》专题-索引目录
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：这里整理了《Windows内核分析》专题的各篇博文，方便查找。 二进制中的数学换算 常用汇编指令集合 驱动内核函数汇总 windbg 常调用指令 滴水视频汇总 PE文件 系统调用 APC 进程与线程 等待对象 异常(1) 异常(2) 编译器对于SEH异常的拓展 软件调试 消息机制 内存管理 一、保护            <a href="https://www.cnblogs.com/onetrainee/p/11675224.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-10-19 23:59 OneTrainee 阅读 (918) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11675224" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/onetrainee/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12765370.html">
+    两种异常(CPU异常、用户模拟异常)的收集
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html 两种异常(CPU异常、用户模拟异常)的收集 文章的核心：异常收集的是什么？（TrapFrame与ExceptionRecord）；如何收集异常？（看文章）。 1. 异            <a href="https://www.cnblogs.com/onetrainee/p/12765370.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-24 15:46 OneTrainee 阅读 (99) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765370" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/onetrainee/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12763011.html">
+    无处不在的页异常
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html 无处不在的页异常 1. 无效PTE的情况 之前我们在保护模式中分析了PTE的情况，但是其是有效的，如果无效则其数据结构是不同的。 如果要区分是否有效，关键是看PTE中            <a href="https://www.cnblogs.com/onetrainee/p/12763011.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-23 21:20 OneTrainee 阅读 (13) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12763011" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/onetrainee/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12755998.html">
+    线程被动切换（时间碎片） - KiReadyThread函数详细分析
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html 线程被动切换（时间碎片） - KiReadyThread函数详细分析 每个线程都存在自己的时间碎片（_KTHREAD+0x6f QuanTum），当时间到了之后，其会            <a href="https://www.cnblogs.com/onetrainee/p/12755998.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-22 21:10 OneTrainee 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12755998" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12752183.html">
+    KiFindReadyThread分析  - 查找下一个就绪线程
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html KiFindReadyThread分析 - 查找下一个就绪线程 1. KiReadySummary 全局变量 2.KiFindReadyThread 函数分析 3.K            <a href="https://www.cnblogs.com/onetrainee/p/12752183.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-22 15:07 OneTrainee 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12752183" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/onetrainee/archive/2020/04/20.html">2020年4月20日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12740469.html">
+    [设计模式]抽象工厂
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：[设计模式]抽象工厂 1. 抽象工厂模式与工厂模式的区别 工厂模式解决的是单个对象的工作，其并不是依赖的；而抽象工厂模式是解决一系列的相互依赖问题。 其很简单，即一个工厂可以创建一系列相互配到的对象。 举个例子，MySql有一系列Connect类，Command类等，同样oracle也有一系列，一旦            <a href="https://www.cnblogs.com/onetrainee/p/12740469.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 21:02 OneTrainee 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12740469" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12740134.html">
+    [设计模式]工厂模式
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：[设计模式]工厂模式 1. “对象创建”模式 通过“对象创建”模式绕开new,来避免对象创建(new)过程中所导致的紧耦合（依赖具体类），从而支持对象创建的稳定。他是接口抽象之后的第一步工作。 面向接口编程告诉我们，一个接口的类往往应该设计成为抽象类，而不应该声明成具体的类，如果声明具体的类则无法支            <a href="https://www.cnblogs.com/onetrainee/p/12740134.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 20:26 OneTrainee 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12740134" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12738275.html">
+    TLB机制
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html TLB 1. CPU寻址模式 2. TLB 3. 缓存 4. shadowwalk技术 5.TLB感知实验 6.全局页 1. CPU寻址模式 之前在分页时介绍过这张图            <a href="https://www.cnblogs.com/onetrainee/p/12738275.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 18:25 OneTrainee 阅读 (12) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12738275" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12736863.html">
+    [CrackMe]160个CrackMe之09
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：[CrackMe]160个CrackMe之09 1. 常规通过栈回溯法 2. 很容易追溯到爆破点，上面一个字符串比较函数 用户名为 123456，则key为 0012F4B4 0026F214 UNICODE &quot;381-8147-010&quot; 3. 分析key生成算法 找算法的一个比较明显的特点就是找循            <a href="https://www.cnblogs.com/onetrainee/p/12736863.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 11:53 OneTrainee 阅读 (6) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12736863" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12735753.html">
+    [CrackMe]160个CrackMe之08
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：[CrackMe]160个CrackMe之08 1. 直接通过栈回溯法执行到exe领空 2.分析代码片段，很容易找到爆破点，再往上发现一串UNICODE和字符串比较，断定这个Unicode就是注册码了。 3.输出该Unicode字符串，发现成功，该题比较简单，没啥好分析的了。            <a href="https://www.cnblogs.com/onetrainee/p/12735753.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 08:48 OneTrainee 阅读 (7) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735753" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12735344.html">
+    [CrackMe]160个CrackMe之04
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：[CrackMe]160个CrackMe之04 1. 如下界面，输入用户名和密码之后点击确定。 2. 先用OD来字符串搜索，搜索到如下字符串。 3. 关键位置，爆破法成功 爆破法破解成功，出现如下图。 4. 分析关键位置 查看其内存明显是0，但是下面有一些可以的内存 对应的账号和密码 其最后一行代码            <a href="https://www.cnblogs.com/onetrainee/p/12735344.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-20 00:44 OneTrainee 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12735344" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/onetrainee/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 OneTrainee
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

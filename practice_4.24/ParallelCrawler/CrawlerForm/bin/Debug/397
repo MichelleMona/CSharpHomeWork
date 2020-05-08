@@ -1,0 +1,582 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="当你会关注这篇文章时，那么意味着你对 或多或少有些了解，甚至你在许多业务中有所应用。正如你所知，业界对 、`lambda Stream`相关的api的确提供了诸多的便利，如果你愿意花时间去理解和使用的" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Stream—一个早产的婴儿 - nineyang - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=OL4qeo1LNGlN1rKIhv5UctANvt0M6Nx6kLzr_ffx3Xk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/nineyang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/nineyang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/nineyang/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 360683;
+        var currentBlogApp = 'nineyang';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/nineyang/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/nineyang/">nineyang</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/nineyang/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/nineyang">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/nineyang/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+10&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+9</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/nineyang/p/12765439.html">Stream—一个早产的婴儿</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <p>当你会关注这篇文章时，那么意味着你对<code>Stream</code>或多或少有些了解，甚至你在许多业务中有所应用。正如你所知，业界对<code>Stream</code>、<code>lambda</code>褒贬不一，有人认为它是银弹，也有人认为其降低了代码的可读性。事实上，很多东西我们应该辩证的去看待，一方面<code>Stream</code>相关的api的确提供了诸多的便利，如果你愿意花时间去理解和使用的话；然而另一方面，它像一个早产的婴儿，当你去阅读它源码时，你会觉得诧异，像是一个临时拼凑而成的模块。<br>
+在前面的<a href="https://www.hellonine.top/index.php/archives/121/">Java函数式编程的前生今世</a>篇章中，我们已经了解了<code>lambda</code>表达式的原理，以及常见的四大函数式接口。<br>
+我们可以先看一个<code>Stream</code>的demo：</p>
+<pre><code>Stream.of(1, 2, 3)
+                .filter(num -&gt; num &gt; 2)
+                .forEach(System.out::println);
+</code></pre>
+<p>语义比较清晰，从一个<code>list</code>中获取数值大于2的，最后给打印出来。</p>
+<h3 id="源头">源头</h3>
+<p>在调用<code>Stream</code>的<code>API</code>之前，我们都需要先创建一个<code>Steam</code>流，<code>Stream</code>流的创建方式有很多种，比如上述<code>demo</code>中的<code>Stream.of</code>，其使用的是<code>StreamSupport</code>这个类提供的方法；还有在集合类中在<code>1.8</code>之后预留了<code>stream</code>的获取方法等。</p>
+<pre><code>//StreamSupport
+public static &lt;T&gt; Stream&lt;T&gt; stream(Spliterator&lt;T&gt; spliterator, boolean parallel) {
+        Objects.requireNonNull(spliterator);
+        return new ReferencePipeline.Head&lt;&gt;(spliterator,
+                                            StreamOpFlag.fromCharacteristics(spliterator),
+                                            parallel);
+    }
+//Collection
+    default Stream&lt;E&gt; stream() {
+        return StreamSupport.stream(spliterator(), false);
+    }
+</code></pre>
+<p>这里可以稍微留意一下，有一个<code>parallel</code>参数，为我们后文去执行作准备。<br>
+不知道看到这里你是否也会有同样的疑惑：为什么<code>Stream</code>明明是一个接口，要在里面做<code>static</code>的实现？<br>
+这与以往的<code>JDK</code>代码有较大的出入，一般静态功能都会提供一个<code>xxxs</code>来处理，比如<code>Path</code>与<code>Paths</code>，<code>File</code>与<code>Files</code>等。而且更令人诧异的是，在<code>1.8</code>之后，这种静态方法在<code>List</code>、<code>Collection</code>中比比皆是。<br>
+坦率地讲，这并非一种好的设计，严格来讲，接口只是声明，不应该承载具体实现，虽然从语法而言提供了这种能力，但这并不意味着我们只有这样才能实现。而这也像是对过去设计的妥协。<br>
+我们回到<code>Stream</code>，前面两种方法都提到了，会返回一个<code>Stream</code>流。</p>
+<pre><code>default Stream&lt;E&gt; stream() {
+   return StreamSupport.stream(spliterator(), false);
+}
+</code></pre>
+<p>最开始当我看到<code>StreamSupport</code>这个类时，我第一感觉是类似于<code>LockSupport</code>，用于「辅助」，而非「创建」。然而事与愿违的是，它更多的做的是「创建」。其实熟悉<code>JDK</code>源码的人应该比较清楚，这种「创建」的事情，一般是在<code>xxs</code>（比如<code>Paths</code>）这种类中处理。<br>
+当然，这个仅是个人主观的臆断，也许他们内部并没有这种「约定俗成」的东西。</p>
+<pre><code>public static &lt;T&gt; Stream&lt;T&gt; stream(Spliterator&lt;T&gt; spliterator, boolean parallel) {
+        Objects.requireNonNull(spliterator);
+        return new ReferencePipeline.Head&lt;&gt;(spliterator,
+                                            StreamOpFlag.fromCharacteristics(spliterator),
+                                            parallel);
+    }
+</code></pre>
+<p><code>ReferencePipeline.Head</code>是所有流处理的源头，<code>ReferencePipeline</code>继承自<code>AbstractPipeline</code>。<code>Spliterator</code>用于对数据迭代并加工，其中有一个较为关键的方法<code>forEachRemaining</code>，我们后面也会提到。</p>
+<pre><code>//创建头节点
+    AbstractPipeline(Spliterator&lt;?&gt; source,
+                     int sourceFlags, boolean parallel) {
+        this.previousStage = null;
+        this.sourceSpliterator = source;
+        this.sourceStage = this;
+        this.sourceOrOpFlags = sourceFlags &amp; StreamOpFlag.STREAM_MASK;
+        // The following is an optimization of:
+        // StreamOpFlag.combineOpFlags(sourceOrOpFlags, StreamOpFlag.INITIAL_OPS_VALUE);
+        this.combinedFlags = (~(sourceOrOpFlags &lt;&lt; 1)) &amp; StreamOpFlag.INITIAL_OPS_VALUE;
+        this.depth = 0;
+        this.parallel = parallel;
+    }
+</code></pre>
+<p>头节点，包括后面流水线的节点都继承自这个<code>AbstractPipeline</code>，你会发现这里的结构是一个双向链表，通过<code>previousStage</code>和<code>nextStage</code>来分别用于指向前一个和后一个节点。</p>
+<p><img src="https://www.hellonine.top/usr/uploads/2020/04/3206143694.png" alt="2020-04-21T16:01:07.png"></p>
+<h3 id="流水线">流水线</h3>
+<p>在<code>Stream</code>体系中，操作被划分成了两种，一种流操作，他所做的事情是对数据的加工，而在流操作内部，又被划分成了两种，一种是有状态的流(<code>StatefulOp</code>)，一种是无状态的流(<code>StatelessOp</code>)，二者的区别在于，<strong>数据是否会随着操作中的变化而变化</strong>，举个例子，<code>filter</code>是无状态的，你要过滤什么就是什么，而<code>sort</code>是有状态的，在两个线程中，如果你在数据层增加了数据或修改了数据，那么二者最后得到的结果可能并不一致；</p>
+<blockquote>
+<p>A stateful lambda expression is one whose result depends on any state that might change during the execution of a pipeline. On the other hand, a stateless lambda expression is one whose result does not depend on any state that might change during the execution of a pipeline.</p>
+</blockquote>
+<p>另外一种是终止操作(<code>TerminalOp</code>)，他意味着开始对流进行执行操作，如果代码中仅有流操作，那么这个流是不会开始执行的，因为流返回的都是一个新的对象。</p>
+<p>在<code>Stream</code>中，流操作有很多种，比如常见的<code>filter</code>、<code>map</code>、<code>mapToInt</code>等，都会在方法中返回一个新建的流操作对象，而这个对象也继承了<code>AbstractPipeline</code>。</p>
+<pre><code>//filter操作
+    @Override
+    public final Stream&lt;P_OUT&gt; filter(Predicate&lt;? super P_OUT&gt; predicate) {
+        Objects.requireNonNull(predicate);
+        //这里的this就是前面提到的流的源头
+        return new StatelessOp&lt;P_OUT, P_OUT&gt;(this, StreamShape.REFERENCE,
+                                     StreamOpFlag.NOT_SIZED) {
+            @Override
+            Sink&lt;P_OUT&gt; opWrapSink(int flags, Sink&lt;P_OUT&gt; sink) {
+                return new Sink.ChainedReference&lt;P_OUT, P_OUT&gt;(sink) {
+                    @Override
+                    public void begin(long size) {
+                        downstream.begin(-1);
+                    }
+
+                    @Override
+                    public void accept(P_OUT u) {
+                        if (predicate.test(u))
+                            downstream.accept(u);
+                    }
+                };
+            }
+        };
+    }
+
+//StatelessOp类
+    abstract static class StatelessOp&lt;E_IN, E_OUT&gt;
+            extends ReferencePipeline&lt;E_IN, E_OUT&gt; {
+        /**
+         * Construct a new Stream by appending a stateless intermediate
+         * operation to an existing stream.
+         *
+         * @param upstream The upstream pipeline stage
+         * @param inputShape The stream shape for the upstream pipeline stage
+         * @param opFlags Operation flags for the new stage
+         */
+        StatelessOp(AbstractPipeline&lt;?, E_IN, ?&gt; upstream,
+                    StreamShape inputShape,
+                    int opFlags) {
+            super(upstream, opFlags);
+            assert upstream.getOutputShape() == inputShape;
+        }
+
+        @Override
+        final boolean opIsStateful() {
+            return false;
+        }
+    }
+
+//StatelessOp最终也继承自AbstractPipeline
+    AbstractPipeline(AbstractPipeline&lt;?, E_IN, ?&gt; previousStage, int opFlags) {
+        if (previousStage.linkedOrConsumed)
+            throw new IllegalStateException(MSG_STREAM_LINKED);
+        previousStage.linkedOrConsumed = true;
+        previousStage.nextStage = this;
+
+        this.previousStage = previousStage;
+        this.sourceOrOpFlags = opFlags &amp; StreamOpFlag.OP_MASK;
+        this.combinedFlags = StreamOpFlag.combineOpFlags(opFlags, previousStage.combinedFlags);
+        this.sourceStage = previousStage.sourceStage;
+        if (opIsStateful())
+            sourceStage.sourceAnyStateful = true;
+        this.depth = previousStage.depth + 1;
+    }
+</code></pre>
+<p><code>StatelessOp</code>对象在创建时，会注入一个参数<code>this</code>，而这个<code>this</code>即我们前面提到的流的源头。在<code>AbstractPipeline</code>的另外一个构造方法中，完成了双向链表的指定以及深度的自增。</p>
+<p>这里有一个方法<code>opIsStateful</code>，用于判定前面提到的是否是有状态的。</p>
+<h3 id="终止符">终止符</h3>
+<p>所有的流操作的执行，都取决于最终的终止操作(<code>TerminalOp</code>)，如果流中没有这个操作，那么前面提到的操作流都无法执行。<br>
+而所有的终止操作都实现了<code>TerminalOp</code>这个接口，包括向我们常见的<code>foreach</code>、<code>reduce</code>、<code>find</code>等。我们还是以前面例子中提到的<code>foreach</code>来演示我们的原理。</p>
+<pre><code>//Stream
+void forEach(Consumer&lt;? super T&gt; action);
+
+//ReferencePipeline中的forEach实现
+    @Override
+public void forEach(Consumer&lt;? super P_OUT&gt; action) {
+   evaluate(ForEachOps.makeRef(action, false));
+}
+
+</code></pre>
+<p>在<code>Stream</code>的<code>forEach</code>方法中，有一个参数<code>Consumer</code>，是一个函数式接口，我们在前面的文章中有所涉及，有兴趣的可以自行查阅其原理。</p>
+<pre><code>//ForEachOps
+static final class OfRef&lt;T&gt; extends ForEachOp&lt;T&gt; {
+            final Consumer&lt;? super T&gt; consumer;
+
+            OfRef(Consumer&lt;? super T&gt; consumer, boolean ordered) {
+                super(ordered);
+                this.consumer = consumer;
+            }
+
+            @Override
+            public void accept(T t) {
+                consumer.accept(t);
+            }
+        }
+</code></pre>
+<p>在<code>ForEachOps</code>有一个<code>ForEachOp</code>类用于生成操作类，同时，<code>ForEachOp</code>还实现了<code>TerminalSink</code>，后面会提到。不过，还有另外一个<code>OfRef</code>来继承自<code>ForEachOp</code>作为调用入口去使用，不过至今我还没明白这里为何单独需要在<code>ForEachOp</code>下面再嵌套一层，有了解的可以告知我一下。</p>
+<pre><code>//AbstractPipeline
+    final &lt;R&gt; R evaluate(TerminalOp&lt;E_OUT, R&gt; terminalOp) {
+        assert getOutputShape() == terminalOp.inputShape();
+        if (linkedOrConsumed)
+            throw new IllegalStateException(MSG_STREAM_LINKED);
+        linkedOrConsumed = true;
+
+//用于判定是并行还是串行
+        return isParallel()
+               ? terminalOp.evaluateParallel(this, sourceSpliterator(terminalOp.getOpFlags()))
+               : terminalOp.evaluateSequential(this, sourceSpliterator(terminalOp.getOpFlags()));
+    }
+
+    @Override
+    public final boolean isParallel() {
+        return sourceStage.parallel;
+    }
+
+</code></pre>
+<p>这里会根据最开始的源头注入的<code>parallel</code>来判定，在前面也有所提及。这里有一个方法<code>sourceSpliterator</code>用于协助我们去获取数据源分割器，其实在前面有所提及，在创建流的时候，就已经有自动创建一个<code>spliterator</code>，如果是串行流，那么会直接使用源头流的分割器，如果是并行流，而且其中有有状态的操作，那么会使用这个状态流实现的方法去返回。</p>
+<pre><code>//AbstractPipeline
+    @SuppressWarnings(&quot;unchecked&quot;)
+    private Spliterator&lt;?&gt; sourceSpliterator(int terminalFlags) {
+        // Get the source spliterator of the pipeline
+        Spliterator&lt;?&gt; spliterator = null;
+       //最开始的源头流的分割器
+        if (sourceStage.sourceSpliterator != null) {
+            spliterator = sourceStage.sourceSpliterator;
+            sourceStage.sourceSpliterator = null;
+        }
+        else if (sourceStage.sourceSupplier != null) {
+            spliterator = (Spliterator&lt;?&gt;) sourceStage.sourceSupplier.get();
+            sourceStage.sourceSupplier = null;
+        }
+        else {
+            throw new IllegalStateException(MSG_CONSUMED);
+        }
+
+     //如果是并行流并且有有状态的操作流
+        if (isParallel() &amp;&amp; sourceStage.sourceAnyStateful) {
+            // Adapt the source spliterator, evaluating each stateful op
+            // in the pipeline up to and including this pipeline stage.
+            // The depth and flags of each pipeline stage are adjusted accordingly.
+            int depth = 1;
+            for (@SuppressWarnings(&quot;rawtypes&quot;) AbstractPipeline u = sourceStage, p = sourceStage.nextStage, e = this;
+                 u != e;
+                 u = p, p = p.nextStage) {
+
+                int thisOpFlags = p.sourceOrOpFlags;
+                if (p.opIsStateful()) {
+                    depth = 0;
+
+                    if (StreamOpFlag.SHORT_CIRCUIT.isKnown(thisOpFlags)) {
+                        // Clear the short circuit flag for next pipeline stage
+                        // This stage encapsulates short-circuiting, the next
+                        // stage may not have any short-circuit operations, and
+                        // if so spliterator.forEachRemaining should be used
+                        // for traversal
+                        thisOpFlags = thisOpFlags &amp; ~StreamOpFlag.IS_SHORT_CIRCUIT;
+                    }
+
+                    spliterator = p.opEvaluateParallelLazy(u, spliterator);
+
+                    // Inject or clear SIZED on the source pipeline stage
+                    // based on the stage's spliterator
+                    thisOpFlags = spliterator.hasCharacteristics(Spliterator.SIZED)
+                            ? (thisOpFlags &amp; ~StreamOpFlag.NOT_SIZED) | StreamOpFlag.IS_SIZED
+                            : (thisOpFlags &amp; ~StreamOpFlag.IS_SIZED) | StreamOpFlag.NOT_SIZED;
+                }
+                p.depth = depth++;
+                p.combinedFlags = StreamOpFlag.combineOpFlags(thisOpFlags, u.combinedFlags);
+            }
+        }
+
+        if (terminalFlags != 0)  {
+            // Apply flags from the terminal operation to last pipeline stage
+            combinedFlags = StreamOpFlag.combineOpFlags(terminalFlags, combinedFlags);
+        }
+
+        return spliterator;
+    }
+</code></pre>
+<p>在我们拿到分割器之后，我们会调用<code>terminalOp.evaluateSequential</code>方法去处理。需要说明的是，并行流我暂时没有深入研究，所以暂时不在此章的讨论范畴，后续有机会我会补充上去。</p>
+<pre><code>//ForEachOps
+        @Override
+        public &lt;S&gt; Void evaluateSequential(PipelineHelper&lt;T&gt; helper,
+                                           Spliterator&lt;S&gt; spliterator) {
+//这里的helper也就是前面在AbstractPipeline中注入的this
+            return helper.wrapAndCopyInto(this, spliterator).get();
+        }
+
+//AbstractPipeline 
+    @Override
+    final &lt;P_IN, S extends Sink&lt;E_OUT&gt;&gt; S wrapAndCopyInto(S sink, Spliterator&lt;P_IN&gt; spliterator) {
+        copyInto(wrapSink(Objects.requireNonNull(sink)), spliterator);
+        return sink;
+    }
+
+    @Override
+    @SuppressWarnings(&quot;unchecked&quot;)
+    final &lt;P_IN&gt; Sink&lt;P_IN&gt; wrapSink(Sink&lt;E_OUT&gt; sink) {
+        Objects.requireNonNull(sink);
+//遍历流链表，逐一执行前面的opWrapSink方法
+        for ( @SuppressWarnings(&quot;rawtypes&quot;) AbstractPipeline p=AbstractPipeline.this; p.depth &gt; 0; p=p.previousStage) {
+            sink = p.opWrapSink(p.previousStage.combinedFlags, sink);
+        }
+        return (Sink&lt;P_IN&gt;) sink;
+    }
+</code></pre>
+<p>在操作流中，一般会返回一个<code>StatelessOp</code>类，这里前面有所提及，中间有一个<code>opWrapSink</code>就是现在我们在调用的方法，而在这个方法中，又会继续返回一个类<code>Sink.ChainedReference</code>，这个类会在<code>downstream</code>记录我们传入的<code>sink</code>，也就是我们目前正在操作的<code>ForEachOp</code>。</p>
+<pre><code>//前面的filter
+    @Override
+    public final Stream&lt;P_OUT&gt; filter(Predicate&lt;? super P_OUT&gt; predicate) {
+        Objects.requireNonNull(predicate);
+        return new StatelessOp&lt;P_OUT, P_OUT&gt;(this, StreamShape.REFERENCE,
+                                     StreamOpFlag.NOT_SIZED) {
+            @Override
+            Sink&lt;P_OUT&gt; opWrapSink(int flags, Sink&lt;P_OUT&gt; sink) {
+                //继续返回一个类，记录terminalOp
+                return new Sink.ChainedReference&lt;P_OUT, P_OUT&gt;(sink) {
+                    @Override
+                    public void begin(long size) {
+                        downstream.begin(-1);
+                    }
+
+                    @Override
+                    public void accept(P_OUT u) {
+                        if (predicate.test(u))
+                            downstream.accept(u);
+                    }
+                };
+            }
+        };
+    }
+</code></pre>
+<p><code>sink</code>也是一个简单的单项链表，他的顺序与<code>Stream</code>相反，通过<code>downStream</code>一层层向前指定。在获取到最前面一层包装好的<code>sink</code>之后，我们继续看<code>copyInto</code>方法。</p>
+<pre><code>//AbstractPipeline
+    @Override
+    final &lt;P_IN&gt; void copyInto(Sink&lt;P_IN&gt; wrappedSink, Spliterator&lt;P_IN&gt; spliterator) {
+        //这里的wrappedSink是最前面的流操作，也就是我们生成流之后的第一个操作，在此案例中也就是filter
+        Objects.requireNonNull(wrappedSink);
+
+        if (!StreamOpFlag.SHORT_CIRCUIT.isKnown(getStreamAndOpFlags())) {
+            wrappedSink.begin(spliterator.getExactSizeIfKnown());
+            //调用分割器的遍历方法
+            spliterator.forEachRemaining(wrappedSink);
+            wrappedSink.end();
+        }
+        else {
+            copyIntoWithCancel(wrappedSink, spliterator);
+        }
+    }
+
+//Spliterators
+        public void forEachRemaining(Consumer&lt;? super T&gt; action) {
+            Object[] a; int i, hi; // hoist accesses and checks from loop
+            if (action == null)
+                throw new NullPointerException();
+            if ((a = array).length &gt;= (hi = fence) &amp;&amp;
+                (i = index) &gt;= 0 &amp;&amp; i &lt; (index = hi)) {
+               //将数据源遍历，执行sink中的accept方法
+                do { action.accept((T)a[i]); } while (++i &lt; hi);
+            }
+        }
+
+//filter accept方法被遍历执行
+                    @Override
+                    public void accept(P_OUT u) {
+//这里的predicate也就是我们最开始通过lambda表达式创建的action
+                        if (predicate.test(u))
+//如果检测通过，那么执行downstream也就是ForEach.OfRef类的accept方法
+                            downstream.accept(u);
+                    }
+
+//OfRef accept被调用
+            @Override
+            public void accept(T t) {
+//这里的consumer也就是我们stream.foreach调用时注入的System.out::println
+                consumer.accept(t);
+            }
+</code></pre>
+<p><code>Spliterators</code>通过遍历所有数据源，执行<code>filter</code>的<code>accept</code>方法，如果校验通过，那么会执行<code>downstream</code>的<code>accept</code>方法，而这个<code>downstream</code>我们已经提及很多次，也就是我们这个例子中的<code>foreach</code>，<code>foreach</code>的<code>accept</code>被调用时，此时又有一个<code>consumer</code>，这里的<code>consumer</code>也就是我们最开始例子中的<code>System.out::println</code>。<br>
+至此，整体流程就执行完毕了。</p>
+<p>回到我们的标题，为什么说<code>stream</code>是一个“早产的婴儿”呢？在对<code>stream</code>整体源码有所大体阅读之后，你会发现很多类的命名、类的设计风格、以及结构的整理设计能力与之前的模块有较大的差异，有些命名明明可以更为规范，有些设计明明可以设计的更为优雅，甚至于，许多地方的设计还不够简练，这里就不一一举例了。当然，这一切都只是我个人的想法，也有可能是我的水平还没到达另外一个层次，或许几年之后再拜读时又会有不一样的感悟。</p>
+<p>欢迎关注我的公众号，每周至少一篇比较有深度的原创文章：<br>
+<img src="https://www.hellonine.top/usr/uploads/2020/04/3712474294.png" alt="2020-04-23T15:32:19.png"></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 09:46</span>&nbsp;
+<a href="https://www.cnblogs.com/nineyang/">nineyang</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765439" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12765439);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 360683, cb_blogApp = 'nineyang', cb_blogUserGuid = 'cbf3cb2c-a33a-4063-315b-08d4a8d9e085';
+    var cb_entryId = 12765439, cb_entryCreatedDate = '2020-04-24 09:46', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 nineyang
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

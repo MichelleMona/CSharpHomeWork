@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>RioTian - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=1ssrnY3Il79Ok472qeVrpxlSprSXcHhYPgZC5S3wtVM" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/RioTian/custom.css?v=rge7oc1YCxBHot8kEccGvw1cY5E=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=-Yh290MhQyDeXLmvKTSses9H6-49lqbpXFh55zvS0w8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/RioTian/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/RioTian/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/RioTian/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 568589;
+        var currentBlogApp = 'RioTian';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'Custom';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/RioTian/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/RioTian/">RioTian</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/RioTian/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/RioTian">
+联系</a></li>
+<li>
+
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+94&nbsp; </span>
+<span id="stats_article_count">文章 - 
+7&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+8</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/RioTian/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12771891.html">
+[置顶]    【oj进阶之路】各大oj题目分类，集合整理，各处转载
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作为一名计算机专业的学生，现在开始了大规模刷oj竞选ACM队了，oj并非一蹴而就，三两月就能精通的，刷题要趁早，每天一道练手找感觉，真正做进去就会发现oj的世界乐趣无穷，做出题目真的会让人非常有成就感！这段时间我会更新一系列的oj blog，作为对目前所学知识的总结和回顾，也提醒自己别生疏了基本算法            <a href="https://www.cnblogs.com/RioTian/p/12771891.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 10:46 RioTian 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12771891" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/RioTian/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12775236.html">
+    #2063 过山车（二分图入门题）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：过山车 Time Limit: 1000/1000 MS (Java/Others) Memory Limit: 32768/32768 K (Java/Others) Total Submission(s): 19256 Accepted Submission(s): 8415 Problem D            <a href="https://www.cnblogs.com/RioTian/p/12775236.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 20:59 RioTian 阅读 (0) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12775236" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12774564.html">
+    VS遇到 error C4996问题的解决方法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在编译c++程序时报如下错：error C4996: &#39;strncat&#39;: This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECU            <a href="https://www.cnblogs.com/RioTian/p/12774564.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 19:11 RioTian 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774564" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12772116.html">
+    #2059：龟兔赛跑（动态规划dp）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Problem Description 据说在很久很久以前，可怜的兔子经历了人生中最大的打击——赛跑输给乌龟后，心中郁闷，发誓要报仇雪恨，于是躲进了杭州下沙某农业园卧薪尝胆潜心修炼，终于练成了绝技，能够毫不休息得以恒定的速度(VR m/s)一直跑。兔子一直想找机会好好得教训一下乌龟，以雪前耻。 最近            <a href="https://www.cnblogs.com/RioTian/p/12772116.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 11:27 RioTian 阅读 (6) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12772116" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12771891.html">
+    【oj进阶之路】各大oj题目分类，集合整理，各处转载
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作为一名计算机专业的学生，现在开始了大规模刷oj竞选ACM队了，oj并非一蹴而就，三两月就能精通的，刷题要趁早，每天一道练手找感觉，真正做进去就会发现oj的世界乐趣无穷，做出题目真的会让人非常有成就感！这段时间我会更新一系列的oj blog，作为对目前所学知识的总结和回顾，也提醒自己别生疏了基本算法            <a href="https://www.cnblogs.com/RioTian/p/12771891.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 10:46 RioTian 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12771891" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/RioTian/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12766204.html">
+    #2051：Bitset（进制转化）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Bitset Time Limit: 1000/1000 MS (Java/Others) Memory Limit: 32768/32768 K (Java/Others) Total Submission(s): 18437 Accepted Submission(s): 13833 Probl            <a href="https://www.cnblogs.com/RioTian/p/12766204.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 11:21 RioTian 阅读 (5) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766204" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/RioTian/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12763643.html">
+    #2054：A == B ?（水题坑人）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Problem Description Give you two numbers A and B, if A is equal to B, you should print &quot;YES&quot;, or print &quot;NO&quot;. Input each test case contains two numbers            <a href="https://www.cnblogs.com/RioTian/p/12763643.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 21:23 RioTian 阅读 (11) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12763643" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12761427.html">
+    #2045：不容易系列之三LELE的RPG难题（dp递推）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Problem Description 人称“AC女之杀手”的超级偶像LELE最近忽然玩起了深沉，这可急坏了众多“Cole”（LELE的粉丝,即&quot;可乐&quot;）,经过多方打探，某资深Cole终于知道了原因，原来，LELE最近研究起了著名的RPG难题: 有排成一行的ｎ个方格，用红(Red)、粉(Pink)、            <a href="https://www.cnblogs.com/RioTian/p/12761427.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 15:59 RioTian 阅读 (13) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12761427" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12758871.html">
+    #2037：今年暑假不AC
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：今年暑假不AC Problem Description“今年暑假不AC？”“是的。”“那你干什么呢？”“看世界杯呀，笨蛋！”“@ $%^&amp; %...”确实如此，世界杯来了，球迷的节日也来了，估计很多ACMer也会抛开电脑，奔向电视了。作为球迷，一定想看尽量多的完整的比赛，当然，作为新时代的好青年，你            <a href="https://www.cnblogs.com/RioTian/p/12758871.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 10:07 RioTian 阅读 (6) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12758871" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12758636.html">
+    #2036：改革春风吹满地
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：根据题意： 给你边数，和坐标，然后让你输出对应多边形的面积。 思路：先由坐标求三角形，然后多个三角形组合成多边形。 数学原理： 利用了已知三角形的三个顶点的坐标求面积的方法。 已知直角坐标系3点p(a,b),m(c,d),n(e,f) 求$三角形pmn$面积的表达式！ 无论三角形的顶点位置如何，△P            <a href="https://www.cnblogs.com/RioTian/p/12758636.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 09:37 RioTian 阅读 (4) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12758636" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/RioTian/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/RioTian/p/12756291.html">
+    给我买个糖？ 
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：赞赏说明 (っ&#180;▽`)っ 那个emmm，如果你有多余的软妹币的话，可以打赏一下鸭，您的打赏窝会用来买糖哒/或者其余的好玩的东东，蟹蟹嘻嘻！&#128518; 赞赏方式 网页下方的sponsor栏 赞赏记录 谢谢您的打赏的软妹币，最好是能接着在本页面评论下，让我知道你鸭，留下脚印哦！不然找不到你哒~或者打赏的话备注            <a href="https://www.cnblogs.com/RioTian/p/12756291.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 21:55 RioTian 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12756291" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/RioTian/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 RioTian
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script type="text/javascript">
+        /* 鼠标点击文字特效 */
+        var a_idx = 0;
+        jQuery(document).ready(function ($) {
+            $("body").click(function (e) {
+                var a = [
+                    "天天天","技术宅","伊卡洛斯","ACMer","萝莉","人工智能","小白","四糸乃","Terminal","图论","数论","为了女儿说不定连魔王都能干掉","一生只为机器人",
+                ];
+                var b = [
+                    "#FFF68F", "#FFBBFF", "#FF0000", "#FF00FF", "#F08080",
+                    "#008000", "#7FFFAA", "#0000CD", "#0000FF", "#080808"
+                ];
+                var a_index = Math.floor((Math.random() * a.length));
+                var b_index = Math.floor((Math.random() * b.length));
+ 
+                var color = b[b_index];
+                var $i = $("<span/>").text(a[a_index]);
+                /* a_idx = (a_idx + 1) % a.length; */
+                var x = e.pageX,
+                    y = e.pageY;
+ 
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": color,
+                });
+                $("body").append($i);
+                $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                }, 1500, function () {
+                    $i.remove();
+                });
+            });
+        });
+    </script>
+    </div>
+</body>
+</html>

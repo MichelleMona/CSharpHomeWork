@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="Gateway 简介 是什么？ Spring Cloud 全家桶中有个很重要的组件：网关。在 1.x 版本中使用的是 Zuul 网关，但是到了 2.x，由于Zuul的升级不断跳票，Spring Clo" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SpringCloud-Gateway 网关路由、断言、过滤 - 农夫三拳有点疼~ - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/songjilong/custom.css?v=IdZp6AjgWuoKSwHn1wDPGCHpKs4=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/songjilong/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/songjilong/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/songjilong/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 561152;
+        var currentBlogApp = 'songjilong';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/songjilong/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/songjilong/">农夫三拳有点疼</a>
+</h1>
+<h2>
+种一棵树最好的时间是十年前，其次是现在
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/songjilong/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%86%9C%E5%A4%AB%E4%B8%89%E6%8B%B3%E6%9C%89%E7%82%B9%E7%96%BC~">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/songjilong/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+68&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+38</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12774265.html">SpringCloud-Gateway 网关路由、断言、过滤</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="gateway-简介">Gateway 简介</h1>
+<h2 id="是什么？">是什么？</h2>
+<p>Spring Cloud 全家桶中有个很重要的组件：网关。在 1.x 版本中使用的是 Zuul 网关，但是到了 2.x，由于Zuul的升级不断跳票，Spring Cloud 自己研发了一套网关组件：Spring Cloud Gateway。</p>
+<p>Spring Cloud Gateway基于 Spring Boot 2.x，Spring WebFlux 和 Project Reactor 构建，使用了 Webflux 中的 reactor-netty 响应式编程组件，底层使用了 Netty 通讯框架。</p>
+<p>详见：<a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.2.RELEASE/reference/html">官网</a></p>
+<h2 id="能干嘛？">能干嘛？</h2>
+<p>反向代理</p>
+<p>鉴权</p>
+<p>流量控制</p>
+<p>熔断</p>
+<p>日志监控</p>
+<p>......</p>
+<h2 id="网关在微服务架构中的位置">网关在微服务架构中的位置</h2>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425105729.png" alt=""></p>
+<h1 id="gateway-的三大概念">Gateway 的三大概念</h1>
+<p><strong>Route（路由）</strong>：路由是构建网关的基本模块，它由 ID、目标 URI、一系列的断言和过滤器组成，如果断言为 true 则匹配该路由</p>
+<p><strong>Predicate（断言）</strong>：<em>参考的是 Java8 中的 java.util.function.Predicate</em>。开发人员可以匹配 HTTP 请求中的所有内容（例如请求头或请求参数），如果请求与断言相匹配则进行路由</p>
+<p><strong>Filter（过滤）</strong>：指的是 Spring 框架中 GatewayFilter 的实例，使用过滤器，可以在请求被路由之前或之后对请求进行修改</p>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425115208.png" alt=""></p>
+<h1 id="工作流程">工作流程</h1>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425115400.png" alt=""></p>
+<blockquote>
+<p>Clients make requests to Spring Cloud Gateway. If the Gateway Handler Mapping determines that a request matches a route, it is sent to the Gateway Web Handler. This handler runs the request through a filter chain that is specific to the request. The reason the filters are divided by the dotted line is that filters can run logic both before and after the proxy request is sent. All “pre” filter logic is executed. Then the proxy request is made. After the proxy request is made, the “post” filter logic is run.</p>
+</blockquote>
+<p>翻译：客户端向 Spring Cloud Gateway 发出请求。如果网关处理程序映射确定请求与路由匹配，则将其发送到网关 Web 处理程序。该处理程序通过特定于请求的过滤器链来运行请求。 <strong>筛选器由虚线分隔的原因是，筛选器可以在发送代理请求之前和之后运行逻辑。</strong>所有 “前置“ 过滤器逻辑均被执行，然后发出代理请求，发出代理请求后，将运行“ 后置 ”过滤器逻辑。</p>
+<p><strong>总结：路由转发 + 执行过滤器链</strong></p>
+<h1 id="两种配置方式">两种配置方式</h1>
+<h2 id="配置文件方式">配置文件方式</h2>
+<p>我们以访问「百度新闻网」为例，添加如下配置</p>
+<pre><code class="language-yml">server:
+  port: 9527
+spring:
+  application:
+    name: cloud-gateway9527
+  cloud:
+    gateway:
+      routes:
+        - id: news						# 路由id
+          uri: http://news.baidu.com	# 真实调用地址
+          predicates:
+            - Path=/guonei				# 断言，符合规则进行路由
+</code></pre>
+<p>浏览器虽然输入 <code>localhost:9527/guonei</code>，却会转发到指定的地址</p>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425145640.png" alt=""></p>
+<h2 id="编码方式">编码方式</h2>
+<p>新增配置文件</p>
+<pre><code class="language-java">@Configuration
+public class GatewayConfig {
+    @Bean
+    public RouteLocator routes(RouteLocatorBuilder builder) {
+        return builder.routes()
+                .route(&quot;news2&quot;, r -&gt; r.path(&quot;/guoji&quot;).uri(&quot;http://news.baidu.com&quot;))
+                .build();
+    }
+}
+</code></pre>
+<p>效果：</p>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425151001.png" alt=""></p>
+<h1 id="动态路由">动态路由</h1>
+<p>开启后，默认情况下 Gateway 会根据注册中心注册的服务列表，以注册中心上微服务名为路径创建动态路由进行转发，从而实现动态路由的功能</p>
+<pre><code class="language-yml">spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启从注册中心动态创建路由的功能，利用微服务名进行路由
+      routes:
+        - id: payment_routh1
+          #uri: http://localhost:8001     #静态，写死了地址，只能调用一个服务
+          uri: lb://CLOUD-PAYMENT-SERVICE #动态，lb://微服务名
+          predicates:
+            - Path=/payment/get/**
+        - id: payment_routh2
+          #uri: http://localhost:8001
+          uri: lb://CLOUD-PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/lb/**
+</code></pre>
+<h1 id="predicate-的使用">Predicate 的使用</h1>
+<h2 id="时间相关配置">时间相关配置</h2>
+<p>After：在指定时间之<strong>后</strong>进行路由</p>
+<p>Before：在指定时间之<strong>前</strong>进行路由</p>
+<p>Between：在指定时间之<strong>间</strong>进行路由</p>
+<pre><code class="language-yml">predicates:
+    - Path=/payment/lb/**
+    #- After=2020-04-25T16:30:58.215+08:00[Asia/Shanghai]
+    #- Before=2020-04-25T16:40:58.215+08:00[Asia/Shanghai]
+    - Between=2020-04-25T16:35:58.215+08:00[Asia/Shanghai],2020-04-25T16:40:58.215+08:00[Asia/Shanghai]
+</code></pre>
+<p>上述配置的时间格式可以通过以下代码得到</p>
+<pre><code class="language-java">@Test
+public void test(){
+    ZonedDateTime now = ZonedDateTime.now();
+    System.out.println(now);
+}
+</code></pre>
+<h2 id="请求相关配置">请求相关配置</h2>
+<p><strong>Cookie</strong></p>
+<p>配置说明：【Cookie=cookie名, cookie值的正则表达式规则】</p>
+<pre><code class="language-yml">predicates:
+  - Path=/payment/lb/**
+  - Cookie=id, [0-9]
+</code></pre>
+<p>使用 curl 工具模拟携带 cookie 发送请求</p>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425165551.png" alt=""></p>
+<p><strong>Header</strong></p>
+<p>配置说明：【Header=header名, header值的正则表达式规则】</p>
+<pre><code class="language-yml">predicates:
+  - Path=/payment/lb/**
+  - Header=h, [a-h]
+</code></pre>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425170924.png" alt=""></p>
+<p><strong>Host</strong></p>
+<p>配置说明：【Host=主机名（可配置多个，也可以使用通配符）】</p>
+<pre><code class="language-yml">predicates:
+  - Path=/payment/lb/**
+  - Host=**.a.com,**.b.cn
+</code></pre>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425171238.png" alt=""></p>
+<p><strong>Method</strong></p>
+<p>配置说明：【Method=请求类型】</p>
+<pre><code class="language-yml">predicates:
+  - Path=/payment/lb/**
+  - Method=GET
+</code></pre>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425171953.png" alt=""></p>
+<p><strong>Path</strong></p>
+<p>配置说明：【Path=请求路径】</p>
+<pre><code class="language-yml">predicates:
+  - Path=/payment/lb/**
+</code></pre>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425171953.png" alt=""></p>
+<p><strong>Query</strong></p>
+<p>配置说明：【Query=参数名，参数值】</p>
+<pre><code class="language-yml">predicates:
+  - Path=/payment/lb/**
+  - Query=name, zhangsan
+</code></pre>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425172720.png" alt=""></p>
+<p><strong>详见：<a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.2.RELEASE/reference/html/#gateway-request-predicates-factories">官网</a></strong></p>
+<h1 id="filter-的使用">Filter 的使用</h1>
+<ul>
+<li>生命周期：pre、post</li>
+<li>种类：GatewayFilter、GlobalFilter</li>
+</ul>
+<p>GatewayFilter 在官方文档有几十种！详细配置可参考 <a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.2.2.RELEASE/reference/html/#gatewayfilter-factories">官网</a>，这里主要介绍自定义全局过滤器。</p>
+<pre><code class="language-java">@Component
+@Slf4j
+public class MyGlobalFilter implements GlobalFilter, Ordered {
+    @Override
+    public Mono&lt;Void&gt; filter(ServerWebExchange exchange, GatewayFilterChain chain) {
+        String username = exchange.getRequest().getQueryParams().getFirst(&quot;username&quot;);
+        //用户名为空时，给出错误响应
+        if (username == null) {
+            log.info(&quot;用户名为空，非法登录&quot;);
+            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
+            return exchange.getResponse().setComplete();
+        }
+        return chain.filter(exchange);
+    }
+
+    @Override
+    public int getOrder() {
+        return 0;
+    }
+}
+</code></pre>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425175644.png" alt=""></p>
+<p><img src="https://gitee.com/songjilong/FigureBed/raw/master/img/20200425175544.png" alt=""></p>
+<hr>
+<p><a href="https://github.com/songjilong/springcloud-hoxton-learning">获取完整代码</a></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 18:02</span>&nbsp;
+<a href="https://www.cnblogs.com/songjilong/">农夫三拳有点疼~</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774265" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12774265);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 561152, cb_blogApp = 'songjilong', cb_blogUserGuid = '316a7fce-4c2f-498e-9b44-08d765b2412c';
+    var cb_entryId = 12774265, cb_entryCreatedDate = '2020-04-25 18:02', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 农夫三拳有点疼~
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <!-- require APlayer -->
+<!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<meting-js
+        id="594243151"
+        lrc-type="0"
+        server="netease"
+        order="random"
+        type="playlist"
+        fixed="true"
+        list-olded="true">
+</meting-js>
+-->
+    </div>
+</body>
+</html>

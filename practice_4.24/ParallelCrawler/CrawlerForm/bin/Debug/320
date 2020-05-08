@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>TZ张无忌 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/zhaohongcheng/custom.css?v=t5o5q9lwgJ78BN8ae&#x2B;QJ924r9v0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zhaohongcheng/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zhaohongcheng/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zhaohongcheng/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 511456;
+        var currentBlogApp = 'zhaohongcheng';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/zhaohongcheng/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zhaohongcheng/">Tz张无忌</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zhaohongcheng/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/TZ%E5%BC%A0%E6%97%A0%E5%BF%8C">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zhaohongcheng/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+33&nbsp; </span>
+<span id="stats_article_count">文章 - 
+4&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+85</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2019/11/28.html">2019年11月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/11951236.html">
+[置顶]    Vue.js大屏可视化数据数字滚动翻转跳转效果（通俗易懂附完整代码）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：大屏数字滚动翻转效果来源于最近工作中element后台管理页面一张大屏的UI图，该UI图上有一个模块需要有数字往上翻动的效果，以下是最终实现的效果： 整体思路： 在实现此效果之前，我们先来捋一下思路，用思维导图来设计一下我们的实现步骤，如下： 你可以审查元素，下载数字背景图片，复制图片地址，或者使用            <a href="https://www.cnblogs.com/zhaohongcheng/p/11951236.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-28 17:11 TZ张无忌 阅读 (2952) 评论 (24)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11951236" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2019/10/24.html">2019年10月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/11718887.html">
+[置顶]    网页背景H5视频自动播放---PC端、移动端兼容问题完美解决方案（IOS、安卓、微信端）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近公司官网需要使用视频当做banner背景且自动播放，并且因为是官网需要做到PC端和移动端都可以适配兼容，这些问题很是头疼； 兵来将挡，水来土掩，进过查阅相关技术资料，现已完美兼容PC端和移动端。下面就为大家详细讲解： PC端： PC端相应简单些，浏览器对&lt;video&gt;标签的兼容还是很好的，但是想            <a href="https://www.cnblogs.com/zhaohongcheng/p/11718887.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-24 18:37 TZ张无忌 阅读 (1967) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11718887" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/12766000.html">
+    深度剖析前端JavaScript中的原型(JS的对象原型)
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：这张图片有点劝退了，哈哈哈~ 通过原型机制，JavaScript 中的对象从其他对象继承功能特性；这种继承机制与经典的面向对象编程语言的继承机制不同。本文将探讨这些差别，解释原型链如何工作，并了解如何通过 prototype 属性向已有的构造器添加方法 基于原型的语言？ JavaScript 常被描            <a href="https://www.cnblogs.com/zhaohongcheng/p/12766000.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 11:43 TZ张无忌 阅读 (114) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12766000" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2020/03/27.html">2020年3月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/12579446.html">
+    还是只使用console.log()进行调试？好吧，其实还有更多。
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在浏览器控制台中打印消息无疑可以拯救所有开发人员。 console.log()消息就像您的大多数疾病的药，同时调试了代码中的一些有线问题。 那里的大多数开发人员都喜欢—&#160;让我们在浏览器中打印消息以了解有关此问题的更多信息。我敢肯定我不是唯一一个这样做的人。&#129322; 调试就像是犯罪电影中的侦探一样，在开发            <a href="https://www.cnblogs.com/zhaohongcheng/p/12579446.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-27 13:57 TZ张无忌 阅读 (1000) 评论 (9)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12579446" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2020/03/11.html">2020年3月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/12425672.html">
+    Element-UI饿了么时间组件控件按月份周日期，开始时间结束时间范围限制参数
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在日常开发中，我们会遇到一些情况，在使用Element-UI&#160;限制用户的日期时间范围的选择控制（例如：查询消息开始和结束时间，需要限制不能选择今天之后的时间）。 看了网上的一些文档，零零散散、各式各样的都是简单的吧代码列出来，并没有详细的说明各参数的含义，用途，对新手及其不友好。 我们这里使用的是             <a href="https://www.cnblogs.com/zhaohongcheng/p/12425672.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-11 12:31 TZ张无忌 阅读 (487) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12425672" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2020/02/21.html">2020年2月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/12217692.html">
+    揭秘（爱奇艺、优酷、腾讯）在线视频网站视频2倍速、多倍速快速播放的前端实现方法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一、关于视频倍速播放 B站，或者腾讯视频等主流视频网站视频现在都支持倍速播放功能。 这个功能对于当下快节奏的生活而言，是很有用的，说夸张点是延长了我们的生命，哈哈哈。 对于一个靠技术吃饭人，总免不了关注点在技术实现上，究竟是如何实现的呢？且看~ 二、HTML5 video视频倍速播放的实现 当当当当            <a href="https://www.cnblogs.com/zhaohongcheng/p/12217692.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-21 09:31 TZ张无忌 阅读 (284) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12217692" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2020/02/03.html">2020年2月3日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/12257048.html">
+    提高敲代码的效率：程序员同扭曲时间的事儿抗争
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我一直说，时间是人生中最宝贵的财富，今天我就来跟你聊聊时间管理方面的话题。 关于时间管理，我以前在外企工作时，受过一个专门的培训，后来我也在工作中总结过自己的方式。时间管理是非常重要的，因为时间过得实在是太快了，快得让你有点受不了，而看似忙碌的我们似乎在这一年中也没有做太多事，尤其是让自己能成长的事            <a href="https://www.cnblogs.com/zhaohongcheng/p/12257048.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-03 21:20 TZ张无忌 阅读 (50) 评论 (3)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12257048" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2020/01/18.html">2020年1月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/12208492.html">
+    原生JS在网页上复制的所有文字后面自动加上一段版权声明
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：不少技术博客有这样的处理，当我们复制代码的时候，会自动加上一段本信息版权为XXXX，这是怎么实现的呢？ 其实实现的方式很简单，可以在我的网站页面上绑定一个copy事件，当你复制文章内容的时候，自动在剪切板文字后面加上一段版权声明。 我这边是没有加这些的，代码什么的想复制就复制好了。大家都是靠代码技能            <a href="https://www.cnblogs.com/zhaohongcheng/p/12208492.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-18 13:59 TZ张无忌 阅读 (506) 评论 (6)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12208492" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2020/01/07.html">2020年1月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/12161929.html">
+    Echarts大数据可视化物流航向省份流向迁徙动态图，开发全解+完美参数注释
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近在研究Echarts的相关案例，毕竟现在大数据比较流行，比较了D3.js、superset等相关的图表插件，还是觉得echarts更简单上手些。 本文是以原生JS为基础，如果使用Vue.js的话，只需把相关配置放到method函数中，或者放在computed属性中，毕竟参数配置都是固定的，换汤不            <a href="https://www.cnblogs.com/zhaohongcheng/p/12161929.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-07 16:38 TZ张无忌 阅读 (440) 评论 (4)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12161929" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2019/11/28.html">2019年11月28日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/11951236.html">
+    Vue.js大屏可视化数据数字滚动翻转跳转效果（通俗易懂附完整代码）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：大屏数字滚动翻转效果来源于最近工作中element后台管理页面一张大屏的UI图，该UI图上有一个模块需要有数字往上翻动的效果，以下是最终实现的效果： 整体思路： 在实现此效果之前，我们先来捋一下思路，用思维导图来设计一下我们的实现步骤，如下： 你可以审查元素，下载数字背景图片，复制图片地址，或者使用            <a href="https://www.cnblogs.com/zhaohongcheng/p/11951236.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-28 17:11 TZ张无忌 阅读 (2952) 评论 (24)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11951236" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2019/11/01.html">2019年11月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/11775688.html">
+    彻底完美解决安卓苹果手机点击输入框网页页面自动放大缩小
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：为了方便用户的查看浏览器在移动默认设置用户可以放大或者缩小， 但是随着前端届的日新月异的变化，反而随意放大缩小成了我们需要解决的问题； 安卓手机解决方案： 其实使用meta标签可以解决安卓手机的的放啊或者缩小的问题，但是meta标签在苹果手机上的作用却是 const meta = 0(哈哈，就是没有            <a href="https://www.cnblogs.com/zhaohongcheng/p/11775688.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-01 10:47 TZ张无忌 阅读 (770) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11775688" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zhaohongcheng/archive/2019/10/24.html">2019年10月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/zhaohongcheng/p/11718887.html">
+    网页背景H5视频自动播放---PC端、移动端兼容问题完美解决方案（IOS、安卓、微信端）
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近公司官网需要使用视频当做banner背景且自动播放，并且因为是官网需要做到PC端和移动端都可以适配兼容，这些问题很是头疼； 兵来将挡，水来土掩，进过查阅相关技术资料，现已完美兼容PC端和移动端。下面就为大家详细讲解： PC端： PC端相应简单些，浏览器对&lt;video&gt;标签的兼容还是很好的，但是想            <a href="https://www.cnblogs.com/zhaohongcheng/p/11718887.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-10-24 18:37 TZ张无忌 阅读 (1967) 评论 (5)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11718887" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/zhaohongcheng/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 TZ张无忌
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

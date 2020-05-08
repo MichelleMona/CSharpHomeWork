@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>农夫三拳有点疼~ - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/songjilong/custom.css?v=IdZp6AjgWuoKSwHn1wDPGCHpKs4=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/songjilong/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/songjilong/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/songjilong/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 561152;
+        var currentBlogApp = 'songjilong';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleMemory';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/songjilong/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/songjilong/">农夫三拳有点疼</a>
+</h1>
+<h2>
+种一棵树最好的时间是十年前，其次是现在
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/songjilong/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%86%9C%E5%A4%AB%E4%B8%89%E6%8B%B3%E6%9C%89%E7%82%B9%E7%96%BC~">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/songjilong/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+68&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+38</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/25.html">2020年4月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12774265.html">
+    SpringCloud-Gateway 网关路由、断言、过滤
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Gateway 简介 是什么？ Spring Cloud 全家桶中有个很重要的组件：网关。在 1.x 版本中使用的是 Zuul 网关，但是到了 2.x，由于Zuul的升级不断跳票，Spring Cloud 自己研发了一套网关组件：Spring Cloud Gateway。 Spring Cloud             <a href="https://www.cnblogs.com/songjilong/p/12774265.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-25 18:02 农夫三拳有点疼~ 阅读 (64) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12774265" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12770999.html">
+    SpringCloud-Hystrix 服务降级、熔断
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Hystrix 是什么？ Hystrix 是一个用于处理分布式系统的延迟和容错的开源库，在分布式系统里，许多依赖不可避免的会调用失败，比如超时、异常等， Hystrix 能够保证在一个依赖出问题的情况下，不会导致整体服务失败，避免级联故障，以提高分布式系统的弹性。 「断路器」本身是一种开关装置，当某            <a href="https://www.cnblogs.com/songjilong/p/12770999.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 23:50 农夫三拳有点疼~ 阅读 (102) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12770999" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12762088.html">
+    设计模式 - 模板方法模式详解及其在Spring中的应用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：基本介绍 模板方法模式（Template Method Pattern）也叫模板模式，它在一个抽象类中公开定义了执行它的方法的模板，它的字类可以按需重写方法实现，但调用将以抽象类中定义的方式进行。 简单来说，模板方法模式定义一个操作中的算法的骨架，将一些步骤延迟到子类中，使得子类可以不改变一个算法的            <a href="https://www.cnblogs.com/songjilong/p/12762088.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 17:05 农夫三拳有点疼~ 阅读 (164) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12762088" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12759958.html">
+    SpringCloud-OpenFeign的超时控制和日志增强
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：OpenFeign 超时控制 feign 客户端调用服务时默认等待 1 秒钟，如果获取不到服务就会报错 如果需要增加超时时间，需要配置如下信息 OpenFeign 日志增强 Feign 提供了日志打印功能，我们可以通过配置来调整日志级别，从而了解 Feign 中 Http 请求的细节。说白了就是 对            <a href="https://www.cnblogs.com/songjilong/p/12759958.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-23 12:21 农夫三拳有点疼~ 阅读 (16) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12759958" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/22.html">2020年4月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12752115.html">
+    SpringCloud-Ribbon负载均衡机制、手写轮询算法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Ribbon 内置的负载均衡规则 在 包下有一个接口 ，它可以根据特定的算法从服务列表中选取一个要访问的服务，默认使用的是「轮询机制」 RoundRobinRule：轮询 RandomRule：随机 RetryRule：先按照 的策略获取服务，如果获取服务失败则在指定时间内会进行重试，获取可用的服务            <a href="https://www.cnblogs.com/songjilong/p/12752115.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-22 14:58 农夫三拳有点疼~ 阅读 (18) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12752115" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/21.html">2020年4月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12744400.html">
+    服务注册与发现-Eureka、Consul、Zookeeper的区别
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：三者异同点 | 组件名 | 编写语言 | CAP | 服务健康检查 | 对外暴露接口 | SpringCloud 集成 | | | | | | | | | Eureka | Java | AP | 可通过配置支持 | HTTP | 可集成 | | Consul | Golang | CP | 支持             <a href="https://www.cnblogs.com/songjilong/p/12744400.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-21 14:25 农夫三拳有点疼~ 阅读 (13) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12744400" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/19.html">2020年4月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12734627.html">
+    SpringCloud-服务注册中心「Eureka」的介绍与使用
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Eureka 两大组件 &#128681; Eureka Server：提供服务注册服务 ​ 各个微服务节点通过配置启动后，会在 Eureka Server 中进行注册， 这样 Eureka Server 中的服务注册表中将会存储所有可用服务节点的信息，服务节点的信息可以在界面中直观看到。 &#128681; Eureka C            <a href="https://www.cnblogs.com/songjilong/p/12734627.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-19 22:21 农夫三拳有点疼~ 阅读 (60) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12734627" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/18.html">2020年4月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12729129.html">
+    超详细-七种常见结构型模式的描述总结与代码分析
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：结构型模式（Structural Pattern） 用于将类或对象结合在一起形成更强大的结构，就像搭积木，可以通过简单的积木组合出复杂、功能强大的模型。 | 结构型模式 | 重要程度 | | | | | 适配器模式(Adapter) | ⭐⭐⭐⭐ | | 桥接模式(Bridge) | ⭐⭐⭐ | |            <a href="https://www.cnblogs.com/songjilong/p/12729129.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-18 23:37 农夫三拳有点疼~ 阅读 (156) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12729129" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/17.html">2020年4月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12722229.html">
+    Java14：你需要知道的新特性
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：基本介绍 2020 年 3 月 17 日，JDK / Java 14 正式 GA(General Available)。这是自从 Java 采用六个月一次的发布周期之后的第五次发布。 此版本包含的 JEP Java/JDK Enhancement Proposals JDK 增强提案）比 Java             <a href="https://www.cnblogs.com/songjilong/p/12722229.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-17 20:17 农夫三拳有点疼~ 阅读 (252) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12722229" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/songjilong/archive/2020/04/16.html">2020年4月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/songjilong/p/12713689.html">
+    设计模式 - 代理模式详解
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：代理模式介绍 代理模式提供了对目标对象额外的访问方式，即通过代理对象访问目标对象，这样可以 在不修改原目标对象的前提下，提供额外的功能操作，扩展目标对象的功能。 代理模式分为三类： 静态代理 动态代理 Cglib 代理 静态代理（不推荐） 介绍 要求目标对象和代理对象实现同一个接口 ，调用的时候调用            <a href="https://www.cnblogs.com/songjilong/p/12713689.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-16 16:23 农夫三拳有点疼~ 阅读 (155) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12713689" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/songjilong/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 农夫三拳有点疼~
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <!-- require APlayer -->
+<!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<meting-js
+        id="594243151"
+        lrc-type="0"
+        server="netease"
+        order="random"
+        type="playlist"
+        fixed="true"
+        list-olded="true">
+</meting-js>
+-->
+    </div>
+</body>
+</html>

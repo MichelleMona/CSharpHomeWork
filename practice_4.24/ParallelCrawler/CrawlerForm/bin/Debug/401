@@ -1,0 +1,346 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="never" />
+    <meta property="og:description" content="这篇文章行文结构对照微软博客， 结合本人意译和多年实践的回顾思考形成此次读书笔记。 Domian driven Design 领域 驱动 设计（DDD）提倡 。 1. DDD的视角 DDD将 ; DD" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>[半翻]  设计面向DDD的微服务 - 有态度的小码甲 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=hlpQ1CJDwwJXDxv2HNauUmW3NjyWzoMaw1uER19SLT0" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/JulianHuang/custom.css?v=FVeKC9gP1U2VRvzXNKF0htBwJ7U=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=XjHfryC9ctsatIZz1dHn7TsRIqmwz9c3aj_6SCfHSDM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/JulianHuang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/JulianHuang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/JulianHuang/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 232636;
+        var currentBlogApp = 'JulianHuang';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var skinName = 'CodingLife';
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/JulianHuang/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/JulianHuang/">Dotnet Plus</a>
+</h1>
+<h2>
+知其然更知其所以然，不做眼高手低的【高手】
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/JulianHuang/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%9C%89%E6%80%81%E5%BA%A6%E7%9A%84%E5%B0%8F%E7%A0%81%E7%94%B2">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/JulianHuang/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+61&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+252</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/JulianHuang/p/12773161.html">[半翻]  设计面向DDD的微服务</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <blockquote>
+<p>这篇文章行文结构对照微软博客， 结合本人意译和多年实践的回顾思考形成此次读书笔记。</p>
+</blockquote>
+<h2 id="domian-driven-design">Domian-driven Design</h2>
+<p>领域-驱动-设计（DDD）提倡<code>基于(用例相关的现实业务)进行建模</code>。<br>
+<img src="https://imgkr.cn-bj.ufileos.com/cee8e534-650d-4609-8ffc-a9ba3b11d1d5.png" alt=""></p>
+<h4 id="1-ddd的视角">1. DDD的视角</h4>
+<ul>
+<li>DDD将<code>现实问题视为领域</code>;</li>
+<li>DDD将<code>独立的问题描述为有界限的上下文</code>(一个有界上下文对应一个微服务)，并强调通用语言讨论这些问题</li>
+</ul>
+<h4 id="2-ddd提出的概念">2. DDD提出的概念</h4>
+<p>许多技术概念和模式，例如充血模型(对应我们常写贫血模型)、值对象、聚合和聚合根规则。</p>
+<h4 id="3-目前实施ddd的现状">3. 目前实施DDD的现状</h4>
+<p>有时DDD技术规则和模式被视为障碍/啰嗦，对于实施DDD方法而言，学习曲线比较陡峭。<br>
+不要为了实施而实施，最重要的是<strong>使用通用语言编写与业务问题一致的领域代码</strong>。</p>
+<blockquote>
+<p>此外仅当您要实现具有复杂业务规则的微服务时，才应使用DDD方法，诸如CRUD服务之类的简单职责可以通过更简单的方法进行管理。</p>
+</blockquote>
+<p>DDD模式可以协助<code>划分微服务边界</code><br>
+在已经确定的界限上下文，您可以为领域建模：实体模型、值对象和聚合，DDD与边界有关，微服务也与边界有关。</p>
+<h2 id="尽量保持小型微服务">尽量保持小型微服务</h2>
+<p>划分界限上下文，要平衡两个目标：</p>
+<ol>
+<li>创建尽可能小的微服务（这一点不应该成为主要动力)</li>
+<li>要避免微服务之间过密的通信</li>
+</ol>
+<p>这两个目标可能彼此矛盾，两者通过演进的方式达到平衡：<br>
+<strong>尽可能分解系统，直到在下次分解时感到服务通信迅速增加。</strong></p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/b773a371-5102-4803-b9f6-1732fcb50a58.png" alt=""></p>
+<h2 id="ddd微服务中的层">DDD微服务中的层</h2>
+<ol>
+<li>DDD定义的多层是为了管控代码的复杂性， 这些层是逻辑组件(类似环环相扣的齿轮)。</li>
+<li>不同的层（例如领域模型层与表示层等）可能具有不同的类型，此时层加类型需要转换。</li>
+</ol>
+<blockquote>
+<p>例如从数据库中加载的实体，有时候需要做一下修正(截取部分信息、增加信息)才能适配客户端UI。</p>
+</blockquote>
+<ol start="3">
+<li>领域模型层中的领域实体不应传播到它不属于的其他区域(如表示层)</li>
+<li>重要的是有一个由聚合根控制的域模型，以确保与该实体组（聚合）相关的所有不变式和规则都是通过单个入口点或（聚合根）执行。</li>
+</ol>
+<p><img src="https://imgkr.cn-bj.ufileos.com/b8a41dd0-df04-4d30-9974-2ea0e62e0c4c.png" alt=""></p>
+<p>订单DDD微服务有三层：</p>
+<ul>
+<li>应用程序层 Ordering.API</li>
+<li>领域层 Ordering.Domain</li>
+<li>基础设施层 Ordering.Infrastructure</li>
+</ul>
+<p>三层形成的类库<code>有清晰且明确的依赖关系</code></p>
+<h3 id="1-the-domain-model-layer">1. The domain model layer</h3>
+<p>负责表达业务概念、业务场景和业务规则。这一层会将技术细节传递到基础设施层，这一层控制、反映业务场景，是业务软件的核心。</p>
+<ul>
+<li>
+<p>领域模型层是表达业务的地方，在编程上体现为<code>捕获数据和行为（具有逻辑方法）的领域实体的类库</code></p>
+</li>
+<li>
+<p>遵循<code>持久性无感知和基础设施无感知</code>原则</p>
+</li>
+</ul>
+<blockquote>
+<p>领域模型层必须完全忽略数据持久性细节，这些持久性任务应由基础设施层执行，因此，此层不应直接依赖基础设施，这意味着一个重要规则是领域模型实体类应为POCO。<br>
+领域实体不应直接依赖于任何数据访问基础框架（EF、NHibernate），理想情况下，您的域实体不应继承自或实现任何基础设施中定义的任何类型。 大多数现代的ORM框架（例如Entity Framework Core）都支持这种方法，因此您的领域模型不会与基础设施耦合。</p>
+</blockquote>
+<ul>
+<li>领域模型中遵循<code>持久性无感知</code>原则很重要，但也不应忽略持久性问题</li>
+</ul>
+<blockquote>
+<p>理解物理数据模型以及它如何映射到您的实体对象模型仍然非常重要，否则你的设计将会是空中楼阁。而且，大多数时候你将本应该采用关系数据库的设计直接迁移到 NoSQL或面向文档的数据库，领域模型层很可能不适用（基于存储技术和ORM技术，您的实体模型仍然必须遵守一些约束条件）。</p>
+</blockquote>
+<h3 id="2application-layer">2.Application Layer</h3>
+<p>定义软件要执行的工作，并引导（可表达的领域对象）解决问题。<br>
+该层对对业务负责，有时会与其他系统的应用程序层交互。<br>
+该层<code>保持薄</code>： 它不包含业务规则或知识，而仅协调任务并将工作委托给下一层的域对象协作;<br>
+它没有反映业务情况的状态，但是可以具有反映用户或程序的任务进度的状态。</p>
+<blockquote>
+<p>微服务的应用层在.NET中一般表现为WebAPI，webapi实现交互、远程网络连接、为UI/Client app提供的外部请求中转。<br>
+再次强调webapi不应该包含业务规则或领域知识（尤其是用于事务或更新的领域规则），这些应归领域模型类库所有。<br>
+应用层只能协调任务，不能保存或定义任何域状态（域模型），它将业务规则的执行委托给领域模型类本身（聚合根和域实体），这将最终更新这些域实体中的数据。</p>
+</blockquote>
+<p>总体来看，应用层是为实现前端用例的地方。</p>
+<h3 id="3--the-infrastructure-layer">3.  The infrastructure layer</h3>
+<p>基础设施层: 定义如何将最初保存在领域实体中的数据持久化到数据库或者其他存储结构的过程。</p>
+<blockquote>
+<p>一个示例是使用Entity Framework Core代码实现存储库模式类: 该存储库模式类使用DBContext将数据持久存储在关系数据库中。</p>
+</blockquote>
+<p>根据前面提到的<code>持久化无感知</code>和<code>基础设施无感知</code>原则，基础设施层不得“污染”领域模型层。<br>
+再次强调：必须保持领域层实体对基础设施层框架的无感知状态， 领域模型层类库应该只包含领域代码，而只有POCO实体类可以实现软件的核心，并且与基础设施技术完全脱钩。</p>
+<p><img src="https://imgkr.cn-bj.ufileos.com/a9977bf8-b394-46b9-afee-cbc45d1aa103.png" alt=""></p>
+<h3 id="总结">总结</h3>
+<ol>
+<li>在DDD中，应用层依赖于领域和基础设施层，而基础设施依赖于领域层，但是领域层不依赖于任何层。</li>
+<li>只在领域层编写业务规则和通用的领域知识，而应用层负责针对软件的目标来组合、协调领域层的业务规则。</li>
+<li>领域层的领域实体、值类型、聚合根反映了真实业务的核心，需要用一种通用的语言来定义，这样不管应用层多么复杂，核心领域层自岿然不动。</li>
+<li>领域层不能直接依赖与基础设施层，现代ORM框架一般都提出仓储模型来帮助领域层和技术设施层解耦。</li>
+</ol>
+<p><img src="https://imgkr.cn-bj.ufileos.com/ed34dd07-0a86-4d04-acea-c5dd34499751.png" alt=""></p>
+<p>翻译自：  <a href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice">https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice</a></p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-25 15:51</span>&nbsp;
+<a href="https://www.cnblogs.com/JulianHuang/">有态度的小码甲</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12773161" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12773161);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 232636, cb_blogApp = 'JulianHuang', cb_blogUserGuid = 'c75ad4ff-965a-e311-8d02-90b11c0b17d6';
+    var cb_entryId = 12773161, cb_entryCreatedDate = '2020-04-25 15:51', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 有态度的小码甲
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

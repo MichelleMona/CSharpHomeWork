@@ -1,0 +1,487 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>华为IoT小助手 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=r7HROo-7bHpj9wQ7aMjjOlbCdKigSxO_AFRYzTkcpKo" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=FJjyQba01xzuYKRyPpSwE1bMq69pRjxrz5wp2oZZGLY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/hwiot/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/hwiot/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/hwiot/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 558012;
+        var currentBlogApp = 'hwiot';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'LessIsMoreRight';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/hwiot/">风趣幽默小助手</a>
+</div>
+<div class="subtitle">
+
+</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/hwiot/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%8E%E4%B8%BAIoT%E5%B0%8F%E5%8A%A9%E6%89%8B">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/hwiot/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                
+<span id="stats_post_count">随笔 - 
+21&nbsp;</span>
+<span id="stats_article_count">文章 - 
+0&nbsp;</span>
+<!-- <span id="stats-comment_count"></span> -->
+<span id="stats_comment_count">评论 - 
+2</span>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12765418.html">
+    漫谈LiteOS-端云互通组件-MQTT开发指南（上）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 本文介绍使用野火开发板通过Agent Tiny SDK的端云互通组件，使用MQTT协议快速接入华为云平台。通过平台侧、设备侧的开发以及调测过程来了解直接接入物联网平台模式的具体流程，希望对你有所帮助            <a href="https://www.cnblogs.com/hwiot/p/12765418.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-24 09:43 华为IoT小助手 阅读 (181) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12765418" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2020/04/23.html">2020年4月23日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12762207.html">
+    漫谈LiteOS之开发板-LiteOS移植（基于GD32450i-EVAL）
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 本文主要从为什么移植，以及移植的分类，开发环境、移植流程以及测试5个角度对采用非接管中断的方式将LiteOS移植到GD32450i-EVAL（2019）开发板上的详细流程介绍，希望对你有所帮助。            <a href="https://www.cnblogs.com/hwiot/p/12762207.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-23 17:16 华为IoT小助手 阅读 (217) 评论 (2)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12762207" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2020/04/21.html">2020年4月21日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12745773.html">
+    漫谈LiteOS-Huawei_IoT_Link_SDK_OTA 开发指导
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 本文主要介绍Huawei_IoT_Link_SDK_OTA的开发指南，从概述到具体的操作步骤以及后续的编译、适配过程，希望对你有所帮助。            <a href="https://www.cnblogs.com/hwiot/p/12745773.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-21 16:55 华为IoT小助手 阅读 (120) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12745773" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2020/04/13.html">2020年4月13日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12689725.html">
+    以数字资产模型为核心驱动的一站式IoT数据分析实践
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 一个不会直播的云服务架构师，不是一个好的攻城狮！在这个全民直播的时代一个不会直播的云服务架构师，不是一个好的攻城狮！            <a href="https://www.cnblogs.com/hwiot/p/12689725.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-13 10:19 华为IoT小助手 阅读 (26) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12689725" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2020/04/10.html">2020年4月10日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12674454.html">
+    基于华为云IoT Studio自助生成10万行代码的奥秘
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：不会直播的老师不是好老师，不做预习的学生不是好学生~            <a href="https://www.cnblogs.com/hwiot/p/12674454.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-04-10 16:46 华为IoT小助手 阅读 (35) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12674454" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2020/01/21.html">2020年1月21日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12222392.html">
+    一条物联网设备控制命令的一生
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一条物联网设备控制命令从诞生到完成使命，它的一生是什么样的？本文将带你解读物联网设备控制命令的完整生命周期。            <a href="https://www.cnblogs.com/hwiot/p/12222392.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2020-01-21 17:00 华为IoT小助手 阅读 (162) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12222392" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2019/12/28.html">2019年12月28日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12110963.html">
+    来！手把手告诉你如何玩转物联网设备软件升级
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 物联网平台支持远程对设备进行软件升级，本文将会为您介绍软件升级的流程与原理。            <a href="https://www.cnblogs.com/hwiot/p/12110963.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-28 10:47 华为IoT小助手 阅读 (173) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12110963" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12110950.html">
+    揭秘：那些藏在车与路中的秘密
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 车路协同是近年的热门概念，但车与路到底是如何协同的？本文将带您一探究竟。            <a href="https://www.cnblogs.com/hwiot/p/12110950.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-28 10:43 华为IoT小助手 阅读 (91) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12110950" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2019/12/16.html">2019年12月16日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12048191.html">
+    物联网卡能否携号转网？| 我的物联网成长记
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 物联网设备也会用到SIM卡，那物联网卡能否携号转网呢？本文将带您一探究竟。 2019年12月1日，携号转网业务正式在全国范围内推出，相关新闻也不断刷屏。 相信各位物联网爱好者都很好奇，物联网卡能否携号转网？今天，小编就为大家揭开其中神秘的面纱~ 首先，我们来看一下什么是携号转网 我们的手机            <a href="https://www.cnblogs.com/hwiot/p/12048191.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-16 11:24 华为IoT小助手 阅读 (120) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12048191" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/hwiot/archive/2019/12/09.html">2019年12月9日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/hwiot/p/12009090.html">
+    当物联网遇上边缘计算 | 我的物联网成长记
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：【摘要】 针对设备直联云端方案的痛点，将边缘计算概念引入物联网解决方案的IoT边缘服务应运而生。本文将会为您介绍IoT边缘的能力与价值。 边缘，指实体或逻辑概念中离中心较远，靠近边界的部分。在数据处理领域，边缘计算的概念源于云计算，是指在靠近数据源的一侧搭建集网络、计算、存储、应用核心能力为一体的计            <a href="https://www.cnblogs.com/hwiot/p/12009090.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            
+
+posted @ 2019-12-09 09:20 华为IoT小助手 阅读 (309) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12009090" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/hwiot/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2020 华为IoT小助手
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+</body>
+</html>

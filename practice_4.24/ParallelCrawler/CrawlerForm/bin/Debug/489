@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>欧小文大叔 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/elf/bundle-elf.min.css?v=mpcef9xxdj1doWi6glkD6lMbmGclGCSPM_FSrhFRY-A" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/elf/bundle-elf-mobile.min.css?v=Lk2wjMMUJjSLadG0Xil7JdDLDWWAvcpQmxzjUgc7cAk" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/YancyL/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/YancyL/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/YancyL/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 469762;
+        var currentBlogApp = 'YancyL';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'elf';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/YancyL/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/YancyL/">欧小文大叔</a>
+</h1>
+<h2>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/YancyL/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%AC%A7%E5%B0%8F%E6%96%87%E5%A4%A7%E5%8F%94">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/YancyL/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+6&nbsp; </span>
+<span id="stats_article_count">文章 - 
+0&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+0</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/YancyL/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/YancyL/p/12757394.html">
+    Redis的三大问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一般我们对缓存读操作的时候有这么一个固定的套路： 如果我们的数据在缓存里边有，那么就直接取缓存的。 如果缓存里没有我们想要的数据，我们会先去查询数据库，然后将数据库查出来的数据写到缓存中。 最后将数据返回给请求 代码例子: 1 @Override 2 public R selectOrderById            <a href="https://www.cnblogs.com/YancyL/p/12757394.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 15:27 欧小文大叔 阅读 (234) 评论 (1)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12757394" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/YancyL/archive/2020/02/19.html">2020年2月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/YancyL/p/12330255.html">
+    Spring MVC的工作流程
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1,用户通过客户端向服务器发送请求,请求会被Spring MVC的前端控制器DispatcherServlet所拦截. 2,DispatcherServlet拦截请求后,会调用HandlerMapping处理器映射器. 3,处理器映射器根据请求的URL找到具体的处理器,生成处理器对象及处理器拦截器(            <a href="https://www.cnblogs.com/YancyL/p/12330255.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-19 10:57 欧小文大叔 阅读 (46) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12330255" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/YancyL/archive/2019/08/31.html">2019年8月31日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/YancyL/p/11440015.html">
+    Java基础面试题总结二
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：1，什么是字符串常量池？ 字符串的分配，和其他的对象分配一样，耗费高昂的时间与空间代价。JVM为了提高性能和减少内存开销，在实例化字符串常量的时候进行了一些优化。为 了减少在JVM中创建的字符串的数量，字符串类维护了一个字符串池，每当代码创建字符串常量时，JVM会首先检查字符串常量池。如果字符串已经            <a href="https://www.cnblogs.com/YancyL/p/11440015.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-08-31 18:07 欧小文大叔 阅读 (14) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11440015" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/YancyL/archive/2019/07/26.html">2019年7月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/YancyL/p/11245855.html">
+    Java基础面试题总结之简述题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一，数组的优缺点 在Java核心技术卷1中写到数组是一种数据结构，用来储存同一类型值的集合。 优点： 1，按照索引查询元素速度快，效率高 2，能存储大量数据 3，按照索引遍历数组方便 缺点： 1，长度固定不变 2，采用连续存储空间，删除环绕添加效率低下 3，无法直接保存映射关系 4，缺乏封装，操作繁            <a href="https://www.cnblogs.com/YancyL/p/11245855.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-26 12:15 欧小文大叔 阅读 (28) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11245855" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/YancyL/archive/2019/07/10.html">2019年7月10日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/YancyL/p/11182126.html">
+    Spring整合MyBatis案例练习笔记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：需求: 用户登录 技术需求: Servlet+Spring+Mybatis+MVC+jsp+css+html+jquery 数据库设计: 用户表 Sql语句设计: select * from t_user where uname=#{0} and pwd=#{1} 实现: mapper层 UserM            <a href="https://www.cnblogs.com/YancyL/p/11182126.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-07-10 21:20 欧小文大叔 阅读 (73) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11182126" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/YancyL/archive/2018/11/20.html">2018年11月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/YancyL/p/9845992.html">
+    Java基础知识点总结笔记
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：面向对象的三大特性 继承：一般只能单继承，内部类实现多继承，接口可以多继承 封装：访问权限控制public&gt;protected&gt;包&gt;private内部类也是一种封装 多态：编译时多态，体现在向上转型和向下转型，通过引用类型判断调用哪个方法(静态分配)。运行时多态，体现在同名函数通过不同的参数实现多种            <a href="https://www.cnblogs.com/YancyL/p/9845992.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-11-20 12:18 欧小文大叔 阅读 (76) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=9845992" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 欧小文大叔
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+</body>
+</html>

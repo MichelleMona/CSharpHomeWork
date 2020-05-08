@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="一、前言 618期间上线一个活动项目。但上线不顺利，当天就出现了性能问题，接口超时，用户无法打开网页，最后不得的临时下线。花了三天两夜，重构了后台核心代码，才让活动进行下去。 回头看了一下自己的时间记" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>某618大促项目的复盘总结 - 初开 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001.min.css?v=vmUk-3Bh8LDsKXwjNHs2GDiFna-ZMTUgOJzjUaXTlPA" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/wchukai/custom.css?v=OaBqPhFSkVNXjhGXIaL30SvzXso=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001-mobile.min.css?v=cJiDsI1JAuHHd-OAUWJeyE5JMXXsG4mmuUi2rVmEK1c" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wchukai/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wchukai/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wchukai/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 215653;
+        var currentBlogApp = 'wchukai';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'AnotherEon001';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/wchukai/">初开之道</a>
+</h1>
+<div id="subtitle">
+超越范式，渐入谦卑的空。我的作品库：https://chukai.link
+</div>
+</div>
+<div id="sub"><div class="BlogStats">随笔 - 
+60, 文章 - 
+0, 评论 - 
+75, 引用 - 
+0</div>
+
+</div>
+
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	<div id="post_detail">
+    <div class="post">
+        <h2>
+            
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/wchukai/p/11174189.html">某618大促项目的复盘总结</a>
+
+        </h2>
+        <div class="postbody">
+            
+<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+    <h1 id="一、前言">一、前言</h1>
+<p>618期间上线一个活动项目。但上线不顺利，当天就出现了性能问题，接口超时，用户无法打开网页，最后不得的临时下线。花了三天两夜，重构了后台核心代码，才让活动进行下去。</p>
+<p>回头看了一下自己的时间记录，从5月31号那天晚上8点25分开始准备上线，发现异常，分析原因，重构代码，离开公司时已经是6月2号的23点54，经历51小时29分，中间的睡眠时间不到5个小时，这已经是爆发小宇宙了。</p>
+<p>这一波刚过去了，一波未平另一波又起，由于活动的奖励丰厚，大批羊毛党闻风而至，某宝上公开卖脚本的都有了，严重影响了正常用户薅羊毛。</p>
+<p>某客户反馈说：<strong>我们别说薅羊毛了，现在是整头羊都被他们牵走了！</strong></p>
+<p>接下来的几天，又得和薅羊毛的脚本们斗智斗勇，直到活动结束。</p>
+<p>而本文就对此做一次深度的复盘，在以后的项目中让自己快活一点。</p>
+<h1 id="二、一份看似完美的项目总结">二、一份看似完美的项目总结</h1>
+<p>当我们复盘项目过程时，能找到很多问题点，比如：</p>
+<ol>
+<li>
+<p>人力不足，需求过于复杂，开发和测试工作量大。</p>
+</li>
+<li>
+<p>前后端开发、测试都是从其他团队抽掉的，对当前项目的业务和技术不熟悉。</p>
+</li>
+<li>
+<p>跨团队组建的临时团队，职责定义不清晰，项目管控不严格。</p>
+</li>
+<li>
+<p>开发对项目的用到的技术不熟悉，没有经过原有项目成员的CodeReview。</p>
+</li>
+<li>
+<p>测试通过太草率，压测方案设计不合理。</p>
+</li>
+</ol>
+<p>....</p>
+<p>列出问题后，很快就能一一写出改进点。</p>
+<ol>
+<li>
+<p>从公司层面加强的整体项目安排，避免重复玩法的项目，资源投入到重点的几个活动中。</p>
+</li>
+<li>
+<p>加强团队的能力培养，总结文档，供新人学习。</p>
+</li>
+<li>
+<p>对于核心代码进行CodeReview，遇到问题时，项目经理协调资深开发协助解决。</p>
+</li>
+<li>
+<p>将临时组建团队职责定义清晰，各负责人沟通清楚。</p>
+</li>
+<li>
+<p>严格控制测试质量，测试有上线的否决权。</p>
+</li>
+</ol>
+<p>...</p>
+<p>这些总结看起来一点问题没有，列出了问题，也列出了改进点，甚至可以当成样板去使用了，是不是咱们就这么结束了呢。</p>
+<p>当然不是， 它本身的说法没有错，错在<strong>把问题的前提当作问题的原因。</strong></p>
+<p>我们来看两种表述。</p>
+<ol>
+<li>
+<p>下次我们要组建一个经验丰富的项目团队，避免质量问题发生。</p>
+</li>
+<li>
+<p>当下次我们面临一个临时组建，经验不足的项目团队时，如何避免质量问题发生。</p>
+</li>
+</ol>
+<p>这两种表述的差异在哪？</p>
+<p>前一种表述是因为我们“团队”的原因，导致了本次质量问题，所以我们要解决“团队”的问题。</p>
+<p>而后一种是我们的团队就是临时组建的，我们的开发、测试就是对新项目的业务和技术不熟悉，在这个前提下，才会出现质量问题，那么在这个前提下，怎么避免质量问题呢？</p>
+<p>临时组建，经验不足不是问题的<strong>原因</strong>，它们是出现问题的<strong>前提</strong>，这是客观存在的。</p>
+<p>这就好比我们说解决一个问题时，最快的方式是，<strong>我们不解决问题，解决出问题的人就行了。</strong></p>
+<p>在这里不就变成了，<strong>我们不解决问题，解决出问题的团队就行了。</strong></p>
+<p>正是因为这个误区，我们很多时候一出现项目质量问题，就把锅甩给我们团队的协作有问题，或者我们的项目时间紧张，然后一句下次改进就结束了。</p>
+<p>这样的万能回答，看似一点没错，但往往就没法落地了。</p>
+<p>明明项目时间紧，新团队协作经验不足本来就客观的存在，没有它就没有问题，怎么可以当作问题本身给解决掉呢。</p>
+<h2 id="1、质量问题的关键原因">1、质量问题的关键原因</h2>
+<p>带着这个前提，我们再回头看前面的总结，其实就能过滤出真正有价值的点了。</p>
+<p>我们也可以这么问，问题是不能避免的，但为什么在项目过程中我们的性能问题没有暴露出来？</p>
+<p>三个角度：</p>
+<ol>
+<li>
+<p>从项目角度，没有严格按项目流程来，特别是最后测试任务紧张，bug较多时，赶工给出了测试报告。</p>
+</li>
+<li>
+<p>从开发角度，没有找熟悉业务和技术的同学做CodeReview。</p>
+</li>
+<li>
+<p>从测试角度，压测方案设计不合理，不符合真实场景。</p>
+</li>
+</ol>
+<p>逐一分析下。</p>
+<p>前面提到事故是后台的性能问题，从项目角度，就算流程严谨也没法暴露出性能问题，特别是在项目过程中，已暴露的风险是前端人力不足，中间加了人手，从功能的角度，后端进度完全正常。</p>
+<p>再看开发角度，这里我没有提开发的经验不足，不是在推脱责任，这同我们作为一个临时团队对业务的经验不足一样，它是一个客观存在的前提。当你接触新项目，使用新技术时，经验不足是肯定存在的。</p>
+<p><strong>问题是在自身经验不足时，如何去完成任务</strong>，那么和熟悉业务和技术的同学做CodeReview是主要的手段。</p>
+<p>再从测试角度，功能测试是没有问题的，但跟性能相关的压测方案是有问题的，并且一开始就没有引起正视。最开始的压测方案是开发只出接口和参数文档，直接丢给测试去压，现在看来，这是错误的。</p>
+<p>因此，这次质量问题的关键总结如下。</p>
+<p>当下次我们面临一个临时组建，经验不足的项目团队时，面对大流量的业务需求，开发们需要注意：</p>
+<ol>
+<li>
+<p>让熟悉业务和技术的同学帮忙做CodeReview。</p>
+</li>
+<li>
+<p>设计出符合业务场景的压测方案。</p>
+</li>
+</ol>
+<p>这两点就可以落地了，这也不是说项目管理上没有改进的，而是优先保证这两点，能更有效的降低风险。</p>
+<p>CodeReview的技巧这里就不多少说，来谈谈我们做的几次压测方案的改进。</p>
+<h2 id="2、三轮的压测改进">2、三轮的压测改进</h2>
+<ol>
+<li>
+<p>单用户，单接口，双机压测</p>
+</li>
+<li>
+<p>随机用户，多接口，全量压测</p>
+</li>
+<li>
+<p>随机用户，功能分组接口，全量压测</p>
+</li>
+</ol>
+<p>最开始压测方案是用一个用户，两台服务器，一个缓存分片做压测，然后简单的用服务器QPS的均值乘以线上部署机器数量当作压测结果。</p>
+<p>这个方案如果是下图左侧的场景，调用链路上的服务器可以同时弹性扩展自然是可以的。</p>
+<p>但要是右侧的场景，调用链路上存在瓶颈，比如数据库是一个节点，并且无法扩展，那就问题了。</p>
+<p>同样的，这次项目的问题就是Redis成为了一个单节点的瓶颈。另外由于用户id是固定的，所以缓存很可能被重复使用，这样就难以测试到频繁创建缓存的场景。</p>
+<p><img src="https://img2018.cnblogs.com/blog/724293/201907/724293-20190715114844997-144830694.png" alt=""></p>
+<p>在系统重构后，改进了一种压测方案，<strong>通过随机用户Id，批量轮询接口，并且通过测试环境的弹性扩展，完全模拟线上的部署环境</strong>。</p>
+<p>还通过加降级开关，<strong>把入参合法性、风控、时效性校验等临时关闭</strong>，以便能让压测的请求贯穿整个主流程。</p>
+<p>接着在这一方案的基础上，通过对接口分组和伪造恰当的数据，<strong>编写贴近真实的调用行为的脚本</strong>，再次做了压测。</p>
+<p>在执行人员上，也经历了从开发提供数据，测试全权负责；到测试主导，开发参与；再到开发主导，测试协助的过程。</p>
+<p>由此，压测方案就越来越贴近真实场景，压测结论自然就更加可信 。</p>
+<h2 id="3、高并发场景下的设计">3、高并发场景下的设计</h2>
+<p>前面谈到了系统设计的不合理导致了本次性能问题，来分析下这里面的根本原因。</p>
+<p>首先要理解的是，Redis集群是由多个分片构成的，一条数据被写到哪个分片里，是由key的hash值来离散的。</p>
+<p><img src="https://img2018.cnblogs.com/blog/724293/201907/724293-20190715114859986-470835901.png" alt=""></p>
+<p>比如说，我们要在Redis里面缓存一批用户信息，并且能通过ID来存取。</p>
+<p>如果用Redis自带的Hash表结构写法如下：</p>
+<p>存：<code>redis.hset(&quot;userMap&quot;,ID,userInfo)</code></p>
+<p>读：<code>redis.hget(&quot;userMap&quot;,ID)</code></p>
+<p>那么，因为key是固定的userMap，这意味着所有的用户信息都会被写到一个分片里。</p>
+<p><img src="https://img2018.cnblogs.com/blog/724293/201907/724293-20190715114913512-1786224149.png" alt=""></p>
+<p>而对于通常的分布式系统的设计，<strong>一个基本原则是：让流量尽可能的被集群的机器平摊。</strong></p>
+<p>固定的key就无法利用分布式的优势了，并且如果并发量高，这就会让一个分片去抗所有的流量，再加上如果用户量数十万，还有一次性读取所有数据的操作，这样就变成一场灾难了。</p>
+<p>实际设计时，直接把整个Redis集群当作一个Hash表的方式更加高效。</p>
+<p>存：<code>redis.set(&quot;userMap&quot;+ID,userInfo)</code></p>
+<p>读：<code>redis.get(&quot;userMap&quot;+ID)</code></p>
+<p>这里的key=&quot;userMap&quot;+ID，ID不同key就被离散了，请求会集群平摊，从而充分发挥分布式系统的性能。</p>
+<h1 id="三、黑产和羊毛党的问题">三、黑产和羊毛党的问题</h1>
+<p>在项目上线后另一个没重视的问题出现了，那就是大量的黑产和羊毛党出现，活动奖励全被这些用脚本的人占据了。</p>
+<p>对黑产的事前考虑太少了，仅做了简单的风控校验，根本检测不足异常用户，导致黑产可以通过脚本大量刷接口。</p>
+<p>这里的经验有两点：</p>
+<ol>
+<li>
+<p>对包含现金、现金等价物或高价值奖励的活动，要有面对黑产的心理预期。</p>
+</li>
+<li>
+<p>在大公司，专业的事情找专业的人做，基于业务场景，提前跟风控团队沟通好。</p>
+</li>
+</ol>
+<p>对于第一点，基本上只要值点钱的活动，黑产肯定跑不了，空手套白狼，抢到就是赚到，不妨想想如果你是黑产，结合下业务场景，你会怎么来刷自己的系统。</p>
+<p>基于第一点，公司没有风控团队那就只能自己做了，而一般上点规模的公司都有自己的风控团队，利用好现成资源。</p>
+<p>风控主要考虑两方面：</p>
+<ol>
+<li>
+<p>有风控团队的，接入他们的通用风控模型。</p>
+</li>
+<li>
+<p>针对项目的业务场景，定制化一些风控模型。</p>
+</li>
+</ol>
+<p>通用风控模型基本是通过新老账号、异地登录、人机识别等等用户行为建立的用户画像，通过离线计算和实时校验来处理。</p>
+<p>定制化模型视情况而定，比如拉一个单独的小黑户，放进去的用户不能参与这个活动等等。</p>
+<p>被拦截的用户一般是走验证码或直接拉黑，对于后者，别忘了和客服的妹子们打好招呼，准备下话术应对客诉。</p>
+<h1 id="四、结语">四、结语</h1>
+<p>最后总结下项目的经验。</p>
+<p>首先是前提：</p>
+<ol>
+<li>
+<p>当你的面前的是一个临时组建，对现在项目经验不足的项目团队时。</p>
+</li>
+<li>
+<p>当你面临一个大流量，包含现金或等价物的活动时。</p>
+</li>
+</ol>
+<p>请务必做好这三点：</p>
+<ol>
+<li>
+<p>找熟悉本项目的业务和技术的开发参与方案的设计和CodeReview。</p>
+</li>
+<li>
+<p>请开发主动参与压测任务，设计压测方案，注意尽可能模拟真实场景。</p>
+</li>
+<li>
+<p>做好应对黑产的心理准备，直到大促活动结束。</p>
+</li>
+</ol>
+<p>来自于，一个连续加班51小时29分，被用户吐槽整只羊都被人家牵走了的开发。</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+        </div>
+        <p class="postfoot">
+            posted on 
+<span id="post-date">2019-07-12 09:36</span>&nbsp;
+<a href="https://www.cnblogs.com/wchukai/">初开</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11174189" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(11174189);return false;">收藏</a>
+        </p>
+    </div>
+</div>
+
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 215653, cb_blogApp = 'wchukai', cb_blogUserGuid = 'b322d97b-bdb8-e411-b908-9dcfd8948a71';
+    var cb_entryId = 11174189, cb_entryCreatedDate = '2019-07-12 09:36', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+    <li>
+        <a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/wchukai/">
+首页</a>
+
+    </li>
+    <li>
+        
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%88%9D%E5%BC%80">
+联系</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/wchukai/rss/">
+订阅</a>
+        
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/wchukai/rss/">
+    <img src="/skins/anothereon001/images/xml.gif" alt="订阅" />
+</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+    </li>
+</ul>
+
+
+<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 初开
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</p>
+
+
+</div>
+</div>
+
+
+    
+</body>
+</html>
